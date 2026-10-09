@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AutoData · 全流程可视化讲解</title>
+<link rel="stylesheet" href="article.css">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%228%22%20fill%3D%22%23245849%22/%3E%3Cpath%20d%3D%22M9%208h14v4H13v3h9v4h-9v3h10v4H9z%22%20fill%3D%22%23faf7ef%22/%3E%3C/svg%3E">
+<meta name="robots" content="noindex,nofollow">
+</head>
+<body>
+<div style="max-width:1120px;margin:auto;padding:14px 20px;font-size:13px"><a href="../../" style="color:#245849;text-decoration:none">← 个人博客 / 具身学习</a></div>
+
+<nav><div class="inner">
+  <span class="brand">AutoData</span>
+  <a href="#flow">① 全流程</a>
+  <a href="#idea">② 核心思想</a>
+  <a href="#arch">③ 架构与构件</a>
+  <a href="#record">④ 录制</a>
+  <a href="#annotate">⑤ 标注</a>
+  <a href="#generate">⑥ 生成</a>
+  <a href="#waypoint">⑦ Waypoint 层</a>
+  <a href="#algorithms">⑧ 三大算法</a>
+  <a href="#skillgen">⑨ SkillGen 深潜</a>
+  <a href="#random">⑩ 随机化专题</a>
+  <a href="#dataset">⑪ 数据集结构</a>
+  <a href="#validate">⑫ 验证与回放</a>
+  <a href="#params">⑬ 参数速查</a>
+</div></nav>
+
+<div class="wrap">
+
+<div class="article-downloads"><a href="AutoData-全流程可视化讲解.md" download>下载 Markdown</a><a href="autodata-markdown.zip" download>下载完整包（含图示）</a></div><h1 id="autodata-%C2%B7-%E5%85%A8%E6%B5%81%E7%A8%8B%E5%8F%AF%E8%A7%86%E5%8C%96%E8%AE%B2%E8%A7%A3" tabindex="-1">AutoData · 全流程可视化讲解</h1>
+<p class="sub">从少量人工遥操演示，到可直接用于策略训练的大规模成功演示数据集 —— 端到端一张图讲清「录制 → 标注 → 生成 → 验证」每一步在做什么。</p>
+<p class="sub" style="margin-top:8px;">内容统一整理自 AutoData 仓库文档（<code>docs/</code>）与两份既有笔记 （<code>AutoData-原理与数据流总览.md</code>、<code>AutoData-数据生成随机化可视化.html</code>）。 文中数值为便于说明的<b>示意值</b>；字段、参数、流程顺序以仓库代码与官方文档为准。</p>
+<div class="card legend"><div class="li"><span class="badge fixed">固定</span> 确定性的，无随机</div><div class="li"><span class="badge">随机</span> 每次采样都不一样</div><div class="li"><span class="badge mp">MP</span> 运动规划（SkillGen / cuRobo）</div><div class="li"><span class="dot" style="background:var(--fixed)"></span>输入 / 契约 / 数据</div><div class="li"><span class="dot" style="background:var(--rand)"></span>随机化</div><div class="li"><span class="dot" style="background:var(--green)"></span>执行 / 仿真</div><div class="li"><span class="dot" style="background:var(--purple)"></span>噪声</div></div>
+<h2 id="flow" tabindex="-1"><span class="num">①</span>一页看懂：端到端全流程</h2>
+<div class="card">
+<p class="lead" style="margin-top:0;">AutoData 接收一小批<b>已标注</b>的人工演示，用并行仿真环境把它们<b>拆段、变换、拼接、执行、录制</b>， 批量产出新的成功演示。整条流水线只有四个用户可见步骤：</p>
+<div class="flow"><div class="step fixed"><div class="n">STEP 1 · 录制</div><div class="t">🧑‍🦱 遥操采集</div><div class="d"><code>record_demos.py</code><br>SpaceMouse / 键盘 / VR<br>→ 原始 HDF5（几条成功演示）</div></div><div class="arrow">→</div><div class="step fixed"><div class="n">STEP 2 · 标注</div><div class="t">🏷️ 标出子任务边界</div><div class="d"><code>annotate_demos.py</code><br>手动打标 / <code>--auto</code> 自动采样<br>→ 已标注 HDF5（含信号）</div></div><div class="arrow">→</div><div class="step green"><div class="n">STEP 3 · 生成</div><div class="t">⚙️ 并行造数据</div><div class="d"><code>generate_dataset.py</code><br>随机场景 + 变换回放<br>→ 生成数据集 + 结果 JSON</div></div><div class="arrow">→</div><div class="step fixed"><div class="n">STEP 4 · 验证</div><div class="t">✅ 结构校验 / 回放</div><div class="d"><code>validate_dataset.py</code><br><code>replay_demos.py</code> 可视回放</div></div></div>
+<p class="lead" style="margin:22px 0 8px;"><b>STEP 3 内部</b>才是 AutoData 的核心：一次「生成尝试（attempt）」内部有六个阶段， 其中只有三处是真正的随机化（🎲）——其余在采样结果确定后都是确定性的。</p>
+<div class="flow"><div class="step fixed"><div class="n">阶段 0</div><div class="t">环境 Reset</div><div class="d">场景随机化（物体位姿 / 关节角），并把复位后的状态快照为输出 episode 的 <code>initial_state</code></div></div><div class="arrow">→</div><div class="step rand"><div class="n">阶段 1 · 整轮一次</div><div class="t">🎲 边界抖动</div><div class="d"><code>randomize_subtask_boundaries()</code>：把录好的子任务分界点按下标范围抖动</div></div><div class="arrow">→</div><div class="step rand"><div class="n">阶段 2 · 每个子任务</div><div class="t">🎲 选源演示段</div><div class="d"><code>selection_strategy</code>：全随机 / 最近邻 top-k 内随机</div></div></div>
+<div class="flow" style="margin-top:12px;"><div class="step fixed"><div class="n">阶段 3</div><div class="t">位姿变换</div><div class="d">把源段在“参考物体坐标系”下的轨迹，刚体变换到物体当前位姿下</div></div><div class="arrow">→</div><div class="step green"><div class="n">阶段 4</div><div class="t">桥接</div><div class="d">MimicGen：线性插值；SkillGen：<span class="badge mp">MP</span> 规划无碰撞 transit</div></div><div class="arrow">→</div><div class="step rand"><div class="n">阶段 5 · 每步</div><div class="t">🎲 执行 + 动作噪声</div><div class="d"><code>pose_action + σ·randn</code>，逐 tick 注入高斯噪声</div></div><div class="arrow">→</div><div class="step fixed"><div class="n">阶段 6</div><div class="t">判定 &amp; 导出</div><div class="d">每步判成功并锁存；成功则写进输出 HDF5</div></div></div>
+<div class="callout">
+<p><strong>一句话记忆：</strong> 场景多样性来自  <strong>Reset（环境层）</strong> ，轨迹多样性来自  <strong>生成层</strong> ——  <strong>边界抖动</strong> 改变“时间段”， <strong>源段选择</strong> 改变“用哪段”， <strong>动作噪声</strong> 改变“怎么执行”。 三者叠加，少量演示就能长出大量彼此不同的演示。</p>
+</div>
+<h3 id="%E5%9B%9B%E4%B8%AA%E6%AD%A5%E9%AA%A4%E7%9A%84%E8%BE%93%E5%85%A5-%2F-%E8%BE%93%E5%87%BA%E5%AF%B9%E7%85%A7" tabindex="-1">四个步骤的输入 / 输出对照</h3>
+<div class="table-scroll"><table><thead><tr><th style="width:13%">步骤</th><th style="width:24%">命令 / 脚本</th><th style="width:31%">输入</th><th>输出</th></tr></thead><tbody><tr><td><b>1 录制</b></td><td class="mono">IsaacLab<br>record_demos.py</td><td>已注册的 Isaac Lab 环境 <code>--task</code>；遥操设备</td><td>原始演示 HDF5：每 episode 的 <code>actions</code> / <code>initial_state</code> / <code>obs</code></td></tr><tr><td><b>2 标注</b></td><td class="mono">scripts/<br>annotate_demos.py</td><td>原始 HDF5 + 任务描述 YAML + 机械臂配置 YAML</td><td>已标注 HDF5：在 <code>obs/datagen_info</code> 下写入子任务 <code>term/start</code> 信号与逐帧位姿记录</td></tr><tr><td><b>3 生成</b></td><td class="mono">scripts/<br>generate_dataset.py</td><td>已标注 HDF5 + 任务描述 + 机械臂配置（可选 env profile）</td><td>生成数据集 HDF5（成功 episode）＋ 可选 <code>--result_file</code> 统计 JSON</td></tr><tr><td><b>4 验证</b></td><td class="mono">scripts/validate_dataset.py<br>IsaacLab replay_demos.py</td><td>生成数据集 HDF5</td><td>结构校验报告 / 可视化回放</td></tr></tbody></table></div>
+<details>
+<summary>可跳过第 1–2 步：仓库自带预标注数据集</summary>
+<p style="font-size:13px;margin-bottom:0;">仓库随附预标注源数据集，可直接跳到生成步骤： <code>datasets/annotated_datasets/dataset_franka_annotated.hdf5</code>（Franka 堆叠）、 <code>dataset_gr1_annotated.hdf5</code> / <code>dataset_g1_annotated.hdf5</code>（人形）、 <code>dataset_franka_skillgen_annotated.hdf5</code>（SkillGen）。 这些文件通过 Git LFS 分发，需先执行 <code>git lfs pull</code>。</p>
+</details>
+</div>
+<h2 id="idea" tabindex="-1"><span class="num">②</span>为什么可行：把演示拆成“相对物体”的技能段</h2>
+<div class="card">
+<p class="lead" style="margin-top:0;">模仿学习策略是“数据饥饿”的：需要大量、多样的成功演示，而人工遥操采集又慢又贵。 但策略真正要学的东西，往往在十条演示里就已经齐了——<b>同一个技能，在不同物体摆放下的重复</b>。 AutoData 正是利用这份冗余。</p>
+<h3 id="%E4%B8%A4%E4%B8%AA%E5%85%B3%E9%94%AE%E5%AE%9A%E4%B9%89" tabindex="-1">两个关键定义</h3>
+<div class="table-scroll"><table><thead><tr><th style="width:20%">概念</th><th>含义</th></tr></thead><tbody><tr><td><b>子任务<br>subtask</b></td><td>一段连续动作，其中末端执行器（EEF）的运动由<b>单一参考物体</b>支配，例如“伸手抓方块”“把方块放到另一个方块上”。 当支配运动的物体改变时，一个子任务结束、下一个开始。</td></tr><tr><td><b>物体相对存储</b></td><td>因为每段技能是相对参考物体记录的，所以它可以被<b>刚体变换</b>到新的场景位姿后原样回放—— 把变换后的各段拼接起来，少量演示就能变成任意规模的数据集。</td></tr></tbody></table></div>
+<h3 id="%E5%8F%98%E6%8D%A2%E5%85%AC%E5%BC%8F%EF%BC%9A%E4%B8%BA%E4%BB%80%E4%B9%88%E5%BF%85%E9%A1%BB%E7%94%A8%E2%80%9C%E7%BB%9D%E5%AF%B9%E4%BD%8D%E5%A7%BF%E2%80%9D%E5%81%9A%E4%B8%AD%E9%97%B4%E8%A1%A8%E7%A4%BA" tabindex="-1">变换公式：为什么必须用“绝对位姿”做中间表示</h3>
+<p>源演示里每步的 action 是 <strong>相对当时状态的增量</strong> （<code>delta = target − current</code>）， 只在录制时的那个当前位置下成立， <strong>不能被直接变换</strong> 。所以 AutoData 在  <strong>绝对位姿</strong> 空间里做刚体变换：</p>
+<pre><code class="language-text"># 把源 eef 位姿从“源物体系”搬到“当前物体系”
+T_new_eef = T_current_object · inv(T_source_object) · T_source_eef
+</code></pre>
+<p style="font-size:13.5px;">执行时再用新场景的真实状态重新计算 <code>delta</code>，action 才正确。文档把它写成硬约束： <i>“The transformation requires task-space actions … which is what the embodiment adapters guarantee.”</i></p>
+<p><div class="figure-scroll"><a href="figures/figure-01.svg" target="_blank" rel="noopener" aria-label="查看大图：物体相对技能段的刚体变换示意"><img src="figures/figure-01.svg" alt="物体相对技能段的刚体变换示意"></a></div></p>
+<div class="callout blue">
+<p><strong>诊断要点：</strong> 变换后如果所有抓取都 <strong>整体偏移一个固定距离</strong> ，几乎总是机械臂配置里的 <code>eef_offset</code> 与环境报告/源数据标注所用坐标系不一致（见 <a href="#params">⑬ 参数速查</a>）。</p>
+</div>
+</div>
+<h2 id="arch" tabindex="-1"><span class="num">③</span>架构与四大构件：生成机不直接认识仿真器</h2>
+<div class="card">
+<p class="lead" style="margin-top:0;">AutoData 组织架构只围绕一个理念：<b>生成机制不应该直接认识仿真器或机器人</b>。 生成器需要的一切，都通过小的、显式的接口拿到——任务描述 YAML、机械臂配置 YAML、以及一个只读接口 <code>Datastream</code>。于是新任务、新机器人、新算法都能彼此独立地接入。</p>
+<p><div class="figure-scroll"><a href="figures/figure-02.svg" target="_blank" rel="noopener" aria-label="查看大图：AutoData 架构：契约 → Datastream → 生成器/算法 → 仿真 → 数据集"><img src="figures/figure-02.svg" alt="AutoData 架构：契约 → Datastream → 生成器/算法 → 仿真 → 数据集"></a></div></p>
+<h3 id="%E5%8C%85%E8%81%8C%E8%B4%A3" tabindex="-1">包职责</h3>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>包 / 目录</th>
+<th>职责</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>autodata_interfaces</td>
+<td>与仿真器/配置的边界：任务描述、机械臂适配器、Datastream、env 配置辅助、运动规划后端。</td>
+</tr>
+<tr>
+<td>autodata_core</td>
+<td>生成机制本体：数据生成器、生成算法、源演示池、选择策略、Waypoint 执行。</td>
+</tr>
+<tr>
+<td>autodata_utils</td>
+<td>小工具（位姿数学、张量辅助）。</td>
+</tr>
+<tr>
+<td>autodata_examples</td>
+<td>示例任务描述、机械臂配置、环境 profile。</td>
+</tr>
+<tr>
+<td>scripts</td>
+<td>面向用户的入口：生成 <code>generate_dataset.py</code>、标注 <code>annotate_demos.py</code>、校验 <code>validate_dataset.py</code>。</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="datastream%EF%BC%9A%E5%94%AF%E4%B8%80%E7%9A%84%E5%8F%AA%E8%AF%BB%E7%AA%97%E5%8F%A3" tabindex="-1">Datastream：唯一的只读窗口</h3>
+<p style="font-size:13.5px;">Datastream 把「实时环境 + 任务描述 + 机械臂适配器 + 源演示池」组合到同一个对象后面， 作为生成器观察世界的唯一入口。它<b>刻意不做</b>写操作——不 step、不 reset、不录制； 这些控制侧操作统一通过 <code>get_env()</code> 逃生口访问，从而保证读接口诚实、变更点集中可审计。</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>查询组</th>
+<th>代表方法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>任务语义</td>
+<td>get_subtasks / get_task_constraints / get_generation_policy / get_object_refs / get_term_signal_names / get_start_signal_names / get_eef_names / get_expected_attached_object</td>
+</tr>
+<tr>
+<td>机械臂</td>
+<td>get_robot_eef_pose / get_robot_joint_positions / target_eef_pose_to_action / action_to_target_eef_pose / actions_to_passthrough_actions</td>
+</tr>
+<tr>
+<td>实时场景</td>
+<td>get_object_poses / get_robot_root_pose / get_scene_state / get_subtask_term_signals / device</td>
+</tr>
+<tr>
+<td>碰撞世界来源</td>
+<td>get_usd_stage / get_env_prim_path / get_robot_prim_path</td>
+</tr>
+<tr>
+<td>源演示池</td>
+<td>source_pool / datagen_infos / subtask_boundaries / num_source_demos / add_episode</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="%E5%9D%90%E6%A0%87%E4%B8%8E%E7%BA%A6%E5%AE%9A%EF%BC%88%E4%B8%80%E6%9C%89%E2%80%9C%E4%BD%8D%E5%A7%BF%E7%9C%8B%E7%9D%80%E4%B8%8D%E5%AF%B9%E2%80%9D%E5%85%88%E6%9F%A5%E8%BF%99%E9%87%8C%EF%BC%89" tabindex="-1">坐标与约定（一有“位姿看着不对”先查这里）</h3>
+<ul>
+<li><strong>位姿是 4×4 齐次矩阵</strong> （<code>torch.Tensor</code>），位于环境计算设备。</li>
+<li><strong>物体与机器人根位姿是 env 相对</strong> ：减去每个环境自身的原点，因而可跨并行环境比较，也与数据集记录一致。</li>
+<li><strong>四元数统一为 (x, y, z, w)</strong> ，单位元为 <code>[0,0,0,1]</code>。顺序写错会整体翻转 180°。</li>
+<li><strong>读接口是批量的</strong> ：方法接收 <code>env_ids</code>，返回形状 <code>(len(env_ids), ...)</code>；传 <code>None</code> 读全部。</li>
+</ul>
+<h3 id="%E5%9B%9B%E5%A4%A7%E6%9E%84%E4%BB%B6%E5%A6%82%E4%BD%95%E5%85%B1%E5%90%8C%E6%8F%8F%E8%BF%B0%E4%B8%80%E4%B8%AA%E4%BB%BB%E5%8A%A1" tabindex="-1">四大构件如何共同描述一个任务</h3>
+<div class="grid2">
+<h4 id="task-descriptor%EF%BC%88yaml%EF%BC%89" tabindex="-1">Task Descriptor（YAML）</h4>
+<p style="font-size:13px;margin-top:4px;">「任务是什么」的唯一事实来源：按 <code>eef_name</code> 分组的子任务序列、每个子任务的边界信号、 参考物体、选择策略与生成旋钮；多臂任务的跨臂约束；以及全局 <code>generation_policy</code>。 标注工具和生成器<b>读同一份文件</b>，因此标注与生成对“子任务是什么”不可能产生分歧。</p>
+<h4 id="embodiment%EF%BC%88yaml-%2B-adapter%EF%BC%89" tabindex="-1">Embodiment（YAML + adapter）</h4>
+<p style="font-size:13px;margin-top:4px;">从生成器视角描述机器人：去哪读末端位姿、如何在“目标位姿 ↔ action 向量”之间转换。 生成器本身从不接触关节名、控制器或运动学，只会“给我 EEF 位姿”和“把这个目标位姿变成 action”。</p>
+</div>
+</div>
+<h2 id="record" tabindex="-1"><span class="num">④</span>STEP 1 · 录制：采一小批人工演示</h2>
+<div class="card">
+<p class="lead" style="margin-top:0;">AutoData 消费的源演示是 Isaac Lab HDF5 数据集的格式（每个 episode 含 actions、initial_state、observations）。 这一步只需采集<b>少量（示例为 10 条）</b>成功演示。</p>
+<div class="flow" style="margin-bottom:14px;"><div class="step fixed"><div class="n">设备</div><div class="t">SpaceMouse / 键盘 / VR</div><div class="d">推荐 SpaceMouse：平滑的离轴 6-DoF 输入比键盘更干净</div></div><div class="arrow">→</div><div class="step fixed"><div class="n">脚本</div><div class="t">record_demos.py</div><div class="d">Isaac Lab 自带录制工具（位于 submodules/IsaacLab-Arena）</div></div><div class="arrow">→</div><div class="step fixed"><div class="n">输出</div><div class="t">原始 HDF5</div><div class="d"><code>datasets/dataset_franka.hdf5</code></div></div></div>
+<pre><code class="language-bash"><span class="hljs-comment"># Franka 堆叠任务：用 SpaceMouse 采集 10 条成功演示</span>
+python submodules/IsaacLab-Arena/submodules/IsaacLab/scripts/tools/record_demos.py \
+  --viz kit \
+  --task Isaac-Stack-Cube-Franka-IK-Rel-v0 \
+  --teleop_device spacemouse \
+  --dataset_file ./datasets/dataset_franka.hdf5 \
+  --num_demos 10
+</code></pre>
+<h3 id="franka-%E4%BB%BB%E5%8A%A1%E4%B8%8E%E6%93%8D%E4%BD%9C" tabindex="-1">Franka 任务与操作</h3>
+<p style="font-size:13.5px;">环境 <code>Isaac-Stack-Cube-Franka-IK-Rel-v0</code>：Franka 机械臂在桌面上叠三个方块—— <b>红叠蓝，再绿叠红</b>。一条演示在满足成功条件（按正确顺序叠好）时自动判定为成功并收尾； 中途出错按右键丢弃并重来。</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>设备</th>
+<th>输入 → 动作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SpaceMouse</td>
+<td>倾斜 → 沿 x / y 移动</td>
+</tr>
+<tr>
+<td>推 / 拉 → 沿 z 移动</td>
+<td></td>
+</tr>
+<tr>
+<td>扭转 → 旋转</td>
+<td></td>
+</tr>
+<tr>
+<td>左键 → 切换夹爪开 / 合</td>
+<td></td>
+</tr>
+<tr>
+<td>右键 → 丢弃当前演示并复位</td>
+<td></td>
+</tr>
+<tr>
+<td>键盘</td>
+<td><code>W/S</code> <code>A/D</code> <code>Q/E</code> → 沿 x / y / z 移动</td>
+</tr>
+<tr>
+<td><code>Z/X</code> <code>T/G</code> <code>C/V</code> → 绕 x / y / z 旋转；<code>K</code> 切夹爪</td>
+<td></td>
+</tr>
+<tr>
+<td><code>R</code> → 丢弃并复位</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<div class="callout green">
+<p><strong>让演示“既好生成、又好训练”的三条建议：</strong></p>
+<ul>
+<li><strong>尽量短</strong> ——下游策略决策更少，生成器要变换的段也更短。</li>
+<li><strong>走直线</strong> ——朝目标直接移动，而不是逐轴移动。</li>
+<li><strong>不要长时间停顿</strong> ——平滑连续的运动比莫名的停顿更易学习。</li>
+</ul>
+</div>
+<p class="note">采集完成后可用 <code>python scripts/validate_dataset.py datasets/dataset_franka.hdf5</code> 先做一次结构检查。 若采集人形演示（GR-1 / G1），需 Apple Vision Pro + CloudXR；没有 VR 设备可直接使用仓库预标注数据集跳到生成。</p>
+</div>
+<h2 id="annotate" tabindex="-1"><span class="num">⑤</span>STEP 2 · 标注：给演示打上子任务边界信号</h2>
+<div class="card">
+<p class="lead" style="margin-top:0;">生成前，每条源演示都必须标注<b>子任务终止信号</b>：即一个子任务结束、下一个开始的 action 下标。 子任务及其信号名由任务描述 YAML 声明。标注工具会回放每条 episode，并把结果写到输出 HDF5 的 <code>obs/datagen_info</code> 下。</p>
+<h3 id="%E4%B8%A4%E7%A7%8D%E6%A0%87%E6%B3%A8%E6%A8%A1%E5%BC%8F" tabindex="-1">两种标注模式</h3>
+<div class="grid2">
+<div class="card">
+<h4 id="%E6%89%8B%E5%8A%A8%E6%A0%87%E6%B3%A8%EF%BC%88manual%EF%BC%89" tabindex="-1">手动标注（Manual）</h4>
+<p style="font-size:13px;">在 Kit 窗口中回放每条 episode，用键盘标出边界。<br><code>N</code> 播放 / <code>B</code> 暂停 / <code>S</code> 打标 / <code>Q</code> 跳过。</p>
+<p style="font-size:12.5px;color:var(--muted);">SkillGen 数据集<b>只能</b>手动标注， 因为需要同时打“起点”和“终点”标记。</p>
+</div>
+<div class="card">
+<h4 id="%E8%87%AA%E5%8A%A8%E6%A0%87%E6%B3%A8%EF%BC%88--auto%EF%BC%89" tabindex="-1">自动标注（<code>--auto</code>）</h4>
+<p style="font-size:13px;">回放时采样环境发布的布尔子任务观测项；<b>每个信号的第一个上升沿</b>即为边界。可无头运行（<code>--viz none</code>）。</p>
+<p style="font-size:12.5px;color:var(--muted);">需要环境本身发布了 per-subtask 布尔观测。Franka 堆叠任务支持，因此推荐自动标注。</p>
+</div>
+</div>
+<h3 id="%E6%A0%87%E6%B3%A8%E5%9C%A8%E5%81%9A%E4%BB%80%E4%B9%88%EF%BC%9A%E6%8A%8A%E8%BF%9E%E7%BB%AD%E8%BD%A8%E8%BF%B9%E5%88%87%E6%88%90%E6%AE%B5" tabindex="-1">标注在做什么：把连续轨迹切成段</h3>
+<p style="font-size:13.5px;">标注只标记<b>时间点</b>；代码不会“观察轨迹后自己判断这段是抓取”。以“抓取 / 抬高 / 放置”的 12 步小例说明：</p>
+<p><div class="figure-scroll"><a href="figures/figure-03.svg" target="_blank" rel="noopener" aria-label="查看大图：标注信号与子任务边界"><img src="figures/figure-03.svg" alt="标注信号与子任务边界"></a></div></p>
+<h3 id="%E6%A0%87%E6%B3%A8%E5%91%BD%E4%BB%A4" tabindex="-1">标注命令</h3>
+<pre><code class="language-bash"><span class="hljs-comment"># 自动标注（Franka 堆叠推荐）</span>
+python scripts/annotate_demos.py \
+    --env_name Isaac-Stack-Cube-Franka-IK-Rel-v0 \
+    --viz none \
+    --task_descriptor autodata_examples/tasks/franka_cube_stack.yaml \
+    --embodiment autodata_examples/embodiments/franka_ik_rel.yaml \
+    --input_file ./datasets/dataset_franka.hdf5 \
+    --output_file ./datasets/dataset_franka_annotated.hdf5 \
+    --auto
+</code></pre>
+<p style="font-size:13.5px;"><code>--auto</code> 模式下，回放每一步都按任务描述里 <code>subtask_term_signal</code> 指定的名字采样观测项， 信号的第一个上升沿成为子任务边界。若信号从未触发、触发顺序不符、或违反描述的 <code>subtask_term_offset_range</code> 间距要求，该 episode 会被跳过并打印原因。</p>
+<h3 id="skillgen-%E7%9A%84%E6%A0%87%E6%B3%A8%E4%B8%8D%E5%90%8C%EF%BC%9A%E6%AF%8F%E4%B8%AA%E5%AD%90%E4%BB%BB%E5%8A%A1%E8%BF%98%E8%A6%81%E6%9C%89%E2%80%9C%E8%B5%B7%E7%82%B9%E2%80%9D" tabindex="-1">SkillGen 的标注不同：每个子任务还要有“起点”</h3>
+<p style="font-size:13.5px;">SkillGen 用运动规划补齐段间过渡，规划器必须知道每个技能段<b>从哪里开始</b>。因此 SkillGen 数据集的标记是 <b>起点、终点交替</b>，以最终子任务的起点收尾。四段堆叠任务共需 <b>7 个标记</b>：</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>序</th>
+<th>标记</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>grasp_1</code> 起点</td>
+<td>夹爪开始朝红块的最终接近</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>grasp_1</code> 终点</td>
+<td>红块被稳稳抓牢</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>stack_1</code> 起点</td>
+<td>开始往蓝块上放置</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>stack_1</code> 终点</td>
+<td>红块落在蓝块上、夹爪松开</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>grasp_2</code> 起点</td>
+<td>开始朝绿块最终接近</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>grasp_2</code> 终点</td>
+<td>绿块被稳稳抓牢</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>stack_2</code> 起点</td>
+<td>开始往红块上放置（末段，随轨迹结束）</td>
+</tr>
+</tbody>
+</table></div>
+<p class="note">SkillGen 数据集用 <code>franka_ik_rel_skillgen.yaml</code>（与 MimicGen 版只差 <code>eef_offset</code>， 因为其源数据在 <code>panda_hand</code> 帧标注）。自动标注只产出终止信号，因此<b>不能</b>用于 SkillGen。</p>
+<h3 id="%E6%A0%87%E6%B3%A8%E4%BA%A7%E7%89%A9%EF%BC%9Aobs%2Fdatagen_info-%E7%9A%84%E5%AD%97%E6%AE%B5" tabindex="-1">标注产物：<code>obs/datagen_info</code> 的字段</h3>
+<div class="table-scroll"><table><thead><tr><th style="width:24%">字段</th><th style="width:22%">形状（每条演示）</th><th>含义</th></tr></thead><tbody><tr><td class="mono">eef_pose</td><td class="mono">{eef_name: [T,4,4]}</td><td>逐步记录的末端执行器位姿（实际观测）。</td></tr><tr><td class="mono">target_eef_pose</td><td class="mono">{eef_name: [T,4,4]}</td><td>从记录 action 反解出的控制器<b>目标</b>位姿；变换用的是它。</td></tr><tr><td class="mono">object_poses</td><td class="mono">{object_name: [T,4,4]}</td><td>记录到的物体位姿；子任务段据此表示成“相对参考物体”。</td></tr><tr><td class="mono">subtask_term_signals</td><td class="mono">{subtask_name: [T]}</td><td>逐步布尔完成标志，由标注写入。</td></tr><tr><td class="mono">subtask_start_signals</td><td class="mono">{subtask_name: [T]}</td><td>逐步布尔起点标志；<b>仅 SkillGen 数据集</b>存在。</td></tr><tr><td class="mono">passthrough_action</td><td class="mono">{channel: [T,D]}</td><td>非位姿 action 通道（夹爪、手关节、底盘等），回放时逐字复制。</td></tr></tbody></table></div>
+<div class="callout blue">
+<p><strong>两条应答要点：</strong></p>
+<ul>
+<li><code>eef_pose</code> 与 <code>target_eef_pose</code> 分开：前者是“现在在哪”，后者是“这步想去哪”；变换用目标，实际位姿用于选择/锚定插值。</li>
+<li>读到池里后 HDF5 键 <code>object_pose</code>（单数）对应属性 <code>object_poses</code>（复数）。</li>
+</ul>
+</div>
+</div>
+<h2 id="generate" tabindex="-1"><span class="num">⑥</span>STEP 3 · 生成：一次 attempt 的完整生命周期</h2>
+<div class="card">
+<p class="lead" style="margin-top:0;">有了已标注的源演示，MimicGen / DexMimicGen / SkillGen 就能合成新演示。每次尝试中，场景被随机化、 每个子任务选一段源演示、其末端轨迹被刚体变换到新物体位姿后回放。<code>DataGenerator.generate()</code> 就是一次「生成尝试」的完整生命周期。</p>
+<h3 id="6.1-%E6%9C%80%E5%B0%8F%E5%91%BD%E4%BB%A4%E4%B8%8E%E5%85%B3%E9%94%AE%E5%8F%82%E6%95%B0" tabindex="-1">6.1 最小命令与关键参数</h3>
+<pre><code class="language-bash"><span class="hljs-comment"># 小规模：Kit 窗口里先跑通</span>
+python scripts/generate_dataset.py \
+    --env_name Isaac-Stack-Cube-Franka-IK-Rel-v0 \
+    --viz kit --num_envs 20 --alg mimicgen \
+    --generation_num_trials 10 \
+    --task_descriptor autodata_examples/tasks/franka_cube_stack.yaml \
+    --embodiment autodata_examples/embodiments/franka_ik_rel.yaml \
+    --input_file ./datasets/annotated_datasets/dataset_franka_annotated.hdf5 \
+    --output_file ./datasets/generated_dataset_mimicgen_franka_small.hdf5
+</code></pre>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>--alg</td>
+<td>生成算法：<code>mimicgen</code> / <code>dexmimicgen</code> / <code>skillgen</code>。</td>
+</tr>
+<tr>
+<td>--env_name</td>
+<td>环境 id；省略时从源数据集元数据读取。</td>
+</tr>
+<tr>
+<td>--task_descriptor</td>
+<td>任务描述 YAML（子任务 / 约束 / 生成策略）。</td>
+</tr>
+<tr>
+<td>--embodiment</td>
+<td>机械臂配置 YAML（位姿 ↔ action 变换）。</td>
+</tr>
+<tr>
+<td>--env_profile</td>
+<td>可选环境 profile：在创建环境前叠加场景增删改 / reset 随机化 / planner。</td>
+</tr>
+<tr>
+<td>--input_file</td>
+<td>已标注源数据集 HDF5。</td>
+</tr>
+<tr>
+<td>--output_file</td>
+<td>生成 episode 的目标 HDF5（默认 <code>./datasets/output_dataset.hdf5</code>）。</td>
+</tr>
+<tr>
+<td>--result_file</td>
+<td>可选 JSON：整次运行的统计与元信息（原子写）。</td>
+</tr>
+<tr>
+<td>--generation_num_trials</td>
+<td>覆盖任务描述里的 <code>generation_policy.num_trials</code>。</td>
+</tr>
+<tr>
+<td>--num_envs</td>
+<td>并行环境数，各自独立生成。数据规模靠它放大。</td>
+</tr>
+<tr>
+<td>--viz</td>
+<td><code>kit</code> 开窗 / <code>none</code> 无头。数据集级生成一定用 <code>none</code>（渲染显著拖慢）。</td>
+</tr>
+<tr>
+<td>--pause_subtask</td>
+<td>每个子任务后暂停，便于交互调试。</td>
+</tr>
+<tr>
+<td>--visualize_plan</td>
+<td>把 SkillGen 规划轨迹流到 Rerun 查看器（仅 env 0）。</td>
+</tr>
+</tbody>
+</table></div>
+<div class="callout">
+<p><strong>规模与预期（官方示例基准，RTX PRO 6000 Blackwell）：</strong>  MimicGen 全量命令 <code>--num_envs 500 --generation_num_trials 1000</code>，成功率约  <strong>~40%</strong> 、耗时约  <strong>15 分钟</strong> ； DexMimicGen 人形约  <strong>~70%</strong>  /  <strong>~40 分钟</strong> 。失败尝试是正常的，不会被导出。</p>
+</div>
+<h3 id="6.2-%E4%B8%BB%E5%BE%AA%E7%8E%AF%EF%BC%9A%E5%85%AD%E6%AD%A5%E9%A1%BA%E5%BA%8F" tabindex="-1">6.2 主循环：六步顺序</h3>
+<p style="font-size:13.5px;">下面是 <code>generate()</code> 一次调用的执行顺序（<code>autodata_core/data_generator.py</code>）。 左侧是阶段，右侧是它真正做的事与关键函数。</p>
+<p><div class="figure-scroll"><a href="figures/figure-04.svg" target="_blank" rel="noopener" aria-label="查看大图：generate() 一次 attempt 的六阶段顺序"><img src="figures/figure-04.svg" alt="generate() 一次 attempt 的六阶段顺序"></a></div></p>
+<h3 id="6.3-%E9%98%B6%E6%AE%B5%E7%BB%86%E8%8A%82%E4%B8%8E%E5%AE%B9%E6%98%93%E5%BF%BD%E7%95%A5%E7%9A%84%E7%82%B9" tabindex="-1">6.3 阶段细节与容易忽略的点</h3>
+<h4 id="%E9%98%B6%E6%AE%B5-2-%C2%B7-%E8%BE%B9%E7%95%8C%E9%9A%8F%E6%9C%BA%E5%8C%96" tabindex="-1">阶段 2 · 边界随机化</h4>
+<p style="font-size:13.5px;">对每条源演示的边界做抖动，使不同生成演示不会在完全相同的步数切换子任务。非 SkillGen 时， 后一段起点直接取前一段<b>随机化后</b>的终点（首尾相接）；SkillGen 因读“起点信号”，起点也随机。 末尾会做断言保证：每段非空、段间递增、扁平化后单调不减。</p>
+<pre><code class="language-text"># 示意：End 偏移范围 [10,20]，末段强制 [0,0]
+子任务     原始 [start,end)   本次 [start,end)   片段长度
+0 抓红块    [0,40)            [0,55)            55
+1 红叠蓝    [40,90)           [55,102)          47
+2 抓绿块    [90,140)          [102,154)         52
+3 绿叠红    [140,200)         [154,200)         46   # 末段终点固定为 T
+</code></pre>
+<h4 id="%E9%98%B6%E6%AE%B5-3a-%C2%B7-%E9%80%89%E6%BA%90%E6%BC%94%E7%A4%BA%E6%AE%B5%EF%BC%88select%EF%BC%89" tabindex="-1">阶段 3a · 选源演示段（select）</h4>
+<p style="font-size:13.5px;">把每条源演示在该子任务窗口内的片段切出来，交给选择策略。策略： <code>random</code>（均匀随机）、<code>nearest_neighbor_object</code>（按源物体位姿与当前物体位姿的位姿距离排序，前 <code>nn_k</code> 内随机取一）、 <code>nearest_neighbor_robot_distance</code>（把源 EEF 位姿先变到“源物体系”再映射到“当前物体系”，与当前 EEF 比距离）。 约束：<code>object_ref</code> 为空时只允许 <code>random</code>。 距离只用于<b>相对排序</b>（不做阈值判断），且只比源片段的<b>第 0 帧</b>；在算哪两者的距离、为什么这么算，见 9.3。</p>
+<div class="callout red">
+<p><strong>实现注意：</strong> 官方示例同时设了 <code>select_src_per_subtask: true</code> 与 <code>select_src_per_arm: false</code>。 在当前代码里，第一次选择后该臂的已选索引不再是 <code>None</code>，后续子任务的 <code>need_selection</code> 会被压成 false， 因而 <strong>整次尝试只选一次</strong> 。不要只按参数名字面理解为“逐段重选”。</p>
+</div>
+<h4 id="%E9%98%B6%E6%AE%B5-3b-%C2%B7-%E5%8F%98%E6%8D%A2%EF%BC%88transform%EF%BC%89" tabindex="-1">阶段 3b · 变换（transform）</h4>
+<p style="font-size:13.5px;">核心公式：<code>T_new_eef(t) = T_current_object · inv(T_source_object_at_segment_start) · T_source_eef(t)</code>。 另有两条分支：协调约束（<code>use_delta_transform</code> / <code>coord_transform_scheme</code>）直接套用 delta； 无参考物体时原样使用。首段（或 <code>transform_first_robot_pose</code>）会把<b>记录的 EEF 实际位姿</b>拼在目标序列最前，让插值从机器人真实位姿出发。 passthrough 通道只保留「本 EEF 自己的 + 非 EEF 的（如 body）」，避免串入另一条臂的夹爪动作。 最后包成 <code>WaypointTrajectory</code> 返回。</p>
+<h4 id="%E9%98%B6%E6%AE%B5-3c-%C2%B7-%E5%90%88%E5%B9%B6%E6%A1%A5%E6%8E%A5%E6%AE%B5%EF%BC%88merge%EF%BC%89" tabindex="-1">阶段 3c · 合并桥接段（merge）</h4>
+<p style="font-size:13.5px;">基类默认路径即“生成段 + 合并插值”。<code>merge()</code> 先插值到目标段首位姿，再可选固定 hold <code>num_fixed_steps</code> 步，然后接上目标段；末了 <code>pop_first()</code> 丢掉仅用于锚定插值的种子 waypoint。 非首段默认从<b>上一段最后目标位姿</b>接入（<code>interpolate_from_last_target_pose: true</code>）； SkillGen 用 <code>force_use_prev_traj=True</code>，让真实技能段从「MP 终点位姿」而非实时机器人位姿开始插值。</p>
+<h4 id="%E9%98%B6%E6%AE%B5-4-%C2%B7-%E8%B7%A8%E8%87%82%E7%BA%A6%E6%9D%9F%E4%B8%8E%E6%89%A7%E8%A1%8C" tabindex="-1">阶段 4 · 跨臂约束与执行</h4>
+<p style="font-size:13.5px;">每个 tick 前逐个 EEF 决定“往前走”还是“原地 hold”，这两个跨臂约束定义在 <code>autodata_interfaces/tasks/subtask_constraint_spec.py</code>：</p>
+<div class="table-scroll"><table><thead><tr><th style="width:20%">约束</th><th>行为</th></tr></thead><tbody><tr><td><code>sequential</code></td><td>后者执行到只剩 <code>sequential_min_time_diff</code> 步时停下等前者； <code>-1</code> 表示前者完成前完全不启动前者。<span class="tag f">DexMimicGen</span></td></tr><tr><td><code>coordination</code></td><td>两臂共享同一条源演示与共享位姿变换；<code>coordination_synchronize_start</code> 让并发臂同步起步， <code>synchronous_steps</code> 让两边在尾段窗口内锁步。额外的前缀可先行执行。</td></tr></tbody></table></div>
+<p style="font-size:13px;color:var(--muted);">MP transit 期间直接跳过约束（transit 不受约束）。SkillGen 因用 <code>pending_subtask_trajectory</code> + <code>is_in_motion_plan</code> 传递状态，生成器完全不需要知道 cuRobo 的存在。</p>
+<h4 id="%E9%98%B6%E6%AE%B5-6-%C2%B7-%E5%81%9C%E6%AD%A2%E6%9D%A1%E4%BB%B6%E4%B8%8E%E7%BB%9F%E8%AE%A1" tabindex="-1">阶段 6 · 停止条件与统计</h4>
+<p style="font-size:13.5px;"><code>env_loop</code> 每次统计变化时读取 <code>stats</code>：若 <code>guarantee_success=true</code>，攒够 <code>num_trials</code> 个<b>成功</b>即停； 否则跑够 <code>num_trials</code> 次<b>尝试</b>即停。最终可选写入 JSON sidecar（临时文件 + fsync + 原子替换）。</p>
+<pre><code class="language-text">{
+  &quot;algorithm&quot;: &quot;skillgen&quot;,
+  &quot;requested_trials&quot;: 1000,
+  &quot;num_success&quot;: 1000,
+  &quot;num_failures&quot;: 412,
+  &quot;num_attempts&quot;: 1412,
+  &quot;env_profile&quot;: {            // 仅当应用了环境 profile 时出现
+    &quot;name&quot;: &quot;franka_bin_stack&quot;,
+    &quot;path&quot;: &quot;autodata_examples/env_profiles/franka_bin_stack.yaml&quot;,
+    &quot;planner&quot;: &quot;franka_stack_cube_bin&quot;
+  }
+}
+</code></pre>
+<p class="note">生成结果 JSON 是唯一记录“应用了哪个 profile”的地方——生成数据集本身只保存基础 env id。</p>
+</div>
+<h2 id="waypoint" tabindex="-1"><span class="num">⑦</span>Waypoint 层：算法与生成器之间的“指令 IR”</h2>
+<div class="card">
+<p class="lead" style="margin-top:0;"><i>“Algorithms and the generator talk to each other in waypoints, not actions.”</i> 算法插件不直接产出 action，而是产出「目标位姿 + 透传动作 + 噪声」；只有到执行那一刻 （<code>MultiWaypoint.execute</code>），才编码成仿真器能用的 action。</p>
+<h3 id="%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81%E8%BF%99%E4%B8%80%E5%B1%82" tabindex="-1">为什么需要这一层</h3>
+<p style="font-size:13.5px;">源演示录下来的 action 是<b>相对录制那一刻状态的增量</b>（<code>delta_pos = target_pos − curr_pos</code>）， 只在原来的当前位置下成立，无法被整体搬移。算法要做的运算几乎全在<b>位姿</b>上：</p>
+<div class="table-scroll"><table><thead><tr><th style="width:46%">运算</th><th style="width:30%">作用对象</th><th>能在 action 空间做吗</th></tr></thead><tbody><tr><td>选源（比距离）<code>selection_strategy</code></td><td>EEF / 物体<b>位姿</b>距离</td><td>✗</td></tr><tr><td>变换到新物体位姿 <code>transforms.py</code></td><td><b>位姿</b>矩阵乘</td><td>✗</td></tr><tr><td>段间插值 <code>interpolate_poses</code></td><td>两个<b>位姿</b>之间</td><td>✗</td></tr><tr><td>拼接 merge</td><td>两段<b>位姿</b>轨迹首尾相接</td><td>✗</td></tr><tr><td>运动规划（cuRobo）</td><td>输出<b>位姿</b>序列</td><td>✗</td></tr><tr><td>跨臂约束“原地 hold”</td><td>冻结某个<b>位姿</b></td><td>✗</td></tr><tr><td>加噪做多样性</td><td>位姿<b>动作</b>（编码时）</td><td><span class="tag g">✓ 只此一项</span></td></tr></tbody></table></div>
+<p style="font-size:13px;color:var(--muted);">七项里六项只认位姿，因此统一用位姿作为工作表示，即 Waypoint。</p>
+<h3 id="%E5%9B%9B%E4%B8%AA%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B" tabindex="-1">四个数据类型</h3>
+<div class="table-scroll"><table><thead><tr><th style="width:20%"></th><th style="width:12%">粒度</th><th style="width:26%">装什么</th><th style="width:22%">一个实例代表</th><th>生命周期</th></tr></thead><tbody><tr><td class="mono">Waypoint</td><td>1 步 × 1 臂</td><td>目标位姿 + 夹爪 + 噪声</td><td>某一刻“手要去哪”</td><td><b>执行期</b>逐 tick 取用</td></tr><tr><td class="mono">WaypointSequence</td><td>1 段 × 1 臂</td><td><code>list[Waypoint]</code></td><td>变换后的一整段技能</td><td><b>构造期</b></td></tr><tr><td class="mono">WaypointTrajectory</td><td>1 臂 × 多条段</td><td><code>list[WaypointSequence]</code></td><td>一臂待执行的完整行程</td><td><b>构造期</b>（merge 在此）</td></tr><tr><td class="mono">MultiWaypoint</td><td>1 tick × 多臂</td><td><code>{eef: Waypoint}</code></td><td>这一刻所有臂一起动</td><td><b>执行期</b>，每 tick 一次</td></tr></tbody></table></div>
+<p style="font-size:13px;color:var(--muted);">一句话区分：<b>Sequence 是“段”，Trajectory 是“段拼成的行程”，Waypoint 是“行程里的一步”，MultiWaypoint 是“这一刻多臂捆绑”</b>。 注意 <code>MultiWaypoint</code> 不是“更多 waypoint”，单臂任务里它也只装一个 Waypoint。</p>
+<h3 id="%E8%A3%85%E9%85%8D%E6%B5%81%E7%A8%8B%E4%B8%8E%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%88%86%E7%95%8C" tabindex="-1">装配流程与生命周期分界</h3>
+<p><div class="figure-scroll"><a href="figures/figure-05.svg" target="_blank" rel="noopener" aria-label="查看大图：Waypoint 装配流程"><img src="figures/figure-05.svg" alt="Waypoint 装配流程"></a></div></p>
+<h3 id="waypoint-%E9%87%8C%E6%9C%89%E4%BB%80%E4%B9%88" tabindex="-1">Waypoint 里有什么</h3>
+<pre><code class="language-text">Waypoint(
+    pose=[4,4],                            # 绝对目标位姿（世界系），[m, rad]
+    passthrough_action={&quot;franka&quot;: [-1]},   # 这一步的非位姿通道（夹爪等）
+    noise=0.03,                            # 只打位姿、不打透传
+    joint_seed=None,                       # 可选关节种子（IK / 离线调度）
+)
+# Waypoint 存的是“目标”，action 是“目标 − 当前”。
+</code></pre>
+<h3 id="noise-%E5%88%B0%E5%BA%95%E5%8A%A0%E5%9C%A8%E5%93%AA" tabindex="-1">noise 到底加在哪</h3>
+<p style="font-size:13.5px;"><code>Waypoint.noise</code> 是<b>编码 action 时给这一步「6 维位姿动作」叠加的高斯噪声幅度（标准差 σ）</b>， 不是加到目标位姿上的偏移；只在执行那一刻起作用，不改变 <code>Waypoint.pose</code>。</p>
+<pre><code class="language-text"># single_arm_embodiment_adapter：加噪在 clip 之前
+if scale &gt; 0.0:
+    pose_action = pose_action + scale * torch.randn_like(pose_action)   # 6 维
+if self.clip_pose_action_to_unit:
+    pose_action = torch.clamp(pose_action, -1.0, 1.0)
+</code></pre>
+<ul>
+<li>作用对象是 <strong>相对位姿增量</strong> （3 维平移 + 3 维轴角），每维独立 <code>N(0, σ²)</code>。</li>
+<li><code>noise=0.03</code> ≈ 每平移轴 ±3 cm、每旋转轴 ±3°（1σ）。</li>
+<li><strong>只作用于位姿，不作用于透传通道</strong> ——夹爪值逐字复制，永不加噪。</li>
+<li>加噪在 clip 之前，噪声不会把 action 顶出 <code>[-1,1]</code>。</li>
+</ul>
+<div class="callout red">
+<p><strong>别和其他“噪声”混淆：</strong>  <code>coordination_scheme_pos/rot_noise_scale</code> 作用于 <strong>物体位姿变换的 delta</strong> ，且是 <strong>均匀分布</strong> ； 双臂 <code>bimanual_embodiment_adapter</code> 的 <code>_add_noise</code> 给 <strong>绝对</strong>  pos/quat 每标量加高斯噪声； 文档里的 “startup noise” 指日志噪声，无关。</p>
+</div>
+</div>
+<h2 id="algorithms" tabindex="-1"><span class="num">⑧</span>三大生成算法：同一骨架，三种“桥接”</h2>
+<div class="card">
+<p class="lead" style="margin-top:0;">三个算法共享同一副骨架——拆段、选段、变换到当前场景、执行、保留成功演示——差别只在 <b>段与段之间怎么桥接</b>、以及<b>多臂怎么协调</b>。用 <code>--alg</code> 选择； 任务描述里的 <code>algo</code> 字段独立决定按哪套 <code>algo_params</code> 解析描述，二者要保持一致。</p>
+<div class="table-scroll"><table><thead><tr><th style="width:16%">算法</th><th style="width:10%">臂数</th><th style="width:20%">桥接方式</th><th>要点</th></tr></thead><tbody><tr><td><code>mimicgen</code></td><td>1</td><td>插值</td><td>单臂 MimicGen 基础款：每段相对参考物体存储，换物体位姿回放就是末端轨迹的刚体变换。</td></tr><tr><td><code>dexmimicgen</code></td><td>2</td><td>插值</td><td>把配方扩到双臂：每臂各自声明子任务序列，段按臂独立选/变换/执行；用 <code>sequential</code> / <code>coordination</code> 约束同步特定子任务对。</td></tr><tr><td><code>skillgen</code></td><td>1</td><td>运动规划</td><td>cuRobo 规划的<b>无碰撞 transit</b>，替代插值；需要子任务<b>起点信号</b>；每个环境一个 planner。</td></tr></tbody></table></div>
+<h3 id="mimicgen%EF%BC%88%E5%8D%95%E8%87%82%EF%BC%8C%E5%8F%82%E8%80%83%E5%AE%9E%E7%8E%B0%EF%BC%89" tabindex="-1">MimicGen（单臂，参考实现）</h3>
+<p style="font-size:13.5px;">每个子任务段相对其参考物体存储，因此在新物体位姿下回放该段 = 对记录的末端轨迹做刚体变换。 段与段之间，末端从当前位置<b>线性插值</b>到变换后段的起点（<code>num_interpolation_steps</code>，可再固定 hold <code>num_fixed_steps</code>）， 逐步 <code>action_noise</code> 增加多样性。若某步任务成功条件成立即视为成功；只有成功演示才被导出。</p>
+<div class="callout blue">
+<p>该变换要求  <strong>task-space action</strong> ：机械臂的 action 必须编码末端位姿目标（相对或绝对）——这正是机械臂适配器保证的。</p>
+</div>
+<h3 id="dexmimicgen%EF%BC%88%E5%8F%8C%E8%87%82%EF%BC%89" tabindex="-1">DexMimicGen（双臂）</h3>
+<p style="font-size:13.5px;">两套机制保持两臂一致：</p>
+<ul>
+<li><strong>选源范围</strong> ——默认所有臂复用 <strong>同一条源演示</strong> 的段（<code>select_src_per_arm: false</code>），保留人类演示里隐含的协调关系。</li>
+<li><strong>约束</strong> ——描述里的 <code>sequential</code> / <code>coordination</code> 条目在运行期同步特定子任务对。</li>
+</ul>
+<p style="font-size:13px;color:var(--muted);">人形示例用绝对位姿的 <code>absolute_pose_whole_body_bimanual</code> 适配器：每臂一个位姿切片 + 一组手关节索引， action 由每臂目标逐步重组而成。</p>
+<h3 id="skillgen%EF%BC%88%E8%BF%90%E5%8A%A8%E8%A7%84%E5%88%92-transit%EF%BC%89" tabindex="-1">SkillGen（运动规划 transit）</h3>
+<p style="font-size:13.5px;">SkillGen 把每个子任务拆成<b>两阶段</b>：先用 cuRobo 规划一段无碰撞 <b>transit</b> 到技能段起点，再回放变换后的<b>技能段</b>。 相比 MimicGen 的直线插值，它换来三件事——<b>运动质量</b>（可行、平滑的机器人运动）、 <b>碰撞意识</b>（同时避让场景与手中握持物）、<b>适应性</b>（物体摆得离源演示很远、或场景拥挤时仍可用）。 代价是每个环境都需要一个 cuRobo planner，显存与运行成本更高。</p>
+<div class="callout green">
+<p>因为过渡是 <strong>现场规划</strong> 而非回放， <strong>一份标注数据集可以驱动多个任务变体</strong> —— 例如“桌面堆叠”和“料箱内堆叠”都由同一份标注好的堆叠数据集生成。</p>
+</div>
+<p style="font-size:13.5px;">SkillGen 是三者里最“重”的一个，下面 <a href="#skillgen">⑨ SkillGen 深潜</a> 单独展开： 两阶段如何衔接、代码里怎么 stash/resume、标注为何需要 7 个标记、planner 如何解析配置、 运行前 preflight 清单，以及各类规划失败怎么解读。</p>
+<h3 id="%E5%BC%82%E6%AD%A5%E5%A4%9A%E7%8E%AF%E5%A2%83%EF%BC%9A%E4%B8%80%E4%B8%AA%E7%94%9F%E6%88%90%E5%99%A8%EF%BC%8Cn-%E4%B8%AA%E7%8E%AF%E5%A2%83%EF%BC%8C%E9%94%81%E6%AD%A5%E4%BB%BF%E7%9C%9F" tabindex="-1">异步多环境：一个生成器，N 个环境，锁步仿真</h3>
+<p style="font-size:13.5px;">只创建一个 <code>DataGenerator</code>，但为每个 <code>env_id</code> 创建一个 asyncio task； 同步侧 <code>env_loop</code> 负责“等齐每个环境各一个 action → 批量 step 一次 → 顺手处理 reset 请求”。 每个环境的尝试逻辑（含失败重试）在各自 task 里独立跑。</p>
+<p><div class="figure-scroll"><a href="figures/figure-06.svg" target="_blank" rel="noopener" aria-label="查看大图：异步多环境锁步"><img src="figures/figure-06.svg" alt="异步多环境锁步"></a></div></p>
+<p style="font-size:13px;color:var(--muted);">多个 task 共享源池，且 SkillGen 可能在生成中往池里加 episode，因此池带一个 asyncio 锁； 默认静态池不加锁，零开销。加锁范围只覆盖“刷新边界表 + 调算法规划”这一致性窗口。</p>
+<h3 id="%E7%8E%AF%E5%A2%83-profile%EF%BC%9A%E4%B8%8D%E6%94%B9%E7%8E%AF%E5%A2%83-id%EF%BC%8C%E9%80%A0%E4%BB%BB%E5%8A%A1%E5%8F%98%E4%BD%93" tabindex="-1">环境 Profile：不改环境 id，造任务变体</h3>
+<p style="font-size:13.5px;">环境 profile 是一个 YAML 叠加层，用 <code>--env_profile</code> 传入，在创建环境前<b>原地</b>叠加到已解析的 env 配置上， 把基础任务变成变体——而不需要注册新的环境 id。</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>区块</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>scene.rigid_objects.add</td>
+<td>从 USD 生成新刚体（含初始位姿、缩放、物理属性）。</td>
+</tr>
+<tr>
+<td>scene.rigid_objects.override</td>
+<td>修补基础任务已有刚体的属性（如更硬的接触求解）。</td>
+</tr>
+<tr>
+<td>events.remove</td>
+<td>按名禁用基础任务的 event term（如去掉默认方块随机化）。</td>
+</tr>
+<tr>
+<td>events.override</td>
+<td>把新参数合并进已有 event term。</td>
+</tr>
+<tr>
+<td>events.add</td>
+<td>新增 event term——通常是为新增/重新钉死的物体配置 reset 随机化。</td>
+</tr>
+<tr>
+<td>planner</td>
+<td>指定为该修改场景调好的运动规划 profile 名（SkillGen 用）。</td>
+</tr>
+</tbody>
+</table></div>
+<p style="font-size:13px;">应用顺序为：scene 增 → scene 改 → events（remove → override → add），因此新增的 event 可以引用新增的资产。 校验很严格：<code>base_env</code> 必须等于当前环境 id；<code>add</code> 不允许遮蔽基础任务已有的资产/事件； <code>override</code> / <code>remove</code> 不允许操作不存在的项。</p>
+<div class="callout">
+<p><strong>料箱变体示例（<code>franka_bin_stack.yaml</code>）：</strong> 把蓝方块钉在桌心、放进一个窄料箱，红/绿方块在箱外随机化； 因为它比纯堆叠更难（间隙窄、更多尝试被拒），成功率更低、耗时更长。注意添加物体的  <strong>spawn 位姿会被烘焙进 USD stage</strong> ，规划器碰撞世界读的是该位姿而非 reset 事件产生的位姿，所以钉死物体时两边要一致。</p>
+</div>
+</div>
+<h2 id="skillgen" tabindex="-1"><span class="num">⑨</span>SkillGen 深潜：用运动规划替代插值</h2>
+<div class="card">
+<p class="lead" style="margin-top:0;">前面 ⑧ 只给了 SkillGen 的轮廓。这一节把它彻底展开：为什么必须换掉插值、两阶段如何在代码里衔接、 标注与配置差在哪、planner 怎么解析、跑之前要过哪些检查、以及哪些失败是正常的。</p>
+<h3 id="9.1-%E5%AE%83%E8%A7%A3%E5%86%B3%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98%EF%BC%9A%E6%8F%92%E5%80%BC%E6%98%AF%E2%80%9C%E7%9B%B2%E2%80%9D%E7%9A%84" tabindex="-1">9.1 它解决什么问题：插值是“盲”的</h3>
+<p style="font-size:13.5px;">MimicGen 用<b>末端位姿直线插值</b>桥接两个子任务——快，但盲目： 插值出来的路径可能<b>扫过障碍物</b>，而且当新的物体摆放离源演示越远，插值路径的质量越差 （甚至机械臂根本够不到、姿态畸变）。SkillGen 于是把每个子任务拆成两个阶段：</p>
+<div class="table-scroll"><table><thead><tr><th style="width:16%">阶段</th><th>做什么</th></tr></thead><tbody><tr><td><b>① Transit</b><br>（规划）</td><td>用 cuRobo 从机器人<b>当前</b>末端位姿，规划一段<b>无碰撞</b>的运动到该子任务技能段的（变换后的）起点。 <b>手中握持的物体会附着到运动链上</b>一起做碰撞检查。</td></tr><tr><td><b>② Skill</b><br>（回放）</td><td>人类演示的那一段技能，按 MimicGen 的方式变换后逐步回放，逐步 <code>action_noise</code> 提供多样性。</td></tr></tbody></table></div>
+<div class="grid2">
+<div class="callout blue">
+<p><strong>相比 MimicGen 的三点收益</strong></p>
+<ul>
+<li><strong>运动质量</strong> ——平滑、运动学可行的机器人运动，而非直线姿态插值。</li>
+<li><strong>碰撞意识</strong> ——规划 transit 同时避让场景与夹爪握持物；插值对二者都无知。</li>
+<li><strong>适应性</strong> ——过渡每次现场规划，因此物体摆得远、或进入拥挤场景（料箱）也仍能工作。</li>
+</ul>
+</div>
+<div class="callout red">
+<p><strong>代价</strong></p>
+<ul>
+<li>每个环境一个 cuRobo planner（<code>--num_envs</code> 个），显存与启动成本更高。</li>
+<li>需要 cuRobo 专用镜像（<code>./docker/run_docker.sh -c</code>）并匹配 GPU 算力。</li>
+<li>标注更麻烦：每段都要“起点 + 终点”，且只能手动标注。</li>
+<li>规划可能失败，attempt 会被丢弃重建。</li>
+</ul>
+</div>
+</div>
+<h3 id="9.2-%E4%B8%A4%E9%98%B6%E6%AE%B5%E6%B5%81%E6%B0%B4%E7%BA%BF%E4%B8%8E%E4%B8%80%E6%AC%A1-attempt-%E7%9A%84%E4%BA%94%E6%AD%A5" tabindex="-1">9.2 两阶段流水线与一次 attempt 的五步</h3>
+<p><div class="figure-scroll"><a href="figures/figure-07.svg" target="_blank" rel="noopener" aria-label="查看大图：SkillGen 两阶段：transit + skill"><img src="figures/figure-07.svg" alt="SkillGen 两阶段：transit + skill"></a></div></p>
+<p style="font-size:13.5px;">SkillGen 的一次生成尝试随后按这条流水线跑：</p>
+<div class="table-scroll"><table><thead><tr><th style="width:22%">步骤</th><th>内容</th></tr></thead><tbody><tr><td><b>1. Reset</b></td><td>环境复位并随机化方块摆放；快照初始状态供输出 episode 使用。</td></tr><tr><td><b>2. 选段与变换</b></td><td>为当前子任务选一段源技能（默认按参考物体位姿最近邻），刚体变换到参考物体当前位姿；技能段<b>入口点</b>按描述的偏移范围随机化。</td></tr><tr><td><b>3. Plan</b></td><td>planner 把碰撞世界同步到实时场景（若该子任务预期握持物体则附着它），从当前末端位姿规划无碰撞 transit 到技能段起点。<b>规划失败 → 本次 attempt 放弃并计失败。</b></td></tr><tr><td><b>4. Execute</b></td><td>先执行 transit waypoints，再回放技能段并逐步加噪。</td></tr><tr><td><b>5. Record</b></td><td>每步检查成功条件；成功 attempt 导出为演示。</td></tr></tbody></table></div>
+<h3 id="9.3-%E4%BB%A3%E7%A0%81%E8%A7%86%E8%A7%92%EF%BC%9A%E4%B8%80%E4%B8%AA%E9%92%A9%E5%AD%90%E3%80%81%E4%B8%89%E7%A7%8D%E8%BF%94%E5%9B%9E%E3%80%81stash%2Fresume" tabindex="-1">9.3 代码视角：一个钩子、三种返回、stash/resume</h3>
+<p style="font-size:13.5px;">SkillGen 是 <code>GenerationAlgorithm</code> 的子类，只覆写 <code>plan_subtask_trajectory()</code>； 差别全部由类属性声明（自注册进 <code>REGISTERED_ALGORITHMS</code>）：</p>
+<div class="table-scroll"><table><thead><tr><th style="width:34%">类属性</th><th>SkillGen 的值 / 含义</th></tr></thead><tbody><tr><td class="mono">name</td><td><code>"skillgen"</code> —— 即 <code>--alg</code> 的取值。</td></tr><tr><td class="mono">expected_eef_count</td><td><code>1</code> —— 单臂。</td></tr><tr><td class="mono">requires_motion_planner</td><td><code>True</code> —— 构造时要 <code>motion_planners=</code>（每环境一个）。</td></tr><tr><td class="mono">uses_subtask_start_signals</td><td><code>True</code> —— 源演示必须带子任务<b>起点</b>信号，池据此解析边界。</td></tr><tr><td class="mono">supports_coordination</td><td><code>False</code> —— 不支持跨臂协调约束。</td></tr></tbody></table></div>
+<h4 id="%E9%92%A9%E5%AD%90%E7%9A%84%E8%BF%94%E5%9B%9E%E5%A5%91%E7%BA%A6%EF%BC%88%E7%94%9F%E6%88%90%E5%99%A8%E6%8D%AE%E6%AD%A4%E5%88%86%E6%94%AF%EF%BC%89" tabindex="-1">钩子的返回契约（生成器据此分支）</h4>
+<div class="table-scroll"><table><thead><tr><th style="width:30%">返回</th><th>生成器的处理</th></tr></thead><tbody><tr><td class="mono">(waypoints, False)</td><td>当作真实子任务执行，<b>约束生效</b>。</td></tr><tr><td class="mono">(waypoints, True)</td><td>当作 MP transit 执行，<b>期间跳过约束</b>；算法自己把真实子任务 stash 到 per-EEF 状态。</td></tr><tr><td class="mono">None</td><td>规划失败；当前 <code>generate()</code> attempt 以 <code>success=False</code> 中止。</td></tr></tbody></table></div>
+<h4 id="%E6%96%B0%E5%AD%90%E4%BB%BB%E5%8A%A1%E5%88%86%E6%94%AF%EF%BC%88stash-%E6%8A%80%E8%83%BD%E6%AE%B5%EF%BC%8C%E8%BF%94%E5%9B%9E-transit%EF%BC%89" tabindex="-1">新子任务分支（stash 技能段，返回 transit）</h4>
+<pre><code class="language-text"># autodata_core/algorithms.py · SkillGen.plan_subtask_trajectory()
+subtask_traj = data_generator.generate_eef_subtask_trajectory(...)   # 真实技能段
+target_pose  = subtask_traj[0].pose
+
+# 该子任务手里（预期）握持的物体，供 planner 附着到碰撞模型
+expected_attached_object = datastream.get_expected_attached_object(eef_name, subtask_index)
+
+planner = self.motion_planners[env_id]
+planning_success = planner.update_world_and_plan_motion(
+    target_pose=target_pose,
+    expected_attached_object=expected_attached_object,
+    env_id=env_id, step_size=..., enable_retiming=...)
+if not planning_success:
+    return None                                   # 整个 attempt 失败
+
+mp_waypoints = self._convert_planned_trajectory_to_waypoints(planner, subtask_traj[0].passthrough_action)
+
+eef_state.pending_subtask_trajectory = subtask_traj   # stash
+eef_state.is_in_motion_plan = True
+return mp_waypoints, True                            # 这是 transit
+</code></pre>
+<h4 id="resume-%E5%88%86%E6%94%AF%EF%BC%88%E6%89%A7%E8%A1%8C%E5%AE%8C-transit%EF%BC%8C%E6%8E%A5%E4%B8%8A%E6%8A%80%E8%83%BD%E6%AE%B5%EF%BC%89" tabindex="-1">Resume 分支（执行完 transit，接上技能段）</h4>
+<pre><code class="language-text">if eef_state.pending_subtask_trajectory is not None:
+    merged = data_generator.merge_eef_subtask_trajectory(
+        ..., subtask_trajectory=eef_state.pending_subtask_trajectory,
+        force_use_prev_traj=True)          # 从 MP 终点位姿接入，而非实时机器人位姿
+    eef_state.pending_subtask_trajectory = None
+    eef_state.is_in_motion_plan = False
+    return merged, False                       # 这才是真实技能段
+</code></pre>
+<div class="callout blue">
+<p><strong>为什么父类里也留着这段 resume 逻辑？</strong> ——父类被所有算法复用，<code>SkillGen</code> 只覆写了 <code>plan_subtask_trajectory</code>， 两处分支内容一致，因此 resume 路径在基类与子类里都能命中，stash/resume 的状态机保持一致。</p>
+</div>
+<h4 id="%E4%B8%A4%E9%98%B6%E6%AE%B5%E6%9C%9F%E9%97%B4%E7%94%9F%E6%88%90%E5%99%A8%E7%9A%84%E9%85%8D%E5%A5%97%E8%A1%8C%E4%B8%BA" tabindex="-1">两阶段期间生成器的配套行为</h4>
+<div class="table-scroll"><table><thead><tr><th style="width:34%">行为</th><th>细节</th></tr></thead><tbody><tr><td>约束在 transit 期间跳过</td><td><code>_apply_constraint_progression_rules()</code> 在 MP transit 期间直接返回 <code>False</code>——<b>transit 不受约束</b>。</td></tr><tr><td>MP 完成只“重置”不“推进”</td><td>MP 段执行完时 <code>_handle_subtask_completion()</code> 只把 <code>step_index=None</code> 触发 resume，<b>不推进子任务</b>。</td></tr><tr><td>transit 噪声</td><td><code>_convert_planned_trajectory_to_waypoints()</code> 读 <code>config.motion_noise_scale</code> 给每个 waypoint 加噪（缺省 <code>0.0</code>；Franka preset 为 <code>0.02</code>）。</td></tr><tr><td>规划轨迹放哪</td><td>规划结果从 <code>get_planned_poses()</code> 读出转成 Waypoint 执行；待执行技能段暂存 <code>pending_subtask_trajectory</code>。<b>两者都不写回源 DatagenInfo。</b></td></tr></tbody></table></div>
+<pre><code class="language-text">源 DatagenInfo ──切片、变换──→ 技能片段（stash）
+当前机器人状态 ──cuRobo 规划并执行──→ 技能起点 ──执行技能片段──→ 技能结束
+</code></pre>
+</div>
+<div class="card">
+<h3 id="9.4-%E6%A0%87%E6%B3%A8%EF%BC%9Askillgen-%E7%8B%AC%E6%9C%89%E7%9A%84-7-%E4%B8%AA%E6%A0%87%E8%AE%B0" tabindex="-1">9.4 标注：SkillGen 独有的 7 个标记</h3>
+<p style="font-size:13.5px;">规划器必须知道每个技能段<b>从哪开始</b>，所以 SkillGen 除终止信号外还需要<b>起点信号</b>。 对四段堆叠任务，一条演示要打 <b>7 个标记</b>，且顺序固定为“起点、终点、起点、终点…以末段起点收尾”：</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>序</th>
+<th>标记</th>
+<th>含义（技能段应覆盖接触丰富的那部分动作）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>grasp_1</code> 起点</td>
+<td>夹爪开始朝红块的最终接近</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>grasp_1</code> 终点</td>
+<td>红块被稳稳抓牢</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>stack_1</code> 起点</td>
+<td>开始往蓝块上放置</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>stack_1</code> 终点</td>
+<td>红块落在蓝块上、夹爪松开</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>grasp_2</code> 起点</td>
+<td>开始朝绿块最终接近</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>grasp_2</code> 终点</td>
+<td>绿块被稳稳抓牢</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>stack_2</code> 起点</td>
+<td>开始往红块上放置（末段，随轨迹结束，无需终点）</td>
+</tr>
+</tbody>
+</table></div>
+<p style="font-size:13px;"><b>一个终止信号与下一个起点信号之间的那部分，就是留给 transit 规划的空隙</b>——所以技能段应只覆盖接触密集的动作 （最终接近、抓取、放置），其余交给规划。标记数量与预期不符时，episode 会直接重放以便重新标注。</p>
+<div class="callout red">
+<p><strong>两个硬限制：</strong>  ① SkillGen  <strong>只能手动标注</strong> （<code>--viz kit</code>），自动标注只产出终止信号，不足以驱动规划； ② SkillGen 版任务描述的 <strong>每个</strong> 子任务都要写 <code>subtask_term_signal</code>， <strong>包括最后一个</strong> —— 该名字同时充当该子任务 <strong>起点信号的键</strong> ；末段本身仍随轨迹结束，不读取自己的完成信号。</p>
+</div>
+</div>
+<div class="card">
+<h3 id="9.5-%E4%BB%BB%E5%8A%A1%E6%8F%8F%E8%BF%B0%E4%B8%8E-embodiment-%E7%9A%84%E5%B7%AE%E5%BC%82" tabindex="-1">9.5 任务描述与 embodiment 的差异</h3>
+<div class="table-scroll"><table><thead><tr><th style="width:32%">字段</th><th>SkillGen 版</th></tr></thead><tbody><tr><td class="mono">algo / use_skillgen</td><td><code>skillgen</code> / <code>true</code></td></tr><tr><td class="mono">subtask_term_signal</td><td><b>每个</b>子任务都要写（含末段 <code>stack_2</code>），兼作起点信号键</td></tr><tr><td class="mono">num_interpolation_steps</td><td><code>0</code>（transit 取代插值）</td></tr><tr><td class="mono">algo_params.subtask_start_offset_range</td><td>可用：随机化技能段<b>从哪进入</b>（负值提前、正值推后）；首段该偏移与 <code>first_subtask_start_offset_range</code> 相加</td></tr><tr><td class="mono">subtask_term_offset_range</td><td>官方两例均为 <code>[0,0]</code>——技能段边界通常不做抖动</td></tr></tbody></table></div>
+<h4 id="%E8%A3%81%E5%89%AA%E8%87%AA-franka_cube_stack_skillgen.yaml" tabindex="-1">裁剪自 <code>franka_cube_stack_skillgen.yaml</code></h4>
+<pre><code class="language-yaml"><span class="hljs-attr">algo:</span> <span class="hljs-string">skillgen</span>
+<span class="hljs-attr">generation_policy:</span>
+  <span class="hljs-attr">use_skillgen:</span> <span class="hljs-literal">true</span>
+<span class="hljs-attr">subtasks:</span>
+  <span class="hljs-attr">franka:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">object_ref:</span> <span class="hljs-string">cube_2</span>
+      <span class="hljs-attr">subtask_term_signal:</span> <span class="hljs-string">grasp_1</span>        <span class="hljs-comment"># 兼作 grasp_1 的起点信号键</span>
+      <span class="hljs-attr">subtask_term_offset_range:</span> [<span class="hljs-number">0</span>, <span class="hljs-number">0</span>]
+      <span class="hljs-attr">action_noise:</span> <span class="hljs-number">0.03</span>
+      <span class="hljs-attr">num_interpolation_steps:</span> <span class="hljs-number">0</span>          <span class="hljs-comment"># transit 取代插值</span>
+    <span class="hljs-string">...</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">object_ref:</span> <span class="hljs-string">cube_2</span>
+      <span class="hljs-attr">subtask_term_signal:</span> <span class="hljs-string">stack_2</span>        <span class="hljs-comment"># 末段也要写（MimicGen 版此处留空）</span>
+      <span class="hljs-attr">subtask_term_offset_range:</span> [<span class="hljs-number">0</span>, <span class="hljs-number">0</span>]
+      <span class="hljs-attr">num_interpolation_steps:</span> <span class="hljs-number">0</span>
+</code></pre>
+<h4 id="embodiment%EF%BC%9A%E5%8F%AA%E5%B7%AE%E4%B8%80%E4%B8%AA-eef_offset" tabindex="-1">embodiment：只差一个 <code>eef_offset</code></h4>
+<p style="font-size:13.5px;"><code>franka_ik_rel_skillgen.yaml</code> 与 MimicGen 版形状相同（同为 <code>delta_pose_ik_single_arm</code>、7 维 action）， <b>唯一区别</b>是坐标系：SkillGen 的源数据标注在 Franka <code>panda_hand</code> 帧（cuRobo 的规划 link）， 而通用 IK-Rel 任务报告的是<b>指间</b> <code>end_effector</code> 帧，因此用偏移把报告位姿移回 <code>panda_hand</code>：</p>
+<pre><code class="language-yaml"><span class="hljs-attr">eef_offset:</span> [<span class="hljs-number">0.0</span>, <span class="hljs-number">0.0</span>, <span class="hljs-number">0.1034</span>]   <span class="hljs-comment"># (环境报告的 EEF 帧) − (源数据标注帧)</span>
+</code></pre>
+<div class="callout red">
+<p>这个偏移弄错，规划出来的 transit 与记录的技能段就 <strong>对不齐</strong> ，表现为“每次抓取都整体偏移一个固定距离”。 它是排查“变换后动作偏移”类问题的第一站。</p>
+</div>
+</div>
+<div class="card">
+<h3 id="9.6-%E7%8E%AF%E5%A2%83-profile%EF%BC%9A%E5%90%8C%E4%B8%80%E4%BB%BD%E6%95%B0%E6%8D%AE%EF%BC%8C%E9%80%A0%E5%87%BA%E2%80%9C%E6%96%99%E7%AE%B1%E5%A0%86%E5%8F%A0%E2%80%9D%E5%8F%98%E4%BD%93" tabindex="-1">9.6 环境 profile：同一份数据，造出“料箱堆叠”变体</h3>
+<p style="font-size:13.5px;">没有专门的料箱环境。一个<b>环境 profile</b>（<code>--env_profile</code> 叠加的 YAML）在创建环境时 把普通堆叠任务变成“料箱内堆叠”：蓝方块钉在桌心、放进一个窄料箱，红/绿方块在箱外随机化。 变体与基础任务共用<b>同一份</b>已标注堆叠数据集——这正是前面说的“一份数据驱动多个变体”。</p>
+<pre><code class="language-yaml"><span class="hljs-comment"># 裁剪自 autodata_examples/env_profiles/franka_bin_stack.yaml</span>
+<span class="hljs-attr">name:</span> <span class="hljs-string">franka_bin_stack</span>
+<span class="hljs-attr">base_env:</span> <span class="hljs-string">Isaac-Stack-Cube-Franka-IK-Rel-v0</span>
+<span class="hljs-attr">planner:</span> <span class="hljs-string">franka_stack_cube_bin</span>          <span class="hljs-comment"># ← 为该场景调好的 planner profile</span>
+<span class="hljs-attr">scene:</span>
+  <span class="hljs-attr">rigid_objects:</span>
+    <span class="hljs-attr">add:</span>
+      <span class="hljs-attr">blue_sorting_bin:</span>
+        <span class="hljs-attr">usd_path:</span> <span class="hljs-string">&quot;{ISAACLAB_NUCLEUS_DIR}/Mimic/nut_pour_task/nut_pour_assets/sorting_bin_blue.usd&quot;</span>
+        <span class="hljs-attr">position:</span> [<span class="hljs-number">0.4</span>, <span class="hljs-number">0.0</span>, <span class="hljs-number">0.0203</span>]
+        <span class="hljs-attr">scale:</span> [<span class="hljs-number">1.1</span>, <span class="hljs-number">1.6</span>, <span class="hljs-number">3.3</span>]
+    <span class="hljs-attr">override:</span>
+      <span class="hljs-attr">cube_1:</span> {<span class="hljs-attr">rigid_props:</span> {<span class="hljs-attr">solver_position_iteration_count:</span> <span class="hljs-number">40</span>}}   <span class="hljs-comment"># 更硬的接触求解</span>
+<span class="hljs-attr">events:</span>
+  <span class="hljs-attr">remove:</span> [<span class="hljs-string">randomize_cube_positions</span>]
+  <span class="hljs-attr">add:</span>
+    <span class="hljs-attr">reset_blue_bin_pose:</span> <span class="hljs-string">...</span>   <span class="hljs-comment"># 钉死料箱</span>
+    <span class="hljs-attr">reset_cube_pose:</span> <span class="hljs-string">...</span>       <span class="hljs-comment"># 红/绿方块在箱外随机化</span>
+</code></pre>
+<p style="font-size:13.5px;">对应的任务描述 <code>franka_bin_stack_skillgen.yaml</code> 与普通堆叠<b>子任务相同</b>， 但把 <code>action_noise</code> 设为 <code>0.0</code>——料箱壁留给扰动技能段的间隙很小。 生成命令只改<b>描述</b>与 <code>--env_profile</code>，<code>--input_file</code> 复用同一数据集：</p>
+<pre><code class="language-bash">python scripts/generate_dataset.py \
+    --env_name Isaac-Stack-Cube-Franka-IK-Rel-v0 \
+    --alg skillgen \
+    --task_descriptor autodata_examples/tasks/franka_bin_stack_skillgen.yaml \
+    --env_profile autodata_examples/env_profiles/franka_bin_stack.yaml \
+    --embodiment autodata_examples/embodiments/franka_ik_rel_skillgen.yaml \
+    --input_file ./datasets/annotated_datasets/dataset_franka_skillgen_annotated.hdf5 \
+    --output_file ./datasets/generated_dataset_skillgen_franka_bin.hdf5 \
+    --generation_num_trials 10 --num_envs 1 --viz none
+</code></pre>
+<div class="callout">
+<p><strong>预期更差、更慢：</strong> 料箱变体比纯堆叠成功率更低、耗时更长——规划问题更难（间隙窄），更多 attempt 被拒。 生成结果 JSON 会记录所用 profile，因为输出数据集本身只保存基础 env id。</p>
+</div>
+</div>
+<div class="card">
+<h3 id="9.7-planner%EF%BC%9Acurobo-%E5%90%8E%E7%AB%AF%E4%B8%8E%E9%85%8D%E7%BD%AE%E8%A7%A3%E6%9E%90" tabindex="-1">9.7 Planner：cuRobo 后端与配置解析</h3>
+<p style="font-size:13.5px;">运动规划后端可插拔，官方后端是 <b>cuRobo</b>（GPU 加速的无碰撞轨迹优化），位于 <code>autodata_interfaces/motion_planners/</code>。planner 通过共享的 <b>Datastream</b> 读取所有世界状态 （碰撞几何、物体位姿、机器人关节），从不直接触碰 env / robot 句柄。</p>
+<h4 id="%E6%8E%A5%E5%8F%A3%EF%BC%88motionplannerbase%EF%BC%89" tabindex="-1">接口（<code>MotionPlannerBase</code>）</h4>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>update_world_and_plan_motion(target_pose, ...)</td>
+<td>把碰撞世界同步到当前场景并规划到目标末端位姿（含预期附着物体），返回是否成功。</td>
+</tr>
+<tr>
+<td>has_next_waypoint() / get_next_waypoint_ee_pose()</td>
+<td>把规划轨迹按末端位姿迭代。</td>
+</tr>
+<tr>
+<td>get_planned_poses()</td>
+<td>完整规划位姿序列。</td>
+</tr>
+<tr>
+<td>reset_plan()</td>
+<td>丢弃当前规划。</td>
+</tr>
+<tr>
+<td>get_planner_info()</td>
+<td>日志用诊断信息。</td>
+</tr>
+</tbody>
+</table></div>
+<p style="font-size:13px;color:var(--muted);">多环境生成时<b>每环境一个 planner</b>（共 <code>--num_envs</code> 个）；<code>generate_dataset.py</code> 在 <code>--alg skillgen</code> 时自动构建（<code>_build_motion_planners</code>），无需额外 CLI 标志。</p>
+<h4 id="%E9%85%8D%E7%BD%AE%E6%80%8E%E4%B9%88%E8%A7%A3%E6%9E%90%EF%BC%9A%E4%B8%A4%E6%9D%A1%E8%B7%AF%E5%BE%84" tabindex="-1">配置怎么解析：两条路径</h4>
+<div class="table-scroll"><table><thead><tr><th style="width:30%">入口</th><th>时机与行为</th></tr></thead><tbody><tr><td class="mono">CuroboPlannerCfg.from_profile(name)</td><td><b>环境 profile 指定了 <code>planner</code> 字段时</b>用它——把 planner 调参与 env id 解耦，直接按键取注册表里的工厂；未知名字直接断言失败。</td></tr><tr><td class="mono">CuroboPlannerCfg.from_task_name(task)</td><td>否则按任务 id <b>子串匹配</b>预设：含 <code>stack-cube-bin</code> → 料箱预设；含 <code>stack-cube</code> → 普通堆叠预设；其余回退 <b>Franka 预设</b>并打印警告。</td></tr></tbody></table></div>
+<p style="font-size:13px;"><code>PLANNER_PROFILES</code> 目前注册三个：<code>franka</code>、<code>franka_stack_cube</code>、<code>franka_stack_cube_bin</code>。 三者都从 <code>franka_config()</code> 派生（Nucleus 上的 Franka URDF、碰撞球、夹爪开合位置等）， 再按场景覆盖：<code>static_objects</code>（如 <code>["bin","table"]</code>）、<code>approach_distance</code> / <code>retreat_distance</code>、 <code>collision_activation_distance</code>、<code>gripper_closed_positions</code>、<code>motion_noise_scale</code> 等。</p>
+<h4 id="%E5%85%B3%E9%94%AE%E9%85%8D%E7%BD%AE%E5%AD%97%E6%AE%B5" tabindex="-1">关键配置字段</h4>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>字段</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>robot_config_file / robot_name</td>
+<td>cuRobo 机器人模型（运动学、碰撞球）。</td>
+</tr>
+<tr>
+<td>ee_link_name</td>
+<td>规划到目标位姿的那个 link。</td>
+</tr>
+<tr>
+<td>gripper_joint_names + gripper_open/closed_positions</td>
+<td>规划时施加的夹爪状态。</td>
+</tr>
+<tr>
+<td>attached_object_link_name / hand_link_names</td>
+<td>握持物体附着在运动链的哪里，以及附着物碰撞检查时要忽略哪些 link。</td>
+</tr>
+<tr>
+<td>world_config_file / static_objects / world_ignore_substrings</td>
+<td>碰撞世界：基础描述、按静态处理的场景物体、要排除的 prim。</td>
+</tr>
+<tr>
+<td>collision_checker_type</td>
+<td>碰撞表示（默认 mesh）。</td>
+</tr>
+<tr>
+<td>num_trajopt_seeds / num_graph_seeds / trajopt_tsteps</td>
+<td>规划力度：种子越多越慢，但更能跳出局部极小。</td>
+</tr>
+<tr>
+<td>interpolation_dt</td>
+<td>返回轨迹的时间步长。</td>
+</tr>
+<tr>
+<td>collision_activation_distance</td>
+<td>碰撞代价开始生效的缓冲距离。</td>
+</tr>
+<tr>
+<td>approach_distance</td>
+<td>目标前那段直线接近的长度。</td>
+</tr>
+<tr>
+<td>motion_noise_scale</td>
+<td>transit waypoint 的噪声尺度（Franka preset <code>0.02</code>）。</td>
+</tr>
+</tbody>
+</table></div>
+<h4 id="%E9%99%84%E7%9D%80%E7%89%A9%E4%BD%93%EF%BC%88attached-objects%EF%BC%89" tabindex="-1">附着物体（Attached Objects）</h4>
+<p style="font-size:13.5px;">当一个子任务的技能段结束时夹爪握着物体，则下一段 transit 必须把该物体<b>当作机器人的一部分</b>。 生成器依据任务描述的参考物体告诉 planner“预期附着哪个物体”；planner 快照它相对附着 link 的位姿， 并在整段规划里对合成体做碰撞检查。物体被放下后，附着解除、物体回到世界模型。</p>
+<h4 id="%E5%8F%AF%E8%A7%86%E5%8C%96%E4%B8%8E%E8%B0%83%E8%AF%95" tabindex="-1">可视化与调试</h4>
+<p style="font-size:13.5px;">cuRobo 后端可通过 <b>Rerun</b> 可视化碰撞球场模型与规划轨迹（<code>visualize_spheres</code> / <code>visualize_plan</code>）。 生成时传 <code>--visualize_plan</code> 即可开启，用于诊断规划失败、意外绕行、碰撞世界不一致等问题； 多环境时<b>只可视化 env 0</b>（保持仿真响应），且它独立于 Kit 窗口，故可与 <code>--viz none</code> 同用。 planner 诊断（成功率、耗时）可从 <code>get_planner_info()</code> 获取。</p>
+</div>
+<div class="card">
+<h3 id="9.8-preflight%EF%BC%9A%E5%BC%80%E8%B7%91%E5%89%8D%E5%BF%85%E9%A1%BB%E8%BF%87%E7%9A%84%E6%A3%80%E6%9F%A5" tabindex="-1">9.8 Preflight：开跑前必须过的检查</h3>
+<p style="font-size:13.5px;">在标注演示或开始一次长时间 SkillGen 生成前，先完成 preflight：校验 cuRobo 镜像、GPU 构建、源数据集、 Nucleus 资产下载，以及一次完整的端到端生成。<b>更换 GPU 或重建开发镜像后要重做。</b></p>
+<div class="table-scroll"><table><thead><tr><th style="width:24%">要求</th><th>需要什么</th></tr></thead><tbody><tr><td>容器</td><td>cuRobo 开发镜像，用 <code>./docker/run_docker.sh -c</code> 启动。</td></tr><tr><td>显存</td><td>1–2 个环境建议<b>至少 24 GB</b>；约 5 个环境建议 <b>48 GB</b> 显卡。</td></tr><tr><td>GPU 构建</td><td>cuRobo 内核需按运行生成那块 GPU 的<b>算力</b>编译。</td></tr><tr><td>网络</td><td>初始化 planner 时需能出网访问 Nucleus 资产服务器，以获取 Franka URDF。</td></tr><tr><td>源数据</td><td>Git LFS 已拉取，且 SkillGen 标注的 HDF5 结构有效。</td></tr><tr><td>显示</td><td>可选。无头生成用 <code>--viz none</code>；手动标注、Kit 可视化、Rerun 查看器需要显示。</td></tr></tbody></table></div>
+<pre><code class="language-bash"><span class="hljs-comment"># 宿主机：确认 GPU 算力与显存，拉取 LFS，启动 cuRobo 容器</span>
+nvidia-smi --query-gpu=name,compute_cap,memory.total --format=csv
+git lfs pull
+./docker/run_docker.sh -c            <span class="hljs-comment"># 镜像若是为别的 GPU 构建的，用 -c -r 重建</span>
+
+<span class="hljs-comment"># 容器内：验证 cuRobo 与源数据集</span>
+python -c <span class="hljs-string">&quot;import curobo, torch; print(curobo.__file__); print(torch.cuda.get_device_name(0))&quot;</span>
+python scripts/validate_dataset.py ./datasets/annotated_datasets/dataset_franka_skillgen_annotated.hdf5
+
+<span class="hljs-comment"># 端到端规划冒烟测试：先生成 1 条成功演示</span>
+python scripts/generate_dataset.py \
+    --env_name Isaac-Stack-Cube-Franka-IK-Rel-v0 --alg skillgen \
+    --task_descriptor autodata_examples/tasks/franka_cube_stack_skillgen.yaml \
+    --embodiment autodata_examples/embodiments/franka_ik_rel_skillgen.yaml \
+    --input_file ./datasets/annotated_datasets/dataset_franka_skillgen_annotated.hdf5 \
+    --output_file ./datasets/generated_dataset_skillgen_preflight.hdf5 \
+    --result_file ./datasets/generated_dataset_skillgen_preflight.json \
+    --generation_num_trials 1 --num_envs 1 --viz none
+</code></pre>
+<p style="font-size:13px;color:var(--muted);">这次冒烟测试覆盖了 Nucleus URDF 下载、cuRobo 初始化、碰撞世界更新、运动规划、执行与 HDF5 录制。 当它记录下 1 条成功演示、且校验器报告输出为 <code>VALID</code> 时，preflight 通过。</p>
+</div>
+<div class="card">
+<h3 id="9.9-%E8%A7%84%E5%88%92%E5%A4%B1%E8%B4%A5%E6%80%8E%E4%B9%88%E8%AF%BB%EF%BC%9A%E5%93%AA%E4%BA%9B%E6%AD%A3%E5%B8%B8%E3%80%81%E5%93%AA%E4%BA%9B%E6%98%AF%E9%85%8D%E7%BD%AE%E9%97%AE%E9%A2%98" tabindex="-1">9.9 规划失败怎么读：哪些正常、哪些是配置问题</h3>
+<p style="font-size:13.5px;">SkillGen 每次都在<b>新随机化的场景</b>上规划。有些配置在规划器的搜索预算内确实无解， 因此<b>单次规划失败是预期的</b>。两个官方 SkillGen 描述都设 <code>guarantee_success: true</code>： AutoData 记下这次失败、复位场景、继续重试，直到记录到所需数量的成功演示。</p>
+<div class="table-scroll"><table><thead><tr><th style="width:40%">观察到的现象</th><th style="width:14%">预期？</th><th>应对</th></tr></thead><tbody><tr><td>偶发某次 attempt 报无碰撞路径，随后生成继续</td><td><span class="tag g">是</span></td><td>无需处理，关注整体成功率。</td></tr><tr><td>料箱堆叠比普通堆叠拒得更多、跑得更久</td><td><span class="tag g">是</span></td><td>窄间隙让规划更难，属预期。</td></tr><tr><td>每次都从<b>同一个子任务</b>开始就规划失败</td><td><span class="tag r">否</span></td><td>查该子任务的<b>起点标注</b>、末端坐标系与 <code>eef_offset</code>、planner profile、碰撞世界。</td></tr><tr><td>planner 初始化/运行时报 CUDA 显存不足</td><td><span class="tag r">否</span></td><td>减小 <code>--num_envs</code>；先用单环境验证再扩容。</td></tr><tr><td>规划开始前 cuRobo 导入 / CUDA 内核 / Nucleus 下载就失败</td><td><span class="tag r">否</span></td><td>按 preflight 失败处理，查对应排障章节（先修 setup，再查 planner 配置）。</td></tr></tbody></table></div>
+<div class="callout blue">
+<p><strong>排障顺序建议：</strong> 先排除 setup 类问题（cuRobo 导入、CUDA 内核、Nucleus 下载、LFS 未拉取）， 再查标注/坐标系（起点标注、<code>eef_offset</code>、参考物体），最后才调 planner 参数（碰撞世界、种子数、approach 距离）。</p>
+</div>
+</div>
+<h2 id="random" tabindex="-1"><span class="num">⑩</span>随机化专题：真正的“随机”只有几处</h2>
+<div class="card">
+<p class="lead" style="margin-top:0;">一条生成演示的多样性来自两层：<b>场景多样性</b>来自环境 Reset（环境层），<b>轨迹多样性</b>来自生成层。 下面把每个随机源单独讲清，并标注它属于“随机”还是“给定采样后确定”。</p>
+<h3 id="10.1-step-0%EF%BC%9A%E7%8E%AF%E5%A2%83-reset-%E7%9A%84%E9%9A%8F%E6%9C%BA%E5%8C%96%EF%BC%88%E8%BE%93%E5%85%A5-%E2%86%92-%E9%87%8D%E6%8A%BD-%E2%86%92-%E8%90%BD%E7%9B%98%EF%BC%89" tabindex="-1">10.1 STEP 0：环境 Reset 的随机化（输入 → 重抽 → 落盘）</h3>
+<p style="font-size:13.5px;">环境层的随机化<b>不是 AutoData 写的</b>，是基任务（<code>isaaclab_tasks</code>）自带的 Isaac Lab <code>EventManager</code> 事件项；AutoData 只在开跑前用 env profile 做增删改， 然后<b>每个 attempt 的 <code>env.reset()</code> 里重新抽一次</b>。</p>
+<div class="chain"><div class="col in"><h4>输入 · 开跑前只发生一次</h4><div class="when">规则从哪来</div><ul><li><b>基任务 events</b>（Isaac Lab 代码）：<code>randomize_cube_positions</code>、<code>randomize_franka_joint_state</code></li><li><b>env profile YAML</b>（<code>--env_profile</code>）：<code>events.remove</code> / <code>add</code> / <code>override</code></li><li><code>apply_env_profile()</code> 把它们写进 <code>env_cfg.events</code></li><li>此时<b>还没有任何随机数</b>，只是把“规则”装好</li></ul></div><div class="sep">→</div><div class="col run"><h4>执行 · 每个 attempt 重抽</h4><div class="when">规则怎么跑</div><ul><li><code>_reset_environment_for_generation()</code></li><li><code>env_loop</code> 里 <code>env.reset(env_ids)</code></li><li>→ EventManager 执行 <code>mode="reset"</code> 事件，<b>逐条抽签</b></li><li>→ 再进入生成层的边界抖动 / 选源段 / 动作噪声</li></ul></div><div class="sep">→</div><div class="col out"><h4>输出 · 落盘的是“结果”</h4><div class="when">抽到的状态怎么存</div><ul><li><code>get_scene_state()</code> → <code>GenerationResult.initial_state</code></li><li>每个 demo 的 <code>initial_state</code> 写进输出 HDF5</li><li><code>--result_file</code> JSON：记录算法、统计、profile name/path/planner</li><li><b>规则本身不落盘</b>；<code>seed</code> 让重抽过程可复现</li></ul></div></div>
+<p style="font-size:13.5px;margin:6px 0 8px;">以 <code>franka_bin_stack</code> 为例，overlay 之后真正生效的随机化<b>清单</b> （“钉死”和“随机”用同一套机制，区别只在区间是否退化）：</p>
+<div class="table-scroll"><table><thead><tr><th style="width:26%">event term</th><th style="width:9%">mode</th><th style="width:14%">作用对象</th><th>怎么随</th><th style="width:12%">类型</th></tr></thead><tbody><tr><td class="mono">randomize_franka_joint_state</td><td>reset</td><td>机器人</td><td>关节角随机（基任务自带，未被动）</td><td><span class="tag r">随机</span></td></tr><tr><td class="mono">reset_blue_bin_pose</td><td>reset</td><td>bin</td><td class="mono">x[0.4,0.4] y[0,0] z[0.0203,0.0203] yaw[0,0]</td><td><span class="tag f">钉死</span></td></tr><tr><td class="mono">reset_cube_1_pose</td><td>reset</td><td>cube_1</td><td class="mono">x[0.4,0.4] y[0,0] z[0.0203,0.0203] yaw[0,0]</td><td><span class="tag f">钉死</span></td></tr><tr><td class="mono">reset_cube_pose</td><td>reset</td><td>cube_2, cube_3</td><td class="mono">x[0.65,0.70] y[-0.18,0.18] yaw[-1,1]，z 固定，min_separation 0.1</td><td><span class="tag r">随机</span></td></tr><tr style="opacity:.55"><td><s>randomize_cube_positions</s></td><td>—</td><td>—</td><td>被 <code>events.remove</code> 设为 None，不生效</td><td>已移除</td></tr></tbody></table></div>
+<p style="font-size:13.5px;margin:18px 0 8px;">同一个 profile，<b>两次 attempt 抽到的东西不同</b>（数值为示意）：</p>
+<div class="table-scroll"><table><thead><tr><th style="width:16%">对象</th><th style="width:14%">类型</th><th style="width:29%">attempt #1（抽到的）</th><th style="width:29%">attempt #2（重抽）</th><th style="width:12%">变化</th></tr></thead><tbody><tr><td>机器人关节角</td><td><span class="tag r">随机</span></td><td class="mono">[-0.02, -0.28, 0.05, -2.10, 0.01, 2.03, 0.55]</td><td class="mono">[ 0.03, -0.51, -0.12, -2.35, 0.07, 2.41, 0.68]</td><td class="dice">🎲 变</td></tr><tr><td>bin</td><td><span class="tag f">钉死</span></td><td class="mono">(0.40, 0.00, 0.0203)</td><td class="mono">(0.40, 0.00, 0.0203)</td><td class="lock">🔒 同</td></tr><tr><td>cube_1</td><td><span class="tag f">钉死</span></td><td class="mono">(0.40, 0.00, 0.0203)</td><td class="mono">(0.40, 0.00, 0.0203)</td><td class="lock">🔒 同</td></tr><tr><td>cube_2</td><td><span class="tag r">随机</span></td><td class="mono">(0.67, 0.11, 0.0203) yaw 0.4</td><td class="mono">(0.70, -0.05, 0.0203) yaw -0.9</td><td class="dice">🎲 变</td></tr><tr><td>cube_3</td><td><span class="tag r">随机</span></td><td class="mono">(0.66, -0.13, 0.0203) yaw -0.7</td><td class="mono">(0.65, 0.16, 0.0203) yaw 0.6</td><td class="dice">🎲 变</td></tr></tbody></table></div>
+<div class="callout">
+<p><strong>一句话：</strong> 规则是 <strong>输入</strong> （基任务 events + profile delta，在代码和 YAML 里）；随机化在每个 attempt 的 <code>env.reset()</code> 里按规则 <strong>重抽一次</strong> ；AutoData 只保存 <strong>抽到的状态</strong> （每个 demo 的 initial_state） 和 <strong>复现元信息</strong> （result_file + seed）。profile  <strong>不是</strong>  AutoData 固化的随机化配置。</p>
+</div>
+<h3 id="10.2-%E5%AD%90%E4%BB%BB%E5%8A%A1%E8%BE%B9%E7%95%8C%E6%8A%96%E5%8A%A8%EF%BC%88randomize_subtask_boundaries%EF%BC%89" tabindex="-1">10.2 子任务边界抖动（<code>randomize_subtask_boundaries</code>）</h3>
+<p><div class="figure-scroll"><a href="figures/figure-08.svg" target="_blank" rel="noopener" aria-label="查看大图：子任务边界抖动示意"><img src="figures/figure-08.svg" alt="子任务边界抖动示意"></a></div></p>
+<p class="note">加载数据集时，<code>DataGenInfoPool</code> 会用<b>最坏情况</b>（所有偏移取极值）预演一遍，断言“子任务非空且不重叠”， 标注错的源数据会立刻报错并给出具名原因。</p>
+<h3 id="10.3-%E6%BA%90%E6%BC%94%E7%A4%BA%E6%AE%B5%E9%80%89%E6%8B%A9%EF%BC%88selection_strategy%EF%BC%89" tabindex="-1">10.3 源演示段选择（<code>selection_strategy</code>）</h3>
+<p><div class="figure-scroll"><a href="figures/figure-09.svg" target="_blank" rel="noopener" aria-label="查看大图：源段选择示意"><img src="figures/figure-09.svg" alt="源段选择示意"></a></div></p>
+<h4 id="d-%E5%9C%A8%E7%AE%97%E5%93%AA%E4%B8%A4%E8%80%85%E7%9A%84%E8%B7%9D%E7%A6%BB" tabindex="-1">d 在算哪两者的距离</h4>
+<p style="font-size:13.5px;">当前场景只有一个锚点，候选段有 N 条，所以 <code>d</code> 是「<b>一个当前位姿</b>」对「<b>N 个候选段起点位姿</b>」的 <b>一对多</b>比较结果（<code>dists</code> 是长度 N 的向量）。这里的“起点”不是标注时的原始起点，而是 <b>边界抖动之后</b>该子任务切片的第 0 帧（见 9.2）——因此同一条源演示在不同 attempt 里算出的 <code>d</code> 也会变。</p>
+<div class="table-scroll"><table><thead><tr><th style="width:23%">策略</th><th style="width:18%">左端：当前场景</th><th style="width:36%">右端：候选段起点</th><th>是否先做坐标变换</th></tr></thead><tbody><tr><td class="mono">nearest_neighbor_object</td><td>当前<b>物体</b>位姿</td><td>源演示该子任务第 0 帧的<b>物体</b>位姿</td><td>否。两端都是物体位姿，直接比</td></tr><tr><td class="mono">nearest_neighbor_robot_distance</td><td>当前 <b>EEF</b> 位姿</td><td>源演示第 0 帧的 <b>EEF</b> 位姿，先经 <code>T_obj_cur · inv(T_obj_src) · T_eef_src</code> 搬到“当前物体系”</td><td>是。传入的 <code>object_pose</code> 在这里是<b>变换算子</b>，不是比较对象</td></tr></tbody></table></div>
+<p style="font-size:13px;color:var(--muted);">位姿统一是 4×4 齐次变换 <code>[R | p]</code>：<code>R</code> 是 3×3 旋转矩阵，<code>p</code> 是位置向量[m]。 <b>EEF 位姿</b>是末端执行器（夹爪）那一点的位姿；<b>物体位姿</b>是 <code>subtask.object_ref</code> 所指物体的位姿。两者都在同一坐标系下比较。</p>
+<h4 id="d-%E6%80%8E%E4%B9%88%E7%AE%97%E3%80%81%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8F%AA%E7%94%A8%E6%9D%A5%E6%8E%92%E5%BA%8F" tabindex="-1">d 怎么算、为什么只用来排序</h4>
+<pre><code class="language-text">d_i       = pos_weight · pos_dists + rot_weight · rot_dists
+pos_dists = ‖p_i − p_cur‖                       # 位置距离（L2 范数）[m]
+rot_dists = acos((tr(R_i · R_curᵀ) − 1) / 2)   # 旋转角距离 [rad]，0~π
+</code></pre>
+<p style="font-size:13.5px;">两项量纲不同（m vs rad），所以用 <code>pos_weight</code> / <code>rot_weight</code> 调“位置更重要还是姿态更重要”。 因此 <code>d</code> 的数值本身没有物理含义，<b>只在同一批候选之间做比较才有意义</b>；代码里也从不判断 <code>d &lt; 某阈值</code>，永远只是升序排一遍、取前 <code>nn_k</code> 条。</p>
+<div class="callout blue">
+<p><strong>真正的目的：让紧接着的变换改动最小。</strong>  选完源段，源片段会按 <code>T_obj_cur · inv(T_obj_src) · T_src_eef</code> 整体刚体变换到当前物体位姿下再回放（阶段 3b）。 起点位姿越接近当前场景 → 需要的变换越小 → 重放出来的手部动作越可能仍然“够得着、抓得住”。 因为没法对每条候选都真跑一遍仿真去验证，就用起点位姿差这个 <strong>廉价代理</strong> 来排序。所以“近”是手段，不是目的。</p>
+</div>
+<p class="note">三点注意：① <code>d</code> 只看源片段的<b>第 0 帧</b>，不评估整段动作质量——起点很像但后面很糙的两段它区分不了； ② 取 top-k 之后还要<b>等概率随机</b>（<code>nn_k = min(nn_k, 可用源演示数)</code>，<code>nn_k: 1</code> 才是“总选最近那条”）， 用一点可靠性换多样性，避免输出塌缩到同一条源演示； ③ <code>object_ref</code> 为空时只允许 <code>random</code>，双臂 <code>coordination</code> 下另一臂已选过则直接沿用同一条， 这两种情况根本不算距离。</p>
+<h3 id="10.4-%E5%8A%A8%E4%BD%9C%E5%99%AA%E5%A3%B0%EF%BC%88action_noise%EF%BC%89" tabindex="-1">10.4 动作噪声（<code>action_noise</code>）</h3>
+<p><div class="figure-scroll"><a href="figures/figure-10.svg" target="_blank" rel="noopener" aria-label="查看大图：动作噪声示意"><img src="figures/figure-10.svg" alt="动作噪声示意"></a></div></p>
+<p class="note"><code>apply_noise_during_interpolation</code> 决定桥接插值阶段是否也加噪。<b>被回放的源片段永远加噪</b>， 插值 / hold 段是否加噪由该开关决定。单臂与双臂适配器都只作用于 pose 部分，夹爪等 passthrough 通道不加噪。 噪声值来源：源片段子任务 <code>action_noise</code>；插值段 <code>apply_noise_during_interpolation × action_noise</code>（默认 false → 0）； SkillGen 的 MP transit 用 <code>motion_planner.config.motion_noise_scale</code>（缺省 0）。</p>
+<h3 id="10.5-%E5%8D%8F%E8%B0%83%E5%99%AA%E5%A3%B0%EF%BC%88%E4%BB%85%E5%8F%8C%E8%87%82%EF%BC%89" tabindex="-1">10.5 协调噪声（仅双臂）</h3>
+<p><div class="figure-scroll"><a href="figures/figure-11.svg" target="_blank" rel="noopener" aria-label="查看大图：协调噪声示意"><img src="figures/figure-11.svg" alt="协调噪声示意"></a></div></p>
+<h3 id="10.6-%E4%B8%80%E5%9B%BE%E7%9C%8B%E6%B8%85%EF%BC%9A%E6%89%80%E6%9C%89%E9%9A%8F%E6%9C%BA%E5%8C%96%E5%8F%82%E6%95%B0%E5%9C%A8%E5%93%AA%E9%85%8D%E7%BD%AE" tabindex="-1">10.6 一图看清：所有随机化参数在哪配置</h3>
+<div class="table-scroll"><table><thead><tr><th style="width:26%">参数</th><th style="width:16%">位置</th><th style="width:14%">类型</th><th>含义</th></tr></thead><tbody><tr><td class="mono">first_subtask_start_offset_range</td><td>Subtask</td><td><span class="tag r">边界抖动</span></td><td>第一个子任务起点的偏移范围</td></tr><tr><td class="mono">subtask_term_offset_range</td><td>Subtask</td><td><span class="tag r">边界抖动</span></td><td>每个子任务终点边界的偏移范围（末段必须 <code>[0,0]</code>）</td></tr><tr><td class="mono">algo_params.subtask_start_offset_range</td><td>SkillGen 专有</td><td><span class="tag r">边界抖动</span></td><td>SkillGen 子任务起点的偏移范围（仅当算法读起点信号时生效）</td></tr><tr><td class="mono">selection_strategy + selection_strategy_kwargs.nn_k</td><td>Subtask</td><td><span class="tag r">源段选择</span></td><td>random / 最近邻物体 / 最近邻 EEF；top-k 内再随机</td></tr><tr><td class="mono">select_src_per_subtask / select_src_per_arm</td><td>generation_policy</td><td><span class="tag r">源段选择</span></td><td>重选粒度（每段重选 / 每条臂各自选）</td></tr><tr><td class="mono">action_noise</td><td>Subtask</td><td><span class="tag r">动作噪声</span></td><td>该子任务每步 pose 动作的高斯噪声幅度</td></tr><tr><td class="mono">apply_noise_during_interpolation</td><td>Subtask</td><td><span class="tag r">动作噪声</span></td><td>插值桥接阶段是否也加噪</td></tr><tr><td class="mono">coordination_scheme_pos/rot_noise_scale</td><td>SubtaskConstraint</td><td><span class="tag r">协调噪声</span></td><td>双臂协调 delta 位姿的均匀噪声尺度</td></tr><tr><td class="mono">seed</td><td>generation_policy</td><td><span class="tag f">复现</span></td><td>统一给 random / numpy / torch 播种</td></tr><tr><td class="mono">num_interpolation_steps / num_fixed_steps</td><td>Subtask</td><td><span class="tag f">确定</span></td><td>桥接段长度（改变时序，但不含随机）</td></tr><tr><td class="mono">transform_first_robot_pose / interpolate_from_last_target_pose</td><td>generation_policy</td><td><span class="tag f">确定</span></td><td>插值锚点选择（影响拼接口感，不含随机）</td></tr></tbody></table></div>
+<div class="callout">
+<p><strong>一句话：</strong> 场景多样性来自 Reset（环境层），轨迹多样性来自生成层——  <strong>边界抖动</strong> 改变“时间段”， <strong>源段选择</strong> 改变“用哪段”， <strong>动作噪声</strong> 改变“怎么执行”。三者叠加，就得到大量彼此不同的演示。</p>
+</div>
+</div>
+<h2 id="dataset" tabindex="-1"><span class="num">⑪</span>数据集结构：HDF5 里到底存了什么</h2>
+<div class="card">
+<p class="lead" style="margin-top:0;">从原始采集 → 标注 → 生成，数据始终装在 Isaac Lab HDF5 数据集里。三者结构相同， 标注只是在 episode 内多写了一份 <code>obs/datagen_info</code>。</p>
+<h3 id="%E6%AF%8F%E6%9D%A1-episode-%E7%9A%84%E5%BF%85%E5%A4%87%E5%86%85%E5%AE%B9" tabindex="-1">每条 episode 的必备内容</h3>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>键</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>actions</td>
+<td>逐步记录的 action 序列，形状 <code>[T, D]</code>。Franka 单臂为 7 维（delta pose 6 + 夹爪 1）。</td>
+</tr>
+<tr>
+<td>initial_state</td>
+<td>episode 开始时的场景快照——回放时先把场景复位到这个状态，再逐步执行 actions。</td>
+</tr>
+<tr>
+<td>obs</td>
+<td>观测组：包含策略观测，以及（标注后）<code>obs/datagen_info</code> 下的逐帧位姿/信号记录。</td>
+</tr>
+</tbody>
+</table></div>
+<p style="font-size:13px;color:var(--muted);">校验器正好检查这三项是否存在，见 ⑫。episode 名、数量、长度与成功比例以真实文件为准。</p>
+<h3 id="%E6%A0%87%E6%B3%A8%E5%86%99%E5%85%A5%E7%9A%84-obs%2Fdatagen_info" tabindex="-1">标注写入的 <code>obs/datagen_info</code></h3>
+<div class="table-scroll"><table><thead><tr><th style="width:28%">字段</th><th style="width:24%">形状（每条演示）</th><th>含义</th></tr></thead><tbody><tr><td class="mono">eef_pose</td><td class="mono">{eef_name: [T,4,4]}</td><td>逐步记录的 EEF <b>实际</b>位姿。</td></tr><tr><td class="mono">target_eef_pose</td><td class="mono">{eef_name: [T,4,4]}</td><td>由记录 action 反解出的控制器<b>目标</b>位姿（变换用）。</td></tr><tr><td class="mono">object_poses</td><td class="mono">{object_name: [T,4,4]}</td><td>记录到的物体位姿，作为子任务的参考系。<br><span class="path">HDF5 键为 object_pose（单数），入池后属性为 object_poses（复数）</span></td></tr><tr><td class="mono">subtask_term_signals</td><td class="mono">{subtask_name: [T]}</td><td>逐步布尔完成标志。</td></tr><tr><td class="mono">subtask_start_signals</td><td class="mono">{subtask_name: [T]}</td><td>逐步布尔起点标志，仅 SkillGen。</td></tr><tr><td class="mono">passthrough_action</td><td class="mono">{channel: [T,D]}</td><td>非位姿通道（夹爪、手关节、底盘），回放逐字复制。</td></tr></tbody></table></div>
+<h3 id="%E6%B1%A0%E9%87%8C%E7%9A%84%E5%BD%A2%E6%80%81%E4%B8%8E%E8%BE%B9%E7%95%8C%E8%A1%A8" tabindex="-1">池里的形态与边界表</h3>
+<p style="font-size:13.5px;">源池（<code>DataGenInfoPool</code>）把每个 episode 变成上述<b>逐帧记录</b>，并额外为每条 episode 存 <b>子任务边界</b>：按 EEF 给出每个子任务的 <code>(start, end)</code> 下标对。 边界由信号导出——终止信号的上升沿结束其子任务（最后一段随轨迹结束）；启用起点信号时（SkillGen）， 每个子任务的起点改由其<b>自己的</b>起点信号沿决定，而非上一段的终点。</p>
+<pre><code class="language-text"># 边界解析要点（pool.py）
+非 SkillGen：start_index = prev_end        # 首尾相接
+SkillGen   ：start_index = 起点信号上升沿   # 技能段间可留空隙，由 MP 补上
+终点       ：终止信号上升沿 + 2；末段用整条轨迹长度
+解析后     ：_validate_subtask_offsets() 用最坏情况偏移量静态校验，保证随机化后子任务仍非空、不重叠
+</code></pre>
+<h3 id="%E5%91%BD%E5%90%8D%E4%B8%8E%E9%A1%BA%E5%BA%8F%E5%AE%8C%E5%85%A8%E6%9D%A5%E8%87%AA%E4%BB%BB%E5%8A%A1%E9%85%8D%E7%BD%AE" tabindex="-1">命名与顺序完全来自任务配置</h3>
+<p style="font-size:13.5px;">代码依次处理描述里的子任务项，并按配置中的信号名读取示范标注。<code>DatagenInfo</code> 里的信号 <b>只标记时间点</b>；代码不会观察轨迹后自行判断“这段是抓取”。最后一段没有完成信号，因为它直接延续到整条示范末尾。 SkillGen 的任务配置需为<b>每一段</b>提供信号名，最后一项还需写 <code>subtask_term_signal</code>，用作开始信号的键。</p>
+</div>
+<h2 id="validate" tabindex="-1"><span class="num">⑫</span>STEP 4 · 验证与回放</h2>
+<div class="card">
+<h3 id="%E7%BB%93%E6%9E%84%E6%A0%A1%E9%AA%8C" tabindex="-1">结构校验</h3>
+<pre><code class="language-bash">python scripts/validate_dataset.py ./datasets/generated_dataset_mimicgen_franka.hdf5
+</code></pre>
+<p style="font-size:13.5px;">校验器为每个文件打印一行摘要——episode 数量、文件元数据里记录的环境 id、仿真参数—— 随后打印逐文件的问题列表。每条 episode 都会被检查必备字段（<code>actions</code>、<code>initial_state</code>、<code>obs</code>）。 它同时适用于原始、标注、生成的任意数据集。</p>
+<h3 id="%E5%8F%AF%E8%A7%86%E5%9B%9E%E6%94%BE" tabindex="-1">可视回放</h3>
+<pre><code class="language-bash">python submodules/IsaacLab-Arena/submodules/IsaacLab/scripts/tools/replay_demos.py \
+    --task Isaac-Stack-Cube-Franka-IK-Rel-v0 \
+    --viz kit \
+    --num_envs 20 \
+    --dataset_file ./datasets/generated_dataset_mimicgen_franka.hdf5
+</code></pre>
+<p style="font-size:13.5px;">每条 episode 先把场景复位到它记录的 <code>initial_state</code>，再逐步执行记录的 actions—— 应当看到每次物体摆放都不同。好的生成演示看起来像一条可信的人类演示（干净、稳固的抓取与放置）。</p>
+<h3 id="%E5%9B%9E%E6%94%BE%2F%E8%B4%A8%E9%87%8F%E8%A7%82%E5%AF%9F%E6%B8%85%E5%8D%95" tabindex="-1">回放/质量观察清单</h3>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>现象</th>
+<th>可能原因与调整</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>子任务边界处动作抖动 / 突兀</td>
+<td>插值太短——调大 <code>num_interpolation_steps</code>。</td>
+</tr>
+<tr>
+<td>抓取“勉强成功”</td>
+<td>收紧 <code>subtask_term_offset_range</code>，或调小 <code>action_noise</code>。</td>
+</tr>
+<tr>
+<td>变换后抓取整体固定偏移</td>
+<td><code>eef_offset</code> 与环境/源数据坐标系不一致（见 ⑬）。</td>
+</tr>
+<tr>
+<td>大动作执行缓慢或够不到、快速动作回放被截断</td>
+<td>6 维 pose action 撞到 <code>[-1,1]</code> 截断（<code>clip_pose_action_to_unit</code>）。</td>
+</tr>
+</tbody>
+</table></div>
+<div class="callout">
+<p><strong>注意：Isaac Lab 的 PhysX 不是确定性的。</strong> 回放时从保存的 initial_state 重放记录 action， 可能与原始生成过程发生偏离，因此 <strong>少数</strong>  episode 回放时可能不再成功——但数据集里 <strong>每一条</strong> 在生成时都确实满足过成功条件。 结构校验通过 ≠ 物理回放必然成功。</p>
+</div>
+</div>
+<h2 id="params" tabindex="-1"><span class="num">⑬</span>参数速查 · 常见坑 · 文件索引</h2>
+<div class="card">
+<h3 id="%E4%BB%BB%E5%8A%A1%E6%8F%8F%E8%BF%B0-yaml%EF%BC%9Asubtask-%E5%AD%97%E6%AE%B5" tabindex="-1">任务描述 YAML：Subtask 字段</h3>
+<div class="table-scroll"><table><thead><tr><th style="width:30%">字段</th><th style="width:12%">默认</th><th>含义</th></tr></thead><tbody><tr><td class="mono">&lt;eef_name&gt;</td><td>必填</td><td>EEF 名，必须与机械臂描述一致。MimicGen/SkillGen 期望 1 个；DexMimicGen 期望 ≥2 个。声明顺序 = 执行顺序 = 约束里的下标。</td></tr><tr><td class="mono">object_ref</td><td><code>""</code></td><td>定义该子任务参考系的物体名，须匹配 Datastream 的物体位姿键。</td></tr><tr><td class="mono">subtask_term_signal</td><td><code>""</code></td><td>子任务终止信号名；除末段外必填（SkillGen 每段都要）。</td></tr><tr><td class="mono">subtask_start_signal</td><td><code>""</code></td><td>子任务起点信号名，仅 SkillGen。</td></tr><tr><td class="mono">first_subtask_start_offset_range</td><td><code>[0,0]</code></td><td>某 EEF 第一个子任务起点的偏移范围。</td></tr><tr><td class="mono">subtask_term_offset_range</td><td><code>[0,0]</code></td><td>终止边界偏移；负值提前、正值推后。末段必须 <code>[0,0]</code>。</td></tr><tr><td class="mono">selection_strategy</td><td><code>random</code></td><td>选源策略；<code>random</code> 是 <code>object_ref</code> 为空时唯一允许的值。</td></tr><tr><td class="mono">selection_strategy_kwargs</td><td><code>{}</code></td><td>直接传给策略；未知/不支持的值会在生成期失败。<br>支持 <code>pos_weight</code>（默认 1.0）、<code>rot_weight</code>（默认 1.0）、<code>nn_k</code>（默认 3）。</td></tr><tr><td class="mono">action_noise</td><td><code>0.0</code></td><td>pose-action 独立高斯噪声的尺度。</td></tr><tr><td class="mono">num_interpolation_steps</td><td><code>0</code></td><td>从当前起始位姿到变换后段首位姿的桥接步数。</td></tr><tr><td class="mono">num_fixed_steps</td><td><code>0</code></td><td>回放前额外保持段首目标位姿的步数。</td></tr><tr><td class="mono">apply_noise_during_interpolation</td><td><code>false</code></td><td>噪声是否也用于插值/固定保持步；被回放的源片段无论如何都加噪。</td></tr><tr><td class="mono">algo_params</td><td><code>{}</code></td><td>算法专有字段；MimicGen/DexMimicGen 不接受额外字段，SkillGen 支持 <code>subtask_start_offset_range</code>。</td></tr></tbody></table></div>
+<h3 id="%E4%BB%BB%E5%8A%A1%E6%8F%8F%E8%BF%B0-yaml%EF%BC%9Ageneration_policy" tabindex="-1">任务描述 YAML：generation_policy</h3>
+<div class="table-scroll"><table><thead><tr><th style="width:30%">字段</th><th style="width:14%">默认</th><th>含义</th></tr></thead><tbody><tr><td class="mono">seed</td><td><code>1</code></td><td>生成开始前给 Python <code>random</code>、NumPy、PyTorch 播种。</td></tr><tr><td class="mono">num_trials</td><td><code>10</code></td><td>生成目标；<code>guarantee_success</code> 为真时计成功数，否则计总尝试数。<code>--generation_num_trials</code> 覆盖它。</td></tr><tr><td class="mono">guarantee_success</td><td><code>true</code></td><td>为真则一直尝试到攒够 <code>num_trials</code> 个成功；为假则跑够 <code>num_trials</code> 次尝试即停。</td></tr><tr><td class="mono">keep_failed</td><td><code>false</code></td><td>失败尝试是否导出到单独的 HDF5；成功演示始终写入主输出文件。</td></tr><tr><td class="mono">use_skillgen</td><td><code>false</code></td><td>标注是否需采集 SkillGen 起点信号；生成时会被 <code>--alg</code> 覆盖。</td></tr><tr><td class="mono">select_src_per_subtask</td><td><code>false</code></td><td>每个子任务是否可重选源演示；为假则该 EEF 全程复用首次选择。</td></tr><tr><td class="mono">select_src_per_arm</td><td><code>false</code></td><td>每条臂是否独立选源；为假则首次选择被所有臂共享并缓存整轮。</td></tr><tr><td class="mono">transform_first_robot_pose</td><td><code>false</code></td><td>是否为<b>每个</b>子任务的目标序列前拼源 EEF 位姿（为假时只对首个）。</td></tr><tr><td class="mono">interpolate_from_last_target_pose</td><td><code>true</code></td><td>非首段的插值桥接是否从上一段最后目标位姿出发；为假则从实时 EEF 位姿出发。SkillGen 总是从 MP 终点接入。</td></tr></tbody></table></div>
+<h3 id="%E7%BA%A6%E6%9D%9F%EF%BC%88%E5%A4%9A-eef%EF%BC%8Cdexmimicgen%EF%BC%89" tabindex="-1">约束（多 EEF，DexMimicGen）</h3>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>字段</th>
+<th>默认</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>constraint_type</td>
+<td>必填</td>
+<td><code>sequential</code> 或 <code>coordination</code>（大小写不敏感）。</td>
+</tr>
+<tr>
+<td>eef_subtask_constraint_tuple</td>
+<td>必填</td>
+<td>恰好两个 <code>[eef_name, subtask_index]</code>；顺序对 sequential 有意义。</td>
+</tr>
+<tr>
+<td>sequential_min_time_diff</td>
+<td><code>-1</code></td>
+<td><code>-1</code>：前者完成前后者不启动；正值：后者执行到只剩这些步时停下等。</td>
+</tr>
+<tr>
+<td>coordination_scheme</td>
+<td><code>replay</code></td>
+<td><code>replay</code>（单位变换）/ <code>transform</code>（完整刚体）/ <code>translate</code>（仅平移）。</td>
+</tr>
+<tr>
+<td>coordination_scheme_pos/rot_noise_scale</td>
+<td><code>0.0</code></td>
+<td>共享变换上的均匀噪声半宽（m / rad）。</td>
+</tr>
+<tr>
+<td>coordination_synchronize_start</td>
+<td><code>false</code></td>
+<td>为真则子任务保持首位姿直到配对 EEF 抵达其协调子任务。</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="%E6%9C%BA%E6%A2%B0%E8%87%82%E6%8F%8F%E8%BF%B0-yaml" tabindex="-1">机械臂描述 YAML</h3>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>类型 / 字段</th>
+<th>要点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>delta_pose_ik_single_arm</td>
+<td>单臂相对位姿 IK。action = <code>[delta_pos(3), delta_rot(3), gripper]</code>。字段：<code>eef_name</code>、<code>pose_obs_keys.pos/quat</code>、<code>action_layout.gripper_dim</code>、<code>clip_pose_action_to_unit</code>、<code>eef_offset</code>。</td>
+</tr>
+<tr>
+<td>absolute_pose_whole_body_bimanual</td>
+<td>人形绝对位姿全身 IK。action = <code>[left_pos, left_quat, right_pos, right_quat, hand_joints, ...]</code>。字段：<code>eefs.&lt;arm&gt;.pose_obs_keys</code>、<code>gripper_action_indices</code>、<code>action_layout.*_pose_slice</code> / <code>hand_joints_slice</code> / <code>canonicalize_quat</code> / <code>passthrough_channels</code>。</td>
+</tr>
+<tr>
+<td>eef_offset</td>
+<td>从机器人运动学控制 link 到位姿观测所报坐标系的平移 [m]；两帧不一致时抓取会整体偏移。</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="%E5%B8%B8%E8%A7%81%E5%9D%91" tabindex="-1">常见坑</h3>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>症状</th>
+<th>根因</th>
+<th>处理</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>每次抓取都整体偏移一个固定距离</td>
+<td><code>eef_offset</code> 与环境 EEF 观测帧 / 源数据标注帧不一致</td>
+<td>量出两帧差并据此设置 <code>eef_offset</code>；SkillGen 版设为 <code>[0,0,0.1034]</code>（指尖↔panda_hand）</td>
+</tr>
+<tr>
+<td>资产/动作翻转约 180°，或旋转乱漂</td>
+<td>四元数顺序写反（w,x,y,z ↔ x,y,z,w）</td>
+<td>全框架统一 (x,y,z,w)，单位元 <code>[0,0,0,1]</code>；检查观测项与手写位姿</td>
+</tr>
+<tr>
+<td>首次读位姿就 <code>KeyError</code></td>
+<td><code>pose_obs_keys</code> / <code>obs_group</code> 与环境观测项不匹配</td>
+<td>列出环境观测项，照抄键名与组名</td>
+</tr>
+<tr>
+<td>手指不动，或（双臂）动错手</td>
+<td><code>gripper_action_indices</code> 在双臂间错配，或按整条 action 索引（应相对 hand-joints 块）</td>
+<td>索引是 <code>hand_joints_slice</code> 内 0 基；对照环境 URDF 关节顺序</td>
+</tr>
+<tr>
+<td>直接构造 <code>Waypoint(noise=None)</code> 执行报 <code>TypeError</code></td>
+<td><code>noise</code> 默认 <code>None</code>，而单臂适配器写的是 <code>if scale &gt; 0.0</code></td>
+<td>手工构造时显式给 <code>0.0</code>；正常路径都会置浮点值</td>
+</tr>
+<tr>
+<td>以为“每个子任务都重选源”</td>
+<td><code>select_src_per_subtask: true</code> 与 <code>select_src_per_arm: false</code> 同时存在</td>
+<td>当前实现是整轮只选一次；不要只按参数名字面理解</td>
+</tr>
+<tr>
+<td>添加物体后规划器与物理不一致</td>
+<td>添加物体的 spawn 位姿烘焙进 USD stage，规划器碰撞世界读它而非 reset 事件结果</td>
+<td>钉死物体时让其 spawn 位姿与 reset 事件一致</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="%E6%B6%89%E5%8F%8A%E6%96%87%E4%BB%B6%E9%80%9F%E6%9F%A5" tabindex="-1">涉及文件速查</h3>
+<div class="table-scroll"><table><thead><tr><th style="width:34%">主题</th><th>文件</th></tr></thead><tbody><tr><td>主编排器 / 生成循环</td><td class="mono">autodata_core/data_generator.py</td></tr><tr><td>算法注册表 / MimicGen / DexMimicGen / SkillGen</td><td class="mono">autodata_core/algorithms.py</td></tr><tr><td>源片段池 / 边界解析</td><td class="mono">autodata_core/pool.py</td></tr><tr><td>Waypoint / 轨迹 / 执行</td><td class="mono">autodata_core/waypoint.py</td></tr><tr><td>源数据 schema</td><td class="mono">autodata_core/datagen_info.py</td></tr><tr><td>位姿变换</td><td class="mono">autodata_core/transforms.py</td></tr><tr><td>源演示选择策略</td><td class="mono">autodata_core/selection_strategy.py</td></tr><tr><td>Datastream 读接口 / action 编解码</td><td class="mono">autodata_interfaces/datastream/datastream.py</td></tr><tr><td>env 配置与锁步循环</td><td class="mono">autodata_interfaces/env/isaaclab_env_interface.py</td></tr><tr><td>action 编解码适配器</td><td class="mono">autodata_interfaces/embodiments/single_arm_embodiment_adapter.py<br>bimanual_embodiment_adapter.py</td></tr><tr><td>约束定义</td><td class="mono">autodata_interfaces/tasks/subtask_constraint_spec.py</td></tr><tr><td>生成策略 / 子任务规格</td><td class="mono">autodata_interfaces/tasks/generation_policy_spec.py · subtask_spec.py</td></tr><tr><td>运动规划后端</td><td class="mono">autodata_interfaces/motion_planners/（cuRobo）</td></tr><tr><td>CLI 入口</td><td class="mono">scripts/generate_dataset.py · annotate_demos.py · validate_dataset.py</td></tr><tr><td>结果文件</td><td class="mono">autodata_utils/generation_result.py</td></tr><tr><td>示例配置</td><td class="mono">autodata_examples/{tasks,embodiments,env_profiles}/</td></tr></tbody></table></div>
+<h3 id="%E5%9B%9B%E4%BB%BD%E6%96%87%E6%A1%A3%E7%9A%84%E5%90%88%E5%B9%B6%E5%85%B3%E7%B3%BB" tabindex="-1">四份文档的合并关系</h3>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>来源</th>
+<th>并入本文的位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>docs/（概念 + 三条 workflow + quickstart + advanced）</td>
+<td>全文骨架：①③④⑤⑥⑦⑧⑨⑪⑫⑬</td>
+</tr>
+<tr>
+<td>docs/pages/workflows/skillgen/（index + preflight）+ advanced/motion_planners</td>
+<td>⑨ SkillGen 深潜（两阶段、标注、planner、preflight、失败模式）</td>
+</tr>
+<tr>
+<td>AutoData-原理与数据流总览.md</td>
+<td>⑥ 生成生命周期、⑦ Waypoint 层、⑩ 随机化细节、⑬ 文件索引</td>
+</tr>
+<tr>
+<td>AutoData-数据生成随机化可视化.html</td>
+<td>⑩ 随机化专题（STEP0 因果链、边界抖动、源段选择、动作噪声、协调噪声、参数总表）</td>
+</tr>
+<tr>
+<td>仓库 README.md</td>
+<td>① 全流程概览、总体定位与四大构件</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<footer>
+<p>内容整理自 AutoData 官方文档与仓库代码；正文数值为示意值，字段与参数以仓库当前代码为准。</p>
+<p>运行脚本需在 <code>./docker/run_docker.sh</code> 启动的开发容器内执行（SkillGen 需 <code>-c</code> 以包含 cuRobo）。</p>
+</footer>
+
+
+
+</div>
+</body>
+</html>

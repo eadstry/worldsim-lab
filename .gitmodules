@@ -1,0 +1,9 @@
+[submodule "AutoData"]
+	path = AutoData
+	url = https://github.com/isaac-sim/AutoData.git
+[submodule "IsaacLab-Arena"]
+	path = IsaacLab-Arena
+	url = https://github.com/isaac-sim/IsaacLab-Arena.git
+[submodule "RLinf"]
+	path = RLinf
+	url = https://github.com/RLinf/RLinf.git

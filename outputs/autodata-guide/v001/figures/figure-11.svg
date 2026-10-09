@@ -1,0 +1,25 @@
+<svg viewBox="0 0 1000 210" role="img" aria-label="协调噪声示意" class="svgtxt" xmlns="http://www.w3.org/2000/svg"><style>.path{font-family:ui-monospace,Menlo,monospace;font-size:11.5px;fill:#868e96}.svgtxt{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;}</style>
+    <defs>
+      <marker id="ah4" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto">
+        <path d="M0,0 L8,4 L0,8 Z" fill="#1971c2"></path>
+      </marker>
+    </defs>
+    <rect x="30" y="40" width="150" height="130" rx="10" fill="#e7f5ff" stroke="#74c0fc"></rect>
+    <text x="105" y="70" font-size="12" fill="#1971c2" text-anchor="middle">左臂源段</text>
+    <path d="M105,90 l0,50" stroke="#4dabf7" stroke-width="4" marker-end="url(#ah4)"></path>
+    <rect x="820" y="40" width="150" height="130" rx="10" fill="#e7f5ff" stroke="#74c0fc"></rect>
+    <text x="895" y="70" font-size="12" fill="#1971c2" text-anchor="middle">右臂源段</text>
+    <path d="M895,90 l0,50" stroke="#4dabf7" stroke-width="4" marker-end="url(#ah4)"></path>
+
+    <path d="M180,105 h120" stroke="#869e96" stroke-width="2" marker-end="url(#ah4)"></path>
+    <rect x="310" y="46" width="380" height="120" rx="12" fill="#f8f0fc" stroke="#d0bfff"></rect>
+    <text x="500" y="76" font-size="13" fill="#9c36b5" text-anchor="middle" font-weight="700">delta 位姿 + 均匀噪声</text>
+    <text x="500" y="102" font-size="12.5" fill="#495057" text-anchor="middle" font-family="ui-monospace,Menlo,monospace">pos += U(-s_pos, s_pos)　（逐轴）</text>
+    <text x="500" y="126" font-size="12.5" fill="#495057" text-anchor="middle" font-family="ui-monospace,Menlo,monospace">rot ← 小旋转(欧拉 ∈ U(-s_rot, s_rot)) · rot</text>
+    <text x="500" y="152" font-size="11.5" fill="#868e96" text-anchor="middle">s_pos / s_rot = coordination_scheme_*_noise_scale</text>
+
+    <path d="M690,105 h120" stroke="#adb5bd" stroke-width="2" marker-end="url(#ah4)"></path>
+    <rect x="820" y="46" width="150" height="120" rx="10" fill="#fff4e6" stroke="#e8590c"></rect>
+    <text x="895" y="90" font-size="12" fill="#e8590c" text-anchor="middle">双臂协调后</text>
+    <text x="895" y="112" font-size="12" fill="#868e96" text-anchor="middle">相对位姿有扰动</text>
+  </svg>

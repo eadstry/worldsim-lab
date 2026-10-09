@@ -1,0 +1,47 @@
+<svg viewBox="0 0 1000 520" role="img" aria-label="generate() 一次 attempt 的六阶段顺序" class="svgtxt" xmlns="http://www.w3.org/2000/svg"><style>.path{font-family:ui-monospace,Menlo,monospace;font-size:11.5px;fill:#868e96}.svgtxt{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;}</style>
+    <defs>
+      <marker id="a6" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto">
+        <path d="M0,0 L8,4 L0,8 Z" fill="#adb5bd"></path>
+      </marker>
+    </defs>
+    <!-- 竖轴 -->
+    <line x1="120" y1="30" x2="120" y2="470" stroke="#e9ecef" stroke-width="6"></line>
+
+    <!-- 1 -->
+    <circle cx="120" cy="52" r="16" fill="#1971c2"></circle><text x="120" y="57" fill="#fff" font-size="12" font-weight="700" text-anchor="middle">1</text>
+    <rect x="150" y="30" width="820" height="44" rx="9" fill="#e7f5ff" stroke="#74c0fc"></rect>
+    <text x="164" y="50" font-size="12.5" font-weight="700" fill="#1971c2">Reset 与快照</text>
+    <text x="164" y="67" font-size="11.5" fill="#495057">通过 reset 队列复位环境（随机化场景）→ <tspan font-family="ui-monospace,Menlo,monospace">get_scene_state()</tspan> 快照，成为输出 episode 的 initial_state</text>
+
+    <!-- 2 -->
+    <circle cx="120" cy="122" r="16" fill="#e8590c"></circle><text x="120" y="127" fill="#fff" font-size="12" font-weight="700" text-anchor="middle">2</text>
+    <rect x="150" y="100" width="820" height="44" rx="9" fill="#fff4e6" stroke="#e8590c"></rect>
+    <text x="164" y="120" font-size="12.5" font-weight="700" fill="#e8590c">🎲 子任务边界抖动</text>
+    <text x="164" y="137" font-size="11.5" fill="#495057"><tspan font-family="ui-monospace,Menlo,monospace">randomize_subtask_boundaries()</tspan>：每条源演示的边界按下标范围抖动；池变大时（SkillGen）才重算</text>
+
+    <!-- 3 -->
+    <circle cx="120" cy="192" r="16" fill="#9c36b5"></circle><text x="120" y="197" fill="#fff" font-size="12" font-weight="700" text-anchor="middle">3</text>
+    <rect x="150" y="170" width="820" height="44" rx="9" fill="#f8f0fc" stroke="#d0bfff"></rect>
+    <text x="164" y="190" font-size="12.5" font-weight="700" fill="#9c36b5">规划下一段：算法钩子</text>
+    <text x="164" y="207" font-size="11.5" fill="#495057">只要某 EEF 没轨迹了，就调 <tspan font-family="ui-monospace,Menlo,monospace">algorithm.plan_subtask_trajectory()</tspan>：（默认）选段+变换+merge 插值；或 SkillGen 两阶段</text>
+
+    <!-- 4 -->
+    <circle cx="120" cy="262" r="16" fill="#2f9e44"></circle><text x="120" y="267" fill="#fff" font-size="12" font-weight="700" text-anchor="middle">4</text>
+    <rect x="150" y="240" width="820" height="44" rx="9" fill="#ebfbee" stroke="#69db7c"></rect>
+    <text x="164" y="260" font-size="12.5" font-weight="700" fill="#2f9e44">锁步执行：每个 tick 一个 action</text>
+    <text x="164" y="277" font-size="11.5" fill="#495057">组装每臂下一个 Waypoint → <tspan font-family="ui-monospace,Menlo,monospace">MultiWaypoint.execute()</tspan> 编成一个 action → 入队 → env.step；跨臂约束在这里决定 hold 或前进</text>
+
+    <!-- 5 -->
+    <circle cx="120" cy="332" r="16" fill="#2f9e44"></circle><text x="120" y="337" fill="#fff" font-size="12" font-weight="700" text-anchor="middle">5</text>
+    <rect x="150" y="310" width="820" height="44" rx="9" fill="#ebfbee" stroke="#69db7c"></rect>
+    <text x="164" y="330" font-size="12.5" font-weight="700" fill="#2f9e44">成功即锁存</text>
+    <text x="164" y="347" font-size="11.5" fill="#495057">每步后判任务成功条件：<tspan font-family="ui-monospace,Menlo,monospace">buffers.success = buffers.success or exec_success</tspan>——一旦成立就锁定，不要求保持</text>
+
+    <!-- 6 -->
+    <circle cx="120" cy="402" r="16" fill="#2f9e44"></circle><text x="120" y="407" fill="#fff" font-size="12" font-weight="700" text-anchor="middle">6</text>
+    <rect x="150" y="380" width="820" height="44" rx="9" fill="#ebfbee" stroke="#69db7c"></rect>
+    <text x="164" y="400" font-size="12.5" font-weight="700" fill="#2f9e44">录制与返回</text>
+    <text x="164" y="417" font-size="11.5" fill="#495057">所有 EEF 完成子任务后：<tspan font-family="ui-monospace,Menlo,monospace">set_success_to_episodes</tspan> +（成功、或 keep_failed）<tspan font-family="ui-monospace,Menlo,monospace">export_episodes</tspan>；返回 GenerationResult</text>
+
+    <text x="150" y="462" font-size="11.5" fill="#868e96">SkillGen 规划失败时第 3 步返回 None，本次 attempt 直接以 success=False 结束；是否重试由 generation_policy 决定。</text>
+  </svg>

@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "artifact_id": "autodata-guide",
+  "version": "v003",
+  "created_at": "2026-10-08T07:37:31.803192+00:00",
+  "material_cutoff": "2026-10-08T07:37:31.849730+00:00",
+  "sources": [
+    {
+      "artifact_id": "autodata-guide",
+      "version": "v002"
+    },
+    {
+      "type": "feishu_cloud_document",
+      "url": "https://c1hnm0gi16j.feishu.cn/docx/KyG4dWaKvo69EXxwfRpcYirYnJ1"
+    }
+  ],
+  "limitations": [
+    "本次仅调整排版；未新增或重新运行 AutoData 实验。",
+    "本地 HTML 是可阅读的内容快照，飞书原生组件外观由客户端决定。"
+  ],
+  "sealed_at": "2026-10-08T07:39:28.520877+00:00",
+  "files": {
+    "CHANGELOG.md": "8f13fa2b7ba9b987b7d3a653223f70f35d1adfd0cb1c0f716160496edf55daf2",
+    "assets/figure-01.png": "56b01f5a00fc9ff812b00e2fef96e81e282f07bcc14bad3d5902457dbb1bdda2",
+    "assets/figure-02.png": "60188c32bc9ad829bfdc26ca42b18522ce62c26c3e96ec732aa80ed1453ed670",
+    "assets/figure-03.png": "3b29d9e244ac8f36baa66c69c0632fef0646fa584aaf25a228deb0c38a395824",
+    "assets/figure-04.png": "b5f4e6a65f8d5730d23182b8a1b597469fced1e3a78f984aac48aab5f80621fc",
+    "assets/figure-05.png": "08ccee142720765d451fa8d94a0fd7bbd31a4a0eb058ae81aad75effe14cb8a4",
+    "assets/figure-06.png": "91b419fbafb1227c5db1e6d93203365cd50bd607080ff7de0237690e35179444",
+    "assets/figure-07.png": "2e565673dcdd05ace61e175053f5765303dcd45d87cf83f82d4ce72e589a893d",
+    "assets/figure-08.png": "57459ff98df523f9ed2a68f58f14011bc7d56240e8cc06558567a2fff387e461",
+    "assets/figure-09.png": "e668ce1673b9b0699afd7d6888a48cea1d517501487c30dc9ba27bdb2ddb7156",
+    "assets/figure-10.png": "d16f907e617e526a0f973303c1bdcb0eddbad5a548f4220e37553345f9de1bea",
+    "assets/figure-11.png": "87f2e278acee015ef17f2afe3c534b265f0836fd2d7dff49fdf806e074ec1656",
+    "assets/figure-12.png": "2798fb943c615a15f66faf8b76b5839190064758c28b71789286c12e34b1b7d9",
+    "assets/figure-13.png": "800ef0a3e0322f9423a6d208eb15353dff2e957c29508e0f69e8a1babad88f35",
+    "assets/figure-14.png": "ac7c240efb7881d23f4aa12b353e77e3357633af39d634c8a1c0c149959e2a0d",
+    "assets/figure-15.png": "2a25eff4d74c54b8b6fa1570415b763fd3a4907856d19b7c5af603e3f5c76954",
+    "assets/figure-16.png": "6326b435fd00e7d8ff26ebd037e069974ebcc898bead95abb88c516d49ea0a3b",
+    "assets/figure-17.png": "5158d210299873c61a426fdafa6e2a6e92ac5e91661f41fb88d8553e4d88012a",
+    "feishu.xml": "9a8a005648ec9af0e3516d772ddabc781f564863291a87307827439c38f39097",
+    "figures/figure-01.svg": "46e43e41e4ca1eb8b84a8bff252a7ad3d9567a455d2d8ad193bd8d28c95f4d49",
+    "figures/figure-02.svg": "0b1100464af1af8b9df6d3f7d29f041a2e1b0c56cb1180ce6d73413da9434050",
+    "figures/figure-03.svg": "85e3e8e10c7dce386fa988c7724894057c0c80300a122e20a58dedf892e00036",
+    "figures/figure-04.svg": "e9e84cc1211f0a739db114cad3a6a9eef50f30748df71c53252545e9ddf91299",
+    "figures/figure-05.svg": "82e983cffbcef9687a51f886f81757235588504cc82f246aeca558032a5345f0",
+    "figures/figure-06.svg": "4278b714c7999650953ecde8aa7183b3dac51b33c6b581b57c3d5703b2f06a06",
+    "figures/figure-07.svg": "7d234d2109b7cc829f829f4b20e4a9ae498d8f667ff30b24b869fd63375dc81f",
+    "figures/figure-08.svg": "f2ecc305ab21893aff53e97b77caa9d7fcc67074bdee41e05741aaf3292baba5",
+    "figures/figure-09.svg": "a0c6af26755c61bbebbf8fc301f8aae8d53511213119ec2a47ef2c72a7ac9380",
+    "figures/figure-10.svg": "b5c84ffe5b19aede2d0d8836ec0a2d703aa48a51f1d8db596f8e7285cb804637",
+    "figures/figure-11.svg": "43a55a2019d7ecb76e2c6d116e0ffc7a68deb5aeccbeb1918cf911f2c21b812b",
+    "index.html": "b7103893fc2b84763cbccfa92b5b6d0e9dd0dbb874cd1db8358d2872ed344bc3",
+    "report.md": "c9d90fa8835435f42de4176b07b1374fb45d713068a110cebb26e587d71aca22",
+    "verification.json": "a55fcf7846b7e4e49e4801519f0e24d548dc83d8d4caa6fc12727e62a1f26a83"
+  },
+  "delivery": {
+    "feishu": {
+      "status": "verified",
+      "target": "user Drive root",
+      "receipt": {
+        "url": "https://c1hnm0gi16j.feishu.cn/docx/KyG4dWaKvo69EXxwfRpcYirYnJ1",
+        "operation": "in_place_formatting",
+        "verification": {
+          "text_unchanged_except_duplicate_title": true,
+          "chapters": 13,
+          "subheadings": 55,
+          "tables": 39,
+          "native_code_blocks": 20,
+          "images": 17,
+          "all_images_accessible": true,
+          "all_image_bytes_match_original": true,
+          "image_display_width": 820
+        }
+      },
+      "files": [
+        "feishu.xml"
+      ],
+      "updated_at": "2026-10-08T07:39:28.475827+00:00",
+      "error": null
+    },
+    "gpt": {
+      "status": "blocked_destination",
+      "target": null,
+      "receipt": null,
+      "files": [],
+      "updated_at": null,
+      "error": "未指定 ChatGPT 上传目标；本次只要求优化飞书排版。"
+    }
+  }
+}

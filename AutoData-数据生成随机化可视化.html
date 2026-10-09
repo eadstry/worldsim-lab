@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AutoData · 数据生成时的随机化</title>
+<style>
+  :root{
+    --rand:#e8590c;      --rand-bg:#fff4e6;
+    --fixed:#1971c2;     --fixed-bg:#e7f5ff;
+    --green:#2f9e44;     --green-bg:#ebfbee;
+    --purple:#9c36b5;    --purple-bg:#f8f0fc;
+    --gray:#495057;      --line:#ced4da;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; padding:32px 20px 80px;
+    background:#f8f9fa; color:#212529;
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.6;
+  }
+  .wrap{max-width:1080px;margin:0 auto;}
+  h1{font-size:26px;margin:0 0 6px;}
+  .sub{color:#6c757d;margin:0 0 26px;font-size:14px;}
+  h2{font-size:19px;margin:44px 0 14px;padding-left:11px;border-left:4px solid #212529;}
+  .card{
+    background:#fff;border:1px solid #e9ecef;border-radius:12px;
+    padding:20px 22px;box-shadow:0 1px 3px rgba(0,0,0,.05);
+  }
+  .legend{display:flex;flex-wrap:wrap;gap:10px 22px;font-size:13px;margin-bottom:8px;}
+  .li{display:flex;align-items:center;gap:7px;}
+  .dot{width:13px;height:13px;border-radius:4px;display:inline-block;}
+  .badge{
+    display:inline-block;font-size:11px;font-weight:700;color:#fff;
+    background:var(--rand);border-radius:20px;padding:1px 8px;margin-right:6px;
+    vertical-align:middle;
+  }
+  .badge.fixed{background:var(--fixed);}
+  .badge.mp{background:var(--green);}
+
+  /* ---------- pipeline ---------- */
+  .flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:0;margin-top:6px;}
+  .step{
+    flex:1 1 150px;min-width:150px;border:1.5px solid var(--line);border-radius:10px;
+    padding:11px 12px;background:#fff;position:relative;
+  }
+  .step .n{font-size:11px;font-weight:700;color:#adb5bd;letter-spacing:.5px;}
+  .step .t{font-weight:700;font-size:14px;margin:2px 0 4px;}
+  .step .d{font-size:12px;color:#6c757d;line-height:1.45;}
+  .step.rand{border-color:var(--rand);background:var(--rand-bg);}
+  .step.fixed{border-color:var(--fixed);background:var(--fixed-bg);}
+  .step.green{border-color:var(--green);background:var(--green-bg);}
+  .arrow{
+    flex:0 0 26px;display:flex;align-items:center;justify-content:center;
+    color:#adb5bd;font-size:18px;
+  }
+  .loopbar{
+    margin-top:14px;border:1.5px dashed var(--rand);border-radius:10px;padding:10px 12px 12px;
+    background:#fffaf5;
+  }
+  .loopbar .lab{font-size:12px;color:var(--rand);font-weight:700;margin-bottom:8px;}
+  .loopbar .flow{margin:0;}
+  .note{font-size:12.5px;color:#6c757d;margin-top:10px;}
+  code{background:#f1f3f5;border-radius:4px;padding:1px 5px;font-size:12.5px;
+       font-family:ui-monospace,SFMono-Regular,Menlo,monospace;}
+  /* ---------- 因果链 ---------- */
+  .chain{display:flex;flex-wrap:wrap;align-items:stretch;margin:4px 0 16px;}
+  .chain .col{flex:1 1 230px;min-width:230px;border:1.5px solid var(--line);border-radius:10px;
+              padding:12px 14px;background:#fff;}
+  .chain .col.in{border-color:var(--fixed);background:var(--fixed-bg);}
+  .chain .col.run{border-color:var(--rand);background:var(--rand-bg);}
+  .chain .col.out{border-color:var(--green);background:var(--green-bg);}
+  .chain .col h4{margin:0 0 4px;font-size:13.5px;}
+  .chain .col .when{font-size:11.5px;color:#868e96;margin-bottom:8px;}
+  .chain .col ul{margin:0;padding-left:16px;font-size:12.5px;color:#343a40;}
+  .chain .col li{margin:4px 0;}
+  .chain .sep{flex:0 0 26px;display:flex;align-items:center;justify-content:center;
+              color:#adb5bd;font-size:20px;}
+  .lock{color:var(--fixed);font-weight:700;}
+  .dice{color:var(--rand);font-weight:700;}
+  td.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;}
+  svg{display:block;width:100%;height:auto;}
+  table{border-collapse:collapse;width:100%;font-size:13px;margin-top:6px;}
+  th,td{border:1px solid #e9ecef;padding:7px 9px;text-align:left;vertical-align:top;}
+  th{background:#f1f3f5;font-weight:700;}
+  td code{font-size:12px;}
+  .tag{font-size:11px;border-radius:6px;padding:1px 6px;font-weight:700;}
+  .tag.r{background:var(--rand-bg);color:var(--rand);border:1px solid #ffc9c9;}
+  .tag.f{background:var(--fixed-bg);color:var(--fixed);border:1px solid #a5d8ff;}
+  .callout{border-left:4px solid #ffd43b;background:#fff9db;border-radius:0 8px 8px 0;
+           padding:10px 14px;font-size:13px;margin-top:14px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>数据生成时的随机化 · 可视化</h1>
+  <p class="sub">AutoData 造数据（MimicGen / DexMimicGen / SkillGen）时，一条演示是怎么被“随机”出来的</p>
+
+  <div class="card legend">
+    <div class="li"><span class="badge">随机</span> 每次采样都不一样</div>
+    <div class="li"><span class="badge fixed">固定</span> 确定性的，无随机</div>
+    <div class="li"><span class="badge mp">MP</span> 运动规划（SkillGen）</div>
+    <div class="li"><span class="dot" style="background:var(--rand)"></span> 随机化</div>
+    <div class="li"><span class="dot" style="background:var(--purple)"></span> 噪声</div>
+    <div class="li"><span class="dot" style="background:var(--fixed)"></span> 数据/变换</div>
+  </div>
+
+  <!-- ============ 1. 全流程 ============ -->
+  <h2>① 一次 attempt 的全流程</h2>
+  <div class="card">
+    <div class="flow">
+      <div class="step fixed">
+        <div class="n">STEP 0</div>
+        <div class="t">环境 Reset</div>
+        <div class="d">场景随机化（物体位姿等）<br>由 env profile 的 event 决定<br>→ 快照为输出初始状态</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="step rand">
+        <div class="n">STEP 1 · 整轮一次</div>
+        <div class="t">🎲 子任务边界抖动</div>
+        <div class="d"><code>randomize_subtask_boundaries()</code><br>把录好的边界按下标范围抖动</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="step rand">
+        <div class="n">STEP 2 · 每个子任务</div>
+        <div class="t">🎲 选源演示段</div>
+        <div class="d"><code>select_source_demo()</code><br>random / nearest-neighbor top-k</div>
+      </div>
+    </div>
+
+    <div class="flow" style="margin-top:12px;">
+      <div class="step fixed">
+        <div class="n">STEP 3</div>
+        <div class="t">物体位姿变换</div>
+        <div class="d">把源段在参考物体坐标系下的轨迹，搬到当前物体位姿下<br><b>（给定选择后是确定的）</b></div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="step green">
+        <div class="n">STEP 4</div>
+        <div class="t">桥接</div>
+        <div class="d">MimicGen：线性插值<br>SkillGen：<span class="badge mp">MP</span>规划一段无碰撞 transit</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="step rand">
+        <div class="n">STEP 5 · 每步</div>
+        <div class="t">🎲 执行 + 动作噪声</div>
+        <div class="d"><code>pose_action + σ·randn</code><br>逐 tick 注入高斯噪声</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="step fixed">
+        <div class="n">STEP 6</div>
+        <div class="t">判定 & 导出</div>
+        <div class="d">成功则写进输出 HDF5</div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <b>关键：</b>真正的“随机化”只有三处 —— <b>①</b> 边界抖动、<b>②</b> 源段选择、<b>⑤</b> 动作噪声（外加双臂的④协调噪声）。
+      其余步骤在有采样结果后都是确定性的。
+    </div>
+  </div>
+
+  <!-- ============ 1.5 STEP 0 展开 ============ -->
+  <h2>①.5 STEP 0 展开：环境 Reset 的随机化（输入 → 重抽 → 落盘）</h2>
+  <div class="card">
+    <p style="font-size:13.5px;margin:0 0 14px;color:#495057;">
+      环境层的随机化<b>不是 AutoData 写的</b>，是基任务（<code>isaaclab_tasks</code>）自带的 Isaac Lab
+      <code>EventManager</code> 事件项；AutoData 只在开跑前用 env profile 做增删改，然后<b>每个 attempt 的
+      <code>env.reset()</code> 里重新抽一次</b>。
+    </p>
+
+    <div class="chain">
+      <div class="col in">
+        <h4>输入 · 开跑前只发生一次</h4>
+        <div class="when">规则从哪来</div>
+        <ul>
+          <li><b>基任务 events</b>（Isaac Lab 代码）：
+              <code>randomize_cube_positions</code>、<code>randomize_franka_joint_state</code></li>
+          <li><b>env profile YAML</b>（<code>--env_profile</code>）：
+              <code>events.remove</code> / <code>add</code> / <code>override</code></li>
+          <li><code>apply_env_profile()</code>
+              <span style="color:#868e96">isaaclab_env_interface.py:116</span> 把它们写进 <code>env_cfg.events</code></li>
+          <li>此时<b>还没有任何随机数</b>，只是把“规则”装好</li>
+        </ul>
+      </div>
+      <div class="sep">→</div>
+      <div class="col run">
+        <h4>执行 · 每个 attempt 重抽</h4>
+        <div class="when">规则怎么跑</div>
+        <ul>
+          <li><code>_reset_environment_for_generation()</code>
+              <span style="color:#868e96">data_generator.py:617</span></li>
+          <li><code>env_loop</code> 里 <code>env.reset(env_ids)</code>
+              <span style="color:#868e96">isaaclab_env_interface.py:259</span></li>
+          <li>→ EventManager 执行 <code>mode="reset"</code> 事件，<b>逐条抽签</b></li>
+          <li>→ 再进入生成层的边界抖动 / 选源段 / 动作噪声</li>
+        </ul>
+      </div>
+      <div class="sep">→</div>
+      <div class="col out">
+        <h4>输出 · 落盘的是“结果”</h4>
+        <div class="when">抽到的状态怎么存</div>
+        <ul>
+          <li><code>get_scene_state()</code>
+              <span style="color:#868e96">data_generator.py:628</span>
+              → <code>GenerationResult.initial_state</code></li>
+          <li>每个 demo 的 <code>initial_state</code> 写进输出 HDF5</li>
+          <li><code>--result_file</code> JSON：记录
+              <code>{algorithm, stats, profile name/path/planner}</code></li>
+          <li><b>规则本身不落盘</b>；<code>seed</code> 让重抽过程可复现</li>
+        </ul>
+      </div>
+    </div>
+
+    <p style="font-size:13.5px;margin:6px 0 8px;color:#495057;">
+      以 <code>franka_bin_stack</code> 为例，overlay 之后真正生效的随机化<b>清单</b>（“钉死”和“随机”用同一套机制，区别只在区间是否退化）：
+    </p>
+    <table>
+      <thead>
+        <tr><th style="width:24%">event term</th><th style="width:9%">mode</th><th style="width:16%">作用对象</th><th>怎么随</th><th style="width:12%">类型</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>randomize_franka_joint_state</code></td><td>reset</td><td>机器人</td><td>关节角随机（基任务自带，未被动）</td><td><span class="tag r">随机</span></td></tr>
+        <tr><td><code>reset_blue_bin_pose</code></td><td>reset</td><td>bin</td><td class="mono">x[0.4,0.4] y[0,0] z[0.0203,0.0203] yaw[0,0]</td><td><span class="tag f">钉死</span></td></tr>
+        <tr><td><code>reset_cube_1_pose</code></td><td>reset</td><td>cube_1</td><td class="mono">x[0.4,0.4] y[0,0] z[0.0203,0.0203] yaw[0,0]</td><td><span class="tag f">钉死</span></td></tr>
+        <tr><td><code>reset_cube_pose</code></td><td>reset</td><td>cube_2, cube_3</td><td class="mono">x[0.65,0.70] y[-0.18,0.18] yaw[-1,1]，z 固定，min_separation 0.1</td><td><span class="tag r">随机</span></td></tr>
+        <tr style="opacity:.55"><td><s>randomize_cube_positions</s></td><td>—</td><td>—</td><td>被 <code>events.remove</code> 设为 None，不生效</td><td>已移除</td></tr>
+      </tbody>
+    </table>
+
+    <p style="font-size:13.5px;margin:18px 0 8px;color:#495057;">
+      同一个 profile，<b>两次 attempt 抽到的东西不同</b>（数值为示意）：
+    </p>
+    <table>
+      <thead>
+        <tr><th style="width:16%">对象</th><th style="width:14%">类型</th><th style="width:29%">attempt #1（抽到的）</th><th style="width:29%">attempt #2（重抽）</th><th style="width:12%">变化</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>机器人关节角</td><td><span class="tag r">随机</span></td>
+            <td class="mono">[-0.02, -0.28, 0.05, -2.10, 0.01, 2.03, 0.55]</td>
+            <td class="mono">[ 0.03, -0.51, -0.12, -2.35, 0.07, 2.41, 0.68]</td>
+            <td class="dice">🎲 变</td></tr>
+        <tr><td>bin</td><td><span class="tag f">钉死</span></td>
+            <td class="mono">(0.40, 0.00, 0.0203)</td>
+            <td class="mono">(0.40, 0.00, 0.0203)</td>
+            <td class="lock">🔒 同</td></tr>
+        <tr><td>cube_1</td><td><span class="tag f">钉死</span></td>
+            <td class="mono">(0.40, 0.00, 0.0203)</td>
+            <td class="mono">(0.40, 0.00, 0.0203)</td>
+            <td class="lock">🔒 同</td></tr>
+        <tr><td>cube_2</td><td><span class="tag r">随机</span></td>
+            <td class="mono">(0.67, 0.11, 0.0203) yaw 0.4</td>
+            <td class="mono">(0.70, -0.05, 0.0203) yaw -0.9</td>
+            <td class="dice">🎲 变</td></tr>
+        <tr><td>cube_3</td><td><span class="tag r">随机</span></td>
+            <td class="mono">(0.66, -0.13, 0.0203) yaw -0.7</td>
+            <td class="mono">(0.65, 0.16, 0.0203) yaw 0.6</td>
+            <td class="dice">🎲 变</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout" style="margin-top:16px;">
+      <b>一句话：</b>规则是<b>输入</b>（基任务 events ＋ profile delta，在代码和 YAML 里）；随机化在每个 attempt 的
+      <code>env.reset()</code> 里按规则<b>重抽一次</b>；AutoData 只保存<b>抽到的状态</b>（每个 demo 的 initial_state）
+      和<b>复现元信息</b>（result_file ＋ seed）。profile <b>不是</b> AutoData 固化的随机化配置。
+    </div>
+  </div>
+
+  <!-- ============ 2. 边界抖动 ============ -->
+  <h2>② 子任务边界抖动（<code>randomize_subtask_boundaries</code>）</h2>
+  <div class="card">
+    <p style="font-size:13.5px;margin:0 0 12px;color:#495057;">
+      源演示里每个子任务只有枯燥的一组分界点。生成时按配置的范围把分界点“抖动”，于是同一个源段能落在不同时间窗口里。
+    </p>
+
+    <svg viewBox="0 0 1000 430" role="img" aria-label="子任务边界抖动示意">
+      <defs>
+        <marker id="ah" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto">
+          <path d="M0,0 L8,4 L0,8 Z" fill="#e8590c"/>
+        </marker>
+        <marker id="ahb" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto">
+          <path d="M0,0 L8,4 L0,8 Z" fill="#1971c2"/>
+        </marker>
+      </defs>
+
+      <!-- 源数据 -->
+      <text x="16" y="34" font-size="14" font-weight="700" fill="#212529">源演示的边界（录制结果）</text>
+      <g font-size="12" fill="#495057">
+        <rect x="120" y="48" width="240" height="34" fill="#d0ebff" stroke="#4dabf7"/>
+        <rect x="360" y="48" width="200" height="34" fill="#b2f2bb" stroke="#69db7c"/>
+        <rect x="560" y="48" width="200" height="34" fill="#ffec99" stroke="#ffd43b"/>
+        <rect x="760" y="48" width="160" height="34" fill="#ffc9c9" stroke="#ff8787"/>
+        <text x="240" y="70" text-anchor="middle">子任务 0</text>
+        <text x="460" y="70" text-anchor="middle">子任务 1</text>
+        <text x="660" y="70" text-anchor="middle">子任务 2</text>
+        <text x="840" y="70" text-anchor="middle">子任务 3 (末段)</text>
+      </g>
+      <!-- 分界刻度 -->
+      <g stroke="#212529" stroke-width="1.5">
+        <line x1="120" y1="44" x2="120" y2="86"/>
+        <line x1="360" y1="44" x2="360" y2="86"/>
+        <line x1="560" y1="44" x2="560" y2="86"/>
+        <line x1="760" y1="44" x2="760" y2="86"/>
+        <line x1="920" y1="44" x2="920" y2="86"/>
+      </g>
+      <text x="120" y="104" font-size="11" fill="#868e96" text-anchor="middle">start₀</text>
+      <text x="360" y="104" font-size="11" fill="#868e96" text-anchor="middle">end₀</text>
+      <text x="560" y="104" font-size="11" fill="#868e96" text-anchor="middle">end₁</text>
+      <text x="760" y="104" font-size="11" fill="#868e96" text-anchor="middle">end₂</text>
+      <text x="920" y="104" font-size="11" fill="#868e96" text-anchor="middle">末尾(固定)</text>
+
+      <!-- 说明：两种算法 -->
+      <text x="16" y="150" font-size="14" font-weight="700" fill="#e8590c">MimicGen / DexMimicGen　┃ 只有“终点”抖动</text>
+      <text x="16" y="171" font-size="12" fill="#868e96">起点被锁死为上一段的终点 —— 段与段首尾相接</text>
+      <!-- lock 连线 -->
+      <path d="M360,104 C360,130 360,130 360,150" stroke="#ced4da" stroke-width="0" fill="none"/>
+
+      <!-- 三次采样 -->
+      <g>
+        <!-- sample A -->
+        <text x="16" y="212" font-size="11.5" fill="#adb5bd">采样 A</text>
+        <rect x="144" y="196" width="336" height="24" fill="#d0ebff" stroke="#4dabf7"/>
+        <rect x="480" y="196" width="176" height="24" fill="#b2f2bb" stroke="#69db7c"/>
+        <rect x="656" y="196" width="248" height="24" fill="#ffec99" stroke="#ffd43b"/>
+        <rect x="904" y="196" width="16" height="24" fill="#ffc9c9" stroke="#ff8787"/>
+        <!-- sample B -->
+        <text x="16" y="256" font-size="11.5" fill="#adb5bd">采样 B</text>
+        <rect x="128" y="240" width="320" height="24" fill="#d0ebff" stroke="#4dabf7"/>
+        <rect x="448" y="240" width="264" height="24" fill="#b2f2bb" stroke="#69db7c"/>
+        <rect x="712" y="240" width="152" height="24" fill="#ffec99" stroke="#ffd43b"/>
+        <rect x="864" y="240" width="56" height="24" fill="#ffc9c9" stroke="#ff8787"/>
+        <!-- sample C -->
+        <text x="16" y="300" font-size="11.5" fill="#adb5bd">采样 C</text>
+        <rect x="152" y="284" width="280" height="24" fill="#d0ebff" stroke="#4dabf7"/>
+        <rect x="432" y="284" width="296" height="24" fill="#b2f2bb" stroke="#69db7c"/>
+        <rect x="728" y="284" width="120" height="24" fill="#ffec99" stroke="#ffd43b"/>
+        <rect x="848" y="284" width="72" height="24" fill="#ffc9c9" stroke="#ff8787"/>
+      </g>
+
+      <!-- 抖动箭头 -->
+      <path d="M360,110 C420,150 470,160 480,196" stroke="#e8590c" stroke-width="1.8" fill="none" marker-end="url(#ah)"/>
+      <path d="M560,110 C620,150 640,160 656,196" stroke="#e8590c" stroke-width="1.8" fill="none" marker-end="url(#ah)"/>
+      <path d="M760,110 C840,150 880,160 904,196" stroke="#e8590c" stroke-width="1.8" fill="none" marker-end="url(#ah)"/>
+      <text x="612" y="150" font-size="11.5" fill="#e8590c">subtask_term_offset_range = [10, 20]　（末段强制 [0,0]）</text>
+
+      <!-- SkillGen 面板 -->
+      <line x1="0" y1="336" x2="1000" y2="336" stroke="#e9ecef"/>
+      <text x="16" y="366" font-size="14" font-weight="700" fill="#2f9e44">SkillGen　┃ 起点和终点都抖动</text>
+      <text x="16" y="387" font-size="12" fill="#868e96">因为 SkillGen 读“起点信号”，进入 skill 段的位置可随机；段间留出的空隙由 MP transit 补上</text>
+      <g>
+        <text x="16" y="421" font-size="11.5" fill="#adb5bd">采样</text>
+        <rect x="144" y="404" width="328" height="24" fill="#d0ebff" stroke="#4dabf7"/>
+        <rect x="520" y="404" width="144" height="24" fill="#b2f2bb" stroke="#69db7c"/>
+        <rect x="680" y="404" width="160" height="24" fill="#ffec99" stroke="#ffd43b"/>
+        <rect x="856" y="404" width="64" height="24" fill="#ffc9c9" stroke="#ff8787"/>
+        <g stroke="#2f9e44" stroke-width="1.4" stroke-dasharray="4 3">
+          <line x1="120" y1="396" x2="144" y2="396"/>
+          <line x1="360" y1="396" x2="472" y2="396"/>
+          <line x1="560" y1="396" x2="520" y2="396"/>
+        </g>
+        <text x="676" y="421" font-size="11" fill="#2f9e44">subtask_start_offset_range 也在动</text>
+      </g>
+    </svg>
+
+    <div class="note">
+      加载数据集时，`DataGenInfoPool` 会用<b>最坏情况</b>（所有偏移取极值）预演一遍，断言“子任务非空且不重叠”，标注错的源数据会立刻报错。
+    </div>
+  </div>
+
+  <!-- ============ 3. 源段选择 ============ -->
+  <h2>③ 源演示段选择（<code>selection_strategy</code>）</h2>
+  <div class="card">
+    <p style="font-size:13.5px;margin:0 0 10px;color:#495057;">
+      同一子任务，在源数据集里有很多段候选。先算「当前场景」与每个候选段<b>起点位姿</b>的距离 d、升序排序，
+      取<b>前 k</b>（<code>nn_k</code>），再在这 k 个里<b>等概率随机挑 1 个</b>（候选不足 k 个时退化为全池随机）。
+    </p>
+    <svg viewBox="0 0 1000 340" role="img" aria-label="源段选择示意">
+      <defs>
+        <marker id="ah3" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto">
+          <path d="M0,0 L8,4 L0,8 Z" fill="#e8590c"/>
+        </marker>
+        <marker id="ahb3" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto">
+          <path d="M0,0 L8,4 L0,8 Z" fill="#1971c2"/>
+        </marker>
+      </defs>
+
+      <!-- ===== 左：当前场景（距离基准） ===== -->
+      <text x="16" y="28" font-size="13" font-weight="700" fill="#212529">当前场景</text>
+      <rect x="16" y="42" width="184" height="198" rx="10" fill="#e7f5ff" stroke="#74c0fc"/>
+      <text x="108" y="66" font-size="11" fill="#4c6ef5" text-anchor="middle">同一子任务的起点</text>
+
+      <circle cx="70" cy="128" r="17" fill="#4dabf7"/>
+      <text x="70" y="133" font-size="12" fill="#fff" text-anchor="middle">物</text>
+      <text x="70" y="166" font-size="11" fill="#1971c2" text-anchor="middle">物体位姿</text>
+
+      <line x1="146" y1="104" x2="86" y2="122" stroke="#a5d8ff" stroke-width="1.4" stroke-dasharray="4 3"/>
+      <circle cx="152" cy="100" r="6" fill="#1971c2"/>
+      <text x="152" y="86" font-size="11" fill="#1971c2" text-anchor="middle">EEF 位姿</text>
+
+      <text x="108" y="212" font-size="11" fill="#5c7cfa" text-anchor="middle">d 由「物体位姿」或</text>
+      <text x="108" y="228" font-size="11" fill="#5c7cfa" text-anchor="middle">「EEF 位姿」算出</text>
+
+      <path d="M208,108 H232" stroke="#adb5bd" stroke-width="2" marker-end="url(#ahb3)"/>
+
+      <!-- ===== 中：候选列表 ===== -->
+      <text x="232" y="28" font-size="13" font-weight="700" fill="#212529">源演示候选（按 d 升序）</text>
+      <g font-size="11" fill="#868e96">
+        <rect x="592" y="17" width="12" height="12" rx="3" fill="#ebfbee" stroke="#69db7c"/>
+        <text x="609" y="27">入选</text>
+        <rect x="650" y="17" width="12" height="12" rx="3" fill="#f8f9fa" stroke="#dee2e6"/>
+        <text x="667" y="27">落选</text>
+      </g>
+
+      <!-- top-k 候选池 -->
+      <rect x="232" y="42" width="494" height="132" rx="10" fill="#ebfbee" stroke="#69db7c" stroke-dasharray="6 4"/>
+
+      <rect x="240" y="50" width="478" height="34" rx="7" fill="#fff" stroke="#69db7c"/>
+      <text x="254" y="71" font-size="12" fill="#2b8a3e">demo #2</text>
+      <rect x="320" y="60" width="39" height="14" rx="7" fill="#69db7c"/>
+      <text x="710" y="71" font-size="12" fill="#868e96" text-anchor="end">d = 0.04</text>
+
+      <rect x="240" y="90" width="478" height="34" rx="7" fill="#fff" stroke="#2f9e44" stroke-width="2"/>
+      <text x="254" y="111" font-size="12" font-weight="700" fill="#2b8a3e">demo #5</text>
+      <rect x="320" y="100" width="68" height="14" rx="7" fill="#69db7c"/>
+      <text x="710" y="111" font-size="12" fill="#2b8a3e" text-anchor="end">d = 0.07</text>
+
+      <rect x="240" y="130" width="478" height="34" rx="7" fill="#fff" stroke="#69db7c"/>
+      <text x="254" y="151" font-size="12" fill="#2b8a3e">demo #0</text>
+      <rect x="320" y="140" width="106" height="14" rx="7" fill="#69db7c"/>
+      <text x="710" y="151" font-size="12" fill="#868e96" text-anchor="end">d = 0.11</text>
+
+      <text x="232" y="190" font-size="11" fill="#2f9e44">↑ 前 k = 3 名入选（其余不参与随机）</text>
+
+      <rect x="240" y="200" width="478" height="34" rx="7" fill="#f8f9fa" stroke="#dee2e6"/>
+      <text x="254" y="221" font-size="12" fill="#868e96">demo #3</text>
+      <rect x="320" y="210" width="184" height="14" rx="7" fill="#ced4da"/>
+      <text x="710" y="221" font-size="12" fill="#adb5bd" text-anchor="end">d = 0.19</text>
+
+      <rect x="240" y="240" width="478" height="34" rx="7" fill="#f8f9fa" stroke="#dee2e6"/>
+      <text x="254" y="261" font-size="12" fill="#868e96">demo #1</text>
+      <rect x="320" y="250" width="252" height="14" rx="7" fill="#ced4da"/>
+      <text x="710" y="261" font-size="12" fill="#adb5bd" text-anchor="end">d = 0.26</text>
+
+      <rect x="240" y="280" width="478" height="34" rx="7" fill="#f8f9fa" stroke="#dee2e6"/>
+      <text x="254" y="301" font-size="12" fill="#868e96">demo #4</text>
+      <rect x="320" y="290" width="300" height="14" rx="7" fill="#ced4da"/>
+      <text x="710" y="301" font-size="12" fill="#adb5bd" text-anchor="end">d = 0.31</text>
+
+      <!-- ===== 右：随机选取 ===== -->
+      <path d="M732,108 H766" stroke="#e8590c" stroke-width="2" marker-end="url(#ah3)"/>
+      <rect x="770" y="38" width="214" height="140" rx="12" fill="#fff4e6" stroke="#e8590c" stroke-width="1.6"/>
+      <text x="877" y="74" font-size="22" text-anchor="middle">🎲</text>
+      <text x="877" y="99" font-size="12.5" font-weight="700" fill="#e8590c" text-anchor="middle">在 top-k 中等概率随机</text>
+      <rect x="796" y="111" width="162" height="30" rx="15" fill="#ebfbee" stroke="#69db7c"/>
+      <text x="877" y="131" font-size="12" fill="#2b8a3e" text-anchor="middle">demo #5 被选中</text>
+      <text x="877" y="163" font-size="11" fill="#868e96" text-anchor="middle">每次重选可能换成 #2 / #0</text>
+
+      <text x="232" y="332" font-size="11" fill="#868e96">条形长度 ∝ d；d = 平移距离 + 旋转角距离（按物体位姿或变换后 EEF 位姿计算）</text>
+    </svg>
+    <div class="note">
+      策略由每个子任务的 <code>selection_strategy</code> 指定：
+      <code>random</code>（全池随机）、<code>nearest_neighbor_object</code>（按物体位姿）、<code>nearest_neighbor_robot_distance</code>（按 EEF 位姿）。<br>
+      重选粒度：<code>select_src_per_subtask</code>（每段重选）/ <code>select_src_per_arm</code>（每条臂各选）。
+    </div>
+  </div>
+
+  <!-- ============ 4. 动作噪声 ============ -->
+  <h2>④ 动作噪声（<code>action_noise</code>）</h2>
+  <div class="card">
+    <p style="font-size:13.5px;margin:0 0 12px;color:#495057;">
+      轨迹本身是确定的，但每一步发给机器人的动作会加一个高斯扰动：位置增量和旋转增量都被扰动。这是让“同一条源段”产生不同执行细节的关键。
+    </p>
+    <svg viewBox="0 0 1000 260" role="img" aria-label="动作噪声示意">
+      <!-- clean trajectory -->
+      <text x="20" y="26" font-size="13" font-weight="700" fill="#1971c2">确定性轨迹</text>
+      <path d="M40,150 C180,90 300,90 440,140 S700,200 830,150" stroke="#1971c2" stroke-width="2.5" fill="none" stroke-dasharray="7 5"/>
+      <g fill="#1971c2">
+        <circle cx="40" cy="150" r="5"/><circle cx="180" cy="115" r="5"/><circle cx="320" cy="99" r="5"/>
+        <circle cx="460" cy="146" r="5"/><circle cx="600" cy="191" r="5"/><circle cx="740" cy="185" r="5"/>
+        <circle cx="830" cy="150" r="5"/>
+      </g>
+
+      <!-- noisy trajectory -->
+      <text x="20" y="212" font-size="13" font-weight="700" fill="#9c36b5">加噪后（每次采样不同）</text>
+      <path d="M40,150 C150,120 220,80 340,118 S600,235 830,150" stroke="#9c36b5" stroke-width="2.5" fill="none"/>
+      <g fill="#9c36b5">
+        <circle cx="40" cy="150" r="5"/><circle cx="170" cy="135" r="5"/><circle cx="330" cy="109" r="5"/>
+        <circle cx="460" cy="160" r="5"/><circle cx="600" cy="205" r="5"/><circle cx="730" cy="170" r="5"/>
+        <circle cx="830" cy="150" r="5"/>
+      </g>
+      <g stroke="#9c36b5" stroke-width="1" opacity="0.5">
+        <line x1="170" y1="115" x2="170" y2="135"/><line x1="330" y1="99" x2="330" y2="109"/>
+        <line x1="460" y1="146" x2="460" y2="160"/><line x1="600" y1="191" x2="600" y2="205"/>
+        <line x1="730" y1="185" x2="730" y2="170"/>
+      </g>
+
+      <!-- formula box -->
+      <rect x="620" y="34" width="356" height="70" rx="10" fill="#f8f0fc" stroke="#d0bfff"/>
+      <text x="640" y="64" font-size="14" fill="#9c36b5" font-family="ui-monospace,Menlo,monospace">pose_action += σ · randn_like(...)</text>
+      <text x="640" y="88" font-size="12" fill="#868e96">σ = 该子任务的 action_noise；夹到 [-1,1]</text>
+    </svg>
+    <div class="note">
+      <code>apply_noise_during_interpolation</code> 决定桥接插值阶段是否也加噪。
+      单臂（<code>single_arm_embodiment_adapter</code>）与双臂（<code>bimanual_embodiment_adapter</code>）都作用于 pose 部分，夹爪等 passthrough 通道不加噪。
+    </div>
+  </div>
+
+  <!-- ============ 5. 协调噪声 ============ -->
+  <h2>⑤（仅双臂）协调噪声</h2>
+  <div class="card">
+    <p style="font-size:13.5px;margin:0 0 12px;color:#495057;">
+      DexMimicGen 的 <code>COORDINATION</code> 约束会算出一个 delta 位姿把两条臂对齐；这个 delta 可以叠加<b>均匀噪声</b>，让双手的相对位姿也有差异。
+    </p>
+    <svg viewBox="0 0 1000 210" role="img" aria-label="协调噪声示意">
+      <rect x="30" y="40" width="150" height="130" rx="10" fill="#e7f5ff" stroke="#74c0fc"/>
+      <text x="105" y="70" font-size="12" fill="#1971c2" text-anchor="middle">左臂源段</text>
+      <path d="M105,90 l0,50" stroke="#4dabf7" stroke-width="4" marker-end="url(#ahb)"/>
+      <rect x="820" y="40" width="150" height="130" rx="10" fill="#e7f5ff" stroke="#74c0fc"/>
+      <text x="895" y="70" font-size="12" fill="#1971c2" text-anchor="middle">右臂源段</text>
+      <path d="M895,90 l0,50" stroke="#4dabf7" stroke-width="4" marker-end="url(#ahb)"/>
+
+      <path d="M180,105 h120" stroke="#869e96" stroke-width="2" marker-end="url(#ahb)"/>
+      <rect x="310" y="46" width="380" height="120" rx="12" fill="#f8f0fc" stroke="#d0bfff"/>
+      <text x="500" y="76" font-size="13" fill="#9c36b5" text-anchor="middle" font-weight="700">delta 位姿 + 均匀噪声</text>
+      <text x="500" y="102" font-size="12.5" fill="#495057" text-anchor="middle" font-family="ui-monospace,Menlo,monospace">pos += U(-s_pos, s_pos)　（逐轴）</text>
+      <text x="500" y="126" font-size="12.5" fill="#495057" text-anchor="middle" font-family="ui-monospace,Menlo,monospace">rot ← 小旋转(欧拉 ∈ U(-s_rot, s_rot)) · rot</text>
+      <text x="500" y="152" font-size="11.5" fill="#868e96" text-anchor="middle">s_pos / s_rot = coordination_scheme_*_noise_scale</text>
+
+      <path d="M690,105 h120" stroke="#adb5bd" stroke-width="2" marker-end="url(#ahb)"/>
+      <rect x="820" y="46" width="150" height="120" rx="10" fill="#fff4e6" stroke="#e8590c"/>
+      <text x="895" y="90" font-size="12" fill="#e8590c" text-anchor="middle">双臂协调后</text>
+      <text x="895" y="112" font-size="12" fill="#868e96" text-anchor="middle">相对位姿有扰动</text>
+    </svg>
+  </div>
+
+  <!-- ============ 6. 参数表 ============ -->
+  <h2>⑥ 一图看清：所有随机化参数在哪配置</h2>
+  <div class="card">
+    <table>
+      <thead>
+        <tr><th style="width:22%">参数</th><th style="width:14%">位置</th><th style="width:14%">类型</th><th>含义</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>first_subtask_start_offset_range</code></td><td>Subtask</td><td><span class="tag r">边界抖动</span></td><td>第一个子任务起点的偏移范围</td></tr>
+        <tr><td><code>subtask_term_offset_range</code></td><td>Subtask</td><td><span class="tag r">边界抖动</span></td><td>每个子任务终点边界的偏移范围（末段必须 [0,0]）</td></tr>
+        <tr><td><code>algo_params.subtask_start_offset_range</code></td><td>SkillGen 专有</td><td><span class="tag r">边界抖动</span></td><td>SkillGen 子任务起点的偏移范围（仅当算法读起点信号时生效）</td></tr>
+        <tr><td><code>selection_strategy</code> + <code>selection_strategy_kwargs.nn_k</code></td><td>Subtask</td><td><span class="tag r">源段选择</span></td><td>random / 最近邻物体 / 最近邻 EEF；top-k 内再随机</td></tr>
+        <tr><td><code>select_src_per_subtask</code> / <code>select_src_per_arm</code></td><td>generation_policy</td><td><span class="tag r">源段选择</span></td><td>重选粒度（每段重选 / 每条臂各自选）</td></tr>
+        <tr><td><code>action_noise</code></td><td>Subtask</td><td><span class="tag r">动作噪声</span></td><td>该子任务每步 pose 动作的高斯噪声幅度</td></tr>
+        <tr><td><code>apply_noise_during_interpolation</code></td><td>Subtask</td><td><span class="tag r">动作噪声</span></td><td>插值桥接阶段是否也加噪</td></tr>
+        <tr><td><code>coordination_scheme_pos/rot_noise_scale</code></td><td>SubtaskConstraint</td><td><span class="tag r">协调噪声</span></td><td>双臂协调 delta 位姿的均匀噪声尺度</td></tr>
+        <tr><td><code>seed</code></td><td>generation_policy</td><td><span class="tag f">复现</span></td><td>统一给 random / numpy / torch 播种</td></tr>
+        <tr><td><code>num_interpolation_steps</code> / <code>num_fixed_steps</code></td><td>Subtask</td><td><span class="tag f">确定</span></td><td>桥接段长度（改变时序，但不含随机）</td></tr>
+        <tr><td><code>transform_first_robot_pose</code> / <code>interpolate_from_last_target_pose</code></td><td>generation_policy</td><td><span class="tag f">确定</span></td><td>插值锚点选择（影响拼接口感，不含随机）</td></tr>
+      </tbody>
+    </table>
+    <div class="callout" style="margin-top:16px;">
+      <b>一句话：</b>场景多样性来自 Reset（环境层），轨迹多样性来自生成层 ——
+      <b>边界抖动</b>改变“时间段”，<b>源段选择</b>改变“用哪段”，<b>动作噪声</b>改变“怎么执行”。三者叠加，就得到大量彼此不同的演示。
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

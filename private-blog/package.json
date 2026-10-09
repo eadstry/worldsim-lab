@@ -1,0 +1,23 @@
+{
+  "name": "private-blog",
+  "version": "1.0.0",
+  "description": "分享具身智能方向的项目实践、技术文章与学习记录，目前包含「开源贡献」和「具身学习」栏目。",
+  "scripts": {
+    "build": "node scripts/build-autodata.mjs",
+    "check": "node scripts/check-autodata.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "cheerio": "^1.2.0",
+    "highlight.js": "^11.12.0",
+    "markdown-it": "^15.0.2",
+    "markdown-it-anchor": "^10.0.0",
+    "markdown-it-container": "^4.0.0",
+    "turndown": "^7.2.4",
+    "turndown-plugin-gfm": "^1.0.2"
+  },
+  "private": true
+}

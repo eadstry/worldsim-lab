@@ -1,0 +1,88 @@
+<svg viewBox="0 0 1000 300" role="img" aria-label="标注信号与子任务边界" class="svgtxt" xmlns="http://www.w3.org/2000/svg"><style>.path{font-family:ui-monospace,Menlo,monospace;font-size:11.5px;fill:#868e96}.svgtxt{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;}</style>
+    <defs>
+      <marker id="a3" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto">
+        <path d="M0,0 L8,4 L0,8 Z" fill="#1971c2"></path>
+      </marker>
+    </defs>
+    <!-- 时间轴 -->
+    <text x="16" y="24" font-size="13" font-weight="700" fill="#212529">一条 12 步源演示 · action 下标</text>
+    <g font-size="12">
+      <g stroke="#adb5bd">
+        <line x1="60" y1="46" x2="60" y2="70"></line><line x1="134" y1="46" x2="134" y2="70"></line>
+        <line x1="208" y1="46" x2="208" y2="70"></line><line x1="282" y1="46" x2="282" y2="70"></line>
+        <line x1="356" y1="46" x2="356" y2="70"></line><line x1="430" y1="46" x2="430" y2="70"></line>
+        <line x1="504" y1="46" x2="504" y2="70"></line><line x1="578" y1="46" x2="578" y2="70"></line>
+        <line x1="652" y1="46" x2="652" y2="70"></line><line x1="726" y1="46" x2="726" y2="70"></line>
+        <line x1="800" y1="46" x2="800" y2="70"></line><line x1="874" y1="46" x2="874" y2="70"></line>
+      </g>
+      <g fill="#868e96" text-anchor="middle" font-size="10.5">
+        <text x="60" y="38">0</text><text x="134" y="38">1</text><text x="208" y="38">2</text>
+        <text x="282" y="38">3</text><text x="356" y="38">4</text><text x="430" y="38">5</text>
+        <text x="504" y="38">6</text><text x="578" y="38">7</text><text x="652" y="38">8</text>
+        <text x="726" y="38">9</text><text x="800" y="38">10</text><text x="874" y="38">11</text>
+      </g>
+    </g>
+
+    <!-- term signal grasp -->
+    <text x="16" y="96" font-size="12" fill="#1971c2">subtask_term_signal</text>
+    <text x="16" y="113" font-size="12" fill="#1971c2" font-weight="700">grasp</text>
+    <g>
+      <rect x="60" y="86" width="74" height="24" fill="#e7f5ff" stroke="#74c0fc"></rect>
+      <rect x="134" y="86" width="74" height="24" fill="#e7f5ff" stroke="#74c0fc"></rect>
+      <rect x="208" y="86" width="74" height="24" fill="#e7f5ff" stroke="#74c0fc"></rect>
+      <rect x="282" y="86" width="74" height="24" fill="#a5d8ff" stroke="#4dabf7"></rect>
+      <rect x="356" y="86" width="74" height="24" fill="#a5d8ff" stroke="#4dabf7"></rect>
+      <rect x="430" y="86" width="74" height="24" fill="#a5d8ff" stroke="#4dabf7"></rect>
+      <rect x="504" y="86" width="74" height="24" fill="#a5d8ff" stroke="#4dabf7"></rect>
+      <rect x="578" y="86" width="74" height="24" fill="#a5d8ff" stroke="#4dabf7"></rect>
+      <rect x="652" y="86" width="74" height="24" fill="#a5d8ff" stroke="#4dabf7"></rect>
+      <rect x="726" y="86" width="74" height="24" fill="#a5d8ff" stroke="#4dabf7"></rect>
+      <rect x="800" y="86" width="74" height="24" fill="#a5d8ff" stroke="#4dabf7"></rect>
+      <rect x="874" y="86" width="74" height="24" fill="#a5d8ff" stroke="#4dabf7"></rect>
+      <g fill="#1971c2" font-size="11" text-anchor="middle">
+        <text x="97" y="102">0</text><text x="171" y="102">0</text><text x="245" y="102">0</text>
+        <text x="319" y="102">1</text><text x="393" y="102">1</text><text x="467" y="102">1</text>
+        <text x="541" y="102">1</text><text x="615" y="102">1</text><text x="689" y="102">1</text>
+        <text x="763" y="102">1</text><text x="837" y="102">1</text><text x="911" y="102">1</text>
+      </g>
+    </g>
+
+    <!-- term signal lift -->
+    <text x="16" y="150" font-size="12" fill="#1971c2">subtask_term_signal</text>
+    <text x="16" y="167" font-size="12" fill="#1971c2" font-weight="700">lift</text>
+    <g>
+      <rect x="60" y="140" width="74" height="24" fill="#e7f5ff" stroke="#74c0fc"></rect>
+      <rect x="134" y="140" width="74" height="24" fill="#e7f5ff" stroke="#74c0fc"></rect>
+      <rect x="208" y="140" width="74" height="24" fill="#e7f5ff" stroke="#74c0fc"></rect>
+      <rect x="282" y="140" width="74" height="24" fill="#e7f5ff" stroke="#74c0fc"></rect>
+      <rect x="356" y="140" width="74" height="24" fill="#e7f5ff" stroke="#74c0fc"></rect>
+      <rect x="430" y="140" width="74" height="24" fill="#e7f5ff" stroke="#74c0fc"></rect>
+      <rect x="504" y="140" width="74" height="24" fill="#e7f5ff" stroke="#74c0fc"></rect>
+      <rect x="578" y="140" width="74" height="24" fill="#a5d8ff" stroke="#4dabf7"></rect>
+      <rect x="652" y="140" width="74" height="24" fill="#a5d8ff" stroke="#4dabf7"></rect>
+      <rect x="726" y="140" width="74" height="24" fill="#a5d8ff" stroke="#4dabf7"></rect>
+      <rect x="800" y="140" width="74" height="24" fill="#a5d8ff" stroke="#4dabf7"></rect>
+      <rect x="874" y="140" width="74" height="24" fill="#a5d8ff" stroke="#4dabf7"></rect>
+      <g fill="#1971c2" font-size="11" text-anchor="middle">
+        <text x="97" y="156">0</text><text x="171" y="156">0</text><text x="245" y="156">0</text>
+        <text x="319" y="156">0</text><text x="393" y="156">0</text><text x="467" y="156">0</text>
+        <text x="541" y="156">0</text><text x="615" y="156">1</text><text x="689" y="156">1</text>
+        <text x="763" y="156">1</text><text x="837" y="156">1</text><text x="911" y="156">1</text>
+      </g>
+    </g>
+
+    <!-- 切分结果 -->
+    <line x1="20" y1="188" x2="980" y2="188" stroke="#e9ecef"></line>
+    <text x="16" y="214" font-size="12.5" font-weight="700" fill="#212529">解析出的子任务边界（MimicGen：首尾相接）</text>
+    <rect x="60" y="226" width="296" height="34" fill="#d0ebff" stroke="#4dabf7"></rect>
+    <rect x="356" y="226" width="296" height="34" fill="#b2f2bb" stroke="#69db7c"></rect>
+    <rect x="652" y="226" width="296" height="34" fill="#ffec99" stroke="#ffd43b"></rect>
+    <text x="208" y="248" text-anchor="middle" font-size="12">抓取 [0,4)</text>
+    <text x="504" y="248" text-anchor="middle" font-size="12">抬高 [4,8)</text>
+    <text x="800" y="248" text-anchor="middle" font-size="12">放置 [8,12)（末段）</text>
+    <g stroke="#212529" stroke-width="1.5">
+      <line x1="60" y1="222" x2="60" y2="264"></line><line x1="356" y1="222" x2="356" y2="264"></line>
+      <line x1="652" y1="222" x2="652" y2="264"></line><line x1="948" y1="222" x2="948" y2="264"></line>
+    </g>
+    <text x="500" y="292" font-size="11.5" fill="#868e96" text-anchor="middle">三段只需两个内部切点，所以完成信号只有 grasp、lift 两个键；末段直接延续到整条演示末尾</text>
+  </svg>

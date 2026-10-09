@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "artifact_id": "autodata-guide",
+  "version": "v001",
+  "created_at": "2026-10-08T06:59:50.171976+00:00",
+  "material_cutoff": "2026-10-08T06:59:50.204809+00:00",
+  "sources": [
+    {
+      "type": "local_markdown",
+      "path": "private-blog/content/autodata/AutoData-全流程可视化讲解.md"
+    },
+    {
+      "type": "published_blog",
+      "url": "https://eadstry-learning-notebook.jiaxuan-li996.chatgpt.site/embodied/autodata/",
+      "site_version": 7,
+      "commit_sha": "7e7ff394a1f5e7a29e6fefe15ee136d1cb324c99"
+    }
+  ],
+  "limitations": [
+    "保留原文的代码与文档说明，不代表 AutoData 仿真实验已运行。",
+    "飞书普通 Markdown 预览可能不支持卡片扩展语法；完整设计见 index.html 或在线博客。"
+  ],
+  "sealed_at": "2026-10-08T06:59:50.233795+00:00",
+  "files": {
+    "CHANGELOG.md": "b7bc2a4f51a1696542104b98c596842a178ab82843c9e49ba6eabdfa2eef2aa8",
+    "article.css": "32cc3734c9bb138ea401f14f409493927aed7c0f02e34f042ac309b610fd68ad",
+    "figures/figure-01.svg": "46e43e41e4ca1eb8b84a8bff252a7ad3d9567a455d2d8ad193bd8d28c95f4d49",
+    "figures/figure-02.svg": "0b1100464af1af8b9df6d3f7d29f041a2e1b0c56cb1180ce6d73413da9434050",
+    "figures/figure-03.svg": "85e3e8e10c7dce386fa988c7724894057c0c80300a122e20a58dedf892e00036",
+    "figures/figure-04.svg": "e9e84cc1211f0a739db114cad3a6a9eef50f30748df71c53252545e9ddf91299",
+    "figures/figure-05.svg": "82e983cffbcef9687a51f886f81757235588504cc82f246aeca558032a5345f0",
+    "figures/figure-06.svg": "4278b714c7999650953ecde8aa7183b3dac51b33c6b581b57c3d5703b2f06a06",
+    "figures/figure-07.svg": "7d234d2109b7cc829f829f4b20e4a9ae498d8f667ff30b24b869fd63375dc81f",
+    "figures/figure-08.svg": "f2ecc305ab21893aff53e97b77caa9d7fcc67074bdee41e05741aaf3292baba5",
+    "figures/figure-09.svg": "a0c6af26755c61bbebbf8fc301f8aae8d53511213119ec2a47ef2c72a7ac9380",
+    "figures/figure-10.svg": "b5c84ffe5b19aede2d0d8836ec0a2d703aa48a51f1d8db596f8e7285cb804637",
+    "figures/figure-11.svg": "43a55a2019d7ecb76e2c6d116e0ffc7a68deb5aeccbeb1918cf911f2c21b812b",
+    "index.html": "8255e8bfcbc5a37bece5302a0e3a67a4de8ae619b97f5b6b74119ff5e0528aa8",
+    "report.md": "c9d90fa8835435f42de4176b07b1374fb45d713068a110cebb26e587d71aca22"
+  },
+  "delivery": {
+    "feishu": {
+      "status": "verified",
+      "target": "user Drive root",
+      "receipt": {
+        "file_token": "N498b8mIBo5Il5xkOi1cSEcYnCd",
+        "url": "https://c1hnm0gi16j.feishu.cn/file/N498b8mIBo5Il5xkOi1cSEcYnCd",
+        "file_name": "AutoData-全流程可视化讲解.md",
+        "size_bytes": 92239
+      },
+      "files": [
+        "report.md"
+      ],
+      "updated_at": "2026-10-08T07:04:51.153197+00:00",
+      "error": null,
+      "verification": {
+        "method": "download_and_sha256_compare",
+        "sha256": "c9d90fa8835435f42de4176b07b1374fb45d713068a110cebb26e587d71aca22",
+        "matches_source": true
+      }
+    },
+    "gpt": {
+      "status": "blocked_destination",
+      "target": null,
+      "receipt": null,
+      "files": [],
+      "updated_at": "2026-10-08T06:59:50.204809+00:00",
+      "error": "本次仅请求飞书上传，未指定 ChatGPT 交付目标。"
+    }
+  }
+}

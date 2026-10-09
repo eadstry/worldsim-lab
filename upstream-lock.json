@@ -1,0 +1,14 @@
+{
+  "AutoData": {
+    "url": "https://github.com/isaac-sim/AutoData.git",
+    "commit": "1c7360d85c9ad131ca6c8c70f1f731a6312616f3"
+  },
+  "IsaacLab-Arena": {
+    "url": "https://github.com/isaac-sim/IsaacLab-Arena.git",
+    "commit": "98866596fd024d96c874fe6fb95ae916d1133629"
+  },
+  "RLinf": {
+    "url": "https://github.com/RLinf/RLinf.git",
+    "commit": "b023deb7e90ceadfe18e0a528e862e3c630f7e0a"
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "artifact_id": "autodata-guide",
+  "version": "v002",
+  "created_at": "2026-10-08T07:11:22.988678+00:00",
+  "material_cutoff": "2026-10-08T07:11:23.026688+00:00",
+  "sources": [
+    {
+      "artifact_id": "autodata-guide",
+      "version": "v001"
+    },
+    {
+      "type": "blog",
+      "url": "https://eadstry-learning-notebook.jiaxuan-li996.chatgpt.site/embodied/autodata/"
+    },
+    {
+      "type": "user_feedback",
+      "message": "普通 Markdown 飞书文件链接不支持阅读"
+    }
+  ],
+  "limitations": [
+    "正文来源于原有 AutoData 技术说明，不代表新的仿真运行结果。",
+    "飞书原生文档采用适配的段落与表格排版，网页卡片和分栏不逐像素复刻。"
+  ],
+  "sealed_at": "2026-10-08T07:16:25.520692+00:00",
+  "files": {
+    "CHANGELOG.md": "28b7959f5071a994fecebab910ff9b32634af5869360b76a6f90e9212b44185c",
+    "article.css": "32cc3734c9bb138ea401f14f409493927aed7c0f02e34f042ac309b610fd68ad",
+    "autodata-guide.docx": "6cd057a8c2714334b23e05244cb3517c78dacd22fa9d1450b1285c3d9ca193c3",
+    "figures/figure-01.svg": "46e43e41e4ca1eb8b84a8bff252a7ad3d9567a455d2d8ad193bd8d28c95f4d49",
+    "figures/figure-02.svg": "0b1100464af1af8b9df6d3f7d29f041a2e1b0c56cb1180ce6d73413da9434050",
+    "figures/figure-03.svg": "85e3e8e10c7dce386fa988c7724894057c0c80300a122e20a58dedf892e00036",
+    "figures/figure-04.svg": "e9e84cc1211f0a739db114cad3a6a9eef50f30748df71c53252545e9ddf91299",
+    "figures/figure-05.svg": "82e983cffbcef9687a51f886f81757235588504cc82f246aeca558032a5345f0",
+    "figures/figure-06.svg": "4278b714c7999650953ecde8aa7183b3dac51b33c6b581b57c3d5703b2f06a06",
+    "figures/figure-07.svg": "7d234d2109b7cc829f829f4b20e4a9ae498d8f667ff30b24b869fd63375dc81f",
+    "figures/figure-08.svg": "f2ecc305ab21893aff53e97b77caa9d7fcc67074bdee41e05741aaf3292baba5",
+    "figures/figure-09.svg": "a0c6af26755c61bbebbf8fc301f8aae8d53511213119ec2a47ef2c72a7ac9380",
+    "figures/figure-10.svg": "b5c84ffe5b19aede2d0d8836ec0a2d703aa48a51f1d8db596f8e7285cb804637",
+    "figures/figure-11.svg": "43a55a2019d7ecb76e2c6d116e0ffc7a68deb5aeccbeb1918cf911f2c21b812b",
+    "index.html": "8255e8bfcbc5a37bece5302a0e3a67a4de8ae619b97f5b6b74119ff5e0528aa8",
+    "report.md": "c9d90fa8835435f42de4176b07b1374fb45d713068a110cebb26e587d71aca22"
+  },
+  "delivery": {
+    "feishu": {
+      "status": "verified",
+      "target": "user Drive root",
+      "receipt": {
+        "token": "KyG4dWaKvo69EXxwfRpcYirYnJ1",
+        "type": "docx",
+        "url": "https://c1hnm0gi16j.feishu.cn/docx/KyG4dWaKvo69EXxwfRpcYirYnJ1",
+        "ticket": "7694192470623980763"
+      },
+      "files": [
+        "autodata-guide.docx"
+      ],
+      "updated_at": "2026-10-08T07:18:56.912626+00:00",
+      "error": null,
+      "verification": {
+        "method": "native_document_full_readback_and_media_preview",
+        "text_matches_source": true,
+        "normalized_text_characters": 33127,
+        "sections": 13,
+        "subheadings": 55,
+        "tables": 39,
+        "embedded_images": 17,
+        "flow_image_accessible": true
+      }
+    },
+    "gpt": {
+      "status": "blocked_destination",
+      "target": null,
+      "receipt": null,
+      "files": [],
+      "updated_at": null,
+      "error": "本次要求修复飞书阅读，不包含 ChatGPT 上传目标。"
+    }
+  }
+}
