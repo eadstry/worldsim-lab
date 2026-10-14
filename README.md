@@ -37,6 +37,8 @@ After setup succeeds, publish the environment and verify the branch/commit and c
 
 ## Clone
 
+For validation shared by multiple worktrees on one host, use the [task queue](docs/task-queue.md). Submit resource-intensive commands with `python3 scripts/task-queue.py submit --name validation -- <command>`; tasks run serially with separate logs and exit status.
+
 ```bash
 git clone https://github.com/eadstry/WorldSimReady-Home.git
 cd WorldSimReady-Home

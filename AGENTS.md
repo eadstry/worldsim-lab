@@ -7,6 +7,7 @@ This repository combines upstream source references with local AutoData research
 - Keep upstream submodules at their recorded commits unless explicitly asked to update them. Make proposed changes in patches or in this repository's workspace-overlays directory unless the task authorizes editing upstream code.
 - Run `npm --prefix private-blog run check` after blog changes; run its build first if sources changed.
 - Do not publish the blog or change access control as a side effect of GitHub synchronization.
+- On a shared host, submit GPU simulation, training and resource-intensive validation through `scripts/task-queue.py` using the same host-local queue directory across worktrees. Read `docs/task-queue.md`; wait for existing unmanaged GPU tasks to finish before starting the queue. Keep each task's outputs separate and its worktree unchanged while queued or running.
 
 ## Automatic GitHub synchronization
 
