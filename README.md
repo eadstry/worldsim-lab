@@ -44,3 +44,5 @@ bash scripts/cloud-setup.sh
 ```
 
 For later synchronization, commit and push workspace changes. Changes made inside a submodule must be saved separately to a reachable repository/commit or as a workspace overlay; a parent repository only stores the submodule commit reference. Cloud tasks and local work do not continuously mirror each other's uncommitted files.
+
+Codex tasks in this workspace are authorized by `AGENTS.md` to automatically commit their completed changes and push to GitHub after the required checks pass. Existing branches use their configured upstream; new branches are pushed to `origin`, and detached worktrees first create a `codex/` branch. Failed checks prevent automatic commits and pushes; push failures leave the local commit available and must be reported. Unrelated unfinished work, credentials and machine-local configuration are excluded. This workflow runs at task completion, not continuously in the background. Other checkouts must fetch the changes, and synchronization does not publish the private blog or change its access control.
