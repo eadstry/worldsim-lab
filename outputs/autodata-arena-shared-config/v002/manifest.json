@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "artifact_id": "autodata-arena-shared-config",
+  "version": "v002",
+  "created_at": "2026-10-13T08:52:57.623843+00:00",
+  "material_cutoff": "2026-10-13 Asia/Shanghai",
+  "sources": [
+    "config/openarm/experiment.json",
+    "config/README.md",
+    "scripts/shared-config.py",
+    "workspace-overlays/shared_config/",
+    "IsaacLab-Arena:98866596fd024d96c874fe6fb95ae916d1133629",
+    "AutoData:945806ed1cd85cc8734ddeaae196aca891fd06bf plus existing working-tree changes"
+  ],
+  "limitations": [
+    "Host checks only; GPU simulation and training not run",
+    "Historical archives retained locally and excluded from Git",
+    "User explicitly requested local-only delivery"
+  ],
+  "sealed_at": "2026-10-13T08:52:57.834455+00:00",
+  "files": {
+    "CHANGELOG.md": "299f4a4d2b0e48f55dddf46b97c0956c06dc41b5843d7a134a76477810da8412",
+    "evidence.json": "3e5aed8e10d5120f03d857c80b2460a541b249cb87b33dd4456bef0fabc89ada",
+    "implementation.zip": "084a20d7a5c0f79a01329f9b0bbb2437f6fa75710121bf42eac6817c1a035f3e",
+    "report.md": "b4c541a11bbd2c714554d30f35ec77da381edb8b2851e427a3d7f1fed058ce0c"
+  },
+  "delivery": {
+    "feishu": {
+      "status": "blocked_destination",
+      "target": null,
+      "receipt": null,
+      "files": [],
+      "updated_at": null,
+      "error": "User explicitly declined remote delivery; local-only package. No upload attempted."
+    },
+    "gpt": {
+      "status": "blocked_destination",
+      "target": null,
+      "receipt": null,
+      "files": [],
+      "updated_at": null,
+      "error": "User explicitly declined remote delivery; local-only package. No upload attempted."
+    }
+  }
+}

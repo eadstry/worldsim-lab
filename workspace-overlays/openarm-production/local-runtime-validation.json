@@ -1,0 +1,344 @@
+{
+  "status": "passed: single-environment and four-environment left-arm generation",
+  "runtime": "local autodata conda environment, NVIDIA RTX 5090",
+  "versions": {
+    "isaacsim": "6.0.1.0",
+    "torch": "2.11.0",
+    "h5py": "3.16.0",
+    "numpy": "2.3.1"
+  },
+  "autodata_commit": "1c7360d85c9ad131ca6c8c70f1f731a6312616f3",
+  "source": {
+    "origin": "framework-dev/AutoData/logs/openarm_generation_preparation_20261013/fixture_clearance_source.hdf5",
+    "sha256": "7321968fb3f0037b2b7d94bcaa0f0c0ff609c99c89671cd443fcd210c4fec2da",
+    "environment": {
+      "env_name": "Isaac-PickPlace-Cube-OpenArm-Bimanual-Left-IK-Rel-v0",
+      "type": 2
+    },
+    "annotation_provenance": {
+      "source": "datasets/teleop_datasets/openarm_left_fixture_raw.hdf5",
+      "experimental_inferred_annotations": true,
+      "grasp_start": 424,
+      "grasp_term": 679,
+      "place_start": 944,
+      "rules": "TCP distance <=0.09 m before closure; grasp signal true for 5 frames; cube above pad within 0.15 m",
+      "placement_success": true,
+      "frames": 1188,
+      "contains_rgb": false,
+      "grasp_clearance_m": 0.08
+    },
+    "purpose": "Local generation pipeline test; inferred annotations from a replay fixture, not a human-reviewed production source dataset"
+  },
+  "single_environment": {
+    "generation": {
+      "algorithm": "skillgen",
+      "env_profile": {
+        "name": "openarm_left_skillgen",
+        "path": "/home/tangyuan/WorldSimReady-Home/workspace-overlays/openarm-production/runtime/openarm_autodata/tasks/pick_place/autodata_configs/env_profiles/openarm_left_skillgen.yaml",
+        "planner": "openarm_pick_place_left"
+      },
+      "num_attempts": 1,
+      "num_failures": 0,
+      "num_success": 1,
+      "requested_trials": 1
+    },
+    "output_validation": {
+      "file": "/home/tangyuan/WorldSimReady-Home/workspace-overlays/openarm-production/runtime/left-verified-1.hdf5",
+      "episodes": [
+        {
+          "name": "demo_0",
+          "steps": 1432,
+          "recorded_success": true,
+          "final_state_success": true,
+          "inside_pad": true,
+          "height_error_m": 0.0007948875427246094,
+          "gripper_position_rad": 0.6997906565666199,
+          "linear_speed_m_s": 0.000693494628649205,
+          "angular_speed_rad_s": 0.03763029724359512,
+          "images": {
+            "left_hand_rgb": {
+              "shape": [
+                1432,
+                480,
+                640,
+                3
+              ],
+              "dtype": "uint8",
+              "first_frame_mean": 0.7295182291666666,
+              "last_frame_mean": 191.30599066840279
+            },
+            "right_hand_rgb": {
+              "shape": [
+                1432,
+                480,
+                640,
+                3
+              ],
+              "dtype": "uint8",
+              "first_frame_mean": 0.0,
+              "last_frame_mean": 0.00010308159722222222
+            },
+            "third_person_rgb": {
+              "shape": [
+                1432,
+                480,
+                640,
+                3
+              ],
+              "dtype": "uint8",
+              "first_frame_mean": 192.3105642361111,
+              "last_frame_mean": 195.42324110243055
+            }
+          }
+        }
+      ],
+      "passed": true,
+      "sha256": "9a8639b989b47df5db7c3626c369543437384993bab43370dae9d75684a5eaae"
+    }
+  },
+  "four_environments": {
+    "generation": {
+      "algorithm": "skillgen",
+      "env_profile": {
+        "name": "openarm_left_skillgen",
+        "path": "/home/tangyuan/WorldSimReady-Home/workspace-overlays/openarm-production/runtime/openarm_autodata/tasks/pick_place/autodata_configs/env_profiles/openarm_left_skillgen.yaml",
+        "planner": "openarm_pick_place_left"
+      },
+      "num_attempts": 4,
+      "num_failures": 0,
+      "num_success": 4,
+      "requested_trials": 4
+    },
+    "output_validation": {
+      "file": "/home/tangyuan/WorldSimReady-Home/workspace-overlays/openarm-production/runtime/left-verified-4env.hdf5",
+      "episodes": [
+        {
+          "name": "demo_0",
+          "steps": 1349,
+          "recorded_success": true,
+          "final_state_success": true,
+          "inside_pad": true,
+          "height_error_m": 0.0007765889167785645,
+          "gripper_position_rad": 0.6997845768928528,
+          "linear_speed_m_s": 0.0005851066671311855,
+          "angular_speed_rad_s": 0.014639838598668575,
+          "images": {
+            "left_hand_rgb": {
+              "shape": [
+                1349,
+                480,
+                640,
+                3
+              ],
+              "dtype": "uint8",
+              "first_frame_mean": 0.7208116319444444,
+              "last_frame_mean": 190.64645941840277
+            },
+            "right_hand_rgb": {
+              "shape": [
+                1349,
+                480,
+                640,
+                3
+              ],
+              "dtype": "uint8",
+              "first_frame_mean": 9.114583333333334e-05,
+              "last_frame_mean": 0.0002875434027777778
+            },
+            "third_person_rgb": {
+              "shape": [
+                1349,
+                480,
+                640,
+                3
+              ],
+              "dtype": "uint8",
+              "first_frame_mean": 192.52106879340278,
+              "last_frame_mean": 196.60854709201388
+            }
+          }
+        },
+        {
+          "name": "demo_1",
+          "steps": 1353,
+          "recorded_success": true,
+          "final_state_success": true,
+          "inside_pad": true,
+          "height_error_m": 0.0010656118392944336,
+          "gripper_position_rad": 0.6997836828231812,
+          "linear_speed_m_s": 0.0003410988429095596,
+          "angular_speed_rad_s": 0.010981328785419464,
+          "images": {
+            "left_hand_rgb": {
+              "shape": [
+                1353,
+                480,
+                640,
+                3
+              ],
+              "dtype": "uint8",
+              "first_frame_mean": 0.7690082465277778,
+              "last_frame_mean": 180.62232530381945
+            },
+            "right_hand_rgb": {
+              "shape": [
+                1353,
+                480,
+                640,
+                3
+              ],
+              "dtype": "uint8",
+              "first_frame_mean": 0.0,
+              "last_frame_mean": 6.8359375e-05
+            },
+            "third_person_rgb": {
+              "shape": [
+                1353,
+                480,
+                640,
+                3
+              ],
+              "dtype": "uint8",
+              "first_frame_mean": 193.12459852430555,
+              "last_frame_mean": 195.71200303819444
+            }
+          }
+        },
+        {
+          "name": "demo_2",
+          "steps": 1359,
+          "recorded_success": true,
+          "final_state_success": true,
+          "inside_pad": true,
+          "height_error_m": 0.0010523796081542969,
+          "gripper_position_rad": 0.6997864246368408,
+          "linear_speed_m_s": 0.00011506109876791015,
+          "angular_speed_rad_s": 0.0025458235759288073,
+          "images": {
+            "left_hand_rgb": {
+              "shape": [
+                1359,
+                480,
+                640,
+                3
+              ],
+              "dtype": "uint8",
+              "first_frame_mean": 0.7526985677083333,
+              "last_frame_mean": 181.09170138888888
+            },
+            "right_hand_rgb": {
+              "shape": [
+                1359,
+                480,
+                640,
+                3
+              ],
+              "dtype": "uint8",
+              "first_frame_mean": 0.0001247829861111111,
+              "last_frame_mean": 0.0003732638888888889
+            },
+            "third_person_rgb": {
+              "shape": [
+                1359,
+                480,
+                640,
+                3
+              ],
+              "dtype": "uint8",
+              "first_frame_mean": 193.0529568142361,
+              "last_frame_mean": 195.82393229166667
+            }
+          }
+        },
+        {
+          "name": "demo_3",
+          "steps": 1392,
+          "recorded_success": true,
+          "final_state_success": true,
+          "inside_pad": true,
+          "height_error_m": 0.0007761120796203613,
+          "gripper_position_rad": 0.6997831463813782,
+          "linear_speed_m_s": 0.0008574583334848285,
+          "angular_speed_rad_s": 0.015015747398138046,
+          "images": {
+            "left_hand_rgb": {
+              "shape": [
+                1392,
+                480,
+                640,
+                3
+              ],
+              "dtype": "uint8",
+              "first_frame_mean": 0.7664246961805555,
+              "last_frame_mean": 191.13746961805555
+            },
+            "right_hand_rgb": {
+              "shape": [
+                1392,
+                480,
+                640,
+                3
+              ],
+              "dtype": "uint8",
+              "first_frame_mean": 0.00021158854166666667,
+              "last_frame_mean": 0.00010633680555555555
+            },
+            "third_person_rgb": {
+              "shape": [
+                1392,
+                480,
+                640,
+                3
+              ],
+              "dtype": "uint8",
+              "first_frame_mean": 191.72138563368057,
+              "last_frame_mean": 196.3904372829861
+            }
+          }
+        }
+      ],
+      "passed": true,
+      "sha256": "09b4992d292b0ca53a161c8b344cb5f80b603fce95127461b54acd406ff66b67"
+    }
+  },
+  "scope": "Left-arm pipeline validation using experimentally inferred fixture annotations; no right-arm generation validation and no 100-episode success-rate claim",
+  "compatibility_files_sha256": {
+    "check_runtime.py": "f8a810ae3f84f935b534f888d3434c379a964cef3ae96eb4449202ab8c71fba1",
+    "check_static.py": "aad1758ba4231cf4254f704cc005f4d79d26f611904b054da5cd98a957b867ef",
+    "compat.py": "7601de9ce97dcf31ed6f9ca19478f274650618cb77d04b7ce388ea0cfabed2c4",
+    "generate.py": "7c385b383e70544c44a988ac541311697af6333ca169a4cf19ad6df6cbafa5db",
+    "prepare.py": "117c0e1688c69928e9f025de9962ff6b2eeae4aa670f6bb4c73fbf1a1d68acae",
+    "run_local.py": "c598c445557dcea2e27336b1647742de9f0045bcd7bb71e370ff91846c5229ca",
+    "validate_output.py": "4367f2a7cebe63c56885694b2bbd6a304fc38e4bc4327eae6af2a7ccf74ef46b",
+    "runtime/patches/curobo_planner.py": "95bee7d993e66fc3028c7bed509fa0e13b86d00d2bb5648cb3a765e34452dda0",
+    "runtime/patches/single_arm_embodiment_adapter.py": "60eef2725d396e375aa55ad5a1f2ccb3630a2990772518df9ac363826f69a7b7"
+  },
+  "right_environment_probe": {
+    "status": "passed",
+    "steps": 3,
+    "coverage": "Right-arm reset, 3 control/physics steps, planner config loading, 0.02/0.10 action scales, 0.2 clipping limit, and numeric translation-to-action check; no right-arm dataset generation"
+  },
+  "total_test_attempts_after_final_fixes": 5,
+  "total_successes_after_final_fixes": 5,
+  "final_hold_steps": 60,
+  "task_success_thresholds": "Unchanged from the supplied ZIP",
+  "test_task_policy": "Same original left-arm subtasks with guarantee_success=false, keep_failed=true and max_num_failures=3 to bound tests. Production defaults to original guarantee_success=true and max_num_failures=25.",
+  "prior_attempts": [
+    {
+      "log": "generation-original.log",
+      "outcome": "Blocked by passive-arm lock map overwritten during gripper update"
+    },
+    {
+      "log": "generation-debug.log",
+      "outcome": "Planning blocked by inference mode disabling gradients"
+    },
+    {
+      "log": "generation-gradfix.log",
+      "outcome": "Completed 1 attempt, 0 successful; action scales and forward-kinematics joint order still incompatible"
+    },
+    {
+      "log": "generation-settled.log",
+      "outcome": "Interrupted after discovering the action-scaling incompatibility; not a completed generation trial"
+    }
+  ]
+}

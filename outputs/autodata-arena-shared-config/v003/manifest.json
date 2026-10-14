@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "artifact_id": "autodata-arena-shared-config",
+  "version": "v003",
+  "created_at": "2026-10-13T09:04:44.437231+00:00",
+  "material_cutoff": "2026-10-13 Asia/Shanghai",
+  "sources": [
+    "config/openarm/experiment.json",
+    "scripts/shared-config.py",
+    "scripts/validate-shared-runtime.py",
+    "scripts/compare-shared-runtime.py",
+    "workspace-overlays/shared_config/",
+    "runs/shared-runtime-20261013/"
+  ],
+  "limitations": [
+    "Direct predicate cases, not full trajectory equivalence",
+    "No learned policy, SkillGen dataset generation, annotation persistence or dataset readback tested",
+    "Existing native runtimes explicitly authorized; no Docker runtime used",
+    "Local-only delivery requested by user"
+  ],
+  "sealed_at": "2026-10-13T09:06:24.853837+00:00",
+  "files": {
+    "CHANGELOG.md": "0a88febc1b2a3f8639c3c3275d9d32294a9b8363c99c542fdcd32cfc051bc6a2",
+    "arena-result.json": "b37e555a50409e4aecb7650c8a3e11eaa8f751dc1c894af1f89d82e43fe04da3",
+    "arena-versions.json": "a4542688eb47e784e98defb3583004109d17e855a7ab63a096444a901f71f0ce",
+    "autodata-result.json": "900c2e5d8c792f658a13f4d70371da7e6ab02359fc165b19eb7652f07c6b5ad3",
+    "autodata-versions.json": "1eefaf8c3fd36003c758229645ae71e2cccf12339b016ee3d17dd83b5f5884ef",
+    "comparison.json": "b6b6388fc088299c3c259eafb82aa56b5bdce051c0f6a06f8ba06de6fd828766",
+    "evidence.json": "daf42373b59e7c0332ea5d466cb3b8817aa1da775d336e70182f10ec8e8fa212",
+    "implementation.zip": "e1e7e815c2bb4086c1fc0c585594365ac47a2b66f3e7f6920665410998dd36dd",
+    "report.md": "df93398b6eff2ff2bacc1089ffa179aad1659eaa9d20a56b22f500cdb6ac4132",
+    "run-records.zip": "baf0f87458167d6c34484d7b0cdba0f9d924121b2f3a99dd03022a7d0423a053"
+  },
+  "delivery": {
+    "feishu": {
+      "status": "blocked_destination",
+      "target": null,
+      "receipt": null,
+      "files": [],
+      "updated_at": null,
+      "error": "User requested local-only delivery; no upload attempted."
+    },
+    "gpt": {
+      "status": "blocked_destination",
+      "target": null,
+      "receipt": null,
+      "files": [],
+      "updated_at": null,
+      "error": "User requested local-only delivery; no upload attempted."
+    }
+  }
+}

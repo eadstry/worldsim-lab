@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "artifact_id": "arena-examples-guide",
+  "version": "v001",
+  "created_at": "2026-10-12T12:29:27.591191+00:00",
+  "material_cutoff": "2026-10-12 Asia/Shanghai",
+  "sources": [
+    {
+      "type": "source_archive",
+      "url": "https://codeload.github.com/isaac-sim/IsaacLab-Arena/tar.gz/98866596fd024d96c874fe6fb95ae916d1133629",
+      "commit": "98866596fd024d96c874fe6fb95ae916d1133629"
+    },
+    {
+      "type": "workspace_lock",
+      "path": "upstream-lock.json"
+    },
+    {
+      "type": "host_preflight",
+      "observation": "nvidia-smi failed to communicate with NVIDIA driver; Docker 29.8.1 present"
+    }
+  ],
+  "limitations": [
+    "Arne interpreted as IsaacLab-Arena; awaiting confirmation",
+    "Static source inspection only; no simulation or install validation",
+    "README and installation docs differ from actual isaacsim 6.1.0.0 dependency override/lock",
+    "Feishu and GPT destinations unconfigured and upload capability unavailable"
+  ],
+  "sealed_at": "2026-10-12T12:30:57.640451+00:00",
+  "files": {
+    "CHANGELOG.md": "503b154098dd398d710c3d89741531b9e6d96fc056dbadbbf3b8331afc12930f",
+    "report.md": "ae1293e197f66787e1759d7bffb7e256ffa0e42fdf28c3517d76c8478596f7a3"
+  },
+  "delivery": {
+    "feishu": {
+      "status": "blocked_destination",
+      "target": null,
+      "receipt": null,
+      "files": [],
+      "updated_at": "2026-10-12T12:30:57.610161+00:00",
+      "error": "No configured authorized destination; upload capability also unavailable"
+    },
+    "gpt": {
+      "status": "blocked_destination",
+      "target": null,
+      "receipt": null,
+      "files": [],
+      "updated_at": "2026-10-12T12:30:57.610166+00:00",
+      "error": "No configured authorized destination; upload capability also unavailable"
+    }
+  }
+}

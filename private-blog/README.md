@@ -19,6 +19,8 @@ python3 -m http.server 8765 --bind 127.0.0.1 --directory dist
 
 `npm run build` 从 Markdown 生成 `dist/embodied/autodata/` 中的网页、MD 副本、SVG、样式和完整下载包。请勿直接修改生成的正文 HTML。首页仍在 `dist/index.html`，其资源在 `dist/assets/`。
 
+构建和 ZIP 校验需要 Python 3 标准库，不再需要系统 zip/unzip。下载包采用固定文件顺序、时间和权限，同一环境重复构建不产生仅由时间戳引起的 Git 差异。
+
 ## Markdown 扩展
 
 构建使用 markdown-it、markdown-it-container、markdown-it-anchor 与 highlight.js；浏览器不需要加载这些依赖。

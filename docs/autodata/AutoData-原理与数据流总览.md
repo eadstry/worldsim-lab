@@ -124,7 +124,7 @@ DatagenInfo(
 
 `...` 代表实际张量，非固定值。字典按名称组织：`object_poses["cube"]` 取方块 12 帧、`object_poses["bowl"]` 取碗 12 帧。
 
-`eef_pose` 与 `target_eef_pose` 分别是"现在在哪里"和"这步想去哪里"。例如末端当前 `x=0.40 m`，动作要求沿 x 移动 `0.01 m`，则本步记录实际位置 `0.40 m`、目标 `0.41 m`；目标由 `target_pos = curr_pos + delta_pos` 算出，**不表示录制时已到达**。[动作换算](autodata_interfaces/embodiments/single_arm_embodiment_adapter.py) [录制位置](scripts/annotate_demos.py)
+`eef_pose` 与 `target_eef_pose` 分别是"现在在哪里"和"这步想去哪里"。例如末端当前 `x=0.40 m`，动作要求沿 x 移动 `0.01 m`，则本步记录实际位置 `0.40 m`、目标 `0.41 m`；目标由 `target_pos = curr_pos + delta_pos` 算出，**不表示录制时已到达**。[动作换算](../../AutoData/autodata_interfaces/embodiments/single_arm_embodiment_adapter.py) [录制位置](../../AutoData/scripts/annotate_demos.py)
 
 **池里的形态。** 五条已标注遥操示范，源池通常有五个这样的 `DatagenInfo`，每条一个，放在 `pool.datagen_infos` 列表里；字典里的 `"cube"`、`"bowl"` 不是示范编号。`from_hdf5()` 读入时 HDF5 键为 `object_pose`（单数），入池后属性为 `object_poses`（复数）。`DatagenInfo` 另有 `to_dict()`（`49-64`）只materialize 已填充字段。
 

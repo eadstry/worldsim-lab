@@ -1,0 +1,22 @@
+# Local example authored for this guide; not an upstream official file.
+# Run with the package root as the working directory.
+shared:
+  environment:
+    type: configs/tasks/banana_in_bowl.yaml
+    enable_cameras: false
+  environment_builder:
+    num_envs: 1
+    env_spacing: 2.5
+    seed: 42
+    placement_seed: 42
+  policy:
+    type: zero_action
+  rollout_limit:
+    num_episodes: 3
+  num_rebuilds: 1
+runs:
+  baseline: {}
+  alternate_placement:
+    environment_builder:
+      seed: 43
+      placement_seed: 43

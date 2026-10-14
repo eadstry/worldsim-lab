@@ -1,0 +1,21 @@
+{
+  "origin": "framework-dev/AutoData/logs/openarm_generation_preparation_20261013/fixture_clearance_source.hdf5",
+  "sha256": "7321968fb3f0037b2b7d94bcaa0f0c0ff609c99c89671cd443fcd210c4fec2da",
+  "environment": {
+    "env_name": "Isaac-PickPlace-Cube-OpenArm-Bimanual-Left-IK-Rel-v0",
+    "type": 2
+  },
+  "annotation_provenance": {
+    "source": "datasets/teleop_datasets/openarm_left_fixture_raw.hdf5",
+    "experimental_inferred_annotations": true,
+    "grasp_start": 424,
+    "grasp_term": 679,
+    "place_start": 944,
+    "rules": "TCP distance <=0.09 m before closure; grasp signal true for 5 frames; cube above pad within 0.15 m",
+    "placement_success": true,
+    "frames": 1188,
+    "contains_rgb": false,
+    "grasp_clearance_m": 0.08
+  },
+  "purpose": "Local generation pipeline test; inferred annotations from a replay fixture, not a human-reviewed production source dataset"
+}

@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "checks": {
+    "both_passed": true,
+    "correct_backends": true,
+    "same_openarm_source": true,
+    "task_contract_hash": true,
+    "action_shape": true,
+    "physics_dt": true,
+    "step_dt": true,
+    "reset_pose_range": true,
+    "success_function": true,
+    "success_params": true,
+    "observations": true,
+    "processed_arm_probe": true,
+    "gripper_targets": true,
+    "success_cases": true,
+    "physics_steps_completed": true,
+    "same_working_tree_sources": true
+  },
+  "scope": "matching task interfaces and predicate cases; not full-trajectory or learned-policy equivalence"
+}
