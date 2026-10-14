@@ -8,6 +8,7 @@
 | Arena 示例运行与使用说明 | [v001 正文](arena-examples-guide/v001/report.md) · [记录](arena-examples-guide/v001/manifest.json) | 静态源码说明，运行命令需在适当 GPU 环境验证；保留写作时的环境观察 | 飞书、GPT 均为 blocked_destination |
 | Arena RoboLab 配置解耦 | [v001 正文](arena-robolab-config-guide/v001/report.md) · [配置](arena-robolab-config-guide/v001/configs/) · [记录](arena-robolab-config-guide/v001/manifest.json) | 场景、任务和评估配置说明；未执行仿真或完整 schema 验证 | 飞书、GPT 均为 blocked_destination |
 | AutoData / Arena 共用配置 | [v003 GPU 验证](autodata-arena-shared-config/v003/report.md) · [实际配置说明](../config/README.md) · [记录](autodata-arena-shared-config/v003/manifest.json) | 用户授权现有原生环境 GPU 验证；环境/动作/成功判据比较通过，Arena 入口短测通过 | 用户要求仅本地保存，未上传 |
+| AutoData 效率优化报告 | [v001 图文报告](autodata-efficiency-report/v001/index.html) · [PDF](autodata-efficiency-report/v001/AutoData-效率优化报告.pdf) · [证据](autodata-efficiency-report/v001/evidence.json) | 12 组图表汇总既有实验、内存所有权与并行导出改动；24 条 GPU 对照最终文件吞吐提升约 29.8%，严格终态各 23/24，物理验收未通过；本次未新增 GPU 实验 | 本地保存，未上传或发布 |
 
 AutoData 文章历史版本：[v001](autodata-guide/v001/CHANGELOG.md)、[v002](autodata-guide/v002/CHANGELOG.md)。持续编辑文章请使用[博客正文源](../private-blog/content/autodata/AutoData-全流程可视化讲解.md)，不要直接修改这些快照。
 

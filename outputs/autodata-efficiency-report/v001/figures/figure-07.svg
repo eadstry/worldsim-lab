@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="765.6pt" height="362.4pt" viewBox="0 0 765.6 362.4" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-14T14:49:45.033826</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 362.4 
+L 765.6 362.4 
+L 765.6 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 23.589818 103.052632 
+L 229.828364 103.052632 
+Q 233.925818 103.052632 233.925818 99.389474 
+L 233.925818 37.115789 
+Q 233.925818 33.452632 229.828364 33.452632 
+L 23.589818 33.452632 
+Q 19.492364 33.452632 19.492364 37.115789 
+L 19.492364 99.389474 
+Q 19.492364 103.052632 23.589818 103.052632 
+z
+" clip-path="url(#pbc1acc588d)" style="fill: #f5f8fa; stroke: #3376a8; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 279.680727 103.052632 
+L 485.919273 103.052632 
+Q 490.016727 103.052632 490.016727 99.389474 
+L 490.016727 37.115789 
+Q 490.016727 33.452632 485.919273 33.452632 
+L 279.680727 33.452632 
+Q 275.583273 33.452632 275.583273 37.115789 
+L 275.583273 99.389474 
+Q 275.583273 103.052632 279.680727 103.052632 
+z
+" clip-path="url(#pbc1acc588d)" style="fill: #f5f8fa; stroke: #21867e; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 535.771636 103.052632 
+L 742.010182 103.052632 
+Q 746.107636 103.052632 746.107636 99.389474 
+L 746.107636 37.115789 
+Q 746.107636 33.452632 742.010182 33.452632 
+L 535.771636 33.452632 
+Q 531.674182 33.452632 531.674182 37.115789 
+L 531.674182 99.389474 
+Q 531.674182 103.052632 535.771636 103.052632 
+z
+" clip-path="url(#pbc1acc588d)" style="fill: #f5f8fa; stroke: #21867e; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 27.687273 153.115789 
+L 737.912727 153.115789 
+" clip-path="url(#pbc1acc588d)" style="fill: none; stroke: #dde5e9; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 27.687273 194.021053 
+L 737.912727 194.021053 
+" clip-path="url(#pbc1acc588d)" style="fill: none; stroke: #dde5e9; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 27.687273 234.926316 
+L 737.912727 234.926316 
+" clip-path="url(#pbc1acc588d)" style="fill: none; stroke: #dde5e9; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_4">
+    <path d="M 27.687273 275.831579 
+L 737.912727 275.831579 
+" clip-path="url(#pbc1acc588d)" style="fill: none; stroke: #dde5e9; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_5">
+    <path d="M 27.687273 316.736842 
+L 737.912727 316.736842 
+" clip-path="url(#pbc1acc588d)" style="fill: none; stroke: #dde5e9; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'Noto Sans CJK JP'; text-anchor: middle; fill: #253844" x="126.709091" y="59.662023" transform="rotate(-0 126.709091 59.662023)">录制态</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 11px; font-family: 'Noto Sans CJK JP'; fill: #253844" transform="translate(82.345575 79.63215)">dict → list[frame]</text>
+    <text style="font-size: 11px; font-family: 'Noto Sans CJK JP'; fill: #253844" transform="translate(42.431903 92.658212)">CPU 按环境独占 / GPU 小字段保留</text>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'Noto Sans CJK JP'; text-anchor: middle; fill: #253844" x="382.8" y="59.662023" transform="rotate(-0 382.8 59.662023)">传输态</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 11px; font-family: 'Noto Sans CJK JP'; fill: #253844" transform="translate(310.358125 79.327931)">连续共享内存 + leaves 描述符</text>
+    <text style="font-size: 11px; font-family: 'Noto Sans CJK JP'; fill: #253844" transform="translate(301.49625 92.962431)">64 字节对齐，不 pickle 整条 RGB</text>
+   </g>
+   <g id="text_5">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'Noto Sans CJK JP'; text-anchor: middle; fill: #253844" x="638.890909" y="59.662023" transform="rotate(-0 638.890909 59.662023)">存储态</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 11px; font-family: 'Noto Sans CJK JP'; fill: #253844" transform="translate(598.707393 79.516993)">/data/demo_i/*</text>
+    <text style="font-size: 11px; font-family: 'Noto Sans CJK JP'; fill: #253844" transform="translate(572.355518 92.543056)">gzip-2 + h5py auto chunks</text>
+   </g>
+   <g id="patch_5">
+    <path d="M 234.562169 68.252632 
+Q 254.755719 68.252632 273.384021 68.252632 
+" style="fill: none; stroke: #8195a3; stroke-width: 1.4; stroke-linecap: round"/>
+    <path d="M 268.584021 65.852632 
+L 273.384021 68.252632 
+L 268.584021 70.652632 
+" style="fill: none; stroke: #8195a3; stroke-width: 1.4; stroke-linecap: round"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 490.653078 68.252632 
+Q 510.846628 68.252632 529.47493 68.252632 
+" style="fill: none; stroke: #8195a3; stroke-width: 1.4; stroke-linecap: round"/>
+    <path d="M 524.67493 65.852632 
+L 529.47493 68.252632 
+L 524.67493 70.652632 
+" style="fill: none; stroke: #8195a3; stroke-width: 1.4; stroke-linecap: round"/>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 12px; font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace; text-anchor: start; fill: #253844" x="31.101818" y="138.463158" transform="rotate(-0 31.101818 138.463158)">actions</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 12px; font-family: 'Noto Sans CJK JP'; text-anchor: start; fill: #253844" x="294.021818" y="138.463158" transform="rotate(-0 294.021818 138.463158)">[T, 7] · float32</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 12px; font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace; text-anchor: start; fill: #253844" x="31.101818" y="179.368421" transform="rotate(-0 31.101818 179.368421)">obs/*_rgb</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 12px; font-family: 'Noto Sans CJK JP'; text-anchor: start; fill: #253844" x="294.021818" y="179.368421" transform="rotate(-0 294.021818 179.368421)">[T, 480, 640, 3] · uint8 · 三路</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 12px; font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace; text-anchor: start; fill: #253844" x="31.101818" y="220.273684" transform="rotate(-0 31.101818 220.273684)">states / initial_state</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 12px; font-family: 'Noto Sans CJK JP'; text-anchor: start; fill: #253844" x="294.021818" y="220.273684" transform="rotate(-0 294.021818 220.273684)">机器人与物体状态；保持字段结构</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 12px; font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace; text-anchor: start; fill: #253844" x="31.101818" y="261.178947" transform="rotate(-0 31.101818 261.178947)">processed_actions / obs</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 12px; font-family: 'Noto Sans CJK JP'; text-anchor: start; fill: #253844" x="294.021818" y="261.178947" transform="rotate(-0 294.021818 261.178947)">保持帧序与动作、观测对应</text>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 12px; font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace; text-anchor: start; fill: #253844" x="31.101818" y="302.084211" transform="rotate(-0 31.101818 302.084211)">attributes</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 12px; font-family: 'Noto Sans CJK JP'; text-anchor: start; fill: #253844" x="294.021818" y="302.084211" transform="rotate(-0 294.021818 302.084211)">seed / success / num_samples；env_args / total</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pbc1acc588d">
+   <rect x="7.2" y="7.2" width="751.2" height="348"/>
+  </clipPath>
+ </defs>
+</svg>

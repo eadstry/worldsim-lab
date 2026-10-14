@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="765.6pt" height="319.2pt" viewBox="0 0 765.6 319.2" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-14T14:49:44.444652</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 319.2 
+L 765.6 319.2 
+L 765.6 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="line2d_1">
+    <path d="M 25.794059 282.117647 
+L 25.794059 43.058824 
+" clip-path="url(#pcbaf5cd160)" style="fill: none; stroke: #d3dde3; stroke-width: 1.5; stroke-linecap: square"/>
+   </g>
+   <g id="PathCollection_1">
+    <defs>
+     <path id="m9cc5ef582e" d="M 0 5.244044 
+C 1.390737 5.244044 2.7247 4.691499 3.708099 3.708099 
+C 4.691499 2.7247 5.244044 1.390737 5.244044 0 
+C 5.244044 -1.390737 4.691499 -2.7247 3.708099 -3.708099 
+C 2.7247 -4.691499 1.390737 -5.244044 0 -5.244044 
+C -1.390737 -5.244044 -2.7247 -4.691499 -3.708099 -3.708099 
+C -4.691499 -2.7247 -5.244044 -1.390737 -5.244044 0 
+C -5.244044 1.390737 -4.691499 2.7247 -3.708099 3.708099 
+C -2.7247 4.691499 -1.390737 5.244044 0 5.244044 
+z
+" style="stroke: #3376a8"/>
+    </defs>
+    <g clip-path="url(#pcbaf5cd160)">
+     <use xlink:href="#m9cc5ef582e" x="25.794059" y="43.058824" style="fill: #3376a8; stroke: #3376a8"/>
+    </g>
+   </g>
+   <g id="PathCollection_2">
+    <g clip-path="url(#pcbaf5cd160)">
+     <use xlink:href="#m9cc5ef582e" x="25.794059" y="102.823529" style="fill: #3376a8; stroke: #3376a8"/>
+    </g>
+   </g>
+   <g id="PathCollection_3">
+    <defs>
+     <path id="m964bca8976" d="M 0 5.244044 
+C 1.390737 5.244044 2.7247 4.691499 3.708099 3.708099 
+C 4.691499 2.7247 5.244044 1.390737 5.244044 0 
+C 5.244044 -1.390737 4.691499 -2.7247 3.708099 -3.708099 
+C 2.7247 -4.691499 1.390737 -5.244044 0 -5.244044 
+C -1.390737 -5.244044 -2.7247 -4.691499 -3.708099 -3.708099 
+C -4.691499 -2.7247 -5.244044 -1.390737 -5.244044 0 
+C -5.244044 1.390737 -4.691499 2.7247 -3.708099 3.708099 
+C -2.7247 4.691499 -1.390737 5.244044 0 5.244044 
+z
+" style="stroke: #b94d4d"/>
+    </defs>
+    <g clip-path="url(#pcbaf5cd160)">
+     <use xlink:href="#m964bca8976" x="25.794059" y="162.588235" style="fill: #b94d4d; stroke: #b94d4d"/>
+    </g>
+   </g>
+   <g id="PathCollection_4">
+    <g clip-path="url(#pcbaf5cd160)">
+     <use xlink:href="#m964bca8976" x="25.794059" y="222.352941" style="fill: #b94d4d; stroke: #b94d4d"/>
+    </g>
+   </g>
+   <g id="PathCollection_5">
+    <defs>
+     <path id="m997fbb5d4a" d="M 0 5.244044 
+C 1.390737 5.244044 2.7247 4.691499 3.708099 3.708099 
+C 4.691499 2.7247 5.244044 1.390737 5.244044 0 
+C 5.244044 -1.390737 4.691499 -2.7247 3.708099 -3.708099 
+C 2.7247 -4.691499 1.390737 -5.244044 0 -5.244044 
+C -1.390737 -5.244044 -2.7247 -4.691499 -3.708099 -3.708099 
+C -4.691499 -2.7247 -5.244044 -1.390737 -5.244044 0 
+C -5.244044 1.390737 -4.691499 2.7247 -3.708099 3.708099 
+C -2.7247 4.691499 -1.390737 5.244044 0 5.244044 
+z
+" style="stroke: #21867e"/>
+    </defs>
+    <g clip-path="url(#pcbaf5cd160)">
+     <use xlink:href="#m997fbb5d4a" x="25.794059" y="282.117647" style="fill: #21867e; stroke: #21867e"/>
+    </g>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'Noto Sans CJK JP'; text-anchor: start; fill: #253844" x="42.900594" y="39.384871" transform="rotate(-0 42.900594 39.384871)">共享配置探针</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 12px; font-family: 'Noto Sans CJK JP'; text-anchor: start; fill: #253844" x="200.578218" y="39.294871" transform="rotate(-0 200.578218 39.294871)">两端比较 16 / 16 项通过；只验证接口与判据</text>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'Noto Sans CJK JP'; text-anchor: start; fill: #253844" x="42.900594" y="99.149577" transform="rotate(-0 42.900594 99.149577)">早期生成修复</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 12px; font-family: 'Noto Sans CJK JP'; text-anchor: start; fill: #253844" x="200.578218" y="99.053015" transform="rotate(-0 200.578218 99.053015)">修复前 0 / 1；修复后单环境 1 / 1、四环境 4 / 4</text>
+   </g>
+   <g id="text_5">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'Noto Sans CJK JP'; text-anchor: start; fill: #253844" x="42.900594" y="158.914283" transform="rotate(-0 42.900594 158.914283)">100 条目标运行</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 12px; font-family: 'Noto Sans CJK JP'; text-anchor: start; fill: #253844" x="200.578218" y="158.817721" transform="rotate(-0 200.578218 158.817721)">8 环境：遥测 49 成功、6 失败、8 未完成；SIGKILL</text>
+   </g>
+   <g id="text_7">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'Noto Sans CJK JP'; text-anchor: start; fill: #253844" x="42.900594" y="218.678989" transform="rotate(-0 42.900594 218.678989)">异步初版尝试</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 12px; font-family: 'Noto Sans CJK JP'; text-anchor: start; fill: #253844" x="200.578218" y="218.582426" transform="rotate(-0 200.578218 218.582426)">SIGKILL + OOM 计数增加；发现 CPU 视图保留整批数据</text>
+   </g>
+   <g id="text_9">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'Noto Sans CJK JP'; text-anchor: start; fill: #253844" x="42.900594" y="278.443695" transform="rotate(-0 42.900594 278.443695)">所有权修复后对照</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 12px; font-family: 'Noto Sans CJK JP'; text-anchor: start; fill: #253844" x="200.578218" y="278.35932" transform="rotate(-0 200.578218 278.35932)">0 / 1 / 2 worker 各 24 条；严格终态均为 23 / 24</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pcbaf5cd160">
+   <rect x="7.2" y="7.2" width="751.2" height="304.8"/>
+  </clipPath>
+ </defs>
+</svg>

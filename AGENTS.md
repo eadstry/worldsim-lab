@@ -7,5 +7,6 @@ This repository combines upstream source references with local AutoData research
 - Keep upstream submodules at their recorded commits unless explicitly asked to update them. Make proposed changes in patches or in this repository's workspace-overlays directory unless the task authorizes editing upstream code.
 - Run `npm --prefix private-blog run check` after blog changes; run its build first if sources changed.
 - Do not publish the blog or change access control as a side effect of GitHub synchronization.
+- Deliver research reports locally by default. Upload to Feishu or ChatGPT only when explicitly requested by the user; ask for a destination only when needed for that requested upload.
 - Follow `docs/version-management.md` for branches, worktrees and commit boundaries. Run `bash scripts/cloud-check.sh` before committing workspace changes; use `--allow-uninitialized` only for intentionally absent top-level source checkouts.
 - Preserve sealed `outputs/` versions and upstream local changes. Root `.gitignore` does not control files inside submodules; never stage their datasets through the parent repository.

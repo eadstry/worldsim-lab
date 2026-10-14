@@ -59,6 +59,10 @@ def install_generation_compat():
                 if stats["num_failures"] >= generation_policy_params.max_num_failures:
                     raise RuntimeError("OpenArm generation reached its configured failure limit")
 ''', 1)
+    import os
+    if os.environ.get("OPENARM_ASYNC_EXPORT"):
+        source = source.replace("        while True:\n", "        while True:\n            from async_export import poll\n            poll()\n", 1)
+        source = source.replace(anchor, anchor + "\n                from async_export import poll\n                poll()", 1)
     scope = {}
     exec(compile(source, "<openarm-env-loop>", "exec"), vars(isaaclab_env_interface), scope)
     isaaclab_env_interface.env_loop = scope["env_loop"]
