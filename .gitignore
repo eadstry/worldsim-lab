@@ -24,7 +24,7 @@
 /config/.local/
 /runs/
 
-# Independent local framework development clones.
+# Retired development-clone location; prevent accidental reintroduction.
 /framework-dev/
 
 # Local recovery snapshot contains runtime data and is not a source deliverable.

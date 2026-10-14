@@ -14,7 +14,7 @@
 | 博客 | `private-blog/content/` | 正文源、构建脚本与现有 `dist/` 一起提交；首页和备份继续保留 |
 | 数据和运行环境 | `runs/`、扩展 `runtime/`、`config/.local/` 等 | 本地保存和单独备份，不加入 Git |
 
-根目录 Arena 与 AutoData 内嵌 Arena 是不同依赖关系，按各自父仓库锁定，不合并目录。`framework-dev/` 和恢复快照仍保留本地；新开发不再复制一套未记录来源的目录。
+根目录 Arena 与 AutoData 内嵌 Arena 是不同依赖关系，按各自父仓库锁定，不合并目录。`framework-dev/` 已于 2026-10-14 按用户要求移除；源码差异、原分支与文件去向见 `workspace-overlays/framework-dev-removal/manifest.json`。现有恢复快照继续保留本地，新开发使用分支和 worktree。
 
 ## 提交与检查
 

@@ -1,2 +1,3 @@
 # Patch context includes required leading spaces; preserve it byte-for-byte.
 workspace-overlays/upstream-patches/*.patch -whitespace
+workspace-overlays/framework-dev-removal/*.patch -whitespace

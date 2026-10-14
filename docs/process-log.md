@@ -25,3 +25,11 @@
 退出时遥测累计 63 次开始、55 次完成，其中成功 49、失败 6，仍有 8 个未完成回合。这些数值不是数据回读验证结果。运行期间 cgroup 的 `oom_kill` 增量为 1，进程峰值 RSS 约 66.6 GiB；cgroup 包含其他进程，尚不能据此确定具体 OOM 受害进程。原始记录位于 `AutoData/datasets/openarm_left_num_envs_8.*`，未复制大型数据集。
 
 后续应先检查 HDF5 完整性、成功标记和最终状态，再结合系统日志判断中断原因。保留原输出，重试使用新的输出路径。历史 1 环境及 4 环境的小规模通过记录，不能替代这次 100 条目标运行的验收。
+
+## 重复开发目录移除
+
+2026-10-14 按用户要求删除 `framework-dev/`，没有把整套克隆移动到另一个目录。5 个开发克隆的所有引用目标均已在对应上游对象库中找到，原分支、提交和状态写入 `workspace-overlays/framework-dev-removal/manifest.json`；空 RLinf 占位目录一并移除。
+
+8 个修改的源码文件与现有恢复快照一致，同时导出 AutoData 和 IsaacLab 的两份补丁。对未跟踪文件及非缓存的忽略文件逐项核对哈希，确认 1503 个文件已有相同副本；另外 7 个独有预览或日志文件保存到 `runs/recovered-framework-dev/`。1385 个字节码、构建缓存及安装元数据文件未保留。删除前再次核对目录指纹和所有保留文件哈希。
+
+原始生产验证记录中的 `framework-dev/` 路径表示历史来源，不作为当前启动路径。示教源的已准备副本仍位于 `workspace-overlays/openarm-production/runtime/inputs/openarm_left_fixture_clearance_source.hdf5`，恢复快照中也保留原副本。当前可见进程的命令和工作目录，以及两侧已检查的 Python editable-install 配置，未发现对已删除目录的引用；本次没有运行 GPU 验证或修改 Python 环境。

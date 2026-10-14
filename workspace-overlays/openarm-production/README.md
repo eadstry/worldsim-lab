@@ -23,6 +23,8 @@ passes the same checks. Full results and environment versions are recorded in
 1392 steps. These five successful test episodes do not estimate a broad success rate.
 
 The source was found in an ignored local development directory, not inside the ZIP.
+That historical `framework-dev/` directory was removed on 2026-10-14 after its
+changes and unique artifacts were preserved; it is not required by this launcher.
 `runtime/inputs/openarm_left_fixture_clearance_source.hdf5` is an unchanged copy of
 that source. Its annotations were inferred from a replay fixture, not human reviewed;
 see `source-provenance.json`. This verifies the production pipeline on this source,
