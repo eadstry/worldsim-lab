@@ -6,5 +6,5 @@ cd "$workspace_root"
 python3 scripts/check-version-management.py --allow-uninitialized --require-clean-upstream
 GIT_LFS_SKIP_SMUDGE=1 git submodule update --init --jobs 3 AutoData IsaacLab-Arena RLinf
 npm --prefix private-blog ci
-git config --local core.hooksPath .githooks
+python3 scripts/review-workspace.py install
 bash scripts/cloud-check.sh

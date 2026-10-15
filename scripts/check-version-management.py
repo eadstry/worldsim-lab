@@ -48,7 +48,7 @@ def artifact_files(manifest):
     return [(item['path'], item['sha256']) for item in files]
 
 
-def check(root, allow_uninitialized=False, require_clean_upstream=False):
+def check(root, allow_uninitialized=False, require_clean_upstream=False, baseline_ref="HEAD"):
     errors, warnings = [], []
     entries = index_entries(root)
     lock = json.loads((root / 'upstream-lock.json').read_text())
@@ -102,7 +102,7 @@ def check(root, allow_uninitialized=False, require_clean_upstream=False):
                 if not target.is_file() or hashlib.sha256(target.read_bytes()).hexdigest() != expected:
                     errors.append(f'{relative}: missing or changed sealed file {name}')
                 count += 1
-            previous = git(root, 'show', f'HEAD:{relative}')
+            previous = git(root, 'show', f'{baseline_ref}:{relative}')
             if previous.returncode == 0:
                 old = json.loads(previous.stdout)
                 # Delivery receipts may evolve; sealed content/provenance must not.
@@ -112,7 +112,7 @@ def check(root, allow_uninitialized=False, require_clean_upstream=False):
         except (OSError, ValueError, KeyError, TypeError) as error:
             errors.append(f'{relative}: {error}')
     # A missing whole version would otherwise disappear from glob() silently.
-    previous_manifests = git(root, 'ls-tree', '-r', '--name-only', 'HEAD', '--', 'outputs').stdout.decode().splitlines()
+    previous_manifests = git(root, 'ls-tree', '-r', '--name-only', baseline_ref, '--', 'outputs').stdout.decode().splitlines()
     for name in previous_manifests:
         if name.endswith('/manifest.json') and (not (root / name).is_file() or name not in entries):
             errors.append(f'{name}: recorded version deleted; retain sealed snapshots')

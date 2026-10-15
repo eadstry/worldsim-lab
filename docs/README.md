@@ -17,3 +17,5 @@
 ## 实验整合版本
 
 [2026-10-15 Codex 分析整合检查记录](experimental-analysis-20261015.md)列出合并来源、验证范围及未纳入的进行中工作。
+
+[自动版本提交与审查](automatic-version-review.md)：任务基线、提交回执、共享钩子和 GitHub 主机检查。

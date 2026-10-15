@@ -2,7 +2,7 @@
 
 围绕 **AutoData 数据生成、Isaac Lab-Arena 评估与 OpenArm 实验**的具身智能研究工作区，统一管理固定版本的上游源码、本地扩展、研究资料、实验报告和博客。
 
-[实验版本检查记录](docs/experimental-analysis-20261015.md) · [研究资料](docs/README.md) · [实验成果](outputs/README.md) · [OpenArm 扩展](workspace-overlays/openarm-production/README.md) · [共享配置](config/README.md) · [博客维护](private-blog/README.md)
+[自动提交与审查](docs/automatic-version-review.md) · [实验版本检查记录](docs/experimental-analysis-20261015.md) · [研究资料](docs/README.md) · [实验成果](outputs/README.md) · [OpenArm 扩展](workspace-overlays/openarm-production/README.md) · [共享配置](config/README.md) · [博客维护](private-blog/README.md)
 
 > 2026-10-14 的本机保存快照及其历史分支 `codex/local-frontier-20261014` 继续保留。来源、上游补丁和当时的检查记录见[快照说明](workspace-overlays/local-frontier-20261014/README.md)；当前实现和验证状态以所选分支中的文件为准。
 

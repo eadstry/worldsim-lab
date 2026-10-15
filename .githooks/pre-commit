@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 set -euo pipefail
 workspace_root="$(git rev-parse --show-toplevel)"
-python3 "$workspace_root/scripts/check-version-management.py" --allow-uninitialized
+exec python3 "$workspace_root/scripts/review-workspace.py" --root "$workspace_root" verify-index

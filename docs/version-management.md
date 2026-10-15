@@ -26,12 +26,14 @@ npm --prefix private-blog ci
 bash scripts/cloud-check.sh --allow-uninitialized
 
 # 根仓库启用提交检查。所有根仓库 worktree 共用此 Git 设置。
-git config --local core.hooksPath .githooks
+python3 scripts/review-workspace.py install
 
 # 按任务显式暂存，检查差异再提交。子模块中的数据不会随父仓库提交保存。
 git add <本次任务的文件路径>
 git diff --cached --stat
 git diff --cached --check
+python3 scripts/review-workspace.py prepare --allow-uninitialized \
+  --review-note "说明本次差异审查、风险和已解决的问题"
 git commit -m "Describe the change"
 ```
 
@@ -43,14 +45,14 @@ git commit -m "Describe the change"
 python3 scripts/check-version-management.py --require-clean-upstream
 ```
 
-提交钩子只运行版本检查；完整主机检查还运行测试及博客构建、检查。目录名检查用于阻止常见数据、模型和凭据误提交，不替代人工检查文件内容。根仓库 `.gitignore` 不控制子模块自己的文件跟踪规则。
+提交钩子验证绑定当前父提交、分支和暂存树的审查回执，并复核版本约束；回执由完整主机检查及相关模块测试全部通过后生成。共享绝对路径钩子覆盖所有 worktree，旧 worktree 不能因缺少 `.githooks/` 而跳过门禁。目录名检查用于阻止常见数据、模型和凭据误提交，不替代人工检查文件内容。根仓库 `.gitignore` 不控制子模块自己的文件跟踪规则。
 
 `cloud-setup.sh` 在初始化前检查现有子模块是否干净且位于锁定提交，随后仅初始化顶层子模块、安装博客依赖并检查。它不再向上游复制设计文档。设计文档从 `workspace-overlays/AutoData/agentic_design/` 阅读。
 
 ## 并行开发
 
 ```bash
-git worktree add -b codex/topic .worktrees/topic
+python3 scripts/review-workspace.py start topic
 cd .worktrees/topic
 GIT_LFS_SKIP_SMUDGE=1 git submodule update --init AutoData IsaacLab-Arena
 npm --prefix private-blog ci
@@ -65,4 +67,4 @@ bash scripts/cloud-check.sh --allow-uninitialized
 
 生产扩展是另一条明确的入口：`workspace-overlays/openarm-production/prepare.py` 从校验过 manifest 的原始 ZIP 准备独立 `runtime/`，不会自动替换共享配置的历史环境。原始 ZIP SHA256 为 `afa092e722605cb5b12115ebcb70317565360976c571c68f1e09e6ad2735aa48`；准备目录、资产和 HDF5 仍需单独备份。恢复或统一这两个运行入口后，需要重新进行 GPU 验证，不能沿用旧报告的通过结论。
 
-问题与改进状态见 [过程记录](process-log.md)。本地提交不会自动推送、发布博客或改变访问权限。
+问题与改进状态见 [过程记录](process-log.md)。任务结束后默认按[自动提交与审查规则](automatic-version-review.md)检查、提交并推送当前任务分支；用户明确要求仅本地、不提交或不推送时遵守该要求。同步不发布博客或改变访问权限。

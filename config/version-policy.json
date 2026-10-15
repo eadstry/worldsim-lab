@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "required_ancestor": "f7304e48cb5ff1446d64100ba29c00a794e0d383",
+  "default_start_ref": "origin/codex/experimental-analysis-20261015",
+  "branch_prefix": "codex/",
+  "remote": "origin",
+  "remote_url": "https://github.com/eadstry/WorldSimReady-Home.git",
+  "protected_branches": ["main", "release/*"],
+  "large_change_files": 100
+}
