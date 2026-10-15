@@ -23,7 +23,9 @@
 
 场景、左臂动作、观测、相机标定、reset、物理配置和成功判据均来自交付包。
 位姿动作为 `[dx,dy,dz,rx,ry,rz,gripper]`，平移乘 0.02 m、旋转乘 0.10 rad，
-正夹爪动作闭合，非正动作张开。控制频率 30 Hz，物理频率 120 Hz。
+按实际继承的 `BinaryJointPositionAction.process_actions`，负夹爪动作闭合，零或正动作张开；
+原交付说明中的符号描述与实现相反，本例遵循实现，不对夹具动作翻转符号。
+控制频率 30 Hz，物理频率 120 Hz。
 
 成功要求方块完整投影位于扫描鼠标垫内、底面高度误差不超过 8 mm、
 左夹爪张开至少 0.30 rad、线速度不超过 0.03 m/s、角速度不超过 0.5 rad/s。
@@ -66,6 +68,22 @@ python3 workspace-overlays/openarm-benchmark/run.py \
 需要调整预算或种子时，复制 `benchmark.json` 到机器本地文件，通过 `--protocol` 指定；
 运行结果记录有效配置的 SHA-256。固定初态只允许用于 regression。
 
+录制实际 Arena rollout 的完整视口视频：
+
+```bash
+python3 workspace-overlays/openarm-benchmark/run.py \
+  --bundle "$OPENARM_BUNDLE_ROOT" \
+  --arena-root "$ARENA_ROOT" \
+  --runtime-python "$ARENA_PYTHON" \
+  --output-dir workspace-overlays/openarm-benchmark/runs/video-001 \
+  --record-viewport-video
+```
+
+当前版本在 `--viz none` 下录制时自动启用无窗口 Kit 渲染；`--viz kit` 使用 Kit 可视化后端。
+当前 Isaac Lab 的 `render(rgb_array)` 返回空值，所以进程内适配将 Arena 的录像选项接到
+Isaac Lab `VideoRecorderCfg`。这是本次评测的实时录像，不是历史 AutoData 演示或示意动画。
+视口显示 env 0；并行环境的判定仍分别记录，不声称每个环境都有独立视频。
+
 ## 版本和兼容转换
 
 `input-lock.json` 记录交付包清单哈希，以及两个 Arena 版本的关键源码文件哈希：
@@ -73,9 +91,10 @@ python3 workspace-overlays/openarm-benchmark/run.py \
 | Arena 提交 | 任务结束接口 | 验证范围 |
 | --- | --- | --- |
 | `8b82dca224f2b5af08f339f987613c59ce9cdbaa` | 原 Isaac Lab termination 配置 | 原交付包保存了 GPU 回归记录；本次新运行器尚未 GPU 复验 |
-| `98866596fd024d96c874fe6fb95ae916d1133629` | `TaskTerminationCfg` | 本次转换和命令规划通过主机检查；尚未 GPU 复验 |
+| `98866596fd024d96c874fe6fb95ae916d1133629` | `TaskTerminationCfg` | RTX 5090 实测：零动作 0/2，固定轨迹 1/1 成功；两项均有原生报告和实测视频 |
 
 原交付的 Isaac Lab 基线为 `ffff603eafc6b74264a5261cc0183d6a65390d78`。
+本次 GPU 运行的 Isaac Lab 为 `bb0c8e1b9af381bf13064ec3303e17db79e4b6ef`。
 Arena 源码匹配不代表已安装的 Isaac Lab、Isaac Sim 或驱动匹配。
 未知或已修改的关键 Arena API 文件会被拒绝，需要人工审查兼容性后更新版本记录。
 
@@ -84,6 +103,10 @@ Arena 源码匹配不代表已安装的 Isaac Lab、Isaac Sim 或驱动匹配。
 转换不会改写交付包、生产环境或上游源码。默认 90 秒沿用原 Arena 交付协议；
 源 OpenArm 配置的 30 秒可能截断历史约 40 秒的回归轨迹。
 
+适配还保留 Arena 解析出的 PhysX 后端，并为新版 Warp 夹爪关节索引提供 Torch 读取索引；
+原动作处理、目标写入和限速语义保留。录像收尾时，只在 env 0 恰有一个完成回合且恰有一个
+视口文件时关联回合；多回合长视频不冒充单回合录像。
+
 ## 输出和验收
 
 运行目录包含：
@@ -91,9 +114,11 @@ Arena 源码匹配不代表已安装的 Isaac Lab、Isaac Sim 或驱动匹配。
 - `benchmark_result.json`：协议和输入哈希、所选 Arena 接口、各项执行状态、返回码与实际计分。
 - `index.html`：本次示例检查的汇总页面。
 - 每项检查的 `.log`，以及 Arena 创建的时间戳目录、原生 `index.html` 和 `episode_results_rank0.jsonl`。
+- 启用录像时的 `.mp4`，同时链接到汇总页面；单回合视频也显示在 Arena 原生报告中。
 
 检查通过要求子进程退出成功、完成回合数达到目标、记录种子一致、原生 HTML 报告存在，
 且实际成功数符合该检查的预期。并行完成可能略超目标，所有完成回合都计入分母。
+请求录像时还要求非空 MP4 存在；文件可解码性另用实际视频解码检查验证。
 未完成回合不被转换为失败回合；目标未完成则整项检查失败。
 执行在首项错误后停止，保留日志与部分产物，整体返回非零值。输出目录绝不自动清空或复用。
 
@@ -113,4 +138,6 @@ PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover \
 异常退出及旧新任务接口转换。任务接口测试使用显式替身，不导入仿真依赖。
 它们不替代实际 USD 加载、控制器执行、相机渲染和成功回归。
 
-可移交的封装和验证边界见 `outputs/openarm-benchmark/v001/`。
+2026-10-15 实测固定轨迹在第 1,191 个控制步成功，录像 39.70 秒；零动作两回合各 15 步超时。
+最终录像自动关联逻辑随后又通过一次真实 GPU smoke 检查。17 项主机测试通过。
+可移交的视频、原生报告、模块说明和验证边界见 `outputs/openarm-benchmark/v002/`；v001 保留原始静态验证记录。

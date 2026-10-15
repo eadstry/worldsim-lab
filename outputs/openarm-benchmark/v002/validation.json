@@ -1,0 +1,81 @@
+{
+  "validated_at": "2026-10-15T09:30:12.106413+00:00",
+  "host_tests": {
+    "status": "passed",
+    "count": 17,
+    "command": "PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s workspace-overlays/openarm-benchmark/tests -v",
+    "scope": "Protocol, provenance, scoring, recording associations and API adapters; no simulation dependencies in these unit tests."
+  },
+  "repository_check": {
+    "status": "passed",
+    "command": "bash scripts/cloud-check.sh",
+    "dependency_source": "Existing identical-lockfile node_modules temporarily linked for validation; link removed afterwards."
+  },
+  "gpu_runtime": {
+    "status": "passed",
+    "arena_revision": "98866596fd024d96c874fe6fb95ae916d1133629",
+    "isaaclab_revision": "bb0c8e1b9af381bf13064ec3303e17db79e4b6ef",
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.11.0+cu128",
+    "results": "results.json",
+    "smoke": {
+      "completed_episodes": 2,
+      "successes": 0,
+      "mean_episode_steps": 15
+    },
+    "regression": {
+      "completed_episodes": 1,
+      "successes": 1,
+      "mean_episode_steps": 1191
+    },
+    "final_automatic_recording_association": {
+      "status": "passed",
+      "case": "smoke",
+      "results": "recording-followup.json",
+      "positive_rerun_after_association_only_change": false
+    }
+  },
+  "video_decode": [
+    {
+      "path": "fixture_regression_seed11/2026-10-15_17-16-28/arena-native-env0-viewport-episode-0.mp4",
+      "status": "passed",
+      "bytes": 1017926,
+      "full_decode": true,
+      "output_summary": [
+        "[out#0/null @ 0x3a3d07c0] video:512KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown",
+        "frame= 1191 fps=0.0 q=-0.0 Lsize=N/A time=00:00:39.70 bitrate=N/A speed= 263x    "
+      ]
+    },
+    {
+      "path": "recording-followup/smoke_timeout_seed11/2026-10-15_17-23-18/arena-native-env0-viewport-episode-0.mp4",
+      "status": "passed",
+      "bytes": 92773,
+      "full_decode": true,
+      "output_summary": [
+        "[out#0/null @ 0x416a6300] video:6KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown",
+        "frame=   15 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=30.2x    "
+      ]
+    },
+    {
+      "path": "smoke_timeout_seed11/2026-10-15_17-16-12/arena-native-env0-viewport-episode-0.mp4",
+      "status": "passed",
+      "bytes": 92773,
+      "full_decode": true,
+      "output_summary": [
+        "[out#0/null @ 0x78b2700] video:6KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown",
+        "frame=   15 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=31.2x    "
+      ]
+    }
+  ],
+  "portable_html_links": {
+    "status": "passed",
+    "checked": 44,
+    "machine_specific_home_paths": false
+  },
+  "unperformed": [
+    "Optional full-budget baseline",
+    "New overlay GPU validation on original older Arena revision",
+    "Learned-policy evaluation",
+    "Feishu or ChatGPT uploads (local delivery requested)"
+  ]
+}

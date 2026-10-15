@@ -111,7 +111,7 @@ def validate_protocol(protocol):
             raise ValueError("This no-model example supports zero action and fixture replay only")
 
 
-def make_plan(protocol, group, bundle, arena_root, runtime_python, output_dir):
+def make_plan(protocol, group, bundle, arena_root, runtime_python, output_dir, viz="none", record_viewport_video=False):
     runs = []
     for case in protocol["cases"]:
         if not (case["group"] in {"smoke", "regression"} if group == "all" else case["group"] == group):
@@ -121,7 +121,7 @@ def make_plan(protocol, group, bundle, arena_root, runtime_python, output_dir):
             command = [
                 str(runtime_python), str(ROOT / "runtime.py"),
                 "--bundle", str(bundle), "--arena-root", str(arena_root), "--",
-                "--viz", "none", "--enable_cameras",
+                "--viz", viz, "--enable_cameras",
                 "--kit_args", "--enable omni.usd.schema.omni_lens_distortion",
                 "--external_environment_class_path", EXTERNAL_ENVIRONMENT,
                 "--policy_type", case["policy_type"],
@@ -129,6 +129,8 @@ def make_plan(protocol, group, bundle, arena_root, runtime_python, output_dir):
                 "--seed", str(seed), "--num_episodes", str(case["num_episodes"]),
                 "--output_base_dir", str(output_dir / run_name),
             ]
+            if record_viewport_video:
+                command.append("--record_viewport_video")
             if case["fixture"]:
                 command += ["--fixture_path", str(bundle_path(bundle, case["fixture"]))]
             command += [protocol["environment"], "--openarm_episode_length_s", str(case["episode_length_s"])]
@@ -140,7 +142,7 @@ def make_plan(protocol, group, bundle, arena_root, runtime_python, output_dir):
     return runs
 
 
-def collect_result(run_dir, case, seed):
+def collect_result(run_dir, case, seed, require_video=False):
     paths = sorted(run_dir.rglob("episode_results_rank*.jsonl"))
     if not paths:
         raise ValueError("No completed episode records")
@@ -168,6 +170,9 @@ def collect_result(run_dir, case, seed):
     report = paths[0].parent / "index.html"
     if not report.is_file() or report.stat().st_size == 0:
         raise ValueError("Arena HTML report is missing or empty")
+    videos = sorted(run_dir.rglob("*.mp4"))
+    if require_video and not any(path.stat().st_size > 32 for path in videos):
+        raise ValueError("Requested viewport video is missing or empty")
     successes = sum(row["success"] for row in rows)
     expected_met = successes == (len(rows) if case["expected"] == "all_succeeded" else 0)
     return {
@@ -177,6 +182,7 @@ def collect_result(run_dir, case, seed):
         "expected": case["expected"], "expectation_met": expected_met,
         "arena_report": report.relative_to(run_dir.parent).as_posix(),
         "episode_files": [path.relative_to(run_dir.parent).as_posix() for path in paths],
+        "videos": [path.relative_to(run_dir.parent).as_posix() for path in videos],
     }
 
 
@@ -193,12 +199,20 @@ def write_report(output_dir, results):
             '<a href="' + html.escape(metrics["arena_report"], quote=True) + '">Arena 报告</a>'
             if "arena_report" in metrics else "—"
         ) + "</td></tr>")
+    video_sections = []
+    for result in results:
+        for video in result.get("metrics", {}).get("videos", []):
+            video_sections.append(
+                "<h2>" + html.escape(result["name"]) + "</h2>"
+                '<video controls preload="metadata" style="width:100%;max-width:960px" src="'
+                + html.escape(video, quote=True) + '"></video>'
+            )
     content = """<!doctype html><html lang="zh-CN"><meta charset="utf-8">
 <title>OpenArm benchmark 示例结果</title><style>body{font:16px system-ui;margin:40px;max-width:1100px}
 table{border-collapse:collapse}td,th{border:1px solid #ccc;padding:10px;text-align:left}</style>
 <h1>OpenArm benchmark 示例结果</h1><p>检查通过表示预期链路行为成立。零动作失败和固定轨迹成功均不是学习策略的泛化成绩。</p>
 <table><tr><th>检查</th><th>执行状态</th><th>完成回合</th><th>成功回合</th><th>任务成功率</th><th>错误</th><th>详情</th></tr>
-""" + "".join(table_rows) + "</table></html>"
+""" + "".join(table_rows) + "</table>" + "".join(video_sections) + "</html>"
     (output_dir / "index.html").write_text(content, encoding="utf-8")
 
 
@@ -219,7 +233,10 @@ def execute_plan(runs, output_dir, metadata):
                 result["returncode"] = completed.returncode
                 if completed.returncode != 0:
                     raise ValueError(f"Arena exited with code {completed.returncode}; see the preserved log")
-                result["metrics"] = collect_result(output_dir / run["name"], run["case"], run["seed"])
+                result["metrics"] = collect_result(
+                    output_dir / run["name"], run["case"], run["seed"],
+                    require_video=metadata.get("record_viewport_video", False),
+                )
                 if not result["metrics"]["expectation_met"]:
                     raise ValueError("Observed task outcome differs from the demonstration expectation")
                 result["status"] = "passed"
@@ -248,6 +265,8 @@ def main():
     parser.add_argument("--case", choices=("all", "smoke", "regression", "baseline"), default="all")
     parser.add_argument("--output-dir", type=Path, required=True, help="New output directory; never reused")
     parser.add_argument("--dry-run", action="store_true", help="Verify inputs and print commands; no simulator or output writes")
+    parser.add_argument("--viz", choices=("none", "kit"), default="none", help="Arena visualization backend")
+    parser.add_argument("--record-viewport-video", action="store_true", help="Record the actual Arena viewport as MP4")
     args = parser.parse_args()
     try:
         bundle, arena_root, runtime_python, output_dir = (
@@ -262,13 +281,17 @@ def main():
         arena_check = inspect_arena(arena_root, lock)
         protocol = read_json(args.protocol)
         validate_protocol(protocol)
-        runs = make_plan(protocol, args.case, bundle, arena_root, runtime_python, output_dir)
+        runs = make_plan(
+            protocol, args.case, bundle, arena_root, runtime_python, output_dir,
+            viz=args.viz, record_viewport_video=args.record_viewport_video,
+        )
         metadata = {
             "schema_version": 1, "benchmark_id": protocol["benchmark_id"], "scope": protocol["scope"],
             "started_at": datetime.now(timezone.utc).isoformat(),
             "protocol_sha256": sha256(args.protocol), "input_lock_sha256": sha256(ROOT / "input-lock.json"),
             "bundle_check": bundle_check, "arena_check": arena_check,
             "selected_case": args.case, "planned_runs": len(runs),
+            "viz": args.viz, "record_viewport_video": args.record_viewport_video,
             "runtime_validation": "not_performed" if args.dry_run else "see_run_results",
         }
         if args.dry_run:

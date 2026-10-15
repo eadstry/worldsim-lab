@@ -4,6 +4,19 @@
 from openarm_arena.environment import OpenArmPickPlaceEnvironment, OpenArmPickPlaceTask
 
 
+def configure_simulation(cfg, source):
+    """Copy source timing while retaining Arena's resolved physics backend."""
+    physics = getattr(cfg.sim, "physics", None)
+    cfg.sim = source.sim.copy()
+    if hasattr(cfg.sim, "physics") and cfg.sim.physics is None:
+        cfg.sim.physics = physics
+    cfg.decimation = source.decimation
+    from openarm_benchmark.recording import configure_native_recorder
+
+    cfg = configure_native_recorder(cfg)
+    return cfg
+
+
 class OpenArmBenchmarkTask(OpenArmPickPlaceTask):
     """Preserve the placement predicate across the two recorded Arena versions."""
 
@@ -32,6 +45,8 @@ class OpenArmBenchmarkEnvironment(OpenArmPickPlaceEnvironment):
     name = "openarm_left_pick_place_benchmark"
 
     def get_env(self, args_cli):
+        from openarm_benchmark.actions import CompatibleGripperAction
+
         environment = super().get_env(args_cli)
         original = environment.task
         environment.task = OpenArmBenchmarkTask(
@@ -39,4 +54,6 @@ class OpenArmBenchmarkEnvironment(OpenArmPickPlaceEnvironment):
             episode_length_s=original.episode_length_s,
             replay_fixture=original.replay_fixture,
         )
+        environment.env_cfg_callback = lambda cfg: configure_simulation(cfg, original.source)
+        environment.embodiment.action_config.left_gripper_action.class_type = CompatibleGripperAction
         return environment

@@ -19,6 +19,9 @@ def main():
         str(args.arena_root.resolve()),
         str(args.bundle.resolve()),
     ]
+    from openarm_benchmark.recording import install_native_recording
+
+    remaining = install_native_recording(args.arena_root, remaining)
     sys.argv = ["policy_runner", *remaining]
     # The external environment is imported by Arena after SimulationApp starts.
     runpy.run_module("isaaclab_arena.evaluation.policy_runner", run_name="__main__")

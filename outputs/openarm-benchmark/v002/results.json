@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "benchmark_id": "openarm-left-pick-place-demo",
+  "scope": "Evaluation infrastructure example; no learned-policy score",
+  "started_at": "2026-10-15T09:16:05.713033+00:00",
+  "protocol_sha256": "9effc8e0be1f9e20dd9ca7be0e04af090e1817212e6deb4137893f01a496a059",
+  "input_lock_sha256": "9a75e3f7b8faa1fc1774cfcc0dba4da0a10295b36e7060e85a4ec3ba0a5a4348",
+  "bundle_check": {
+    "status": "verified",
+    "files_checked": 181,
+    "manifest_sha256": "d0ec138ada82f89b1bd24006de335240f305457b1031f9c4670b1a181ea8f6d4"
+  },
+  "arena_check": {
+    "revision": "98866596fd024d96c874fe6fb95ae916d1133629",
+    "task_api": "typed_task_termination",
+    "check": "critical_source_hashes"
+  },
+  "selected_case": "all",
+  "planned_runs": 2,
+  "viz": "none",
+  "record_viewport_video": true,
+  "runtime_validation": "see_run_results",
+  "status": "passed",
+  "runs": [
+    {
+      "name": "smoke_timeout_seed11",
+      "status": "passed",
+      "returncode": 0,
+      "metrics": {
+        "completed_episodes": 2,
+        "successes": 0,
+        "failures": 2,
+        "success_rate": 0.0,
+        "mean_episode_steps": 15.0,
+        "expected": "all_failed",
+        "expectation_met": true,
+        "arena_report": "smoke_timeout_seed11/2026-10-15_17-16-12/index.html",
+        "episode_files": [
+          "smoke_timeout_seed11/2026-10-15_17-16-12/episode_results_rank0.jsonl"
+        ],
+        "videos": [
+          "smoke_timeout_seed11/2026-10-15_17-16-12/arena-native-env0-viewport-episode-0.mp4"
+        ]
+      }
+    },
+    {
+      "name": "fixture_regression_seed11",
+      "status": "passed",
+      "returncode": 0,
+      "metrics": {
+        "completed_episodes": 1,
+        "successes": 1,
+        "failures": 0,
+        "success_rate": 1.0,
+        "mean_episode_steps": 1191.0,
+        "expected": "all_succeeded",
+        "expectation_met": true,
+        "arena_report": "fixture_regression_seed11/2026-10-15_17-16-28/index.html",
+        "episode_files": [
+          "fixture_regression_seed11/2026-10-15_17-16-28/episode_results_rank0.jsonl"
+        ],
+        "videos": [
+          "fixture_regression_seed11/2026-10-15_17-16-28/arena-native-env0-viewport-episode-0.mp4"
+        ]
+      }
+    }
+  ],
+  "finished_at": "2026-10-15T09:18:18.838594+00:00",
+  "provenance_note": "Real Arena GPU run. Machine-specific launch commands and raw logs stay in local runtime storage. Single-episode video filenames were associated and native reports rebuilt after this run; video bytes unchanged."
+}

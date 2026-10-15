@@ -1,0 +1,96 @@
+{
+  "kind": "static_comparison_and_historical_records",
+  "bundle_id": "openarm_pick_place_arena_20261013_120511",
+  "source_comparison": [
+    {
+      "path": "openarm_autodata/tasks/pick_place/configs/left_env_cfg.py",
+      "same_as_current_production": true,
+      "sha256": "a9a8560626e07cef784899671b3f298f17613efb6c223d695f11a389b9f4f3b2"
+    },
+    {
+      "path": "openarm_autodata/tasks/pick_place/configs/env_cfg.py",
+      "same_as_current_production": true,
+      "sha256": "81416c26ec4e4b402914d8d6df0e7f56268888524f507b9738b6068898e1afa0"
+    },
+    {
+      "path": "openarm_autodata/tasks/pick_place/configs/scene_cfg.py",
+      "same_as_current_production": true,
+      "sha256": "878f559e5fe0ed98daf1ffc41c79a7f541da524297a47a8a7714488ad8a69450"
+    },
+    {
+      "path": "openarm_autodata/tasks/pick_place/envs/mdp.py",
+      "same_as_current_production": true,
+      "sha256": "3dcb25250fdd6e327a68adf9ab904c9db01b04fc5db5420ad18ba1678954b35c"
+    },
+    {
+      "path": "openarm_autodata/shared/envs/actions.py",
+      "same_as_current_production": true,
+      "sha256": "731c51a21c31c3807f5eafb16eac4e3b40fa97ae45078e7b94a2af81a98c3fb9"
+    },
+    {
+      "path": "openarm_autodata/shared/envs/cameras.py",
+      "same_as_current_production": true,
+      "sha256": "c336a62f470fe990233ebdf04b0d2e04c8db832a238105b49773db209fc5f3dc"
+    },
+    {
+      "path": "openarm_autodata/shared/configs/camera_cfg.py",
+      "same_as_current_production": true,
+      "sha256": "3bed16ded69f04e532f92b27c8806e3400babb5241b625cc2e89d68d9e07d6bc"
+    },
+    {
+      "path": "openarm_autodata/shared/configs/robot_v2_cfg.py",
+      "same_as_current_production": true,
+      "sha256": "28a935145388f6d00dcc1f7259e8f5b930a8426737a02f8bba6717e7885dce7a"
+    },
+    {
+      "path": "openarm_autodata/shared/calibration/cameras.json",
+      "same_as_current_production": true,
+      "sha256": "e529c94b96d6c187cd94cc27a4b5bb2a8d07a969fe89b0f28decc52a73884c37"
+    }
+  ],
+  "historical_runtime": {
+    "source": "validation/summary.json",
+    "sha256": "cf386e3994dfee4a2e59d8f29c29d74c08fa468310f8a483ee39849c408184d8",
+    "record": {
+      "validated_at": "2026-10-13T12:26:04.848482+08:00",
+      "status": "passed",
+      "native_arena_runs": {
+        "negative": {
+          "completed_episodes": 2,
+          "successes": 0,
+          "failures": 2,
+          "success_rate": 0.0,
+          "seeds": [
+            11
+          ],
+          "mean_episode_steps": 15.0
+        },
+        "regression": {
+          "completed_episodes": 1,
+          "successes": 1,
+          "failures": 0,
+          "success_rate": 1.0,
+          "seeds": [
+            11
+          ],
+          "mean_episode_steps": 1190.0
+        },
+        "model_interface": {
+          "completed_episodes": 1,
+          "successes": 0,
+          "failures": 1,
+          "success_rate": 0.0,
+          "seeds": [
+            11
+          ],
+          "mean_episode_steps": 15.0
+        }
+      },
+      "success_rule_contract": "validation/task_contract.json",
+      "asset_dependency_check": "validation/asset_dependencies.json",
+      "source_isolation": "Runtime loaded from delivery path while AutoData imports were explicitly blocked.",
+      "scope": "Environment delivery and evaluation pipeline validation; no trained-policy performance claim."
+    },
+    "applies_to": "Original delivery only, not this new overlay"
+  }
+}

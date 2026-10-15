@@ -15,6 +15,7 @@ from unittest.mock import patch
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 import run as benchmark
+from openarm_benchmark.recording import associate_single_episode_video
 
 
 class BenchmarkTests(unittest.TestCase):
@@ -73,12 +74,53 @@ class BenchmarkTests(unittest.TestCase):
         self.assertTrue(result["expectation_met"])
         self.assertEqual(result["success_rate"], 0.0)
 
+    def test_visualization_flags_reach_native_arena_runner(self):
+        plan = benchmark.make_plan(
+            self.protocol, "smoke", self.root, self.root, Path(sys.executable), self.root,
+            viz="kit", record_viewport_video=True,
+        )
+        command = plan[0]["command"]
+        self.assertEqual(command[command.index("--viz") + 1], "kit")
+        self.assertIn("--record_viewport_video", command)
+        self.assertLess(command.index("--record_viewport_video"), command.index(self.protocol["environment"]))
+
+    def test_requested_video_is_required_and_linked(self):
+        run_dir = self.root / "run"
+        native = self.episodes(run_dir)
+        with self.assertRaisesRegex(ValueError, "video"):
+            benchmark.collect_result(run_dir, self.case, 11, require_video=True)
+        # A test file checks orchestration only; real videos are decoded separately.
+        (native / "scene.mp4").write_bytes(b"synthetic unit-test placeholder" * 3)
+        result = benchmark.collect_result(run_dir, self.case, 11, require_video=True)
+        self.assertEqual(len(result["videos"]), 1)
+        benchmark.write_report(self.root, [dict(name="smoke", status="passed", metrics=result)])
+        self.assertIn("<video controls", (self.root / "index.html").read_text())
+
     def test_parallel_overshoot_counts_all_completed_episodes(self):
         self.episodes(self.root, (True, False, False))
         result = benchmark.collect_result(self.root, self.case, 11)
         self.assertEqual(result["completed_episodes"], 3)
         self.assertAlmostEqual(result["success_rate"], 1 / 3)
         self.assertFalse(result["expectation_met"])
+
+    def test_native_video_association_preserves_clip_bytes(self):
+        native = self.episodes(self.root, (True,))
+        clip = native / "arena-viewport_0000.mp4"
+        clip.write_bytes(b"test video payload")
+        linked = associate_single_episode_video(native)
+        self.assertEqual(linked.name, "arena-native-env0-viewport-episode-0.mp4")
+        self.assertEqual(linked.read_bytes(), b"test video payload")
+        self.assertFalse(clip.exists())
+
+    def test_multi_episode_clip_is_not_mislabeled_as_one_episode(self):
+        native = self.episodes(self.root, (False,))
+        records = native / "episode_results_rank0.jsonl"
+        second = dict(env_id=0, episode_in_env=1, seed=11, success=False, episode_length=15)
+        records.write_text(records.read_text() + json.dumps(second) + "\n")
+        clip = native / "arena-viewport_0000.mp4"
+        clip.write_bytes(b"test video payload")
+        self.assertIsNone(associate_single_episode_video(native))
+        self.assertTrue(clip.exists())
 
     def test_incomplete_rollout_and_missing_report_are_errors(self):
         native = self.episodes(self.root, (False,))
@@ -195,6 +237,19 @@ class TaskApiTests(unittest.TestCase):
         cfg = overlay.OpenArmBenchmarkTask(source).get_termination_cfg()
         self.assertIs(cfg.success, source.terminations.success)
         self.assertIs(cfg.cube_dropped, source.terminations.cube_dropped)
+
+    def test_source_simulation_copy_retains_resolved_physx_backend(self):
+        overlay, source = self.load_overlay(typed=True)
+        source.sim = types.SimpleNamespace(physics=None, dt=1 / 120, render_interval=4)
+        source.sim.copy = lambda: copy.copy(source.sim)
+        source.decimation = 4
+        backend = object()
+        cfg = types.SimpleNamespace(sim=types.SimpleNamespace(physics=backend), decimation=1)
+        result = overlay.configure_simulation(cfg, source)
+        self.assertIs(result.sim.physics, backend)
+        self.assertEqual(result.sim.dt, 1 / 120)
+        self.assertEqual(result.decimation, 4)
+        self.assertIsNone(source.sim.physics)
 
 
 if __name__ == "__main__":
