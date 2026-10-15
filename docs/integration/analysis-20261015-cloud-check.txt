@@ -1,0 +1,62 @@
+Checked 3 upstream pins, 27 manifests and 1087 sealed files
+WARNING: AutoData: not initialized
+WARNING: IsaacLab-Arena: not initialized
+WARNING: RLinf: not initialized
+test_automatic_dispatch_finishes_without_manual_worker (test_task_queue.TaskQueueTests.test_automatic_dispatch_finishes_without_manual_worker) ... ok
+test_concurrent_submitters_and_workers_preserve_fifo_without_overlap (test_task_queue.TaskQueueTests.test_concurrent_submitters_and_workers_preserve_fifo_without_overlap) ... ok
+test_crashed_worker_keeps_slot_until_child_exits_without_retry (test_task_queue.TaskQueueTests.test_crashed_worker_keeps_slot_until_child_exits_without_retry) ... ok
+test_cwd_environment_and_argument_boundaries_are_per_submission (test_task_queue.TaskQueueTests.test_cwd_environment_and_argument_boundaries_are_per_submission) ... ok
+test_failure_missing_executable_and_cancel_do_not_block_next_task (test_task_queue.TaskQueueTests.test_failure_missing_executable_and_cancel_do_not_block_next_task) ... ok
+test_real_git_worktrees_record_their_own_revision_and_dirty_state (test_task_queue.TaskQueueTests.test_real_git_worktrees_record_their_own_revision_and_dirty_state) ... ok
+test_sigterm_cleans_running_command_and_leaves_queue_for_restart (test_task_queue.TaskQueueTests.test_sigterm_cleans_running_command_and_leaves_queue_for_restart) ... ok
+test_timeout_cleans_descendants_and_continues (test_task_queue.TaskQueueTests.test_timeout_cleans_descendants_and_continues) ... ok
+test_changed_payload_and_resealed_manifest_rejected (test_version_management.VersionChecks.test_changed_payload_and_resealed_manifest_rejected) ... ok
+test_deleted_version_rejected (test_version_management.VersionChecks.test_deleted_version_rejected) ... ok
+test_delivery_receipt_update_allowed (test_version_management.VersionChecks.test_delivery_receipt_update_allowed) ... ok
+test_gitlink_lock_disagreement_rejected (test_version_management.VersionChecks.test_gitlink_lock_disagreement_rejected) ... ok
+test_hook_index_does_not_leak_into_nested_checkout (test_version_management.VersionChecks.test_hook_index_does_not_leak_into_nested_checkout) ... ok
+test_partially_staged_changes_rejected (test_version_management.VersionChecks.test_partially_staged_changes_rejected) ... ok
+test_sealed_payload_must_be_in_index (test_version_management.VersionChecks.test_sealed_payload_must_be_in_index) ... ok
+test_staged_dataset_and_secret_rejected (test_version_management.VersionChecks.test_staged_dataset_and_secret_rejected) ... ok
+test_staged_deletion_cannot_hide_behind_worktree_copy (test_version_management.VersionChecks.test_staged_deletion_cannot_hide_behind_worktree_copy) ... ok
+test_unstaged_lock_cannot_authorize_staged_gitlink (test_version_management.VersionChecks.test_unstaged_lock_cannot_authorize_staged_gitlink) ... ok
+test_valid_sealed_version (test_version_management.VersionChecks.test_valid_sealed_version) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 3.997s
+
+OK
+Checked 0 upstream pins, 1 manifests and 1 sealed files
+Checked 0 upstream pins, 1 manifests and 1 sealed files
+Checked 0 upstream pins, 0 manifests and 0 sealed files
+Checked 0 upstream pins, 1 manifests and 1 sealed files
+Checked 1 upstream pins, 0 manifests and 0 sealed files
+Checked 0 upstream pins, 0 manifests and 0 sealed files
+Checked 0 upstream pins, 1 manifests and 1 sealed files
+Checked 0 upstream pins, 0 manifests and 0 sealed files
+Checked 0 upstream pins, 1 manifests and 1 sealed files
+Checked 1 upstream pins, 0 manifests and 0 sealed files
+Checked 0 upstream pins, 1 manifests and 1 sealed files
+test_both_launch_plans_use_shared_adapters_and_snapshot (test_shared_config.ConfigTests.test_both_launch_plans_use_shared_adapters_and_snapshot) ... ok
+test_duplicate_json_keys_fail (test_shared_config.ConfigTests.test_duplicate_json_keys_fail) ... ok
+test_evaluation_changes_do_not_change_generation_native_config (test_shared_config.ConfigTests.test_evaluation_changes_do_not_change_generation_native_config) ... ok
+test_missing_runtime_source_rejected_before_creating_run (test_shared_config.ConfigTests.test_missing_runtime_source_rejected_before_creating_run) ... ok
+test_reject_conflicting_native_scales_and_profile_patches (test_shared_config.ConfigTests.test_reject_conflicting_native_scales_and_profile_patches) ... ok
+test_reject_unknown_conflicting_and_invalid_contracts (test_shared_config.ConfigTests.test_reject_unknown_conflicting_and_invalid_contracts) ... ok
+test_scales_and_seed_derived_once (test_shared_config.ConfigTests.test_scales_and_seed_derived_once) ... ok
+test_shared_reset_and_success_applied_in_both_modes (test_shared_config.ConfigTests.test_shared_reset_and_success_applied_in_both_modes) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.006s
+
+OK
+
+> private-blog@1.0.0 build
+> node scripts/build-autodata.mjs
+
+Built AutoData: 13 sections, Markdown + SVG + offline ZIP
+
+> private-blog@1.0.0 check
+> node scripts/check-autodata.mjs
+
+PASS: original text, headings, tables, code, layouts, 11 SVGs, links, MD source and ZIP integrity

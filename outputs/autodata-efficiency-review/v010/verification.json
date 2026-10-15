@@ -1,0 +1,18 @@
+{
+  "checked_at": "2026-10-15T07:47:06.476281+00:00",
+  "v009_preserved": true,
+  "experimental_data_unchanged": true,
+  "local_links": "passed",
+  "pdf_page_count": 32,
+  "pdf_continuous_page_numbers_and_sections": "32/32 passed via pdftotext",
+  "html_order_matches_manifest": true,
+  "guide_coverage": "32/32",
+  "footer_coverage": "32/32; evidence, conclusion, reading guidance",
+  "visual_spot_checks": [
+    "26-experiment-matrix",
+    "27-metrics",
+    "01-throughput",
+    "PDF first page"
+  ],
+  "scope": "Chart restructuring and experimental explanations; no new runtime experiment"
+}

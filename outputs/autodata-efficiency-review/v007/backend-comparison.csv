@@ -1,0 +1,3 @@
+date,backend,config,final_ready_seconds,recorded_successes,terminal_passes,recorded_successes_per_minute,terminal_passes_per_minute,caveat
+2026-10-14,v1,auto,623.647924,16,16,1.5393300659812668,1.5393300659812668,historical single run
+2026-10-15,v2,auto,699.0455019999999,16,15,1.3733011617318154,1.2874698391235768,different day and fresh caches; not isolated causal comparison

@@ -1,0 +1,6 @@
+{
+  "test_kind": "CPU execution of pinned v2 SampleBuffer",
+  "global_manual_seed_does_not_reset_private_generator": true,
+  "successive_samples_differ": true,
+  "explicit_reset_replays_first_samples": true
+}

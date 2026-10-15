@@ -1,0 +1,22 @@
+[
+  {
+    "path": "AutoData/autodata_interfaces/motion_planners/curobo/curobo_planner.py",
+    "sha256": "59a38b465dd073b8173b1a588347e7321f5f18685fc774ff5759d21f1748daaa",
+    "evidence_type": "当前源码，非历史冻结快照"
+  },
+  {
+    "path": "AutoData/datasets/efficiency_20261014_201834/v2/launchers/v2/v2_planner.py",
+    "sha256": "78b58d08f9503d302325a35775ffbd6ec8e98e366d0663c54b724f7808c779ea",
+    "evidence_type": "实验冻结适配器"
+  },
+  {
+    "path": "AutoData/datasets/efficiency_20261014_201834/v1/launchers/v1/async_export.py",
+    "sha256": "b44c38db5f28faecc316369e5bfafa73d627eeddf26eb757a1dcce26a2da6573",
+    "evidence_type": "实验冻结保存桥"
+  },
+  {
+    "path": "AutoData/datasets/efficiency_20261014_201834/v1/launchers/v1/export_pool.py",
+    "sha256": "ef03ef54bbbc7276205b15030358ee691fc3f422c6449f263acd8c7887768aef",
+    "evidence_type": "实验冻结保存池"
+  }
+]

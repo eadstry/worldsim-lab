@@ -1,0 +1,237 @@
+{
+  "schema_version": 1,
+  "artifact_id": "autodata-efficiency-review",
+  "version": "v003",
+  "created_at": "2026-10-15T04:50:51.210011+00:00",
+  "material_cutoff": "2026-10-15 Asia/Shanghai; includes new v2 runtime and output readback",
+  "sources": [
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/summary.csv",
+      "sha256": "c118aac9896864fc60221b1ca65343320da03864d31804ed4b60d53780dd42a9"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w0/episodes.telemetry-summary.json",
+      "sha256": "84350a09c56618138436bfc8024b4b86c11902526a18191dea2e1408019b64c4"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w0/episodes.telemetry.jsonl",
+      "sha256": "0aa617c5d965a966ea557b292e039e51c2724f418327f3940f5619e8f020c1bc"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w0/episodes.run.json",
+      "sha256": "2eb0e79aca14b7588eb72a47b06110c77dd0f2a79ccb80b1e24dbc8ea64cde34"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w0/episodes.validation.json",
+      "sha256": "395134e4ae467cbd2d15149679ccf9cd055c6f2319e8226bfec70708399a0de2"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w0/episodes.resources.jsonl",
+      "sha256": "80518de5e96a5d21dbb6e9e8ab0f6765f99616813dee88be9dd202cea622324b"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w4/episodes.telemetry-summary.json",
+      "sha256": "820c245bbc131f36baa47d206f3dfe4f871fda5e890fbfce259bd5fc8a31cc9f"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w4/episodes.telemetry.jsonl",
+      "sha256": "af4864fcc36097270f58c5f3ee51c72ba08650a4a5847c3dc99b615e60c4eebb"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w4/episodes.run.json",
+      "sha256": "b62e7dc122e035eb45dfe3f36ce5e903d8f069d6dcf33638aef17503b60251c9"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w4/episodes.validation.json",
+      "sha256": "b09dafbad3c9ffbf087fa4d120fd373f37e1c96ca675acaef45dfcfb103ecda1"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w4/episodes.resources.jsonl",
+      "sha256": "840ebc708097cf37c2476121e0dafbc034f9dc2e80438b726264f44257d4c683"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w8/episodes.telemetry-summary.json",
+      "sha256": "ee92b2484043b9e2cc9a061e2a0d7e4f87fe4b2292e75cd313132bd2f4c69066"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w8/episodes.telemetry.jsonl",
+      "sha256": "459837b077b3e92889d9dc16d04ad5578331c945854aa839e8ba64a1c29323e2"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w8/episodes.run.json",
+      "sha256": "06e7fc98a830677862c68f486862cc898f2b83786cec8b3308fb5f2bc9f889c0"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w8/episodes.validation.json",
+      "sha256": "2f407ca3eec04c51a46ba5bbd89bf7318f0f41403a857f6c40cee3736d6268ce"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w8/episodes.resources.jsonl",
+      "sha256": "b6aa7cd4b86dc46c4a0c07c27ac232c960cd7184e3644dc58ee1131094d76a00"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_wauto/episodes.telemetry-summary.json",
+      "sha256": "f5eb394a147199c057d2e352de195e8a601d47c452d0afb3927f80fc915a2546"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_wauto/episodes.telemetry.jsonl",
+      "sha256": "67f8d3181f246cb0629e80ff57a065741deb54b8eeb0f98966fb841ea36ec5be"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_wauto/episodes.run.json",
+      "sha256": "61cd5c9b6cec3987b2bd52921425f2e25fa9f2ae9f0e25f6699de30602bb1343"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_wauto/episodes.validation.json",
+      "sha256": "f8f37aef6a9bec66b990fc21b8a55064481b626d7df2d843646ef4a7f9fd3f32"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_wauto/episodes.resources.jsonl",
+      "sha256": "0d3c32b3ef93cb88fd20d35085733eb5ee7c3378ee6933b78a5dd9e1dbebdb83"
+    },
+    {
+      "path": "outputs/autodata-efficiency-report/v001/evidence.json",
+      "sha256": "c86c49528ebd6f3c83ac314eb8ea3acdf34daaa269fd53b29dd8da2e6a10ece4"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v2/r01_v2_wauto/episodes.telemetry-summary.json",
+      "sha256": "804bc36b0a2710f3f5c01998e3831e526404bab4b963cfbd5cb81702d5957172"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v2/r01_v2_wauto/episodes.run.json",
+      "sha256": "a6400a50e95638da2d9a5c4c51e72d2659821dd87553068bbcbd8cd3cd957db0"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v2/r01_v2_wauto/episodes.telemetry.jsonl",
+      "sha256": "d9c9f7fa2615b87933e4433c9d4a9c2623d4e45c0080d545654d9898c5ef1c8e"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v2/r01_v2_wauto/episodes.export.json",
+      "sha256": "d36f58877d896e3dfc9653bfcaeec3f3eb27cd4ea15944fb786bbfcad5fcb783"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/launchers/v1/generate.py",
+      "sha256": "028a03f3c75fe46131bd03f17634cb6ed44ae0f4f7274e01ba4fe41d92195ff4"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/launchers/v1/async_export.py",
+      "sha256": "b44c38db5f28faecc316369e5bfafa73d627eeddf26eb757a1dcce26a2da6573"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/launchers/v1/export_pool.py",
+      "sha256": "ef03ef54bbbc7276205b15030358ee691fc3f422c6449f263acd8c7887768aef"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/launchers/v1/export_governor.py",
+      "sha256": "d2dc630a91dc890c57ac36db381ac2759518a25b3a582704ccf783584dee808b"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v2/launchers/v2/v2_planner.py",
+      "sha256": "78b58d08f9503d302325a35775ffbd6ec8e98e366d0663c54b724f7808c779ea"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v2/launchers/v2/model.py",
+      "sha256": "a8b87f6ba410ec8ee838349f3c8c009e35f7878fb7bec16151e990c8a7a9a32a"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v2/launchers/v2/trajectory.py",
+      "sha256": "1dac1ab5841cd5b389757607eb789dc94e2820026d3b400862734d278aaec949"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v2/launchers/v2/validate_output.py",
+      "sha256": "4367f2a7cebe63c56885694b2bbd6a304fc38e4bc4327eae6af2a7ccf74ef46b"
+    },
+    {
+      "root": "current_workspace",
+      "path": "workspace-overlays/efficiency-review-runtime/v2-auto-16-seed101/episodes.run.json",
+      "sha256": "939b6987450ea20ab897f6e14a4da6da5111b3f190433bb74caf9e5c289d7af1"
+    },
+    {
+      "root": "current_workspace",
+      "path": "workspace-overlays/efficiency-review-runtime/v2-auto-16-seed101/episodes.telemetry.jsonl",
+      "sha256": "41296f8470a0017440dacf29d8986f41e8c99e30f4133379026a2a86c811d73d"
+    },
+    {
+      "root": "current_workspace",
+      "path": "workspace-overlays/efficiency-review-runtime/v2-auto-16-seed101/episodes.telemetry-summary.json",
+      "sha256": "fe899eb67b54bf3afb78a23d5ac5dfd319322152927b376103b925e53b50f88c"
+    },
+    {
+      "root": "current_workspace",
+      "path": "workspace-overlays/efficiency-review-runtime/v2-auto-16-seed101/episodes.validation.json",
+      "sha256": "d1d1fb914049970592a9bb6325ee1b874cff931f8b5b258e97b4e1449afbb832"
+    },
+    {
+      "root": "current_workspace",
+      "path": "workspace-overlays/efficiency-review-runtime/v2-auto-16-seed101/schema-validation.log",
+      "sha256": "04a7847d535be85a26ca69126bb126d72f7b378322386166d3667fbc37ca5981"
+    },
+    {
+      "root": "current_workspace",
+      "path": "workspace-overlays/efficiency-review-runtime/v2-auto-16-seed101/validation.log",
+      "sha256": "aec4e4cbaaec2dba5bb236f9d6152b9841f6852583f7630784a6f9788eadb690"
+    }
+  ],
+  "limitations": [
+    "v2 runtime completed but strict terminal validation failed for demo_2; 15/16 pass.",
+    "Historical v1 vs new v2 is cross-day single-run comparison, not causal isolation.",
+    "HDF5 readback and terminal-state checks are not full physics replay."
+  ],
+  "delivery_policy": "local_only",
+  "delivery": {
+    "feishu": {
+      "status": "not_requested"
+    },
+    "gpt": {
+      "status": "not_requested"
+    }
+  },
+  "sealed_at": "2026-10-15T04:50:51.210011+00:00",
+  "files": {
+    "CHANGELOG.md": "36ea52298b481cb9e1b861d0e18df074bceff209b2214e91782c6c0d6d5b328f",
+    "backend-comparison.csv": "c03c65a478d648a76c704593ddf4266e259173bb07a09feac43da7d5bd5c0085",
+    "build_figures.py": "d9f2bb1f1240a45aa7e5cf7c36e9ab03129acce8a3ea0a03d883c45573e3857b",
+    "build_report.py": "71e0ebfdaf09d2da6684763fe4ee05e5cad185a56d330f8d86779a6e040af20d",
+    "charts.pdf": "a54f0758599f89074c179d487e7f4fe9c1e13f8dea27daf40d0f4f215d9faa01",
+    "code-evidence.md": "b8e9aeb460a7a972b3855f90bad0bdc5104ed09a15107a73c6e3b9b119b158e3",
+    "data.csv": "ce19bb7a0206817948847d4f88a48ebf70bc51ed97a6fd0671fde753d6ec1fe4",
+    "data.json": "085a9ba5657167353f06dd2b34a99002dcf614c4971c8cabdd370af5259e8b2d",
+    "figures/00-code-methods.png": "ef2f307eac956b036878309d835eb9458757c1d5af94a3bec125b9094d72feda",
+    "figures/00-code-methods.svg": "20bed2088a17c391394ef986745d63af5b6b98810b61a8ad8f1686de543e3314",
+    "figures/01-throughput.png": "d72a215315d859a688db52d25eb8e05c49260a0572407538a19f489f4fe9276c",
+    "figures/01-throughput.svg": "f09d4ead60e86b368cf119d490287b74253b9bd595a00a20eb36705be30deee3",
+    "figures/02-tail.png": "4fe6d841e93884fa47bbf6f8cd726b66588930e10154a06ab62add4ad7849374",
+    "figures/02-tail.svg": "557d3cae80e82bec27bf89f0ac0a62feb91862a8af0a44cd5dfd35ae7f5583c6",
+    "figures/03-stages.png": "4f397c2f8fea958be7def48ed5c5ffd2f1ba728c86295209760ba3f812953821",
+    "figures/03-stages.svg": "16e53254790a8de52cfc72f404628bb506ff101f2bca8ddb4dac155e03906239",
+    "figures/04-gpu.png": "48c08a1a98a8a4e7e9d7ef997fe0cd26a1c4d3fb759ee2d1ea5d3fb60665667b",
+    "figures/04-gpu.svg": "955fae8ea17df253b4c0079c3aba0f262b3ee563c98469bc0c65171837d4cf6d",
+    "figures/05-quality.png": "29fef0ad0c851aa9b5decaf643ae5c9f2b355fb96fcad41584131efa186cd31c",
+    "figures/05-quality.svg": "99adfadd1f7cff438fd148a299be5448f29c67db60f9aa223bf6fd80c44e1755",
+    "figures/06-history.png": "c74c736d71c5ddcb8196658651467916a6a90e7b01198b471e5a544027401bb0",
+    "figures/06-history.svg": "b806d9a75d83c5284dbcb4c5cee6ef3c0fdb375a6c4ae8ff16ad5612a79532fd",
+    "figures/07-compression.png": "80de2384238b50dba5a6e93969a41ca4122f51ec1e3b8c6ef2e8ed39bc249d12",
+    "figures/07-compression.svg": "fc084567f57944a6080906ed074d9c64d5eba5ed487d6c7da2c4cc76d660f180",
+    "figures/08-flow.png": "274c443390d434cce49d79516e9715abbe1146940c608db9d1c79c832c98ae1a",
+    "figures/08-flow.svg": "3b0b574724d322a6476dccedfcd80458f12dd0903f8127fccd8d0ac4a6a99017",
+    "figures/09-stage-change.png": "d8953c694600eba2b3241d5e8f3835641e0751e844d9fd7027700a9355aacd23",
+    "figures/09-stage-change.svg": "d3e46f9d4d7c34c2741e01346879d2e89ed8c79453e3281023a76fabf0dfa056",
+    "figures/10-async-cost.png": "2c0140bd9f871d404077842bec2b3fd45fd09feb2041764f1cc20d10669758ca",
+    "figures/10-async-cost.svg": "3f87df8ae61e38bbbc281e8e3bfcd14a45fc79df9e234371ff666ef016f4e214",
+    "figures/11-tail-detail.png": "b4a6d18924dd1d97709b0a483216efc77f96abae4f34c6409c105317d6b6e135",
+    "figures/11-tail-detail.svg": "1888bd3c0d6c80b56dae1998c8f86228eaf742d1bfe293cf8a3ac6737826bb3c",
+    "figures/12-memory-lifecycle.png": "538ba444487e3fff73cdd63476f3d05c6967f7b6cabc121f03b28cbbdb0e7a8b",
+    "figures/12-memory-lifecycle.svg": "3dfd79b198efbc5996b8adbe2904679c171b1c37df229876912265d0b42f6878",
+    "figures/13-v2-adapter.png": "d86e10cf72153135b58f2701685221e4dcdb66903f760a2de602c5ffc082724d",
+    "figures/13-v2-adapter.svg": "bbbd0aff1542c2595149459cda4fb97ba4819010d2ec327ecf2eae58f246e0d6",
+    "figures/14-v2-result.png": "9de534a6dc37f12de925641c6182fb68021e3aead13d37f0ac8d4ba842aa8089",
+    "figures/14-v2-result.svg": "4e6b913e40294844ebbbb6a70dd8d838c51e1c11d5c8ad55b103f4a70431e317",
+    "index.html": "5ab85fbab298018e7f601dc1aed888ab6840d39d0cd9152ef9bc38501931cbe3",
+    "internal-timing.csv": "2908286a4ba8c176cdc691fe815e9fcfba69ae8058e35e693b29cbd25fe916b5",
+    "report.md": "dbeae1a40d40e874e1376d43062087fbc38a3d0c3b08828147a51bf9026b4eb1",
+    "v2-provenance.json": "1f59d60b13338d969b19153bb611c92aa047a5397a253f91e0a60af72cefcde1",
+    "v2-result.json": "d8aa00969eb48628b5eb8eb10bb88fe95de23f503f9d7ad110d6161a75d2de06",
+    "v2-validation.json": "12006033f252ca2dd3ce9be35ef90a18bdfdca2eb6dac61bd15339c4341f6ef5",
+    "verification.json": "1d7a5981a20a87e58f8f7e1b05e441615807e14748fd0c09f920399001a22184"
+  }
+}

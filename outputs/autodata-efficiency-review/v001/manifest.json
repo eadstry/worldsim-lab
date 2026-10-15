@@ -1,0 +1,157 @@
+{
+  "schema_version": 1,
+  "artifact_id": "autodata-efficiency-review",
+  "version": "v001",
+  "created_at": "2026-10-15T03:29:49.534262+00:00",
+  "material_cutoff": "2026-10-15 Asia/Shanghai; historical records from 2026-10-14",
+  "sources": [
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/summary.csv",
+      "sha256": "c118aac9896864fc60221b1ca65343320da03864d31804ed4b60d53780dd42a9"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w0/episodes.telemetry-summary.json",
+      "sha256": "84350a09c56618138436bfc8024b4b86c11902526a18191dea2e1408019b64c4"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w0/episodes.telemetry.jsonl",
+      "sha256": "0aa617c5d965a966ea557b292e039e51c2724f418327f3940f5619e8f020c1bc"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w0/episodes.run.json",
+      "sha256": "2eb0e79aca14b7588eb72a47b06110c77dd0f2a79ccb80b1e24dbc8ea64cde34"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w0/episodes.validation.json",
+      "sha256": "395134e4ae467cbd2d15149679ccf9cd055c6f2319e8226bfec70708399a0de2"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w0/episodes.resources.jsonl",
+      "sha256": "80518de5e96a5d21dbb6e9e8ab0f6765f99616813dee88be9dd202cea622324b"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w4/episodes.telemetry-summary.json",
+      "sha256": "820c245bbc131f36baa47d206f3dfe4f871fda5e890fbfce259bd5fc8a31cc9f"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w4/episodes.telemetry.jsonl",
+      "sha256": "af4864fcc36097270f58c5f3ee51c72ba08650a4a5847c3dc99b615e60c4eebb"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w4/episodes.run.json",
+      "sha256": "b62e7dc122e035eb45dfe3f36ce5e903d8f069d6dcf33638aef17503b60251c9"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w4/episodes.validation.json",
+      "sha256": "b09dafbad3c9ffbf087fa4d120fd373f37e1c96ca675acaef45dfcfb103ecda1"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w4/episodes.resources.jsonl",
+      "sha256": "840ebc708097cf37c2476121e0dafbc034f9dc2e80438b726264f44257d4c683"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w8/episodes.telemetry-summary.json",
+      "sha256": "ee92b2484043b9e2cc9a061e2a0d7e4f87fe4b2292e75cd313132bd2f4c69066"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w8/episodes.telemetry.jsonl",
+      "sha256": "459837b077b3e92889d9dc16d04ad5578331c945854aa839e8ba64a1c29323e2"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w8/episodes.run.json",
+      "sha256": "06e7fc98a830677862c68f486862cc898f2b83786cec8b3308fb5f2bc9f889c0"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w8/episodes.validation.json",
+      "sha256": "2f407ca3eec04c51a46ba5bbd89bf7318f0f41403a857f6c40cee3736d6268ce"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w8/episodes.resources.jsonl",
+      "sha256": "b6aa7cd4b86dc46c4a0c07c27ac232c960cd7184e3644dc58ee1131094d76a00"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_wauto/episodes.telemetry-summary.json",
+      "sha256": "f5eb394a147199c057d2e352de195e8a601d47c452d0afb3927f80fc915a2546"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_wauto/episodes.telemetry.jsonl",
+      "sha256": "67f8d3181f246cb0629e80ff57a065741deb54b8eeb0f98966fb841ea36ec5be"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_wauto/episodes.run.json",
+      "sha256": "61cd5c9b6cec3987b2bd52921425f2e25fa9f2ae9f0e25f6699de30602bb1343"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_wauto/episodes.validation.json",
+      "sha256": "f8f37aef6a9bec66b990fc21b8a55064481b626d7df2d843646ef4a7f9fd3f32"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_wauto/episodes.resources.jsonl",
+      "sha256": "0d3c32b3ef93cb88fd20d35085733eb5ee7c3378ee6933b78a5dd9e1dbebdb83"
+    },
+    {
+      "path": "outputs/autodata-efficiency-report/v001/evidence.json",
+      "sha256": "c86c49528ebd6f3c83ac314eb8ea3acdf34daaa269fd53b29dd8da2e6a10ece4"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v2/r01_v2_wauto/episodes.telemetry-summary.json",
+      "sha256": "804bc36b0a2710f3f5c01998e3831e526404bab4b963cfbd5cb81702d5957172"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v2/r01_v2_wauto/episodes.run.json",
+      "sha256": "a6400a50e95638da2d9a5c4c51e72d2659821dd87553068bbcbd8cd3cd957db0"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v2/r01_v2_wauto/episodes.telemetry.jsonl",
+      "sha256": "d9c9f7fa2615b87933e4433c9d4a9c2623d4e45c0080d545654d9898c5ef1c8e"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v2/r01_v2_wauto/episodes.export.json",
+      "sha256": "d36f58877d896e3dfc9653bfcaeec3f3eb27cd4ea15944fb786bbfcad5fcb783"
+    }
+  ],
+  "limitations": [
+    "Historical record review only; no new GPU run or HDF5 readback.",
+    "Single repeat for latest production configurations; not causal isolation.",
+    "v2 lacks output_ready and validation.",
+    "User requested local-only delivery and removal of mandatory dual-delivery."
+  ],
+  "sealed_at": "2026-10-15T03:34:10.361990+00:00",
+  "files": {
+    "CHANGELOG.md": "714ee3748914a3712598af8a3643876a989191ca51841882575c5ebc7bd4bd06",
+    "build_figures.py": "0d262656c4094041b21be56cbc44528a5cc62d6879b7a45524b5d1958ff8dcb5",
+    "charts.pdf": "deca1835e85b5d04d3bdba0416d8e4c8ef7c9e61698060931cee03dab366cfa1",
+    "data.csv": "ce19bb7a0206817948847d4f88a48ebf70bc51ed97a6fd0671fde753d6ec1fe4",
+    "data.json": "2ac6a1cc5d84e3ca80dc5a5293a8f2cd6576149ca570f8ea94e8f98d52a49bc9",
+    "figures/01-throughput.png": "d72a215315d859a688db52d25eb8e05c49260a0572407538a19f489f4fe9276c",
+    "figures/01-throughput.svg": "fbefe20c6ba9e0d800fb9f06a812fe80abc059b080c722a2f169b74ea6b90d65",
+    "figures/02-tail.png": "4fe6d841e93884fa47bbf6f8cd726b66588930e10154a06ab62add4ad7849374",
+    "figures/02-tail.svg": "2d3abffa947c748baad3ee666e9717a17af7c1605091ec16b54ed4651b8216ae",
+    "figures/03-stages.png": "4f397c2f8fea958be7def48ed5c5ffd2f1ba728c86295209760ba3f812953821",
+    "figures/03-stages.svg": "092aca14219f6f3a4b8d3585214d4e0e14035a99c8a9a5e621ecbdb0374d198d",
+    "figures/04-gpu.png": "48c08a1a98a8a4e7e9d7ef997fe0cd26a1c4d3fb759ee2d1ea5d3fb60665667b",
+    "figures/04-gpu.svg": "008b5599057ac937641ff76d6e91baa783833f93c1fcf6e7f83f01c108089234",
+    "figures/05-quality.png": "29fef0ad0c851aa9b5decaf643ae5c9f2b355fb96fcad41584131efa186cd31c",
+    "figures/05-quality.svg": "a392c5dd0af455c038dee83b977ad2f42d10772a9545dc9cc0dcce534f82c661",
+    "figures/06-history.png": "c74c736d71c5ddcb8196658651467916a6a90e7b01198b471e5a544027401bb0",
+    "figures/06-history.svg": "dfe2960516f9e4aea4012fc4d0e1454dca0a13e276a6702c44809dd0ae003f05",
+    "figures/07-compression.png": "80de2384238b50dba5a6e93969a41ca4122f51ec1e3b8c6ef2e8ed39bc249d12",
+    "figures/07-compression.svg": "53048f410489b9bca935b6f0abc35f18cb454bafa5c742ba90ecded0ee042af4",
+    "figures/08-flow.png": "274c443390d434cce49d79516e9715abbe1146940c608db9d1c79c832c98ae1a",
+    "figures/08-flow.svg": "4fb2ca8d3e835933e5f8164d042bc711acb696c1afe494881f8dc1a4b32e2f9b",
+    "index.html": "1e58715af7e4d4ccdab7573e20d8b7a90d224dbb77c2fa8003caeed6a21793af",
+    "report.md": "16c16b42b4fd8f8fada1beeea65aa3ae299f590b5ee12f3e97612767dd66873b",
+    "verification.json": "c87929d293b4fd7331a6f3026e8220f4bb97088ab5ea1c55d39e19c8796070cd"
+  },
+  "delivery": {
+    "feishu": {
+      "status": "not_requested",
+      "reason": "Explicit user override: local only; no upload."
+    },
+    "gpt": {
+      "status": "not_requested",
+      "reason": "Explicit user override: local only; no upload."
+    }
+  },
+  "delivery_policy": "local_only"
+}

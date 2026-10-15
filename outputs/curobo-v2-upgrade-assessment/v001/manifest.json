@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "artifact_id": "curobo-v2-upgrade-assessment",
+  "version": "v001",
+  "created_at": "2026-10-14T07:05:37.041514+00:00",
+  "material_cutoff": "2026-10-14T15:05:00+08:00",
+  "sources": [
+    {
+      "kind": "repository_lock",
+      "path": "upstream-lock.json",
+      "autodata_commit": "1c7360d85c9ad131ca6c8c70f1f731a6312616f3"
+    },
+    {
+      "kind": "static_local_source_and_installation_metadata",
+      "path": "evidence.json"
+    },
+    {
+      "kind": "official_mutable_web_source",
+      "url": "https://raw.githubusercontent.com/NVlabs/curobo/main/README.md",
+      "accessed_on": "2026-10-14",
+      "immutable_revision": null
+    },
+    {
+      "kind": "official_mutable_web_source",
+      "url": "https://raw.githubusercontent.com/NVlabs/curobo/main/CHANGELOG.md",
+      "accessed_on": "2026-10-14",
+      "immutable_revision": null
+    },
+    {
+      "kind": "official_mutable_web_source",
+      "url": "https://nvlabs.github.io/curobo/latest/technical_reports.html",
+      "accessed_on": "2026-10-14",
+      "immutable_revision": null
+    },
+    {
+      "kind": "official_mutable_web_source",
+      "url": "https://nvlabs.github.io/curobo/latest/getting-started/installation.html",
+      "accessed_on": "2026-10-14",
+      "immutable_revision": null
+    },
+    {
+      "kind": "official_mutable_web_source",
+      "url": "https://nvlabs.github.io/curobo/latest/getting-started/motion_planning.html",
+      "accessed_on": "2026-10-14",
+      "immutable_revision": null
+    },
+    {
+      "kind": "official_mutable_web_source",
+      "url": "https://raw.githubusercontent.com/NVlabs/curobo/main/pyproject.toml",
+      "accessed_on": "2026-10-14",
+      "immutable_revision": null
+    },
+    {
+      "kind": "official_mutable_web_source",
+      "url": "https://raw.githubusercontent.com/NVlabs/curobo/main/curobo/types.py",
+      "accessed_on": "2026-10-14",
+      "immutable_revision": null
+    },
+    {
+      "kind": "official_mutable_web_source",
+      "url": "https://raw.githubusercontent.com/NVlabs/curobo/main/curobo/motion_planner.py",
+      "accessed_on": "2026-10-14",
+      "immutable_revision": null
+    },
+    {
+      "kind": "official_mutable_web_source",
+      "url": "https://raw.githubusercontent.com/NVlabs/curobo/main/curobo/_src/motion/motion_planner_cfg.py",
+      "accessed_on": "2026-10-14",
+      "immutable_revision": null
+    },
+    {
+      "kind": "official_mutable_web_source",
+      "url": "https://raw.githubusercontent.com/NVlabs/curobo/main/curobo/_src/motion/motion_planner.py",
+      "accessed_on": "2026-10-14",
+      "immutable_revision": null
+    }
+  ],
+  "limitations": [
+    "Static assessment only; no GPU runtime validation or v1-v2 A/B.",
+    "Installed v1 package has a development version and lacks recoverable source SHA.",
+    "Official v2 sources use mutable main/latest, not one pinned revision.",
+    "Same-machine OpenArm overlays exist outside the active worktree; input hashes recorded.",
+    "Effort estimates and suggested acceptance thresholds are engineering judgments.",
+    "User explicitly requested local delivery only."
+  ],
+  "sealed_at": "2026-10-14T07:10:21.772878+00:00",
+  "files": {
+    "CHANGELOG.md": "bc3eb2f19e82d581a15289e059a0f445aa75cdf3c36026306e7ee15b7e048b56",
+    "evidence.json": "830b2869ce017ce8d068ab9776d32e83ba9fc632c26d898c1cadc7e17d17db6d",
+    "report.md": "9561699c455b96ed7d33910fce521fd86fa5470aaa55a9167ead9f767d67f1b0"
+  },
+  "delivery": {
+    "feishu": {
+      "status": "blocked_destination",
+      "target": null,
+      "receipt": null,
+      "files": [],
+      "updated_at": "2026-10-14T07:09:52.518581+00:00",
+      "error": "Out of scope by explicit user instruction: local only. No external delivery attempted."
+    },
+    "gpt": {
+      "status": "blocked_destination",
+      "target": null,
+      "receipt": null,
+      "files": [],
+      "updated_at": "2026-10-14T07:09:52.518581+00:00",
+      "error": "Out of scope by explicit user instruction: local only. No external delivery attempted."
+    }
+  },
+  "delivery_scope": "local_only_user_instruction"
+}

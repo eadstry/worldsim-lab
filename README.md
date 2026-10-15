@@ -2,7 +2,7 @@
 
 围绕 **AutoData 数据生成、Isaac Lab-Arena 评估与 OpenArm 实验**的具身智能研究工作区，统一管理固定版本的上游源码、本地扩展、研究资料、实验报告和博客。
 
-[研究资料](docs/README.md) · [实验成果](outputs/README.md) · [OpenArm 扩展](workspace-overlays/openarm-production/README.md) · [共享配置](config/README.md) · [博客维护](private-blog/README.md)
+[实验版本检查记录](docs/experimental-analysis-20261015.md) · [研究资料](docs/README.md) · [实验成果](outputs/README.md) · [OpenArm 扩展](workspace-overlays/openarm-production/README.md) · [共享配置](config/README.md) · [博客维护](private-blog/README.md)
 
 > 2026-10-14 的本机保存快照及其历史分支 `codex/local-frontier-20261014` 继续保留。来源、上游补丁和当时的检查记录见[快照说明](workspace-overlays/local-frontier-20261014/README.md)；当前实现和验证状态以所选分支中的文件为准。
 
@@ -10,6 +10,7 @@
 
 | 你想做什么 | 推荐入口 |
 | --- | --- |
+| 运行 Arena OpenArm 评测示例 | [Arena benchmark](workspace-overlays/openarm-benchmark/README.md) |
 | 理解 AutoData 的原理、数据流与随机化 | [AutoData 资料与阅读顺序](docs/autodata/README.md) |
 | 阅读完整技术文章 | [AutoData 全流程可视化讲解](private-blog/content/autodata/AutoData-全流程可视化讲解.md) |
 | 查找报告、配置示例与历史验证 | [成果索引](outputs/README.md) |

@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "artifact_id": "autodata-v1-internal-timing",
+  "version": "v001",
+  "created_at": "2026-10-15T16:57:45.233960+08:00",
+  "sealed_at": "2026-10-15T16:57:45.233960+08:00",
+  "material_cutoff": "2026-10-15 Asia/Shanghai",
+  "sources": [
+    "/home/tangyuan/WorldSimReady-Home/runs/v1-internal-timing-20261015-r03/experiment.json",
+    "/home/tangyuan/WorldSimReady-Home/runs/v1-internal-timing-20261015-r03/report.json",
+    "/home/tangyuan/WorldSimReady-Home/runs/v1-internal-timing-20261015-r03/before_sync/episodes.internal-summary.json",
+    "/home/tangyuan/WorldSimReady-Home/runs/v1-internal-timing-20261015-r03/before_sync/episodes.run.json",
+    "/home/tangyuan/WorldSimReady-Home/runs/v1-internal-timing-20261015-r03/before_sync/episodes.telemetry-summary.json",
+    "/home/tangyuan/WorldSimReady-Home/runs/v1-internal-timing-20261015-r03/before_sync/episodes.validation.json",
+    "/home/tangyuan/WorldSimReady-Home/runs/v1-internal-timing-20261015-r03/after_auto/episodes.internal-summary.json",
+    "/home/tangyuan/WorldSimReady-Home/runs/v1-internal-timing-20261015-r03/after_auto/episodes.run.json",
+    "/home/tangyuan/WorldSimReady-Home/runs/v1-internal-timing-20261015-r03/after_auto/episodes.telemetry-summary.json",
+    "/home/tangyuan/WorldSimReady-Home/runs/v1-internal-timing-20261015-r03/after_auto/episodes.validation.json"
+  ],
+  "files": {
+    "comparison.png": "b6f1a090354b94a7ff3973e0720ae12ca656f45c4e52a6bf4097861c05b8b2fc",
+    "comparison.svg": "f03a99a402377bd35b9c17918c574b36d06bc03a0c65affe880037dee0f6d559",
+    "evidence/after_auto/episodes.internal-summary.json": "d4e501172b0e8dedb2dc8b2e8ffd43b9b69f64f5dbafbe5c38bca44a8f211f77",
+    "evidence/after_auto/episodes.run.json": "126a6edf4b39f95d25130c94b5d141c7f5d8b51538fff03c4db0a9f24610add2",
+    "evidence/after_auto/episodes.telemetry-summary.json": "710c192571ef931e72cb2cb82d13bf4f718cb1d7de7029c772d161b2266c689e",
+    "evidence/after_auto/episodes.validation.json": "3ad33853a7a6380b3dc3ec16f39e4c914347d62377b04afe7a2b5a9dc76b0cb2",
+    "evidence/before_sync/episodes.internal-summary.json": "6358226ac238350c77156616c7a6e592e139428576475a3506d02e12d396953a",
+    "evidence/before_sync/episodes.run.json": "c8f60eccebced9e9c288779062b6ff11034387783ffebba5bca51738e4b62b2f",
+    "evidence/before_sync/episodes.telemetry-summary.json": "05360d8d42927f04c9e86e1504c6df4f0a9ec1dd92618ef4caaee8b13b0576dd",
+    "evidence/before_sync/episodes.validation.json": "c446d21e8c2f836e69ec7cf16cc996392b413e504b1e5edee16543c79032f4eb",
+    "execute-phases.csv": "c89a08ccc2ba87caa64f9ebc772e01b63bc7b29345812967898ba6284631fc38",
+    "execution-notes.json": "a631bbb96a559afd8713d491d93207bdf5fd5ad3682f0a1de4fbceb8b07d1cc5",
+    "experiment.json": "fbbb9c35295681ceb310e1176c21ac78208c583338b32ace2909dbefe1ecce36",
+    "index.html": "19311cb2d65a0b7e7b52eee435891fc0fd195beb708bb8d51a249026524f4780",
+    "pair-data-check.json": "6aaeb6316a62a60e5478608e270425126ff042f5f33854f31c9ee79eff5c06ef",
+    "report.json": "249267e647d31d45919399a958ea070e0fa5bc227810bfed26915395d51e0891",
+    "report.md": "adff5a28462a4f509c58d6d9be71e079b8a4c96973b45a29ec5dbbe503474bb0",
+    "reproduction/README.md": "7f215c665140c1169ad804ca237137759d521784fa2b4c3e47ecf780c95a1e35",
+    "reproduction/analyze.py": "c843e593667872079d478d3e49312313b0a136d2ca147ce0e1c20f81781564f2",
+    "reproduction/internal_timing.py": "9d52f46dc9cf8b0be860ae9ad356eef82b4047b05d3ca80392e97d6ef4763aa1",
+    "reproduction/package_report.py": "d564ac056d2e43e3c5da240c95b29ce865903c70f2b001e2589c00c387ece544",
+    "reproduction/run_experiment.py": "eb414fc89d8450c408d0ff0f10354dd0377cd31ec1f8a1b0ea48b6778387514f",
+    "reproduction/test_internal_timing.py": "a6daf4bff5d839478e67b730b81a00c739b214586f934f9a29c7ba731035ee11",
+    "reproduction/verify_pair.py": "6ff4d6700e7c817bd6adf9637ada062a21ccb966f0e767f32aec3197c2c160a1"
+  },
+  "validation": {
+    "real_gpu_runs": 2,
+    "num_envs": 4,
+    "target_successes_per_run": 8,
+    "accounting_closure": true,
+    "physical_and_schema_passed": true
+  },
+  "limitations": [
+    "One pair at one fixed seed, not a statistical population estimate",
+    "Host API time is not isolated GPU kernel time",
+    "Execute windows overlap across concurrent environments"
+  ],
+  "delivery": {
+    "local": {
+      "status": "saved"
+    },
+    "external": {
+      "status": "not_requested",
+      "published": false
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "checked_at": "2026-10-15T03:33:57.109615+00:00",
+  "source_hashes_verified": 26,
+  "arithmetic": "passed",
+  "local_html_links": "passed",
+  "png_figures": 8,
+  "scope": "Historical data and static document verification; no new GPU simulation or HDF5 readback"
+}

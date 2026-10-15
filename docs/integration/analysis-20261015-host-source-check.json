@@ -1,0 +1,9 @@
+{
+  "scope": "31 host tests; temporary read-only source dependency link to existing AutoData worktree; no simulation",
+  "returncode": 0,
+  "source_files": {
+    "scripts/generate_dataset.py": "bb36958579a7e20d8b2b4cccc7f4dd545a89ad956e21434572699cfd3999df01",
+    "submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab/isaaclab/utils/datasets/episode_data.py": "5c75e6681240e35515d1c23767f789267d79375b6f36b2ac4b60c858606ded28",
+    "submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab/isaaclab/utils/datasets/hdf5_dataset_file_handler.py": "b5c4365cfd46107dfe56288b092bbdb03d993dbb83e23415742965db7df8d793"
+  }
+}

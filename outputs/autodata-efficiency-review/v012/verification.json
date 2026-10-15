@@ -1,0 +1,11 @@
+{
+  "checked_at": "2026-10-15T08:11:05.536449+00:00",
+  "v011_preserved": true,
+  "experimental_data_unchanged": true,
+  "new_offline_analysis": "recomputed from five raw telemetry logs; reproduced JSON equality",
+  "window_definition": "all full windows contain exactly 100 normal execute returns",
+  "v1_v2_timer_wrappers_match": true,
+  "local_links": "passed",
+  "pdf_pages_and_notes": "40/40",
+  "scope": "Offline analysis and source inspection; no detailed runtime profiling or new simulation"
+}

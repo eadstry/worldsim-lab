@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "artifact_id": "openarm-benchmark",
+  "version": "v001",
+  "created_at": "2026-10-15T08:14:14.722898+00:00",
+  "material_cutoff": "2026-10-15T08:24:56.717852+00:00",
+  "sources": [
+    {
+      "kind": "source_snapshot",
+      "path": "code/input-lock.json",
+      "description": "Recorded OpenArm bundle and Arena API hashes"
+    },
+    {
+      "kind": "static_comparison_and_historical_runtime",
+      "path": "source-evidence.json"
+    },
+    {
+      "kind": "new_host_validation",
+      "path": "validation.json"
+    }
+  ],
+  "limitations": [
+    "New benchmark overlay has not been GPU validated.",
+    "Full original OpenArm delivery with assets must be provided separately.",
+    "Fixed replay is regression evidence, not learned-policy generalization.",
+    "Only local delivery was requested for this task."
+  ],
+  "sealed_at": "2026-10-15T08:24:56.737598+00:00",
+  "files": {
+    "CHANGELOG.md": "cf5b602c775e304c278ae383562bf1d0ded849425796941ca14d332b27979bef",
+    "code/README.md": "30583973d48e021c831936237817ff32ff11435b3bb832d3a88567fa4afe284b",
+    "code/benchmark.json": "9effc8e0be1f9e20dd9ca7be0e04af090e1817212e6deb4137893f01a496a059",
+    "code/input-lock.json": "9a75e3f7b8faa1fc1774cfcc0dba4da0a10295b36e7060e85a4ec3ba0a5a4348",
+    "code/openarm_benchmark/__init__.py": "1822c5ef70a6a194bf8d3f6b74f002f277d76b88e19f87321b626cc2d204e0c9",
+    "code/openarm_benchmark/environment.py": "7e5634d63b3e5c8186e86599cefa8d57d8a6e31698ebbeccb389af47de0f8f6e",
+    "code/run.py": "bf49c182ab0494a90873566f5c1c4f2f787923c2efd68dcae623f1410203f5c9",
+    "code/runtime.py": "0bebc239bd42e0c5c3194784754223eb2b2578e85d46e42cb5a5c716499b03ee",
+    "code/tests/test_benchmark.py": "6bc5bc9beb531a873e1f2bc9a0608ce6619d60b791fff0b900fb3d224c9eba3d",
+    "report.md": "b6cc7a3376faf86fc4e8253aa1ec3689f66a1dd862ca436667e92329a9ec2868",
+    "source-evidence.json": "b6cda2a9a291e57db2d7fbf2bd52ce49cbfd18f77eef70305cba92b775f85e92",
+    "validation.json": "03a9b352d6c3c025b6c323b30899d3bb6454d8746efe211c28d198cc7a66ac0e"
+  },
+  "delivery": {
+    "feishu": {
+      "status": "pending",
+      "target": null,
+      "receipt": null,
+      "files": [],
+      "updated_at": "2026-10-15T08:24:56.717852+00:00",
+      "error": "Deferred: user explicitly requested local delivery only; no upload attempted."
+    },
+    "gpt": {
+      "status": "pending",
+      "target": null,
+      "receipt": null,
+      "files": [],
+      "updated_at": "2026-10-15T08:24:56.717852+00:00",
+      "error": "Deferred: user explicitly requested local delivery only; no upload attempted."
+    }
+  },
+  "local_delivery": {
+    "status": "prepared",
+    "path": ".",
+    "requested_by_user": true,
+    "updated_at": "2026-10-15T08:24:56.717852+00:00"
+  }
+}

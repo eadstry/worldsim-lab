@@ -1,0 +1,266 @@
+{
+  "schema_version": 1,
+  "artifact_id": "autodata-efficiency-review",
+  "version": "v005",
+  "created_at": "2026-10-15T06:36:03.538471+00:00",
+  "material_cutoff": "2026-10-15 Asia/Shanghai; includes new v2 runtime and output readback",
+  "sources": [
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/summary.csv",
+      "sha256": "c118aac9896864fc60221b1ca65343320da03864d31804ed4b60d53780dd42a9"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w0/episodes.telemetry-summary.json",
+      "sha256": "84350a09c56618138436bfc8024b4b86c11902526a18191dea2e1408019b64c4"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w0/episodes.telemetry.jsonl",
+      "sha256": "0aa617c5d965a966ea557b292e039e51c2724f418327f3940f5619e8f020c1bc"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w0/episodes.run.json",
+      "sha256": "2eb0e79aca14b7588eb72a47b06110c77dd0f2a79ccb80b1e24dbc8ea64cde34"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w0/episodes.validation.json",
+      "sha256": "395134e4ae467cbd2d15149679ccf9cd055c6f2319e8226bfec70708399a0de2"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w0/episodes.resources.jsonl",
+      "sha256": "80518de5e96a5d21dbb6e9e8ab0f6765f99616813dee88be9dd202cea622324b"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w4/episodes.telemetry-summary.json",
+      "sha256": "820c245bbc131f36baa47d206f3dfe4f871fda5e890fbfce259bd5fc8a31cc9f"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w4/episodes.telemetry.jsonl",
+      "sha256": "af4864fcc36097270f58c5f3ee51c72ba08650a4a5847c3dc99b615e60c4eebb"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w4/episodes.run.json",
+      "sha256": "b62e7dc122e035eb45dfe3f36ce5e903d8f069d6dcf33638aef17503b60251c9"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w4/episodes.validation.json",
+      "sha256": "b09dafbad3c9ffbf087fa4d120fd373f37e1c96ca675acaef45dfcfb103ecda1"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w4/episodes.resources.jsonl",
+      "sha256": "840ebc708097cf37c2476121e0dafbc034f9dc2e80438b726264f44257d4c683"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w8/episodes.telemetry-summary.json",
+      "sha256": "ee92b2484043b9e2cc9a061e2a0d7e4f87fe4b2292e75cd313132bd2f4c69066"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w8/episodes.telemetry.jsonl",
+      "sha256": "459837b077b3e92889d9dc16d04ad5578331c945854aa839e8ba64a1c29323e2"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w8/episodes.run.json",
+      "sha256": "06e7fc98a830677862c68f486862cc898f2b83786cec8b3308fb5f2bc9f889c0"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w8/episodes.validation.json",
+      "sha256": "2f407ca3eec04c51a46ba5bbd89bf7318f0f41403a857f6c40cee3736d6268ce"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w8/episodes.resources.jsonl",
+      "sha256": "b6aa7cd4b86dc46c4a0c07c27ac232c960cd7184e3644dc58ee1131094d76a00"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_wauto/episodes.telemetry-summary.json",
+      "sha256": "f5eb394a147199c057d2e352de195e8a601d47c452d0afb3927f80fc915a2546"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_wauto/episodes.telemetry.jsonl",
+      "sha256": "67f8d3181f246cb0629e80ff57a065741deb54b8eeb0f98966fb841ea36ec5be"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_wauto/episodes.run.json",
+      "sha256": "61cd5c9b6cec3987b2bd52921425f2e25fa9f2ae9f0e25f6699de30602bb1343"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_wauto/episodes.validation.json",
+      "sha256": "f8f37aef6a9bec66b990fc21b8a55064481b626d7df2d843646ef4a7f9fd3f32"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_wauto/episodes.resources.jsonl",
+      "sha256": "0d3c32b3ef93cb88fd20d35085733eb5ee7c3378ee6933b78a5dd9e1dbebdb83"
+    },
+    {
+      "path": "outputs/autodata-efficiency-report/v001/evidence.json",
+      "sha256": "c86c49528ebd6f3c83ac314eb8ea3acdf34daaa269fd53b29dd8da2e6a10ece4"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v2/r01_v2_wauto/episodes.telemetry-summary.json",
+      "sha256": "804bc36b0a2710f3f5c01998e3831e526404bab4b963cfbd5cb81702d5957172"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v2/r01_v2_wauto/episodes.run.json",
+      "sha256": "a6400a50e95638da2d9a5c4c51e72d2659821dd87553068bbcbd8cd3cd957db0"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v2/r01_v2_wauto/episodes.telemetry.jsonl",
+      "sha256": "d9c9f7fa2615b87933e4433c9d4a9c2623d4e45c0080d545654d9898c5ef1c8e"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v2/r01_v2_wauto/episodes.export.json",
+      "sha256": "d36f58877d896e3dfc9653bfcaeec3f3eb27cd4ea15944fb786bbfcad5fcb783"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/launchers/v1/generate.py",
+      "sha256": "028a03f3c75fe46131bd03f17634cb6ed44ae0f4f7274e01ba4fe41d92195ff4"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/launchers/v1/async_export.py",
+      "sha256": "b44c38db5f28faecc316369e5bfafa73d627eeddf26eb757a1dcce26a2da6573"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/launchers/v1/export_pool.py",
+      "sha256": "ef03ef54bbbc7276205b15030358ee691fc3f422c6449f263acd8c7887768aef"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/launchers/v1/export_governor.py",
+      "sha256": "d2dc630a91dc890c57ac36db381ac2759518a25b3a582704ccf783584dee808b"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v2/launchers/v2/v2_planner.py",
+      "sha256": "78b58d08f9503d302325a35775ffbd6ec8e98e366d0663c54b724f7808c779ea"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v2/launchers/v2/model.py",
+      "sha256": "a8b87f6ba410ec8ee838349f3c8c009e35f7878fb7bec16151e990c8a7a9a32a"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v2/launchers/v2/trajectory.py",
+      "sha256": "1dac1ab5841cd5b389757607eb789dc94e2820026d3b400862734d278aaec949"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v2/launchers/v2/validate_output.py",
+      "sha256": "4367f2a7cebe63c56885694b2bbd6a304fc38e4bc4327eae6af2a7ccf74ef46b"
+    },
+    {
+      "root": "current_workspace",
+      "path": "workspace-overlays/efficiency-review-runtime/v2-auto-16-seed101/episodes.run.json",
+      "sha256": "939b6987450ea20ab897f6e14a4da6da5111b3f190433bb74caf9e5c289d7af1"
+    },
+    {
+      "root": "current_workspace",
+      "path": "workspace-overlays/efficiency-review-runtime/v2-auto-16-seed101/episodes.telemetry.jsonl",
+      "sha256": "41296f8470a0017440dacf29d8986f41e8c99e30f4133379026a2a86c811d73d"
+    },
+    {
+      "root": "current_workspace",
+      "path": "workspace-overlays/efficiency-review-runtime/v2-auto-16-seed101/episodes.telemetry-summary.json",
+      "sha256": "fe899eb67b54bf3afb78a23d5ac5dfd319322152927b376103b925e53b50f88c"
+    },
+    {
+      "root": "current_workspace",
+      "path": "workspace-overlays/efficiency-review-runtime/v2-auto-16-seed101/episodes.validation.json",
+      "sha256": "d1d1fb914049970592a9bb6325ee1b874cff931f8b5b258e97b4e1449afbb832"
+    },
+    {
+      "root": "current_workspace",
+      "path": "workspace-overlays/efficiency-review-runtime/v2-auto-16-seed101/schema-validation.log",
+      "sha256": "04a7847d535be85a26ca69126bb126d72f7b378322386166d3667fbc37ca5981"
+    },
+    {
+      "root": "current_workspace",
+      "path": "workspace-overlays/efficiency-review-runtime/v2-auto-16-seed101/validation.log",
+      "sha256": "aec4e4cbaaec2dba5bb236f9d6152b9841f6852583f7630784a6f9788eadb690"
+    },
+    {
+      "path": "AutoData/scripts/generate_dataset.py",
+      "sha256": "bb36958579a7e20d8b2b4cccc7f4dd545a89ad956e21434572699cfd3999df01",
+      "evidence_type": "current source inspection 2026-10-15"
+    },
+    {
+      "path": "AutoData/autodata_core/waypoint.py",
+      "sha256": "3e47b8fdccf54c9b20054037d45188dbda17b82d3a6cd88280028b59d42524ee",
+      "evidence_type": "current source inspection 2026-10-15"
+    },
+    {
+      "path": "AutoData/autodata_interfaces/env/isaaclab_env_interface.py",
+      "sha256": "eb4812da4cb418c82f8fb1fd4fef1e0bb569a43e4b077ba7e851194c4a5b157c",
+      "evidence_type": "current source inspection 2026-10-15"
+    },
+    {
+      "path": "AutoData/autodata_core/algorithms.py",
+      "sha256": "2288cae36381dd36a2e13a80bc20c47e514f8568c1ec8a028af1512244f95939",
+      "evidence_type": "current source inspection 2026-10-15"
+    }
+  ],
+  "limitations": [
+    "v2 runtime completed but strict terminal validation failed for demo_2; 15/16 pass.",
+    "Historical v1 vs new v2 is cross-day single-run comparison, not causal isolation.",
+    "HDF5 readback and terminal-state checks are not full physics replay.",
+    "GPU/process diagrams are conceptual, not profiler traces; current main-loop inspection does not establish historical source identity."
+  ],
+  "delivery_policy": "local_only",
+  "delivery": {
+    "feishu": {
+      "status": "not_requested"
+    },
+    "gpt": {
+      "status": "not_requested"
+    }
+  },
+  "sealed_at": "2026-10-15T06:36:03.538471+00:00",
+  "files": {
+    "CHANGELOG.md": "e3d7b0c75f7dd899ebced4a30a22c0e7f52c49fa28abe7ed0b4fa69eed2aabaf",
+    "backend-comparison.csv": "c03c65a478d648a76c704593ddf4266e259173bb07a09feac43da7d5bd5c0085",
+    "build_figures.py": "2890a6ccf8bc85215055b4bb54f4f29244ef0145f37af517f271ddd3bf150b41",
+    "build_report.py": "c1527728401c5fb5b3dbad8add5596c047db493c269eeb7aef15d6a2c24ed98b",
+    "charts.pdf": "537a0f534ff71b261ec561f38fda04e61b074c59d6e44fa78f4adbb1e7895cb4",
+    "code-evidence.md": "bb381292ef97f3cd5002d423c5cf77f2201c476abfaf476285a3f88c2a040c6d",
+    "data.csv": "ce19bb7a0206817948847d4f88a48ebf70bc51ed97a6fd0671fde753d6ec1fe4",
+    "data.json": "085a9ba5657167353f06dd2b34a99002dcf614c4971c8cabdd370af5259e8b2d",
+    "figures/00-code-methods.png": "ef2f307eac956b036878309d835eb9458757c1d5af94a3bec125b9094d72feda",
+    "figures/00-code-methods.svg": "9e37bdf763cf7dd8f4a2428db0475eae9921594309414e4817b897afd998613a",
+    "figures/01-throughput.png": "d72a215315d859a688db52d25eb8e05c49260a0572407538a19f489f4fe9276c",
+    "figures/01-throughput.svg": "d7a7030d1a1b553fe3d0db506d6983a6b00552727fa24c3c6fabb5e196362353",
+    "figures/02-tail.png": "4fe6d841e93884fa47bbf6f8cd726b66588930e10154a06ab62add4ad7849374",
+    "figures/02-tail.svg": "a1b30e66aa2dde32afe0a23a888a5417276a05cb661007a3efbe71c4ab96180e",
+    "figures/03-stages.png": "4f397c2f8fea958be7def48ed5c5ffd2f1ba728c86295209760ba3f812953821",
+    "figures/03-stages.svg": "22ec7e6b92fd1cefe9c5d481ae29ca30b354b8f6dec2db587b4a0679bc487ec3",
+    "figures/04-gpu.png": "48c08a1a98a8a4e7e9d7ef997fe0cd26a1c4d3fb759ee2d1ea5d3fb60665667b",
+    "figures/04-gpu.svg": "ddefca828cc624dd6a81997d1df5ef277caf43a5738aad73166d53bac78fda6f",
+    "figures/05-quality.png": "29fef0ad0c851aa9b5decaf643ae5c9f2b355fb96fcad41584131efa186cd31c",
+    "figures/05-quality.svg": "4e8c2179964c52b8b6c4f277d511699bd8f52927787df58c12841af92ec305a4",
+    "figures/06-history.png": "c74c736d71c5ddcb8196658651467916a6a90e7b01198b471e5a544027401bb0",
+    "figures/06-history.svg": "9a7712499ee2c944542a6dcd9972e4f2c95732de8bc81d66682241b36dd1e115",
+    "figures/07-compression.png": "80de2384238b50dba5a6e93969a41ca4122f51ec1e3b8c6ef2e8ed39bc249d12",
+    "figures/07-compression.svg": "e1c7b840a4cd20a11f49bfc1f0a02b8f7a09d5c2b06b905a7f43d1935d32dd95",
+    "figures/08-flow.png": "274c443390d434cce49d79516e9715abbe1146940c608db9d1c79c832c98ae1a",
+    "figures/08-flow.svg": "cf3f0524116268510d7c8532bf0f5b78611d5f92f419fa60190ffdfd052971df",
+    "figures/09-stage-change.png": "d8953c694600eba2b3241d5e8f3835641e0751e844d9fd7027700a9355aacd23",
+    "figures/09-stage-change.svg": "ff601f1dbaff320ead2d54675e78f97731c225f44572e2dcdb0d0e8ffbf9c016",
+    "figures/10-async-cost.png": "2c0140bd9f871d404077842bec2b3fd45fd09feb2041764f1cc20d10669758ca",
+    "figures/10-async-cost.svg": "129c248b56ecf15576164386d58509bf46f0e35aafd5e3ab67a76d857a8d89b4",
+    "figures/11-tail-detail.png": "b4a6d18924dd1d97709b0a483216efc77f96abae4f34c6409c105317d6b6e135",
+    "figures/11-tail-detail.svg": "ca695eaefa72ec69865b835d992bdded89a369cc2edb633bc0b8ef684b79e040",
+    "figures/12-memory-lifecycle.png": "538ba444487e3fff73cdd63476f3d05c6967f7b6cabc121f03b28cbbdb0e7a8b",
+    "figures/12-memory-lifecycle.svg": "0c146e56badb7b97e9814b51cd16c638f50a217ed58c8aae25ef94b3d2892654",
+    "figures/13-v2-adapter.png": "d86e10cf72153135b58f2701685221e4dcdb66903f760a2de602c5ffc082724d",
+    "figures/13-v2-adapter.svg": "b9c7fa2fbb275bd7e78adb379728f611fdfa1a98859fa021369813beb17299fa",
+    "figures/14-v2-result.png": "9de534a6dc37f12de925641c6182fb68021e3aead13d37f0ac8d4ba842aa8089",
+    "figures/14-v2-result.svg": "fe0d66f35deb4ab21244cd0d391da1e30ed228a3aeb9d1f533dbada9453e6ad7",
+    "figures/15-serial-parallel.png": "f30c1fe6303b1d42a221420895edc1ca5de9a658d854b30e3157b931db867323",
+    "figures/15-serial-parallel.svg": "9208a11cea24aa179e9b666f58af74a07651266f8e3d55743cbeafe5856808a2",
+    "figures/16-process-gpu.png": "cfb1d2fa990ffc33327bf39360f98d0fc25dec882062cb8e0673f8954fff53a6",
+    "figures/16-process-gpu.svg": "13b23bdb12239d2ca41370f802ed4e5e6215da753e9b60e7f1e609e01dbfaf5f",
+    "figures/17-batch-barrier.png": "a81bf1afd58e1c307094db7c0388d673ebfc86360190bdc77709dd4a844bd504",
+    "figures/17-batch-barrier.svg": "6ae8e133c79df7d1b2a810c3ed710697aa935eba4f95509634a9619ecba372b7",
+    "figures/18-parallel-comparison.png": "efec55b56efa82fa43f23081d88142537142ee80deec6f65395a48579d9826bf",
+    "figures/18-parallel-comparison.svg": "46df1788fe42e99f9e14a5f05e95eeaa513731fac54b9c36d5357de655492b1c",
+    "index.html": "04b2b3f48191481dcdf72adb9ac5a259e5f4dfbb31be1a6ae92a31f2df3a2998",
+    "internal-timing.csv": "2908286a4ba8c176cdc691fe815e9fcfba69ae8058e35e693b29cbd25fe916b5",
+    "report.md": "a20ae4c7e89cd37467c50a9e6f774310519fef4b93b7976fc7ce84d2ab317984",
+    "v2-provenance.json": "1f59d60b13338d969b19153bb611c92aa047a5397a253f91e0a60af72cefcde1",
+    "v2-result.json": "d8aa00969eb48628b5eb8eb10bb88fe95de23f503f9d7ad110d6161a75d2de06",
+    "v2-validation.json": "12006033f252ca2dd3ce9be35ef90a18bdfdca2eb6dac61bd15339c4341f6ef5",
+    "verification.json": "cb546e0fc03930736607cbcb913c80acdfd54ce0f9c96a83e158f23a5986c8d3"
+  }
+}

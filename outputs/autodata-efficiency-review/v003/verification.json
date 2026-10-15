@@ -1,0 +1,14 @@
+{
+  "checked_at": "2026-10-15T04:50:51.210011+00:00",
+  "source_hashes_verified": 40,
+  "prior_versions_preserved": true,
+  "arithmetic": "passed",
+  "local_links": "passed",
+  "figures": 15,
+  "new_figures_visually_reviewed": 3,
+  "runtime_generation_exit_code": 0,
+  "schema_validator_exit_code": 0,
+  "physical_validator_exit_code": 1,
+  "physical_validation": "15/16; demo_2 angular velocity exceeds threshold",
+  "scope": "New GPU generation and final HDF5 readback performed; no full physics replay or complete frame quality audit"
+}

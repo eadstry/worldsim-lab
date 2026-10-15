@@ -1,0 +1,114 @@
+{
+  "created_at": "2026-10-14T09:34:16.232716+00:00",
+  "v2_commit": "78fd485fa82d9b9a063fb4985e371814587e666a",
+  "inputs": [
+    {
+      "alias": "v1-baseline-01/episodes.result.json",
+      "sha256": "177935c3ef8703d5e3d9db9bbfcbd2c5bd1af497423bd70af14cf82186902526"
+    },
+    {
+      "alias": "v1-baseline-01/episodes.telemetry-summary.json",
+      "sha256": "641c410b1bf659935051eb1580d4754ae2262655fec43be2bb78f4a2f07ebffc"
+    },
+    {
+      "alias": "v1-baseline-01/launch.json",
+      "sha256": "4a3e093ddee50812fdf14e88f6eb300ee72370d265822db57fa17a304452931d"
+    },
+    {
+      "alias": "v1-baseline-01/episodes.metrics.jsonl",
+      "sha256": "2795880d750c0a988318e9a00b313f74796755cd5379fb2784b20139e2cc7867"
+    },
+    {
+      "alias": "v1-baseline-01/episodes.telemetry.jsonl",
+      "sha256": "92e3970b5d54183ca0c085e2f74e58067a022bf613444479a6c8e00cd593d53f"
+    },
+    {
+      "alias": "v2-baseline-04/episodes.result.json",
+      "sha256": "2f3e5b16f568ff4a6385c04fc7d404e3c4447002091412de63525fb126bbf209"
+    },
+    {
+      "alias": "v2-baseline-04/episodes.telemetry-summary.json",
+      "sha256": "6f34d864f4725011ff93c51980a7ea7dc760801e34a708f1ba36d8cfad5f3624"
+    },
+    {
+      "alias": "v2-baseline-04/launch.json",
+      "sha256": "8c0bf591f93dc69054c89c23464dee3c0f3bd7204a113dc9e1a3a442ee1a0f09"
+    },
+    {
+      "alias": "v2-baseline-04/episodes.metrics.jsonl",
+      "sha256": "08f468bb1f781df715ac3fb96ac310572d082fd12e67a928d684f8630af559dd"
+    },
+    {
+      "alias": "v2-baseline-04/episodes.telemetry.jsonl",
+      "sha256": "09229cdb88aac68e290960dede2f0b4235290f4ffbefba31d72d3a4a1e925a47"
+    },
+    {
+      "alias": "v2-seed105-trace-01/episodes.result.json",
+      "sha256": "fec72268194e1d683ec074123be156fa8b3f0a652f35374bf8fba451eaff1246"
+    },
+    {
+      "alias": "v2-seed105-trace-01/episodes.telemetry-summary.json",
+      "sha256": "b20a95fc4df486289d858e3b5949cf317ce8610a78d2203f498d23a84d8001bc"
+    },
+    {
+      "alias": "v2-seed105-trace-01/launch.json",
+      "sha256": "0037d9be238b62de14a5ecfe682428a6009b157cee9310b2928e0ce35d8e4f69"
+    },
+    {
+      "alias": "v2-seed105-trace-01/episodes.metrics.jsonl",
+      "sha256": "5bf33dce2b48456259801152e5b1db62c0d8e600376e9d35f9073de33639f460"
+    },
+    {
+      "alias": "v2-seed105-trace-01/episodes.telemetry.jsonl",
+      "sha256": "ae04d10575ccd85748e9e649616bdcd2c62605cfb994651349c23b15e2a3e5cc"
+    },
+    {
+      "alias": "v2-seed105-trace-01/episodes.metrics.trace.jsonl",
+      "sha256": "e2531cacf2578031b59a02e352bf1d934aef89a30994ed192c78dc2d87b893b4"
+    },
+    {
+      "alias": "v2-seed105-repeat-01/episodes.result.json",
+      "sha256": "fec72268194e1d683ec074123be156fa8b3f0a652f35374bf8fba451eaff1246"
+    },
+    {
+      "alias": "v2-seed105-repeat-01/episodes.telemetry-summary.json",
+      "sha256": "9734bc38e6698a59c58c5702118dda8cbe5734e17fbf95596b02c8fabaa177af"
+    },
+    {
+      "alias": "v2-seed105-repeat-01/launch.json",
+      "sha256": "4b8f37744870377d555dee4f66de904755d56c8ab086bb278edb03b5c84a2853"
+    },
+    {
+      "alias": "v2-seed105-repeat-01/episodes.metrics.jsonl",
+      "sha256": "96818e0d05eb8695f9ea796c54b9c8e4378773fd4debf3c3ec0c972c53878ecf"
+    },
+    {
+      "alias": "v2-seed105-repeat-01/episodes.telemetry.jsonl",
+      "sha256": "f3dd5931380459f6c896f167e4403964413890eddc2044f8ee495fdd677f2cd1"
+    }
+  ],
+  "code_sha256": {
+    "diagnostic_trace.py": "91a6fe174a94a418ae23b73244fbf49683fa38123451dbf29d41273cf9cdbe96",
+    "analyze_grasp.py": "c16b14af5dece44c42c490528a0962ebaacae3c5c3a336c348670f70403da1a9",
+    "summarize.py": "b4fbd170760fa3a1d5b446d1dbfb14522f1982daa46d32e269c78735ecce7d9c",
+    "run.py": "487a2db5bd688f28dc602fce257f7305be3d82472ff802f94516bb9bff089217",
+    "metrics.py": "47d0e8cdb64cf656f77d66229ba1913a1340b9e15541cba69e530a969c65f7da",
+    "model.py": "a8b87f6ba410ec8ee838349f3c8c009e35f7878fb7bec16151e990c8a7a9a32a",
+    "v2_planner.py": "78b58d08f9503d302325a35775ffbd6ec8e98e366d0663c54b724f7808c779ea",
+    "trajectory.py": "1dac1ab5841cd5b389757607eb789dc94e2820026d3b400862734d278aaec949",
+    "diagnose_failure.py": "c99ee2702bd827b6695142c875262cc332ba23009ab19f593bdbdfc8d9cc8717",
+    "compare.py": "44afbf592f8f7c89bba57a4366344129ef2637862d3cd284fa48d6fb4325a164",
+    "test_host.py": "ff2bf93eb8a8a7c43063b3a38f3c62ff4c40e7f05cc9c57dcc7da955620f62af",
+    "launch.py": "4eb6efec43b76999fa079ce87f07cdac8644caf73280bf24b289c2daa7030861",
+    "probe_model.py": "9656cf18f0639e4653da86e9680dfc0c009ad8201342b2b7178cda074140a57e",
+    "verify_artifacts.py": "99f9fb90fb7d59e3fddc579fe00211431e83eb08dfeba3fa313c587200668014",
+    "prepare.py": "605c2062746d7e9f356c7213d662eee438bf7e852e04feef7fda2295462c3cfb"
+  },
+  "source_code_sha256": {
+    "curobo/_src/util/sampling/sample_buffer.py": "f349dd2dae76fbc41abfc2b78eacb6f9035385cf8063aa81ad691720ed9fdba2",
+    "curobo/_src/solver/manager_seed.py": "271ec8f2d9b13f4962c0e25a5855289aa74651ee894ef6185fac3043a4f213bb",
+    "curobo/_src/motion/motion_planner.py": "e865256c6fb1d99394cec242209cda8fe8b9c8a0f5b5503f74978d45401efc9f"
+  },
+  "original_package_manifest_sha256": "eefbfb91fd7c88bb172b672637951deb5f0e9d7bebd1cf567b62d825368cad56",
+  "jacobian_check_method": "CPU central finite differences of URDF FK at closure positions, 1e-5 rad, translational rows in meters and rotational rows in radians, left joint indices verified against diagnostic joint-name trace."
+}

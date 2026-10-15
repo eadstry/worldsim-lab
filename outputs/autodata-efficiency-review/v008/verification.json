@@ -1,0 +1,11 @@
+{
+  "checked_at": "2026-10-15T06:43:45.349211+00:00",
+  "v007_preserved": true,
+  "experimental_data_unchanged": true,
+  "local_links": "passed",
+  "figure_count": 22,
+  "footer_coverage": "22/22",
+  "new_figures_visually_reviewed": true,
+  "reported_percentages": "checked against bundled data",
+  "scope": "Three-version explanatory comparison; no new experiment"
+}

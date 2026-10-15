@@ -1,0 +1,10 @@
+{
+  "checked_at": "2026-10-15T03:44:24.714937+00:00",
+  "source_hashes_verified": 30,
+  "v001_preserved": true,
+  "sample_counts": "17 completed episodes vs 16 writer saves verified",
+  "internal_intervals": "nonnegative remainder verified",
+  "local_links": "passed",
+  "new_figures_visually_reviewed": 4,
+  "scope": "Static source and historical telemetry review only; no new GPU test"
+}

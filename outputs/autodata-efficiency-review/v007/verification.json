@@ -1,0 +1,14 @@
+{
+  "checked_at": "2026-10-15T06:40:30.069063+00:00",
+  "v006_preserved": true,
+  "experimental_data_unchanged": true,
+  "local_links": "passed",
+  "figure_count": 19,
+  "footer_coverage": "19/19; two lines each",
+  "footer_width_checks": "passed during figure generation",
+  "visual_spot_checks": [
+    "01-throughput",
+    "14-v2-result"
+  ],
+  "scope": "Presentation annotations only; no new experiments"
+}

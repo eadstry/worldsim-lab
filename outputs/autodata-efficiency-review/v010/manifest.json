@@ -1,0 +1,347 @@
+{
+  "schema_version": 1,
+  "artifact_id": "autodata-efficiency-review",
+  "version": "v010",
+  "created_at": "2026-10-15T07:47:06.476281+00:00",
+  "material_cutoff": "2026-10-15 Asia/Shanghai; includes new v2 runtime and output readback",
+  "sources": [
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/summary.csv",
+      "sha256": "c118aac9896864fc60221b1ca65343320da03864d31804ed4b60d53780dd42a9"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w0/episodes.telemetry-summary.json",
+      "sha256": "84350a09c56618138436bfc8024b4b86c11902526a18191dea2e1408019b64c4"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w0/episodes.telemetry.jsonl",
+      "sha256": "0aa617c5d965a966ea557b292e039e51c2724f418327f3940f5619e8f020c1bc"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w0/episodes.run.json",
+      "sha256": "2eb0e79aca14b7588eb72a47b06110c77dd0f2a79ccb80b1e24dbc8ea64cde34"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w0/episodes.validation.json",
+      "sha256": "395134e4ae467cbd2d15149679ccf9cd055c6f2319e8226bfec70708399a0de2"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w0/episodes.resources.jsonl",
+      "sha256": "80518de5e96a5d21dbb6e9e8ab0f6765f99616813dee88be9dd202cea622324b"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w4/episodes.telemetry-summary.json",
+      "sha256": "820c245bbc131f36baa47d206f3dfe4f871fda5e890fbfce259bd5fc8a31cc9f"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w4/episodes.telemetry.jsonl",
+      "sha256": "af4864fcc36097270f58c5f3ee51c72ba08650a4a5847c3dc99b615e60c4eebb"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w4/episodes.run.json",
+      "sha256": "b62e7dc122e035eb45dfe3f36ce5e903d8f069d6dcf33638aef17503b60251c9"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w4/episodes.validation.json",
+      "sha256": "b09dafbad3c9ffbf087fa4d120fd373f37e1c96ca675acaef45dfcfb103ecda1"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w4/episodes.resources.jsonl",
+      "sha256": "840ebc708097cf37c2476121e0dafbc034f9dc2e80438b726264f44257d4c683"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w8/episodes.telemetry-summary.json",
+      "sha256": "ee92b2484043b9e2cc9a061e2a0d7e4f87fe4b2292e75cd313132bd2f4c69066"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w8/episodes.telemetry.jsonl",
+      "sha256": "459837b077b3e92889d9dc16d04ad5578331c945854aa839e8ba64a1c29323e2"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w8/episodes.run.json",
+      "sha256": "06e7fc98a830677862c68f486862cc898f2b83786cec8b3308fb5f2bc9f889c0"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w8/episodes.validation.json",
+      "sha256": "2f407ca3eec04c51a46ba5bbd89bf7318f0f41403a857f6c40cee3736d6268ce"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w8/episodes.resources.jsonl",
+      "sha256": "b6aa7cd4b86dc46c4a0c07c27ac232c960cd7184e3644dc58ee1131094d76a00"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_wauto/episodes.telemetry-summary.json",
+      "sha256": "f5eb394a147199c057d2e352de195e8a601d47c452d0afb3927f80fc915a2546"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_wauto/episodes.telemetry.jsonl",
+      "sha256": "67f8d3181f246cb0629e80ff57a065741deb54b8eeb0f98966fb841ea36ec5be"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_wauto/episodes.run.json",
+      "sha256": "61cd5c9b6cec3987b2bd52921425f2e25fa9f2ae9f0e25f6699de30602bb1343"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_wauto/episodes.validation.json",
+      "sha256": "f8f37aef6a9bec66b990fc21b8a55064481b626d7df2d843646ef4a7f9fd3f32"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_wauto/episodes.resources.jsonl",
+      "sha256": "0d3c32b3ef93cb88fd20d35085733eb5ee7c3378ee6933b78a5dd9e1dbebdb83"
+    },
+    {
+      "path": "outputs/autodata-efficiency-report/v001/evidence.json",
+      "sha256": "c86c49528ebd6f3c83ac314eb8ea3acdf34daaa269fd53b29dd8da2e6a10ece4"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v2/r01_v2_wauto/episodes.telemetry-summary.json",
+      "sha256": "804bc36b0a2710f3f5c01998e3831e526404bab4b963cfbd5cb81702d5957172"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v2/r01_v2_wauto/episodes.run.json",
+      "sha256": "a6400a50e95638da2d9a5c4c51e72d2659821dd87553068bbcbd8cd3cd957db0"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v2/r01_v2_wauto/episodes.telemetry.jsonl",
+      "sha256": "d9c9f7fa2615b87933e4433c9d4a9c2623d4e45c0080d545654d9898c5ef1c8e"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v2/r01_v2_wauto/episodes.export.json",
+      "sha256": "d36f58877d896e3dfc9653bfcaeec3f3eb27cd4ea15944fb786bbfcad5fcb783"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/launchers/v1/generate.py",
+      "sha256": "028a03f3c75fe46131bd03f17634cb6ed44ae0f4f7274e01ba4fe41d92195ff4"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/launchers/v1/async_export.py",
+      "sha256": "b44c38db5f28faecc316369e5bfafa73d627eeddf26eb757a1dcce26a2da6573"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/launchers/v1/export_pool.py",
+      "sha256": "ef03ef54bbbc7276205b15030358ee691fc3f422c6449f263acd8c7887768aef"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/launchers/v1/export_governor.py",
+      "sha256": "d2dc630a91dc890c57ac36db381ac2759518a25b3a582704ccf783584dee808b"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v2/launchers/v2/v2_planner.py",
+      "sha256": "78b58d08f9503d302325a35775ffbd6ec8e98e366d0663c54b724f7808c779ea"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v2/launchers/v2/model.py",
+      "sha256": "a8b87f6ba410ec8ee838349f3c8c009e35f7878fb7bec16151e990c8a7a9a32a"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v2/launchers/v2/trajectory.py",
+      "sha256": "1dac1ab5841cd5b389757607eb789dc94e2820026d3b400862734d278aaec949"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v2/launchers/v2/validate_output.py",
+      "sha256": "4367f2a7cebe63c56885694b2bbd6a304fc38e4bc4327eae6af2a7ccf74ef46b"
+    },
+    {
+      "root": "current_workspace",
+      "path": "workspace-overlays/efficiency-review-runtime/v2-auto-16-seed101/episodes.run.json",
+      "sha256": "939b6987450ea20ab897f6e14a4da6da5111b3f190433bb74caf9e5c289d7af1"
+    },
+    {
+      "root": "current_workspace",
+      "path": "workspace-overlays/efficiency-review-runtime/v2-auto-16-seed101/episodes.telemetry.jsonl",
+      "sha256": "41296f8470a0017440dacf29d8986f41e8c99e30f4133379026a2a86c811d73d"
+    },
+    {
+      "root": "current_workspace",
+      "path": "workspace-overlays/efficiency-review-runtime/v2-auto-16-seed101/episodes.telemetry-summary.json",
+      "sha256": "fe899eb67b54bf3afb78a23d5ac5dfd319322152927b376103b925e53b50f88c"
+    },
+    {
+      "root": "current_workspace",
+      "path": "workspace-overlays/efficiency-review-runtime/v2-auto-16-seed101/episodes.validation.json",
+      "sha256": "d1d1fb914049970592a9bb6325ee1b874cff931f8b5b258e97b4e1449afbb832"
+    },
+    {
+      "root": "current_workspace",
+      "path": "workspace-overlays/efficiency-review-runtime/v2-auto-16-seed101/schema-validation.log",
+      "sha256": "04a7847d535be85a26ca69126bb126d72f7b378322386166d3667fbc37ca5981"
+    },
+    {
+      "root": "current_workspace",
+      "path": "workspace-overlays/efficiency-review-runtime/v2-auto-16-seed101/validation.log",
+      "sha256": "aec4e4cbaaec2dba5bb236f9d6152b9841f6852583f7630784a6f9788eadb690"
+    },
+    {
+      "path": "AutoData/scripts/generate_dataset.py",
+      "sha256": "bb36958579a7e20d8b2b4cccc7f4dd545a89ad956e21434572699cfd3999df01",
+      "evidence_type": "current source inspection 2026-10-15"
+    },
+    {
+      "path": "AutoData/autodata_core/waypoint.py",
+      "sha256": "3e47b8fdccf54c9b20054037d45188dbda17b82d3a6cd88280028b59d42524ee",
+      "evidence_type": "current source inspection 2026-10-15"
+    },
+    {
+      "path": "AutoData/autodata_interfaces/env/isaaclab_env_interface.py",
+      "sha256": "eb4812da4cb418c82f8fb1fd4fef1e0bb569a43e4b077ba7e851194c4a5b157c",
+      "evidence_type": "current source inspection 2026-10-15"
+    },
+    {
+      "path": "AutoData/autodata_core/algorithms.py",
+      "sha256": "2288cae36381dd36a2e13a80bc20c47e514f8568c1ec8a028af1512244f95939",
+      "evidence_type": "current source inspection 2026-10-15"
+    },
+    {
+      "path": "AutoData/autodata_interfaces/motion_planners/curobo/curobo_planner.py",
+      "sha256": "59a38b465dd073b8173b1a588347e7321f5f18685fc774ff5759d21f1748daaa",
+      "evidence_type": "当前源码，非历史冻结快照"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v2/launchers/v2/v2_planner.py",
+      "sha256": "78b58d08f9503d302325a35775ffbd6ec8e98e366d0663c54b724f7808c779ea",
+      "evidence_type": "实验冻结适配器"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/launchers/v1/async_export.py",
+      "sha256": "b44c38db5f28faecc316369e5bfafa73d627eeddf26eb757a1dcce26a2da6573",
+      "evidence_type": "实验冻结保存桥"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/launchers/v1/export_pool.py",
+      "sha256": "ef03ef54bbbc7276205b15030358ee691fc3f422c6449f263acd8c7887768aef",
+      "evidence_type": "实验冻结保存池"
+    }
+  ],
+  "limitations": [
+    "v2 runtime completed but strict terminal validation failed for demo_2; 15/16 pass.",
+    "Historical v1 vs new v2 is cross-day single-run comparison, not causal isolation.",
+    "HDF5 readback and terminal-state checks are not full physics replay.",
+    "GPU/process diagrams are conceptual, not profiler traces; current main-loop inspection does not establish historical source identity."
+  ],
+  "delivery_policy": "local_only",
+  "delivery": {
+    "feishu": {
+      "status": "not_requested"
+    },
+    "gpt": {
+      "status": "not_requested"
+    }
+  },
+  "sealed_at": "2026-10-15T07:47:06.476281+00:00",
+  "files": {
+    "CHANGELOG.md": "14d6b0747c08649409854e570ae39487efed37821d4ffa11305e1ef01c3d1f80",
+    "backend-comparison.csv": "c03c65a478d648a76c704593ddf4266e259173bb07a09feac43da7d5bd5c0085",
+    "build_charts.py": "8e5a91c90e8e889d59679955afe0143e91d504d96554e0796eb8e390b04f5817",
+    "build_figures.py": "f9f9c66c696e767b2e2c8a8a651546ac1c909542cb17a70b90f51a8af0c9558a",
+    "build_report.py": "0693a37e8d9546f4b3c43b1acf7ab0a469db006d0256f6b12442b2daf8951668",
+    "chart-order.json": "31164a2b66ac6263e9c4d15954e34ea4217df7113c801bb9b3aedbfc1f4316a5",
+    "charts-guide.md": "0125b9784d43d470ebf06b54b4bc2721caf5aa800194a98cccaa4f3e945fda75",
+    "charts.html": "af34424f32569a7abad9485f4607efc00cad1145669c481ddb83da101b45234a",
+    "charts.pdf": "bc62028e5cfbb418b65e6536716587abcfa7a3814eef1679dea2946456b317f4",
+    "code-evidence.md": "43aa4e765ce3aed8d277d82b3cef7dc91e306c0dffed007fd7f117254d4e01c6",
+    "data.csv": "ce19bb7a0206817948847d4f88a48ebf70bc51ed97a6fd0671fde753d6ec1fe4",
+    "data.json": "085a9ba5657167353f06dd2b34a99002dcf614c4971c8cabdd370af5259e8b2d",
+    "figures/00-code-methods.png": "64e5b5badbff99480e9b7e2f9cd6daff0f23214dd1b24a015b97b3daee60b449",
+    "figures/00-code-methods.svg": "708890b11557dca029e5a84554db138f56e2e63ef9edb23821bd0c302183169e",
+    "figures/01-throughput.png": "eebec828d2742b0446bbefc9f4a51c96acd5b45b735d8c3a52531761b057e619",
+    "figures/01-throughput.svg": "936548da9b410993372b93de9f9345372f29b1f1978afada8b02db23f7eb53c7",
+    "figures/02-tail.png": "4d716d5fdc158a50b911633437b7f512ebb9f506fd5b1cc94f53805ea1b82725",
+    "figures/02-tail.svg": "27d5a1833e8acef524da60ec8cced401b05eea0ea75bc25df5e84af610c64247",
+    "figures/03-stages.png": "15f652f9a798dec36778d80686ae0a6ea476c2693c45a2758c004af24f7bfcbc",
+    "figures/03-stages.svg": "9c00ed4c947082070837cf3677a0c95c45f7fdffbbfa044866c99bb0a6e4b88e",
+    "figures/04-gpu.png": "4447ef9c282be5a3c17c9246c0a2862a059db5bd2a7540f38e03516efefcbc40",
+    "figures/04-gpu.svg": "7e64f80b287e4262c461a5235f053ea2fc1876d15f7b498917b3912d30188f80",
+    "figures/05-quality.png": "d51a60768ae2b32e7925b026e1dac5c77c458aa7eecea971efeb92093df614e1",
+    "figures/05-quality.svg": "5293ea0aca6f4a343dfa219522104b0ec0278190fd63bbb81dc74d3611b9d05b",
+    "figures/06-history.png": "b4246db095584b4d379ff4c6aeb383c856568080439a6cc06ca04301f8e7c123",
+    "figures/06-history.svg": "218bb17cccb2c30c92a4c2f0d7b468f368da85f463db30443be0489dfc1e97f0",
+    "figures/07-compression.png": "8b0fbacdb91155e71d46cbb775e4e92952e9b470b2022b60ed58e11affe114e0",
+    "figures/07-compression.svg": "0ba2fcaaaf729cdd286864c330fe9c813a627b08151a68354acb6b19c5e97ec9",
+    "figures/08-flow.png": "8f3b66ebb8584700a17f536153e168804189b077ce0a49afe412c064d8277d04",
+    "figures/08-flow.svg": "1511c59079d9d95e5b203167e84cad8f0bd7664f9349e320f1d7548c0fb815f3",
+    "figures/09-stage-change.png": "91b7fca6c19a699908d6100a29e5b76016e173b4a3c684880a5f495f3eceba56",
+    "figures/09-stage-change.svg": "67689e034ae80cdc0b1fb63d5a36d5fde880a53579d4b674ae3b49921b37d37e",
+    "figures/10-async-cost.png": "53221cbd65b7149fab214206fc303b5eecc9b2c6845ed7047c71bf66f090913d",
+    "figures/10-async-cost.svg": "7df44e4ccd97a2495ca5d6fa68488b4340e8ebbfdb805bbce0b873a39e8553b2",
+    "figures/11-tail-detail.png": "9e704d94650692099659e31e44580d15e738e2572fb717bb3662585095d01e98",
+    "figures/11-tail-detail.svg": "923c7ff1341419bf9e1fdb06aafa0080a73d76e3442235b5c7a5b1049fbe2fed",
+    "figures/12-memory-lifecycle.png": "197e704c8b21dea83cd5b76bd5712c346b12a4ebee1be71b779d59172485e72d",
+    "figures/12-memory-lifecycle.svg": "033134d307c00513e9566dc680b6797c73c6231625b87090102ccf7b7ee06543",
+    "figures/13-v2-adapter.png": "1bd49eefa013ab48eab82c835e05ef683031045488ec2ea90cd54b4cd0e27cf1",
+    "figures/13-v2-adapter.svg": "2025e074dc0b4e5cb734a4940062d3ce68abaaac5c1a211a38248d4c1c6493c8",
+    "figures/14-v2-result.png": "2853d4429510b74ac8214e848f4bacdff4a65d7418874bfbb6c34cda85b61fae",
+    "figures/14-v2-result.svg": "d68558473055cdf98564b0020f28c20be708f4066efdc1f4059a675d5c9b3d19",
+    "figures/15-serial-parallel.png": "3d69ed532f64e121b25ae5f669c3b55d9006c9b3ff25f705e0f0e386061c6933",
+    "figures/15-serial-parallel.svg": "75b1c958b3a8920de691d181a9edf47060229aa961e3ca3f93860967a5ff840a",
+    "figures/16-process-gpu.png": "227935b6db76f13912c065598bdde72f5f2ff814c87ea330cd1b345f8eef3f58",
+    "figures/16-process-gpu.svg": "4b55652aeb6569d0304e75aefe62880c6402eafbbc4a4be5921314965536f384",
+    "figures/17-batch-barrier.png": "50bb1b90daf4808f294f69448f493ba706f402f0327b7b715a0eeea59f60f6ee",
+    "figures/17-batch-barrier.svg": "cd340617fc6fe07aded6786210bcf81495baaff4882ec3741d23a9c57f83b849",
+    "figures/18-parallel-comparison.png": "5b7c797463eeaa0c57fa254031000d94997c684ad5fae0dd3a28c34ce42b1fb0",
+    "figures/18-parallel-comparison.svg": "dd875aa63d1fcb7345f2086f291113ecab73d0840c59aa778f40edc29bd28766",
+    "figures/19-version-boundaries.png": "27db86f3b821b8c59a81d01c4a1f5fa5f51c04bc5d5e954c956efeef9447a640",
+    "figures/19-version-boundaries.svg": "726e3cb1ad6ffa2667206528e9e85d2851ec374d215bf894ab72aa6aa5c03790",
+    "figures/20-version-control-flow.png": "4105185ee1c27df2753feef0c06a5bc498dd6a10d74824d5324042ac34ac6ec3",
+    "figures/20-version-control-flow.svg": "1c5acee959d9e7ca05529e774e2eccb4af7b5c533d82498c94b7a93764c04ccb",
+    "figures/21-version-evidence.png": "307136859e7b5374733c464427aefa2a06612761fbb4fb5466ebfe25b3e40b5d",
+    "figures/21-version-evidence.svg": "ea3018bdd8e8ff616365a278f97275d26f2e0cf0fa78b483b90224814a3388e1",
+    "figures/22-stage-parallelism.png": "8c3933d0725f533f7e08e267402d1635178256f455d00132487f6fa61efc3802",
+    "figures/22-stage-parallelism.svg": "9b7a82ebc097a918b05919cdfbcb08cc36d6d4bb49b82acf400cc03be14dad84",
+    "figures/23-exact-interfaces.png": "59e333cbe9a307a37bfc1e2c6fc0c7cb9b999c257beb1c777573feaf62eea2a4",
+    "figures/23-exact-interfaces.svg": "204295fe25d3e8049b2f6527e676b7d62ce3fa94d1502968269782ccf2aeb5ed",
+    "figures/24-library-vs-integration.png": "bff7e9a358d13d3b34725867975fa82119a538a8a5c3f7acabc4854d2224d3f0",
+    "figures/24-library-vs-integration.svg": "2da72cc86277175fc2928c1663595b543b0701d2c30b4bdd0f3bb04e11406008",
+    "figures/25-questions.png": "6c6e6ee2b7e0b5d77a00800f6ab5779e3420ab602ee5318d386ec46ed5f4442c",
+    "figures/25-questions.svg": "b7a6a971ea35ca033807b346d1604a43271ff754ace97104fb0f8d6fb9e2406e",
+    "figures/26-experiment-matrix.png": "38d2f9ee78df1acf9548e0c911cb559d8829876ccae89573985eabaab8596154",
+    "figures/26-experiment-matrix.svg": "5b8328b35effa3fd233b6ab62bdf18daa8f9f90710af40a653ad82a95566d31a",
+    "figures/27-metrics.png": "053dc19043a0965527763d00e2dc7be77297b814d95dd42dd81e76d4409fb3ae",
+    "figures/27-metrics.svg": "9104e17cfb7a73ae8fed432f607dde501d5e41127435e9db53477f54314bed9e",
+    "figures/28-evidence-chain.png": "797caad732b2bd20bcf02ca2dd66a0670767c2f33743513a5c237be6c3517fd4",
+    "figures/28-evidence-chain.svg": "e8332b3335aac33c32291d801031b8d34bdfc0caab0cf149f680f4efea77fdaa",
+    "figures/29-v2-protocol.png": "c683b3a9be649408d9093b040160a78c85940bfe0c1eef509a01a31daa790bb3",
+    "figures/29-v2-protocol.svg": "6e60e80c647d8addcd6e10cda1bd2369fbf86210d566a0bcc0087dd6f7f71a6a",
+    "figures/30-conclusions.png": "252de6946886e140847dbbb71d726bb9083c42c01521d9ccadcdcc555a5756af",
+    "figures/30-conclusions.svg": "fc93500a92c648e6f5415e6958b5f099896178736e7e1fcda5cfd574f95ed407",
+    "figures/31-next-experiments.png": "896603cca8c9ed38acd89b45a5685d14bbda00527134c56bd7c5fa59aec9ecd4",
+    "figures/31-next-experiments.svg": "0d43f4aec55aa28313b01d86cfa55d53bd1d87f2c085c36973267e5c7ea6c29f",
+    "index.html": "eca7bcb2119f96c814fa9a2df066fc586422ba3298a17b53f3e456c14cb43b59",
+    "interface-evidence.md": "7ac3891563cb572661e4a5ef2e88744d2ff8bb3f1831053c25419c54326d2021",
+    "interface-sources.json": "fad9c9e31e5a9dbccdfa97ecc867c55d729e59535ad172d4e4c0eada04dfdc1f",
+    "internal-timing.csv": "2908286a4ba8c176cdc691fe815e9fcfba69ae8058e35e693b29cbd25fe916b5",
+    "report.md": "16ea0983a2a10c818a3850e3a5384f7aea117aa706877172c86e90e1e36abbe6",
+    "slide-notes.json": "354b93c1aa686d5ae023fa32b1be0655e48a7e16d98351d34e1455cab6b1e646",
+    "v2-provenance.json": "1f59d60b13338d969b19153bb611c92aa047a5397a253f91e0a60af72cefcde1",
+    "v2-result.json": "d8aa00969eb48628b5eb8eb10bb88fe95de23f503f9d7ad110d6161a75d2de06",
+    "v2-validation.json": "12006033f252ca2dd3ce9be35ef90a18bdfdca2eb6dac61bd15339c4341f6ef5",
+    "verification.json": "831c05f9e6f361899d6b566754861a651eae7fd708c1761684475bccce3eb141",
+    "version-walkthrough.md": "f898044c669ad5bcab7218151468bf5d99d3e22f0c372bca1fcdc7ce9102153d"
+  },
+  "web_sources": [
+    {
+      "url": "https://github.com/NVlabs/curobo",
+      "checked_on": "2026-10-15",
+      "role": "Official library capability/API reference; not frozen experiment source"
+    },
+    {
+      "url": "https://curobo.org/readme.html",
+      "checked_on": "2026-10-15",
+      "role": "Official library capability/API reference; not frozen experiment source"
+    },
+    {
+      "url": "https://arxiv.org/abs/2603.05493",
+      "checked_on": "2026-10-15",
+      "role": "Official library capability/API reference; not frozen experiment source"
+    },
+    {
+      "url": "https://curobo.org/_api/curobo.wrap.reacher.motion_gen.html",
+      "checked_on": "2026-10-15",
+      "role": "Official library capability/API reference; not frozen experiment source"
+    },
+    {
+      "url": "https://nvlabs.github.io/curobo/latest/api/curobo.motion_planner.html",
+      "checked_on": "2026-10-15",
+      "role": "Official library capability/API reference; not frozen experiment source"
+    }
+  ]
+}

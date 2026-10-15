@@ -1,0 +1,10 @@
+{
+  "checked_at": "2026-10-15T08:56:11.607870+00:00",
+  "v012_preserved": true,
+  "experimental_data_unchanged": true,
+  "local_links_and_source_anchors": "passed",
+  "pdf_pages_and_notes": "43/43",
+  "new_slides_visual_review": "3/3 checked; no clipping",
+  "source_snapshots": "12 files with original line numbers and SHA256",
+  "scope": "Static source inspection and offline report update; no new simulation or GPU profiler measurements"
+}

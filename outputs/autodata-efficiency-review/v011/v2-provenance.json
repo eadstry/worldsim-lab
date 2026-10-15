@@ -1,0 +1,44 @@
+{
+  "checked_at": "2026-10-15T04:37:59.241023+00:00",
+  "source_artifacts": [
+    {
+      "relative_to_old_v2": "launchers/v2/generate.py",
+      "sha256": "028a03f3c75fe46131bd03f17634cb6ed44ae0f4f7274e01ba4fe41d92195ff4",
+      "matches_preparation": true
+    },
+    {
+      "relative_to_old_v2": "launchers/v2/v2_planner.py",
+      "sha256": "78b58d08f9503d302325a35775ffbd6ec8e98e366d0663c54b724f7808c779ea",
+      "matches_preparation": true
+    },
+    {
+      "relative_to_old_v2": "launchers/v2/export_pool.py",
+      "sha256": "ef03ef54bbbc7276205b15030358ee691fc3f422c6449f263acd8c7887768aef",
+      "matches_preparation": true
+    },
+    {
+      "relative_to_old_v2": "launchers/v2/async_export.py",
+      "sha256": "b44c38db5f28faecc316369e5bfafa73d627eeddf26eb757a1dcce26a2da6573",
+      "matches_preparation": true
+    },
+    {
+      "relative_to_old_v2": "launchers/v2/validate_output.py",
+      "sha256": "4367f2a7cebe63c56885694b2bbd6a304fc38e4bc4327eae6af2a7ccf74ef46b",
+      "matches_preparation": true
+    },
+    {
+      "relative_to_old_v2": "r01_v2_wauto/task.yaml",
+      "sha256": "6909e42ecdca8f6b1b3aa7716d5c43ab58809310c907e398dfaae8ec416cf06e",
+      "matches_preparation": null
+    },
+    {
+      "role": "input_hdf5",
+      "sha256": "7321968fb3f0037b2b7d94bcaa0f0c0ff609c99c89671cd443fcd210c4fec2da"
+    }
+  ],
+  "v2_commit_recorded": "78fd485fa82d9b9a063fb4985e371814587e666a",
+  "comparison_caveats": [
+    "Different day and fresh cache; historical v1 not contemporaneous control.",
+    "CPU powersave warning recorded by Isaac Sim; no power policy changed."
+  ]
+}

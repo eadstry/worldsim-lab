@@ -1,0 +1,130 @@
+[
+  {
+    "id": "25-questions",
+    "section": "一、问题与实验设计"
+  },
+  {
+    "id": "26-experiment-matrix",
+    "section": "一、问题与实验设计"
+  },
+  {
+    "id": "27-metrics",
+    "section": "一、问题与实验设计"
+  },
+  {
+    "id": "19-version-boundaries",
+    "section": "二、实现与机制"
+  },
+  {
+    "id": "20-version-control-flow",
+    "section": "二、实现与机制"
+  },
+  {
+    "id": "00-code-methods",
+    "section": "二、实现与机制"
+  },
+  {
+    "id": "22-stage-parallelism",
+    "section": "二、实现与机制"
+  },
+  {
+    "id": "16-process-gpu",
+    "section": "二、实现与机制"
+  },
+  {
+    "id": "17-batch-barrier",
+    "section": "二、实现与机制"
+  },
+  {
+    "id": "12-memory-lifecycle",
+    "section": "二、实现与机制"
+  },
+  {
+    "id": "01-throughput",
+    "section": "三、v1 效率与耗时解释"
+  },
+  {
+    "id": "05-quality",
+    "section": "三、v1 效率与耗时解释"
+  },
+  {
+    "id": "02-tail",
+    "section": "三、v1 效率与耗时解释"
+  },
+  {
+    "id": "09-stage-change",
+    "section": "三、v1 效率与耗时解释"
+  },
+  {
+    "id": "10-async-cost",
+    "section": "三、v1 效率与耗时解释"
+  },
+  {
+    "id": "11-tail-detail",
+    "section": "三、v1 效率与耗时解释"
+  },
+  {
+    "id": "04-gpu",
+    "section": "三、v1 效率与耗时解释"
+  },
+  {
+    "id": "28-evidence-chain",
+    "section": "三、v1 效率与耗时解释"
+  },
+  {
+    "id": "24-library-vs-integration",
+    "section": "四、v2 迁移与实验"
+  },
+  {
+    "id": "23-exact-interfaces",
+    "section": "四、v2 迁移与实验"
+  },
+  {
+    "id": "13-v2-adapter",
+    "section": "四、v2 迁移与实验"
+  },
+  {
+    "id": "29-v2-protocol",
+    "section": "四、v2 迁移与实验"
+  },
+  {
+    "id": "14-v2-result",
+    "section": "四、v2 迁移与实验"
+  },
+  {
+    "id": "21-version-evidence",
+    "section": "四、v2 迁移与实验"
+  },
+  {
+    "id": "30-conclusions",
+    "section": "五、结论与下一轮验证"
+  },
+  {
+    "id": "31-next-experiments",
+    "section": "五、结论与下一轮验证"
+  },
+  {
+    "id": "08-flow",
+    "section": "附录、补充机制与历史实验"
+  },
+  {
+    "id": "15-serial-parallel",
+    "section": "附录、补充机制与历史实验"
+  },
+  {
+    "id": "18-parallel-comparison",
+    "section": "附录、补充机制与历史实验"
+  },
+  {
+    "id": "03-stages",
+    "section": "附录、补充机制与历史实验"
+  },
+  {
+    "id": "06-history",
+    "section": "附录、补充机制与历史实验"
+  },
+  {
+    "id": "07-compression",
+    "section": "附录、补充机制与历史实验"
+  }
+]

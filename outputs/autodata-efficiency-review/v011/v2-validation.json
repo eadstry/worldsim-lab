@@ -1,0 +1,743 @@
+{
+  "file": "local-runtime/v2-auto-16-seed101/episodes.hdf5",
+  "episodes": [
+    {
+      "name": "demo_0",
+      "steps": 1381,
+      "recorded_success": true,
+      "final_state_success": true,
+      "inside_pad": true,
+      "height_error_m": 0.0008304119110107422,
+      "gripper_position_rad": 0.6997842192649841,
+      "linear_speed_m_s": 0.0007441674242727458,
+      "angular_speed_rad_s": 0.025169523432850838,
+      "images": {
+        "left_hand_rgb": {
+          "shape": [
+            1381,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 0.7287836371527778,
+          "last_frame_mean": 191.22788519965277
+        },
+        "right_hand_rgb": {
+          "shape": [
+            1381,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 0.000166015625,
+          "last_frame_mean": 0.00019856770833333334
+        },
+        "third_person_rgb": {
+          "shape": [
+            1381,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 192.92687608506944,
+          "last_frame_mean": 195.92871961805557
+        }
+      }
+    },
+    {
+      "name": "demo_1",
+      "steps": 1383,
+      "recorded_success": true,
+      "final_state_success": true,
+      "inside_pad": true,
+      "height_error_m": 0.0007791519165039062,
+      "gripper_position_rad": 0.6997831463813782,
+      "linear_speed_m_s": 0.0001284115860471502,
+      "angular_speed_rad_s": 0.0018485599430277944,
+      "images": {
+        "left_hand_rgb": {
+          "shape": [
+            1383,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 0.758486328125,
+          "last_frame_mean": 191.1705197482639
+        },
+        "right_hand_rgb": {
+          "shape": [
+            1383,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 0.00031684027777777776,
+          "last_frame_mean": 0.0015570746527777779
+        },
+        "third_person_rgb": {
+          "shape": [
+            1383,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 193.03491102430556,
+          "last_frame_mean": 196.11223849826388
+        }
+      }
+    },
+    {
+      "name": "demo_10",
+      "steps": 1351,
+      "recorded_success": true,
+      "final_state_success": true,
+      "inside_pad": true,
+      "height_error_m": 0.0010137557983398438,
+      "gripper_position_rad": 0.699783980846405,
+      "linear_speed_m_s": 0.0006201770156621933,
+      "angular_speed_rad_s": 0.019718626514077187,
+      "images": {
+        "left_hand_rgb": {
+          "shape": [
+            1351,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 190.79062282986112,
+          "last_frame_mean": 181.4362152777778
+        },
+        "right_hand_rgb": {
+          "shape": [
+            1351,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 8.355034722222222e-05,
+          "last_frame_mean": 8.463541666666667e-05
+        },
+        "third_person_rgb": {
+          "shape": [
+            1351,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 196.50595052083332,
+          "last_frame_mean": 196.52954427083333
+        }
+      }
+    },
+    {
+      "name": "demo_11",
+      "steps": 1373,
+      "recorded_success": true,
+      "final_state_success": true,
+      "inside_pad": true,
+      "height_error_m": 0.0008069872856140137,
+      "gripper_position_rad": 0.6997844576835632,
+      "linear_speed_m_s": 0.003322222735732794,
+      "angular_speed_rad_s": 0.17376205325126648,
+      "images": {
+        "left_hand_rgb": {
+          "shape": [
+            1373,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 189.81908311631943,
+          "last_frame_mean": 191.16329318576388
+        },
+        "right_hand_rgb": {
+          "shape": [
+            1373,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 0.00020073784722222221,
+          "last_frame_mean": 0.00022135416666666666
+        },
+        "third_person_rgb": {
+          "shape": [
+            1373,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 196.45768120659721,
+          "last_frame_mean": 196.5488693576389
+        }
+      }
+    },
+    {
+      "name": "demo_12",
+      "steps": 1347,
+      "recorded_success": true,
+      "final_state_success": true,
+      "inside_pad": true,
+      "height_error_m": 0.0010256171226501465,
+      "gripper_position_rad": 0.6997845768928528,
+      "linear_speed_m_s": 0.001173429423943162,
+      "angular_speed_rad_s": 0.046985965222120285,
+      "images": {
+        "left_hand_rgb": {
+          "shape": [
+            1347,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 191.28332682291668,
+          "last_frame_mean": 181.93592881944446
+        },
+        "right_hand_rgb": {
+          "shape": [
+            1347,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 7.161458333333333e-05,
+          "last_frame_mean": 0.00013020833333333333
+        },
+        "third_person_rgb": {
+          "shape": [
+            1347,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 197.8205099826389,
+          "last_frame_mean": 198.01076822916667
+        }
+      }
+    },
+    {
+      "name": "demo_13",
+      "steps": 1384,
+      "recorded_success": true,
+      "final_state_success": true,
+      "inside_pad": true,
+      "height_error_m": 0.0008032917976379395,
+      "gripper_position_rad": 0.6997829079627991,
+      "linear_speed_m_s": 0.002743322169408202,
+      "angular_speed_rad_s": 0.1445132941007614,
+      "images": {
+        "left_hand_rgb": {
+          "shape": [
+            1384,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 191.10179796006943,
+          "last_frame_mean": 191.09167100694444
+        },
+        "right_hand_rgb": {
+          "shape": [
+            1384,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 0.0003081597222222222,
+          "last_frame_mean": 0.00026258680555555557
+        },
+        "third_person_rgb": {
+          "shape": [
+            1384,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 197.9837065972222,
+          "last_frame_mean": 198.05246419270833
+        }
+      }
+    },
+    {
+      "name": "demo_14",
+      "steps": 1438,
+      "recorded_success": true,
+      "final_state_success": true,
+      "inside_pad": true,
+      "height_error_m": 0.0010216832160949707,
+      "gripper_position_rad": 0.699796736240387,
+      "linear_speed_m_s": 0.0010002562776207924,
+      "angular_speed_rad_s": 0.015867354348301888,
+      "images": {
+        "left_hand_rgb": {
+          "shape": [
+            1438,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 191.23760416666667,
+          "last_frame_mean": 180.08508572048612
+        },
+        "right_hand_rgb": {
+          "shape": [
+            1438,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 0.0001931423611111111,
+          "last_frame_mean": 0.00028103298611111113
+        },
+        "third_person_rgb": {
+          "shape": [
+            1438,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 195.93764322916667,
+          "last_frame_mean": 195.6509027777778
+        }
+      }
+    },
+    {
+      "name": "demo_15",
+      "steps": 1423,
+      "recorded_success": true,
+      "final_state_success": true,
+      "inside_pad": true,
+      "height_error_m": 0.0008350014686584473,
+      "gripper_position_rad": 0.6997926831245422,
+      "linear_speed_m_s": 5.387674173107371e-05,
+      "angular_speed_rad_s": 0.001939018489792943,
+      "images": {
+        "left_hand_rgb": {
+          "shape": [
+            1423,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 191.035087890625,
+          "last_frame_mean": 191.08706163194444
+        },
+        "right_hand_rgb": {
+          "shape": [
+            1423,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 7.161458333333333e-05,
+          "last_frame_mean": 9.006076388888889e-05
+        },
+        "third_person_rgb": {
+          "shape": [
+            1423,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 195.43968207465278,
+          "last_frame_mean": 195.60462456597222
+        }
+      }
+    },
+    {
+      "name": "demo_2",
+      "steps": 1409,
+      "recorded_success": true,
+      "final_state_success": false,
+      "inside_pad": true,
+      "height_error_m": 0.00022971630096435547,
+      "gripper_position_rad": 0.7002443075180054,
+      "linear_speed_m_s": 0.022112073376774788,
+      "angular_speed_rad_s": 0.8537716269493103,
+      "images": {
+        "left_hand_rgb": {
+          "shape": [
+            1409,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 0.7572732204861111,
+          "last_frame_mean": 185.42660807291668
+        },
+        "right_hand_rgb": {
+          "shape": [
+            1409,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 0.00042317708333333335,
+          "last_frame_mean": 0.001784939236111111
+        },
+        "third_person_rgb": {
+          "shape": [
+            1409,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 192.60671440972223,
+          "last_frame_mean": 196.782802734375
+        }
+      }
+    },
+    {
+      "name": "demo_3",
+      "steps": 1417,
+      "recorded_success": true,
+      "final_state_success": true,
+      "inside_pad": true,
+      "height_error_m": 0.0008633732795715332,
+      "gripper_position_rad": 0.6997830867767334,
+      "linear_speed_m_s": 0.0007267192122526467,
+      "angular_speed_rad_s": 0.019238049164414406,
+      "images": {
+        "left_hand_rgb": {
+          "shape": [
+            1417,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 0.7423383246527778,
+          "last_frame_mean": 190.81025933159722
+        },
+        "right_hand_rgb": {
+          "shape": [
+            1417,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 0.0,
+          "last_frame_mean": 8.138020833333333e-05
+        },
+        "third_person_rgb": {
+          "shape": [
+            1417,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 192.14007161458332,
+          "last_frame_mean": 196.47744032118055
+        }
+      }
+    },
+    {
+      "name": "demo_4",
+      "steps": 1417,
+      "recorded_success": true,
+      "final_state_success": true,
+      "inside_pad": true,
+      "height_error_m": 0.0007599592208862305,
+      "gripper_position_rad": 0.6997807621955872,
+      "linear_speed_m_s": 0.0004459173942450434,
+      "angular_speed_rad_s": 0.006029305048286915,
+      "images": {
+        "left_hand_rgb": {
+          "shape": [
+            1417,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 0.749150390625,
+          "last_frame_mean": 189.83827799479167
+        },
+        "right_hand_rgb": {
+          "shape": [
+            1417,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 4.8828125e-05,
+          "last_frame_mean": 0.00019856770833333334
+        },
+        "third_person_rgb": {
+          "shape": [
+            1417,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 192.2761935763889,
+          "last_frame_mean": 196.46531792534722
+        }
+      }
+    },
+    {
+      "name": "demo_5",
+      "steps": 1427,
+      "recorded_success": true,
+      "final_state_success": true,
+      "inside_pad": true,
+      "height_error_m": 0.0008690357208251953,
+      "gripper_position_rad": 0.6997828483581543,
+      "linear_speed_m_s": 0.0010639266110956669,
+      "angular_speed_rad_s": 0.058764148503541946,
+      "images": {
+        "left_hand_rgb": {
+          "shape": [
+            1427,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 0.7365603298611111,
+          "last_frame_mean": 191.08343532986112
+        },
+        "right_hand_rgb": {
+          "shape": [
+            1427,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 0.000107421875,
+          "last_frame_mean": 0.0003146701388888889
+        },
+        "third_person_rgb": {
+          "shape": [
+            1427,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 192.46025390625,
+          "last_frame_mean": 198.0008127170139
+        }
+      }
+    },
+    {
+      "name": "demo_6",
+      "steps": 1451,
+      "recorded_success": true,
+      "final_state_success": true,
+      "inside_pad": true,
+      "height_error_m": 0.0008602142333984375,
+      "gripper_position_rad": 0.6997947692871094,
+      "linear_speed_m_s": 0.0010901798959821463,
+      "angular_speed_rad_s": 0.04480773210525513,
+      "images": {
+        "left_hand_rgb": {
+          "shape": [
+            1451,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 0.7847178819444445,
+          "last_frame_mean": 191.0183159722222
+        },
+        "right_hand_rgb": {
+          "shape": [
+            1451,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 0.0,
+          "last_frame_mean": 7.161458333333333e-05
+        },
+        "third_person_rgb": {
+          "shape": [
+            1451,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 193.0630815972222,
+          "last_frame_mean": 195.43316297743056
+        }
+      }
+    },
+    {
+      "name": "demo_7",
+      "steps": 1455,
+      "recorded_success": true,
+      "final_state_success": true,
+      "inside_pad": true,
+      "height_error_m": 0.0007541179656982422,
+      "gripper_position_rad": 0.6997969746589661,
+      "linear_speed_m_s": 0.001933980849571526,
+      "angular_speed_rad_s": 0.09652694314718246,
+      "images": {
+        "left_hand_rgb": {
+          "shape": [
+            1455,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 0.7586838107638889,
+          "last_frame_mean": 191.22718315972222
+        },
+        "right_hand_rgb": {
+          "shape": [
+            1455,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 2.8211805555555554e-05,
+          "last_frame_mean": 7.269965277777777e-05
+        },
+        "third_person_rgb": {
+          "shape": [
+            1455,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 192.5325173611111,
+          "last_frame_mean": 197.80711805555555
+        }
+      }
+    },
+    {
+      "name": "demo_8",
+      "steps": 1379,
+      "recorded_success": true,
+      "final_state_success": true,
+      "inside_pad": true,
+      "height_error_m": 0.0008249878883361816,
+      "gripper_position_rad": 0.6997831463813782,
+      "linear_speed_m_s": 0.0008608726202510297,
+      "angular_speed_rad_s": 0.07022292912006378,
+      "images": {
+        "left_hand_rgb": {
+          "shape": [
+            1379,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 191.19279405381945,
+          "last_frame_mean": 191.3683908420139
+        },
+        "right_hand_rgb": {
+          "shape": [
+            1379,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 0.001572265625,
+          "last_frame_mean": 0.0016981336805555556
+        },
+        "third_person_rgb": {
+          "shape": [
+            1379,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 196.12164930555556,
+          "last_frame_mean": 196.21798936631944
+        }
+      }
+    },
+    {
+      "name": "demo_9",
+      "steps": 1357,
+      "recorded_success": true,
+      "final_state_success": true,
+      "inside_pad": true,
+      "height_error_m": 0.0007693171501159668,
+      "gripper_position_rad": 0.6997837424278259,
+      "linear_speed_m_s": 4.34236389992293e-05,
+      "angular_speed_rad_s": 0.0007747031049802899,
+      "images": {
+        "left_hand_rgb": {
+          "shape": [
+            1357,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 185.40861002604166,
+          "last_frame_mean": 190.58411024305556
+        },
+        "right_hand_rgb": {
+          "shape": [
+            1357,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 0.001865234375,
+          "last_frame_mean": 0.001847873263888889
+        },
+        "third_person_rgb": {
+          "shape": [
+            1357,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 196.8206716579861,
+          "last_frame_mean": 196.92051106770833
+        }
+      }
+    }
+  ],
+  "passed": false,
+  "sha256": "801cc08322f51e0d38a800fc00445931246d3b25ccd47bc06f657576ccf27bb2"
+}

@@ -1,0 +1,12 @@
+{
+  "checked_at": "2026-10-15T07:56:13.130751+00:00",
+  "v010_preserved": true,
+  "experimental_data_unchanged": true,
+  "local_links": "passed",
+  "pdf_page_count": 36,
+  "pdf_page_order_and_explanations": "36/36 passed",
+  "code_snippets": "5/5 syntax checked; illustrative and not executed",
+  "new_figures_visually_reviewed": true,
+  "source_evidence": "AST-selected functions with line numbers and SHA-256",
+  "scope": "Detailed structural documentation; no upstream source edits or runtime experiment"
+}
