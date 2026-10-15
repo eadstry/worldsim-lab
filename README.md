@@ -9,6 +9,7 @@ Private workspace for embodied AI source exploration, AutoData research document
 | `AutoData/`, `IsaacLab-Arena/`, `RLinf/` | Upstream Git submodules pinned to the commits in `upstream-lock.json` |
 | `AutoData-*.md`, `AutoData-*.html` | Local AutoData explanations and visualizations |
 | `workspace-overlays/AutoData/agentic_design/` | Preserved local AutoData design document; setup copies it into the source checkout |
+| `workspace-overlays/openarm-benchmark/` | OpenArm Arena benchmark example using zero actions and fixture replay; no trained checkpoint required. GPU validation remains outstanding. |
 | `private-blog/` | Blog sources, build scripts and existing generated site; no hosting credentials/configuration |
 | `outputs/` | Existing versioned research deliverables, preserved as saved |
 | `skills/research-dual-delivery/` | Portable research delivery instructions and package tool |
