@@ -20,3 +20,5 @@ This repository combines upstream source references with local AutoData research
 - If authentication, network access, repository permissions, or remote divergence prevents the push, preserve the local commit and report that GitHub synchronization is incomplete. Do not claim success until the push succeeds.
 - Report the commit and synchronized branch at task completion. This is a task-completion workflow, not a background file watcher or scheduled service; other machines and cloud tasks must fetch the pushed commits to receive them.
 
+
+- On a shared host, submit GPU simulation, training and resource-intensive validation through `scripts/task-queue.py` using the same host-local queue directory across worktrees. Read `docs/task-queue.md`; wait for existing unmanaged GPU tasks to finish before starting the queue. Keep each task's outputs separate and its worktree unchanged while queued or running.

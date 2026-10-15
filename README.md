@@ -64,6 +64,8 @@ bash scripts/cloud-check.sh
 
 完成上述依赖安装后：
 
+For validation shared by multiple worktrees on one host, use the [task queue](docs/task-queue.md). Submit resource-intensive commands with `python3 scripts/task-queue.py submit --name validation -- <command>`; tasks run serially with separate logs and exit status.
+
 ```bash
 npm --prefix private-blog run build
 npm --prefix private-blog run check
