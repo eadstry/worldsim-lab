@@ -111,12 +111,19 @@ def summarize(rows, target=None, elapsed=None, window_seconds=60):
     completed_iterations = len(iterations) if iteration_starts else n_iterations
     n_iteration_successes = (sum(r.get('success') is True for r in iterations) if iteration_starts else
                             sum(r.get('curobo_iteration_successes', 0) for r in requests))
-    stage_names = ('reset', 'motion_plan', 'execution_wait', 'export')
+    stage_names = ('reset', 'motion_plan', 'execution_wait', 'export', 'export_enqueue')
     policy = next((r for r in reversed(rows) if r['event'] == 'generation_policy'), {})
     target = policy.get('requested_trials', target)
     target_is_successes = policy.get('guarantee_success', True)
     target_done = len(successes) if target_is_successes else len(completed)
     target_rate = target_done / generation_elapsed if generation_elapsed else 0
+    submitted = [r for r in rows if r['event'] == 'export_submitted']
+    saved = [r for r in rows if r['event'] == 'export_saved']
+    pool_started = next((r for r in reversed(rows) if r['event'] == 'export_pool_started'), {})
+    worker_pids = set(pool_started.get('worker_pids', []))
+    worker_pids.update(r['worker_pid'] for r in rows if r['event'] == 'export_worker_started')
+    admission = next((r for r in reversed(rows) if r['event'] == 'export_scaling_decision'), None)
+    export_complete = next((r for r in reversed(rows) if r['event'] == 'export_complete'), None)
     exports = [r for r in rows if r['event'] == 'export_breakdown']
     return {
         'schema_version': 2, 'time_utc': utc_now(), 'elapsed_seconds': elapsed,
@@ -163,6 +170,18 @@ def summarize(rows, target=None, elapsed=None, window_seconds=60):
              if 'simulation_seconds_per_wall_second' in r]),
         'stage_duration_seconds': {name: distribution([r.get('stages_seconds', {}).get(name, 0)
                                                        for r in completed]) for name in stage_names},
+        'async_export': {
+            'max_workers': pool_started.get('max_workers', pool_started.get('workers', 0)),
+            'scaling_policy': pool_started.get('scaling_policy', 'on_demand'),
+            'resource_admission': admission,
+            'workers_started': len(worker_pids),
+            'submitted': len(submitted), 'saved': len(saved), 'pending': len(submitted) - len(saved),
+            'peak_queue_memory_bytes': max((r.get('queue_memory_bytes', 0) for r in submitted), default=0),
+            'packing_seconds': sum(r['packing_seconds'] for r in submitted),
+            'queue_wait_seconds': sum(r['queue_wait_seconds'] for r in submitted),
+            'write_seconds': distribution([r['write_seconds'] for r in saved]),
+            'complete': export_complete,
+        },
         'export_breakdown': {
             'count': len(exports),
             'phases_seconds': {phase: distribution([r['phases_seconds'][phase] for r in exports])
@@ -242,11 +261,23 @@ def compact_status(value):
     status = value.get('run', {}).get('status', '状态未知')
     solver_rate = value['solver_iteration_success_rate']
     solver = f'{solver_rate:.1%}' if solver_rate is not None else '?'
+    saving = value.get('async_export', {})
+    export = (f"保存 {saving.get('saved', 0)}/{saving.get('submitted', 0)}，"
+              f"保存进程 {saving.get('workers_started', 0)}/{saving.get('max_workers') or '资源自适应'}，"
+              f"待保存 {saving.get('pending', 0)}，" if value.get('run', {}).get('config', {}).get('export_workers') else '')
+    admission = saving.get('resource_admission')
+    if (export and admission and not admission['allow']
+            and saving.get('pending', 0) > saving.get('workers_started', 0)):
+        labels = {'cpu_sampling': '采样中', 'cpu_capacity': 'CPU 配额已满', 'cpu_busy': 'CPU 忙',
+                  'memory_reserve': '内存余量不足', 'process_slots': '进程或线程配额不足',
+                  'shared_memory': '共享内存不足', 'disk_space': '磁盘空间不足',
+                  'io_pressure': '磁盘 I/O 压力大', 'resources_unavailable': '资源信息不可读'}
+        export += f"扩容暂停({labels.get(admission['reason'], admission['reason'])})，"
     return (f"{datetime.now().astimezone().strftime('%H:%M:%S')} [{status}] "
             f"成功 {value['successes']} / 完成 {value['episodes_completed']}，成功率 {success}，"
             f"进行中 {value['in_flight']}，速度 {value['successful_episodes_per_minute']:.2f} 条/分，"
             f"求解 {value['solver_iterations']} 次/成功率 {solver}，"
-            f"RSS {memory}，遥测距今 {value.get('telemetry_age_seconds', 0):.0f}s")
+            f"{export}RSS {memory}，遥测距今 {value.get('telemetry_age_seconds', 0):.0f}s")
 
 
 def main():

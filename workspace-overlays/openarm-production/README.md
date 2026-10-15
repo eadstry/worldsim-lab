@@ -238,3 +238,142 @@ bash -n workspace-overlays/openarm-production/run-local.sh
 A separate real right-arm environment/reset/three-step and action-scaling probe is
 available through `bash workspace-overlays/openarm-production/run-local.sh --check-runtime`.
 Its result is saved in `runtime-check-result.json`; it is not a data-generation test.
+
+### Whole-episode multiprocessing export
+
+The existing synchronous path remains the default. Add these options to the
+normal `run-local.sh` invocation to enable the bounded queue:
+
+```bash
+--export-workers auto --export-queue-memory-gib 16 --export-timeout-seconds 600
+```
+
+`--export-workers auto` enables admission based on server resources, with no
+user-specified process count. No writer starts before there is data. When outstanding
+episodes exceed the existing writer count, the coordinator samples resources and
+admits at most one new writer per second. CPU usage needs two samples before the
+first admission. Idle writers are reused until export finishes. Resource pressure
+pauses new starts; queued work and existing writers continue, and polling retries
+admission even when no new episode is submitted.
+
+Auto admission reads CPU affinity and visible cgroup v2 ancestor quotas, measured
+CPU use, system `MemAvailable` and ancestor `memory.max` / `memory.high` headroom,
+shared-memory space, ancestor PID/thread limits, output filesystem free space and
+system/cgroup I/O pressure. It preserves 25% of CPU capacity (at most two cores)
+and 15% of effective RAM (at least 256 MiB) for simulation and other work. A new
+writer also needs at least 256 MiB, raised to 125% of the largest observed writer
+private memory; shared episode mappings are not counted again as private memory.
+It requires space for one raw episode plus 1 GiB on the output filesystem, and
+pauses growth at 20% I/O stall pressure over the last ten seconds. These are
+admission heuristics, not OS resource reservations or a guarantee against later
+resource changes. Existing writers are not killed when capacity falls. Invisible
+host quotas cannot be inferred; missing required sampling data pauses admission.
+If admission cannot recover within the export timeout, the run fails clearly.
+
+An integer, such as `--export-max-workers 2` (alias `--export-workers 2`), retains
+the previous count-limited policy. Zero keeps the default synchronous path. Both
+policies retain the shared-memory byte budget and backpressure. Trajectory packing
+and GPU-to-CPU recording still run in the producer; this changes export scheduling.
+
+The scheduling update is covered by host-only tests for lazy startup, resource
+admission, ancestor limits, pause/recovery without new submissions, idle reuse,
+count limits and cleanup after a later spawn failure. The saved
+GPU comparisons below predate this scheduling update; its GPU throughput has not
+been remeasured.
+
+Completed episodes are copied directly into packed shared memory once; only
+array descriptors and metadata enter the process queue. No full episode pickle
+or producer-side full RGB `torch.stack()` is required. Small GPU state fields
+are stacked per field for a single CPU transfer, avoiding a synchronization for
+every individual frame. Queued and currently writing
+allocations count against the byte budget. Active simulation recorder buffers
+are separate and are not included in that budget. `/dev/shm` must have capacity
+for the configured budget plus an 8 MiB reserve. Before starting Isaac Sim, a
+budget exceeding available shared memory is reduced to at most 16 GiB (or the
+available capacity minus the reserve, if smaller), with a warning. The supervisor
+records the requested and effective budgets. Capacity is checked again when
+workers start, since other processes can consume shared memory after preflight.
+This does not reserve RAM for simulation or guarantee that an episode fits a
+small queue. Oversized episodes fail clearly;
+a full queue applies backpressure rather than growing without limit.
+
+In asynchronous mode, CPU recorder frames have per-environment storage instead
+of views retaining all eight environments' batches. During ownership transfer,
+frames are released as they are copied; glibc free pages are periodically trimmed.
+This prevents a full retained recorder episode plus a second shared copy from
+raising memory peaks during handoff. Small GPU state fields retain the original
+batch recording and are transferred per field. Failed/interrupted subprocesses
+are terminated as a process group by the supervisor; their export manifest is
+marked failed and completed shards are preserved.
+
+CPU-only workers use `spawn`, each with its own HDF5 shard. Compression stays
+at gzip level 2 with h5py's existing automatic chunks. IDs are assigned on
+submission, not completion; frame order and matching actions/observations stay
+within their episode. After all submitted writes are acknowledged and workers
+close their files, the coordinator copies compressed groups into a standalone
+file, checks metadata/shapes/counts, and publishes `--output_file` atomically.
+No external links or virtual datasets are used. Successful shards are removed;
+on failure `.export-parts/`, `.partial.hdf5` if present, and `.export.json` are
+retained for diagnosis. The manifest is complete only after final publication.
+
+New telemetry records each on-demand `export_worker_started`; the monitor shows
+started writers versus their limit and discovers their resource samplers as they
+start. In auto mode it displays resource admission and the pause reason instead
+of a fixed process limit. `export_scaling_decision` records reason changes with
+resource measurements. The export manifest also records the policy, writer PIDs
+and latest resource admission sample (`max_workers: null` in auto mode).
+Telemetry distinguishes `export_enqueue` from worker writes, tracks
+submitted/saved/pending episodes, packing/wait/write/drain/merge time and peak
+queue allocation. Parent resource samples include worker RSS/CPU and shared
+memory use. Summed RSS double-counts shared pages: use cgroup memory and available
+system RAM when assessing total physical pressure. Worker failures/timeouts
+propagate to generation; generation counts alone cannot mark the run successful.
+
+Host tests and fixed-data benchmarks (fresh output directory required):
+
+```bash
+PYTHONDONTWRITEBYTECODE=1 /home/tangyuan/miniconda3/envs/autodata/bin/python \
+  workspace-overlays/openarm-production/test_export_pool.py
+PYTHONDONTWRITEBYTECODE=1 /home/tangyuan/miniconda3/envs/autodata/bin/python \
+  workspace-overlays/openarm-production/benchmark_pool.py \
+  AutoData/datasets/openarm_left_num_envs_8.hdf5 \
+  --directory workspace-overlays/openarm-production/runtime/offline-export-comparison \
+  --episodes 4
+```
+
+The benchmark compares all arrays blockwise, metadata, compression, chunk layout
+and group structure against the original real episodes, and includes queue
+startup, packing, drain and merge in final-ready throughput. Its input loading
+and subsequent integrity checks are outside the timing window. Run it separately
+from GPU speed comparisons to avoid introducing CPU/memory contention. GPU
+comparisons use the same source, task seed, 8 environments and at least 24
+successes each for workers 0/1/2, with distinct output paths. Report production
+and final-ready throughput separately; final-ready includes drain and merge.
+
+### GPU export validation, 2026-10-14
+
+With 8 environments and 24 episodes per mode, final-file readiness from the first
+episode start (including drain/merge) was 1156.74 / 1022.19 / 891.22 seconds for
+workers 0 / 1 / 2. Two workers improved final-ready throughput by 29.8%; full
+launcher throughput improved by 28.3%. All modes saved the same 32,959 frames
+with valid existing HDF5 structure. All 672 non-RGB datasets in each asynchronous
+output matched the synchronous output exactly. Peak producer RSS was
+56.2 / 40.5 / 40.7 GiB. Queue payload peaked at 14.44 GiB, within the 16 GiB limit.
+The final runs had no OOM event increments.
+
+The strict physical checker rejects the same `demo_2` in all three modes
+(terminal linear/angular velocity remains above threshold): 23/24 pass in each.
+This remains a failed overall physical acceptance. No thresholds, trajectory
+data or success labels were changed. See `async-export-validation.json` for the
+separate integrity/format results, timing scope, diagnostics and source hashes.
+The historical 100-success target above has not been rerun by this comparison.
+
+A full real-episode check of destructive ownership transfer, including all RGB
+values and existing-loader compatibility after shard deletion, can be repeated
+with a fresh directory:
+
+```bash
+PYTHONDONTWRITEBYTECODE=1 /home/tangyuan/miniconda3/envs/autodata/bin/python \
+  workspace-overlays/openarm-production/verify_handoff.py /path/to/closed.hdf5 \
+  --demo demo_0 --directory /path/to/new-verification-directory
+```

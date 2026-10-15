@@ -28,6 +28,11 @@ def record_policy(policy, num_trials, num_envs):
                      max_failures=policy.max_num_failures, final_hold_steps=policy.num_steps_final_hold)
 
 
+def record_output_ready():
+    if _active is not None:
+        _active.emit('output_ready')
+
+
 def error_text(exc):
     return f'{type(exc).__name__}: {exc}'
 
@@ -163,7 +168,8 @@ def install(data_generator_module, planner_module, path):
         recorder = self.datastream.get_env().recorder_manager
         if not getattr(recorder, '_openarm_telemetry_installed', False):
             from export_timing import export_scope, install as install_export_timing
-            install_export_timing(recorder)
+            if not os.environ.get("OPENARM_ASYNC_EXPORT"):
+                install_export_timing(recorder)
             original_export = recorder.export_episodes
 
             @functools.wraps(original_export)
@@ -171,18 +177,22 @@ def install(data_generator_module, planner_module, path):
                 current = _episode_context.get()
                 if current is None:
                     return original_export(*export_args, **export_kwargs)
-                started, previous = telemetry.stage_started(current, 'export')
+                stage = 'export_enqueue' if os.environ.get('OPENARM_ASYNC_EXPORT') else 'export'
+                started, previous = telemetry.stage_started(current, stage)
                 export_error = None
                 try:
-                    with export_scope(telemetry.emit, **telemetry.episode_values(current)):
+                    if os.environ.get('OPENARM_ASYNC_EXPORT'):
                         result = original_export(*export_args, **export_kwargs)
+                    else:
+                        with export_scope(telemetry.emit, **telemetry.episode_values(current)):
+                            result = original_export(*export_args, **export_kwargs)
                     current['export_calls'] += 1
                     return result
                 except BaseException as exc:
                     export_error = error_text(exc)
                     raise
                 finally:
-                    telemetry.stage_finished(current, 'export', started, previous, export_error)
+                    telemetry.stage_finished(current, stage, started, previous, export_error)
 
             recorder.export_episodes = tracked_export
             recorder._openarm_telemetry_installed = True

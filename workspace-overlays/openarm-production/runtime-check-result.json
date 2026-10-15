@@ -1,1 +1,4 @@
-{"status": "passed", "steps": 3}
+{
+  "status": "failed",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/tangyuan/WorldSimReady-Home/workspace-overlays/openarm-production/check_runtime.py\", line 22, in <module>\n    install()\n  File \"/home/tangyuan/WorldSimReady-Home/workspace-overlays/openarm-production/compat.py\", line 126, in install\n    assert telemetry_file, \"OPENARM_TELEMETRY_FILE must be set by generate.py\"\n           ^^^^^^^^^^^^^^\nAssertionError: OPENARM_TELEMETRY_FILE must be set by generate.py\n"
+}

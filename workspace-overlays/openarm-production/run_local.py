@@ -16,6 +16,7 @@ from pathlib import Path
 
 from monitor import Journal, append_json, atomic_json, compact_status, snapshot, utc_now
 from resources import ResourceSampler
+from export_governor import parse_workers
 
 
 def main():
@@ -30,21 +31,30 @@ def main():
     parser.add_argument('--arm', default='right')
     parser.add_argument('--final-hold-steps', type=int, default=0)
     parser.add_argument('--log-interval', type=float, default=10)
+    parser.add_argument('--export-workers', '--export-max-workers', type=parse_workers, default=0)
+    parser.add_argument('--export-queue-memory-gib', type=float, default=16)
+    parser.add_argument('--export-timeout-seconds', type=float, default=600)
     args, _ = parser.parse_known_args()
     assert args.log_interval > 0
     output = args.output_file.resolve()
     assert output != args.input_file.resolve(), 'Input and output must differ'
     assert args.input_file.is_file(), f'Missing input: {args.input_file}'
     suffixes = ('.console.log', '.run.json', '.resources.jsonl', '.status.json', '.telemetry.jsonl',
-                '.telemetry-summary.json', '.result.json', '.error.txt')
+                '.telemetry-summary.json', '.result.json', '.error.txt', '.export.json', '.export-parts', '.partial.hdf5')
     assert not output.exists(), f'Output already exists: {output}'
     for suffix in suffixes:
         assert not output.with_suffix(suffix).exists(), f'Existing run artifact: {output.with_suffix(suffix)}; use a new output name'
     output.parent.mkdir(parents=True, exist_ok=True)
     run_id = uuid.uuid4().hex
     command = [sys.executable, '-u', str(script), *sys.argv[1:]]
+    requested_memory_gib = args.export_queue_memory_gib
+    if args.export_workers:
+        from export_resources import resolve_export_memory_gib
+        args.export_queue_memory_gib = resolve_export_memory_gib(requested_memory_gib)
+        command.extend(['--export-queue-memory-gib', str(args.export_queue_memory_gib)])
     config = vars(args).copy()
     config = {k: str(v.resolve()) if isinstance(v, Path) else v for k, v in config.items()}
+    config['requested_export_queue_memory_gib'] = requested_memory_gib
     run = {'schema_version': 2, 'run_id': run_id, 'started_at': utc_now(), 'status': 'starting',
            'command': command, 'config': config, 'supervisor_pid': os.getpid(),
            'cwd': str(Path.cwd()), 'hostname': os.uname().nodename,
@@ -68,6 +78,7 @@ def main():
     journal = Journal(output.with_suffix('.telemetry.jsonl'))
     resource_journal = Journal(output.with_suffix('.resources.jsonl'))
     previous_output = None
+    worker_samplers = {}
 
     def pump_console():
         try:
@@ -89,6 +100,18 @@ def main():
         nonlocal previous_output
         sample = resources.sample()
         sample.update(run_id=run_id, output_bytes=output.stat().st_size if output.exists() else 0)
+        for row in journal.refresh():
+            pids = (row['worker_pids'] if row['event'] == 'export_pool_started' else
+                    [row['worker_pid']] if row['event'] == 'export_worker_started' else [])
+            for pid in pids:
+                if pid not in worker_samplers:
+                    worker_samplers[pid] = ResourceSampler(pid)
+                    worker_samplers[pid].gpu_command = None
+        sample['export_workers'] = [sampler.sample() for sampler in worker_samplers.values()]
+        sample['shared_memory_used_bytes'] = (__import__('shutil').disk_usage('/dev/shm').used)
+        # Worker RSS includes shared pages; use cgroup/available RAM for physical totals.
+        sample['process_tree_rss_bytes_including_shared_duplicates'] = sum(
+            row.get('process_rss_bytes') or 0 for row in [sample, *sample['export_workers']])
         now = time.monotonic()
         if previous_output is not None:
             sample['output_growth_bytes_per_second'] = ((sample['output_bytes'] - previous_output[1]) /
@@ -131,12 +154,32 @@ def main():
         pump.join(timeout=3)
         for sig, handler in old_handlers.items():
             signal.signal(sig, handler)
+    if returncode != 0:
+        # The simulator may be SIGKILLed before its own finally/atexit handlers.
+        try:
+            os.killpg(child.pid, signal.SIGTERM)
+        except ProcessLookupError:
+            pass
+        export_path = output.with_suffix('.export.json')
+        if export_path.exists():
+            state = json.loads(export_path.read_text())
+            if state.get('status') != 'complete':
+                state.update(status='failed', child_returncode=returncode)
+                state.setdefault('error', 'Generation process exited before export completion')
+                atomic_json(export_path, state)
     report = output.with_suffix('.result.json')
     completion_error = None
     stats = None
     if returncode == 0:
         try:
+            error_path = output.with_suffix('.error.txt')
+            if error_path.is_file():
+                raise ValueError('Generation failed: ' + error_path.read_text().strip())
             stats = json.loads(report.read_text())
+            if args.export_workers:
+                export = json.loads(output.with_suffix('.export.json').read_text())
+                assert export['status'] == 'complete' and output.is_file(), 'Async export is incomplete'
+                assert sum(e['attributes'].get('success') is True for e in export['entries']) == stats['num_success'], 'Saved/generated success count mismatch'
             assert stats['num_success'] > 0, 'No successful demonstrations'
             assert stats.get('requested_trials') == args.generation_num_trials, 'Completion target mismatch'
             policy = next((r for r in reversed(journal.refresh()) if r['event'] == 'generation_policy'), {})
