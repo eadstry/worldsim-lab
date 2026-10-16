@@ -26,6 +26,9 @@ def main():
     parser = argparse.ArgumentParser(add_help=False)
     parser.add_argument('--output_file', type=Path, required=True)
     parser.add_argument('--input_file', type=Path, required=True)
+    parser.add_argument('--runtime', type=Path)
+    parser.add_argument('--background-config', type=Path)
+    parser.add_argument('--background-seed', type=int, default=101)
     parser.add_argument('--num_envs', type=int, default=1)
     parser.add_argument('--generation_num_trials', type=int, default=1)
     parser.add_argument('--arm', default='right')
@@ -40,7 +43,7 @@ def main():
     assert output != args.input_file.resolve(), 'Input and output must differ'
     assert args.input_file.is_file(), f'Missing input: {args.input_file}'
     suffixes = ('.console.log', '.run.json', '.resources.jsonl', '.status.json', '.telemetry.jsonl',
-                '.telemetry-summary.json', '.result.json', '.error.txt', '.export.json', '.export-parts', '.partial.hdf5')
+                '.telemetry-summary.json', '.background.json', '.result.json', '.error.txt', '.export.json', '.export-parts', '.partial.hdf5')
     assert not output.exists(), f'Output already exists: {output}'
     for suffix in suffixes:
         assert not output.with_suffix(suffix).exists(), f'Existing run artifact: {output.with_suffix(suffix)}; use a new output name'
@@ -176,6 +179,9 @@ def main():
             if error_path.is_file():
                 raise ValueError('Generation failed: ' + error_path.read_text().strip())
             stats = json.loads(report.read_text())
+            if args.background_config is not None:
+                background = json.loads(output.with_suffix('.background.json').read_text())
+                assert background.get('dataset_annotated') is True, 'HDR dataset provenance is incomplete'
             if args.export_workers:
                 export = json.loads(output.with_suffix('.export.json').read_text())
                 assert export['status'] == 'complete' and output.is_file(), 'Async export is incomplete'

@@ -86,18 +86,20 @@ def install_generation_compat():
     data_generator.DataGenerator.generate = scope["generate"]
 
 
-def install():
+def install(runtime=None):
     install_task_compat()
     import importlib.util
     import os
     import sys
     from pathlib import Path
 
+    runtime = Path(runtime) if runtime is not None else Path(__file__).resolve().parent / "runtime"
+
     from autodata_interfaces.motion_planners.curobo import curobo_planner_cfg  # noqa: F401
 
     name = "autodata_interfaces.motion_planners.curobo.curobo_planner"
     assert name not in sys.modules, "Planner was imported before OpenArm compatibility setup"
-    path = Path(__file__).resolve().parent / "runtime/patches/curobo_planner.py"
+    path = runtime / "patches/curobo_planner.py"
     spec = importlib.util.spec_from_file_location(name, path)
     module = importlib.util.module_from_spec(spec)
     sys.modules[name] = module
@@ -107,7 +109,7 @@ def install():
     from autodata_interfaces.embodiments import factory
 
     name = "autodata_interfaces.embodiments.single_arm_embodiment_adapter"
-    path = Path(__file__).resolve().parent / "runtime/patches/single_arm_embodiment_adapter.py"
+    path = runtime / "patches/single_arm_embodiment_adapter.py"
     spec = importlib.util.spec_from_file_location(name, path)
     module = importlib.util.module_from_spec(spec)
     sys.modules[name] = module
