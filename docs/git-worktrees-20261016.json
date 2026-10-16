@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "captured_on": "2026-10-16",
-  "phase": "before migration",
+  "phase": "completed historical migrations; final root state verified at task completion; active task state is a point-in-time snapshot",
   "worktrees": [
     {
       "path": "/home/tangyuan/WorldSimReady-Home",
@@ -81,7 +81,15 @@
         "?? outputs/autodata-efficiency-review/v022/curobo-v1-v2.md",
         "?? outputs/autodata-efficiency-review/v022/verification.json"
       ],
-      "migration": "retain"
+      "migration": "v022 archived; adopt final reviewed tip after push, without changing active peer worktree",
+      "branch_after": "codex/git-all-worktrees-20261016",
+      "status_count_after": 2,
+      "status_after": [
+        " M AutoData",
+        " M IsaacLab-Arena"
+      ],
+      "head_after_ref": "origin/codex/git-all-worktrees-20261016",
+      "verification": "Expected final state; verified against Git at task completion"
     },
     {
       "path": "/home/tangyuan/.codex/worktrees/1099/WorldSimReady-Home",
@@ -89,7 +97,11 @@
       "branch": null,
       "status_count_before": 0,
       "status_before": [],
-      "migration": "retain"
+      "migration": "retain",
+      "head_after": "34301dc6a41049f5986fc19710ed6784a107d2c7",
+      "branch_after": null,
+      "status_count_after": 0,
+      "status_after": []
     },
     {
       "path": "/home/tangyuan/.codex/worktrees/214b/WorldSimReady-Home",
@@ -97,7 +109,11 @@
       "branch": null,
       "status_count_before": 0,
       "status_before": [],
-      "migration": "retain"
+      "migration": "retain",
+      "head_after": "34301dc6a41049f5986fc19710ed6784a107d2c7",
+      "branch_after": null,
+      "status_count_after": 0,
+      "status_after": []
     },
     {
       "path": "/home/tangyuan/.codex/worktrees/2b9e/WorldSimReady-Home",
@@ -105,7 +121,11 @@
       "branch": null,
       "status_count_before": 0,
       "status_before": [],
-      "migration": "retain"
+      "migration": "retain",
+      "head_after": "34301dc6a41049f5986fc19710ed6784a107d2c7",
+      "branch_after": null,
+      "status_count_after": 0,
+      "status_after": []
     },
     {
       "path": "/home/tangyuan/.codex/worktrees/3ae2/WorldSimReady-Home",
@@ -113,7 +133,11 @@
       "branch": null,
       "status_count_before": 0,
       "status_before": [],
-      "migration": "retain"
+      "migration": "retain",
+      "head_after": "34301dc6a41049f5986fc19710ed6784a107d2c7",
+      "branch_after": null,
+      "status_count_after": 0,
+      "status_after": []
     },
     {
       "path": "/home/tangyuan/.codex/worktrees/434b/WorldSimReady-Home",
@@ -121,7 +145,11 @@
       "branch": "refs/heads/codex/shared-validation-queue",
       "status_count_before": 0,
       "status_before": [],
-      "migration": "retain"
+      "migration": "retain",
+      "head_after": "47723c155bbb357bdd5c5bc5bdbf812c6b8e733c",
+      "branch_after": "codex/shared-validation-queue",
+      "status_count_after": 0,
+      "status_after": []
     },
     {
       "path": "/home/tangyuan/.codex/worktrees/5b06/WorldSimReady-Home",
@@ -200,7 +228,20 @@
         "?? workspace-overlays/curobo-v2-mvp/v2_planner.py",
         "?? workspace-overlays/curobo-v2-mvp/verify_artifacts.py"
       ],
-      "migration": "pending"
+      "migration": "complete",
+      "head_after": "755b2295292a05f05113e2de4391d61e34a85cda",
+      "branch_after": "codex/organized-5b06-20261016",
+      "status_count_after": 0,
+      "status_after": [],
+      "receipt": {
+        "path": "/home/tangyuan/.codex/worktrees/5b06/WorldSimReady-Home",
+        "branch": "codex/organized-5b06-20261016",
+        "head": "755b2295292a05f05113e2de4391d61e34a85cda",
+        "recovery_stash": "5b75cb6086096640e0be3ac3e40ac259a7d09de2",
+        "recovery_label": "before-all-worktrees-20261016-5b06",
+        "status_count": 0,
+        "runtime_size_and_mtime_preserved": true
+      }
     },
     {
       "path": "/home/tangyuan/.codex/worktrees/8ff3/WorldSimReady-Home",
@@ -208,7 +249,11 @@
       "branch": null,
       "status_count_before": 0,
       "status_before": [],
-      "migration": "retain"
+      "migration": "retain",
+      "head_after": "34301dc6a41049f5986fc19710ed6784a107d2c7",
+      "branch_after": null,
+      "status_count_after": 0,
+      "status_after": []
     },
     {
       "path": "/home/tangyuan/.codex/worktrees/aa69/WorldSimReady-Home",
@@ -216,7 +261,11 @@
       "branch": null,
       "status_count_before": 0,
       "status_before": [],
-      "migration": "retain"
+      "migration": "retain",
+      "head_after": "34301dc6a41049f5986fc19710ed6784a107d2c7",
+      "branch_after": null,
+      "status_count_after": 0,
+      "status_after": []
     },
     {
       "path": "/home/tangyuan/.codex/worktrees/b8dd/WorldSimReady-Home",
@@ -224,7 +273,11 @@
       "branch": null,
       "status_count_before": 0,
       "status_before": [],
-      "migration": "retain"
+      "migration": "retain",
+      "head_after": "34301dc6a41049f5986fc19710ed6784a107d2c7",
+      "branch_after": null,
+      "status_count_after": 0,
+      "status_after": []
     },
     {
       "path": "/home/tangyuan/.codex/worktrees/c46d/WorldSimReady-Home",
@@ -247,7 +300,20 @@
         "?? workspace-overlays/openarm-benchmark/test_launch.py",
         "?? workspace-overlays/openarm-benchmark/test_terminal_gate.py"
       ],
-      "migration": "pending"
+      "migration": "complete",
+      "head_after": "755b2295292a05f05113e2de4391d61e34a85cda",
+      "branch_after": "codex/organized-c46d-20261016",
+      "status_count_after": 0,
+      "status_after": [],
+      "receipt": {
+        "path": "/home/tangyuan/.codex/worktrees/c46d/WorldSimReady-Home",
+        "branch": "codex/organized-c46d-20261016",
+        "head": "755b2295292a05f05113e2de4391d61e34a85cda",
+        "recovery_stash": "647e1e790ad0bdd14d30aac41358f367573c9e3f",
+        "recovery_label": "before-all-worktrees-20261016-c46d",
+        "status_count": 0,
+        "runtime_size_and_mtime_preserved": true
+      }
     },
     {
       "path": "/home/tangyuan/.codex/worktrees/ca7b/WorldSimReady-Home",
@@ -255,7 +321,11 @@
       "branch": "refs/heads/codex/openarm-benchmark-demo",
       "status_count_before": 0,
       "status_before": [],
-      "migration": "retain"
+      "migration": "retain",
+      "head_after": "a537426a410abc7f5e437b7365effe77af06110c",
+      "branch_after": "codex/openarm-benchmark-demo",
+      "status_count_after": 0,
+      "status_after": []
     },
     {
       "path": "/home/tangyuan/.codex/worktrees/e476/WorldSimReady-Home",
@@ -1922,7 +1992,20 @@
         "?? workspace-overlays/efficiency-review-runtime/v2-auto-16-seed101/episodes.validation.json",
         "?? workspace-overlays/efficiency-review-runtime/validate_v2.py"
       ],
-      "migration": "pending"
+      "migration": "complete",
+      "head_after": "755b2295292a05f05113e2de4391d61e34a85cda",
+      "branch_after": "codex/organized-e476-20261016",
+      "status_count_after": 0,
+      "status_after": [],
+      "receipt": {
+        "path": "/home/tangyuan/.codex/worktrees/e476/WorldSimReady-Home",
+        "branch": "codex/organized-e476-20261016",
+        "head": "755b2295292a05f05113e2de4391d61e34a85cda",
+        "recovery_stash": "ca039db0689b918769885b9f37f117d15423f8f1",
+        "recovery_label": "before-all-worktrees-20261016-e476",
+        "status_count": 0,
+        "runtime_size_and_mtime_preserved": true
+      }
     },
     {
       "path": "/home/tangyuan/WorldSimReady-Home/.worktrees/autodata-plan-scene-20261016",
@@ -1936,7 +2019,53 @@
         "?? workspace-overlays/autodata-plan-scene/scene_probe.py",
         "?? workspace-overlays/autodata-plan-scene/viewer.html"
       ],
-      "migration": "retain"
+      "migration": "active task left unchanged",
+      "head_after": "e5f361139f19b87ae003558a85b957b907046310",
+      "branch_after": "codex/autodata-plan-scene-20261016",
+      "status_count_after": 41,
+      "status_after": [
+        "?? outputs/autodata-plan-scene/v001/baseline/episodes.result.json",
+        "?? outputs/autodata-plan-scene/v001/baseline/episodes.validation.json",
+        "?? outputs/autodata-plan-scene/v001/baseline/frame-0000.jpg",
+        "?? outputs/autodata-plan-scene/v001/baseline/frame-0034.jpg",
+        "?? outputs/autodata-plan-scene/v001/baseline/frame-0068.jpg",
+        "?? outputs/autodata-plan-scene/v001/baseline/probe-recovered.json",
+        "?? outputs/autodata-plan-scene/v001/baseline/probe.json",
+        "?? outputs/autodata-plan-scene/v001/baseline/source-sha256.json",
+        "?? outputs/autodata-plan-scene/v001/baseline/source-stability.json",
+        "?? outputs/autodata-plan-scene/v001/baseline/task.yaml",
+        "?? outputs/autodata-plan-scene/v001/comparison.json",
+        "?? outputs/autodata-plan-scene/v001/manifest.json",
+        "?? outputs/autodata-plan-scene/v001/offset-a/episodes.result.json",
+        "?? outputs/autodata-plan-scene/v001/offset-a/episodes.validation.json",
+        "?? outputs/autodata-plan-scene/v001/offset-a/frame-0000.jpg",
+        "?? outputs/autodata-plan-scene/v001/offset-a/frame-0034.jpg",
+        "?? outputs/autodata-plan-scene/v001/offset-a/frame-0067.jpg",
+        "?? outputs/autodata-plan-scene/v001/offset-a/probe-recovered.json",
+        "?? outputs/autodata-plan-scene/v001/offset-a/probe.json",
+        "?? outputs/autodata-plan-scene/v001/offset-a/source-sha256.json",
+        "?? outputs/autodata-plan-scene/v001/offset-a/source-stability.json",
+        "?? outputs/autodata-plan-scene/v001/offset-a/task.yaml",
+        "?? outputs/autodata-plan-scene/v001/offset-b/episodes.result.json",
+        "?? outputs/autodata-plan-scene/v001/offset-b/episodes.validation.json",
+        "?? outputs/autodata-plan-scene/v001/offset-b/frame-0000.jpg",
+        "?? outputs/autodata-plan-scene/v001/offset-b/frame-0035.jpg",
+        "?? outputs/autodata-plan-scene/v001/offset-b/frame-0070.jpg",
+        "?? outputs/autodata-plan-scene/v001/offset-b/probe-recovered.json",
+        "?? outputs/autodata-plan-scene/v001/offset-b/probe.json",
+        "?? outputs/autodata-plan-scene/v001/offset-b/source-sha256.json",
+        "?? outputs/autodata-plan-scene/v001/offset-b/source-stability.json",
+        "?? outputs/autodata-plan-scene/v001/offset-b/task.yaml",
+        "?? outputs/autodata-plan-scene/v001/visualization-fragment.html",
+        "?? workspace-overlays/autodata-plan-scene/README.md",
+        "?? workspace-overlays/autodata-plan-scene/package.py",
+        "?? workspace-overlays/autodata-plan-scene/recover_capture.py",
+        "?? workspace-overlays/autodata-plan-scene/run.sh",
+        "?? workspace-overlays/autodata-plan-scene/run_case.py",
+        "?? workspace-overlays/autodata-plan-scene/scene_probe.py",
+        "?? workspace-overlays/autodata-plan-scene/test_recover_capture.py",
+        "?? workspace-overlays/autodata-plan-scene/viewer.html"
+      ]
     },
     {
       "path": "/home/tangyuan/WorldSimReady-Home/.worktrees/experimental-analysis-20261015",
@@ -1944,7 +2073,11 @@
       "branch": "refs/heads/codex/experimental-analysis-20261015",
       "status_count_before": 0,
       "status_before": [],
-      "migration": "retain"
+      "migration": "retain",
+      "head_after": "e5f361139f19b87ae003558a85b957b907046310",
+      "branch_after": "codex/experimental-analysis-20261015",
+      "status_count_after": 0,
+      "status_after": []
     },
     {
       "path": "/home/tangyuan/WorldSimReady-Home/.worktrees/git-all-worktrees-20261016",
@@ -2048,7 +2181,12 @@
         "?? outputs/git-worktree-preservation/v001/inventory.json",
         "?? outputs/git-worktree-preservation/v001/manifest.json"
       ],
-      "migration": "retain"
+      "migration": "review worktree detached at final pushed tip",
+      "head_after": "755b2295292a05f05113e2de4391d61e34a85cda",
+      "branch_after": null,
+      "status_count_after": 0,
+      "status_after": [],
+      "verification": "Transient review files omitted; verified clean after commit"
     },
     {
       "path": "/home/tangyuan/WorldSimReady-Home/.worktrees/git-hygiene-20261016",
@@ -2056,7 +2194,11 @@
       "branch": null,
       "status_count_before": 0,
       "status_before": [],
-      "migration": "retain"
+      "migration": "retain",
+      "head_after": "f346cc5d93c11fed02e9566953ce337015fa50ad",
+      "branch_after": null,
+      "status_count_after": 0,
+      "status_after": []
     }
   ]
 }
