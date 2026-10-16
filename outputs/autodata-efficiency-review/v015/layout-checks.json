@@ -1,0 +1,767 @@
+{
+  "19-version-boundaries": {
+    "footer_inches": 4.2,
+    "chart_inches": [
+      16.0,
+      6.4
+    ],
+    "paragraph_lines": [
+      2,
+      1,
+      1,
+      1
+    ],
+    "footer_inside_canvas": true,
+    "paragraphs_do_not_overlap": true
+  },
+  "20-version-control-flow": {
+    "footer_inches": 4.2,
+    "chart_inches": [
+      16.0,
+      8.0
+    ],
+    "paragraph_lines": [
+      2,
+      1,
+      1,
+      1
+    ],
+    "footer_inside_canvas": true,
+    "paragraphs_do_not_overlap": true
+  },
+  "21-version-evidence": {
+    "footer_inches": 4.2,
+    "chart_inches": [
+      16.0,
+      6.0
+    ],
+    "paragraph_lines": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "footer_inside_canvas": true,
+    "paragraphs_do_not_overlap": true
+  },
+  "22-stage-parallelism": {
+    "footer_inches": 4.2,
+    "chart_inches": [
+      16.0,
+      8.0
+    ],
+    "paragraph_lines": [
+      2,
+      1,
+      1,
+      1
+    ],
+    "footer_inside_canvas": true,
+    "paragraphs_do_not_overlap": true
+  },
+  "23-exact-interfaces": {
+    "footer_inches": 4.2,
+    "chart_inches": [
+      17.0,
+      8.0
+    ],
+    "paragraph_lines": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "footer_inside_canvas": true,
+    "paragraphs_do_not_overlap": true
+  },
+  "24-library-vs-integration": {
+    "footer_inches": 4.2,
+    "chart_inches": [
+      16.0,
+      8.0
+    ],
+    "paragraph_lines": [
+      2,
+      1,
+      1,
+      1
+    ],
+    "footer_inside_canvas": true,
+    "paragraphs_do_not_overlap": true
+  },
+  "00-code-methods": {
+    "footer_inches": 4.2,
+    "chart_inches": [
+      15.0,
+      6.0
+    ],
+    "paragraph_lines": [
+      2,
+      1,
+      2,
+      1
+    ],
+    "footer_inside_canvas": true,
+    "paragraphs_do_not_overlap": true
+  },
+  "15-serial-parallel": {
+    "footer_inches": 4.2,
+    "chart_inches": [
+      12.0,
+      8.0
+    ],
+    "paragraph_lines": [
+      2,
+      2,
+      2,
+      1
+    ],
+    "footer_inside_canvas": true,
+    "paragraphs_do_not_overlap": true
+  },
+  "12-memory-lifecycle": {
+    "footer_inches": 4.2,
+    "chart_inches": [
+      13.0,
+      6.0
+    ],
+    "paragraph_lines": [
+      2,
+      1,
+      2,
+      1
+    ],
+    "footer_inside_canvas": true,
+    "paragraphs_do_not_overlap": true
+  },
+  "13-v2-adapter": {
+    "footer_inches": 4.2,
+    "chart_inches": [
+      15.0,
+      6.0
+    ],
+    "paragraph_lines": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "footer_inside_canvas": true,
+    "paragraphs_do_not_overlap": true
+  },
+  "09-stage-change": {
+    "footer_inches": 4.2,
+    "chart_inches": [
+      15.0,
+      5.0
+    ],
+    "paragraph_lines": [
+      2,
+      1,
+      1,
+      1
+    ],
+    "footer_inside_canvas": true,
+    "paragraphs_do_not_overlap": true
+  },
+  "10-async-cost": {
+    "footer_inches": 4.2,
+    "chart_inches": [
+      12.0,
+      5.0
+    ],
+    "paragraph_lines": [
+      2,
+      2,
+      2,
+      1
+    ],
+    "footer_inside_canvas": true,
+    "paragraphs_do_not_overlap": true
+  },
+  "11-tail-detail": {
+    "footer_inches": 4.2,
+    "chart_inches": [
+      11.0,
+      5.0
+    ],
+    "paragraph_lines": [
+      2,
+      2,
+      2,
+      1
+    ],
+    "footer_inside_canvas": true,
+    "paragraphs_do_not_overlap": true
+  },
+  "01-throughput": {
+    "footer_inches": 4.2,
+    "chart_inches": [
+      12.0,
+      4.8
+    ],
+    "paragraph_lines": [
+      2,
+      1,
+      2,
+      1
+    ],
+    "footer_inside_canvas": true,
+    "paragraphs_do_not_overlap": true
+  },
+  "02-tail": {
+    "footer_inches": 4.2,
+    "chart_inches": [
+      11.0,
+      4.8
+    ],
+    "paragraph_lines": [
+      2,
+      2,
+      2,
+      1
+    ],
+    "footer_inside_canvas": true,
+    "paragraphs_do_not_overlap": true
+  },
+  "03-stages": {
+    "footer_inches": 4.2,
+    "chart_inches": [
+      11.0,
+      5.0
+    ],
+    "paragraph_lines": [
+      2,
+      2,
+      2,
+      1
+    ],
+    "footer_inside_canvas": true,
+    "paragraphs_do_not_overlap": true
+  },
+  "04-gpu": {
+    "footer_inches": 4.2,
+    "chart_inches": [
+      11.0,
+      7.0
+    ],
+    "paragraph_lines": [
+      2,
+      2,
+      2,
+      1
+    ],
+    "footer_inside_canvas": true,
+    "paragraphs_do_not_overlap": true
+  },
+  "05-quality": {
+    "footer_inches": 4.2,
+    "chart_inches": [
+      11.0,
+      4.8
+    ],
+    "paragraph_lines": [
+      2,
+      2,
+      2,
+      1
+    ],
+    "footer_inside_canvas": true,
+    "paragraphs_do_not_overlap": true
+  },
+  "06-history": {
+    "footer_inches": 4.2,
+    "chart_inches": [
+      12.0,
+      5.0
+    ],
+    "paragraph_lines": [
+      2,
+      2,
+      2,
+      1
+    ],
+    "footer_inside_canvas": true,
+    "paragraphs_do_not_overlap": true
+  },
+  "07-compression": {
+    "footer_inches": 4.2,
+    "chart_inches": [
+      10.0,
+      5.0
+    ],
+    "paragraph_lines": [
+      2,
+      2,
+      2,
+      1
+    ],
+    "footer_inside_canvas": true,
+    "paragraphs_do_not_overlap": true
+  },
+  "08-flow": {
+    "footer_inches": 4.2,
+    "chart_inches": [
+      12.0,
+      5.0
+    ],
+    "paragraph_lines": [
+      2,
+      1,
+      2,
+      1
+    ],
+    "footer_inside_canvas": true,
+    "paragraphs_do_not_overlap": true
+  },
+  "14-v2-result": {
+    "footer_inches": 4.2,
+    "chart_inches": [
+      15.0,
+      5.0
+    ],
+    "paragraph_lines": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "footer_inside_canvas": true,
+    "paragraphs_do_not_overlap": true
+  },
+  "16-process-gpu": {
+    "footer_inches": 4.2,
+    "chart_inches": [
+      14.0,
+      7.0
+    ],
+    "paragraph_lines": [
+      2,
+      1,
+      1,
+      1
+    ],
+    "footer_inside_canvas": true,
+    "paragraphs_do_not_overlap": true
+  },
+  "17-batch-barrier": {
+    "footer_inches": 4.2,
+    "chart_inches": [
+      14.0,
+      8.0
+    ],
+    "paragraph_lines": [
+      2,
+      1,
+      2,
+      1
+    ],
+    "footer_inside_canvas": true,
+    "paragraphs_do_not_overlap": true
+  },
+  "18-parallel-comparison": {
+    "footer_inches": 4.2,
+    "chart_inches": [
+      16.0,
+      7.0
+    ],
+    "paragraph_lines": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "footer_inside_canvas": true,
+    "paragraphs_do_not_overlap": true
+  },
+  "25-questions": {
+    "footer_inches": 4.2,
+    "chart_inches": [
+      16.0,
+      7.0
+    ],
+    "paragraph_lines": [
+      2,
+      1,
+      1,
+      1
+    ],
+    "footer_inside_canvas": true,
+    "paragraphs_do_not_overlap": true
+  },
+  "26-experiment-matrix": {
+    "footer_inches": 4.2,
+    "chart_inches": [
+      16.0,
+      7.0
+    ],
+    "paragraph_lines": [
+      2,
+      1,
+      1,
+      1
+    ],
+    "footer_inside_canvas": true,
+    "paragraphs_do_not_overlap": true
+  },
+  "27-metrics": {
+    "footer_inches": 4.2,
+    "chart_inches": [
+      16.0,
+      7.0
+    ],
+    "paragraph_lines": [
+      2,
+      1,
+      1,
+      1
+    ],
+    "footer_inside_canvas": true,
+    "paragraphs_do_not_overlap": true
+  },
+  "28-evidence-chain": {
+    "footer_inches": 4.2,
+    "chart_inches": [
+      16.0,
+      7.0
+    ],
+    "paragraph_lines": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "footer_inside_canvas": true,
+    "paragraphs_do_not_overlap": true
+  },
+  "29-v2-protocol": {
+    "footer_inches": 4.2,
+    "chart_inches": [
+      16.0,
+      7.0
+    ],
+    "paragraph_lines": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "footer_inside_canvas": true,
+    "paragraphs_do_not_overlap": true
+  },
+  "30-conclusions": {
+    "footer_inches": 4.2,
+    "chart_inches": [
+      16.0,
+      7.0
+    ],
+    "paragraph_lines": [
+      1,
+      1,
+      2,
+      1
+    ],
+    "footer_inside_canvas": true,
+    "paragraphs_do_not_overlap": true
+  },
+  "31-next-experiments": {
+    "footer_inches": 4.2,
+    "chart_inches": [
+      16.0,
+      7.0
+    ],
+    "paragraph_lines": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "footer_inside_canvas": true,
+    "paragraphs_do_not_overlap": true
+  },
+  "32-module-structure": {
+    "footer_inches": 4.2,
+    "chart_inches": [
+      16.0,
+      7.0
+    ],
+    "paragraph_lines": [
+      2,
+      1,
+      1,
+      1
+    ],
+    "footer_inside_canvas": true,
+    "paragraphs_do_not_overlap": true
+  },
+  "33-install-hooks": {
+    "footer_inches": 4.2,
+    "chart_inches": [
+      16.0,
+      7.0
+    ],
+    "paragraph_lines": [
+      2,
+      1,
+      1,
+      1
+    ],
+    "footer_inside_canvas": true,
+    "paragraphs_do_not_overlap": true
+  },
+  "34-buffer-changes": {
+    "footer_inches": 4.2,
+    "chart_inches": [
+      16.0,
+      7.0
+    ],
+    "paragraph_lines": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "footer_inside_canvas": true,
+    "paragraphs_do_not_overlap": true
+  },
+  "35-completion-failure": {
+    "footer_inches": 4.2,
+    "chart_inches": [
+      16.0,
+      7.0
+    ],
+    "paragraph_lines": [
+      2,
+      1,
+      1,
+      1
+    ],
+    "footer_inside_canvas": true,
+    "paragraphs_do_not_overlap": true
+  },
+  "36-execute-timer": {
+    "footer_inches": 4.2,
+    "chart_inches": [
+      16.0,
+      7.0
+    ],
+    "paragraph_lines": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "footer_inside_canvas": true,
+    "paragraphs_do_not_overlap": true
+  },
+  "37-execute-normalized": {
+    "footer_inches": 4.2,
+    "chart_inches": [
+      15.0,
+      6.0
+    ],
+    "paragraph_lines": [
+      1,
+      1,
+      2,
+      1
+    ],
+    "footer_inside_canvas": true,
+    "paragraphs_do_not_overlap": true
+  },
+  "38-execute-tail": {
+    "footer_inches": 4.2,
+    "chart_inches": [
+      16.0,
+      6.0
+    ],
+    "paragraph_lines": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "footer_inside_canvas": true,
+    "paragraphs_do_not_overlap": true
+  },
+  "39-execute-residual": {
+    "footer_inches": 4.2,
+    "chart_inches": [
+      14.0,
+      6.0
+    ],
+    "paragraph_lines": [
+      1,
+      2,
+      2,
+      1
+    ],
+    "footer_inside_canvas": true,
+    "paragraphs_do_not_overlap": true
+  },
+  "40-gpu-chain": {
+    "footer_inches": 4.2,
+    "chart_inches": [
+      16.0,
+      7.0
+    ],
+    "paragraph_lines": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "footer_inside_canvas": true,
+    "paragraphs_do_not_overlap": true
+  },
+  "41-camera-copies": {
+    "footer_inches": 4.2,
+    "chart_inches": [
+      16.0,
+      7.0
+    ],
+    "paragraph_lines": [
+      2,
+      1,
+      2,
+      1
+    ],
+    "footer_inside_canvas": true,
+    "paragraphs_do_not_overlap": true
+  },
+  "42-gpu-validation": {
+    "footer_inches": 4.2,
+    "chart_inches": [
+      16.0,
+      7.0
+    ],
+    "paragraph_lines": [
+      2,
+      1,
+      1,
+      1
+    ],
+    "footer_inside_canvas": true,
+    "paragraphs_do_not_overlap": true
+  },
+  "43-paired-runtime": {
+    "footer_inches": 4.2,
+    "chart_inches": [
+      16.0,
+      7.0
+    ],
+    "paragraph_lines": [
+      2,
+      1,
+      1,
+      1
+    ],
+    "footer_inside_canvas": true,
+    "paragraphs_do_not_overlap": true
+  },
+  "44-internal-attribution": {
+    "footer_inches": 4.2,
+    "chart_inches": [
+      16.0,
+      7.5
+    ],
+    "paragraph_lines": [
+      2,
+      1,
+      1,
+      1
+    ],
+    "footer_inside_canvas": true,
+    "paragraphs_do_not_overlap": true
+  },
+  "45-cpu-gpu-work": {
+    "footer_inches": 4.2,
+    "chart_inches": [
+      16.0,
+      7.0
+    ],
+    "paragraph_lines": [
+      2,
+      1,
+      2,
+      1
+    ],
+    "footer_inside_canvas": true,
+    "paragraphs_do_not_overlap": true
+  },
+  "46-step-dependencies": {
+    "footer_inches": 4.2,
+    "chart_inches": [
+      16.0,
+      7.0
+    ],
+    "paragraph_lines": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "footer_inside_canvas": true,
+    "paragraphs_do_not_overlap": true
+  },
+  "47-camera-reuse": {
+    "footer_inches": 4.2,
+    "chart_inches": [
+      16.0,
+      7.0
+    ],
+    "paragraph_lines": [
+      2,
+      1,
+      1,
+      1
+    ],
+    "footer_inside_canvas": true,
+    "paragraphs_do_not_overlap": true
+  },
+  "48-speed-priorities": {
+    "footer_inches": 4.2,
+    "chart_inches": [
+      16.0,
+      7.0
+    ],
+    "paragraph_lines": [
+      1,
+      1,
+      2,
+      1
+    ],
+    "footer_inside_canvas": true,
+    "paragraphs_do_not_overlap": true
+  },
+  "49-conditional-envelope": {
+    "footer_inches": 4.2,
+    "chart_inches": [
+      16.0,
+      7.0
+    ],
+    "paragraph_lines": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "footer_inside_canvas": true,
+    "paragraphs_do_not_overlap": true
+  },
+  "50-ablation-protocol": {
+    "footer_inches": 4.2,
+    "chart_inches": [
+      16.0,
+      7.0
+    ],
+    "paragraph_lines": [
+      2,
+      1,
+      1,
+      1
+    ],
+    "footer_inside_canvas": true,
+    "paragraphs_do_not_overlap": true
+  }
+}

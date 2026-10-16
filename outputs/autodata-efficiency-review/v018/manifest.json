@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "artifact_id": "autodata-efficiency-review",
+  "version": "v018",
+  "sealed_at": "2026-10-15 Asia/Shanghai",
+  "scope": "Beginner-oriented continuous document explaining data organization, module roles and implementation versions",
+  "delivery": {
+    "policy": "local_only"
+  },
+  "sources": [
+    {
+      "path": "outputs/autodata-efficiency-review/v015/code-structure-evidence.md",
+      "sha256": "34af1ca4ec715f2fc1e85cbaeea93750d68bdec3223c7ada1187f428fa4ca3a4"
+    },
+    {
+      "path": "outputs/autodata-efficiency-review/v015/interface-evidence.md",
+      "sha256": "7ac3891563cb572661e4a5ef2e88744d2ff8bb3f1831053c25419c54326d2021"
+    },
+    {
+      "path": "outputs/autodata-efficiency-review/v015/version-walkthrough.md",
+      "sha256": "f898044c669ad5bcab7218151468bf5d99d3e22f0c372bca1fcdc7ce9102153d"
+    },
+    {
+      "path": "outputs/autodata-efficiency-review/v015/charts.pdf",
+      "sha256": "56fd7770f1fc289d029eca883f3897c5e29817515d69190524b366365e82dfc5"
+    }
+  ],
+  "verification": {
+    "docx_xml_parse": true,
+    "docx_archive_integrity": true,
+    "all_paragraphs_and_table_cells_preserved": true,
+    "word_application_render_checked": false,
+    "new_simulation_runs": false
+  },
+  "files": [
+    {
+      "path": "AutoData入门说明.docx",
+      "sha256": "31a6259bbc3251fbd707bd3778fbf956fec3df6d832aa62c71aa6f2ea5bc651f"
+    },
+    {
+      "path": "AutoData入门说明.html",
+      "sha256": "a984aaef6b07d870b99294534b699792cb39203e2c756374347956203ed026fb"
+    },
+    {
+      "path": "AutoData入门说明.md",
+      "sha256": "6149da41e2d6eb36a3c00e173652f702eaa40914560184cb05fb4b063ad26c13"
+    },
+    {
+      "path": "build_document.py",
+      "sha256": "2f0c034f9843a15ce62f25dd6e9c8013ff778d664798ca55079ad9cf9c1ee8b3"
+    }
+  ]
+}

@@ -16,6 +16,8 @@
 
 根目录 Arena 与 AutoData 内嵌 Arena 是不同依赖关系，按各自父仓库锁定，不合并目录。`framework-dev/` 已于 2026-10-14 按用户要求移除；源码差异、原分支与文件去向见 `workspace-overlays/framework-dev-removal/manifest.json`。现有恢复快照继续保留本地，新开发使用分支和 worktree。
 
+本次文件清单、忽略边界与原工作树保留状态见 [2026-10-16 Git 整理记录](git-hygiene-20261016.md)。
+
 ## 提交与检查
 
 ```bash

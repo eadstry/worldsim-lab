@@ -1,0 +1,47 @@
+<!doctype html><meta charset="utf-8"><title>observation 源码定位</title><style>body{font:16px/1.7 system-ui;padding:28px;background:#f6f8fb}pre{background:white;padding:20px;overflow:auto}span{display:block;scroll-margin-top:80px}span:target{background:#ffe59a}a{color:#196d93}p{overflow-wrap:anywhere}</style><a href="../gpu-analysis.html">返回 GPU 分析</a><h1>当前 IsaacLab 源码；历史依赖版本仍需运行时核验</h1><p>/home/tangyuan/WorldSimReady-Home/AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab/isaaclab/managers/observation_manager.py</p><p>SHA256: de7c9b2c6b6e0bdb431a0574727982feebe72142ebf41b1140dce624b932d6b8</p><h2>原文件 318–345 行</h2><pre><span id="L318"><a href="#L318"> 318</a>          &quot;&quot;&quot;Compute the observations per group for all groups.</span>
+<span id="L319"><a href="#L319"> 319</a>  </span>
+<span id="L320"><a href="#L320"> 320</a>          The method computes the observations for all the groups handled by the observation manager.</span>
+<span id="L321"><a href="#L321"> 321</a>          Please check the :meth:`compute_group` on the processing of observations per group.</span>
+<span id="L322"><a href="#L322"> 322</a>  </span>
+<span id="L323"><a href="#L323"> 323</a>          Args:</span>
+<span id="L324"><a href="#L324"> 324</a>              update_history: The boolean indicator without return obs should be appended to observation history.</span>
+<span id="L325"><a href="#L325"> 325</a>                  Default to False, in which case calling compute_group does not modify history. This input is no-ops</span>
+<span id="L326"><a href="#L326"> 326</a>                  if the group&#x27;s history_length == 0.</span>
+<span id="L327"><a href="#L327"> 327</a>  </span>
+<span id="L328"><a href="#L328"> 328</a>          Returns:</span>
+<span id="L329"><a href="#L329"> 329</a>              A dictionary with keys as the group names and values as the computed observations.</span>
+<span id="L330"><a href="#L330"> 330</a>              The observations are either concatenated into a single tensor or returned as a dictionary</span>
+<span id="L331"><a href="#L331"> 331</a>              with keys corresponding to the term&#x27;s name.</span>
+<span id="L332"><a href="#L332"> 332</a>          &quot;&quot;&quot;</span>
+<span id="L333"><a href="#L333"> 333</a>          # create a buffer for storing obs from all the groups</span>
+<span id="L334"><a href="#L334"> 334</a>          obs_buffer = dict()</span>
+<span id="L335"><a href="#L335"> 335</a>          # iterate over all the terms in each group</span>
+<span id="L336"><a href="#L336"> 336</a>          for group_name in self._group_obs_term_names:</span>
+<span id="L337"><a href="#L337"> 337</a>              obs_buffer[group_name] = self.compute_group(group_name, update_history=update_history)</span>
+<span id="L338"><a href="#L338"> 338</a>          # otherwise return a dict with observations of all groups</span>
+<span id="L339"><a href="#L339"> 339</a>  </span>
+<span id="L340"><a href="#L340"> 340</a>          # Cache the observations.</span>
+<span id="L341"><a href="#L341"> 341</a>          self._obs_buffer = obs_buffer</span>
+<span id="L342"><a href="#L342"> 342</a>          return obs_buffer</span>
+<span id="L343"><a href="#L343"> 343</a>  </span>
+<span id="L344"><a href="#L344"> 344</a>      def compute_group(self, group_name: str, update_history: bool = False) -&gt; torch.Tensor | dict[str, torch.Tensor]:</span>
+<span id="L345"><a href="#L345"> 345</a>          &quot;&quot;&quot;Computes the observations for a given group.</span>
+</pre><h2>原文件 385–402 行</h2><pre><span id="L385"><a href="#L385"> 385</a>          # iterate over all the terms in each group</span>
+<span id="L386"><a href="#L386"> 386</a>          group_term_names = self._group_obs_term_names[group_name]</span>
+<span id="L387"><a href="#L387"> 387</a>          # buffer to store obs per group</span>
+<span id="L388"><a href="#L388"> 388</a>          group_obs = dict.fromkeys(group_term_names, None)</span>
+<span id="L389"><a href="#L389"> 389</a>          # read attributes for each term</span>
+<span id="L390"><a href="#L390"> 390</a>          obs_terms = zip(group_term_names, self._group_obs_term_cfgs[group_name])</span>
+<span id="L391"><a href="#L391"> 391</a>  </span>
+<span id="L392"><a href="#L392"> 392</a>          # evaluate terms: compute, add noise, clip, scale, custom modifiers</span>
+<span id="L393"><a href="#L393"> 393</a>          for term_name, term_cfg in obs_terms:</span>
+<span id="L394"><a href="#L394"> 394</a>              # compute term&#x27;s value</span>
+<span id="L395"><a href="#L395"> 395</a>              obs: torch.Tensor = term_cfg.func(self._env, **term_cfg.params).clone()</span>
+<span id="L396"><a href="#L396"> 396</a>              # apply post-processing</span>
+<span id="L397"><a href="#L397"> 397</a>              if term_cfg.modifiers is not None:</span>
+<span id="L398"><a href="#L398"> 398</a>                  for modifier in term_cfg.modifiers:</span>
+<span id="L399"><a href="#L399"> 399</a>                      obs = modifier.func(obs, **modifier.params)</span>
+<span id="L400"><a href="#L400"> 400</a>              if isinstance(term_cfg.noise, noise.NoiseCfg):</span>
+<span id="L401"><a href="#L401"> 401</a>                  obs = term_cfg.noise.func(obs, term_cfg.noise)</span>
+<span id="L402"><a href="#L402"> 402</a>              elif isinstance(term_cfg.noise, noise.NoiseModelCfg) and term_cfg.noise.func is not None:</span>
+</pre>

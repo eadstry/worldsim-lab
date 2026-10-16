@@ -1,0 +1,40 @@
+<!doctype html><meta charset="utf-8"><title>env-loop 源码定位</title><style>body{font:16px/1.7 system-ui;padding:28px;background:#f6f8fb}pre{background:white;padding:20px;overflow:auto}span{display:block;scroll-margin-top:80px}span:target{background:#ffe59a}a{color:#196d93}p{overflow-wrap:anywhere}</style><a href="../gpu-analysis.html">返回 GPU 分析</a><h1>当前 AutoData 源码</h1><p>/home/tangyuan/WorldSimReady-Home/AutoData/autodata_interfaces/env/isaaclab_env_interface.py</p><p>SHA256: eb4812da4cb418c82f8fb1fd4fef1e0bb569a43e4b077ba7e851194c4a5b157c</p><h2>原文件 240–278 行</h2><pre><span id="L240"><a href="#L240"> 240</a>          Whether the generation policy&#x27;s requested trial target was reached.</span>
+<span id="L241"><a href="#L241"> 241</a>      &quot;&quot;&quot;</span>
+<span id="L242"><a href="#L242"> 242</a>      num_trials = generation_policy_params.num_trials</span>
+<span id="L243"><a href="#L243"> 243</a>      guarantee_success = generation_policy_params.guarantee_success</span>
+<span id="L244"><a href="#L244"> 244</a>      env_id_tensor = torch.tensor([0], dtype=torch.int64, device=env.device)</span>
+<span id="L245"><a href="#L245"> 245</a>      prev_num_attempts = 0</span>
+<span id="L246"><a href="#L246"> 246</a>      # simulate environment -- run everything in inference mode</span>
+<span id="L247"><a href="#L247"> 247</a>      with contextlib.suppress(KeyboardInterrupt) and torch.inference_mode():</span>
+<span id="L248"><a href="#L248"> 248</a>          while True:</span>
+<span id="L249"><a href="#L249"> 249</a>              # check if any environment needs to be reset while waiting for actions</span>
+<span id="L250"><a href="#L250"> 250</a>              while env_action_queue.qsize() != env.num_envs:</span>
+<span id="L251"><a href="#L251"> 251</a>                  asyncio_event_loop.run_until_complete(asyncio.sleep(0))</span>
+<span id="L252"><a href="#L252"> 252</a>                  if data_gen_tasks is not None and data_gen_tasks.done():</span>
+<span id="L253"><a href="#L253"> 253</a>                      exc = data_gen_tasks.exception()</span>
+<span id="L254"><a href="#L254"> 254</a>                      if exc is not None:</span>
+<span id="L255"><a href="#L255"> 255</a>                          raise exc</span>
+<span id="L256"><a href="#L256"> 256</a>                      return False</span>
+<span id="L257"><a href="#L257"> 257</a>                  while not env_reset_queue.empty():</span>
+<span id="L258"><a href="#L258"> 258</a>                      env_id_tensor[0] = env_reset_queue.get_nowait()</span>
+<span id="L259"><a href="#L259"> 259</a>                      env.reset(env_ids=env_id_tensor)</span>
+<span id="L260"><a href="#L260"> 260</a>                      env_reset_queue.task_done()</span>
+<span id="L261"><a href="#L261"> 261</a>  </span>
+<span id="L262"><a href="#L262"> 262</a>              actions = torch.zeros(env.action_space.shape)</span>
+<span id="L263"><a href="#L263"> 263</a>  </span>
+<span id="L264"><a href="#L264"> 264</a>              # batch-fetch all per-env actions in one gather instead of sequential blocking calls</span>
+<span id="L265"><a href="#L265"> 265</a>              get_tasks = [env_action_queue.get() for _ in range(env.num_envs)]</span>
+<span id="L266"><a href="#L266"> 266</a>              results = asyncio_event_loop.run_until_complete(asyncio.gather(*get_tasks))</span>
+<span id="L267"><a href="#L267"> 267</a>              for env_id, action in results:</span>
+<span id="L268"><a href="#L268"> 268</a>                  actions[env_id] = action</span>
+<span id="L269"><a href="#L269"> 269</a>  </span>
+<span id="L270"><a href="#L270"> 270</a>              # perform action on environment</span>
+<span id="L271"><a href="#L271"> 271</a>              env.step(actions)</span>
+<span id="L272"><a href="#L272"> 272</a>  </span>
+<span id="L273"><a href="#L273"> 273</a>              # mark done so the data generators can continue with the step results</span>
+<span id="L274"><a href="#L274"> 274</a>              for _ in range(env.num_envs):</span>
+<span id="L275"><a href="#L275"> 275</a>                  env_action_queue.task_done()</span>
+<span id="L276"><a href="#L276"> 276</a>  </span>
+<span id="L277"><a href="#L277"> 277</a>              if prev_num_attempts != stats[&quot;num_attempts&quot;]:</span>
+<span id="L278"><a href="#L278"> 278</a>                  prev_num_attempts = stats[&quot;num_attempts&quot;]</span>
+</pre>

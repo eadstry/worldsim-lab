@@ -1,0 +1,153 @@
+[
+  {
+    "original_page": 1,
+    "id": "25-questions"
+  },
+  {
+    "original_page": 2,
+    "id": "26-experiment-matrix"
+  },
+  {
+    "original_page": 3,
+    "id": "27-metrics"
+  },
+  {
+    "new": "structure"
+  },
+  {
+    "new": "framework"
+  },
+  {
+    "new": "lifecycle"
+  },
+  {
+    "new": "versions"
+  },
+  {
+    "original_page": 15,
+    "id": "01-throughput"
+  },
+  {
+    "original_page": 16,
+    "id": "05-quality"
+  },
+  {
+    "original_page": 17,
+    "id": "02-tail"
+  },
+  {
+    "original_page": 18,
+    "id": "09-stage-change"
+  },
+  {
+    "original_page": 19,
+    "id": "36-execute-timer"
+  },
+  {
+    "original_page": 20,
+    "id": "37-execute-normalized"
+  },
+  {
+    "original_page": 21,
+    "id": "38-execute-tail"
+  },
+  {
+    "original_page": 22,
+    "id": "39-execute-residual"
+  },
+  {
+    "original_page": 23,
+    "id": "10-async-cost"
+  },
+  {
+    "original_page": 24,
+    "id": "11-tail-detail"
+  },
+  {
+    "original_page": 25,
+    "id": "04-gpu"
+  },
+  {
+    "original_page": 26,
+    "id": "40-gpu-chain"
+  },
+  {
+    "original_page": 27,
+    "id": "41-camera-copies"
+  },
+  {
+    "original_page": 28,
+    "id": "42-gpu-validation"
+  },
+  {
+    "original_page": 29,
+    "id": "43-paired-runtime"
+  },
+  {
+    "original_page": 30,
+    "id": "44-internal-attribution"
+  },
+  {
+    "original_page": 31,
+    "id": "45-cpu-gpu-work"
+  },
+  {
+    "original_page": 32,
+    "id": "46-step-dependencies"
+  },
+  {
+    "original_page": 33,
+    "id": "47-camera-reuse"
+  },
+  {
+    "original_page": 34,
+    "id": "48-speed-priorities"
+  },
+  {
+    "original_page": 35,
+    "id": "49-conditional-envelope"
+  },
+  {
+    "original_page": 36,
+    "id": "50-ablation-protocol"
+  },
+  {
+    "original_page": 37,
+    "id": "28-evidence-chain"
+  },
+  {
+    "new": "planner"
+  },
+  {
+    "original_page": 41,
+    "id": "29-v2-protocol"
+  },
+  {
+    "original_page": 42,
+    "id": "14-v2-result"
+  },
+  {
+    "original_page": 43,
+    "id": "21-version-evidence"
+  },
+  {
+    "original_page": 44,
+    "id": "30-conclusions"
+  },
+  {
+    "original_page": 45,
+    "id": "31-next-experiments"
+  },
+  {
+    "original_page": 49,
+    "id": "03-stages"
+  },
+  {
+    "original_page": 50,
+    "id": "06-history"
+  },
+  {
+    "original_page": 51,
+    "id": "07-compression"
+  }
+]

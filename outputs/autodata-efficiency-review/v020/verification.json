@@ -1,0 +1,9 @@
+{
+  "main_document_links_exist": true,
+  "embedded_figures": 11,
+  "all_figures_equal_v015_originals": true,
+  "historical_auto_time_reduction_percent": 37.6,
+  "historical_auto_throughput_gain_percent": 60.2,
+  "separate_experiment_scales": true,
+  "new_simulation_runs": false
+}

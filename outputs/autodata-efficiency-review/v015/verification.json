@@ -1,0 +1,26 @@
+{
+  "checked_at": "2026-10-15T21:36:43.841243+08:00",
+  "local_references_checked": 899,
+  "historical_data_preserved": true,
+  "paired_evidence_preserved": true,
+  "v014_preserved": true,
+  "footer_layouts_checked": 51,
+  "pdf_page_count": 51,
+  "pdf_complete_page_explanations": "51/51 titles and all 204 explanatory paragraphs matched against text extraction",
+  "pdf_rendered_pages": 51,
+  "pdf_font_and_render_warnings": 0,
+  "visual_review": "51 pages reviewed in three contact sheets; detailed attribution page reviewed at full size",
+  "html_browser_check": {
+    "pages": 51,
+    "paragraphs": 204,
+    "collapsed": 0,
+    "viewport": 500,
+    "scrollWidth": 485,
+    "visible": true,
+    "imagesWithDimensions": 51
+  },
+  "html_visual_review": "1440 px full reader first page and 500 px representative page 30 using identical HTML/CSS",
+  "explanation_source": "page-explanations.json",
+  "pdf_html_guide_share_same_text": true,
+  "scope": "Editorial explanations and local layout only; no new GPU experiment, profiler trace or optimization benchmark"
+}

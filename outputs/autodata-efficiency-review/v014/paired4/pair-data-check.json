@@ -1,0 +1,698 @@
+{
+  "rgb_metadata_passed": true,
+  "before": [
+    {
+      "episode": "demo_0",
+      "action_shape": [
+        1349,
+        7
+      ],
+      "action_sha256": "ca6f570ece53391ab5c1bf4c453d5dadce02267f5189641077bb7897089a1d5e",
+      "rgb": {
+        "left_hand_rgb": {
+          "shape": [
+            1349,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "compression": "gzip",
+          "compression_opts": 2
+        },
+        "right_hand_rgb": {
+          "shape": [
+            1349,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "compression": "gzip",
+          "compression_opts": 2
+        },
+        "third_person_rgb": {
+          "shape": [
+            1349,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "compression": "gzip",
+          "compression_opts": 2
+        }
+      }
+    },
+    {
+      "episode": "demo_1",
+      "action_shape": [
+        1353,
+        7
+      ],
+      "action_sha256": "63fef3a4b5ac521c65a563fbed5eafd6018cc5381981ebef851f7b9c0ea2038e",
+      "rgb": {
+        "left_hand_rgb": {
+          "shape": [
+            1353,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "compression": "gzip",
+          "compression_opts": 2
+        },
+        "right_hand_rgb": {
+          "shape": [
+            1353,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "compression": "gzip",
+          "compression_opts": 2
+        },
+        "third_person_rgb": {
+          "shape": [
+            1353,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "compression": "gzip",
+          "compression_opts": 2
+        }
+      }
+    },
+    {
+      "episode": "demo_2",
+      "action_shape": [
+        1359,
+        7
+      ],
+      "action_sha256": "065153134b76e38f13614825e4d5b1ab52960eb6108c9cccf23155b2a3b36f46",
+      "rgb": {
+        "left_hand_rgb": {
+          "shape": [
+            1359,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "compression": "gzip",
+          "compression_opts": 2
+        },
+        "right_hand_rgb": {
+          "shape": [
+            1359,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "compression": "gzip",
+          "compression_opts": 2
+        },
+        "third_person_rgb": {
+          "shape": [
+            1359,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "compression": "gzip",
+          "compression_opts": 2
+        }
+      }
+    },
+    {
+      "episode": "demo_3",
+      "action_shape": [
+        1392,
+        7
+      ],
+      "action_sha256": "90bc1f3d78b5fa00be6d06fc9322ae8e11354d0e013187959094d14aaa619353",
+      "rgb": {
+        "left_hand_rgb": {
+          "shape": [
+            1392,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "compression": "gzip",
+          "compression_opts": 2
+        },
+        "right_hand_rgb": {
+          "shape": [
+            1392,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "compression": "gzip",
+          "compression_opts": 2
+        },
+        "third_person_rgb": {
+          "shape": [
+            1392,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "compression": "gzip",
+          "compression_opts": 2
+        }
+      }
+    },
+    {
+      "episode": "demo_4",
+      "action_shape": [
+        1362,
+        7
+      ],
+      "action_sha256": "a171329f0847504f2356c170a952cb0109493062a0892e249794a646487e542b",
+      "rgb": {
+        "left_hand_rgb": {
+          "shape": [
+            1362,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "compression": "gzip",
+          "compression_opts": 2
+        },
+        "right_hand_rgb": {
+          "shape": [
+            1362,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "compression": "gzip",
+          "compression_opts": 2
+        },
+        "third_person_rgb": {
+          "shape": [
+            1362,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "compression": "gzip",
+          "compression_opts": 2
+        }
+      }
+    },
+    {
+      "episode": "demo_5",
+      "action_shape": [
+        1384,
+        7
+      ],
+      "action_sha256": "43ac69bb527949a7613e5e8652a869a50d9c78c5a50652c63f0da91b0fc15195",
+      "rgb": {
+        "left_hand_rgb": {
+          "shape": [
+            1384,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "compression": "gzip",
+          "compression_opts": 2
+        },
+        "right_hand_rgb": {
+          "shape": [
+            1384,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "compression": "gzip",
+          "compression_opts": 2
+        },
+        "third_person_rgb": {
+          "shape": [
+            1384,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "compression": "gzip",
+          "compression_opts": 2
+        }
+      }
+    },
+    {
+      "episode": "demo_6",
+      "action_shape": [
+        1378,
+        7
+      ],
+      "action_sha256": "9d09b742f28b9f11a5d5d4c4e6238540ded5f84a961c6e9e317177e0bd25125e",
+      "rgb": {
+        "left_hand_rgb": {
+          "shape": [
+            1378,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "compression": "gzip",
+          "compression_opts": 2
+        },
+        "right_hand_rgb": {
+          "shape": [
+            1378,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "compression": "gzip",
+          "compression_opts": 2
+        },
+        "third_person_rgb": {
+          "shape": [
+            1378,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "compression": "gzip",
+          "compression_opts": 2
+        }
+      }
+    },
+    {
+      "episode": "demo_7",
+      "action_shape": [
+        1386,
+        7
+      ],
+      "action_sha256": "d57c49e1f176b683a7c582a1e3b4630f859460c7bd36ef6bf3cb248e8594231d",
+      "rgb": {
+        "left_hand_rgb": {
+          "shape": [
+            1386,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "compression": "gzip",
+          "compression_opts": 2
+        },
+        "right_hand_rgb": {
+          "shape": [
+            1386,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "compression": "gzip",
+          "compression_opts": 2
+        },
+        "third_person_rgb": {
+          "shape": [
+            1386,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "compression": "gzip",
+          "compression_opts": 2
+        }
+      }
+    }
+  ],
+  "after": [
+    {
+      "episode": "demo_0",
+      "action_shape": [
+        1349,
+        7
+      ],
+      "action_sha256": "ca6f570ece53391ab5c1bf4c453d5dadce02267f5189641077bb7897089a1d5e",
+      "rgb": {
+        "left_hand_rgb": {
+          "shape": [
+            1349,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "compression": "gzip",
+          "compression_opts": 2
+        },
+        "right_hand_rgb": {
+          "shape": [
+            1349,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "compression": "gzip",
+          "compression_opts": 2
+        },
+        "third_person_rgb": {
+          "shape": [
+            1349,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "compression": "gzip",
+          "compression_opts": 2
+        }
+      }
+    },
+    {
+      "episode": "demo_1",
+      "action_shape": [
+        1353,
+        7
+      ],
+      "action_sha256": "63fef3a4b5ac521c65a563fbed5eafd6018cc5381981ebef851f7b9c0ea2038e",
+      "rgb": {
+        "left_hand_rgb": {
+          "shape": [
+            1353,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "compression": "gzip",
+          "compression_opts": 2
+        },
+        "right_hand_rgb": {
+          "shape": [
+            1353,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "compression": "gzip",
+          "compression_opts": 2
+        },
+        "third_person_rgb": {
+          "shape": [
+            1353,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "compression": "gzip",
+          "compression_opts": 2
+        }
+      }
+    },
+    {
+      "episode": "demo_2",
+      "action_shape": [
+        1359,
+        7
+      ],
+      "action_sha256": "065153134b76e38f13614825e4d5b1ab52960eb6108c9cccf23155b2a3b36f46",
+      "rgb": {
+        "left_hand_rgb": {
+          "shape": [
+            1359,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "compression": "gzip",
+          "compression_opts": 2
+        },
+        "right_hand_rgb": {
+          "shape": [
+            1359,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "compression": "gzip",
+          "compression_opts": 2
+        },
+        "third_person_rgb": {
+          "shape": [
+            1359,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "compression": "gzip",
+          "compression_opts": 2
+        }
+      }
+    },
+    {
+      "episode": "demo_3",
+      "action_shape": [
+        1392,
+        7
+      ],
+      "action_sha256": "90bc1f3d78b5fa00be6d06fc9322ae8e11354d0e013187959094d14aaa619353",
+      "rgb": {
+        "left_hand_rgb": {
+          "shape": [
+            1392,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "compression": "gzip",
+          "compression_opts": 2
+        },
+        "right_hand_rgb": {
+          "shape": [
+            1392,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "compression": "gzip",
+          "compression_opts": 2
+        },
+        "third_person_rgb": {
+          "shape": [
+            1392,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "compression": "gzip",
+          "compression_opts": 2
+        }
+      }
+    },
+    {
+      "episode": "demo_4",
+      "action_shape": [
+        1362,
+        7
+      ],
+      "action_sha256": "a171329f0847504f2356c170a952cb0109493062a0892e249794a646487e542b",
+      "rgb": {
+        "left_hand_rgb": {
+          "shape": [
+            1362,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "compression": "gzip",
+          "compression_opts": 2
+        },
+        "right_hand_rgb": {
+          "shape": [
+            1362,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "compression": "gzip",
+          "compression_opts": 2
+        },
+        "third_person_rgb": {
+          "shape": [
+            1362,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "compression": "gzip",
+          "compression_opts": 2
+        }
+      }
+    },
+    {
+      "episode": "demo_5",
+      "action_shape": [
+        1384,
+        7
+      ],
+      "action_sha256": "43ac69bb527949a7613e5e8652a869a50d9c78c5a50652c63f0da91b0fc15195",
+      "rgb": {
+        "left_hand_rgb": {
+          "shape": [
+            1384,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "compression": "gzip",
+          "compression_opts": 2
+        },
+        "right_hand_rgb": {
+          "shape": [
+            1384,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "compression": "gzip",
+          "compression_opts": 2
+        },
+        "third_person_rgb": {
+          "shape": [
+            1384,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "compression": "gzip",
+          "compression_opts": 2
+        }
+      }
+    },
+    {
+      "episode": "demo_6",
+      "action_shape": [
+        1378,
+        7
+      ],
+      "action_sha256": "9d09b742f28b9f11a5d5d4c4e6238540ded5f84a961c6e9e317177e0bd25125e",
+      "rgb": {
+        "left_hand_rgb": {
+          "shape": [
+            1378,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "compression": "gzip",
+          "compression_opts": 2
+        },
+        "right_hand_rgb": {
+          "shape": [
+            1378,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "compression": "gzip",
+          "compression_opts": 2
+        },
+        "third_person_rgb": {
+          "shape": [
+            1378,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "compression": "gzip",
+          "compression_opts": 2
+        }
+      }
+    },
+    {
+      "episode": "demo_7",
+      "action_shape": [
+        1386,
+        7
+      ],
+      "action_sha256": "d57c49e1f176b683a7c582a1e3b4630f859460c7bd36ef6bf3cb248e8594231d",
+      "rgb": {
+        "left_hand_rgb": {
+          "shape": [
+            1386,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "compression": "gzip",
+          "compression_opts": 2
+        },
+        "right_hand_rgb": {
+          "shape": [
+            1386,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "compression": "gzip",
+          "compression_opts": 2
+        },
+        "third_person_rgb": {
+          "shape": [
+            1386,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "compression": "gzip",
+          "compression_opts": 2
+        }
+      }
+    }
+  ],
+  "exact_action_sequence_matches": 8,
+  "all_action_sequences_match_as_multiset": true,
+  "scope": "Full action arrays and RGB metadata; image pixels are not compared"
+}

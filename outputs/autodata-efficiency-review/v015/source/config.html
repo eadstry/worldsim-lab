@@ -1,0 +1,31 @@
+<!doctype html><meta charset="utf-8"><title>config 源码定位</title><style>body{font:16px/1.7 system-ui;padding:28px;background:#f6f8fb}pre{background:white;padding:20px;overflow:auto}span{display:block;scroll-margin-top:80px}span:target{background:#ffe59a}a{color:#196d93}p{overflow-wrap:anywhere}</style><a href="../gpu-analysis.html">返回 GPU 分析</a><h1>v1 实验冻结任务源码</h1><p>/home/tangyuan/WorldSimReady-Home/AutoData/datasets/efficiency_20261014_201834/v1/launchers/v1/runtime/openarm_autodata/tasks/pick_place/configs/env_cfg.py</p><p>SHA256: 81416c26ec4e4b402914d8d6df0e7f56268888524f507b9738b6068898e1afa0</p><h2>原文件 110–130 行</h2><pre><span id="L110"><a href="#L110"> 110</a>          },</span>
+<span id="L111"><a href="#L111"> 111</a>          close_command_expr={joint_name: 0.0 for joint_name in OPENARM_V2_RIGHT_FINGER_JOINT_NAMES},</span>
+<span id="L112"><a href="#L112"> 112</a>          max_velocity=1.0,</span>
+<span id="L113"><a href="#L113"> 113</a>      )</span>
+<span id="L114"><a href="#L114"> 114</a>  </span>
+<span id="L115"><a href="#L115"> 115</a>  </span>
+<span id="L116"><a href="#L116"> 116</a>  @configclass</span>
+<span id="L117"><a href="#L117"> 117</a>  class ObservationsCfg:</span>
+<span id="L118"><a href="#L118"> 118</a>      &quot;&quot;&quot;Robot, object, action, and automatic annotation observations.&quot;&quot;&quot;</span>
+<span id="L119"><a href="#L119"> 119</a>  </span>
+<span id="L120"><a href="#L120"> 120</a>      @configclass</span>
+<span id="L121"><a href="#L121"> 121</a>      class PolicyCfg(ObsGroup):</span>
+<span id="L122"><a href="#L122"> 122</a>          left_hand_rgb = ObsTerm(func=rgb_image, params={&quot;name&quot;: &quot;left_hand_camera&quot;})</span>
+<span id="L123"><a href="#L123"> 123</a>          right_hand_rgb = ObsTerm(func=rgb_image, params={&quot;name&quot;: &quot;right_hand_camera&quot;})</span>
+<span id="L124"><a href="#L124"> 124</a>          third_person_rgb = ObsTerm(func=rgb_image, params={&quot;name&quot;: &quot;third_person_camera&quot;})</span>
+<span id="L125"><a href="#L125"> 125</a>          joint_pos = ObsTerm(func=base_mdp.joint_pos_rel)</span>
+<span id="L126"><a href="#L126"> 126</a>          joint_vel = ObsTerm(func=base_mdp.joint_vel_rel)</span>
+<span id="L127"><a href="#L127"> 127</a>          right_tcp_pos = ObsTerm(func=mdp.tcp_position_in_robot_root_frame)</span>
+<span id="L128"><a href="#L128"> 128</a>          right_tcp_quat = ObsTerm(func=mdp.tcp_orientation_in_robot_root_frame)</span>
+<span id="L129"><a href="#L129"> 129</a>          right_tcp_pos_env = ObsTerm(func=mdp.tcp_position_in_env_frame)</span>
+<span id="L130"><a href="#L130"> 130</a>          right_tcp_quat_env = ObsTerm(func=mdp.tcp_orientation_in_env_frame)</span>
+</pre><h2>原文件 210–220 行</h2><pre><span id="L210"><a href="#L210"> 210</a>      rewards = None</span>
+<span id="L211"><a href="#L211"> 211</a>      curriculum = None</span>
+<span id="L212"><a href="#L212"> 212</a>  </span>
+<span id="L213"><a href="#L213"> 213</a>      def __post_init__(self):</span>
+<span id="L214"><a href="#L214"> 214</a>          self.seed = 1</span>
+<span id="L215"><a href="#L215"> 215</a>          self.decimation = 4</span>
+<span id="L216"><a href="#L216"> 216</a>          self.episode_length_s = 30.0</span>
+<span id="L217"><a href="#L217"> 217</a>          self.sim.dt = 1.0 / 120.0</span>
+<span id="L218"><a href="#L218"> 218</a>          self.sim.render_interval = self.decimation</span>
+</pre>

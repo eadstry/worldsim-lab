@@ -1,0 +1,61 @@
+method,metric,value,unit,scope
+同步,reset,0.2776948120585182,seconds,mean across 17 completed episodes including 1 failure
+同步,motion_plan,1.739729078470619,seconds,mean across 17 completed episodes including 1 failure
+同步,execution_wait,310.2744314831736,seconds,mean across 17 completed episodes including 1 failure
+同步,export,25.61474146741185,seconds,mean across 17 completed episodes including 1 failure
+同步,export_enqueue,0.0,seconds,mean across 17 completed episodes including 1 failure
+同步,generation_seconds,997.668937,seconds,batch wall; nested intervals must not be summed
+同步,tail_seconds,1.676565999999866,seconds,batch wall; nested intervals must not be summed
+同步,seconds,999.3455029999999,seconds,batch wall; nested intervals must not be summed
+上限 4,reset,0.1562796359999886,seconds,mean across 17 completed episodes including 1 failure
+上限 4,motion_plan,1.5674494734115905,seconds,mean across 17 completed episodes including 1 failure
+上限 4,execution_wait,178.16608328317284,seconds,mean across 17 completed episodes including 1 failure
+上限 4,export,0.0,seconds,mean across 17 completed episodes including 1 failure
+上限 4,export_enqueue,2.6524288535293796,seconds,mean across 17 completed episodes including 1 failure
+上限 4,packing_seconds,26.7075818609992,seconds,run cumulative; overlaps enqueue
+上限 4,queue_wait_seconds,18.032046847998572,seconds,run cumulative; overlaps enqueue
+上限 4,writer_mean,28.310805469125057,seconds,16 export_saved events; overlapping background work
+上限 4,writer_p95,33.03540202699878,seconds,16 export_saved events; overlapping background work
+上限 4,generation_seconds,604.7206649999999,seconds,batch wall; nested intervals must not be summed
+上限 4,drain_seconds,28.927483509000012,seconds,batch wall; nested intervals must not be summed
+上限 4,merge_seconds,8.156597780000084,seconds,batch wall; nested intervals must not be summed
+上限 4,tail_seconds,38.986699000000044,seconds,batch wall; nested intervals must not be summed
+上限 4,seconds,643.707364,seconds,batch wall; nested intervals must not be summed
+上限 8,reset,0.1873863705297802,seconds,mean across 17 completed episodes including 1 failure
+上限 8,motion_plan,1.46419744988249,seconds,mean across 17 completed episodes including 1 failure
+上限 8,execution_wait,170.89551917646574,seconds,mean across 17 completed episodes including 1 failure
+上限 8,export,0.0,seconds,mean across 17 completed episodes including 1 failure
+上限 8,export_enqueue,2.6202001511179227,seconds,mean across 17 completed episodes including 1 failure
+上限 8,packing_seconds,25.104424209999706,seconds,run cumulative; overlaps enqueue
+上限 8,queue_wait_seconds,19.119466095997268,seconds,run cumulative; overlaps enqueue
+上限 8,writer_mean,27.61855752343729,seconds,16 export_saved events; overlapping background work
+上限 8,writer_p95,30.609215098000277,seconds,16 export_saved events; overlapping background work
+上限 8,generation_seconds,563.470109,seconds,batch wall; nested intervals must not be summed
+上限 8,drain_seconds,27.283136895999633,seconds,batch wall; nested intervals must not be summed
+上限 8,merge_seconds,8.503173802000674,seconds,batch wall; nested intervals must not be summed
+上限 8,tail_seconds,37.34504400000003,seconds,batch wall; nested intervals must not be summed
+上限 8,seconds,600.815153,seconds,batch wall; nested intervals must not be summed
+auto,reset,0.15096432258852635,seconds,mean across 17 completed episodes including 1 failure
+auto,motion_plan,1.4228737647060958,seconds,mean across 17 completed episodes including 1 failure
+auto,execution_wait,167.2152489368232,seconds,mean across 17 completed episodes including 1 failure
+auto,export,0.0,seconds,mean across 17 completed episodes including 1 failure
+auto,export_enqueue,2.618947079117146,seconds,mean across 17 completed episodes including 1 failure
+auto,packing_seconds,24.461777656993945,seconds,run cumulative; overlaps enqueue
+auto,queue_wait_seconds,19.727247216997057,seconds,run cumulative; overlaps enqueue
+auto,writer_mean,27.303258513750507,seconds,16 export_saved events; overlapping background work
+auto,writer_p95,30.43589761900148,seconds,16 export_saved events; overlapping background work
+auto,generation_seconds,549.170671,seconds,batch wall; nested intervals must not be summed
+auto,drain_seconds,27.152264667001873,seconds,batch wall; nested intervals must not be summed
+auto,merge_seconds,45.66549491499973,seconds,batch wall; nested intervals must not be summed
+auto,tail_seconds,74.47725300000002,seconds,batch wall; nested intervals must not be summed
+auto,seconds,623.647924,seconds,batch wall; nested intervals must not be summed
+v2 auto 2026-10-15,reset,1.4818245401247623,seconds,mean across 16 completed episodes
+v2 auto 2026-10-15,motion_plan,8.037998487005098,seconds,mean across 16 completed episodes
+v2 auto 2026-10-15,execution_wait,241.7395420179837,seconds,mean across 16 completed episodes
+v2 auto 2026-10-15,export,0.0,seconds,mean across 16 completed episodes
+v2 auto 2026-10-15,export_enqueue,3.6936450129369405,seconds,mean across 16 completed episodes
+v2 auto 2026-10-15,seconds,699.0455019999999,seconds,batch wall; nested intervals
+v2 auto 2026-10-15,generation_seconds,663.221634,seconds,batch wall; nested intervals
+v2 auto 2026-10-15,tail_seconds,35.82386799999995,seconds,batch wall; nested intervals
+v2 auto 2026-10-15,drain_seconds,27.22792474499147,seconds,batch wall; nested intervals
+v2 auto 2026-10-15,merge_seconds,4.13362921900989,seconds,batch wall; nested intervals

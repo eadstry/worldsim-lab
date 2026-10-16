@@ -1,0 +1,54 @@
+{
+  "baseline_execute_seconds": 142.70607624156582,
+  "kind": "conditional arithmetic only, not measured speedup or final-file prediction",
+  "assumptions": [
+    "Target category cost scales linearly with the assumed operation reduction",
+    "All removed latency lies on the measured execute window's critical path",
+    "Other phase costs, work counts, caches and queue interactions stay unchanged",
+    "Reset/event/observation semantics permit the proposed reuse"
+  ],
+  "scenarios": [
+    {
+      "scenario": "位姿整批刷新 6 次变 1 次",
+      "saved_execute_seconds": 30.11346981569962,
+      "remaining_execute_seconds": 112.59260642586621,
+      "execute_time_reduction_fraction": 0.21101743253542352,
+      "conditional_execute_speedup": 1.2674551266874445
+    },
+    {
+      "scenario": "RGB 副本 6 批变 3 批",
+      "saved_execute_seconds": 2.078969566264277,
+      "remaining_execute_seconds": 140.62710667530155,
+      "execute_time_reduction_fraction": 0.014568192336429317,
+      "conditional_execute_speedup": 1.0147835621127048
+    },
+    {
+      "scenario": "上面两项同时成立",
+      "saved_execute_seconds": 32.192439381963894,
+      "remaining_execute_seconds": 110.51363685960193,
+      "execute_time_reduction_fraction": 0.2255856248718528,
+      "conditional_execute_speedup": 1.2912983437769008
+    },
+    {
+      "scenario": "相机渲染调用耗时减半",
+      "saved_execute_seconds": 14.48624775432927,
+      "remaining_execute_seconds": 128.21982848723655,
+      "execute_time_reduction_fraction": 0.10151107882615777,
+      "conditional_execute_speedup": 1.11297977797382
+    },
+    {
+      "scenario": "物理推进调用耗时减半",
+      "saved_execute_seconds": 18.328070144935737,
+      "remaining_execute_seconds": 124.37800609663009,
+      "execute_time_reduction_fraction": 0.12843230384886262,
+      "conditional_execute_speedup": 1.1473578064171293
+    },
+    {
+      "scenario": "全部 RGB 复制完全隐藏",
+      "saved_execute_seconds": 4.157939132528554,
+      "remaining_execute_seconds": 138.54813710903727,
+      "execute_time_reduction_fraction": 0.029136384672858635,
+      "conditional_execute_speedup": 1.0300107906124805
+    }
+  ]
+}

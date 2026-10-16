@@ -1,0 +1,1223 @@
+{
+  "schema_version": 2,
+  "time_utc": "2026-10-15T08:48:40.392936+00:00",
+  "elapsed_seconds": 536.1199687990011,
+  "observed_environment_count": 4,
+  "generation_elapsed_seconds": 514.930995799001,
+  "telemetry_last_elapsed_seconds": 536.118848,
+  "episodes_started": 12,
+  "episodes_completed": 8,
+  "successes": 8,
+  "failures": 0,
+  "unknown_outcomes": 0,
+  "cancelled": 4,
+  "in_flight": 0,
+  "episode_success_rate": 1.0,
+  "planner_requests": 38,
+  "planner_request_success_rate": 1.0,
+  "solver_iterations": 38,
+  "solver_iterations_completed": 38,
+  "solver_iterations_in_flight": 0,
+  "solver_iteration_success_rate": 1.0,
+  "solver_iterations_per_request": 1.0,
+  "solver_iteration_instrumentation_available": true,
+  "solver_retry_requests": 0,
+  "solver_iterations_per_request_distribution": {
+    "count": 38,
+    "mean": 1.0,
+    "p50": 1,
+    "p95": 1,
+    "max": 1
+  },
+  "generation_policy": {
+    "schema_version": 2,
+    "run_id": "d5d6b69d0f754f79832f93641561e007",
+    "time_utc": "2026-10-15T08:39:44.275789+00:00",
+    "elapsed_seconds": 0.00311,
+    "event": "generation_policy",
+    "requested_trials": 8,
+    "num_envs": 4,
+    "guarantee_success": true,
+    "max_failures": 25,
+    "final_hold_steps": 60
+  },
+  "successful_episodes_per_minute": 0.9321637343955188,
+  "recent_window_seconds": 60,
+  "recent_successes_per_minute": 2.0,
+  "amortized_wall_seconds_per_success": 64.36637447487513,
+  "target_kind": "successes",
+  "remaining_target": 0,
+  "eta_seconds": 0.0,
+  "episode_duration_seconds": {
+    "count": 8,
+    "mean": 234.42285561387507,
+    "p50": 229.01386253599776,
+    "p95": 278.17427374600084,
+    "max": 278.17427374600084
+  },
+  "successful_episode_duration_seconds": {
+    "count": 8,
+    "mean": 234.42285561387507,
+    "p50": 229.01386253599776,
+    "p95": 278.17427374600084,
+    "max": 278.17427374600084
+  },
+  "planner_request_duration_seconds": {
+    "count": 38,
+    "mean": 0.25569460673700395,
+    "p50": 0.07595854999090079,
+    "p95": 0.8061205560079543,
+    "max": 1.0508040449931286
+  },
+  "solver_iteration_duration_seconds": {
+    "count": 38,
+    "mean": 0.24971082989366933,
+    "p50": 0.07144636000157334,
+    "p95": 0.801927139997133,
+    "max": 1.0199180459894706
+  },
+  "solver_iterations_per_episode": {
+    "count": 8,
+    "mean": 4.0,
+    "p50": 4,
+    "p95": 4,
+    "max": 4
+  },
+  "execution_steps_per_wall_second": {
+    "count": 8,
+    "mean": 5.954569842241257,
+    "p50": 5.458488783402119,
+    "p95": 7.653506986765725,
+    "max": 7.653506986765725
+  },
+  "simulation_seconds_per_wall_second": {
+    "count": 8,
+    "mean": 0.19848565980471608,
+    "p50": 0.18194962482285393,
+    "p95": 0.25511689704617607,
+    "max": 0.25511689704617607
+  },
+  "stage_duration_seconds": {
+    "reset": {
+      "count": 8,
+      "mean": 0.11025322512796265,
+      "p50": 0.034583325003040954,
+      "p95": 0.19051974201283883,
+      "max": 0.19051974201283883
+    },
+    "motion_plan": {
+      "count": 8,
+      "mean": 1.6196493099960207,
+      "p50": 1.5043422829912743,
+      "p95": 2.431935254993732,
+      "max": 2.431935254993732
+    },
+    "execution_wait": {
+      "count": 8,
+      "mean": 197.51001173761324,
+      "p50": 190.90840501101047,
+      "p95": 241.8560694996413,
+      "max": 241.8560694996413
+    },
+    "export": {
+      "count": 8,
+      "mean": 26.307830171628666,
+      "p50": 26.530343849008204,
+      "p95": 28.134902523001074,
+      "max": 28.134902523001074
+    },
+    "export_enqueue": {
+      "count": 8,
+      "mean": 0.0,
+      "p50": 0,
+      "p95": 0,
+      "max": 0
+    }
+  },
+  "async_export": {
+    "max_workers": 0,
+    "scaling_policy": "on_demand",
+    "resource_admission": null,
+    "workers_started": 0,
+    "submitted": 0,
+    "saved": 0,
+    "pending": 0,
+    "peak_queue_memory_bytes": 0,
+    "packing_seconds": 0,
+    "queue_wait_seconds": 0,
+    "write_seconds": {
+      "count": 0,
+      "mean": null,
+      "p50": null,
+      "p95": null,
+      "max": null
+    },
+    "complete": null
+  },
+  "export_breakdown": {
+    "count": 8,
+    "phases_seconds": {
+      "prepare_stack": {
+        "count": 8,
+        "mean": 0.36524582099991676,
+        "p50": 0.3468215559987584,
+        "p95": 0.4728163480031071,
+        "max": 0.4728163480031071
+      },
+      "cpu_numpy": {
+        "count": 8,
+        "mean": 0.005920912479268736,
+        "p50": 0.00545055593829602,
+        "p95": 0.009701150949695148,
+        "max": 0.009701150949695148
+      },
+      "dataset_create": {
+        "count": 8,
+        "mean": 25.745257681855946,
+        "p50": 25.955676446974394,
+        "p95": 27.527326964001986,
+        "max": 27.527326964001986
+      },
+      "flush": {
+        "count": 8,
+        "mean": 0.003040615625650389,
+        "p50": 0.003640449998783879,
+        "p95": 0.0051790229917969555,
+        "max": 0.0051790229917969555
+      }
+    },
+    "other_seconds": {
+      "count": 8,
+      "mean": 0.1880842156606377,
+      "p50": 0.18973817706864793,
+      "p95": 0.19648092707211617,
+      "max": 0.19648092707211617
+    },
+    "last": {
+      "schema_version": 2,
+      "run_id": "d5d6b69d0f754f79832f93641561e007",
+      "time_utc": "2026-10-15T08:48:40.373027+00:00",
+      "elapsed_seconds": 536.100353,
+      "event": "export_breakdown",
+      "episode_id": "env2-attempt2",
+      "env_id": 2,
+      "duration_seconds": 27.630235837990767,
+      "thread_cpu_seconds": 27.469336193000004,
+      "phases_seconds": {
+        "prepare_stack": 0.3468215559987584,
+        "cpu_numpy": 0.00545055593829602,
+        "dataset_create": 27.087406306978664,
+        "flush": 0.0008192420064006001
+      },
+      "other_seconds": 0.18973817706864793,
+      "operations": [
+        {
+          "phase": "prepare_stack",
+          "wall_seconds": 0.3468215559987584,
+          "thread_cpu_seconds": 0.2386446410000076,
+          "error": null
+        },
+        {
+          "phase": "cpu_numpy",
+          "wall_seconds": 6.871898949611932e-05,
+          "thread_cpu_seconds": 6.785799996578135e-05,
+          "error": null,
+          "source_device": "cuda:0",
+          "shape": [
+            1,
+            7
+          ]
+        },
+        {
+          "phase": "dataset_create",
+          "wall_seconds": 0.00018238699703942984,
+          "thread_cpu_seconds": 0.00018255700001645891,
+          "error": null,
+          "dataset": "/data/demo_7/initial_state/articulation/robot/root_pose",
+          "shape": [
+            1,
+            7
+          ],
+          "dtype": "float32",
+          "raw_bytes": 28,
+          "compression": "gzip",
+          "compression_opts": 2,
+          "requested_chunks": null
+        },
+        {
+          "phase": "cpu_numpy",
+          "wall_seconds": 3.400100104045123e-05,
+          "thread_cpu_seconds": 3.396799996835398e-05,
+          "error": null,
+          "source_device": "cuda:0",
+          "shape": [
+            1,
+            6
+          ]
+        },
+        {
+          "phase": "dataset_create",
+          "wall_seconds": 0.00011887699656654149,
+          "thread_cpu_seconds": 0.00011900599997716199,
+          "error": null,
+          "dataset": "/data/demo_7/initial_state/articulation/robot/root_velocity",
+          "shape": [
+            1,
+            6
+          ],
+          "dtype": "float32",
+          "raw_bytes": 24,
+          "compression": "gzip",
+          "compression_opts": 2,
+          "requested_chunks": null
+        },
+        {
+          "phase": "cpu_numpy",
+          "wall_seconds": 3.44989966833964e-05,
+          "thread_cpu_seconds": 3.452300001072217e-05,
+          "error": null,
+          "source_device": "cuda:0",
+          "shape": [
+            1,
+            18
+          ]
+        },
+        {
+          "phase": "dataset_create",
+          "wall_seconds": 0.00010921299690380692,
+          "thread_cpu_seconds": 0.00010938000002624904,
+          "error": null,
+          "dataset": "/data/demo_7/initial_state/articulation/robot/joint_position",
+          "shape": [
+            1,
+            18
+          ],
+          "dtype": "float32",
+          "raw_bytes": 72,
+          "compression": "gzip",
+          "compression_opts": 2,
+          "requested_chunks": null
+        },
+        {
+          "phase": "cpu_numpy",
+          "wall_seconds": 2.5900008040480316e-05,
+          "thread_cpu_seconds": 2.595400002292081e-05,
+          "error": null,
+          "source_device": "cuda:0",
+          "shape": [
+            1,
+            18
+          ]
+        },
+        {
+          "phase": "dataset_create",
+          "wall_seconds": 9.91629931377247e-05,
+          "thread_cpu_seconds": 9.933199999068165e-05,
+          "error": null,
+          "dataset": "/data/demo_7/initial_state/articulation/robot/joint_velocity",
+          "shape": [
+            1,
+            18
+          ],
+          "dtype": "float32",
+          "raw_bytes": 72,
+          "compression": "gzip",
+          "compression_opts": 2,
+          "requested_chunks": null
+        },
+        {
+          "phase": "cpu_numpy",
+          "wall_seconds": 2.9305010684765875e-05,
+          "thread_cpu_seconds": 2.9297000025962916e-05,
+          "error": null,
+          "source_device": "cuda:0",
+          "shape": [
+            1,
+            7
+          ]
+        },
+        {
+          "phase": "dataset_create",
+          "wall_seconds": 0.00010396698780823499,
+          "thread_cpu_seconds": 0.00010413799998332252,
+          "error": null,
+          "dataset": "/data/demo_7/initial_state/rigid_object/table/root_pose",
+          "shape": [
+            1,
+            7
+          ],
+          "dtype": "float32",
+          "raw_bytes": 28,
+          "compression": "gzip",
+          "compression_opts": 2,
+          "requested_chunks": null
+        },
+        {
+          "phase": "cpu_numpy",
+          "wall_seconds": 2.676800068002194e-05,
+          "thread_cpu_seconds": 2.681900002698967e-05,
+          "error": null,
+          "source_device": "cuda:0",
+          "shape": [
+            1,
+            6
+          ]
+        },
+        {
+          "phase": "dataset_create",
+          "wall_seconds": 0.00010917900362983346,
+          "thread_cpu_seconds": 0.00010938499997337203,
+          "error": null,
+          "dataset": "/data/demo_7/initial_state/rigid_object/table/root_velocity",
+          "shape": [
+            1,
+            6
+          ],
+          "dtype": "float32",
+          "raw_bytes": 24,
+          "compression": "gzip",
+          "compression_opts": 2,
+          "requested_chunks": null
+        },
+        {
+          "phase": "cpu_numpy",
+          "wall_seconds": 2.750000567175448e-05,
+          "thread_cpu_seconds": 2.752400001782007e-05,
+          "error": null,
+          "source_device": "cuda:0",
+          "shape": [
+            1,
+            7
+          ]
+        },
+        {
+          "phase": "dataset_create",
+          "wall_seconds": 0.00010058400221168995,
+          "thread_cpu_seconds": 0.00010074699997630887,
+          "error": null,
+          "dataset": "/data/demo_7/initial_state/rigid_object/cube/root_pose",
+          "shape": [
+            1,
+            7
+          ],
+          "dtype": "float32",
+          "raw_bytes": 28,
+          "compression": "gzip",
+          "compression_opts": 2,
+          "requested_chunks": null
+        },
+        {
+          "phase": "cpu_numpy",
+          "wall_seconds": 2.6013003662228584e-05,
+          "thread_cpu_seconds": 2.611499996874045e-05,
+          "error": null,
+          "source_device": "cuda:0",
+          "shape": [
+            1,
+            6
+          ]
+        },
+        {
+          "phase": "dataset_create",
+          "wall_seconds": 9.56290023168549e-05,
+          "thread_cpu_seconds": 9.577399998761393e-05,
+          "error": null,
+          "dataset": "/data/demo_7/initial_state/rigid_object/cube/root_velocity",
+          "shape": [
+            1,
+            6
+          ],
+          "dtype": "float32",
+          "raw_bytes": 24,
+          "compression": "gzip",
+          "compression_opts": 2,
+          "requested_chunks": null
+        },
+        {
+          "phase": "cpu_numpy",
+          "wall_seconds": 3.2423995435237885e-05,
+          "thread_cpu_seconds": 3.243900005145406e-05,
+          "error": null,
+          "source_device": "cuda:0",
+          "shape": [
+            1386,
+            7
+          ]
+        },
+        {
+          "phase": "dataset_create",
+          "wall_seconds": 0.00015822700515855104,
+          "thread_cpu_seconds": 0.00015830600000299455,
+          "error": null,
+          "dataset": "/data/demo_7/actions",
+          "shape": [
+            1386,
+            7
+          ],
+          "dtype": "float32",
+          "raw_bytes": 38808,
+          "compression": "gzip",
+          "compression_opts": 2,
+          "requested_chunks": null
+        },
+        {
+          "phase": "cpu_numpy",
+          "wall_seconds": 9.379989933222532e-06,
+          "thread_cpu_seconds": 9.281000018290797e-06,
+          "error": null,
+          "source_device": "cpu",
+          "shape": [
+            1386,
+            480,
+            640,
+            3
+          ]
+        },
+        {
+          "phase": "dataset_create",
+          "wall_seconds": 11.483727511003963,
+          "thread_cpu_seconds": 11.470218452999973,
+          "error": null,
+          "dataset": "/data/demo_7/obs/left_hand_rgb",
+          "shape": [
+            1386,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "raw_bytes": 1277337600,
+          "compression": "gzip",
+          "compression_opts": 2,
+          "requested_chunks": null
+        },
+        {
+          "phase": "cpu_numpy",
+          "wall_seconds": 2.3111002519726753e-05,
+          "thread_cpu_seconds": 2.2735000015927653e-05,
+          "error": null,
+          "source_device": "cpu",
+          "shape": [
+            1386,
+            480,
+            640,
+            3
+          ]
+        },
+        {
+          "phase": "dataset_create",
+          "wall_seconds": 4.318549388000974,
+          "thread_cpu_seconds": 4.312813470000037,
+          "error": null,
+          "dataset": "/data/demo_7/obs/right_hand_rgb",
+          "shape": [
+            1386,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "raw_bytes": 1277337600,
+          "compression": "gzip",
+          "compression_opts": 2,
+          "requested_chunks": null
+        },
+        {
+          "phase": "cpu_numpy",
+          "wall_seconds": 2.008498995564878e-05,
+          "thread_cpu_seconds": 1.977499999838983e-05,
+          "error": null,
+          "source_device": "cpu",
+          "shape": [
+            1386,
+            480,
+            640,
+            3
+          ]
+        },
+        {
+          "phase": "dataset_create",
+          "wall_seconds": 11.2811099679966,
+          "thread_cpu_seconds": 11.24768425100001,
+          "error": null,
+          "dataset": "/data/demo_7/obs/third_person_rgb",
+          "shape": [
+            1386,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "raw_bytes": 1277337600,
+          "compression": "gzip",
+          "compression_opts": 2,
+          "requested_chunks": null
+        },
+        {
+          "phase": "cpu_numpy",
+          "wall_seconds": 0.004382544997497462,
+          "thread_cpu_seconds": 0.004376605999993899,
+          "error": null,
+          "source_device": "cuda:0",
+          "shape": [
+            1386,
+            18
+          ]
+        },
+        {
+          "phase": "dataset_create",
+          "wall_seconds": 0.0002802680101012811,
+          "thread_cpu_seconds": 0.00028058800000962947,
+          "error": null,
+          "dataset": "/data/demo_7/obs/joint_pos",
+          "shape": [
+            1386,
+            18
+          ],
+          "dtype": "float32",
+          "raw_bytes": 99792,
+          "compression": "gzip",
+          "compression_opts": 2,
+          "requested_chunks": null
+        },
+        {
+          "phase": "cpu_numpy",
+          "wall_seconds": 5.0583999836817384e-05,
+          "thread_cpu_seconds": 5.0533000035102305e-05,
+          "error": null,
+          "source_device": "cuda:0",
+          "shape": [
+            1386,
+            18
+          ]
+        },
+        {
+          "phase": "dataset_create",
+          "wall_seconds": 0.00018408300820738077,
+          "thread_cpu_seconds": 0.00018429799996511065,
+          "error": null,
+          "dataset": "/data/demo_7/obs/joint_vel",
+          "shape": [
+            1386,
+            18
+          ],
+          "dtype": "float32",
+          "raw_bytes": 99792,
+          "compression": "gzip",
+          "compression_opts": 2,
+          "requested_chunks": null
+        },
+        {
+          "phase": "cpu_numpy",
+          "wall_seconds": 3.881000156980008e-05,
+          "thread_cpu_seconds": 3.8759999995363614e-05,
+          "error": null,
+          "source_device": "cuda:0",
+          "shape": [
+            1386,
+            7
+          ]
+        },
+        {
+          "phase": "dataset_create",
+          "wall_seconds": 0.0001699230051599443,
+          "thread_cpu_seconds": 0.00017028700000309982,
+          "error": null,
+          "dataset": "/data/demo_7/obs/cube_pose",
+          "shape": [
+            1386,
+            7
+          ],
+          "dtype": "float32",
+          "raw_bytes": 38808,
+          "compression": "gzip",
+          "compression_opts": 2,
+          "requested_chunks": null
+        },
+        {
+          "phase": "cpu_numpy",
+          "wall_seconds": 6.269800360314548e-05,
+          "thread_cpu_seconds": 6.239700002197424e-05,
+          "error": null,
+          "source_device": "cuda:0",
+          "shape": [
+            1386,
+            7
+          ]
+        },
+        {
+          "phase": "dataset_create",
+          "wall_seconds": 0.00022333899687509984,
+          "thread_cpu_seconds": 0.00022362400000019989,
+          "error": null,
+          "dataset": "/data/demo_7/obs/table_pose",
+          "shape": [
+            1386,
+            7
+          ],
+          "dtype": "float32",
+          "raw_bytes": 38808,
+          "compression": "gzip",
+          "compression_opts": 2,
+          "requested_chunks": null
+        },
+        {
+          "phase": "cpu_numpy",
+          "wall_seconds": 4.212898784317076e-05,
+          "thread_cpu_seconds": 4.209399997989749e-05,
+          "error": null,
+          "source_device": "cuda:0",
+          "shape": [
+            1386,
+            7
+          ]
+        },
+        {
+          "phase": "dataset_create",
+          "wall_seconds": 0.00014650099910795689,
+          "thread_cpu_seconds": 0.00014668700003994672,
+          "error": null,
+          "dataset": "/data/demo_7/obs/actions",
+          "shape": [
+            1386,
+            7
+          ],
+          "dtype": "float32",
+          "raw_bytes": 38808,
+          "compression": "gzip",
+          "compression_opts": 2,
+          "requested_chunks": null
+        },
+        {
+          "phase": "cpu_numpy",
+          "wall_seconds": 3.393800579942763e-05,
+          "thread_cpu_seconds": 3.3950999977605534e-05,
+          "error": null,
+          "source_device": "cuda:0",
+          "shape": [
+            1386,
+            3
+          ]
+        },
+        {
+          "phase": "dataset_create",
+          "wall_seconds": 0.00013201299589127302,
+          "thread_cpu_seconds": 0.00013220700003557795,
+          "error": null,
+          "dataset": "/data/demo_7/obs/left_tcp_pos",
+          "shape": [
+            1386,
+            3
+          ],
+          "dtype": "float32",
+          "raw_bytes": 16632,
+          "compression": "gzip",
+          "compression_opts": 2,
+          "requested_chunks": null
+        },
+        {
+          "phase": "cpu_numpy",
+          "wall_seconds": 3.344500146340579e-05,
+          "thread_cpu_seconds": 3.3411999993404606e-05,
+          "error": null,
+          "source_device": "cuda:0",
+          "shape": [
+            1386,
+            4
+          ]
+        },
+        {
+          "phase": "dataset_create",
+          "wall_seconds": 0.00012545099889393896,
+          "thread_cpu_seconds": 0.00012565099996209028,
+          "error": null,
+          "dataset": "/data/demo_7/obs/left_tcp_quat",
+          "shape": [
+            1386,
+            4
+          ],
+          "dtype": "float32",
+          "raw_bytes": 22176,
+          "compression": "gzip",
+          "compression_opts": 2,
+          "requested_chunks": null
+        },
+        {
+          "phase": "cpu_numpy",
+          "wall_seconds": 3.06049914797768e-05,
+          "thread_cpu_seconds": 3.067100004727763e-05,
+          "error": null,
+          "source_device": "cuda:0",
+          "shape": [
+            1386,
+            3
+          ]
+        },
+        {
+          "phase": "dataset_create",
+          "wall_seconds": 0.00011862299288623035,
+          "thread_cpu_seconds": 0.00011875899997448869,
+          "error": null,
+          "dataset": "/data/demo_7/obs/left_tcp_pos_env",
+          "shape": [
+            1386,
+            3
+          ],
+          "dtype": "float32",
+          "raw_bytes": 16632,
+          "compression": "gzip",
+          "compression_opts": 2,
+          "requested_chunks": null
+        },
+        {
+          "phase": "cpu_numpy",
+          "wall_seconds": 3.0561990570276976e-05,
+          "thread_cpu_seconds": 3.0632000004970905e-05,
+          "error": null,
+          "source_device": "cuda:0",
+          "shape": [
+            1386,
+            4
+          ]
+        },
+        {
+          "phase": "dataset_create",
+          "wall_seconds": 0.00014805499813519418,
+          "thread_cpu_seconds": 0.00014222800001562064,
+          "error": null,
+          "dataset": "/data/demo_7/obs/left_tcp_quat_env",
+          "shape": [
+            1386,
+            4
+          ],
+          "dtype": "float32",
+          "raw_bytes": 22176,
+          "compression": "gzip",
+          "compression_opts": 2,
+          "requested_chunks": null
+        },
+        {
+          "phase": "cpu_numpy",
+          "wall_seconds": 3.6981000448577106e-05,
+          "thread_cpu_seconds": 3.694899999118206e-05,
+          "error": null,
+          "source_device": "cuda:0",
+          "shape": [
+            1386,
+            1
+          ]
+        },
+        {
+          "phase": "dataset_create",
+          "wall_seconds": 0.00011715300206560642,
+          "thread_cpu_seconds": 0.00011732900003380564,
+          "error": null,
+          "dataset": "/data/demo_7/obs/left_gripper_pos",
+          "shape": [
+            1386,
+            1
+          ],
+          "dtype": "float32",
+          "raw_bytes": 5544,
+          "compression": "gzip",
+          "compression_opts": 2,
+          "requested_chunks": null
+        },
+        {
+          "phase": "cpu_numpy",
+          "wall_seconds": 3.610599378589541e-05,
+          "thread_cpu_seconds": 3.5932000002958375e-05,
+          "error": null,
+          "source_device": "cuda:0",
+          "shape": [
+            1386,
+            7
+          ]
+        },
+        {
+          "phase": "dataset_create",
+          "wall_seconds": 0.00012870300270151347,
+          "thread_cpu_seconds": 0.0001289570000153617,
+          "error": null,
+          "dataset": "/data/demo_7/states/articulation/robot/root_pose",
+          "shape": [
+            1386,
+            7
+          ],
+          "dtype": "float32",
+          "raw_bytes": 38808,
+          "compression": "gzip",
+          "compression_opts": 2,
+          "requested_chunks": null
+        },
+        {
+          "phase": "cpu_numpy",
+          "wall_seconds": 3.368599573150277e-05,
+          "thread_cpu_seconds": 3.36939999669994e-05,
+          "error": null,
+          "source_device": "cuda:0",
+          "shape": [
+            1386,
+            6
+          ]
+        },
+        {
+          "phase": "dataset_create",
+          "wall_seconds": 0.0001251099893124774,
+          "thread_cpu_seconds": 0.00012520600000698323,
+          "error": null,
+          "dataset": "/data/demo_7/states/articulation/robot/root_velocity",
+          "shape": [
+            1386,
+            6
+          ],
+          "dtype": "float32",
+          "raw_bytes": 33264,
+          "compression": "gzip",
+          "compression_opts": 2,
+          "requested_chunks": null
+        },
+        {
+          "phase": "cpu_numpy",
+          "wall_seconds": 3.6874989746138453e-05,
+          "thread_cpu_seconds": 3.6856999997780804e-05,
+          "error": null,
+          "source_device": "cuda:0",
+          "shape": [
+            1386,
+            18
+          ]
+        },
+        {
+          "phase": "dataset_create",
+          "wall_seconds": 0.00014940700202714652,
+          "thread_cpu_seconds": 0.00014976699998214826,
+          "error": null,
+          "dataset": "/data/demo_7/states/articulation/robot/joint_position",
+          "shape": [
+            1386,
+            18
+          ],
+          "dtype": "float32",
+          "raw_bytes": 99792,
+          "compression": "gzip",
+          "compression_opts": 2,
+          "requested_chunks": null
+        },
+        {
+          "phase": "cpu_numpy",
+          "wall_seconds": 6.192299770191312e-05,
+          "thread_cpu_seconds": 6.184599999414786e-05,
+          "error": null,
+          "source_device": "cuda:0",
+          "shape": [
+            1386,
+            18
+          ]
+        },
+        {
+          "phase": "dataset_create",
+          "wall_seconds": 0.0002094550000037998,
+          "thread_cpu_seconds": 0.00020997100000386126,
+          "error": null,
+          "dataset": "/data/demo_7/states/articulation/robot/joint_velocity",
+          "shape": [
+            1386,
+            18
+          ],
+          "dtype": "float32",
+          "raw_bytes": 99792,
+          "compression": "gzip",
+          "compression_opts": 2,
+          "requested_chunks": null
+        },
+        {
+          "phase": "cpu_numpy",
+          "wall_seconds": 4.28019993705675e-05,
+          "thread_cpu_seconds": 4.274600001963336e-05,
+          "error": null,
+          "source_device": "cuda:0",
+          "shape": [
+            1386,
+            7
+          ]
+        },
+        {
+          "phase": "dataset_create",
+          "wall_seconds": 0.00015820699627511203,
+          "thread_cpu_seconds": 0.00015855099996997524,
+          "error": null,
+          "dataset": "/data/demo_7/states/rigid_object/table/root_pose",
+          "shape": [
+            1386,
+            7
+          ],
+          "dtype": "float32",
+          "raw_bytes": 38808,
+          "compression": "gzip",
+          "compression_opts": 2,
+          "requested_chunks": null
+        },
+        {
+          "phase": "cpu_numpy",
+          "wall_seconds": 3.573199501261115e-05,
+          "thread_cpu_seconds": 3.574700002673126e-05,
+          "error": null,
+          "source_device": "cuda:0",
+          "shape": [
+            1386,
+            6
+          ]
+        },
+        {
+          "phase": "dataset_create",
+          "wall_seconds": 0.00013024000509176403,
+          "thread_cpu_seconds": 0.0001304330000380105,
+          "error": null,
+          "dataset": "/data/demo_7/states/rigid_object/table/root_velocity",
+          "shape": [
+            1386,
+            6
+          ],
+          "dtype": "float32",
+          "raw_bytes": 33264,
+          "compression": "gzip",
+          "compression_opts": 2,
+          "requested_chunks": null
+        },
+        {
+          "phase": "cpu_numpy",
+          "wall_seconds": 3.334600478410721e-05,
+          "thread_cpu_seconds": 3.334199999471821e-05,
+          "error": null,
+          "source_device": "cuda:0",
+          "shape": [
+            1386,
+            7
+          ]
+        },
+        {
+          "phase": "dataset_create",
+          "wall_seconds": 0.00012123900523874909,
+          "thread_cpu_seconds": 0.00012141600001314146,
+          "error": null,
+          "dataset": "/data/demo_7/states/rigid_object/cube/root_pose",
+          "shape": [
+            1386,
+            7
+          ],
+          "dtype": "float32",
+          "raw_bytes": 38808,
+          "compression": "gzip",
+          "compression_opts": 2,
+          "requested_chunks": null
+        },
+        {
+          "phase": "cpu_numpy",
+          "wall_seconds": 3.525200008880347e-05,
+          "thread_cpu_seconds": 3.519499995263686e-05,
+          "error": null,
+          "source_device": "cuda:0",
+          "shape": [
+            1386,
+            6
+          ]
+        },
+        {
+          "phase": "dataset_create",
+          "wall_seconds": 0.00013817498984280974,
+          "thread_cpu_seconds": 0.00013844200003632068,
+          "error": null,
+          "dataset": "/data/demo_7/states/rigid_object/cube/root_velocity",
+          "shape": [
+            1386,
+            6
+          ],
+          "dtype": "float32",
+          "raw_bytes": 33264,
+          "compression": "gzip",
+          "compression_opts": 2,
+          "requested_chunks": null
+        },
+        {
+          "phase": "cpu_numpy",
+          "wall_seconds": 3.483198815956712e-05,
+          "thread_cpu_seconds": 3.486399998564593e-05,
+          "error": null,
+          "source_device": "cuda:0",
+          "shape": [
+            1386,
+            8
+          ]
+        },
+        {
+          "phase": "dataset_create",
+          "wall_seconds": 0.00013626899453811347,
+          "thread_cpu_seconds": 0.00013647499997659907,
+          "error": null,
+          "dataset": "/data/demo_7/processed_actions",
+          "shape": [
+            1386,
+            8
+          ],
+          "dtype": "float32",
+          "raw_bytes": 44352,
+          "compression": "gzip",
+          "compression_opts": 2,
+          "requested_chunks": null
+        },
+        {
+          "phase": "write_episode_inclusive",
+          "wall_seconds": 27.20399769100186,
+          "thread_cpu_seconds": 27.151305819999948,
+          "error": null
+        },
+        {
+          "phase": "flush",
+          "wall_seconds": 0.0008192420064006001,
+          "thread_cpu_seconds": 0.0008192459999918356,
+          "error": null
+        }
+      ],
+      "error": null,
+      "timing_semantics": "host wall and current-thread CPU; dataset_create includes gzip, HDF5 and I/O; flush is HDF5 flush, not fsync; GPU copies may synchronize; write_episode_inclusive overlaps cpu_numpy and dataset_create"
+    }
+  },
+  "active_episodes": [],
+  "last_progress": {
+    "schema_version": 2,
+    "run_id": "d5d6b69d0f754f79832f93641561e007",
+    "time_utc": "2026-10-15T08:48:40.389408+00:00",
+    "elapsed_seconds": 536.116729,
+    "event": "stage_finished",
+    "episode_id": "env2-attempt3",
+    "env_id": 2,
+    "stage": "reset",
+    "duration_seconds": 0.012508207000792027,
+    "error": "CancelledError: "
+  },
+  "errors": [
+    {
+      "schema_version": 2,
+      "run_id": "d5d6b69d0f754f79832f93641561e007",
+      "time_utc": "2026-10-15T08:48:40.383204+00:00",
+      "elapsed_seconds": 536.110525,
+      "event": "episode_cancelled",
+      "episode_id": "env0-attempt3",
+      "env_id": 0,
+      "success": null,
+      "error": "CancelledError: ",
+      "duration_seconds": 91.23101881399634,
+      "planner_calls": 2,
+      "planner_successes": 2,
+      "planner_failures": 0,
+      "curobo_solver_iterations": 2,
+      "curobo_iteration_successes": 2,
+      "execution_steps": 63,
+      "recorder_export_calls": 0,
+      "simulated_seconds": 2.1,
+      "execution_steps_per_wall_second": 0.6905545963413485,
+      "simulation_seconds_per_wall_second": 0.023018486315361967,
+      "stages_seconds": {
+        "reset": 0.02599956099584233,
+        "motion_plan": 0.7088296050060308,
+        "execution_wait": 90.18124547594925
+      }
+    },
+    {
+      "schema_version": 2,
+      "run_id": "d5d6b69d0f754f79832f93641561e007",
+      "time_utc": "2026-10-15T08:48:40.386382+00:00",
+      "elapsed_seconds": 536.113701,
+      "event": "episode_cancelled",
+      "episode_id": "env1-attempt3",
+      "env_id": 1,
+      "success": null,
+      "error": "CancelledError: ",
+      "duration_seconds": 32.522616896996624,
+      "planner_calls": 2,
+      "planner_successes": 2,
+      "planner_failures": 0,
+      "curobo_solver_iterations": 2,
+      "curobo_iteration_successes": 2,
+      "execution_steps": 41,
+      "recorder_export_calls": 0,
+      "simulated_seconds": 1.3666666666666667,
+      "execution_steps_per_wall_second": 1.260661128785615,
+      "simulation_seconds_per_wall_second": 0.04202203646719252,
+      "stages_seconds": {
+        "reset": 0.02648936001060065,
+        "motion_plan": 0.9406363030138891,
+        "execution_wait": 31.277138369972818
+      }
+    },
+    {
+      "schema_version": 2,
+      "run_id": "d5d6b69d0f754f79832f93641561e007",
+      "time_utc": "2026-10-15T08:48:40.389408+00:00",
+      "elapsed_seconds": 536.116729,
+      "event": "stage_finished",
+      "episode_id": "env2-attempt3",
+      "env_id": 2,
+      "stage": "reset",
+      "duration_seconds": 0.012508207000792027,
+      "error": "CancelledError: "
+    },
+    {
+      "schema_version": 2,
+      "run_id": "d5d6b69d0f754f79832f93641561e007",
+      "time_utc": "2026-10-15T08:48:40.389456+00:00",
+      "elapsed_seconds": 536.116773,
+      "event": "episode_cancelled",
+      "episode_id": "env2-attempt3",
+      "env_id": 2,
+      "success": null,
+      "error": "CancelledError: ",
+      "duration_seconds": 0.012626003997866064,
+      "planner_calls": 0,
+      "planner_successes": 0,
+      "planner_failures": 0,
+      "curobo_solver_iterations": 0,
+      "curobo_iteration_successes": 0,
+      "execution_steps": 0,
+      "recorder_export_calls": 0,
+      "simulated_seconds": 0.0,
+      "execution_steps_per_wall_second": 0.0,
+      "simulation_seconds_per_wall_second": 0.0,
+      "stages_seconds": {
+        "reset": 0.012508207000792027,
+        "execution_wait": 0.0
+      }
+    },
+    {
+      "schema_version": 2,
+      "run_id": "d5d6b69d0f754f79832f93641561e007",
+      "time_utc": "2026-10-15T08:48:40.391529+00:00",
+      "elapsed_seconds": 536.118848,
+      "event": "episode_cancelled",
+      "episode_id": "env3-attempt3",
+      "env_id": 3,
+      "success": null,
+      "error": "CancelledError: ",
+      "duration_seconds": 60.47017182598938,
+      "planner_calls": 2,
+      "planner_successes": 2,
+      "planner_failures": 0,
+      "curobo_solver_iterations": 2,
+      "curobo_iteration_successes": 2,
+      "execution_steps": 45,
+      "recorder_export_calls": 0,
+      "simulated_seconds": 1.5,
+      "execution_steps_per_wall_second": 0.7441685395449935,
+      "simulation_seconds_per_wall_second": 0.024805617588973896,
+      "stages_seconds": {
+        "reset": 0.030794143996899948,
+        "motion_plan": 0.7842233369883616,
+        "execution_wait": 59.34911461993761
+      }
+    }
+  ],
+  "solver_status_counts": {
+    "None": 38
+  }
+}

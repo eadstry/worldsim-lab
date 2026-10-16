@@ -1,0 +1,40 @@
+<!doctype html><meta charset="utf-8"><title>camera 源码定位</title><style>body{font:16px/1.7 system-ui;padding:28px;background:#f6f8fb}pre{background:white;padding:20px;overflow:auto}span{display:block;scroll-margin-top:80px}span:target{background:#ffe59a}a{color:#196d93}p{overflow-wrap:anywhere}</style><a href="../gpu-analysis.html">返回 GPU 分析</a><h1>v1 实验冻结任务源码</h1><p>/home/tangyuan/WorldSimReady-Home/AutoData/datasets/efficiency_20261014_201834/v1/launchers/v1/runtime/openarm_autodata/shared/envs/cameras.py</p><p>SHA256: c336a62f470fe990233ebdf04b0d2e04c8db832a238105b49773db209fc5f3dc</p><h2>原文件 17–55 行</h2><pre><span id="L17"><a href="#L17">  17</a>  CAMERA_NAMES = (&quot;left_hand_camera&quot;, &quot;right_hand_camera&quot;, &quot;third_person_camera&quot;)</span>
+<span id="L18"><a href="#L18">  18</a>  </span>
+<span id="L19"><a href="#L19">  19</a>  </span>
+<span id="L20"><a href="#L20">  20</a>  def update_mounted_camera_poses(scene: InteractiveScene) -&gt; None:</span>
+<span id="L21"><a href="#L21">  21</a>      &quot;&quot;&quot;Refresh mounted camera poses before rendering or reading observations.</span>
+<span id="L22"><a href="#L22">  22</a>  </span>
+<span id="L23"><a href="#L23">  23</a>      The installed FrameView path can retain a stale world pose for a camera</span>
+<span id="L24"><a href="#L24">  24</a>      nested under an articulation. Use the public Camera API and live link state</span>
+<span id="L25"><a href="#L25">  25</a>      to preserve the calibrated mounting transform. No asset or dependency edits.</span>
+<span id="L26"><a href="#L26">  26</a>  </span>
+<span id="L27"><a href="#L27">  27</a>      Args:</span>
+<span id="L28"><a href="#L28">  28</a>          scene: OpenArm scene with the robot and its three camera sensors.</span>
+<span id="L29"><a href="#L29">  29</a>      &quot;&quot;&quot;</span>
+<span id="L30"><a href="#L30">  30</a>      robot = scene[&quot;robot&quot;]</span>
+<span id="L31"><a href="#L31">  31</a>      for name in CAMERA_NAMES:</span>
+<span id="L32"><a href="#L32">  32</a>          camera = scene[name]</span>
+<span id="L33"><a href="#L33">  33</a>          assert camera.cfg.offset.convention == &quot;ros&quot;</span>
+<span id="L34"><a href="#L34">  34</a>          parent_name = camera.cfg.prim_path.rsplit(&quot;/&quot;, 2)[-2]</span>
+<span id="L35"><a href="#L35">  35</a>          parent_pose = robot.data.body_link_pose_w.torch[:, robot.body_names.index(parent_name)]</span>
+<span id="L36"><a href="#L36">  36</a>          # Isaac Lab requires equal batch shapes; the mount is shared by all environments.</span>
+<span id="L37"><a href="#L37">  37</a>          position, rotation = combine_frame_transforms(</span>
+<span id="L38"><a href="#L38">  38</a>              parent_pose[:, :3],</span>
+<span id="L39"><a href="#L39">  39</a>              parent_pose[:, 3:],</span>
+<span id="L40"><a href="#L40">  40</a>              parent_pose.new_tensor(camera.cfg.offset.pos).expand_as(parent_pose[:, :3]),</span>
+<span id="L41"><a href="#L41">  41</a>              parent_pose.new_tensor(camera.cfg.offset.rot).expand_as(parent_pose[:, 3:]),</span>
+<span id="L42"><a href="#L42">  42</a>          )</span>
+<span id="L43"><a href="#L43">  43</a>          camera.set_world_poses(position, rotation, convention=&quot;ros&quot;)</span>
+<span id="L44"><a href="#L44">  44</a>  </span>
+<span id="L45"><a href="#L45">  45</a>  </span>
+<span id="L46"><a href="#L46">  46</a>  def rgb_image(env: ManagerBasedRLEnv, name: str) -&gt; torch.Tensor:</span>
+<span id="L47"><a href="#L47">  47</a>      &quot;&quot;&quot;Return a CPU uint8 RGB snapshot for the non-concatenated policy group.</span>
+<span id="L48"><a href="#L48">  48</a>  </span>
+<span id="L49"><a href="#L49">  49</a>      Cameras render on the GPU. The official recorder clones observations on</span>
+<span id="L50"><a href="#L50">  50</a>      their existing device and retains every frame until reset/export, so RGB</span>
+<span id="L51"><a href="#L51">  51</a>      observations must live on the CPU to avoid per-frame CUDA accumulation.</span>
+<span id="L52"><a href="#L52">  52</a>      Low-dimensional robot observations and simulation remain on the GPU.</span>
+<span id="L53"><a href="#L53">  53</a>      &quot;&quot;&quot;</span>
+<span id="L54"><a href="#L54">  54</a>      update_mounted_camera_poses(env.scene)</span>
+<span id="L55"><a href="#L55">  55</a>      return env.scene[name].data.output[&quot;rgb&quot;].torch[..., :3].to(device=&quot;cpu&quot;, copy=True)</span>
+</pre>

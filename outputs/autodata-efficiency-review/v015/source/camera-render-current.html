@@ -1,0 +1,45 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>当前源码定位</title><style>body{font:16px/1.7 system-ui;padding:28px;background:#f7f9fc}pre{background:white;padding:20px;overflow:auto}span{display:block}span:target{background:#ffe59a}</style><a href="../acceleration-analysis.html">返回加速方案</a><h1>当前本地源码</h1><p>/home/tangyuan/WorldSimReady-Home/AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab/isaaclab/sensors/camera/camera.py</p><p>SHA256: 92a38ddf04e64af1df417a70bf6c94241e87a51f0154deefbc56fcbf34a89a9a</p><pre><span id="L535"><a href="#L535">535</a>          for cam_prim in view_prims:</span>
+<span id="L536"><a href="#L536">536</a>              # Obtain the prim path</span>
+<span id="L537"><a href="#L537">537</a>              cam_prim_path = cam_prim.GetPath().pathString</span>
+<span id="L538"><a href="#L538">538</a>              # Check if prim is a camera</span>
+<span id="L539"><a href="#L539">539</a>              if not cam_prim.IsA(UsdGeom.Camera):</span>
+<span id="L540"><a href="#L540">540</a>                  raise RuntimeError(f&quot;Prim at path &#x27;{cam_prim_path}&#x27; is not a Camera.&quot;)</span>
+<span id="L541"><a href="#L541">541</a>              # Add to list</span>
+<span id="L542"><a href="#L542">542</a>              self._sensor_prims.append(UsdGeom.Camera(cam_prim))</span>
+<span id="L543"><a href="#L543">543</a>  </span>
+<span id="L544"><a href="#L544">544</a>          self._render_data = self._renderer.create_render_data(render_spec)</span>
+<span id="L545"><a href="#L545">545</a>  </span>
+<span id="L546"><a href="#L546">546</a>          # Create internal buffers (includes intrinsic matrix and pose init)</span>
+<span id="L547"><a href="#L547">547</a>          self._create_buffers()</span>
+<span id="L548"><a href="#L548">548</a>  </span>
+<span id="L549"><a href="#L549">549</a>      def _update_buffers_impl(self, env_mask: wp.array):</span>
+<span id="L550"><a href="#L550">550</a>          if not self._env_mask_has_any(env_mask):</span>
+<span id="L551"><a href="#L551">551</a>              return</span>
+<span id="L552"><a href="#L552">552</a>          # Increment frame count</span>
+<span id="L553"><a href="#L553">553</a>          if self.cfg.update_latest_camera_pose:</span>
+<span id="L554"><a href="#L554">554</a>              self._update_poses(env_mask=env_mask, frame_op=1)</span>
+<span id="L555"><a href="#L555">555</a>          else:</span>
+<span id="L556"><a href="#L556">556</a>              self._update_camera_state(env_mask=env_mask, frame_op=1)</span>
+<span id="L557"><a href="#L557">557</a>  </span>
+<span id="L558"><a href="#L558">558</a>          sim_ctx = sim_utils.SimulationContext.instance()</span>
+<span id="L559"><a href="#L559">559</a>          renderer = self._renderer</span>
+<span id="L560"><a href="#L560">560</a>          assert renderer is not None</span>
+<span id="L561"><a href="#L561">561</a>          if sim_ctx is not None:</span>
+<span id="L562"><a href="#L562">562</a>              sim_ctx.render_context.render_into_camera(</span>
+<span id="L563"><a href="#L563">563</a>                  renderer,</span>
+<span id="L564"><a href="#L564">564</a>                  self._render_data,</span>
+<span id="L565"><a href="#L565">565</a>                  self._data,</span>
+<span id="L566"><a href="#L566">566</a>                  sim_ctx.get_physics_step_count(),</span>
+<span id="L567"><a href="#L567">567</a>              )</span>
+<span id="L568"><a href="#L568">568</a>          else:</span>
+<span id="L569"><a href="#L569">569</a>              renderer.render(self._render_data)</span>
+<span id="L570"><a href="#L570">570</a>              renderer.read_output(self._render_data, self._data)</span>
+<span id="L571"><a href="#L571">571</a>  </span>
+<span id="L572"><a href="#L572">572</a>      &quot;&quot;&quot;</span>
+<span id="L573"><a href="#L573">573</a>      Private Helpers</span>
+<span id="L574"><a href="#L574">574</a>      &quot;&quot;&quot;</span>
+<span id="L575"><a href="#L575">575</a>  </span>
+<span id="L576"><a href="#L576">576</a>      def _check_supported_data_types(self, cfg: CameraCfg):</span>
+<span id="L577"><a href="#L577">577</a>          &quot;&quot;&quot;Checks if the data types are supported by the ray-caster camera.&quot;&quot;&quot;</span>
+<span id="L578"><a href="#L578">578</a>          # check if there is any intersection in unsupported types</span>
+</pre></html>

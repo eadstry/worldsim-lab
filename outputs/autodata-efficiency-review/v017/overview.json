@@ -1,0 +1,27 @@
+[
+ {"id":"structure","title":"数据结构：一条 episode，三种表示","lead":"同一次任务的数据，依次成为录制缓冲、跨进程保存任务和 HDF5 记录。","blocks":[
+ ["录制缓冲｜按环境、按字段、按时间保存","RecorderManager 为每个环境持有 EpisodeData。其 data 是嵌套字典；逐步录制的叶子是帧列表。字段路径保留层级，列表堆叠后形状为 [T, …]；T 是该字段的采样数。具体字段由 recorder 配置决定。"],
+ ["保存任务｜数据本体与描述信息分开","数据本体放在 CPU 共享内存。任务携带 memory 名称及 leaves；每个 leaf 用 path、shape、dtype、offset、bytes 定位一个数组。另带 route、demo_id、env_args 和 attributes，决定写到哪里、附带什么元数据。"],
+ ["文件记录｜保留字段树，按 demo 组织","writer 将各字段写入 /data/demo_<id>/<字段路径>，seed、success、num_samples 等放在属性中。共享内存中的字段路径对应 HDF5 层级；图像和状态数组不作为大对象经进程队列传递。"],
+ ["贯穿示例｜结构示意，非完整数据清单","某字段：data[字段] = [帧0, 帧1, …] → leaf(shape=[T,…], dtype, offset) + 共享内存 → /data/demo_7/字段。env_id 用于运行时定位环境；demo_id 用于保存记录，二者不是同一个编号。"]],"source":"code-structure-evidence.md：EpisodeData、layout、pack、write_job"},
+ {"id":"framework","title":"代码框架：生成主进程 + CPU 保存进程","lead":"AutoData 负责产生轨迹；本地扩展负责把完成的 episode 交给后台保存。","blocks":[
+ ["生成主进程｜规划、步进、录制","任务协程调用规划适配器，提交动作；env_loop 汇集动作后执行 env.step。RecorderManager 收集每个环境的数据。多环境共用生成主进程，并非每个环境一个操作系统进程。"],
+ ["保存入口｜Bridge → ExportPool","Bridge 保留导出路由、成功标记和 demo ID 语义。ExportPool 管预算、共享内存、任务队列、writer 和回执；主进程仍承担数据打包，预算不足时等待。"],
+ ["后台执行｜writer → 独立 HDF5 分片","spawn 创建 CPU writer。每个 writer 从队列取任务、映射共享内存、压缩并写自己的分片；不接收仿真对象，也不运行 CUDA 规划。最终由主进程排空、检查并合并。"],
+ ["接入位置｜启动器安装，运行时回收","generate.py/build_source 在环境创建前 configure，创建后 attach；compat.py 在生成过程中 poll，结束时 finish。录制类方法与 recorder 实例导出方法在运行时接入；上游文件不因此被永久改写。"]],"source":"code-structure-evidence.md：generate.py、compat.py、Bridge、ExportPool；interface-evidence.md：env_loop"},
+ {"id":"lifecycle","title":"异步保存的本质：移交所有权，延后等待","lead":"提交返回、分片写完、最终文件就绪，是三个不同的完成时刻。","blocks":[
+ ["① 录制 → 打包｜主进程仍有工作","CPU 帧按环境独立持有，避免切片拖住整批存储。提交前检查在途字节预算，再复制到共享内存；CPU 列表逐帧复制并释放源帧，小型 GPU 状态先堆叠再转到 CPU。这里仍有复制成本。"],
+ ["② 提交 → saved｜后台写入与生成重叠","jobs 队列传任务描述，writer 压缩、写分片并 flush，再通过 results 返回 saved。主进程收到回执后才释放对应共享内存并更新保存计数；pending 包括排队与写入中的任务。"],
+ ["③ finish → output_ready｜整批真正完成","finish 排空任务，等待 writer 退出并核对结果，再合并分片。launcher 关闭环境后记录 output_ready。writer 的失败、退出或超时会向主进程报错，不能把已提交数当作已保存数。"],
+ ["为什么能提速｜保存成本与下一条生成重叠","原同步路径必须写完才能返回；异步路径打包提交后可继续生成。预算等待、压缩写盘和最终合并仍然存在。数据布局与所有权改动支持这条流水线，尚未单独测出各自收益。"]],"source":"code-structure-evidence.md：owned_recording_method、submit、poll、finish、_merge"},
+ {"id":"versions","title":"版本区别：一次改保存，一次换规划接口","lead":"这里的三版是项目测试实现；v015 / v017 则是报告修订号。","blocks":[
+ ["v1 同步基线｜MotionGen + 主流程保存","使用 cuRobo v1 规划；recorder 在主流程堆叠数据、压缩、写 HDF5。workers=0 走这条保存路径。基线已有 GPU 计算与多环境仿真。"],
+ ["v1 异步改进版｜规划保留，保存移到后台","保留 v1 规划和任务流程，新增 Bridge、ExportPool、共享内存移交、CPU writer、回执与合并。核心变化是生成与保存重叠，同时调整 CPU 帧所有权。"],
+ ["v2 适配版｜沿用异步保存，迁移规划层","将 MotionGen 路径适配为 MotionPlanner，处理模型配置、目标坐标、轨迹和接触逻辑。上层任务仍取可执行末端位姿；保存链沿用异步版。接口迁移本身不保证更快或质量更好。"],
+ ["cap4 / cap8 / auto｜保存池的容量策略","cap 限制 writer 数量上限，auto 按积压和资源准入逐步扩容，本轮不主动缩容。历史实验三种异步配置实际均启动 4 个 writer；cap8 不代表用了 8 个进程。环境数与 writer 数分别控制。"]],"source":"code-structure-evidence.md、interface-evidence.md；v015 历史运行记录"},
+ {"id":"planner","title":"v2 迁移：把新规划结果转换回任务需要的格式","lead":"适配器的责任是保持上层任务可用，同时处理新旧库的数据契约差异。","blocks":[
+ ["输入｜机器人模型、场景与目标","MotionGenConfig → MotionPlannerCfg；ee_link → tool_frames，retract_config → default_joint_position。目标和动态物体先转换到机器人基座系，再构造按工具坐标系命名的 GoalToolPose。"],
+ ["求解｜替换调用，重新处理成功语义","v1 plan_single → v2 plan_pose。适配器检查结果存在及 success，再读取 get_interpolated_plan()；B-spline 控制点不能直接当成执行采样。部分规划选项没有建立一对一映射。"],
+ ["输出｜轨迹 → 关节重排 → FK → 世界坐标位姿","按关节名称整理插值轨迹，通过正向运动学（FK）读取目标工具的末端位姿，再变回世界坐标系，供原任务执行。持物附着、临时碰撞设置及恢复也需要适配。"],
+ ["迁移边界｜接口跑通与任务收益分别验证","当前仍是逐环境规划调用，未改成跨环境批量规划；未据此验证全身、力矩约束或深度融合能力。适配代码含固定版本私有接口依赖。实验页保留跨日期单轮和末态 15/16 的限制。"]],"source":"interface-evidence.md：冻结 v2 适配器及当前 v1 调用摘录"}
+]

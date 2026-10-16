@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "artifact_id": "autodata-efficiency-review",
+  "version": "v019",
+  "sealed_at": "2026-10-15 Asia/Shanghai",
+  "scope": "Beginner guide in Markdown with clear hierarchy, reading guide, data tree and comparison tables",
+  "delivery": {
+    "policy": "local_only"
+  },
+  "files": [
+    {
+      "path": "AutoData入门指南.md",
+      "sha256": "e868a9cda12cb42b647a44bf5d9df48184e3adc1f1ad9aa4f4b82a83c0c456d1"
+    }
+  ]
+}

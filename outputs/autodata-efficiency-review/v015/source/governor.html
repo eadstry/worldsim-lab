@@ -1,0 +1,29 @@
+<!doctype html><meta charset="utf-8"><title>governor 源码定位</title><style>body{font:16px/1.7 system-ui;padding:28px;background:#f6f8fb}pre{background:white;padding:20px;overflow:auto}span{display:block;scroll-margin-top:80px}span:target{background:#ffe59a}a{color:#196d93}p{overflow-wrap:anywhere}</style><a href="../gpu-analysis.html">返回 GPU 分析</a><h1>v1 实验冻结资源策略</h1><p>/home/tangyuan/WorldSimReady-Home/AutoData/datasets/efficiency_20261014_201834/v1/launchers/v1/export_governor.py</p><p>SHA256: d2dc630a91dc890c57ac36db381ac2759518a25b3a582704ccf783584dee808b</p><h2>原文件 143–170 行</h2><pre><span id="L143"><a href="#L143"> 143</a>      def evaluate(sample, worker_count, episode_bytes):</span>
+<span id="L144"><a href="#L144"> 144</a>          if not sample[&#x27;cpu_sample_ready&#x27;]:</span>
+<span id="L145"><a href="#L145"> 145</a>              return &#x27;cpu_sampling&#x27;</span>
+<span id="L146"><a href="#L146"> 146</a>          cpu_budget = sample[&#x27;cpu_capacity&#x27;] - sample[&#x27;cpu_reserve_cores&#x27;]</span>
+<span id="L147"><a href="#L147"> 147</a>          cpu_limit = max(1, math.floor(cpu_budget))</span>
+<span id="L148"><a href="#L148"> 148</a>          if worker_count &gt;= cpu_limit:</span>
+<span id="L149"><a href="#L149"> 149</a>              return &#x27;cpu_capacity&#x27;</span>
+<span id="L150"><a href="#L150"> 150</a>          if sample[&#x27;free_cpu_cores&#x27;] &lt; sample[&#x27;cpu_reserve_cores&#x27;] + min(1.0, cpu_budget):</span>
+<span id="L151"><a href="#L151"> 151</a>              return &#x27;cpu_busy&#x27;</span>
+<span id="L152"><a href="#L152"> 152</a>          if sample[&#x27;memory_available_bytes&#x27;] &lt; sample[&#x27;memory_reserve_bytes&#x27;] + sample[&#x27;worker_private_bytes&#x27;]:</span>
+<span id="L153"><a href="#L153"> 153</a>              return &#x27;memory_reserve&#x27;</span>
+<span id="L154"><a href="#L154"> 154</a>          if sample[&#x27;task_headroom&#x27;] is not None and sample[&#x27;task_headroom&#x27;] &lt; sample[&#x27;worker_task_slots&#x27;]:</span>
+<span id="L155"><a href="#L155"> 155</a>              return &#x27;process_slots&#x27;</span>
+<span id="L156"><a href="#L156"> 156</a>          if sample[&#x27;shared_memory_free_bytes&#x27;] &lt; 8 * MIB:</span>
+<span id="L157"><a href="#L157"> 157</a>              return &#x27;shared_memory&#x27;</span>
+<span id="L158"><a href="#L158"> 158</a>          if sample[&#x27;disk_free_bytes&#x27;] &lt; episode_bytes + GIB:</span>
+<span id="L159"><a href="#L159"> 159</a>              return &#x27;disk_space&#x27;</span>
+<span id="L160"><a href="#L160"> 160</a>          if sample[&#x27;io_pressure_percent&#x27;] &gt;= 20:</span>
+<span id="L161"><a href="#L161"> 161</a>              return &#x27;io_pressure&#x27;</span>
+<span id="L162"><a href="#L162"> 162</a>          return &#x27;available&#x27;</span>
+<span id="L163"><a href="#L163"> 163</a>  </span>
+<span id="L164"><a href="#L164"> 164</a>      def decide(self, processes, pending, output):</span>
+<span id="L165"><a href="#L165"> 165</a>          now = time.monotonic()</span>
+<span id="L166"><a href="#L166"> 166</a>          if now - self.last_checked &lt; 1:</span>
+<span id="L167"><a href="#L167"> 167</a>              return None</span>
+<span id="L168"><a href="#L168"> 168</a>          self.last_checked = now</span>
+<span id="L169"><a href="#L169"> 169</a>          try:</span>
+<span id="L170"><a href="#L170"> 170</a>              sample = self.sample(processes, output)</span>
+</pre>

@@ -1,0 +1,638 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>v1 内部耗时对照实验</title><style>
+body{font-family:"Noto Sans CJK SC",sans-serif;background:#f7f9fc;color:#253844;margin:0 auto;padding:36px;max-width:1200px;line-height:1.75}h1,h2,h3{line-height:1.4}h1{font-size:30px}h2{margin-top:40px;font-size:23px}table{border-collapse:collapse;width:100%;font-size:14px;margin:20px 0}th,td{padding:9px 12px;border-bottom:1px solid #d5dee8;text-align:left}th{background:#e5edf5}tr:nth-child(even){background:#eef3f8}figure{margin:25px 0}img{max-width:100%;height:auto}code{overflow-wrap:anywhere}li{overflow-wrap:anywhere}@media(max-width:700px){body{padding:16px}table{font-size:12px}th,td{padding:6px}}
+</style><body><h1>v1 改进前后内部耗时对照实验</h1><figure><img src="comparison.svg" alt="v1 改进前后内部耗时与百分比对照" /></figure>
+<p>本次 4 环境配对测试中，平均 execute 累计时间由 197.53 秒变为 142.71 秒；其中等待窗口内的导出与背压由 58.41 秒变为 3.64 秒。改进后相机渲染与图像采集占 execute 内部的 50.0%，物理推进与控制占 34.9%。</p>
+<p>改进前为冻结 v1 的同步导出；改进后为同一 v1 的自动扩展多进程异步导出，并包含该路径既有的 CPU 记录缓冲所有权优化。两组使用相同计时钩子、输入 SHA256、任务 YAML、seed=101、4 个环境、8 个成功目标和 60 个最终保持步，按改进前→改进后依次运行。</p>
+<p>这是固定 seed 的一次配对实验。测量的是主机调用的墙钟延迟，没有新增 CUDA 同步；GPU 工作可能在后续读取时才产生阻塞，因此各行不能解释为隔离的 GPU kernel 用时。</p>
+<h2>运行结果</h2>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th style="text-align: right;">改进前：同步导出</th>
+<th style="text-align: right;">改进后：auto 导出</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>成功数</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr>
+<td>失败数</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>最终文件就绪秒数（首 episode 起）</td>
+<td style="text-align: right;">515.768</td>
+<td style="text-align: right;">350.297</td>
+</tr>
+<tr>
+<td>最终文件吞吐（成功数/分钟）</td>
+<td style="text-align: right;">0.931</td>
+<td style="text-align: right;">1.370</td>
+</tr>
+<tr>
+<td>平均 episode 秒数</td>
+<td style="text-align: right;">234.423</td>
+<td style="text-align: right;">154.697</td>
+</tr>
+<tr>
+<td>平均 execute 累计秒数</td>
+<td style="text-align: right;">197.526</td>
+<td style="text-align: right;">142.706</td>
+</tr>
+<tr>
+<td>平均执行步数</td>
+<td style="text-align: right;">1370.375</td>
+<td style="text-align: right;">1370.375</td>
+</tr>
+<tr>
+<td>平均 queue.join 秒数（嵌套）</td>
+<td style="text-align: right;">195.420</td>
+<td style="text-align: right;">140.682</td>
+</tr>
+<tr>
+<td>生产主进程峰值 RSS GiB（采样）</td>
+<td style="text-align: right;">33.48</td>
+<td style="text-align: right;">25.22</td>
+</tr>
+</tbody>
+</table>
+<p>动作序列精确匹配 8 组（按完整 actions 数组 SHA256 匹配，不依赖导出编号）。三路 RGB 均为 640×480 uint8、gzip level 2；像素内容未作逐帧比较。</p>
+<p>最终文件吞吐比值：1.472 倍；变化 +47.2%。
+物理与文件结构验证：两组均通过。</p>
+<p>平均 execute 减少 54.82 秒，其中导出与背压归因减少 54.77 秒。相机与物理控制的绝对耗时变化较小，加速主要来自同步导出对其他环境阻塞的减少；相机占比升高主要是总时间缩短所致。</p>
+<h2>execute 内部归因</h2>
+<p>每次 execute 从入口到返回期间，对主线程实际执行的同步环节做互斥计时；包括其他环境在该等待窗口内的规划、重置和导出。这里回答的是“等待时主程序在做什么”。4 个环境的窗口会重叠，表中各行可在单个窗口内相加，但不能跨环境相加得到整批墙钟。</p>
+<table>
+<thead>
+<tr>
+<th>汇总环节</th>
+<th style="text-align: right;">改进前秒/episode</th>
+<th style="text-align: right;">内部占比</th>
+<th style="text-align: right;">改进后秒/episode</th>
+<th style="text-align: right;">内部占比</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>导出与背压</td>
+<td style="text-align: right;">58.412</td>
+<td style="text-align: right;">29.57%</td>
+<td style="text-align: right;">3.638</td>
+<td style="text-align: right;">2.55%</td>
+</tr>
+<tr>
+<td>相机渲染与图像采集</td>
+<td style="text-align: right;">70.720</td>
+<td style="text-align: right;">35.80%</td>
+<td style="text-align: right;">71.412</td>
+<td style="text-align: right;">50.04%</td>
+</tr>
+<tr>
+<td>物理推进与控制</td>
+<td style="text-align: right;">51.196</td>
+<td style="text-align: right;">25.92%</td>
+<td style="text-align: right;">49.803</td>
+<td style="text-align: right;">34.90%</td>
+</tr>
+<tr>
+<td>记录缓冲与其余观测</td>
+<td style="text-align: right;">8.194</td>
+<td style="text-align: right;">4.15%</td>
+<td style="text-align: right;">9.041</td>
+<td style="text-align: right;">6.34%</td>
+</tr>
+<tr>
+<td>规划与重置</td>
+<td style="text-align: right;">1.733</td>
+<td style="text-align: right;">0.88%</td>
+<td style="text-align: right;">1.732</td>
+<td style="text-align: right;">1.21%</td>
+</tr>
+<tr>
+<td>动作准备与成功检查</td>
+<td style="text-align: right;">5.133</td>
+<td style="text-align: right;">2.60%</td>
+<td style="text-align: right;">4.956</td>
+<td style="text-align: right;">3.47%</td>
+</tr>
+<tr>
+<td>调度及其余开销</td>
+<td style="text-align: right;">2.138</td>
+<td style="text-align: right;">1.08%</td>
+<td style="text-align: right;">2.124</td>
+<td style="text-align: right;">1.49%</td>
+</tr>
+</tbody>
+</table>
+<h3>各调用的详细耗时</h3>
+<table>
+<thead>
+<tr>
+<th>环节</th>
+<th style="text-align: right;">改进前秒/episode</th>
+<th style="text-align: right;">内部占比</th>
+<th style="text-align: right;">改进后秒/episode</th>
+<th style="text-align: right;">内部占比</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>物理推进（主机调用）</td>
+<td style="text-align: right;">37.883</td>
+<td style="text-align: right;">19.18%</td>
+<td style="text-align: right;">36.656</td>
+<td style="text-align: right;">25.69%</td>
+</tr>
+<tr>
+<td>相机位姿更新</td>
+<td style="text-align: right;">35.757</td>
+<td style="text-align: right;">18.10%</td>
+<td style="text-align: right;">36.136</td>
+<td style="text-align: right;">25.32%</td>
+</tr>
+<tr>
+<td>同步导出／异步提交其余开销</td>
+<td style="text-align: right;">58.412</td>
+<td style="text-align: right;">29.57%</td>
+<td style="text-align: right;">0.019</td>
+<td style="text-align: right;">0.01%</td>
+</tr>
+<tr>
+<td>相机实际渲染（主机调用）</td>
+<td style="text-align: right;">29.090</td>
+<td style="text-align: right;">14.73%</td>
+<td style="text-align: right;">28.972</td>
+<td style="text-align: right;">20.30%</td>
+</tr>
+<tr>
+<td>控制器施加动作</td>
+<td style="text-align: right;">6.672</td>
+<td style="text-align: right;">3.38%</td>
+<td style="text-align: right;">6.634</td>
+<td style="text-align: right;">4.65%</td>
+</tr>
+<tr>
+<td>其余观测计算</td>
+<td style="text-align: right;">6.150</td>
+<td style="text-align: right;">3.11%</td>
+<td style="text-align: right;">6.444</td>
+<td style="text-align: right;">4.52%</td>
+</tr>
+<tr>
+<td>场景数据写入仿真</td>
+<td style="text-align: right;">4.588</td>
+<td style="text-align: right;">2.32%</td>
+<td style="text-align: right;">4.594</td>
+<td style="text-align: right;">3.22%</td>
+</tr>
+<tr>
+<td>RGB GPU→CPU 复制（含等待）</td>
+<td style="text-align: right;">3.802</td>
+<td style="text-align: right;">1.92%</td>
+<td style="text-align: right;">4.158</td>
+<td style="text-align: right;">2.91%</td>
+</tr>
+<tr>
+<td>目标位姿转动作</td>
+<td style="text-align: right;">2.908</td>
+<td style="text-align: right;">1.47%</td>
+<td style="text-align: right;">2.793</td>
+<td style="text-align: right;">1.96%</td>
+</tr>
+<tr>
+<td>成功条件检查</td>
+<td style="text-align: right;">2.225</td>
+<td style="text-align: right;">1.13%</td>
+<td style="text-align: right;">2.163</td>
+<td style="text-align: right;">1.52%</td>
+</tr>
+<tr>
+<td>相机数据更新其余开销</td>
+<td style="text-align: right;">1.785</td>
+<td style="text-align: right;">0.90%</td>
+<td style="text-align: right;">1.835</td>
+<td style="text-align: right;">1.29%</td>
+</tr>
+<tr>
+<td>记录缓冲复制与追加</td>
+<td style="text-align: right;">1.483</td>
+<td style="text-align: right;">0.75%</td>
+<td style="text-align: right;">2.103</td>
+<td style="text-align: right;">1.47%</td>
+</tr>
+<tr>
+<td>运动规划</td>
+<td style="text-align: right;">1.718</td>
+<td style="text-align: right;">0.87%</td>
+<td style="text-align: right;">1.717</td>
+<td style="text-align: right;">1.20%</td>
+</tr>
+<tr>
+<td>导出共享内存打包</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">0.00%</td>
+<td style="text-align: right;">3.207</td>
+<td style="text-align: right;">2.25%</td>
+</tr>
+<tr>
+<td>场景状态更新</td>
+<td style="text-align: right;">1.224</td>
+<td style="text-align: right;">0.62%</td>
+<td style="text-align: right;">1.120</td>
+<td style="text-align: right;">0.78%</td>
+</tr>
+<tr>
+<td>协程调度及未细分的生成逻辑</td>
+<td style="text-align: right;">1.071</td>
+<td style="text-align: right;">0.54%</td>
+<td style="text-align: right;">1.087</td>
+<td style="text-align: right;">0.76%</td>
+</tr>
+<tr>
+<td>env.step 其余开销</td>
+<td style="text-align: right;">0.856</td>
+<td style="text-align: right;">0.43%</td>
+<td style="text-align: right;">0.817</td>
+<td style="text-align: right;">0.57%</td>
+</tr>
+<tr>
+<td>环境动作处理</td>
+<td style="text-align: right;">0.830</td>
+<td style="text-align: right;">0.42%</td>
+<td style="text-align: right;">0.799</td>
+<td style="text-align: right;">0.56%</td>
+</tr>
+<tr>
+<td>逐帧记录后处理</td>
+<td style="text-align: right;">0.531</td>
+<td style="text-align: right;">0.27%</td>
+<td style="text-align: right;">0.465</td>
+<td style="text-align: right;">0.33%</td>
+</tr>
+<tr>
+<td>RGB 读取包装其余开销</td>
+<td style="text-align: right;">0.217</td>
+<td style="text-align: right;">0.11%</td>
+<td style="text-align: right;">0.234</td>
+<td style="text-align: right;">0.16%</td>
+</tr>
+<tr>
+<td>主循环未细分开销</td>
+<td style="text-align: right;">0.212</td>
+<td style="text-align: right;">0.11%</td>
+<td style="text-align: right;">0.220</td>
+<td style="text-align: right;">0.15%</td>
+</tr>
+<tr>
+<td>导出轮询／背压</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">0.00%</td>
+<td style="text-align: right;">0.412</td>
+<td style="text-align: right;">0.29%</td>
+</tr>
+<tr>
+<td>sim.render 调度与回调</td>
+<td style="text-align: right;">0.039</td>
+<td style="text-align: right;">0.02%</td>
+<td style="text-align: right;">0.043</td>
+<td style="text-align: right;">0.03%</td>
+</tr>
+<tr>
+<td>逐帧记录前处理</td>
+<td style="text-align: right;">0.029</td>
+<td style="text-align: right;">0.01%</td>
+<td style="text-align: right;">0.029</td>
+<td style="text-align: right;">0.02%</td>
+</tr>
+<tr>
+<td>渲染场景变换同步</td>
+<td style="text-align: right;">0.016</td>
+<td style="text-align: right;">0.01%</td>
+<td style="text-align: right;">0.017</td>
+<td style="text-align: right;">0.01%</td>
+</tr>
+<tr>
+<td>环境重置其余开销</td>
+<td style="text-align: right;">0.014</td>
+<td style="text-align: right;">0.01%</td>
+<td style="text-align: right;">0.015</td>
+<td style="text-align: right;">0.01%</td>
+</tr>
+<tr>
+<td>渲染器输出读取</td>
+<td style="text-align: right;">0.013</td>
+<td style="text-align: right;">0.01%</td>
+<td style="text-align: right;">0.015</td>
+<td style="text-align: right;">0.01%</td>
+</tr>
+<tr>
+<td>合计</td>
+<td style="text-align: right;">197.526</td>
+<td style="text-align: right;">100%</td>
+<td style="text-align: right;">142.706</td>
+<td style="text-align: right;">100%</td>
+</tr>
+</tbody>
+</table>
+<p>queue.join 等待分别占 execute 的 98.93% 和 98.58%。这是包含仿真等工作的逻辑等待，已被上表归因覆盖，不能再加到上表。</p>
+<h2>主循环独占墙钟分解</h2>
+<p>从主仿真循环进入到退出，不重复计算并发 episode，子环节从父环节扣除。包括最终目标达成时仍在进行的 episode；不包含启动和循环退出后的异步排空。</p>
+<table>
+<thead>
+<tr>
+<th>环节</th>
+<th style="text-align: right;">改进前总秒数</th>
+<th style="text-align: right;">占循环墙钟</th>
+<th style="text-align: right;">改进后总秒数</th>
+<th style="text-align: right;">占循环墙钟</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>同步导出／异步提交其余开销</td>
+<td style="text-align: right;">210.460</td>
+<td style="text-align: right;">40.87%</td>
+<td style="text-align: right;">0.059</td>
+<td style="text-align: right;">0.02%</td>
+</tr>
+<tr>
+<td>物理推进（主机调用）</td>
+<td style="text-align: right;">76.658</td>
+<td style="text-align: right;">14.89%</td>
+<td style="text-align: right;">74.651</td>
+<td style="text-align: right;">23.41%</td>
+</tr>
+<tr>
+<td>相机位姿更新</td>
+<td style="text-align: right;">72.475</td>
+<td style="text-align: right;">14.08%</td>
+<td style="text-align: right;">73.848</td>
+<td style="text-align: right;">23.15%</td>
+</tr>
+<tr>
+<td>相机实际渲染（主机调用）</td>
+<td style="text-align: right;">58.908</td>
+<td style="text-align: right;">11.44%</td>
+<td style="text-align: right;">58.890</td>
+<td style="text-align: right;">18.46%</td>
+</tr>
+<tr>
+<td>运动规划</td>
+<td style="text-align: right;">15.394</td>
+<td style="text-align: right;">2.99%</td>
+<td style="text-align: right;">15.870</td>
+<td style="text-align: right;">4.98%</td>
+</tr>
+<tr>
+<td>控制器施加动作</td>
+<td style="text-align: right;">13.497</td>
+<td style="text-align: right;">2.62%</td>
+<td style="text-align: right;">13.551</td>
+<td style="text-align: right;">4.25%</td>
+</tr>
+<tr>
+<td>其余观测计算</td>
+<td style="text-align: right;">12.446</td>
+<td style="text-align: right;">2.42%</td>
+<td style="text-align: right;">13.161</td>
+<td style="text-align: right;">4.13%</td>
+</tr>
+<tr>
+<td>场景数据写入仿真</td>
+<td style="text-align: right;">9.286</td>
+<td style="text-align: right;">1.80%</td>
+<td style="text-align: right;">9.372</td>
+<td style="text-align: right;">2.94%</td>
+</tr>
+<tr>
+<td>目标位姿转动作</td>
+<td style="text-align: right;">9.352</td>
+<td style="text-align: right;">1.82%</td>
+<td style="text-align: right;">9.016</td>
+<td style="text-align: right;">2.83%</td>
+</tr>
+<tr>
+<td>RGB GPU→CPU 复制（含等待）</td>
+<td style="text-align: right;">7.697</td>
+<td style="text-align: right;">1.49%</td>
+<td style="text-align: right;">8.444</td>
+<td style="text-align: right;">2.65%</td>
+</tr>
+<tr>
+<td>协程调度及未细分的生成逻辑</td>
+<td style="text-align: right;">7.080</td>
+<td style="text-align: right;">1.37%</td>
+<td style="text-align: right;">7.052</td>
+<td style="text-align: right;">2.21%</td>
+</tr>
+<tr>
+<td>成功条件检查</td>
+<td style="text-align: right;">6.833</td>
+<td style="text-align: right;">1.33%</td>
+<td style="text-align: right;">6.683</td>
+<td style="text-align: right;">2.10%</td>
+</tr>
+<tr>
+<td>导出共享内存打包</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">0.00%</td>
+<td style="text-align: right;">11.579</td>
+<td style="text-align: right;">3.63%</td>
+</tr>
+<tr>
+<td>相机数据更新其余开销</td>
+<td style="text-align: right;">3.624</td>
+<td style="text-align: right;">0.70%</td>
+<td style="text-align: right;">3.745</td>
+<td style="text-align: right;">1.17%</td>
+</tr>
+<tr>
+<td>记录缓冲复制与追加</td>
+<td style="text-align: right;">3.004</td>
+<td style="text-align: right;">0.58%</td>
+<td style="text-align: right;">4.321</td>
+<td style="text-align: right;">1.35%</td>
+</tr>
+<tr>
+<td>场景状态更新</td>
+<td style="text-align: right;">2.473</td>
+<td style="text-align: right;">0.48%</td>
+<td style="text-align: right;">2.298</td>
+<td style="text-align: right;">0.72%</td>
+</tr>
+<tr>
+<td>env.step 其余开销</td>
+<td style="text-align: right;">1.730</td>
+<td style="text-align: right;">0.34%</td>
+<td style="text-align: right;">1.672</td>
+<td style="text-align: right;">0.52%</td>
+</tr>
+<tr>
+<td>环境动作处理</td>
+<td style="text-align: right;">1.680</td>
+<td style="text-align: right;">0.33%</td>
+<td style="text-align: right;">1.630</td>
+<td style="text-align: right;">0.51%</td>
+</tr>
+<tr>
+<td>逐帧记录后处理</td>
+<td style="text-align: right;">1.076</td>
+<td style="text-align: right;">0.21%</td>
+<td style="text-align: right;">0.952</td>
+<td style="text-align: right;">0.30%</td>
+</tr>
+<tr>
+<td>RGB 读取包装其余开销</td>
+<td style="text-align: right;">0.441</td>
+<td style="text-align: right;">0.09%</td>
+<td style="text-align: right;">0.477</td>
+<td style="text-align: right;">0.15%</td>
+</tr>
+<tr>
+<td>主循环未细分开销</td>
+<td style="text-align: right;">0.429</td>
+<td style="text-align: right;">0.08%</td>
+<td style="text-align: right;">0.447</td>
+<td style="text-align: right;">0.14%</td>
+</tr>
+<tr>
+<td>导出轮询／背压</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">0.00%</td>
+<td style="text-align: right;">0.829</td>
+<td style="text-align: right;">0.26%</td>
+</tr>
+<tr>
+<td>环境重置其余开销</td>
+<td style="text-align: right;">0.176</td>
+<td style="text-align: right;">0.03%</td>
+<td style="text-align: right;">0.186</td>
+<td style="text-align: right;">0.06%</td>
+</tr>
+<tr>
+<td>sim.render 调度与回调</td>
+<td style="text-align: right;">0.080</td>
+<td style="text-align: right;">0.02%</td>
+<td style="text-align: right;">0.088</td>
+<td style="text-align: right;">0.03%</td>
+</tr>
+<tr>
+<td>逐帧记录前处理</td>
+<td style="text-align: right;">0.060</td>
+<td style="text-align: right;">0.01%</td>
+<td style="text-align: right;">0.059</td>
+<td style="text-align: right;">0.02%</td>
+</tr>
+<tr>
+<td>渲染场景变换同步</td>
+<td style="text-align: right;">0.033</td>
+<td style="text-align: right;">0.01%</td>
+<td style="text-align: right;">0.036</td>
+<td style="text-align: right;">0.01%</td>
+</tr>
+<tr>
+<td>渲染器输出读取</td>
+<td style="text-align: right;">0.027</td>
+<td style="text-align: right;">0.01%</td>
+<td style="text-align: right;">0.030</td>
+<td style="text-align: right;">0.01%</td>
+</tr>
+<tr>
+<td>合计</td>
+<td style="text-align: right;">514.921</td>
+<td style="text-align: right;">100%</td>
+<td style="text-align: right;">318.944</td>
+<td style="text-align: right;">100%</td>
+</tr>
+</tbody>
+</table>
+<h2>主线程 CPU 时间</h2>
+<p>线程 CPU 时间记录主线程实际被 CPU 调度执行的时长。墙钟减去线程 CPU 时间包含 GPU 或其他线程等待、I/O 和调度延迟，不能全部命名为 GPU 等待；其他 CPU 线程和导出进程的计算不在该线程计数中。</p>
+<table>
+<thead>
+<tr>
+<th>主循环指标</th>
+<th style="text-align: right;">改进前</th>
+<th style="text-align: right;">改进后</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>主线程 CPU 秒数</td>
+<td style="text-align: right;">415.791</td>
+<td style="text-align: right;">222.932</td>
+</tr>
+<tr>
+<td>主线程 CPU 时间 / 循环墙钟</td>
+<td style="text-align: right;">80.75%</td>
+<td style="text-align: right;">69.90%</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>调用环节</th>
+<th style="text-align: right;">改进前线程 CPU / 该环节墙钟</th>
+<th style="text-align: right;">改进后线程 CPU / 该环节墙钟</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>同步导出／异步提交其余开销</td>
+<td style="text-align: right;">99.26%</td>
+<td style="text-align: right;">90.73%</td>
+</tr>
+<tr>
+<td>相机位姿更新</td>
+<td style="text-align: right;">98.92%</td>
+<td style="text-align: right;">99.28%</td>
+</tr>
+<tr>
+<td>相机实际渲染（主机调用）</td>
+<td style="text-align: right;">43.71%</td>
+<td style="text-align: right;">45.58%</td>
+</tr>
+<tr>
+<td>RGB GPU→CPU 复制（含等待）</td>
+<td style="text-align: right;">98.69%</td>
+<td style="text-align: right;">99.29%</td>
+</tr>
+<tr>
+<td>物理推进（主机调用）</td>
+<td style="text-align: right;">22.72%</td>
+<td style="text-align: right;">22.87%</td>
+</tr>
+<tr>
+<td>记录缓冲复制与追加</td>
+<td style="text-align: right;">68.16%</td>
+<td style="text-align: right;">59.01%</td>
+</tr>
+</tbody>
+</table>
+<h2>相机调用的实际来源</h2>
+<p>当前 ManagerBasedRLEnv.step 在启用 recorder 时，先计算一次观测供记录，再在步骤末尾计算一次观测。每次观测读取三路 RGB；rgb_image 每次读取又更新所有三台相机的位姿。因此正常批次步内会计算两次观测、复制六批 RGB、执行六次全相机位姿更新。相机渲染缓存避免每次重复读取都重新渲染，但重复位姿计算和 CPU 拷贝仍有成本。</p>
+<p>实际调用数按批次环境步折算（含少量重置调用）：改进前观测计算 2.004 次，RGB 复制 6.012 次，相机渲染 3.012 次；改进后分别为 2.004、6.012、3.012 次。</p>
+<p>相机位姿和重复图像读取是后续可检查的优化方向；本实验仅测量，没有修改它们，也没有验证缓存合并后的图像与时序等价性。</p>
+<h2>计时完整性和范围</h2>
+<ul>
+<li>初始 8 环境试跑在完成首个 episode 前被 SIGKILL，最后采样进程 RSS 约 50.9 GB，cgroup OOM-kill 计数增加 1。正式两组统一使用 4 环境，试跑数据不参与对照；不能将本次百分比直接当作原图 8 环境的内部占比。</li>
+<li>两组主循环与最终就绪窗口的互斥计时和均与墙钟闭合，误差小于 10 微秒；每个已完成 episode 的 execute 内部分解也逐一闭合。</li>
+<li>相机惰性渲染在 Camera.data 读取时触发，已分别记录 renderer.render、renderer.read_output、场景变换同步及显式 GPU→CPU 复制。<code>rgb_readback_other</code> 仅为上述子环节之外的包装开销；<code>scene_update</code> 仍可能包含传感器相关工作。</li>
+<li><code>record_buffer_copy</code> 包含 RecorderManager.add_to_episodes 的递归处理、张量复制与追加。</li>
+<li><code>scheduler_other</code> 仍包含没有细分的轨迹准备和协程开销，不等同于纯空闲。</li>
+<li>异步 worker 的写入与主线程重叠，不加入主线程互斥占比；写入、排空和合并保留在原始导出日志。最终文件吞吐包含排空和关闭。</li>
+<li>钩子自身有开销，两组完全一致；未进行无钩子重跑，因此不声称测量零扰动。外层 execute 计时与原始 telemetry 的差额保存在 report.json。</li>
+<li>没有改变依赖环境、上游文件、历史数据或 CPU 调频策略。单次固定顺序无法排除缓存和系统漂移。</li>
+</ul>
+<h2>原始证据</h2>
+<ul>
+<li>实验配置与源码哈希：/home/tangyuan/WorldSimReady-Home/runs/v1-internal-timing-20261015-r03/experiment.json</li>
+<li>数值结果：/home/tangyuan/WorldSimReady-Home/runs/v1-internal-timing-20261015-r03/report.json</li>
+<li>原始日志：/home/tangyuan/WorldSimReady-Home/runs/v1-internal-timing-20261015-r03/before_sync 和 /home/tangyuan/WorldSimReady-Home/runs/v1-internal-timing-20261015-r03/after_auto</li>
+</ul></body></html>

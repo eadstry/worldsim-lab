@@ -1,0 +1,37 @@
+[
+  {
+    "path": "AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab/isaaclab/managers/recorder_manager.py",
+    "sha256": "9d684f8d8f7a7dfa78307dea86b879eb2af8ea4a25913a1a692a3fb1d1de7150",
+    "evidence_type": "当前上游源码"
+  },
+  {
+    "path": "AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab/isaaclab/utils/datasets/episode_data.py",
+    "sha256": "5c75e6681240e35515d1c23767f789267d79375b6f36b2ac4b60c858606ded28",
+    "evidence_type": "当前上游源码"
+  },
+  {
+    "path": "AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab/isaaclab/utils/datasets/hdf5_dataset_file_handler.py",
+    "sha256": "b5c4365cfd46107dfe56288b092bbdb03d993dbb83e23415742965db7df8d793",
+    "evidence_type": "当前上游源码"
+  },
+  {
+    "path": "AutoData/datasets/efficiency_20261014_201834/v1/launchers/v1/generate.py",
+    "sha256": "028a03f3c75fe46131bd03f17634cb6ed44ae0f4f7274e01ba4fe41d92195ff4",
+    "evidence_type": "冻结 launcher"
+  },
+  {
+    "path": "AutoData/datasets/efficiency_20261014_201834/v1/launchers/v1/compat.py",
+    "sha256": "0f7df8d7a65f1178645aa02c53d733baa2dfc13e0a5435d81b54235d16f6023a",
+    "evidence_type": "冻结兼容层"
+  },
+  {
+    "path": "AutoData/datasets/efficiency_20261014_201834/v1/launchers/v1/async_export.py",
+    "sha256": "b44c38db5f28faecc316369e5bfafa73d627eeddf26eb757a1dcce26a2da6573",
+    "evidence_type": "冻结保存桥"
+  },
+  {
+    "path": "AutoData/datasets/efficiency_20261014_201834/v1/launchers/v1/export_pool.py",
+    "sha256": "ef03ef54bbbc7276205b15030358ee691fc3f422c6449f263acd8c7887768aef",
+    "evidence_type": "冻结保存池"
+  }
+]

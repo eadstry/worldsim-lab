@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "artifact_id": "autodata-domain-randomization",
+  "version": "v001",
+  "created_at": "2026-10-16T10:25:47.813094+08:00",
+  "sealed_at": "2026-10-16T10:25:47.813094+08:00",
+  "sources": [
+    "/home/tangyuan/WorldSimReady-Home/runs/domain-randomization-20261016/probe-r02"
+  ],
+  "files": {
+    "distribution.png": "d53e50143f452b0a2ffc6e383ce098d76770058ba7ce3441298fc5462d13b047",
+    "distribution.svg": "a1213df4adf1aa4a3f004906cabc0485c7a86ac8545e05ff6ea168bdf1743bae",
+    "image-check.json": "d37295cbf35b276f0cd4a771ea35169a4d936f916e0707a1274545609a8aeb26",
+    "index.html": "80a9a5aef2e91508aebe5c6acb85d93c6eeee4726aa18111c56558074b309b10",
+    "renders.png": "20b381d690abdf51ecec0cbe8b8c6a5a9b763f89ca36c8dfae5f2dcc6ca8b92c",
+    "report.md": "6c940f54acfe96fcfdbb126b4d7d03c69bf82f28779bbbab65706d77c4d0e2a2",
+    "reset-00.png": "4b09c0d4131846b72938669143a66ecdee9b4b7e52fc90cb8808ea0e06f372a5",
+    "reset-01.png": "f9706d4372839201b1bd336f42a8a2e1f68ae125cf807da10142386a6b1335ea",
+    "reset-02.png": "489e2c7dc601f2a5ad0fe583c4a4b5863964dacc07a90bc38375b86c1923cda4",
+    "reset-03.png": "17917b9b91faae8f2579aad36d397fc7cfdfc0d7614eca08502fec9be72d95f8",
+    "reset-04.png": "451823e491a976986aeced915e287b06e6ef26955cacbde3c8c72ffd5ecbfcc7",
+    "reset-05.png": "1d5df95665c4dd7d5c3e667246a94388a174cc57b2076543ecf7c446aa275ec1",
+    "reset-06.png": "8954a478c8b84745c8ed09f2ce050ab631bd4b5f7cf1703fd63eb9f2d78b5356",
+    "reset-07.png": "f8901f2939859ae0e6a081a17b3d8b5067e35de01da5ced64690213677185c3c",
+    "reset-08.png": "cff9cbc74e274cd979db370e219a56c9e412f5fa923529cc39c2347143d4800c",
+    "result.json": "f851ca47ae00f3f1375c05b5bbbba45610b4963dca23d6012be57c0befd5a9d4",
+    "samples.npz": "34a267833cce37995e469b0c1385d861c8b05463b9f909bcb9b2f10a8343dc2d"
+  },
+  "validation": {
+    "finite_poses": true,
+    "configured_bounds": true,
+    "xy_changes": true,
+    "z_fixed": true,
+    "orientation_fixed": true,
+    "same_seed_reproduces": true,
+    "different_seed_changes": true,
+    "disabled_randomization_fixed": true,
+    "physics_steps_finite": true
+  },
+  "delivery": {
+    "local": {
+      "status": "saved"
+    }
+  }
+}

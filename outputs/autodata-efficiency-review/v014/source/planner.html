@@ -1,0 +1,57 @@
+<!doctype html><meta charset="utf-8"><title>planner 源码定位</title><style>body{font:16px/1.7 system-ui;padding:28px;background:#f6f8fb}pre{background:white;padding:20px;overflow:auto}span{display:block;scroll-margin-top:80px}span:target{background:#ffe59a}a{color:#196d93}p{overflow-wrap:anywhere}</style><a href="../gpu-analysis.html">返回 GPU 分析</a><h1>v1 实验冻结规划补丁</h1><p>/home/tangyuan/WorldSimReady-Home/AutoData/datasets/efficiency_20261014_201834/v1/launchers/v1/runtime/patches/curobo_planner.py</p><p>SHA256: 95bee7d993e66fc3028c7bed509fa0e13b86d00d2bb5648cb3a765e34452dda0</p><h2>原文件 1303–1322 行</h2><pre><span id="L1303"><a href="#L1303">1303</a>          sphere_counts_after_disable = self._count_active_spheres()</span>
+<span id="L1304"><a href="#L1304">1304</a>          self.logger.debug(</span>
+<span id="L1305"><a href="#L1305">1305</a>              f&quot;Planning phase contact={contact}: Spheres after disable - Total:&quot;</span>
+<span id="L1306"><a href="#L1306">1306</a>              f&quot; {sphere_counts_after_disable[&#x27;total&#x27;]}, Robot: {sphere_counts_after_disable[&#x27;robot_links&#x27;]},&quot;</span>
+<span id="L1307"><a href="#L1307">1307</a>              f&quot; Attached: {sphere_counts_after_disable[&#x27;attached_objects&#x27;]}&quot;</span>
+<span id="L1308"><a href="#L1308">1308</a>          )</span>
+<span id="L1309"><a href="#L1309">1309</a>  </span>
+<span id="L1310"><a href="#L1310">1310</a>          planning_success = False</span>
+<span id="L1311"><a href="#L1311">1311</a>          try:</span>
+<span id="L1312"><a href="#L1312">1312</a>              result: Any = self.motion_gen.plan_single(start_state, goal_pose, self.plan_config)</span>
+<span id="L1313"><a href="#L1313">1313</a>  </span>
+<span id="L1314"><a href="#L1314">1314</a>              if result.success.item():</span>
+<span id="L1315"><a href="#L1315">1315</a>                  if result.optimized_plan is not None and len(result.optimized_plan.position) != 0:</span>
+<span id="L1316"><a href="#L1316">1316</a>                      self._current_plan = result.optimized_plan</span>
+<span id="L1317"><a href="#L1317">1317</a>                      self.logger.debug(f&quot;Using optimized plan with {len(self._current_plan.position)} waypoints&quot;)</span>
+<span id="L1318"><a href="#L1318">1318</a>                  else:</span>
+<span id="L1319"><a href="#L1319">1319</a>                      self._current_plan = result.get_interpolated_plan()</span>
+<span id="L1320"><a href="#L1320">1320</a>                      self.logger.debug(f&quot;Using interpolated plan with {len(self._current_plan.position)} waypoints&quot;)</span>
+<span id="L1321"><a href="#L1321">1321</a>  </span>
+<span id="L1322"><a href="#L1322">1322</a>                  self._current_plan = self.motion_gen.get_full_js(self._current_plan)</span>
+</pre><h2>原文件 1580–1615 行</h2><pre><span id="L1580"><a href="#L1580">1580</a>      def get_planned_poses(self) -&gt; list[torch.Tensor]:</span>
+<span id="L1581"><a href="#L1581">1581</a>          &quot;&quot;&quot;Extract all end-effector poses from current trajectory.</span>
+<span id="L1582"><a href="#L1582">1582</a>  </span>
+<span id="L1583"><a href="#L1583">1583</a>          Computes end-effector poses for all waypoints in the current trajectory without</span>
+<span id="L1584"><a href="#L1584">1584</a>          affecting the execution state. Optionally repeats the final pose multiple times</span>
+<span id="L1585"><a href="#L1585">1585</a>          if configured for stable goal reaching.</span>
+<span id="L1586"><a href="#L1586">1586</a>  </span>
+<span id="L1587"><a href="#L1587">1587</a>          Returns:</span>
+<span id="L1588"><a href="#L1588">1588</a>              List of end-effector poses as 4x4 transformation matrices, with optional repetition</span>
+<span id="L1589"><a href="#L1589">1589</a>          &quot;&quot;&quot;</span>
+<span id="L1590"><a href="#L1590">1590</a>          if self._current_plan is None:</span>
+<span id="L1591"><a href="#L1591">1591</a>              return []</span>
+<span id="L1592"><a href="#L1592">1592</a>  </span>
+<span id="L1593"><a href="#L1593">1593</a>          # Save current execution state</span>
+<span id="L1594"><a href="#L1594">1594</a>          original_plan_index = self._plan_index</span>
+<span id="L1595"><a href="#L1595">1595</a>  </span>
+<span id="L1596"><a href="#L1596">1596</a>          # Iterate through the plan to get all poses</span>
+<span id="L1597"><a href="#L1597">1597</a>          planned_poses: list[torch.Tensor] = []</span>
+<span id="L1598"><a href="#L1598">1598</a>          self._plan_index = 0</span>
+<span id="L1599"><a href="#L1599">1599</a>          while self.has_next_waypoint():</span>
+<span id="L1600"><a href="#L1600">1600</a>              # Directly use the joint state from the plan to compute pose</span>
+<span id="L1601"><a href="#L1601">1601</a>              # without advancing the main plan index in get_next_waypoint_ee_pose</span>
+<span id="L1602"><a href="#L1602">1602</a>              next_joint_state: JointState = self._current_plan[self._plan_index]</span>
+<span id="L1603"><a href="#L1603">1603</a>              self._plan_index += 1  # Manually advance index for this loop</span>
+<span id="L1604"><a href="#L1604">1604</a>              eef_state: Any = self._compute_kinematics(next_joint_state)</span>
+<span id="L1605"><a href="#L1605">1605</a>              planned_pose: Pose | None = eef_state.ee_pose</span>
+<span id="L1606"><a href="#L1606">1606</a>  </span>
+<span id="L1607"><a href="#L1607">1607</a>              if planned_pose is not None:</span>
+<span id="L1608"><a href="#L1608">1608</a>                  # Convert pose to environment device for compatibility</span>
+<span id="L1609"><a href="#L1609">1609</a>                  position = (</span>
+<span id="L1610"><a href="#L1610">1610</a>                      self._to_env_device(planned_pose.position)</span>
+<span id="L1611"><a href="#L1611">1611</a>                      if isinstance(planned_pose.position, torch.Tensor)</span>
+<span id="L1612"><a href="#L1612">1612</a>                      else planned_pose.position</span>
+<span id="L1613"><a href="#L1613">1613</a>                  )</span>
+<span id="L1614"><a href="#L1614">1614</a>                  rotation = (</span>
+<span id="L1615"><a href="#L1615">1615</a>                      self._to_env_device(planned_pose.get_rotation())</span>
+</pre>

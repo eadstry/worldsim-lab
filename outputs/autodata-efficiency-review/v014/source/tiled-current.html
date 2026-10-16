@@ -1,0 +1,41 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>当前源码定位</title><style>body{font:16px/1.7 system-ui;padding:28px;background:#f7f9fc}pre{background:white;padding:20px;overflow:auto}span{display:block}span:target{background:#ffe59a}</style><a href="../acceleration-analysis.html">返回加速方案</a><h1>当前本地源码</h1><p>/home/tangyuan/WorldSimReady-Home/AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab/isaaclab/sensors/camera/tiled_camera.py</p><p>SHA256: bda25ac24cb58d4caa9c7ada6dd7ab7fa4b461eae16ec4c71e305ef2356d07cc</p><pre><span id="L1"><a href="#L1">1</a>  # Copyright (c) 2022-2026, The Isaac Lab Project Developers (https://github.com/isaac-sim/IsaacLab/blob/main/CONTRIBUTORS.md).</span>
+<span id="L2"><a href="#L2">2</a>  # All rights reserved.</span>
+<span id="L3"><a href="#L3">3</a>  #</span>
+<span id="L4"><a href="#L4">4</a>  # SPDX-License-Identifier: BSD-3-Clause</span>
+<span id="L5"><a href="#L5">5</a>  </span>
+<span id="L6"><a href="#L6">6</a>  &quot;&quot;&quot;Deprecated module. Use :class:`~isaaclab.sensors.camera.Camera` instead.</span>
+<span id="L7"><a href="#L7">7</a>  </span>
+<span id="L8"><a href="#L8">8</a>  .. deprecated:: 4.6.0</span>
+<span id="L9"><a href="#L9">9</a>      :class:`TiledCamera` is deprecated. :class:`~isaaclab.sensors.camera.Camera` now includes</span>
+<span id="L10"><a href="#L10">10</a>      TiledCamera&#x27;s vectorized rendering optimizations via the same :class:`~isaaclab.renderers.Renderer`</span>
+<span id="L11"><a href="#L11">11</a>      abstraction. Use :class:`~isaaclab.sensors.camera.Camera` with</span>
+<span id="L12"><a href="#L12">12</a>      :class:`~isaaclab.sensors.camera.CameraCfg` (or :class:`~isaaclab.sensors.camera.TiledCameraCfg`)</span>
+<span id="L13"><a href="#L13">13</a>      directly.</span>
+<span id="L14"><a href="#L14">14</a>  &quot;&quot;&quot;</span>
+<span id="L15"><a href="#L15">15</a>  </span>
+<span id="L16"><a href="#L16">16</a>  from __future__ import annotations</span>
+<span id="L17"><a href="#L17">17</a>  </span>
+<span id="L18"><a href="#L18">18</a>  import warnings</span>
+<span id="L19"><a href="#L19">19</a>  </span>
+<span id="L20"><a href="#L20">20</a>  from .camera import Camera</span>
+<span id="L21"><a href="#L21">21</a>  from .tiled_camera_cfg import TiledCameraCfg</span>
+<span id="L22"><a href="#L22">22</a>  </span>
+<span id="L23"><a href="#L23">23</a>  </span>
+<span id="L24"><a href="#L24">24</a>  class TiledCamera(Camera):</span>
+<span id="L25"><a href="#L25">25</a>      &quot;&quot;&quot;Deprecated alias for :class:`Camera`.</span>
+<span id="L26"><a href="#L26">26</a>  </span>
+<span id="L27"><a href="#L27">27</a>      .. deprecated:: 4.6.0</span>
+<span id="L28"><a href="#L28">28</a>          Use :class:`Camera` directly — it now includes TiledCamera&#x27;s vectorized rendering</span>
+<span id="L29"><a href="#L29">29</a>          optimizations via the same Renderer abstraction.</span>
+<span id="L30"><a href="#L30">30</a>      &quot;&quot;&quot;</span>
+<span id="L31"><a href="#L31">31</a>  </span>
+<span id="L32"><a href="#L32">32</a>      def __init__(self, cfg: TiledCameraCfg):</span>
+<span id="L33"><a href="#L33">33</a>          warnings.warn(</span>
+<span id="L34"><a href="#L34">34</a>              &quot;TiledCamera is deprecated and will be removed in a future release. &quot;</span>
+<span id="L35"><a href="#L35">35</a>              &quot;Use Camera directly — it now includes TiledCamera&#x27;s vectorized rendering &quot;</span>
+<span id="L36"><a href="#L36">36</a>              &quot;optimizations via the same Renderer abstraction.&quot;,</span>
+<span id="L37"><a href="#L37">37</a>              DeprecationWarning,</span>
+<span id="L38"><a href="#L38">38</a>              stacklevel=2,</span>
+<span id="L39"><a href="#L39">39</a>          )</span>
+<span id="L40"><a href="#L40">40</a>          super().__init__(cfg)</span>
+</pre></html>

@@ -1,0 +1,375 @@
+{
+  "file": "/home/tangyuan/WorldSimReady-Home/runs/v1-internal-timing-20261015-r03/after_auto/episodes.hdf5",
+  "episodes": [
+    {
+      "name": "demo_0",
+      "steps": 1349,
+      "recorded_success": true,
+      "final_state_success": true,
+      "inside_pad": true,
+      "height_error_m": 0.0007765889167785645,
+      "gripper_position_rad": 0.6997845768928528,
+      "linear_speed_m_s": 0.0005851066671311855,
+      "angular_speed_rad_s": 0.014639838598668575,
+      "images": {
+        "left_hand_rgb": {
+          "shape": [
+            1349,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 0.7208116319444444,
+          "last_frame_mean": 190.67097981770834
+        },
+        "right_hand_rgb": {
+          "shape": [
+            1349,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 9.114583333333334e-05,
+          "last_frame_mean": 0.0003483072916666667
+        },
+        "third_person_rgb": {
+          "shape": [
+            1349,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 192.4772710503472,
+          "last_frame_mean": 196.61155598958334
+        }
+      }
+    },
+    {
+      "name": "demo_1",
+      "steps": 1353,
+      "recorded_success": true,
+      "final_state_success": true,
+      "inside_pad": true,
+      "height_error_m": 0.0010656118392944336,
+      "gripper_position_rad": 0.6997836828231812,
+      "linear_speed_m_s": 0.0003410988429095596,
+      "angular_speed_rad_s": 0.010981328785419464,
+      "images": {
+        "left_hand_rgb": {
+          "shape": [
+            1353,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 0.7690082465277778,
+          "last_frame_mean": 180.6488726128472
+        },
+        "right_hand_rgb": {
+          "shape": [
+            1353,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 0.0,
+          "last_frame_mean": 7.486979166666666e-05
+        },
+        "third_person_rgb": {
+          "shape": [
+            1353,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 193.129599609375,
+          "last_frame_mean": 195.723828125
+        }
+      }
+    },
+    {
+      "name": "demo_2",
+      "steps": 1359,
+      "recorded_success": true,
+      "final_state_success": true,
+      "inside_pad": true,
+      "height_error_m": 0.0010523796081542969,
+      "gripper_position_rad": 0.6997864246368408,
+      "linear_speed_m_s": 0.00011506109876791015,
+      "angular_speed_rad_s": 0.0025458235759288073,
+      "images": {
+        "left_hand_rgb": {
+          "shape": [
+            1359,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 0.7526985677083333,
+          "last_frame_mean": 181.100263671875
+        },
+        "right_hand_rgb": {
+          "shape": [
+            1359,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 0.0001247829861111111,
+          "last_frame_mean": 0.00028645833333333333
+        },
+        "third_person_rgb": {
+          "shape": [
+            1359,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 193.0820551215278,
+          "last_frame_mean": 195.82189019097223
+        }
+      }
+    },
+    {
+      "name": "demo_3",
+      "steps": 1392,
+      "recorded_success": true,
+      "final_state_success": true,
+      "inside_pad": true,
+      "height_error_m": 0.0007761120796203613,
+      "gripper_position_rad": 0.6997831463813782,
+      "linear_speed_m_s": 0.0008574583334848285,
+      "angular_speed_rad_s": 0.015015747398138046,
+      "images": {
+        "left_hand_rgb": {
+          "shape": [
+            1392,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 0.7664246961805555,
+          "last_frame_mean": 191.16656141493056
+        },
+        "right_hand_rgb": {
+          "shape": [
+            1392,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 0.00021158854166666667,
+          "last_frame_mean": 9.114583333333334e-05
+        },
+        "third_person_rgb": {
+          "shape": [
+            1392,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 191.67182291666666,
+          "last_frame_mean": 196.44266493055557
+        }
+      }
+    },
+    {
+      "name": "demo_4",
+      "steps": 1362,
+      "recorded_success": true,
+      "final_state_success": true,
+      "inside_pad": true,
+      "height_error_m": 0.0009949803352355957,
+      "gripper_position_rad": 0.6997835040092468,
+      "linear_speed_m_s": 0.0008248501690104604,
+      "angular_speed_rad_s": 0.025699900463223457,
+      "images": {
+        "left_hand_rgb": {
+          "shape": [
+            1362,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 180.61385091145834,
+          "last_frame_mean": 180.41280815972223
+        },
+        "right_hand_rgb": {
+          "shape": [
+            1362,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 7.486979166666666e-05,
+          "last_frame_mean": 0.000107421875
+        },
+        "third_person_rgb": {
+          "shape": [
+            1362,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 195.7074728732639,
+          "last_frame_mean": 195.76997721354167
+        }
+      }
+    },
+    {
+      "name": "demo_5",
+      "steps": 1384,
+      "recorded_success": true,
+      "final_state_success": true,
+      "inside_pad": true,
+      "height_error_m": 0.0010544061660766602,
+      "gripper_position_rad": 0.6997807621955872,
+      "linear_speed_m_s": 0.0003223137464374304,
+      "angular_speed_rad_s": 0.010096479207277298,
+      "images": {
+        "left_hand_rgb": {
+          "shape": [
+            1384,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 190.65645182291667,
+          "last_frame_mean": 182.80052083333334
+        },
+        "right_hand_rgb": {
+          "shape": [
+            1384,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 0.0003483072916666667,
+          "last_frame_mean": 0.000390625
+        },
+        "third_person_rgb": {
+          "shape": [
+            1384,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 196.61204427083334,
+          "last_frame_mean": 196.57933159722222
+        }
+      }
+    },
+    {
+      "name": "demo_6",
+      "steps": 1378,
+      "recorded_success": true,
+      "final_state_success": true,
+      "inside_pad": true,
+      "height_error_m": 0.0010822415351867676,
+      "gripper_position_rad": 0.699782133102417,
+      "linear_speed_m_s": 0.0010841283947229385,
+      "angular_speed_rad_s": 0.04431890696287155,
+      "images": {
+        "left_hand_rgb": {
+          "shape": [
+            1378,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 181.104833984375,
+          "last_frame_mean": 183.8731271701389
+        },
+        "right_hand_rgb": {
+          "shape": [
+            1378,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 0.00028645833333333333,
+          "last_frame_mean": 0.00028862847222222224
+        },
+        "third_person_rgb": {
+          "shape": [
+            1378,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 195.82204752604167,
+          "last_frame_mean": 195.69468207465277
+        }
+      }
+    },
+    {
+      "name": "demo_7",
+      "steps": 1386,
+      "recorded_success": true,
+      "final_state_success": true,
+      "inside_pad": true,
+      "height_error_m": 0.0007348060607910156,
+      "gripper_position_rad": 0.6997830271720886,
+      "linear_speed_m_s": 0.001285950536839664,
+      "angular_speed_rad_s": 0.05201439559459686,
+      "images": {
+        "left_hand_rgb": {
+          "shape": [
+            1386,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 191.13437825520833,
+          "last_frame_mean": 190.93724934895835
+        },
+        "right_hand_rgb": {
+          "shape": [
+            1386,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 9.765625e-05,
+          "last_frame_mean": 9.874131944444444e-05
+        },
+        "third_person_rgb": {
+          "shape": [
+            1386,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 196.39992730034723,
+          "last_frame_mean": 196.524365234375
+        }
+      }
+    }
+  ],
+  "passed": true,
+  "sha256": "7b36a7b9fb2e55bcb8960215c7d4ab73d177aa2b618033acba69471f16de10ee"
+}

@@ -1,0 +1,162 @@
+[
+  {
+    "path": "/home/tangyuan/WorldSimReady-Home/AutoData/autodata_interfaces/env/isaaclab_env_interface.py",
+    "sha256": "eb4812da4cb418c82f8fb1fd4fef1e0bb569a43e4b077ba7e851194c4a5b157c",
+    "kind": "当前 AutoData 源码",
+    "ranges": [
+      [
+        240,
+        278
+      ]
+    ],
+    "viewer": "source/env-loop.html"
+  },
+  {
+    "path": "/home/tangyuan/WorldSimReady-Home/AutoData/autodata_core/waypoint.py",
+    "sha256": "3e47b8fdccf54c9b20054037d45188dbda17b82d3a6cd88280028b59d42524ee",
+    "kind": "当前 AutoData 源码",
+    "ranges": [
+      [
+        288,
+        336
+      ]
+    ],
+    "viewer": "source/waypoint.html"
+  },
+  {
+    "path": "/home/tangyuan/WorldSimReady-Home/AutoData/autodata_core/algorithms.py",
+    "sha256": "2288cae36381dd36a2e13a80bc20c47e514f8568c1ec8a028af1512244f95939",
+    "kind": "当前 AutoData 源码",
+    "ranges": [
+      [
+        230,
+        255
+      ]
+    ],
+    "viewer": "source/algorithms.html"
+  },
+  {
+    "path": "/home/tangyuan/WorldSimReady-Home/AutoData/datasets/efficiency_20261014_201834/v1/launchers/v1/runtime/openarm_autodata/shared/envs/cameras.py",
+    "sha256": "c336a62f470fe990233ebdf04b0d2e04c8db832a238105b49773db209fc5f3dc",
+    "kind": "v1 实验冻结任务源码",
+    "ranges": [
+      [
+        17,
+        55
+      ]
+    ],
+    "viewer": "source/camera.html"
+  },
+  {
+    "path": "/home/tangyuan/WorldSimReady-Home/AutoData/datasets/efficiency_20261014_201834/v1/launchers/v1/runtime/openarm_autodata/tasks/pick_place/configs/env_cfg.py",
+    "sha256": "81416c26ec4e4b402914d8d6df0e7f56268888524f507b9738b6068898e1afa0",
+    "kind": "v1 实验冻结任务源码",
+    "ranges": [
+      [
+        110,
+        130
+      ],
+      [
+        210,
+        220
+      ]
+    ],
+    "viewer": "source/config.html"
+  },
+  {
+    "path": "/home/tangyuan/WorldSimReady-Home/AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab/isaaclab/envs/manager_based_rl_env.py",
+    "sha256": "a963cfcdb4cd60955cd022ed709d27c99a6935685b69180bb29d74f8983f6566",
+    "kind": "当前 IsaacLab 源码；历史依赖版本仍需运行时核验",
+    "ranges": [
+      [
+        190,
+        275
+      ]
+    ],
+    "viewer": "source/rl-step.html"
+  },
+  {
+    "path": "/home/tangyuan/WorldSimReady-Home/AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab/isaaclab/managers/observation_manager.py",
+    "sha256": "de7c9b2c6b6e0bdb431a0574727982feebe72142ebf41b1140dce624b932d6b8",
+    "kind": "当前 IsaacLab 源码；历史依赖版本仍需运行时核验",
+    "ranges": [
+      [
+        318,
+        345
+      ],
+      [
+        385,
+        402
+      ]
+    ],
+    "viewer": "source/observation.html"
+  },
+  {
+    "path": "/home/tangyuan/WorldSimReady-Home/AutoData/datasets/efficiency_20261014_201834/v1/launchers/v1/runtime/patches/curobo_planner.py",
+    "sha256": "95bee7d993e66fc3028c7bed509fa0e13b86d00d2bb5648cb3a765e34452dda0",
+    "kind": "v1 实验冻结规划补丁",
+    "ranges": [
+      [
+        1303,
+        1322
+      ],
+      [
+        1580,
+        1615
+      ]
+    ],
+    "viewer": "source/planner.html"
+  },
+  {
+    "path": "/home/tangyuan/WorldSimReady-Home/AutoData/datasets/efficiency_20261014_201834/v1/launchers/v1/compat.py",
+    "sha256": "0f7df8d7a65f1178645aa02c53d733baa2dfc13e0a5435d81b54235d16f6023a",
+    "kind": "v1 实验冻结加载器",
+    "ranges": [
+      [
+        89,
+        110
+      ]
+    ],
+    "viewer": "source/compat.html"
+  },
+  {
+    "path": "/home/tangyuan/WorldSimReady-Home/AutoData/datasets/efficiency_20261014_201834/v1/launchers/v1/export_pool.py",
+    "sha256": "ef03ef54bbbc7276205b15030358ee691fc3f422c6449f263acd8c7887768aef",
+    "kind": "v1 实验冻结保存实现",
+    "ranges": [
+      [
+        77,
+        110
+      ],
+      [
+        285,
+        322
+      ]
+    ],
+    "viewer": "source/export.html"
+  },
+  {
+    "path": "/home/tangyuan/WorldSimReady-Home/AutoData/datasets/efficiency_20261014_201834/v1/launchers/v1/export_governor.py",
+    "sha256": "d2dc630a91dc890c57ac36db381ac2759518a25b3a582704ccf783584dee808b",
+    "kind": "v1 实验冻结资源策略",
+    "ranges": [
+      [
+        143,
+        170
+      ]
+    ],
+    "viewer": "source/governor.html"
+  },
+  {
+    "path": "/home/tangyuan/WorldSimReady-Home/AutoData/datasets/efficiency_20261014_201834/v2/launchers/v2/v2_planner.py",
+    "sha256": "78b58d08f9503d302325a35775ffbd6ec8e98e366d0663c54b724f7808c779ea",
+    "kind": "v2 冻结适配源码",
+    "ranges": [
+      [
+        229,
+        246
+      ]
+    ],
+    "viewer": "source/v2-planner.html"
+  }
+]

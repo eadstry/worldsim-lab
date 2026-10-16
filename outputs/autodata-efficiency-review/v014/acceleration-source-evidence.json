@@ -1,0 +1,38 @@
+[
+  {
+    "path": "/home/tangyuan/WorldSimReady-Home/AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab/isaaclab/sensors/camera/tiled_camera.py",
+    "sha256": "bda25ac24cb58d4caa9c7ada6dd7ab7fa4b461eae16ec4c71e305ef2356d07cc",
+    "ranges": [
+      [
+        1,
+        42
+      ]
+    ],
+    "viewer": "source/tiled-current.html",
+    "kind": "current local dependency source; not historical 8-env identity proof"
+  },
+  {
+    "path": "/home/tangyuan/WorldSimReady-Home/AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab_physx/isaaclab_physx/physics/physx_manager.py",
+    "sha256": "79852394dafa48aeb5e9cdb39072dde27c9ab35f6b587a17ce931318ab44fd4a",
+    "ranges": [
+      [
+        570,
+        615
+      ]
+    ],
+    "viewer": "source/physx-device.html",
+    "kind": "current local dependency source; not historical 8-env identity proof"
+  },
+  {
+    "path": "/home/tangyuan/WorldSimReady-Home/AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab/isaaclab/sensors/camera/camera.py",
+    "sha256": "92a38ddf04e64af1df417a70bf6c94241e87a51f0154deefbc56fcbf34a89a9a",
+    "ranges": [
+      [
+        535,
+        578
+      ]
+    ],
+    "viewer": "source/camera-render-current.html",
+    "kind": "current local dependency source; not historical 8-env identity proof"
+  }
+]

@@ -1,0 +1,27 @@
+<!doctype html><meta charset="utf-8"><title>algorithms 源码定位</title><style>body{font:16px/1.7 system-ui;padding:28px;background:#f6f8fb}pre{background:white;padding:20px;overflow:auto}span{display:block;scroll-margin-top:80px}span:target{background:#ffe59a}a{color:#196d93}p{overflow-wrap:anywhere}</style><a href="../gpu-analysis.html">返回 GPU 分析</a><h1>当前 AutoData 源码</h1><p>/home/tangyuan/WorldSimReady-Home/AutoData/autodata_core/algorithms.py</p><p>SHA256: 2288cae36381dd36a2e13a80bc20c47e514f8568c1ec8a028af1512244f95939</p><h2>原文件 230–255 行</h2><pre><span id="L230"><a href="#L230"> 230</a>          target_pose = subtask_traj[0].pose</span>
+<span id="L231"><a href="#L231"> 231</a>          target_passthrough_action = subtask_traj[0].passthrough_action</span>
+<span id="L232"><a href="#L232"> 232</a>  </span>
+<span id="L233"><a href="#L233"> 233</a>          # Which object (if any) the EEF carries during this subtask, so the planner can attach it</span>
+<span id="L234"><a href="#L234"> 234</a>          # to the robot&#x27;s collision model before planning transit. Derived from the task</span>
+<span id="L235"><a href="#L235"> 235</a>          # descriptor&#x27;s subtask metadata via the Datastream interface.</span>
+<span id="L236"><a href="#L236"> 236</a>          expected_attached_object = data_generator.datastream.get_expected_attached_object(</span>
+<span id="L237"><a href="#L237"> 237</a>              eef_name, eef_state.current_subtask_index</span>
+<span id="L238"><a href="#L238"> 238</a>          )</span>
+<span id="L239"><a href="#L239"> 239</a>  </span>
+<span id="L240"><a href="#L240"> 240</a>          planner = self.motion_planners[env_id]</span>
+<span id="L241"><a href="#L241"> 241</a>          planning_success = planner.update_world_and_plan_motion(</span>
+<span id="L242"><a href="#L242"> 242</a>              target_pose=target_pose,</span>
+<span id="L243"><a href="#L243"> 243</a>              expected_attached_object=expected_attached_object,</span>
+<span id="L244"><a href="#L244"> 244</a>              env_id=env_id,</span>
+<span id="L245"><a href="#L245"> 245</a>              step_size=getattr(planner, &quot;step_size&quot;, None),</span>
+<span id="L246"><a href="#L246"> 246</a>              enable_retiming=(hasattr(planner, &quot;step_size&quot;) and planner.step_size is not None),</span>
+<span id="L247"><a href="#L247"> 247</a>          )</span>
+<span id="L248"><a href="#L248"> 248</a>          if not planning_success:</span>
+<span id="L249"><a href="#L249"> 249</a>              return None</span>
+<span id="L250"><a href="#L250"> 250</a>  </span>
+<span id="L251"><a href="#L251"> 251</a>          mp_waypoints = self._convert_planned_trajectory_to_waypoints(planner, target_passthrough_action)</span>
+<span id="L252"><a href="#L252"> 252</a>  </span>
+<span id="L253"><a href="#L253"> 253</a>          # Stash the skill segment so the follow-up call merges it from the MP end pose.</span>
+<span id="L254"><a href="#L254"> 254</a>          eef_state.pending_subtask_trajectory = subtask_traj</span>
+<span id="L255"><a href="#L255"> 255</a>          eef_state.is_in_motion_plan = True</span>
+</pre>

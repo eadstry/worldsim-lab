@@ -1,0 +1,11 @@
+{
+  "checked_at": "2026-10-15T22:56:44.663936+08:00",
+  "source_version": "v015",
+  "pdf_pages": 51,
+  "markdown_chart_sections": 51,
+  "image_links_valid": 51,
+  "explanatory_paragraphs_matched_to_pdf": 204,
+  "pdf_sha256_unchanged": true,
+  "zip_integrity": "passed",
+  "new_experiments": false
+}

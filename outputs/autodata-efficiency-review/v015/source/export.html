@@ -1,0 +1,73 @@
+<!doctype html><meta charset="utf-8"><title>export 源码定位</title><style>body{font:16px/1.7 system-ui;padding:28px;background:#f6f8fb}pre{background:white;padding:20px;overflow:auto}span{display:block;scroll-margin-top:80px}span:target{background:#ffe59a}a{color:#196d93}p{overflow-wrap:anywhere}</style><a href="../gpu-analysis.html">返回 GPU 分析</a><h1>v1 实验冻结保存实现</h1><p>/home/tangyuan/WorldSimReady-Home/AutoData/datasets/efficiency_20261014_201834/v1/launchers/v1/export_pool.py</p><p>SHA256: ef03ef54bbbc7276205b15030358ee691fc3f422c6449f263acd8c7887768aef</p><h2>原文件 77–110 行</h2><pre><span id="L77"><a href="#L77">  77</a>  def pack(data, leaves, memory, release_source=False):</span>
+<span id="L78"><a href="#L78">  78</a>      for leaf in leaves:</span>
+<span id="L79"><a href="#L79">  79</a>          value = data</span>
+<span id="L80"><a href="#L80">  80</a>          for key in leaf[&#x27;path&#x27;].split(&#x27;/&#x27;):</span>
+<span id="L81"><a href="#L81">  81</a>              value = value[key]</span>
+<span id="L82"><a href="#L82">  82</a>          target = np.ndarray(leaf[&#x27;shape&#x27;], dtype=leaf[&#x27;dtype&#x27;], buffer=memory.buf, offset=leaf[&#x27;offset&#x27;])</span>
+<span id="L83"><a href="#L83">  83</a>          if isinstance(value, list) and getattr(value[0], &#x27;is_cuda&#x27;, False):</span>
+<span id="L84"><a href="#L84">  84</a>              # RGB is already CPU-resident. Batch the small GPU state fields to</span>
+<span id="L85"><a href="#L85">  85</a>              # avoid thousands of individual device synchronizations per episode.</span>
+<span id="L86"><a href="#L86">  86</a>              import torch</span>
+<span id="L87"><a href="#L87">  87</a>              np.copyto(target, torch.stack(value).detach().cpu().numpy(), casting=&#x27;no&#x27;)</span>
+<span id="L88"><a href="#L88">  88</a>              if release_source:</span>
+<span id="L89"><a href="#L89">  89</a>                  value.clear()</span>
+<span id="L90"><a href="#L90">  90</a>          elif isinstance(value, list):</span>
+<span id="L91"><a href="#L91">  91</a>              released = 0</span>
+<span id="L92"><a href="#L92">  92</a>              for index, frame in enumerate(value):</span>
+<span id="L93"><a href="#L93">  93</a>                  source = array(frame)</span>
+<span id="L94"><a href="#L94">  94</a>                  assert source.shape == target.shape[1:] and source.dtype == target.dtype, leaf[&#x27;path&#x27;]</span>
+<span id="L95"><a href="#L95">  95</a>                  np.copyto(target[index:index + 1], source.reshape((1, *source.shape)), casting=&#x27;no&#x27;)</span>
+<span id="L96"><a href="#L96">  96</a>                  if release_source:</span>
+<span id="L97"><a href="#L97">  97</a>                      released += source.nbytes</span>
+<span id="L98"><a href="#L98">  98</a>                      value[index] = None</span>
+<span id="L99"><a href="#L99">  99</a>                      del source, frame</span>
+<span id="L100"><a href="#L100"> 100</a>                      if released &gt;= 64 * 1024**2:</span>
+<span id="L101"><a href="#L101"> 101</a>                          trim_free_memory()</span>
+<span id="L102"><a href="#L102"> 102</a>                          released = 0</span>
+<span id="L103"><a href="#L103"> 103</a>              if release_source:</span>
+<span id="L104"><a href="#L104"> 104</a>                  value.clear()</span>
+<span id="L105"><a href="#L105"> 105</a>                  trim_free_memory()</span>
+<span id="L106"><a href="#L106"> 106</a>          else:</span>
+<span id="L107"><a href="#L107"> 107</a>              np.copyto(target, array(value), casting=&#x27;no&#x27;)</span>
+<span id="L108"><a href="#L108"> 108</a>  </span>
+<span id="L109"><a href="#L109"> 109</a>  </span>
+<span id="L110"><a href="#L110"> 110</a>  def write_job(job, handles, directory):</span>
+</pre><h2>原文件 285–322 行</h2><pre><span id="L285"><a href="#L285"> 285</a>      def submit(self, data, output=None, env_args=None, attributes=None, compression=True,</span>
+<span id="L286"><a href="#L286"> 286</a>                 demo_id=None, env_id=None, format_version=1, release_source=False):</span>
+<span id="L287"><a href="#L287"> 287</a>          self.poll()</span>
+<span id="L288"><a href="#L288"> 288</a>          output = Path(output or self.output).resolve()</span>
+<span id="L289"><a href="#L289"> 289</a>          route = next((r for r, p in self.outputs.items() if p == str(output)), None)</span>
+<span id="L290"><a href="#L290"> 290</a>          if route is None:</span>
+<span id="L291"><a href="#L291"> 291</a>              assert not output.exists(), f&#x27;Output exists: {output}&#x27;</span>
+<span id="L292"><a href="#L292"> 292</a>              route = str(len(self.outputs))</span>
+<span id="L293"><a href="#L293"> 293</a>              self.outputs[route] = str(output)</span>
+<span id="L294"><a href="#L294"> 294</a>          leaves, size = layout(data)</span>
+<span id="L295"><a href="#L295"> 295</a>          assert size &lt;= self.limit, f&#x27;Episode requires {size} bytes, exceeding export budget {self.limit}&#x27;</span>
+<span id="L296"><a href="#L296"> 296</a>          wait = time.monotonic()</span>
+<span id="L297"><a href="#L297"> 297</a>          while self.used + size &gt; self.limit:</span>
+<span id="L298"><a href="#L298"> 298</a>              self.poll(wait=.05)</span>
+<span id="L299"><a href="#L299"> 299</a>          waited = time.monotonic() - wait</span>
+<span id="L300"><a href="#L300"> 300</a>          self.wait_seconds += waited</span>
+<span id="L301"><a href="#L301"> 301</a>          index = self.next_ids.get(route, 0) if demo_id is None else int(demo_id)</span>
+<span id="L302"><a href="#L302"> 302</a>          key = f&#x27;{route}:{index}&#x27;</span>
+<span id="L303"><a href="#L303"> 303</a>          assert key not in self.entries, f&#x27;Duplicate demo id: {key}&#x27;</span>
+<span id="L304"><a href="#L304"> 304</a>          if demo_id is None:</span>
+<span id="L305"><a href="#L305"> 305</a>              self.next_ids[route] = index + 1</span>
+<span id="L306"><a href="#L306"> 306</a>          attrs = dict(attributes or {})</span>
+<span id="L307"><a href="#L307"> 307</a>          actions = next((leaf for leaf in leaves if leaf[&#x27;path&#x27;] == &#x27;actions&#x27;), None)</span>
+<span id="L308"><a href="#L308"> 308</a>          attrs[&#x27;num_samples&#x27;] = actions[&#x27;shape&#x27;][0] if actions else 0</span>
+<span id="L309"><a href="#L309"> 309</a>          assert size + 8 * 1024**2 &lt;= shutil.disk_usage(&#x27;/dev/shm&#x27;).free, &#x27;Shared memory capacity changed; cannot pack episode safely&#x27;</span>
+<span id="L310"><a href="#L310"> 310</a>          memory = SharedMemory(create=True, size=size)</span>
+<span id="L311"><a href="#L311"> 311</a>          try:</span>
+<span id="L312"><a href="#L312"> 312</a>              start = time.monotonic()</span>
+<span id="L313"><a href="#L313"> 313</a>              pack(data, leaves, memory, release_source=release_source)</span>
+<span id="L314"><a href="#L314"> 314</a>              packed = time.monotonic() - start</span>
+<span id="L315"><a href="#L315"> 315</a>              self.pack_seconds += packed</span>
+<span id="L316"><a href="#L316"> 316</a>              job = dict(key=key, route=route, demo_id=index, env_id=env_id, memory=memory.name,</span>
+<span id="L317"><a href="#L317"> 317</a>                         memory_bytes=size, leaves=leaves, empty_groups=empty_groups(data), attributes=attrs, env_args=env_args or {},</span>
+<span id="L318"><a href="#L318"> 318</a>                         format_version=format_version, compression=bool(compression))</span>
+<span id="L319"><a href="#L319"> 319</a>              # Packing a large episode can take seconds; acknowledge any writes that</span>
+<span id="L320"><a href="#L320"> 320</a>              # finished meanwhile so an idle writer is reused before scaling up.</span>
+<span id="L321"><a href="#L321"> 321</a>              self.poll()</span>
+<span id="L322"><a href="#L322"> 322</a>              self.used += size</span>
+</pre>

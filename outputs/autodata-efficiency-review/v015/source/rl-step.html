@@ -1,0 +1,87 @@
+<!doctype html><meta charset="utf-8"><title>rl-step 源码定位</title><style>body{font:16px/1.7 system-ui;padding:28px;background:#f6f8fb}pre{background:white;padding:20px;overflow:auto}span{display:block;scroll-margin-top:80px}span:target{background:#ffe59a}a{color:#196d93}p{overflow-wrap:anywhere}</style><a href="../gpu-analysis.html">返回 GPU 分析</a><h1>当前 IsaacLab 源码；历史依赖版本仍需运行时核验</h1><p>/home/tangyuan/WorldSimReady-Home/AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab/isaaclab/envs/manager_based_rl_env.py</p><p>SHA256: a963cfcdb4cd60955cd022ed709d27c99a6935685b69180bb29d74f8983f6566</p><h2>原文件 190–275 行</h2><pre><span id="L190"><a href="#L190"> 190</a>              A tuple containing the observations, rewards, resets (terminated and truncated) and extras.</span>
+<span id="L191"><a href="#L191"> 191</a>          &quot;&quot;&quot;</span>
+<span id="L192"><a href="#L192"> 192</a>          # process actions</span>
+<span id="L193"><a href="#L193"> 193</a>          self.action_manager.process_action(action.to(self.device))</span>
+<span id="L194"><a href="#L194"> 194</a>  </span>
+<span id="L195"><a href="#L195"> 195</a>          self.recorder_manager.record_pre_step()</span>
+<span id="L196"><a href="#L196"> 196</a>  </span>
+<span id="L197"><a href="#L197"> 197</a>          # check if we need to do rendering within the physics loop</span>
+<span id="L198"><a href="#L198"> 198</a>          # note: uses cached property to avoid settings lookup every step</span>
+<span id="L199"><a href="#L199"> 199</a>          is_rendering = self.sim.is_rendering</span>
+<span id="L200"><a href="#L200"> 200</a>  </span>
+<span id="L201"><a href="#L201"> 201</a>          # perform physics stepping</span>
+<span id="L202"><a href="#L202"> 202</a>          if self._physics_handles_decimation:</span>
+<span id="L203"><a href="#L203"> 203</a>              self._sim_step_counter += self.cfg.decimation</span>
+<span id="L204"><a href="#L204"> 204</a>              self.action_manager.apply_action()</span>
+<span id="L205"><a href="#L205"> 205</a>              self.scene.write_data_to_sim()</span>
+<span id="L206"><a href="#L206"> 206</a>              self.sim.step(render=False)</span>
+<span id="L207"><a href="#L207"> 207</a>              self.recorder_manager.record_post_physics_decimation_step()</span>
+<span id="L208"><a href="#L208"> 208</a>              # render only when a render_interval boundary falls within this decimation block,</span>
+<span id="L209"><a href="#L209"> 209</a>              # mirroring the per-sub-step check in the else branch.</span>
+<span id="L210"><a href="#L210"> 210</a>              if self._sim_step_counter % self.cfg.sim.render_interval == 0 and is_rendering:</span>
+<span id="L211"><a href="#L211"> 211</a>                  self.sim.render(skip_app_pumping=not self.render_enabled)</span>
+<span id="L212"><a href="#L212"> 212</a>              self.scene.update(dt=self.step_dt)</span>
+<span id="L213"><a href="#L213"> 213</a>          else:</span>
+<span id="L214"><a href="#L214"> 214</a>              for _ in range(self.cfg.decimation):</span>
+<span id="L215"><a href="#L215"> 215</a>                  self._sim_step_counter += 1</span>
+<span id="L216"><a href="#L216"> 216</a>                  # set actions into buffers</span>
+<span id="L217"><a href="#L217"> 217</a>                  self.action_manager.apply_action()</span>
+<span id="L218"><a href="#L218"> 218</a>                  # set actions into simulator</span>
+<span id="L219"><a href="#L219"> 219</a>                  self.scene.write_data_to_sim()</span>
+<span id="L220"><a href="#L220"> 220</a>                  # simulate</span>
+<span id="L221"><a href="#L221"> 221</a>                  self.sim.step(render=False)</span>
+<span id="L222"><a href="#L222"> 222</a>                  self.recorder_manager.record_post_physics_decimation_step()</span>
+<span id="L223"><a href="#L223"> 223</a>                  # render between steps only if the GUI or an RTX sensor needs it.</span>
+<span id="L224"><a href="#L224"> 224</a>                  # When render_enabled is False, Kit visualizer (camera/GUI) is skipped</span>
+<span id="L225"><a href="#L225"> 225</a>                  # but standalone visualizers (Newton, Rerun, Viser) still update.</span>
+<span id="L226"><a href="#L226"> 226</a>                  if self._sim_step_counter % self.cfg.sim.render_interval == 0 and is_rendering:</span>
+<span id="L227"><a href="#L227"> 227</a>                      self.sim.render(skip_app_pumping=not self.render_enabled)</span>
+<span id="L228"><a href="#L228"> 228</a>                  # update buffers at sim dt</span>
+<span id="L229"><a href="#L229"> 229</a>                  self.scene.update(dt=self.physics_dt)</span>
+<span id="L230"><a href="#L230"> 230</a>  </span>
+<span id="L231"><a href="#L231"> 231</a>          # post-step:</span>
+<span id="L232"><a href="#L232"> 232</a>          # -- update env counters (used for curriculum generation)</span>
+<span id="L233"><a href="#L233"> 233</a>          self.episode_length_buf += 1  # step in current episode (per env)</span>
+<span id="L234"><a href="#L234"> 234</a>          self.common_step_counter += 1  # total step (common for all envs)</span>
+<span id="L235"><a href="#L235"> 235</a>          # -- check terminations</span>
+<span id="L236"><a href="#L236"> 236</a>          self.reset_buf = self.termination_manager.compute()</span>
+<span id="L237"><a href="#L237"> 237</a>          self.reset_terminated = self.termination_manager.terminated</span>
+<span id="L238"><a href="#L238"> 238</a>          self.reset_time_outs = self.termination_manager.time_outs</span>
+<span id="L239"><a href="#L239"> 239</a>          # -- reward computation</span>
+<span id="L240"><a href="#L240"> 240</a>          self.reward_buf = self.reward_manager.compute(dt=self.step_dt)</span>
+<span id="L241"><a href="#L241"> 241</a>  </span>
+<span id="L242"><a href="#L242"> 242</a>          if len(self.recorder_manager.active_terms) &gt; 0:</span>
+<span id="L243"><a href="#L243"> 243</a>              # update observations for recording if needed</span>
+<span id="L244"><a href="#L244"> 244</a>              self.obs_buf = self.observation_manager.compute()</span>
+<span id="L245"><a href="#L245"> 245</a>              self.recorder_manager.record_post_step()</span>
+<span id="L246"><a href="#L246"> 246</a>  </span>
+<span id="L247"><a href="#L247"> 247</a>          # -- reset envs that terminated/timed-out and log the episode information</span>
+<span id="L248"><a href="#L248"> 248</a>          reset_env_ids = self.reset_buf.nonzero(as_tuple=False).squeeze(-1).int()</span>
+<span id="L249"><a href="#L249"> 249</a>          if len(reset_env_ids) &gt; 0:</span>
+<span id="L250"><a href="#L250"> 250</a>              # trigger recorder terms for pre-reset calls</span>
+<span id="L251"><a href="#L251"> 251</a>              self.recorder_manager.record_pre_reset(reset_env_ids)</span>
+<span id="L252"><a href="#L252"> 252</a>  </span>
+<span id="L253"><a href="#L253"> 253</a>              self._reset_idx(reset_env_ids)</span>
+<span id="L254"><a href="#L254"> 254</a>  </span>
+<span id="L255"><a href="#L255"> 255</a>              # if sensors are added to the scene, make sure we render to reflect changes in reset</span>
+<span id="L256"><a href="#L256"> 256</a>              if self.render_enabled and is_rendering and self.has_rtx_sensors and self.cfg.num_rerenders_on_reset &gt; 0:</span>
+<span id="L257"><a href="#L257"> 257</a>                  for _ in range(self.cfg.num_rerenders_on_reset):</span>
+<span id="L258"><a href="#L258"> 258</a>                      self.sim.render()</span>
+<span id="L259"><a href="#L259"> 259</a>  </span>
+<span id="L260"><a href="#L260"> 260</a>              # trigger recorder terms for post-reset calls</span>
+<span id="L261"><a href="#L261"> 261</a>              self.recorder_manager.record_post_reset(reset_env_ids)</span>
+<span id="L262"><a href="#L262"> 262</a>  </span>
+<span id="L263"><a href="#L263"> 263</a>          # -- update command</span>
+<span id="L264"><a href="#L264"> 264</a>          self.command_manager.compute(dt=self.step_dt)</span>
+<span id="L265"><a href="#L265"> 265</a>          # -- step interval events</span>
+<span id="L266"><a href="#L266"> 266</a>          if &quot;interval&quot; in self.event_manager.available_modes:</span>
+<span id="L267"><a href="#L267"> 267</a>              self.event_manager.apply(mode=&quot;interval&quot;, dt=self.step_dt)</span>
+<span id="L268"><a href="#L268"> 268</a>          # -- compute observations</span>
+<span id="L269"><a href="#L269"> 269</a>          # note: done after reset to get the correct observations for reset envs</span>
+<span id="L270"><a href="#L270"> 270</a>          self.obs_buf = self.observation_manager.compute(update_history=True)</span>
+<span id="L271"><a href="#L271"> 271</a>  </span>
+<span id="L272"><a href="#L272"> 272</a>          # return observations, rewards, resets and extras</span>
+<span id="L273"><a href="#L273"> 273</a>          return self.obs_buf, self.reward_buf, self.reset_terminated, self.reset_time_outs, self.extras</span>
+<span id="L274"><a href="#L274"> 274</a>  </span>
+<span id="L275"><a href="#L275"> 275</a>      def render(self, recompute: bool = False) -&gt; np.ndarray | None:</span>
+</pre>

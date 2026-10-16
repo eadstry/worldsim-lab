@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "artifact_id": "autodata-efficiency-review",
+  "version": "v020",
+  "sealed_at": "2026-10-15 Asia/Shanghai",
+  "scope": "Beginner-oriented Markdown integrating code structure diagrams and historical experiment results",
+  "base_versions": [
+    "v015",
+    "v019"
+  ],
+  "delivery": {
+    "policy": "local_only"
+  },
+  "files": [
+    {
+      "path": "AutoData原理与实验图解.md",
+      "sha256": "5a754ef8f7bb7c8cfac33996ba9878e7bf11da5737d31d43139469da3c8d47a2"
+    },
+    {
+      "path": "AutoData图文资料包.zip",
+      "sha256": "92e789f9da41de3f51618af588f8b7e0144cf368ae95a97fee62df1590c40ffc"
+    },
+    {
+      "path": "evidence/acceleration-analysis.md",
+      "sha256": "9153cc6f1b6cd4b7cddf2def14cb97dea64043598313b47f34e57cf64030b3ef"
+    },
+    {
+      "path": "evidence/backend-comparison.csv",
+      "sha256": "c03c65a478d648a76c704593ddf4266e259173bb07a09feac43da7d5bd5c0085"
+    },
+    {
+      "path": "evidence/code-structure-evidence.md",
+      "sha256": "34af1ca4ec715f2fc1e85cbaeea93750d68bdec3223c7ada1187f428fa4ca3a4"
+    },
+    {
+      "path": "evidence/data.csv",
+      "sha256": "ce19bb7a0206817948847d4f88a48ebf70bc51ed97a6fd0671fde753d6ec1fe4"
+    },
+    {
+      "path": "evidence/interface-evidence.md",
+      "sha256": "7ac3891563cb572661e4a5ef2e88744d2ff8bb3f1831053c25419c54326d2021"
+    },
+    {
+      "path": "evidence/v015-charts.pdf",
+      "sha256": "56fd7770f1fc289d029eca883f3897c5e29817515d69190524b366365e82dfc5"
+    },
+    {
+      "path": "figures/01-throughput.png",
+      "sha256": "7343bbc15f3f2275c483a5b557f4dc79960574a8bd508a465ab2b2099c6a7b33"
+    },
+    {
+      "path": "figures/02-tail.png",
+      "sha256": "2c0862022f210a27ac6bc1e45ba65b90f7ca8e05823533958a70ad0ef3e34dbc"
+    },
+    {
+      "path": "figures/05-quality.png",
+      "sha256": "9a1cad6a8127de4f331855e4d03be24802a316ab1d318c9fcce55c8817839797"
+    },
+    {
+      "path": "figures/09-stage-change.png",
+      "sha256": "597b7fa3e587e5d05361939db7f50c9b19c5a542cc6160fce60c36c34391bb07"
+    },
+    {
+      "path": "figures/12-memory-lifecycle.png",
+      "sha256": "8f5966f40c58595834715dd48eb188454384ed921bd4d8b15176c97879a724cb"
+    },
+    {
+      "path": "figures/14-v2-result.png",
+      "sha256": "0cb6a1024fc5a87009a3cae12f23fff03d282b6c7924684710d6279b32a45a83"
+    },
+    {
+      "path": "figures/19-version-boundaries.png",
+      "sha256": "f81a18e9e2b9e5bd5642ac2e1e1f3d10b63723f34b46a0cefe5c1acab33550cf"
+    },
+    {
+      "path": "figures/32-module-structure.png",
+      "sha256": "529996c24da5d511f2351f98c3ae743f4faef1303463c057e40d64bbd7298eb0"
+    },
+    {
+      "path": "figures/43-paired-runtime.png",
+      "sha256": "87e0324ed14be4be5b2f8ed51e7d5d6471b8eebea352d55af97607da7bd5e451"
+    },
+    {
+      "path": "figures/44-internal-attribution.png",
+      "sha256": "b565ba2a26d93adf4c6573ac862224d7619cbf79f2d2e725f4141dbedc0a8bf2"
+    },
+    {
+      "path": "figures/47-camera-reuse.png",
+      "sha256": "eddab6a88787f4e88f2022544efefb822226ff13d885f985af9836c364294c15"
+    },
+    {
+      "path": "verification.json",
+      "sha256": "05cc8433b310d6945d3f64a77527637a3f0159f2f41f4ed90c1d7ce6c8e97b65"
+    },
+    {
+      "path": "阅读预览.html",
+      "sha256": "4a211ea5ec240c44222351d581d0bf1b2869e7275ec6431976e09de8ca310107"
+    }
+  ]
+}

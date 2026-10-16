@@ -1,0 +1,19 @@
+<!doctype html><meta charset="utf-8"><title>v2-planner 源码定位</title><style>body{font:16px/1.7 system-ui;padding:28px;background:#f6f8fb}pre{background:white;padding:20px;overflow:auto}span{display:block;scroll-margin-top:80px}span:target{background:#ffe59a}a{color:#196d93}p{overflow-wrap:anywhere}</style><a href="../gpu-analysis.html">返回 GPU 分析</a><h1>v2 冻结适配源码</h1><p>/home/tangyuan/WorldSimReady-Home/AutoData/datasets/efficiency_20261014_201834/v2/launchers/v2/v2_planner.py</p><p>SHA256: 78b58d08f9503d302325a35775ffbd6ec8e98e366d0663c54b724f7808c779ea</p><h2>原文件 229–246 行</h2><pre><span id="L229"><a href="#L229"> 229</a>      def get_planned_poses(self) -&gt; list[torch.Tensor]:</span>
+<span id="L230"><a href="#L230"> 230</a>          if self._current_plan is None:</span>
+<span id="L231"><a href="#L231"> 231</a>              return []</span>
+<span id="L232"><a href="#L232"> 232</a>          with torch.no_grad():</span>
+<span id="L233"><a href="#L233"> 233</a>              matrices = self._ee_pose(self._state(self._current_plan)).get_matrix().reshape(-1, 4, 4)</span>
+<span id="L234"><a href="#L234"> 234</a>              result = list(self._base @ matrices)</span>
+<span id="L235"><a href="#L235"> 235</a>              if result and self.config.n_repeat:</span>
+<span id="L236"><a href="#L236"> 236</a>                  result.extend([result[-1]] * self.config.n_repeat)</span>
+<span id="L237"><a href="#L237"> 237</a>              return result</span>
+<span id="L238"><a href="#L238"> 238</a>  </span>
+<span id="L239"><a href="#L239"> 239</a>      def has_next_waypoint(self) -&gt; bool:</span>
+<span id="L240"><a href="#L240"> 240</a>          return self._current_plan is not None and self._index &lt; len(self._current_plan)</span>
+<span id="L241"><a href="#L241"> 241</a>  </span>
+<span id="L242"><a href="#L242"> 242</a>      def get_next_waypoint_ee_pose(self) -&gt; Pose:</span>
+<span id="L243"><a href="#L243"> 243</a>          assert self.has_next_waypoint()</span>
+<span id="L244"><a href="#L244"> 244</a>          pose = self._ee_pose(self._state(self._current_plan[self._index]))</span>
+<span id="L245"><a href="#L245"> 245</a>          self._index += 1</span>
+<span id="L246"><a href="#L246"> 246</a>          return Pose.from_matrix(self._base @ pose.get_matrix().reshape(4, 4))</span>
+</pre>

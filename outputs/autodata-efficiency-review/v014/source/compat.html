@@ -1,0 +1,23 @@
+<!doctype html><meta charset="utf-8"><title>compat 源码定位</title><style>body{font:16px/1.7 system-ui;padding:28px;background:#f6f8fb}pre{background:white;padding:20px;overflow:auto}span{display:block;scroll-margin-top:80px}span:target{background:#ffe59a}a{color:#196d93}p{overflow-wrap:anywhere}</style><a href="../gpu-analysis.html">返回 GPU 分析</a><h1>v1 实验冻结加载器</h1><p>/home/tangyuan/WorldSimReady-Home/AutoData/datasets/efficiency_20261014_201834/v1/launchers/v1/compat.py</p><p>SHA256: 0f7df8d7a65f1178645aa02c53d733baa2dfc13e0a5435d81b54235d16f6023a</p><h2>原文件 89–110 行</h2><pre><span id="L89"><a href="#L89">  89</a>  def install():</span>
+<span id="L90"><a href="#L90">  90</a>      install_task_compat()</span>
+<span id="L91"><a href="#L91">  91</a>      import importlib.util</span>
+<span id="L92"><a href="#L92">  92</a>      import os</span>
+<span id="L93"><a href="#L93">  93</a>      import sys</span>
+<span id="L94"><a href="#L94">  94</a>      from pathlib import Path</span>
+<span id="L95"><a href="#L95">  95</a>  </span>
+<span id="L96"><a href="#L96">  96</a>      from autodata_interfaces.motion_planners.curobo import curobo_planner_cfg  # noqa: F401</span>
+<span id="L97"><a href="#L97">  97</a>  </span>
+<span id="L98"><a href="#L98">  98</a>      name = &quot;autodata_interfaces.motion_planners.curobo.curobo_planner&quot;</span>
+<span id="L99"><a href="#L99">  99</a>      assert name not in sys.modules, &quot;Planner was imported before OpenArm compatibility setup&quot;</span>
+<span id="L100"><a href="#L100"> 100</a>      path = Path(__file__).resolve().parent / &quot;runtime/patches/curobo_planner.py&quot;</span>
+<span id="L101"><a href="#L101"> 101</a>      spec = importlib.util.spec_from_file_location(name, path)</span>
+<span id="L102"><a href="#L102"> 102</a>      module = importlib.util.module_from_spec(spec)</span>
+<span id="L103"><a href="#L103"> 103</a>      sys.modules[name] = module</span>
+<span id="L104"><a href="#L104"> 104</a>      spec.loader.exec_module(module)</span>
+<span id="L105"><a href="#L105"> 105</a>      planner_module = module</span>
+<span id="L106"><a href="#L106"> 106</a>      from autodata_interfaces import embodiments</span>
+<span id="L107"><a href="#L107"> 107</a>      from autodata_interfaces.embodiments import factory</span>
+<span id="L108"><a href="#L108"> 108</a>  </span>
+<span id="L109"><a href="#L109"> 109</a>      name = &quot;autodata_interfaces.embodiments.single_arm_embodiment_adapter&quot;</span>
+<span id="L110"><a href="#L110"> 110</a>      path = Path(__file__).resolve().parent / &quot;runtime/patches/single_arm_embodiment_adapter.py&quot;</span>
+</pre>

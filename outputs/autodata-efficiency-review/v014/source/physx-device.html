@@ -1,0 +1,47 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>当前源码定位</title><style>body{font:16px/1.7 system-ui;padding:28px;background:#f7f9fc}pre{background:white;padding:20px;overflow:auto}span{display:block}span:target{background:#ffe59a}</style><a href="../acceleration-analysis.html">返回加速方案</a><h1>当前本地源码</h1><p>/home/tangyuan/WorldSimReady-Home/AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab_physx/isaaclab_physx/physics/physx_manager.py</p><p>SHA256: 79852394dafa48aeb5e9cdb39072dde27c9ab35f6b587a17ce931318ab44fd4a</p><pre><span id="L570"><a href="#L570">570</a>          sim.set_setting(&quot;/physics/disableContactProcessing&quot;, True)  # type: ignore[union-attr]</span>
+<span id="L571"><a href="#L571">571</a>          sim.set_setting(&quot;/physics/collisionConeCustomGeometry&quot;, False)  # type: ignore[union-attr]</span>
+<span id="L572"><a href="#L572">572</a>          sim.set_setting(&quot;/physics/collisionCylinderCustomGeometry&quot;, False)  # type: ignore[union-attr]</span>
+<span id="L573"><a href="#L573">573</a>          sim.set_setting(&quot;/physics/autoPopupSimulationOutputWindow&quot;, False)  # type: ignore[union-attr]</span>
+<span id="L574"><a href="#L574">574</a>  </span>
+<span id="L575"><a href="#L575">575</a>          # device setup (set on PhysicsManager so PhysicsManager.get_device() works)</span>
+<span id="L576"><a href="#L576">576</a>          is_gpu = &quot;cuda&quot; in device</span>
+<span id="L577"><a href="#L577">577</a>          if is_gpu:</span>
+<span id="L578"><a href="#L578">578</a>              parts = device.split(&quot;:&quot;)</span>
+<span id="L579"><a href="#L579">579</a>              cuda_device = sim.get_setting(&quot;/physics/cudaDevice&quot;)  # type: ignore[union-attr]</span>
+<span id="L580"><a href="#L580">580</a>              device_id = int(parts[1]) if len(parts) &gt; 1 else max(0, int(cuda_device) if cuda_device is not None else 0)</span>
+<span id="L581"><a href="#L581">581</a>              sim.set_setting(&quot;/physics/cudaDevice&quot;, device_id)  # type: ignore[union-attr]</span>
+<span id="L582"><a href="#L582">582</a>              sim.set_setting(&quot;/physics/suppressReadback&quot;, True)  # type: ignore[union-attr]</span>
+<span id="L583"><a href="#L583">583</a>              PhysicsManager._device = f&quot;cuda:{device_id}&quot;</span>
+<span id="L584"><a href="#L584">584</a>          else:</span>
+<span id="L585"><a href="#L585">585</a>              sim.set_setting(&quot;/physics/cudaDevice&quot;, -1)  # type: ignore[union-attr]</span>
+<span id="L586"><a href="#L586">586</a>              sim.set_setting(&quot;/physics/suppressReadback&quot;, False)  # type: ignore[union-attr]</span>
+<span id="L587"><a href="#L587">587</a>              PhysicsManager._device = &quot;cpu&quot;</span>
+<span id="L588"><a href="#L588">588</a>  </span>
+<span id="L589"><a href="#L589">589</a>          # physx scene api (use sim.cfg for shared parameters like physics_prim_path, dt, physics_material)</span>
+<span id="L590"><a href="#L590">590</a>          # apply schema and set attributes by name</span>
+<span id="L591"><a href="#L591">591</a>          sim_cfg = sim.cfg</span>
+<span id="L592"><a href="#L592">592</a>          stage = sim.stage</span>
+<span id="L593"><a href="#L593">593</a>          scene_prim = stage.GetPrimAtPath(sim_cfg.physics_prim_path)</span>
+<span id="L594"><a href="#L594">594</a>          if &quot;PhysxSceneAPI&quot; not in scene_prim.GetAppliedSchemas():</span>
+<span id="L595"><a href="#L595">595</a>              scene_prim.AddAppliedSchema(&quot;PhysxSceneAPI&quot;)</span>
+<span id="L596"><a href="#L596">596</a>  </span>
+<span id="L597"><a href="#L597">597</a>          # timestep and frame rate</span>
+<span id="L598"><a href="#L598">598</a>          steps_per_sec = int(1.0 / sim_cfg.dt)</span>
+<span id="L599"><a href="#L599">599</a>          sim_utils.safe_set_attribute_on_usd_prim(</span>
+<span id="L600"><a href="#L600">600</a>              scene_prim, &quot;physxScene:timeStepsPerSecond&quot;, steps_per_sec, camel_case=False</span>
+<span id="L601"><a href="#L601">601</a>          )</span>
+<span id="L602"><a href="#L602">602</a>          render_interval = max(sim_cfg.render_interval, 1)</span>
+<span id="L603"><a href="#L603">603</a>          sim.set_setting(&quot;/persistent/simulation/minFrameRate&quot;, steps_per_sec // render_interval)  # type: ignore[union-attr]</span>
+<span id="L604"><a href="#L604">604</a>  </span>
+<span id="L605"><a href="#L605">605</a>          # gpu dynamics</span>
+<span id="L606"><a href="#L606">606</a>          sim_utils.safe_set_attribute_on_usd_prim(</span>
+<span id="L607"><a href="#L607">607</a>              scene_prim, &quot;physxScene:broadphaseType&quot;, &quot;GPU&quot; if is_gpu else &quot;MBP&quot;, camel_case=False</span>
+<span id="L608"><a href="#L608">608</a>          )</span>
+<span id="L609"><a href="#L609">609</a>          sim_utils.safe_set_attribute_on_usd_prim(scene_prim, &quot;physxScene:enableGPUDynamics&quot;, is_gpu, camel_case=False)</span>
+<span id="L610"><a href="#L610">610</a>  </span>
+<span id="L611"><a href="#L611">611</a>          # ccd (not supported on gpu)</span>
+<span id="L612"><a href="#L612">612</a>          enable_ccd = cfg.enable_ccd and not is_gpu</span>
+<span id="L613"><a href="#L613">613</a>          if cfg.enable_ccd and is_gpu:</span>
+<span id="L614"><a href="#L614">614</a>              logger.warning(&quot;CCD disabled when GPU dynamics is enabled.&quot;)</span>
+<span id="L615"><a href="#L615">615</a>          sim_utils.safe_set_attribute_on_usd_prim(scene_prim, &quot;physxScene:enableCCD&quot;, enable_ccd, camel_case=False)</span>
+</pre></html>

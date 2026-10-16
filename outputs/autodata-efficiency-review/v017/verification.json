@@ -1,0 +1,43 @@
+{
+  "page_count": 39,
+  "retained_original_pages": 34,
+  "retained_page_text_equal": true,
+  "retained_pages_method": "pdfseparate + pdfunite; no rerendering",
+  "layout_checks": [
+    {
+      "id": "structure",
+      "text_in_bounds": true,
+      "blocks_do_not_overlap": true
+    },
+    {
+      "id": "framework",
+      "text_in_bounds": true,
+      "blocks_do_not_overlap": true
+    },
+    {
+      "id": "lifecycle",
+      "text_in_bounds": true,
+      "blocks_do_not_overlap": true
+    },
+    {
+      "id": "versions",
+      "text_in_bounds": true,
+      "blocks_do_not_overlap": true
+    },
+    {
+      "id": "planner",
+      "text_in_bounds": true,
+      "blocks_do_not_overlap": true
+    }
+  ],
+  "new_simulation_runs": false,
+  "source_pdf_matches_user_path": true,
+  "retained_raster_sample_pages_equal": [
+    1,
+    8,
+    22,
+    32,
+    39
+  ],
+  "html_local_links_exist": true
+}

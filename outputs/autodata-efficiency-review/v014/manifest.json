@@ -1,0 +1,692 @@
+{
+  "schema_version": 1,
+  "artifact_id": "autodata-efficiency-review",
+  "version": "v014",
+  "created_at": "2026-10-15T17:33:08.365924+08:00",
+  "material_cutoff": "2026-10-15 Asia/Shanghai; historical 8-env data plus separate completed 4-env v1 timing pair",
+  "sources": [
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/summary.csv",
+      "sha256": "c118aac9896864fc60221b1ca65343320da03864d31804ed4b60d53780dd42a9"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w0/episodes.telemetry-summary.json",
+      "sha256": "84350a09c56618138436bfc8024b4b86c11902526a18191dea2e1408019b64c4"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w0/episodes.telemetry.jsonl",
+      "sha256": "0aa617c5d965a966ea557b292e039e51c2724f418327f3940f5619e8f020c1bc"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w0/episodes.run.json",
+      "sha256": "2eb0e79aca14b7588eb72a47b06110c77dd0f2a79ccb80b1e24dbc8ea64cde34"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w0/episodes.validation.json",
+      "sha256": "395134e4ae467cbd2d15149679ccf9cd055c6f2319e8226bfec70708399a0de2"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w0/episodes.resources.jsonl",
+      "sha256": "80518de5e96a5d21dbb6e9e8ab0f6765f99616813dee88be9dd202cea622324b"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w4/episodes.telemetry-summary.json",
+      "sha256": "820c245bbc131f36baa47d206f3dfe4f871fda5e890fbfce259bd5fc8a31cc9f"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w4/episodes.telemetry.jsonl",
+      "sha256": "af4864fcc36097270f58c5f3ee51c72ba08650a4a5847c3dc99b615e60c4eebb"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w4/episodes.run.json",
+      "sha256": "b62e7dc122e035eb45dfe3f36ce5e903d8f069d6dcf33638aef17503b60251c9"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w4/episodes.validation.json",
+      "sha256": "b09dafbad3c9ffbf087fa4d120fd373f37e1c96ca675acaef45dfcfb103ecda1"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w4/episodes.resources.jsonl",
+      "sha256": "840ebc708097cf37c2476121e0dafbc034f9dc2e80438b726264f44257d4c683"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w8/episodes.telemetry-summary.json",
+      "sha256": "ee92b2484043b9e2cc9a061e2a0d7e4f87fe4b2292e75cd313132bd2f4c69066"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w8/episodes.telemetry.jsonl",
+      "sha256": "459837b077b3e92889d9dc16d04ad5578331c945854aa839e8ba64a1c29323e2"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w8/episodes.run.json",
+      "sha256": "06e7fc98a830677862c68f486862cc898f2b83786cec8b3308fb5f2bc9f889c0"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w8/episodes.validation.json",
+      "sha256": "2f407ca3eec04c51a46ba5bbd89bf7318f0f41403a857f6c40cee3736d6268ce"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_w8/episodes.resources.jsonl",
+      "sha256": "b6aa7cd4b86dc46c4a0c07c27ac232c960cd7184e3644dc58ee1131094d76a00"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_wauto/episodes.telemetry-summary.json",
+      "sha256": "f5eb394a147199c057d2e352de195e8a601d47c452d0afb3927f80fc915a2546"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_wauto/episodes.telemetry.jsonl",
+      "sha256": "67f8d3181f246cb0629e80ff57a065741deb54b8eeb0f98966fb841ea36ec5be"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_wauto/episodes.run.json",
+      "sha256": "61cd5c9b6cec3987b2bd52921425f2e25fa9f2ae9f0e25f6699de30602bb1343"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_wauto/episodes.validation.json",
+      "sha256": "f8f37aef6a9bec66b990fc21b8a55064481b626d7df2d843646ef4a7f9fd3f32"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/r01_v1_wauto/episodes.resources.jsonl",
+      "sha256": "0d3c32b3ef93cb88fd20d35085733eb5ee7c3378ee6933b78a5dd9e1dbebdb83"
+    },
+    {
+      "path": "outputs/autodata-efficiency-report/v001/evidence.json",
+      "sha256": "c86c49528ebd6f3c83ac314eb8ea3acdf34daaa269fd53b29dd8da2e6a10ece4"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v2/r01_v2_wauto/episodes.telemetry-summary.json",
+      "sha256": "804bc36b0a2710f3f5c01998e3831e526404bab4b963cfbd5cb81702d5957172"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v2/r01_v2_wauto/episodes.run.json",
+      "sha256": "a6400a50e95638da2d9a5c4c51e72d2659821dd87553068bbcbd8cd3cd957db0"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v2/r01_v2_wauto/episodes.telemetry.jsonl",
+      "sha256": "d9c9f7fa2615b87933e4433c9d4a9c2623d4e45c0080d545654d9898c5ef1c8e"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v2/r01_v2_wauto/episodes.export.json",
+      "sha256": "d36f58877d896e3dfc9653bfcaeec3f3eb27cd4ea15944fb786bbfcad5fcb783"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/launchers/v1/generate.py",
+      "sha256": "028a03f3c75fe46131bd03f17634cb6ed44ae0f4f7274e01ba4fe41d92195ff4"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/launchers/v1/async_export.py",
+      "sha256": "b44c38db5f28faecc316369e5bfafa73d627eeddf26eb757a1dcce26a2da6573"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/launchers/v1/export_pool.py",
+      "sha256": "ef03ef54bbbc7276205b15030358ee691fc3f422c6449f263acd8c7887768aef"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/launchers/v1/export_governor.py",
+      "sha256": "d2dc630a91dc890c57ac36db381ac2759518a25b3a582704ccf783584dee808b"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v2/launchers/v2/v2_planner.py",
+      "sha256": "78b58d08f9503d302325a35775ffbd6ec8e98e366d0663c54b724f7808c779ea"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v2/launchers/v2/model.py",
+      "sha256": "a8b87f6ba410ec8ee838349f3c8c009e35f7878fb7bec16151e990c8a7a9a32a"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v2/launchers/v2/trajectory.py",
+      "sha256": "1dac1ab5841cd5b389757607eb789dc94e2820026d3b400862734d278aaec949"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v2/launchers/v2/validate_output.py",
+      "sha256": "4367f2a7cebe63c56885694b2bbd6a304fc38e4bc4327eae6af2a7ccf74ef46b"
+    },
+    {
+      "root": "current_workspace",
+      "path": "workspace-overlays/efficiency-review-runtime/v2-auto-16-seed101/episodes.run.json",
+      "sha256": "939b6987450ea20ab897f6e14a4da6da5111b3f190433bb74caf9e5c289d7af1"
+    },
+    {
+      "root": "current_workspace",
+      "path": "workspace-overlays/efficiency-review-runtime/v2-auto-16-seed101/episodes.telemetry.jsonl",
+      "sha256": "41296f8470a0017440dacf29d8986f41e8c99e30f4133379026a2a86c811d73d"
+    },
+    {
+      "root": "current_workspace",
+      "path": "workspace-overlays/efficiency-review-runtime/v2-auto-16-seed101/episodes.telemetry-summary.json",
+      "sha256": "fe899eb67b54bf3afb78a23d5ac5dfd319322152927b376103b925e53b50f88c"
+    },
+    {
+      "root": "current_workspace",
+      "path": "workspace-overlays/efficiency-review-runtime/v2-auto-16-seed101/episodes.validation.json",
+      "sha256": "d1d1fb914049970592a9bb6325ee1b874cff931f8b5b258e97b4e1449afbb832"
+    },
+    {
+      "root": "current_workspace",
+      "path": "workspace-overlays/efficiency-review-runtime/v2-auto-16-seed101/schema-validation.log",
+      "sha256": "04a7847d535be85a26ca69126bb126d72f7b378322386166d3667fbc37ca5981"
+    },
+    {
+      "root": "current_workspace",
+      "path": "workspace-overlays/efficiency-review-runtime/v2-auto-16-seed101/validation.log",
+      "sha256": "aec4e4cbaaec2dba5bb236f9d6152b9841f6852583f7630784a6f9788eadb690"
+    },
+    {
+      "path": "AutoData/scripts/generate_dataset.py",
+      "sha256": "bb36958579a7e20d8b2b4cccc7f4dd545a89ad956e21434572699cfd3999df01",
+      "evidence_type": "current source inspection 2026-10-15"
+    },
+    {
+      "path": "AutoData/autodata_core/waypoint.py",
+      "sha256": "3e47b8fdccf54c9b20054037d45188dbda17b82d3a6cd88280028b59d42524ee",
+      "evidence_type": "current source inspection 2026-10-15"
+    },
+    {
+      "path": "AutoData/autodata_interfaces/env/isaaclab_env_interface.py",
+      "sha256": "eb4812da4cb418c82f8fb1fd4fef1e0bb569a43e4b077ba7e851194c4a5b157c",
+      "evidence_type": "current source inspection 2026-10-15"
+    },
+    {
+      "path": "AutoData/autodata_core/algorithms.py",
+      "sha256": "2288cae36381dd36a2e13a80bc20c47e514f8568c1ec8a028af1512244f95939",
+      "evidence_type": "current source inspection 2026-10-15"
+    },
+    {
+      "path": "AutoData/autodata_interfaces/motion_planners/curobo/curobo_planner.py",
+      "sha256": "59a38b465dd073b8173b1a588347e7321f5f18685fc774ff5759d21f1748daaa",
+      "evidence_type": "当前源码，非历史冻结快照"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v2/launchers/v2/v2_planner.py",
+      "sha256": "78b58d08f9503d302325a35775ffbd6ec8e98e366d0663c54b724f7808c779ea",
+      "evidence_type": "实验冻结适配器"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/launchers/v1/async_export.py",
+      "sha256": "b44c38db5f28faecc316369e5bfafa73d627eeddf26eb757a1dcce26a2da6573",
+      "evidence_type": "实验冻结保存桥"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/launchers/v1/export_pool.py",
+      "sha256": "ef03ef54bbbc7276205b15030358ee691fc3f422c6449f263acd8c7887768aef",
+      "evidence_type": "实验冻结保存池"
+    },
+    {
+      "path": "AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab/isaaclab/managers/recorder_manager.py",
+      "sha256": "9d684f8d8f7a7dfa78307dea86b879eb2af8ea4a25913a1a692a3fb1d1de7150",
+      "evidence_type": "当前上游源码"
+    },
+    {
+      "path": "AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab/isaaclab/utils/datasets/episode_data.py",
+      "sha256": "5c75e6681240e35515d1c23767f789267d79375b6f36b2ac4b60c858606ded28",
+      "evidence_type": "当前上游源码"
+    },
+    {
+      "path": "AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab/isaaclab/utils/datasets/hdf5_dataset_file_handler.py",
+      "sha256": "b5c4365cfd46107dfe56288b092bbdb03d993dbb83e23415742965db7df8d793",
+      "evidence_type": "当前上游源码"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/launchers/v1/generate.py",
+      "sha256": "028a03f3c75fe46131bd03f17634cb6ed44ae0f4f7274e01ba4fe41d92195ff4",
+      "evidence_type": "冻结 launcher"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/launchers/v1/compat.py",
+      "sha256": "0f7df8d7a65f1178645aa02c53d733baa2dfc13e0a5435d81b54235d16f6023a",
+      "evidence_type": "冻结兼容层"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/launchers/v1/async_export.py",
+      "sha256": "b44c38db5f28faecc316369e5bfafa73d627eeddf26eb757a1dcce26a2da6573",
+      "evidence_type": "冻结保存桥"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/launchers/v1/export_pool.py",
+      "sha256": "ef03ef54bbbc7276205b15030358ee691fc3f422c6449f263acd8c7887768aef",
+      "evidence_type": "冻结保存池"
+    },
+    {
+      "path": "AutoData/datasets/efficiency_20261014_201834/v1/launchers/v1/telemetry.py",
+      "sha256": "a6425d399ba0de11e8ef6233772a6af1117c99f8c62ed0249d7a7acbf2ab4e8c"
+    },
+    {
+      "path": "AutoData/autodata_core/waypoint.py",
+      "sha256": "3e47b8fdccf54c9b20054037d45188dbda17b82d3a6cd88280028b59d42524ee"
+    },
+    {
+      "path": "AutoData/autodata_interfaces/env/isaaclab_env_interface.py",
+      "sha256": "eb4812da4cb418c82f8fb1fd4fef1e0bb569a43e4b077ba7e851194c4a5b157c"
+    },
+    {
+      "path": "/home/tangyuan/WorldSimReady-Home/AutoData/autodata_interfaces/env/isaaclab_env_interface.py",
+      "sha256": "eb4812da4cb418c82f8fb1fd4fef1e0bb569a43e4b077ba7e851194c4a5b157c",
+      "kind": "当前 AutoData 源码",
+      "ranges": [
+        [
+          240,
+          278
+        ]
+      ],
+      "viewer": "source/env-loop.html"
+    },
+    {
+      "path": "/home/tangyuan/WorldSimReady-Home/AutoData/autodata_core/waypoint.py",
+      "sha256": "3e47b8fdccf54c9b20054037d45188dbda17b82d3a6cd88280028b59d42524ee",
+      "kind": "当前 AutoData 源码",
+      "ranges": [
+        [
+          288,
+          336
+        ]
+      ],
+      "viewer": "source/waypoint.html"
+    },
+    {
+      "path": "/home/tangyuan/WorldSimReady-Home/AutoData/autodata_core/algorithms.py",
+      "sha256": "2288cae36381dd36a2e13a80bc20c47e514f8568c1ec8a028af1512244f95939",
+      "kind": "当前 AutoData 源码",
+      "ranges": [
+        [
+          230,
+          255
+        ]
+      ],
+      "viewer": "source/algorithms.html"
+    },
+    {
+      "path": "/home/tangyuan/WorldSimReady-Home/AutoData/datasets/efficiency_20261014_201834/v1/launchers/v1/runtime/openarm_autodata/shared/envs/cameras.py",
+      "sha256": "c336a62f470fe990233ebdf04b0d2e04c8db832a238105b49773db209fc5f3dc",
+      "kind": "v1 实验冻结任务源码",
+      "ranges": [
+        [
+          17,
+          55
+        ]
+      ],
+      "viewer": "source/camera.html"
+    },
+    {
+      "path": "/home/tangyuan/WorldSimReady-Home/AutoData/datasets/efficiency_20261014_201834/v1/launchers/v1/runtime/openarm_autodata/tasks/pick_place/configs/env_cfg.py",
+      "sha256": "81416c26ec4e4b402914d8d6df0e7f56268888524f507b9738b6068898e1afa0",
+      "kind": "v1 实验冻结任务源码",
+      "ranges": [
+        [
+          110,
+          130
+        ],
+        [
+          210,
+          220
+        ]
+      ],
+      "viewer": "source/config.html"
+    },
+    {
+      "path": "/home/tangyuan/WorldSimReady-Home/AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab/isaaclab/envs/manager_based_rl_env.py",
+      "sha256": "a963cfcdb4cd60955cd022ed709d27c99a6935685b69180bb29d74f8983f6566",
+      "kind": "当前 IsaacLab 源码；历史依赖版本仍需运行时核验",
+      "ranges": [
+        [
+          190,
+          275
+        ]
+      ],
+      "viewer": "source/rl-step.html"
+    },
+    {
+      "path": "/home/tangyuan/WorldSimReady-Home/AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab/isaaclab/managers/observation_manager.py",
+      "sha256": "de7c9b2c6b6e0bdb431a0574727982feebe72142ebf41b1140dce624b932d6b8",
+      "kind": "当前 IsaacLab 源码；历史依赖版本仍需运行时核验",
+      "ranges": [
+        [
+          318,
+          345
+        ],
+        [
+          385,
+          402
+        ]
+      ],
+      "viewer": "source/observation.html"
+    },
+    {
+      "path": "/home/tangyuan/WorldSimReady-Home/AutoData/datasets/efficiency_20261014_201834/v1/launchers/v1/runtime/patches/curobo_planner.py",
+      "sha256": "95bee7d993e66fc3028c7bed509fa0e13b86d00d2bb5648cb3a765e34452dda0",
+      "kind": "v1 实验冻结规划补丁",
+      "ranges": [
+        [
+          1303,
+          1322
+        ],
+        [
+          1580,
+          1615
+        ]
+      ],
+      "viewer": "source/planner.html"
+    },
+    {
+      "path": "/home/tangyuan/WorldSimReady-Home/AutoData/datasets/efficiency_20261014_201834/v1/launchers/v1/compat.py",
+      "sha256": "0f7df8d7a65f1178645aa02c53d733baa2dfc13e0a5435d81b54235d16f6023a",
+      "kind": "v1 实验冻结加载器",
+      "ranges": [
+        [
+          89,
+          110
+        ]
+      ],
+      "viewer": "source/compat.html"
+    },
+    {
+      "path": "/home/tangyuan/WorldSimReady-Home/AutoData/datasets/efficiency_20261014_201834/v1/launchers/v1/export_pool.py",
+      "sha256": "ef03ef54bbbc7276205b15030358ee691fc3f422c6449f263acd8c7887768aef",
+      "kind": "v1 实验冻结保存实现",
+      "ranges": [
+        [
+          77,
+          110
+        ],
+        [
+          285,
+          322
+        ]
+      ],
+      "viewer": "source/export.html"
+    },
+    {
+      "path": "/home/tangyuan/WorldSimReady-Home/AutoData/datasets/efficiency_20261014_201834/v1/launchers/v1/export_governor.py",
+      "sha256": "d2dc630a91dc890c57ac36db381ac2759518a25b3a582704ccf783584dee808b",
+      "kind": "v1 实验冻结资源策略",
+      "ranges": [
+        [
+          143,
+          170
+        ]
+      ],
+      "viewer": "source/governor.html"
+    },
+    {
+      "path": "/home/tangyuan/WorldSimReady-Home/AutoData/datasets/efficiency_20261014_201834/v2/launchers/v2/v2_planner.py",
+      "sha256": "78b58d08f9503d302325a35775ffbd6ec8e98e366d0663c54b724f7808c779ea",
+      "kind": "v2 冻结适配源码",
+      "ranges": [
+        [
+          229,
+          246
+        ]
+      ],
+      "viewer": "source/v2-planner.html"
+    },
+    {
+      "path": "/home/tangyuan/.codex/worktrees/e476/WorldSimReady-Home/outputs/autodata-efficiency-review/v013/manifest.json",
+      "sha256": "0b5c2b071729aa4e6e2116393c24390211fc4863421402a777d7cfd889f6e674",
+      "role": "Designated v013 chart book; immutable source"
+    },
+    {
+      "path": "/home/tangyuan/WorldSimReady-Home/outputs/autodata-v1-internal-timing/v001/manifest.json",
+      "sha256": "7599c88340b5485064f5f4e0cef33351a76336da41206c06a91a5f21e6bbc55a",
+      "role": "Completed 4-env v1 synchronous/auto paired timing evidence"
+    }
+  ],
+  "limitations": [
+    "v2 runtime completed but strict terminal validation failed for demo_2; 15/16 pass.",
+    "Historical v1 vs new v2 is cross-day single-run comparison, not causal isolation.",
+    "HDF5 readback and terminal-state checks are not full physics replay.",
+    "GPU/process diagrams are conceptual, not profiler traces; current main-loop inspection does not establish historical source identity.",
+    "Historical 8-env dependency identity remains separate; new 4-env loaded sources and call counts were verified.",
+    "Exclusive host API latency is not isolated GPU kernel time or evidence of GPU phase overlap.",
+    "New cache and rendering optimization proposals have not been implemented or benchmarked.",
+    "Arithmetic scenarios assume linear cost scaling and unchanged critical-path costs; they do not predict final-file throughput."
+  ],
+  "delivery_policy": "local_only",
+  "delivery": {
+    "feishu": {
+      "status": "not_requested"
+    },
+    "gpt": {
+      "status": "not_requested"
+    }
+  },
+  "sealed_at": "2026-10-15T17:33:08.365924+08:00",
+  "files": {
+    "CHANGELOG.md": "f7e93a951c76e4272ea0deaf1115b93b8a94044cd07fb78e8ecfc7222c7b0b11",
+    "README.md": "6bb135b15d9d29a5587a6dad8a5e426f38953f24d82dd7c77867a3b00e15ea71",
+    "acceleration-analysis.html": "dd3c33bd64659b023e3c51b56e78c6680c703576528d75c5aae75e91bbc16d3a",
+    "acceleration-analysis.md": "9153cc6f1b6cd4b7cddf2def14cb97dea64043598313b47f34e57cf64030b3ef",
+    "acceleration-scenarios.json": "081aa1e1c19a26098fa1a8e1cd36dc6ebda8b0654f2ae855f76822bcc885c20c",
+    "acceleration-source-evidence.json": "9819e89bb51a177fd41881524ec3d25f8bfdaae653ef20f5fcfc4a924155b8ce",
+    "analyze_execution.py": "fc7d9cec69f3812a109bda2640adcb3ade0faf4b38f9065c992725cae58ca019",
+    "backend-comparison.csv": "c03c65a478d648a76c704593ddf4266e259173bb07a09feac43da7d5bd5c0085",
+    "build_charts.py": "07b784565f98fd244471eea28cc7e2d06738e22098902760d1877a729199bb54",
+    "build_code_structure.py": "22ab557662541aba1f74cfd049f8715a902e9f0702c521a24c3ef8f62a595dfc",
+    "build_execution_report.py": "60957ed8d8fbd7dc0819e395e83c3b17ae2b21befbaa5d863fa842cf7a638a08",
+    "build_figures.py": "a252e1b62014c121cf0c6bc8059658df6c32ca3a1d08fc782ea8ab6d3ec589ff",
+    "build_gpu_report.py": "091df2e0bf8829512f1b5eb170cd922357bac0fd28a83211acbe388566f4d5bb",
+    "build_report.py": "26bfc3fb8401a10ebcd5d8f3e7c768f79860b411c1cf76f4c3323e88163ea998",
+    "build_timing_figures.py": "b27ee164cb9c89161e4e3b776f1ecf4a2a77260e53e64a28d339486ed6c1360f",
+    "chart-order.json": "1f1370ace1c91fb9da256c33d3c597c3475224f84ae95215e47a6ebad681d8b5",
+    "charts-guide.md": "f7c9f41e03b3b79ce4e5f683b3ef199e9e746ab1e9392e0676772eccf3a4deb5",
+    "charts.html": "94c22865d9cd35e6da0015ca8e53f652947fbac37ab52adc37d10f7eb5c33725",
+    "charts.pdf": "2c6d10b004e6dfd282fc2beff54648d15bcb788e87573bff25227e45eb0eada5",
+    "code-evidence.md": "43aa4e765ce3aed8d277d82b3cef7dc91e306c0dffed007fd7f117254d4e01c6",
+    "code-structure-evidence.md": "34af1ca4ec715f2fc1e85cbaeea93750d68bdec3223c7ada1187f428fa4ca3a4",
+    "code-structure-sources.json": "65b86c716c3afe275a2539173e7ec50a6928d6ad5a983da6d89b86650e282565",
+    "code-structure.html": "676b7420ecdd52ee46494e3fd55f8cd2eb28a033a1879bb8d8e7323f49f73377",
+    "code-structure.md": "be68e1ee3c8e1ec02adc68d7385532571d7c593413a8d9694e848f866f2846a5",
+    "data.csv": "ce19bb7a0206817948847d4f88a48ebf70bc51ed97a6fd0671fde753d6ec1fe4",
+    "data.json": "085a9ba5657167353f06dd2b34a99002dcf614c4971c8cabdd370af5259e8b2d",
+    "execution-analysis.html": "64c4fe54264884a12e0b4e8046cb9a8926ffc59c93ac843c26457b37a6fe3a91",
+    "execution-analysis.json": "60713f772356bb8c42560db98df77232f190f2233381570a0805278107636e50",
+    "execution-analysis.md": "e03c51e5bf357d63eca2fb8f81d49af7d710de4ddca8691f753ee38b22a37b33",
+    "execution-episodes.csv": "f229d70a4caeaf1d8b0b336bc7d433a3444421c32ae552b4172055297cebfdf7",
+    "execution-timing-evidence.md": "ebbef8333401e6f63627b6c876ff555c06b854093d9320fb0d0aa678f9ffb58c",
+    "execution-timing-sources.json": "428c95533ef034bacf77accdc6ca7e115f32bcfdc95defd4aa529db32c7088f6",
+    "execution-windows.csv": "3bbd9917dd1b8c3a9c1a6911b396dff66eaea038d1dbe09de5b1e6a508453883",
+    "extend_review_charts.py": "1af52a35b8c7f757ac1a6f1bfdd22626474c10b38eaaf4af537a50eadefa005d",
+    "extension-provenance.json": "95602ee0eb93845c52aca0a132d8db7a1bb6368bc6f4b795f0065ba030dce51d",
+    "figures/00-code-methods.png": "fcb04ba90d3e3487f3c2a617cff0fbc8b0898e5d8ddf8031fd5e0c37cc58eaa8",
+    "figures/00-code-methods.svg": "a0b716829b5786e7e286f56b6d504569c5e3031007ca4410e26442ac8b281e63",
+    "figures/01-throughput.png": "55fe83352b7bbe5a10ace2c90a1eb631d7096d5cf4b1b6b75923bd43de96223e",
+    "figures/01-throughput.svg": "85f245bfcd7aa33f27a1bec9edc72482e90c9237561bde8391b853a7b0534cc7",
+    "figures/02-tail.png": "a7f900d2d2aab03387fea0c553a021cecf090523ed9fdff6185d3710780e3d2d",
+    "figures/02-tail.svg": "976f7395b13555958519534d18d60edc8d84ae3348e3a8cecd72bc371f42da0f",
+    "figures/03-stages.png": "1d49f3976f772c4cbed5554eceba120a7a327131793a19ab2251f51de700f655",
+    "figures/03-stages.svg": "ef04595d69fe1d570b551865479d1c8dd860d9a1e3d2b9a4d3e7a0a2cbdf978e",
+    "figures/04-gpu.png": "2dd4f7971e28db8c438bef3717f7f3ef660da1fe94d8ef27ab91a240bf6740aa",
+    "figures/04-gpu.svg": "de722595806f833653a12ccb6f22967f825f63edd550968dead25aeba9a7b972",
+    "figures/05-quality.png": "75dc09ce1d93a1eaf015bacfbb42fa8ad58964dea15c6d06a8b00c05d1b59b1f",
+    "figures/05-quality.svg": "36a3472bb368c68100fe7b0bdc247f0a6a1a41d99814d5ce28ec0f5f9c6174ca",
+    "figures/06-history.png": "92211adb2310fb71ea11e979ba118ecb94109cc699491972593821ab49cde305",
+    "figures/06-history.svg": "0d40b14c8eed142de59bab607baa3442c4488d044d5ff7d1be8eb9ff18c02a0a",
+    "figures/07-compression.png": "71389726190a96b61a1f49d83dc714551e32126e3e722ba1ea1bcb1dc8d75563",
+    "figures/07-compression.svg": "23d9e134aff3e84bf05e3e0e8bf23a7b8d038a24fdab62a6ccc700b93104d7ba",
+    "figures/08-flow.png": "d2738da9de672069ffb63e7af8b83afbb24216f43b67cb7b02ef9979472a51f3",
+    "figures/08-flow.svg": "6e9be0d906b50d42186302f3bd1ee900f5382b22b1cefe1d45669abaea9e84d2",
+    "figures/09-stage-change.png": "4f14f30e6a249bd098c5a97111d558fd3f9aed7ef3493008319ab51c9bbdf60d",
+    "figures/09-stage-change.svg": "569a6035d6110364db377406579deb022363de3bd4b10d8c85e51896cca6431a",
+    "figures/10-async-cost.png": "365446f6b1fa53782245e8ccfeb8c47c874fd25addb15867db6221fb759cb39b",
+    "figures/10-async-cost.svg": "d9753853d998f35e18bb5fad325c7ae379c48b4f73539927f71b5271b9889dd1",
+    "figures/11-tail-detail.png": "06b452fd295253deed4f1cd087d8b1ac3cb6b715f7d6ae350520d72f75ff1077",
+    "figures/11-tail-detail.svg": "f1598f9b7fd37306f8ae24e8af664d6d93aa9efec380b9de8f1220c13eec08d3",
+    "figures/12-memory-lifecycle.png": "2d30098b68c909473784d19da8e2f8796e7d6065392f1ea0db7ff78bf13ff96b",
+    "figures/12-memory-lifecycle.svg": "1c1ec24d68d4a6e6718a947598118cc76698b7d6ccc2cf861d035c732edbb95a",
+    "figures/13-v2-adapter.png": "01cda1afb0bc71d5bf805d127ae15bae210fabcecb78c10237c29ce1f5b93713",
+    "figures/13-v2-adapter.svg": "d818236fe0211816979a39dd8cccff11fd7787410a58b46a1e0fb3bf3217b86c",
+    "figures/14-v2-result.png": "80028201d6864a901ecdd81c32517cf86dfa42f2e4272e69074500620c9927b1",
+    "figures/14-v2-result.svg": "3c50ed075b3c77605344f0b9f073b281a129ff93673ec591a35b90815da0652b",
+    "figures/15-serial-parallel.png": "bdf23ce5d51e6ebb49e5ee0dee7ed9cbc1356a9c0b427514cd560ebbcea8fa07",
+    "figures/15-serial-parallel.svg": "f74bf9628b0e22845abc5bae9f465dd23e7c76cfe915490efea7eaa707a5d512",
+    "figures/16-process-gpu.png": "b08ad73e9123cd0da8b2bf5d8d0c85ee8b2d903414ea0434ebbc29fd2d545acb",
+    "figures/16-process-gpu.svg": "8f394d6dd7ed7a0c5f0db2c66cbcfe17c02d6bc6279c5547d9b8909b4688d9ab",
+    "figures/17-batch-barrier.png": "62c86fc35fb4c1099964c1a2af77fbf345b0cbe055c3fddb26e7b6c8445a2224",
+    "figures/17-batch-barrier.svg": "b36a0eaba7427a07c9e305e34613f56e7c0fb1911f3d218a453a2c02ef1de4bd",
+    "figures/18-parallel-comparison.png": "25934222dab6ac2ca5633536ee82e54c394878833e0c3d40eab97a46c8a4ba8b",
+    "figures/18-parallel-comparison.svg": "a1b6e800e0cdaa81977841fbefb387b5aaaa51d46d53229463739a5b973bffae",
+    "figures/19-version-boundaries.png": "32c3a59121071550d48938cdc53099e63c6397ac951d78ce403174b4a8e6e96e",
+    "figures/19-version-boundaries.svg": "ecc6e0dccf822b3d38661b01c00c31c31596dcd6523fb6b243f61e1a91de3912",
+    "figures/20-version-control-flow.png": "b651b64eeeed2e81c4f2fe9e94d9690ce5351db82b9c7ae6ea098e6bfa6f5749",
+    "figures/20-version-control-flow.svg": "62e1463ec47105022a2d9ab2e940acee4142a05988812711312b13ae04f73815",
+    "figures/21-version-evidence.png": "abb2401b515cf67f77f669b813de1c9c7ef264f802f7414216dfea73ee324c41",
+    "figures/21-version-evidence.svg": "0d04f674e5f89701c1626afc0417a5d753b254bebb216a14257c663063301b67",
+    "figures/22-stage-parallelism.png": "61da5f7ac26d6aa51cce84057bba14747bda6512432c61c6f95f26a25dcba1ad",
+    "figures/22-stage-parallelism.svg": "7e76da10de10b1710271428800f4274cd18aab3e9f0a13d1c65e2e01e57c7f51",
+    "figures/23-exact-interfaces.png": "930706ffa8760e90ad86ad84de84ebb0f0a9d4c8b679b025e7dec8a6c97ff9be",
+    "figures/23-exact-interfaces.svg": "af1fea19ba1d8b0270922b8908038e1e0a0c4c13ad9e81114282b1dc8c83a525",
+    "figures/24-library-vs-integration.png": "70db54f36935aa5cce641881414f168a5a4c4d5b0bd58795b616a688787b7b37",
+    "figures/24-library-vs-integration.svg": "52bc66ead72641684104b8311b4664f117bd5151e089bacc33e0a119a12843f8",
+    "figures/25-questions.png": "6c97de49cc5dbd9b883a0aceacc61216ac0c29b460813fb1c40f05850b4fb1f2",
+    "figures/25-questions.svg": "c1c7f214292f189d0e92ad5f2256c18fc460b0e043c2af6b4dcf08cc53b0df20",
+    "figures/26-experiment-matrix.png": "9512b3183428e3b7aaeef071f6bebee309cc0a4a71f3b64361cdbe0294869105",
+    "figures/26-experiment-matrix.svg": "a3baefb0c3f8a12d819ebdc4699998efbaac29fe626ba0f29e351ee85076ed35",
+    "figures/27-metrics.png": "fe49d2fd7bc95f8784d082331718987f7f27f5359720f6109694e501bd4129a2",
+    "figures/27-metrics.svg": "41780ba90aa1a03afe7fefe78d6e0d700ad5dd21683eab23b92fb4429ea4b903",
+    "figures/28-evidence-chain.png": "7dac6e873730c3786f4c8173c9db8f029faac8448e958053d4148afedc5a2e44",
+    "figures/28-evidence-chain.svg": "72ec59ae2c54e8fe4e45bbbd89db1c524ff9fb13dfc9b0e01873f8c58e0b06d4",
+    "figures/29-v2-protocol.png": "2ad9f40d0b8c68682579d6dc4816c1a66f46d474be5634549d66578de8cd12dc",
+    "figures/29-v2-protocol.svg": "fd58ebd653499e98b9ea38c6ccb99aa8067995cbf13e845c1fecd15a0af08330",
+    "figures/30-conclusions.png": "c15359106b5665a3db656f2da718e8185d1c6f333ec7b09a25e12ee00b885b9b",
+    "figures/30-conclusions.svg": "9c72d4d7ac14a82064e9817402fddc303c9ad889be1860d25c8331c5214d9bdd",
+    "figures/31-next-experiments.png": "9b26e96561a389e217f63f87d38a893aebdae93383cd1683750e7e634ab152dd",
+    "figures/31-next-experiments.svg": "eab4b9a5e446ec07d93e1f3a9aafefba7954f4ee58e02ff1da83e1774ad29879",
+    "figures/32-module-structure.png": "c17f4f678a53734a1d44f7d6a1870806a9699ac5f99bc2417816996ad9045083",
+    "figures/32-module-structure.svg": "7c92e57bac4c4563aae67114f51ebd197a8428b6daff067cb222a5f33ce10f6b",
+    "figures/33-install-hooks.png": "1a7da177203cf677250d00fa46a87c0dd5c1e6ff33b3b080698fee25a86dc399",
+    "figures/33-install-hooks.svg": "194b789f5346715fc06f5b25065901135a43f9ddf0733a45b3d7ca75bbb5b7c3",
+    "figures/34-buffer-changes.png": "b18ea00e995a1f50e77262126a8e25413e962237b2b9ccbd74d43c8f0dbd9c8e",
+    "figures/34-buffer-changes.svg": "d38eb547de275a7a5fc5fa40fc7758da56ca44e1c5c14d80e02155c8d3da7be1",
+    "figures/35-completion-failure.png": "5ed6ff489de1b9ec3e06b8698f672f56829f207625c912ea143e1cfa9d04380d",
+    "figures/35-completion-failure.svg": "b6bed5225f98107e8edb64643fb55934b61e6f11aebc114d66ccb35848da8240",
+    "figures/36-execute-timer.png": "ce1975fb6528bbe57575e36535aa43cce64e459e023c24eb14ccc5562802c76d",
+    "figures/36-execute-timer.svg": "651607821c2345c3303751cb22d4b5545add629dd759e695a39f56e886ccb920",
+    "figures/37-execute-normalized.png": "30f6e0d4cf8cd0431a187f8b04146d1eceef1e4993e80bf7fef4c853e60034b0",
+    "figures/37-execute-normalized.svg": "4d2bd7d2809bb94594cb2507e5718b58a644e578a2219c7c2c74c9af295e9947",
+    "figures/38-execute-tail.png": "f475466327ff2fa0eefe29fa1326c9f61263ce468d97747006334210ae63dd36",
+    "figures/38-execute-tail.svg": "e781dbfa6c0986814076d354fd46f78e51b48f2e36ffd11fb4456eee4877e23a",
+    "figures/39-execute-residual.png": "cf533d0e0aa10228ac8673259ac74372f3a2c5863edd97e07c4937e2f1899d9d",
+    "figures/39-execute-residual.svg": "b81f3b343db2f4f1739af4783fedf2ba8f490db973c0a7acc8d07b30871b3309",
+    "figures/40-gpu-chain.png": "2d7151ef9eee1733b74b76a8e01ba478556857a726cfd6f468e068bce5f3b0e5",
+    "figures/40-gpu-chain.svg": "6f187461f6b92bc412dcad1a24c2e32bfceb99512d6378c8c5a929cac7cb4040",
+    "figures/41-camera-copies.png": "a65639f418b36b897e1529017a33fc2f0685a02863ed15e2b2a42120693d95c7",
+    "figures/41-camera-copies.svg": "c285d6996293bcec374e4af97ae95475b528c458650dbb33e5c89ebf2bfdb71d",
+    "figures/42-gpu-validation.png": "413b76b219e63f2ffc11f46fdd84881dfa8e6fa324a6181d50c39a37a2b325f8",
+    "figures/42-gpu-validation.svg": "f147a24ef4de7e860fb52bd1af7b9a4163641fb29b04af657d62b643af805e98",
+    "figures/43-paired-runtime.png": "b27d66f6e0d56a790be30eac44319de8c3a1404c0119d692619bc5dbe6f21623",
+    "figures/43-paired-runtime.svg": "b86a038506efeebdbbef582beeaa5364798a361343bf83b4c9ec62ecca6c0727",
+    "figures/44-internal-attribution.png": "512abd069603b9b3a41a7160559decdce2ee712b7734e3d16c9edab8870fc78f",
+    "figures/44-internal-attribution.svg": "b5c41e8994c14d7345cc1f0eb833dc8918c34760e6e28ac2915b7abcf5a10e14",
+    "figures/45-cpu-gpu-work.png": "485f9668784d2b3e152a1161b752ebdcf6da9138a82767b0adc7e9568e468a35",
+    "figures/45-cpu-gpu-work.svg": "d19d52e26a9efce4aa4a95a0e9c818b8699b311930bc40f730031c8beded7495",
+    "figures/46-step-dependencies.png": "6b876436aaf8033b04b06d1f99956ab1b0e8cc0708fe0a9a06b7352e182481b5",
+    "figures/46-step-dependencies.svg": "85929553f89e082eef39eaea267d655a108341400118ffebeb74cd3a10977d7f",
+    "figures/47-camera-reuse.png": "5e711ceff51342cb8b41a34bf9b6e63abc9ec910c3d194a7000ecbde0685d49c",
+    "figures/47-camera-reuse.svg": "a90e161925e3b28dfdfb22532f2237dcb0496134c18e3f635aceac75a0a8188b",
+    "figures/48-speed-priorities.png": "016dd786fd6bc1ac3c838ab43cf99d7deb0ca68b7e2c42686fd3a476870d88ea",
+    "figures/48-speed-priorities.svg": "b6f11bb0b99abee9e6db962e285d6cdaf324fea14a96e52f9ae88da33485b480",
+    "figures/49-conditional-envelope.png": "cc559c20254a67eef2a99913b20a11fa934dffe8a47270b62ef3f5ea2b069cb3",
+    "figures/49-conditional-envelope.svg": "d88bb196c4ba32ef3c0f57c0ab128d2ed8e41b4911809050c459e0b71f7254ec",
+    "figures/50-ablation-protocol.png": "3038760215dc92f1d35de18606f5bdf3ad81c5491e1176ad704b18d3e8b17e41",
+    "figures/50-ablation-protocol.svg": "7c3a961255d0b9fac8b1cc16bbfdd1c87357e62250e0d7fab7918b03323f8df1",
+    "gpu-analysis.html": "dbd04de930798e084f3958a6ad9b4b70cc3967f4d5247756144366bcc2c53f25",
+    "gpu-analysis.md": "4d1df58e737272f3008fdaa1bb11184cef2cddb57effad31ff63d0a4cd69b9bb",
+    "gpu-source-evidence.json": "1033945e099b84286b7db267a0ba5f41bd628ffbc47508c289789ccf0054f50b",
+    "index.html": "49e48d70a4aa9843c60e2eb01f9b5831f0ac2a6538f39607b8c5d50a5612a7ec",
+    "interface-evidence.md": "7ac3891563cb572661e4a5ef2e88744d2ff8bb3f1831053c25419c54326d2021",
+    "interface-sources.json": "fad9c9e31e5a9dbccdfa97ecc867c55d729e59535ad172d4e4c0eada04dfdc1f",
+    "internal-timing.csv": "2908286a4ba8c176cdc691fe815e9fcfba69ae8058e35e693b29cbd25fe916b5",
+    "paired4/comparison.png": "b6f1a090354b94a7ff3973e0720ae12ca656f45c4e52a6bf4097861c05b8b2fc",
+    "paired4/comparison.svg": "f03a99a402377bd35b9c17918c574b36d06bc03a0c65affe880037dee0f6d559",
+    "paired4/evidence/after_auto/episodes.internal-summary.json": "d4e501172b0e8dedb2dc8b2e8ffd43b9b69f64f5dbafbe5c38bca44a8f211f77",
+    "paired4/evidence/after_auto/episodes.run.json": "126a6edf4b39f95d25130c94b5d141c7f5d8b51538fff03c4db0a9f24610add2",
+    "paired4/evidence/after_auto/episodes.telemetry-summary.json": "710c192571ef931e72cb2cb82d13bf4f718cb1d7de7029c772d161b2266c689e",
+    "paired4/evidence/after_auto/episodes.validation.json": "3ad33853a7a6380b3dc3ec16f39e4c914347d62377b04afe7a2b5a9dc76b0cb2",
+    "paired4/evidence/before_sync/episodes.internal-summary.json": "6358226ac238350c77156616c7a6e592e139428576475a3506d02e12d396953a",
+    "paired4/evidence/before_sync/episodes.run.json": "c8f60eccebced9e9c288779062b6ff11034387783ffebba5bca51738e4b62b2f",
+    "paired4/evidence/before_sync/episodes.telemetry-summary.json": "05360d8d42927f04c9e86e1504c6df4f0a9ec1dd92618ef4caaee8b13b0576dd",
+    "paired4/evidence/before_sync/episodes.validation.json": "c446d21e8c2f836e69ec7cf16cc996392b413e504b1e5edee16543c79032f4eb",
+    "paired4/execute-phases.csv": "c89a08ccc2ba87caa64f9ebc772e01b63bc7b29345812967898ba6284631fc38",
+    "paired4/execution-notes.json": "a631bbb96a559afd8713d491d93207bdf5fd5ad3682f0a1de4fbceb8b07d1cc5",
+    "paired4/experiment.json": "fbbb9c35295681ceb310e1176c21ac78208c583338b32ace2909dbefe1ecce36",
+    "paired4/index.html": "19311cb2d65a0b7e7b52eee435891fc0fd195beb708bb8d51a249026524f4780",
+    "paired4/manifest.json": "7599c88340b5485064f5f4e0cef33351a76336da41206c06a91a5f21e6bbc55a",
+    "paired4/pair-data-check.json": "6aaeb6316a62a60e5478608e270425126ff042f5f33854f31c9ee79eff5c06ef",
+    "paired4/report.json": "249267e647d31d45919399a958ea070e0fa5bc227810bfed26915395d51e0891",
+    "paired4/report.md": "adff5a28462a4f509c58d6d9be71e079b8a4c96973b45a29ec5dbbe503474bb0",
+    "paired4/reproduction/README.md": "7f215c665140c1169ad804ca237137759d521784fa2b4c3e47ecf780c95a1e35",
+    "paired4/reproduction/analyze.py": "c843e593667872079d478d3e49312313b0a136d2ca147ce0e1c20f81781564f2",
+    "paired4/reproduction/internal_timing.py": "9d52f46dc9cf8b0be860ae9ad356eef82b4047b05d3ca80392e97d6ef4763aa1",
+    "paired4/reproduction/package_report.py": "d564ac056d2e43e3c5da240c95b29ce865903c70f2b001e2589c00c387ece544",
+    "paired4/reproduction/run_experiment.py": "eb414fc89d8450c408d0ff0f10354dd0377cd31ec1f8a1b0ea48b6778387514f",
+    "paired4/reproduction/test_internal_timing.py": "a6daf4bff5d839478e67b730b81a00c739b214586f934f9a29c7ba731035ee11",
+    "paired4/reproduction/verify_pair.py": "6ff4d6700e7c817bd6adf9637ada062a21ccb966f0e767f32aec3197c2c160a1",
+    "report.md": "7d98f4db85a78e2f39bef8117e70d96a955620a1be98acdb33a8f6e4151b3ff8",
+    "slide-notes.json": "4971930dd5361984dc9574865d065bb570872fcf8f33cb220f18ab5da5f8f076",
+    "source/algorithms.html": "0dc8ab66245eab46e41aa0c629fd582a4d9d133e4e647aa9e1c1c44ba811ba5c",
+    "source/camera-render-current.html": "fceff55e48fd177a698d9747a0434c451290f4c1f696f1d7f1134ee45b81facf",
+    "source/camera.html": "a4b6014cbe10ba20c630a67444d5ae4b6438fa456b7ae9826b7d62d471ecb317",
+    "source/compat.html": "dfd86dd9b4562ea56a4436a3303e74275dce43d7bedc55df752c2185a38468b9",
+    "source/config.html": "91eefb89b6c091fc5db4027beebee3a83474e73971b6204087d8cebdfd9ed8df",
+    "source/env-loop.html": "54baebbd8e5111be3bf0e7a8d35ae3ee587b54bca3945a5479b3716f3435fafd",
+    "source/export.html": "08226a99201be7b8d882584629f9d58fc63dfdd147dbb47b1a83e6a98f2ce2dd",
+    "source/governor.html": "44dcf50f702473caeebf9002e75614db655bbbc228d3d30e4e96cdea6f534bac",
+    "source/observation.html": "b241223679304657a8f2740ec3ce923a139c928bd1627c95353e370f28b1eb5d",
+    "source/physx-device.html": "349013ac7d3d7d60e2575bac2b2d1f127aeb76228a0a9750c0b9cb0830e0e8a1",
+    "source/planner.html": "598e228d46eb8696a28fc2f817af33629c08cd56bcf0b2b73262422068fc27ec",
+    "source/rl-step.html": "930526a7c0a7645327ffb54d8005dc2a8f801bffc1d037bf8a1cb199cf5f2bd4",
+    "source/tiled-current.html": "95333d1750f2ff713a60454840f739903887845db7a58040520217b3ccb969a9",
+    "source/v2-planner.html": "d3c4cb56367f582f10be10f87a08e1b2a2ac44bdc9bdc73337915f2baf0fbdbd",
+    "source/waypoint.html": "ecead940c4b5b04d77ee335d280ad28173a557f751ce8e5936ce4a2d510476a6",
+    "v2-provenance.json": "1f59d60b13338d969b19153bb611c92aa047a5397a253f91e0a60af72cefcde1",
+    "v2-result.json": "d8aa00969eb48628b5eb8eb10bb88fe95de23f503f9d7ad110d6161a75d2de06",
+    "v2-validation.json": "12006033f252ca2dd3ce9be35ef90a18bdfdca2eb6dac61bd15339c4341f6ef5",
+    "verification.json": "44f2e521dab62f38a93feee7d24f34ff6e3ea4195517488f9f8f307df44dec2e",
+    "version-walkthrough.md": "f898044c669ad5bcab7218151468bf5d99d3e22f0c372bca1fcdc7ce9102153d"
+  },
+  "web_sources": [
+    {
+      "url": "https://github.com/NVlabs/curobo",
+      "checked_on": "2026-10-15",
+      "role": "Official library capability/API reference; not frozen experiment source"
+    },
+    {
+      "url": "https://curobo.org/readme.html",
+      "checked_on": "2026-10-15",
+      "role": "Official library capability/API reference; not frozen experiment source"
+    },
+    {
+      "url": "https://arxiv.org/abs/2603.05493",
+      "checked_on": "2026-10-15",
+      "role": "Official library capability/API reference; not frozen experiment source"
+    },
+    {
+      "url": "https://curobo.org/_api/curobo.wrap.reacher.motion_gen.html",
+      "checked_on": "2026-10-15",
+      "role": "Official library capability/API reference; not frozen experiment source"
+    },
+    {
+      "url": "https://nvlabs.github.io/curobo/latest/api/curobo.motion_planner.html",
+      "checked_on": "2026-10-15",
+      "role": "Official library capability/API reference; not frozen experiment source"
+    },
+    {
+      "url": "https://docs.nvidia.com/deploy/nvidia-smi/index.html",
+      "checked_on": "2026-10-15",
+      "role": "GPU utilization metric definition; not measured occupancy"
+    },
+    {
+      "url": "https://docs.pytorch.org/tutorials/intermediate/pinmem_nonblock.html",
+      "role": "D2H asynchronous completion and pinned-memory conditions",
+      "checked_on": "2026-10-15"
+    },
+    {
+      "url": "https://docs.nvidia.com/cuda/archive/13.0.1/cuda-c-best-practices-guide/index.html",
+      "role": "Conditional copy/compute overlap and stream dependencies",
+      "checked_on": "2026-10-15"
+    },
+    {
+      "url": "https://docs.nvidia.com/nsight-systems/UserGuide/index.html",
+      "role": "CPU/CUDA/graphics timeline attribution",
+      "checked_on": "2026-10-15"
+    }
+  ]
+}
