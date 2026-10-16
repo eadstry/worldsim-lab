@@ -1,0 +1,864 @@
+{
+  "scope": "Real Arena variations on a minimal primitive scene, PhysX backend. No robot policy, planner or task-success evaluation.",
+  "cases": [
+    {
+      "id": "intensity",
+      "label": "灯光强度",
+      "phase": "build-time",
+      "note": "同一方向光，强度 250 / 3000",
+      "parameters": [
+        250.0,
+        3000.0
+      ],
+      "status": "passed",
+      "samples": [
+        {
+          "file": "0.png",
+          "cube_pose": [
+            0.0,
+            0.0,
+            0.18000000715255737,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "mass_kg": 0.25,
+          "camera_position_m": [
+            0.75,
+            0.75,
+            0.699999988079071
+          ],
+          "camera_apertures": [
+            24.0,
+            18.0
+          ],
+          "mean_rgb": [
+            33.655034722222226,
+            33.11137152777778,
+            33.91959490740741
+          ],
+          "parameter": 250.0,
+          "live_light": {
+            "intensity": 250.0,
+            "color": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "color_temperature": 6500.0,
+            "temperature_enabled": false
+          }
+        },
+        {
+          "file": "1.png",
+          "cube_pose": [
+            0.0,
+            0.0,
+            0.18000000715255737,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "mass_kg": 0.25,
+          "camera_position_m": [
+            0.75,
+            0.75,
+            0.699999988079071
+          ],
+          "camera_apertures": [
+            24.0,
+            18.0
+          ],
+          "mean_rgb": [
+            48.17049768518518,
+            47.82075231481482,
+            48.07630787037037
+          ],
+          "parameter": 3000.0,
+          "live_light": {
+            "intensity": 3000.0,
+            "color": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "color_temperature": 6500.0,
+            "temperature_enabled": false
+          }
+        }
+      ],
+      "pixel_mean_absolute_difference": 14.474685570987655,
+      "checks": {
+        "finite_state": true,
+        "nonblack_frames": true,
+        "visible_difference": true,
+        "live_parameter_applied": true
+      }
+    },
+    {
+      "id": "color",
+      "label": "灯光颜色",
+      "phase": "build-time",
+      "note": "暖红 / 冷蓝 RGB",
+      "parameters": [
+        [
+          1.0,
+          0.3,
+          0.15
+        ],
+        [
+          0.2,
+          0.45,
+          1.0
+        ]
+      ],
+      "status": "passed",
+      "samples": [
+        {
+          "file": "0.png",
+          "cube_pose": [
+            0.0,
+            0.0,
+            0.18000000715255737,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "mass_kg": 0.25,
+          "camera_position_m": [
+            0.75,
+            0.75,
+            0.699999988079071
+          ],
+          "camera_apertures": [
+            24.0,
+            18.0
+          ],
+          "mean_rgb": [
+            42.73208912037037,
+            35.84178240740741,
+            34.940815972222225
+          ],
+          "parameter": [
+            1.0,
+            0.3,
+            0.15
+          ],
+          "live_light": {
+            "intensity": 1800.0,
+            "color": [
+              1.0,
+              0.30000001192092896,
+              0.15000000596046448
+            ],
+            "color_temperature": 6500.0,
+            "temperature_enabled": false
+          }
+        },
+        {
+          "file": "1.png",
+          "cube_pose": [
+            0.0,
+            0.0,
+            0.18000000715255737,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "mass_kg": 0.25,
+          "camera_position_m": [
+            0.75,
+            0.75,
+            0.699999988079071
+          ],
+          "camera_apertures": [
+            24.0,
+            18.0
+          ],
+          "mean_rgb": [
+            35.800949074074076,
+            37.67964699074074,
+            43.17862847222222
+          ],
+          "parameter": [
+            0.2,
+            0.45,
+            1.0
+          ],
+          "live_light": {
+            "intensity": 1800.0,
+            "color": [
+              0.20000000298023224,
+              0.44999998807907104,
+              1.0
+            ],
+            "color_temperature": 6500.0,
+            "temperature_enabled": false
+          }
+        }
+      ],
+      "pixel_mean_absolute_difference": 5.729953703703703,
+      "checks": {
+        "finite_state": true,
+        "nonblack_frames": true,
+        "visible_difference": true,
+        "live_parameter_applied": true
+      }
+    },
+    {
+      "id": "temperature",
+      "label": "灯光色温",
+      "phase": "build-time",
+      "note": "2800 K / 9000 K",
+      "parameters": [
+        2800.0,
+        9000.0
+      ],
+      "status": "passed",
+      "samples": [
+        {
+          "file": "0.png",
+          "cube_pose": [
+            0.0,
+            0.0,
+            0.18000000715255737,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "mass_kg": 0.25,
+          "camera_position_m": [
+            0.75,
+            0.75,
+            0.699999988079071
+          ],
+          "camera_apertures": [
+            24.0,
+            18.0
+          ],
+          "mean_rgb": [
+            49.3271875,
+            40.685387731481484,
+            35.60527199074074
+          ],
+          "parameter": 2800.0,
+          "live_light": {
+            "intensity": 1800.0,
+            "color": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "color_temperature": 2800.0,
+            "temperature_enabled": true
+          }
+        },
+        {
+          "file": "1.png",
+          "cube_pose": [
+            0.0,
+            0.0,
+            0.18000000715255737,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "mass_kg": 0.25,
+          "camera_position_m": [
+            0.75,
+            0.75,
+            0.699999988079071
+          ],
+          "camera_apertures": [
+            24.0,
+            18.0
+          ],
+          "mean_rgb": [
+            42.141597222222224,
+            42.41788773148148,
+            45.59858217592593
+          ],
+          "parameter": 9000.0,
+          "live_light": {
+            "intensity": 1800.0,
+            "color": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "color_temperature": 9000.0,
+            "temperature_enabled": true
+          }
+        }
+      ],
+      "pixel_mean_absolute_difference": 6.355466820987655,
+      "checks": {
+        "finite_state": true,
+        "nonblack_frames": true,
+        "visible_difference": true,
+        "live_parameter_applied": true
+      }
+    },
+    {
+      "id": "direction",
+      "label": "光照方向",
+      "phase": "build-time",
+      "note": "方位角/偏离天顶角 [rad]",
+      "parameters": [
+        [
+          0.0,
+          0.15
+        ],
+        [
+          1.57,
+          1.2
+        ]
+      ],
+      "status": "passed",
+      "samples": [
+        {
+          "file": "0.png",
+          "cube_pose": [
+            0.0,
+            0.0,
+            0.18000000715255737,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "mass_kg": 0.25,
+          "camera_position_m": [
+            0.75,
+            0.75,
+            0.699999988079071
+          ],
+          "camera_apertures": [
+            24.0,
+            18.0
+          ],
+          "mean_rgb": [
+            45.683177083333334,
+            45.10394097222222,
+            45.583194444444445
+          ],
+          "parameter": [
+            0.0,
+            0.15
+          ]
+        },
+        {
+          "file": "1.png",
+          "cube_pose": [
+            0.0,
+            0.0,
+            0.18000000715255737,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "mass_kg": 0.25,
+          "camera_position_m": [
+            0.75,
+            0.75,
+            0.699999988079071
+          ],
+          "camera_apertures": [
+            24.0,
+            18.0
+          ],
+          "mean_rgb": [
+            37.465943287037035,
+            37.06553819444444,
+            37.502864583333334
+          ],
+          "parameter": [
+            1.57,
+            1.2
+          ]
+        }
+      ],
+      "pixel_mean_absolute_difference": 10.68808449074074,
+      "checks": {
+        "finite_state": true,
+        "nonblack_frames": true,
+        "visible_difference": true
+      }
+    },
+    {
+      "id": "hdr",
+      "label": "HDR 环境",
+      "phase": "build-time",
+      "note": "本机真实 studio / beach HDR；未联网下载",
+      "parameters": [
+        "probe_studio",
+        "probe_beach"
+      ],
+      "status": "passed",
+      "samples": [
+        {
+          "file": "0.png",
+          "cube_pose": [
+            0.0,
+            0.0,
+            0.18000000715255737,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "mass_kg": 0.25,
+          "camera_position_m": [
+            0.75,
+            0.75,
+            0.699999988079071
+          ],
+          "camera_apertures": [
+            24.0,
+            18.0
+          ],
+          "mean_rgb": [
+            68.96604745370371,
+            70.77901041666667,
+            71.98518518518519
+          ],
+          "parameter": "probe_studio"
+        },
+        {
+          "file": "1.png",
+          "cube_pose": [
+            0.0,
+            0.0,
+            0.18000000715255737,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "mass_kg": 0.25,
+          "camera_position_m": [
+            0.75,
+            0.75,
+            0.699999988079071
+          ],
+          "camera_apertures": [
+            24.0,
+            18.0
+          ],
+          "mean_rgb": [
+            70.42164351851852,
+            73.1491724537037,
+            79.55344907407408
+          ],
+          "parameter": "probe_beach"
+        }
+      ],
+      "pixel_mean_absolute_difference": 24.435021219135802,
+      "checks": {
+        "finite_state": true,
+        "nonblack_frames": true,
+        "visible_difference": true
+      }
+    },
+    {
+      "id": "extrinsics",
+      "label": "相机外参平移",
+      "phase": "reset",
+      "note": "ROS 光学 X -30 / +30 mm；为便于观察扩展测试幅度，库默认 ±5 mm",
+      "parameters": [
+        [
+          -0.03,
+          0.0,
+          0.0
+        ],
+        [
+          0.03,
+          0.0,
+          0.0
+        ]
+      ],
+      "status": "failed",
+      "samples": [],
+      "error": "Traceback (most recent call last):\n  File \"/home/tangyuan/WorldSimReady-Home/.worktrees/arena-domain-visual-20261016/workspace-overlays/arena-domain-visual/run.py\", line 201, in <module>\n    env.reset(seed=value if kind=='pose' else 101)\n  File \"/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/.venv/lib/python3.12/site-packages/gymnasium/wrappers/common.py\", line 400, in reset\n    return super().reset(seed=seed, options=options)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/.venv/lib/python3.12/site-packages/gymnasium/core.py\", line 333, in reset\n    return self.env.reset(seed=seed, options=options)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab/isaaclab/envs/manager_based_env.py\", line 421, in reset\n    self._reset_idx(env_ids)\n  File \"/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/isaaclab_arena/environments/isaaclab_arena_manager_based_env.py\", line 107, in _reset_idx\n    super()._reset_idx(env_ids)\n  File \"/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab/isaaclab/envs/manager_based_rl_env.py\", line 419, in _reset_idx\n    self.event_manager.apply(mode=\"reset\", env_ids=env_ids, global_env_step_count=env_step_count)\n  File \"/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab/isaaclab/managers/event_manager.py\", line 262, in apply\n    term_cfg.func(self._env, env_ids, **term_cfg.params)\n  File \"/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/isaaclab_arena/variations/camera_extrinsics_variation.py\", line 169, in __call__\n    self._pose_writer.set_local_translations(translations=t_parent_Cnew_in_parent, env_ids=env_ids)\n  File \"/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/isaaclab_arena/patches/camera_render_pose.py\", line 72, in set_local_translations\n    self._ensure_initialized()\n  File \"/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/isaaclab_arena/patches/camera_render_pose.py\", line 49, in _ensure_initialized\n    self._assert_views_share_local_frame()\n  File \"/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/isaaclab_arena/patches/camera_render_pose.py\", line 60, in _assert_views_share_local_frame\n    assert torch.allclose(physics_t, usd_t, atol=1.0e-4), (\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Physics FrameView and USD camera-prim local translations disagree (physics=[[0.75, 0.75, 0.699999988079071]], usd=[[0.0, 0.0, 0.0]]); one pose cannot serve both.\n"
+    },
+    {
+      "id": "intrinsics",
+      "label": "相机内参",
+      "phase": "reset",
+      "note": "fx/fy -10% / +10%，使用库默认范围端点",
+      "parameters": [
+        [
+          -0.1,
+          -0.1
+        ],
+        [
+          0.1,
+          0.1
+        ]
+      ],
+      "status": "passed",
+      "samples": [
+        {
+          "file": "0.png",
+          "cube_pose": [
+            0.0,
+            0.0,
+            0.18000000715255737,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "mass_kg": 0.25,
+          "camera_position_m": [
+            0.75,
+            0.75,
+            0.699999988079071
+          ],
+          "camera_apertures": [
+            26.66666603088379,
+            20.0
+          ],
+          "mean_rgb": [
+            42.03423611111111,
+            41.703211805555554,
+            41.99634837962963
+          ],
+          "parameter": [
+            -0.1,
+            -0.1
+          ]
+        },
+        {
+          "file": "1.png",
+          "cube_pose": [
+            0.0,
+            0.0,
+            0.18000000715255737,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "mass_kg": 0.25,
+          "camera_position_m": [
+            0.75,
+            0.75,
+            0.699999988079071
+          ],
+          "camera_apertures": [
+            21.81818199157715,
+            16.363636016845703
+          ],
+          "mean_rgb": [
+            44.35528935185185,
+            43.704658564814814,
+            43.904322916666665
+          ],
+          "parameter": [
+            0.1,
+            0.1
+          ]
+        }
+      ],
+      "pixel_mean_absolute_difference": 19.744988425925925,
+      "checks": {
+        "finite_state": true,
+        "nonblack_frames": true,
+        "visible_difference": true,
+        "aperture_ratio": true
+      }
+    },
+    {
+      "id": "mass",
+      "label": "物体质量",
+      "phase": "reset",
+      "note": "0.05 / 0.25 kg；同一外力 0.05 N 持续 0.4 s，无重力",
+      "parameters": [
+        0.05,
+        0.25
+      ],
+      "status": "failed",
+      "samples": [
+        {
+          "file": "0.png",
+          "cube_pose": [
+            0.01049912441521883,
+            0.00015720092051196843,
+            0.059999868273735046,
+            8.034151051106164e-07,
+            3.639208898675861e-06,
+            0.0009004854364320636,
+            0.9999995231628418
+          ],
+          "mass_kg": 0.05000000074505806,
+          "camera_position_m": [
+            0.75,
+            0.75,
+            0.699999988079071
+          ],
+          "camera_apertures": [
+            24.0,
+            18.0
+          ],
+          "mean_rgb": [
+            41.84417824074074,
+            42.207123842592594,
+            42.348188657407405
+          ],
+          "parameter": 0.05
+        },
+        {
+          "file": "1.png",
+          "cube_pose": [
+            -0.0005544528248719871,
+            0.006668662186712027,
+            0.05999171733856201,
+            -5.927573511144146e-05,
+            2.529162884457037e-05,
+            -0.012006164528429508,
+            0.9999279379844666
+          ],
+          "mass_kg": 0.25,
+          "camera_position_m": [
+            0.75,
+            0.75,
+            0.699999988079071
+          ],
+          "camera_apertures": [
+            24.0,
+            18.0
+          ],
+          "mean_rgb": [
+            42.09486689814815,
+            42.40762152777778,
+            42.42848958333333
+          ],
+          "parameter": 0.25
+        }
+      ],
+      "displacement_x_m": [
+        0.01049912441521883,
+        -0.0005544528248719871
+      ],
+      "pixel_mean_absolute_difference": 1.468971836419753,
+      "checks": {
+        "finite_state": true,
+        "nonblack_frames": true,
+        "visible_difference": true,
+        "masses_applied": true,
+        "inverse_mass_response": false
+      }
+    },
+    {
+      "id": "disappear",
+      "label": "物体消失",
+      "phase": "reset",
+      "note": "消失概率 0 / 1；检查返回概率 0 后物体恢复",
+      "parameters": [
+        0.0,
+        1.0
+      ],
+      "status": "passed",
+      "samples": [
+        {
+          "file": "0.png",
+          "cube_pose": [
+            0.0,
+            0.0,
+            0.18000000715255737,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "mass_kg": 0.25,
+          "camera_position_m": [
+            0.75,
+            0.75,
+            0.699999988079071
+          ],
+          "camera_apertures": [
+            24.0,
+            18.0
+          ],
+          "mean_rgb": [
+            42.90221643518519,
+            42.49337384259259,
+            42.83278935185185
+          ],
+          "parameter": 0.0
+        },
+        {
+          "file": "1.png",
+          "cube_pose": [
+            1000.0,
+            -9.065288759302348e-05,
+            0.05006083846092224,
+            0.0007596081704832613,
+            -7.461195536961895e-07,
+            -7.70442767361601e-08,
+            0.9999996423721313
+          ],
+          "mass_kg": 0.25,
+          "camera_position_m": [
+            0.75,
+            0.75,
+            0.699999988079071
+          ],
+          "camera_apertures": [
+            24.0,
+            18.0
+          ],
+          "mean_rgb": [
+            39.61618055555556,
+            41.581429398148146,
+            42.00988425925926
+          ],
+          "parameter": 1.0
+        }
+      ],
+      "pixel_mean_absolute_difference": 3.495877700617284,
+      "checks": {
+        "finite_state": true,
+        "nonblack_frames": true,
+        "visible_difference": true,
+        "parked_away": true,
+        "returns_after_reset": true
+      }
+    },
+    {
+      "id": "pose",
+      "label": "物体位姿",
+      "phase": "reset",
+      "note": "XY ±100 mm、yaw ±0.8 rad，两个 seed 实际采样",
+      "parameters": [
+        101,
+        102
+      ],
+      "status": "passed",
+      "samples": [
+        {
+          "file": "0.png",
+          "cube_pose": [
+            0.016230426728725433,
+            -0.06104910001158714,
+            0.18000000715255737,
+            0.0,
+            0.0,
+            0.1304040551185608,
+            0.991460919380188
+          ],
+          "mass_kg": 0.25,
+          "camera_position_m": [
+            0.75,
+            0.75,
+            0.699999988079071
+          ],
+          "camera_apertures": [
+            24.0,
+            18.0
+          ],
+          "mean_rgb": [
+            43.01243634259259,
+            43.29260416666666,
+            43.42104745370371
+          ],
+          "parameter": 101
+        },
+        {
+          "file": "1.png",
+          "cube_pose": [
+            -0.07036575675010681,
+            0.023193057626485825,
+            0.18000000715255737,
+            0.0,
+            0.0,
+            -0.09239803999662399,
+            0.9957221746444702
+          ],
+          "mass_kg": 0.25,
+          "camera_position_m": [
+            0.75,
+            0.75,
+            0.699999988079071
+          ],
+          "camera_apertures": [
+            24.0,
+            18.0
+          ],
+          "mean_rgb": [
+            42.89924768518519,
+            42.316238425925924,
+            42.6688599537037
+          ],
+          "parameter": 102
+        }
+      ],
+      "pixel_mean_absolute_difference": 5.220592206790124,
+      "checks": {
+        "finite_state": true,
+        "nonblack_frames": true,
+        "visible_difference": true,
+        "within_range": true
+      }
+    }
+  ],
+  "source_root": "/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena",
+  "status": "failed",
+  "concrete_variations": [
+    {
+      "class": "LightIntensityVariation",
+      "source": "/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/isaaclab_arena/variations/light_intensity_variation.py",
+      "line": 28
+    },
+    {
+      "class": "ObjectMassVariation",
+      "source": "/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/isaaclab_arena/variations/object_mass_variation.py",
+      "line": 45
+    },
+    {
+      "class": "LightDirectionVariation",
+      "source": "/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/isaaclab_arena/variations/light_direction_variation.py",
+      "line": 73
+    },
+    {
+      "class": "ObjectDisappearVariation",
+      "source": "/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/isaaclab_arena/variations/object_disappear_variation.py",
+      "line": 74
+    },
+    {
+      "class": "LightColorTemperatureVariation",
+      "source": "/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/isaaclab_arena/variations/light_color_temperature_variation.py",
+      "line": 30
+    },
+    {
+      "class": "LightColorVariation",
+      "source": "/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/isaaclab_arena/variations/light_color_variation.py",
+      "line": 32
+    },
+    {
+      "class": "CameraExtrinsicsVariation",
+      "source": "/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/isaaclab_arena/variations/camera_extrinsics_variation.py",
+      "line": 54
+    },
+    {
+      "class": "CameraIntrinsicsVariation",
+      "source": "/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/isaaclab_arena/variations/camera_intrinsics_variation.py",
+      "line": 48
+    },
+    {
+      "class": "HDRImageVariation",
+      "source": "/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/isaaclab_arena/variations/hdr_image_variation.py",
+      "line": 37
+    }
+  ],
+  "source_unchanged": true
+}

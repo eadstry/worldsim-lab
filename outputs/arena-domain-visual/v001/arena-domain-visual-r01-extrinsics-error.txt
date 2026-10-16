@@ -1,0 +1,27 @@
+Traceback (most recent call last):
+  File "/home/tangyuan/WorldSimReady-Home/.worktrees/arena-domain-visual-20261016/workspace-overlays/arena-domain-visual/run.py", line 201, in <module>
+    env.reset(seed=value if kind=='pose' else 101)
+  File "/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/.venv/lib/python3.12/site-packages/gymnasium/wrappers/common.py", line 400, in reset
+    return super().reset(seed=seed, options=options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/.venv/lib/python3.12/site-packages/gymnasium/core.py", line 333, in reset
+    return self.env.reset(seed=seed, options=options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab/isaaclab/envs/manager_based_env.py", line 421, in reset
+    self._reset_idx(env_ids)
+  File "/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/isaaclab_arena/environments/isaaclab_arena_manager_based_env.py", line 107, in _reset_idx
+    super()._reset_idx(env_ids)
+  File "/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab/isaaclab/envs/manager_based_rl_env.py", line 419, in _reset_idx
+    self.event_manager.apply(mode="reset", env_ids=env_ids, global_env_step_count=env_step_count)
+  File "/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab/isaaclab/managers/event_manager.py", line 262, in apply
+    term_cfg.func(self._env, env_ids, **term_cfg.params)
+  File "/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/isaaclab_arena/variations/camera_extrinsics_variation.py", line 169, in __call__
+    self._pose_writer.set_local_translations(translations=t_parent_Cnew_in_parent, env_ids=env_ids)
+  File "/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/isaaclab_arena/patches/camera_render_pose.py", line 72, in set_local_translations
+    self._ensure_initialized()
+  File "/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/isaaclab_arena/patches/camera_render_pose.py", line 49, in _ensure_initialized
+    self._assert_views_share_local_frame()
+  File "/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/isaaclab_arena/patches/camera_render_pose.py", line 60, in _assert_views_share_local_frame
+    assert torch.allclose(physics_t, usd_t, atol=1.0e-4), (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Physics FrameView and USD camera-prim local translations disagree (physics=[[0.75, 0.75, 0.699999988079071]], usd=[[0.0, 0.0, 0.0]]); one pose cannot serve both.

@@ -4,6 +4,7 @@
 
 | 主题 | 当前阅读入口 | 内容与验证范围 | 已记录交付情况 |
 | --- | --- | --- | --- |
+| Arena 域随机化可视化检查 | [v001 比较结果](arena-domain-visual/v001/comparison.json) · [复现入口](../workspace-overlays/arena-domain-visual/README.md) | 2026-10-16 根目录 Arena 原生环境、PhysX 真实渲染：9 个具体 Variation + PoseRange 共 10 项最终通过；首轮 8 项通过，外参/质量修正测试设置后复测通过；保留原失败、状态与像素证据，未检查 Newton 或策略效果 | 按用户偏好仅本地保存，不推送 |
 | 全库 Git 历史差异保留 | [v001 说明](git-worktree-preservation/v001/README.md) · [逐文件清单](git-worktree-preservation/v001/inventory.json) | 保存 3 个旧工作树的独有源码与正文，重复成果引用既有归档；缓存和数据留本机，无新增实验 | Git 归档，非运行验证 |
 | AutoData 架构与 cuRobo 对比 | [v022 架构](autodata-efficiency-review/v022/architecture.html) · [cuRobo 对比](autodata-efficiency-review/v022/curobo-v1-v2.html) · [完整图册](autodata-efficiency-review/v022/charts.html) | 已完成的新版本交付，保存原生成校验与验证记录；本次仅归档，没有新增 GPU 实验 | 本地交付并随 Git 同步 |
 | AutoData 域随机化方法总览 | [v001 方法清单](autodata-domain-randomization-catalog/v001/catalog.json) · [交互 HTML 片段](autodata-domain-randomization-catalog/v001/atlas-fragment.html) · [验证记录](autodata-domain-randomization-catalog/v001/validation.json) | 45 类方法，附参数、源码入口与接入限制；源码清点和原理示意，未新增 GPU 实验；HTML 为嵌入式片段 | 本地归档并随 Git 同步，未发布站点 |

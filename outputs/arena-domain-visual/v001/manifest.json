@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "artifact_id": "arena-domain-visual",
+  "version": "v001",
+  "created_at": "2026-10-16T11:46:59.617736+08:00",
+  "sealed_at": "2026-10-16T11:46:59.617736+08:00",
+  "sources": [
+    "/home/tangyuan/WorldSimReady-Home/.worktrees/arena-domain-visual-20261016/runs/arena-domain-visual-r01",
+    "/home/tangyuan/WorldSimReady-Home/.worktrees/arena-domain-visual-20261016/runs/arena-domain-visual-r02"
+  ],
+  "files": {
+    "arena-domain-visual-r01-extrinsics-error.txt": "59834f1f65938c616da41e349855062a70ad7029167def4311c7ab704e465e39",
+    "color/0.png": "da34e26bf4fb8fc20443eb8b49d8e6223cba881bafe4b62035a529a81a4f0982",
+    "color/1.png": "e9d017b78a00cc828da3ce27d68832aa56178702ac598054b305536043760328",
+    "comparison.json": "1bd2afe68e0d47fb65ad6af79ce5f3c26f2c9a1316098a51697556a53ef7e353",
+    "direction/0.png": "81be6ab9cc0b32031443dcf7497df3404800209f157395da66a18e08857b4cc4",
+    "direction/1.png": "cdfad692aa847c228bcbe248b77a369e38b42e83e570ee1bc2145b5d9bc1a592",
+    "disappear/0.png": "9d4c6d263e938f020b44d55322b372f3196aa1f9ebf642d3fa99f927ee9b2a72",
+    "disappear/1.png": "2d5c0d38932530f431d963d6d2a028d149c04b1ff2f64c299cccd0e44a9b5951",
+    "extrinsics/0.png": "2cb6fc2c93b7329e4c3c9467d73ce4721789978dca5304baa96da01bc0b88e69",
+    "extrinsics/1.png": "adb259a7168b993561d72fc30c84028007b7098d7752f3b241c8643c1e1f2bde",
+    "first-run/result.json": "17347cefbe7bb48a025a17f7f73ec8b0a7f0ac7e423e92c2d38751e4c70e1501",
+    "first-run/source-sha256.json": "dd398554c544ab1bdfeca5ea0a907bb5d78652e7f002c4651ae85f1b6d98b51b",
+    "hdr/0.png": "2ebb3c718a452981acee967ec8d80b6038df8020706713b43563f9129dff44fd",
+    "hdr/1.png": "f1fcde06020e7cf501a268ef4c513c3606acc1c8b0a40921c9dfc006c9716938",
+    "intensity/0.png": "0e25466fa631e593574a2b1c2d0fcf8522b98cffcf31770fb2192111425df2be",
+    "intensity/1.png": "dace20be8479035dfe7f0c1f30e9d13a9d8f28bf17f94d45e3301269c579e61f",
+    "intrinsics/0.png": "996751eb830fa122990f3801f1a6e8d19761cc553ee2d050a93531070537bed2",
+    "intrinsics/1.png": "c36dced19fd3b70237c549d1c0f353cccae7762b34bd24b8c5a2655e87ece933",
+    "mass/0.png": "254278edd5516a216487e3a4dc868ac3301b672ec1156b0959a72e13c8edc4ed",
+    "mass/1.png": "a5dfc390d05e3a035cee622ff3cedf075223d317bb51e43ad1adc0494cec2aa8",
+    "pose/0.png": "6de2fd3a1a2b3bebe1e144699ee79f87256a1b6a7fa29a6c8e95d707e73f1e6a",
+    "pose/1.png": "2bd970ea37467c88717ad5328523281826e5c35a573392599d8a95243d22d756",
+    "recheck/result.json": "90f2d4cf904f24a3323f60817c765d99533e7d4f191f953154b2b8b1bf645634",
+    "recheck/source-sha256.json": "3739f3d4f93eaad7c60f1c43e2781897a20065c2ff344cc30c739c392be763d0",
+    "temperature/0.png": "0191720032e9bf055c7ce062094f78918ed0d798f07008d0d87bf9159c3f5956",
+    "temperature/1.png": "86f715f1d356b5068eda455761b7c8d2abd067242fc663ef63cd9e4fd11bed2b",
+    "visualization-fragment.html": "ebdf1134cdaabc4828312ad025aeee8bacb61b2fb1705c0db911d021c648557c"
+  },
+  "validation": {
+    "real_gpu_check_count": 10,
+    "concrete_arena_variations_covered": 9,
+    "first_run_passed": 8,
+    "rechecked_passed": 2,
+    "backend": "PhysX",
+    "not_checked": "Newton, policy performance, planning and statistical distribution"
+  },
+  "delivery": {
+    "local": {
+      "status": "saved"
+    }
+  }
+}

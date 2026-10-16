@@ -1,0 +1,229 @@
+{
+  "scope": "Real Arena variations on a minimal primitive scene, PhysX backend. No robot policy, planner or task-success evaluation.",
+  "cases": [
+    {
+      "id": "extrinsics",
+      "label": "相机外参平移",
+      "phase": "reset",
+      "note": "ROS 光学 X -30 / +30 mm；为便于观察扩展测试幅度，库默认 ±5 mm",
+      "parameters": [
+        [
+          -0.03,
+          0.0,
+          0.0
+        ],
+        [
+          0.03,
+          0.0,
+          0.0
+        ]
+      ],
+      "status": "passed",
+      "samples": [
+        {
+          "file": "0.png",
+          "cube_pose": [
+            0.0,
+            0.0,
+            0.18000000715255737,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "mass_kg": 0.25,
+          "camera_position_m": [
+            0.7712132334709167,
+            0.728786826133728,
+            0.699999988079071
+          ],
+          "camera_apertures": [
+            24.0,
+            18.0
+          ],
+          "mean_rgb": [
+            42.3163599537037,
+            42.09325231481481,
+            42.41980902777778
+          ],
+          "parameter": [
+            -0.03,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "file": "1.png",
+          "cube_pose": [
+            0.0,
+            0.0,
+            0.18000000715255737,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "mass_kg": 0.25,
+          "camera_position_m": [
+            0.7287867665290833,
+            0.771213173866272,
+            0.699999988079071
+          ],
+          "camera_apertures": [
+            24.0,
+            18.0
+          ],
+          "mean_rgb": [
+            42.4269849537037,
+            42.2370775462963,
+            42.47371527777778
+          ],
+          "parameter": [
+            0.03,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "pixel_mean_absolute_difference": 22.555189043209875,
+      "camera_shift_m": 0.06000000065907689,
+      "checks": {
+        "finite_state": true,
+        "nonblack_frames": true,
+        "visible_difference": true,
+        "camera_shift_applied": true
+      }
+    },
+    {
+      "id": "mass",
+      "label": "物体质量",
+      "phase": "reset",
+      "note": "0.05 / 0.25 kg；同一外力 0.05 N 持续 0.4 s，无重力",
+      "parameters": [
+        0.05,
+        0.25
+      ],
+      "status": "passed",
+      "samples": [
+        {
+          "file": "0.png",
+          "cube_pose": [
+            0.08010432869195938,
+            0.0,
+            0.18000000715255737,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "mass_kg": 0.05000000074505806,
+          "camera_position_m": [
+            0.75,
+            0.75,
+            0.699999988079071
+          ],
+          "camera_apertures": [
+            24.0,
+            18.0
+          ],
+          "mean_rgb": [
+            43.257465277777776,
+            43.21226273148148,
+            43.08447916666667
+          ],
+          "parameter": 0.05
+        },
+        {
+          "file": "1.png",
+          "cube_pose": [
+            0.016020819544792175,
+            0.0,
+            0.18000000715255737,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "mass_kg": 0.25,
+          "camera_position_m": [
+            0.75,
+            0.75,
+            0.699999988079071
+          ],
+          "camera_apertures": [
+            24.0,
+            18.0
+          ],
+          "mean_rgb": [
+            43.14914351851852,
+            42.903634259259256,
+            42.96761574074074
+          ],
+          "parameter": 0.25
+        }
+      ],
+      "displacement_x_m": [
+        0.08010432869195938,
+        0.016020819544792175
+      ],
+      "pixel_mean_absolute_difference": 2.781309799382716,
+      "checks": {
+        "finite_state": true,
+        "nonblack_frames": true,
+        "visible_difference": true,
+        "masses_applied": true,
+        "inverse_mass_response": true
+      }
+    }
+  ],
+  "source_root": "/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena",
+  "status": "passed",
+  "concrete_variations": [
+    {
+      "class": "LightIntensityVariation",
+      "source": "/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/isaaclab_arena/variations/light_intensity_variation.py",
+      "line": 28
+    },
+    {
+      "class": "ObjectMassVariation",
+      "source": "/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/isaaclab_arena/variations/object_mass_variation.py",
+      "line": 45
+    },
+    {
+      "class": "LightDirectionVariation",
+      "source": "/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/isaaclab_arena/variations/light_direction_variation.py",
+      "line": 73
+    },
+    {
+      "class": "ObjectDisappearVariation",
+      "source": "/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/isaaclab_arena/variations/object_disappear_variation.py",
+      "line": 74
+    },
+    {
+      "class": "LightColorTemperatureVariation",
+      "source": "/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/isaaclab_arena/variations/light_color_temperature_variation.py",
+      "line": 30
+    },
+    {
+      "class": "LightColorVariation",
+      "source": "/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/isaaclab_arena/variations/light_color_variation.py",
+      "line": 32
+    },
+    {
+      "class": "CameraExtrinsicsVariation",
+      "source": "/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/isaaclab_arena/variations/camera_extrinsics_variation.py",
+      "line": 54
+    },
+    {
+      "class": "CameraIntrinsicsVariation",
+      "source": "/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/isaaclab_arena/variations/camera_intrinsics_variation.py",
+      "line": 48
+    },
+    {
+      "class": "HDRImageVariation",
+      "source": "/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/isaaclab_arena/variations/hdr_image_variation.py",
+      "line": 37
+    }
+  ],
+  "source_unchanged": true
+}
