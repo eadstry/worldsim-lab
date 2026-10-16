@@ -1,0 +1,53 @@
+{
+  "file": "/home/tangyuan/WorldSimReady-Home/.worktrees/autodata-plan-scene-20261016/runs/autodata-plan-scene/offset-b/episodes.hdf5",
+  "episodes": [
+    {
+      "name": "demo_0",
+      "steps": 1409,
+      "recorded_success": true,
+      "final_state_success": true,
+      "inside_pad": true,
+      "height_error_m": 0.0008132457733154297,
+      "gripper_position_rad": 0.6997820734977722,
+      "linear_speed_m_s": 0.0009663797682151198,
+      "angular_speed_rad_s": 0.016475196927785873,
+      "images": {
+        "left_hand_rgb": {
+          "shape": [
+            1409,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 0.7317545572916667,
+          "last_frame_mean": 190.69745008680556
+        },
+        "right_hand_rgb": {
+          "shape": [
+            1409,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 0.0,
+          "last_frame_mean": 9.874131944444444e-05
+        },
+        "third_person_rgb": {
+          "shape": [
+            1409,
+            480,
+            640,
+            3
+          ],
+          "dtype": "uint8",
+          "first_frame_mean": 192.30369032118057,
+          "last_frame_mean": 194.233330078125
+        }
+      }
+    }
+  ],
+  "passed": true,
+  "sha256": "e534daf5b746e73e8aeb808e2ac1fe510aaed9275b9decba391cc4ed490d52ce"
+}

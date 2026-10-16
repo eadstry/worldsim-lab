@@ -4,6 +4,7 @@
 
 | 主题 | 当前阅读入口 | 内容与验证范围 | 已记录交付情况 |
 | --- | --- | --- | --- |
+| AutoData 场景变化与实际规划执行 | [v003 比较数据](autodata-plan-scene/v003/comparison.json) · [运行入口](../workspace-overlays/autodata-plan-scene/README.md) | 2026-10-16 真实 GPU 三场景：默认 cube 位置及 XY (-35,+50)/(+35,-50) mm；同源同 seed，6/6 过渡规划与 3/3 严格终态通过；保存原始计划、执行帧、HDF5 对齐核对与源码哈希，聊天内可对照播放 | 本地保存，未上传或发布 |
 | AutoData 全流程文章 | [v003 正文](autodata-guide/v003/report.md) · [HTML](autodata-guide/v003/index.html) · [记录](autodata-guide/v003/manifest.json) | 文章及飞书排版快照；没有新增仿真实验 | 飞书记录为 verified；GPT 为 blocked_destination |
 | Arena 示例运行与使用说明 | [v001 正文](arena-examples-guide/v001/report.md) · [记录](arena-examples-guide/v001/manifest.json) | 静态源码说明，运行命令需在适当 GPU 环境验证；保留写作时的环境观察 | 飞书、GPT 均为 blocked_destination |
 | Arena RoboLab 配置解耦 | [v001 正文](arena-robolab-config-guide/v001/report.md) · [配置](arena-robolab-config-guide/v001/configs/) · [记录](arena-robolab-config-guide/v001/manifest.json) | 场景、任务和评估配置说明；未执行仿真或完整 schema 验证 | 飞书、GPT 均为 blocked_destination |

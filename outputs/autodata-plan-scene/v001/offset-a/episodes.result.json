@@ -1,0 +1,12 @@
+{
+  "algorithm": "skillgen",
+  "env_profile": {
+    "name": "openarm_left_skillgen",
+    "path": "/home/tangyuan/WorldSimReady-Home/workspace-overlays/openarm-production/runtime/openarm_autodata/tasks/pick_place/autodata_configs/env_profiles/openarm_left_skillgen.yaml",
+    "planner": "openarm_pick_place_left"
+  },
+  "num_attempts": 1,
+  "num_failures": 0,
+  "num_success": 1,
+  "requested_trials": 1
+}

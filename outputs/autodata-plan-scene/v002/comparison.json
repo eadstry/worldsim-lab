@@ -1,0 +1,125 @@
+{
+  "cases": [
+    {
+      "case": "baseline",
+      "label": "默认位置",
+      "offset_m": [
+        0.0,
+        0.0
+      ],
+      "steps": 1364,
+      "duration_s": 45.46666666666667,
+      "plan_count": 2,
+      "plan_successes": 2,
+      "planned_length_m": 0.5379853546619415,
+      "recorded_success": true,
+      "terminal_success": true,
+      "generation_result": {
+        "algorithm": "skillgen",
+        "env_profile": {
+          "name": "openarm_left_skillgen",
+          "path": "/home/tangyuan/WorldSimReady-Home/workspace-overlays/openarm-production/runtime/openarm_autodata/tasks/pick_place/autodata_configs/env_profiles/openarm_left_skillgen.yaml",
+          "planner": "openarm_pick_place_left"
+        },
+        "num_attempts": 1,
+        "num_failures": 0,
+        "num_success": 1,
+        "requested_trials": 1
+      }
+    },
+    {
+      "case": "offset-a",
+      "label": "偏移 A",
+      "offset_m": [
+        -0.035,
+        0.05
+      ],
+      "steps": 1351,
+      "duration_s": 45.03333333333333,
+      "plan_count": 2,
+      "plan_successes": 2,
+      "planned_length_m": 0.5171450078487396,
+      "recorded_success": true,
+      "terminal_success": true,
+      "generation_result": {
+        "algorithm": "skillgen",
+        "env_profile": {
+          "name": "openarm_left_skillgen",
+          "path": "/home/tangyuan/WorldSimReady-Home/workspace-overlays/openarm-production/runtime/openarm_autodata/tasks/pick_place/autodata_configs/env_profiles/openarm_left_skillgen.yaml",
+          "planner": "openarm_pick_place_left"
+        },
+        "num_attempts": 1,
+        "num_failures": 0,
+        "num_success": 1,
+        "requested_trials": 1
+      }
+    },
+    {
+      "case": "offset-b",
+      "label": "偏移 B",
+      "offset_m": [
+        0.035,
+        -0.05
+      ],
+      "steps": 1409,
+      "duration_s": 46.96666666666667,
+      "plan_count": 2,
+      "plan_successes": 2,
+      "planned_length_m": 0.6012519001960754,
+      "recorded_success": true,
+      "terminal_success": true,
+      "generation_result": {
+        "algorithm": "skillgen",
+        "env_profile": {
+          "name": "openarm_left_skillgen",
+          "path": "/home/tangyuan/WorldSimReady-Home/workspace-overlays/openarm-production/runtime/openarm_autodata/tasks/pick_place/autodata_configs/env_profiles/openarm_left_skillgen.yaml",
+          "planner": "openarm_pick_place_left"
+        },
+        "num_attempts": 1,
+        "num_failures": 0,
+        "num_success": 1,
+        "requested_trials": 1
+      }
+    }
+  ],
+  "run_root": "/home/tangyuan/WorldSimReady-Home/.worktrees/autodata-plan-scene-20261016/runs/autodata-plan-scene",
+  "source_stable": true,
+  "timeline": [
+    0.0,
+    1.341904761904762,
+    2.683809523809524,
+    4.025714285714286,
+    5.367619047619048,
+    6.70952380952381,
+    8.051428571428572,
+    9.393333333333334,
+    10.735238095238095,
+    12.077142857142857,
+    13.41904761904762,
+    14.760952380952382,
+    16.102857142857143,
+    17.444761904761904,
+    18.78666666666667,
+    20.12857142857143,
+    21.47047619047619,
+    22.812380952380952,
+    24.154285714285713,
+    25.496190476190478,
+    26.83809523809524,
+    28.18,
+    29.521904761904764,
+    30.863809523809525,
+    32.205714285714286,
+    33.54761904761905,
+    34.88952380952381,
+    36.23142857142857,
+    37.57333333333334,
+    38.915238095238095,
+    40.25714285714286,
+    41.59904761904762,
+    42.94095238095238,
+    44.28285714285715,
+    45.624761904761904,
+    46.96666666666667
+  ]
+}

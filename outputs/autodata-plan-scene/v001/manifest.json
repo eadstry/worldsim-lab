@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "artifact_id": "autodata-plan-scene",
+  "version": "v001",
+  "created_at": "2026-10-16T11:01:25.493714+08:00",
+  "sealed_at": "2026-10-16T11:01:25.493714+08:00",
+  "sources": [
+    "/home/tangyuan/WorldSimReady-Home/.worktrees/autodata-plan-scene-20261016/runs/autodata-plan-scene"
+  ],
+  "files": {
+    "baseline/episodes.result.json": "ce4897220113d52a1a60fa9edeab0a5f15ef714a5b606686e90554604b15d60f",
+    "baseline/episodes.validation.json": "744e99c9253c6cf3f8b85b6a9afffe08c600a6ef14e57a29697a6e56dd88783f",
+    "baseline/frame-0000.jpg": "00c2632481e32841cfdd7dadc5dfc3c3a6fd389084d9cf2a314bb840a2abacbc",
+    "baseline/frame-0034.jpg": "757ba37fd38619d6f4ee1e719a6e22b88f68deb9c2fbcd7483bb7b403bb9464b",
+    "baseline/frame-0068.jpg": "9201cc384115cdd0c3a07987051bc15f8b4fdc9a0f48feeee1994da4fb134e2c",
+    "baseline/probe-recovered.json": "46e9b01c1ed150355dec75d47844df531ec900cc97448ca806691d403de87dc8",
+    "baseline/probe.json": "7f881f43d13894decd29dfa3b4afc1dc1cb724936ea06f5d78e97ff8fa182d5e",
+    "baseline/source-sha256.json": "201afe7d04d54f8e2ed82c469023372b0068d972e4bc65ea3690a6102de9192b",
+    "baseline/source-stability.json": "616962e62bfc84c49a671946c2479bb859d73bb925221ba92b73bae794247e0c",
+    "baseline/task.yaml": "426be5fd257695b7696bbca6baf10029f203737abd2d2385e1cd5619c758d8dc",
+    "comparison.json": "c839fb80516f1f1b1cf6fd986203c94543de2a2f89dbe5f78539b59d82f640da",
+    "offset-a/episodes.result.json": "ce4897220113d52a1a60fa9edeab0a5f15ef714a5b606686e90554604b15d60f",
+    "offset-a/episodes.validation.json": "04c844e8146540152e6fcd1588ade53e886327dcf308430d09194c0f7cae634a",
+    "offset-a/frame-0000.jpg": "53e67249348aaa1c4f2d2f5b7776856fe633bcd171b157487631cf150aeae918",
+    "offset-a/frame-0034.jpg": "a37c77f2091f1d325fe7a6c8f1c8d243a041989ee4407577d1eb7ab8fb93a4bc",
+    "offset-a/frame-0067.jpg": "7cd1b03077060fb6a2dfc30b8c433c9e90edf16ae7b3d6d786023afa4b629223",
+    "offset-a/probe-recovered.json": "d0dbfad434bb01db313c10501a8532f5522c38286de84425c78fb8252acee631",
+    "offset-a/probe.json": "e7cd2c30177f63862ddb6b80998354ce543408dc400939853af2433a3482da7c",
+    "offset-a/source-sha256.json": "201afe7d04d54f8e2ed82c469023372b0068d972e4bc65ea3690a6102de9192b",
+    "offset-a/source-stability.json": "616962e62bfc84c49a671946c2479bb859d73bb925221ba92b73bae794247e0c",
+    "offset-a/task.yaml": "426be5fd257695b7696bbca6baf10029f203737abd2d2385e1cd5619c758d8dc",
+    "offset-b/episodes.result.json": "ce4897220113d52a1a60fa9edeab0a5f15ef714a5b606686e90554604b15d60f",
+    "offset-b/episodes.validation.json": "92f12a1bd93d427d4979e6a30f497940fdb7aa81e9d34db33bfb1c16e3e76b3b",
+    "offset-b/frame-0000.jpg": "18168406ee418af39a34bb1a2fada6fd97786876311e81485b4abffd5e50e3a4",
+    "offset-b/frame-0035.jpg": "4f9daa377a8a706e8b97ab3e1378556d988a78f8f174edf761909b63c519c113",
+    "offset-b/frame-0070.jpg": "64dadd3b675a96f5c709b95fe81c2e484c2a42e21093c1612757f331e62e3a0a",
+    "offset-b/probe-recovered.json": "c4fde01dcf654eff1b9ec998098d4cce43622e281017fb6edada9b03621a1fe6",
+    "offset-b/probe.json": "c9c26132451a7e2efbc84e56508790fdc9765208a3b4beeba76ab613b0cec96b",
+    "offset-b/source-sha256.json": "201afe7d04d54f8e2ed82c469023372b0068d972e4bc65ea3690a6102de9192b",
+    "offset-b/source-stability.json": "616962e62bfc84c49a671946c2479bb859d73bb925221ba92b73bae794247e0c",
+    "offset-b/task.yaml": "426be5fd257695b7696bbca6baf10029f203737abd2d2385e1cd5619c758d8dc",
+    "visualization-fragment.html": "5e61b72c2f5d2d3dcd5e8d047b64e078f1f9f731b025a04464980cb2ca717898"
+  },
+  "validation": {
+    "real_gpu_scenarios": 3,
+    "source_stability": true,
+    "scope": "Real cuRobo planning, AutoData execution and terminal-state validation; one episode per scenario"
+  },
+  "delivery": {
+    "local": {
+      "status": "saved"
+    }
+  }
+}

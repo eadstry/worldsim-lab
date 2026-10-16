@@ -1,0 +1,35 @@
+algo: skillgen
+description: Pick up a cube with the OpenArm left hand and place it on the pad scanned
+  into the desk mesh.
+generation_policy:
+  guarantee_success: false
+  interpolate_from_last_target_pose: true
+  keep_failed: true
+  max_num_failures: 25
+  name: openarm_bimanual_left_cube_pick_place
+  num_trials: 10
+  seed: 101
+  select_src_per_subtask: true
+  transform_first_robot_pose: false
+  use_skillgen: true
+name: openarm_bimanual_left_cube_pick_place
+subtasks:
+  left:
+  - action_noise: 0.0
+    num_interpolation_steps: 0
+    object_ref: cube
+    selection_strategy: nearest_neighbor_object
+    subtask_term_offset_range:
+    - 0
+    - 0
+    subtask_term_signal: grasp
+  - action_noise: 0.0
+    algo_params:
+      expected_attached_object: cube
+    num_interpolation_steps: 0
+    object_ref: table
+    selection_strategy: nearest_neighbor_object
+    subtask_term_offset_range:
+    - 0
+    - 0
+    subtask_term_signal: place
