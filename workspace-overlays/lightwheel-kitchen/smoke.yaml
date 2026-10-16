@@ -1,0 +1,12 @@
+shared:
+  environment:
+    type: isaaclab_arena_environments/kitchen_bench/kitchen_bench_lightwheel_pick_and_place.yaml
+    enable_cameras: true
+runs:
+  lightwheel_mustard:
+    environment_builder:
+      num_envs: 1
+    policy:
+      type: zero_action
+    rollout_limit:
+      num_steps: 20
