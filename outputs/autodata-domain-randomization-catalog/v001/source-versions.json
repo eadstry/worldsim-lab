@@ -1,0 +1,14 @@
+{
+  "AutoData": {
+    "head": "1c7360d85c9ad131ca6c8c70f1f731a6312616f3",
+    "has_local_changes": true
+  },
+  "AutoData/submodules/IsaacLab-Arena": {
+    "head": "8b82dca224f2b5af08f339f987613c59ce9cdbaa",
+    "has_local_changes": true
+  },
+  "AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab": {
+    "head": "ffff603eafc6b74264a5261cc0183d6a65390d78",
+    "has_local_changes": true
+  }
+}

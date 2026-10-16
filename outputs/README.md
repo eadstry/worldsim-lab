@@ -4,6 +4,7 @@
 
 | 主题 | 当前阅读入口 | 内容与验证范围 | 已记录交付情况 |
 | --- | --- | --- | --- |
+| AutoData 域随机化方法总览 | [v001 方法清单](autodata-domain-randomization-catalog/v001/catalog.json) · [交互 HTML 片段](autodata-domain-randomization-catalog/v001/atlas-fragment.html) · [验证记录](autodata-domain-randomization-catalog/v001/validation.json) | 45 类方法，附参数、源码入口与接入限制；源码清点和原理示意，未新增 GPU 实验；HTML 为嵌入式片段 | 本地归档并随 Git 同步，未发布站点 |
 | AutoData 域随机化实测 | [v002 可视化](autodata-domain-randomization/v002/index.html) · [报告](autodata-domain-randomization/v002/report.md) · [证据](autodata-domain-randomization/v002/result.json) | 2026-10-16 RTX 5090 实测 OpenArm 左臂 4 环境、256 个 reset 位姿；范围、种子复现、固定位置对照与短程物理共 9 项通过；保留原相机及固定诊断视角，未评估轨迹生成成功率；v001 渲染未同步，视觉结论由 v002 替代 | 本地保存，未上传或发布 |
 | AutoData 全流程文章 | [v003 正文](autodata-guide/v003/report.md) · [HTML](autodata-guide/v003/index.html) · [记录](autodata-guide/v003/manifest.json) | 文章及飞书排版快照；没有新增仿真实验 | 飞书记录为 verified；GPT 为 blocked_destination |
 | Arena 示例运行与使用说明 | [v001 正文](arena-examples-guide/v001/report.md) · [记录](arena-examples-guide/v001/manifest.json) | 静态源码说明，运行命令需在适当 GPU 环境验证；保留写作时的环境观察 | 飞书、GPT 均为 blocked_destination |

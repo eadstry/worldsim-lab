@@ -1,0 +1,19 @@
+{
+  "kind": "source_inventory_and_browser_check",
+  "gpu_runs_this_turn": 0,
+  "prior_gpu_scope": "OpenArm XY reset only; outputs/autodata-domain-randomization/v002",
+  "source_coverage": {
+    "all_20_public_common_randomized_events": true,
+    "all_6_concrete_arena_variations": true
+  },
+  "browser": {
+    "methods_selected_and_checked": 45,
+    "sections": 6,
+    "comparison_svgs": 12,
+    "javascript_errors": 0,
+    "desktop_width_px": 736,
+    "mobile_width_px": 360,
+    "horizontal_overflow": false
+  },
+  "preview_note": "Local preview removed CDN script tags and permitted same-origin debugging in the wrapper. The atlas fragment itself uses no external resources."
+}

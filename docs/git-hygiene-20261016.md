@@ -54,3 +54,5 @@
 切换不递归操作子模块，三个顶层 gitlink 与旧基线完全相同。根仓库预计只保留 AutoData 和 Arena 的子模块脏状态；这两个状态明确保留，不用忽略设置掩盖。后续修改应继续在干净的任务 worktree 中审查和提交。
 
 GitHub 同步范围为 `origin` 上的 `codex/git-hygiene-20261016`，包括集成基线历史、本次完整报告归档和状态清单。其他聊天的独立工作分支不强制合并或推送，`main` 保持原状。GPU 数据、依赖与恢复目录仍需单独备份；Git 推送不代表这些机器数据已上传，不发布博客或改变权限。
+
+迁移前检测到另一个聊天在原目录编写域随机化方法总览，因此等待该轮任务结束后再切换分支。其完成的 `workspace-overlays/autodata-domain-randomization/catalog.py` 和 `outputs/autodata-domain-randomization-catalog/v001/` 也纳入归档；后者包含目录 JSON、交互 HTML 片段、源码版本、验证记录和封存 manifest。该成果是 45 类方法的源码清点与示意，29 个引用源码文件的 SHA256 已核对一致，没有新增 GPU 验证。等待期间恢复原目录的旧成果副本，原恢复 stash 保留；最终迁移另建同名前缀的恢复点，包含此批新文件。

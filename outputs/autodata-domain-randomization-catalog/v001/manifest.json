@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "artifact_id": "autodata-domain-randomization-catalog",
+  "version": "v001",
+  "created_at": "2026-10-16T10:44:57.105859+08:00",
+  "sealed_at": "2026-10-16T10:44:57.105859+08:00",
+  "sources": [
+    "workspace-overlays/autodata-domain-randomization/catalog.py"
+  ],
+  "files": {
+    "atlas-fragment.html": "5451e080a2942adeb1d85ba0aacdc296d2c65fd2bd43470f20de0af8247d9b53",
+    "catalog.json": "ec691712b5b62fe23ae20287353be40a9be2868fbd8b3830a10b1caf18384a8f",
+    "source-versions.json": "50b56e6f70d6b1a875ac0ea9ae1183d4a4ab4bd96fd4caecb6b9adec948b30db",
+    "validation.json": "ad0f2d7d5da0250804286b557e806fd763dd070dc45018ee7357111fd5f136eb"
+  },
+  "validation": {
+    "kind": "source_inventory_and_browser_check",
+    "gpu_runs_this_turn": 0,
+    "prior_gpu_scope": "OpenArm XY reset only; outputs/autodata-domain-randomization/v002",
+    "source_coverage": {
+      "all_20_public_common_randomized_events": true,
+      "all_6_concrete_arena_variations": true
+    },
+    "browser": {
+      "methods_selected_and_checked": 45,
+      "sections": 6,
+      "comparison_svgs": 12,
+      "javascript_errors": 0,
+      "desktop_width_px": 736,
+      "mobile_width_px": 360,
+      "horizontal_overflow": false
+    },
+    "preview_note": "Local preview removed CDN script tags and permitted same-origin debugging in the wrapper. The atlas fragment itself uses no external resources."
+  },
+  "delivery": {
+    "local": {
+      "status": "saved"
+    }
+  }
+}
