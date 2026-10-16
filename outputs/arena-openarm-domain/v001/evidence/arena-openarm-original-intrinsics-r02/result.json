@@ -1,0 +1,156 @@
+{
+  "scope": "Actual OpenArm left pick-place production scene in native Arena, PhysX; source robot/table/cube assets and calibrated cameras retained. Diagnostic pinhole camera added. No planner or task-success evaluation.",
+  "cases": [
+    {
+      "id": "intrinsics",
+      "label": "相机内参",
+      "phase": "reset",
+      "note": "fx/fy -10% / +10%，使用库默认范围端点",
+      "parameters": [
+        [
+          -0.1,
+          -0.1
+        ],
+        [
+          0.1,
+          0.1
+        ]
+      ],
+      "status": "failed",
+      "samples": [
+        {
+          "file": "0.png",
+          "original_camera_file": "original-0.png",
+          "cube_pose": [
+            0.5297610759735107,
+            0.11979784071445465,
+            1.078355312347412,
+            0.004851908423006535,
+            -0.004305667243897915,
+            -0.0012929036747664213,
+            0.9999780654907227
+          ],
+          "mass_kg": 0.03999999910593033,
+          "camera_position_m": [
+            0.21033358573913574,
+            0.01660304144024849,
+            1.3300367593765259
+          ],
+          "opencv_fx_fy": [
+            603.1517333984375,
+            603.1273193359375
+          ],
+          "camera_apertures": [
+            28.295808792114258,
+            21.22271728515625
+          ],
+          "mean_rgb": [
+            174.76812174479167,
+            175.548291015625,
+            175.943818359375
+          ],
+          "parameter": [
+            -0.1,
+            -0.1
+          ]
+        },
+        {
+          "file": "1.png",
+          "original_camera_file": "original-1.png",
+          "cube_pose": [
+            0.5297610759735107,
+            0.11979784071445465,
+            1.078355312347412,
+            0.004851908423006535,
+            -0.004305667243897915,
+            -0.0012929036747664213,
+            0.9999780654907227
+          ],
+          "mass_kg": 0.03999999910593033,
+          "camera_position_m": [
+            0.21033358573913574,
+            0.016603119671344757,
+            1.3300366401672363
+          ],
+          "opencv_fx_fy": [
+            603.1517333984375,
+            603.1273193359375
+          ],
+          "camera_apertures": [
+            23.1511173248291,
+            17.36404037475586
+          ],
+          "mean_rgb": [
+            171.65388997395834,
+            172.46282877604168,
+            173.03901692708334
+          ],
+          "parameter": [
+            0.1,
+            0.1
+          ]
+        }
+      ],
+      "pixel_mean_absolute_difference": 3.532449001736111,
+      "opencv_focal_lengths_changed": false,
+      "checks": {
+        "finite_state": true,
+        "nonblack_frames": true,
+        "visible_difference": true,
+        "aperture_ratio": true,
+        "opencv_focal_lengths_changed": false
+      }
+    }
+  ],
+  "source_root": "/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena",
+  "status": "failed",
+  "camera_target": "third_person_camera",
+  "concrete_variations": [
+    {
+      "class": "LightIntensityVariation",
+      "source": "/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/isaaclab_arena/variations/light_intensity_variation.py",
+      "line": 28
+    },
+    {
+      "class": "ObjectMassVariation",
+      "source": "/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/isaaclab_arena/variations/object_mass_variation.py",
+      "line": 45
+    },
+    {
+      "class": "LightDirectionVariation",
+      "source": "/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/isaaclab_arena/variations/light_direction_variation.py",
+      "line": 73
+    },
+    {
+      "class": "ObjectDisappearVariation",
+      "source": "/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/isaaclab_arena/variations/object_disappear_variation.py",
+      "line": 74
+    },
+    {
+      "class": "LightColorTemperatureVariation",
+      "source": "/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/isaaclab_arena/variations/light_color_temperature_variation.py",
+      "line": 30
+    },
+    {
+      "class": "LightColorVariation",
+      "source": "/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/isaaclab_arena/variations/light_color_variation.py",
+      "line": 32
+    },
+    {
+      "class": "CameraExtrinsicsVariation",
+      "source": "/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/isaaclab_arena/variations/camera_extrinsics_variation.py",
+      "line": 54
+    },
+    {
+      "class": "CameraIntrinsicsVariation",
+      "source": "/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/isaaclab_arena/variations/camera_intrinsics_variation.py",
+      "line": 48
+    },
+    {
+      "class": "HDRImageVariation",
+      "source": "/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/isaaclab_arena/variations/hdr_image_variation.py",
+      "line": 37
+    }
+  ],
+  "source_unchanged": true
+}

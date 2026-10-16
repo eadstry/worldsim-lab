@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/home/tangyuan/WorldSimReady-Home/.worktrees/arena-openarm-domain-20261016/workspace-overlays/arena-openarm-domain/run.py", line 217, in <module>
+    env, variation = build(kind, value)
+                     ^^^^^^^^^^^^^^^^^^
+  File "/home/tangyuan/WorldSimReady-Home/.worktrees/arena-openarm-domain-20261016/workspace-overlays/arena-openarm-domain/run.py", line 149, in build
+    if args.camera_target!='probe_camera': embodiment.scene_config.third_person_camera=rig.get_cfg().third_person_camera
+                                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ProbeRig' object has no attribute 'third_person_camera'

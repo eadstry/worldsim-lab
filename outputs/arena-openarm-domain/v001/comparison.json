@@ -1,0 +1,1330 @@
+{
+  "cases": [
+    {
+      "id": "intensity",
+      "label": "灯光强度",
+      "phase": "build-time",
+      "note": "原场景穹顶光，强度 250 / 3000",
+      "parameters": [
+        250.0,
+        3000.0
+      ],
+      "status": "passed",
+      "samples": [
+        {
+          "file": "0.png",
+          "original_camera_file": "original-0.png",
+          "cube_pose": [
+            0.5297610759735107,
+            0.11979784071445465,
+            1.078355312347412,
+            0.004851908423006535,
+            -0.004305667243897915,
+            -0.0012929036747664213,
+            0.9999780654907227
+          ],
+          "mass_kg": 0.03999999910593033,
+          "camera_position_m": [
+            1.350000023841858,
+            1.0499999523162842,
+            1.75
+          ],
+          "opencv_fx_fy": [
+            null,
+            null
+          ],
+          "camera_apertures": [
+            24.0,
+            18.0
+          ],
+          "mean_rgb": [
+            71.48622106481481,
+            71.32971643518519,
+            69.84165509259259
+          ],
+          "parameter": 250.0,
+          "live_light": {
+            "intensity": 250.0,
+            "color": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "color_temperature": 6500.0,
+            "temperature_enabled": false
+          }
+        },
+        {
+          "file": "1.png",
+          "original_camera_file": "original-1.png",
+          "cube_pose": [
+            0.5297610759735107,
+            0.11979784071445465,
+            1.078355312347412,
+            0.004851908423006535,
+            -0.004305667243897915,
+            -0.0012929036747664213,
+            0.9999780654907227
+          ],
+          "mass_kg": 0.03999999910593033,
+          "camera_position_m": [
+            1.350000023841858,
+            1.0499999523162842,
+            1.75
+          ],
+          "opencv_fx_fy": [
+            null,
+            null
+          ],
+          "camera_apertures": [
+            24.0,
+            18.0
+          ],
+          "mean_rgb": [
+            180.2469212962963,
+            181.0807349537037,
+            180.7871412037037
+          ],
+          "parameter": 3000.0,
+          "live_light": {
+            "intensity": 3000.0,
+            "color": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "color_temperature": 6500.0,
+            "temperature_enabled": false
+          }
+        }
+      ],
+      "pixel_mean_absolute_difference": 109.81906828703704,
+      "checks": {
+        "finite_state": true,
+        "nonblack_frames": true,
+        "visible_difference": true,
+        "live_parameter_applied": true
+      },
+      "kind": "intensity",
+      "source": [
+        "LightIntensityVariation"
+      ],
+      "run_source": "/home/tangyuan/WorldSimReady-Home/.worktrees/arena-openarm-domain-20261016/runs/arena-openarm-domain-r01",
+      "binding": "原场景穹顶光"
+    },
+    {
+      "id": "color",
+      "label": "灯光颜色",
+      "phase": "build-time",
+      "note": "暖红 / 冷蓝 RGB",
+      "parameters": [
+        [
+          1.0,
+          0.3,
+          0.15
+        ],
+        [
+          0.2,
+          0.45,
+          1.0
+        ]
+      ],
+      "status": "passed",
+      "samples": [
+        {
+          "file": "0.png",
+          "original_camera_file": "original-0.png",
+          "cube_pose": [
+            0.5297610759735107,
+            0.11979784071445465,
+            1.078355312347412,
+            0.004851908423006535,
+            -0.004305667243897915,
+            -0.0012929036747664213,
+            0.9999780654907227
+          ],
+          "mass_kg": 0.03999999910593033,
+          "camera_position_m": [
+            1.350000023841858,
+            1.0499999523162842,
+            1.75
+          ],
+          "opencv_fx_fy": [
+            null,
+            null
+          ],
+          "camera_apertures": [
+            24.0,
+            18.0
+          ],
+          "mean_rgb": [
+            158.8670486111111,
+            114.54174189814815,
+            93.17206597222223
+          ],
+          "parameter": [
+            1.0,
+            0.3,
+            0.15
+          ],
+          "live_light": {
+            "intensity": 1800.0,
+            "color": [
+              1.0,
+              0.30000001192092896,
+              0.15000000596046448
+            ],
+            "color_temperature": 6500.0,
+            "temperature_enabled": false
+          }
+        },
+        {
+          "file": "1.png",
+          "original_camera_file": "original-1.png",
+          "cube_pose": [
+            0.5297610759735107,
+            0.11979784071445465,
+            1.078355312347412,
+            0.004851908423006535,
+            -0.004305667243897915,
+            -0.0012929036747664213,
+            0.9999780654907227
+          ],
+          "mass_kg": 0.03999999910593033,
+          "camera_position_m": [
+            1.350000023841858,
+            1.0499999523162842,
+            1.75
+          ],
+          "opencv_fx_fy": [
+            null,
+            null
+          ],
+          "camera_apertures": [
+            24.0,
+            18.0
+          ],
+          "mean_rgb": [
+            101.75466435185186,
+            127.72320023148148,
+            159.48465856481482
+          ],
+          "parameter": [
+            0.2,
+            0.45,
+            1.0
+          ],
+          "live_light": {
+            "intensity": 1800.0,
+            "color": [
+              0.20000000298023224,
+              0.44999998807907104,
+              1.0
+            ],
+            "color_temperature": 6500.0,
+            "temperature_enabled": false
+          }
+        }
+      ],
+      "pixel_mean_absolute_difference": 45.5358487654321,
+      "checks": {
+        "finite_state": true,
+        "nonblack_frames": true,
+        "visible_difference": true,
+        "live_parameter_applied": true
+      },
+      "kind": "color",
+      "source": [
+        "LightColorVariation"
+      ],
+      "run_source": "/home/tangyuan/WorldSimReady-Home/.worktrees/arena-openarm-domain-20261016/runs/arena-openarm-domain-r01",
+      "binding": "原场景穹顶光"
+    },
+    {
+      "id": "temperature",
+      "label": "灯光色温",
+      "phase": "build-time",
+      "note": "2800 K / 9000 K",
+      "parameters": [
+        2800.0,
+        9000.0
+      ],
+      "status": "passed",
+      "samples": [
+        {
+          "file": "0.png",
+          "original_camera_file": "original-0.png",
+          "cube_pose": [
+            0.5297610759735107,
+            0.11979784071445465,
+            1.078355312347412,
+            0.004851908423006535,
+            -0.004305667243897915,
+            -0.0012929036747664213,
+            0.9999780654907227
+          ],
+          "mass_kg": 0.03999999910593033,
+          "camera_position_m": [
+            1.350000023841858,
+            1.0499999523162842,
+            1.75
+          ],
+          "opencv_fx_fy": [
+            null,
+            null
+          ],
+          "camera_apertures": [
+            24.0,
+            18.0
+          ],
+          "mean_rgb": [
+            186.46877314814816,
+            151.91969328703703,
+            103.43498263888888
+          ],
+          "parameter": 2800.0,
+          "live_light": {
+            "intensity": 1800.0,
+            "color": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "color_temperature": 2800.0,
+            "temperature_enabled": true
+          }
+        },
+        {
+          "file": "1.png",
+          "original_camera_file": "original-1.png",
+          "cube_pose": [
+            0.5297610759735107,
+            0.11979784071445465,
+            1.078355312347412,
+            0.004851908423006535,
+            -0.004305667243897915,
+            -0.0012929036747664213,
+            0.9999780654907227
+          ],
+          "mass_kg": 0.03999999910593033,
+          "camera_position_m": [
+            1.350000023841858,
+            1.0499999523162842,
+            1.75
+          ],
+          "opencv_fx_fy": [
+            null,
+            null
+          ],
+          "camera_apertures": [
+            24.0,
+            18.0
+          ],
+          "mean_rgb": [
+            154.13876157407407,
+            158.72405671296298,
+            171.2114699074074
+          ],
+          "parameter": 9000.0,
+          "live_light": {
+            "intensity": 1800.0,
+            "color": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "color_temperature": 9000.0,
+            "temperature_enabled": true
+          }
+        }
+      ],
+      "pixel_mean_absolute_difference": 35.64381365740741,
+      "checks": {
+        "finite_state": true,
+        "nonblack_frames": true,
+        "visible_difference": true,
+        "live_parameter_applied": true
+      },
+      "kind": "temperature",
+      "source": [
+        "LightColorTemperatureVariation"
+      ],
+      "run_source": "/home/tangyuan/WorldSimReady-Home/.worktrees/arena-openarm-domain-20261016/runs/arena-openarm-domain-r01",
+      "binding": "原场景穹顶光"
+    },
+    {
+      "id": "direction",
+      "label": "光照方向",
+      "phase": "build-time",
+      "note": "原场景追加方向光；方位角/偏离天顶角 [rad]",
+      "parameters": [
+        [
+          0.0,
+          0.15
+        ],
+        [
+          1.57,
+          1.2
+        ]
+      ],
+      "status": "passed",
+      "samples": [
+        {
+          "file": "0.png",
+          "original_camera_file": "original-0.png",
+          "cube_pose": [
+            0.5297610759735107,
+            0.11979784071445465,
+            1.078355312347412,
+            0.004851908423006535,
+            -0.004305667243897915,
+            -0.0012929036747664213,
+            0.9999780654907227
+          ],
+          "mass_kg": 0.03999999910593033,
+          "camera_position_m": [
+            1.350000023841858,
+            1.0499999523162842,
+            1.75
+          ],
+          "opencv_fx_fy": [
+            null,
+            null
+          ],
+          "camera_apertures": [
+            24.0,
+            18.0
+          ],
+          "mean_rgb": [
+            120.20057291666667,
+            120.55072337962963,
+            120.19133680555555
+          ],
+          "parameter": [
+            0.0,
+            0.15
+          ],
+          "directional_orientation": [
+            0.0,
+            0.0749298613616008,
+            0.0,
+            0.9971888065338135
+          ]
+        },
+        {
+          "file": "1.png",
+          "original_camera_file": "original-1.png",
+          "cube_pose": [
+            0.5297610759735107,
+            0.11979784071445465,
+            1.078355312347412,
+            0.004851908423006535,
+            -0.004305667243897915,
+            -0.0012929036747664213,
+            0.9999780654907227
+          ],
+          "mass_kg": 0.03999999910593033,
+          "camera_position_m": [
+            1.350000023841858,
+            1.0499999523162842,
+            1.75
+          ],
+          "opencv_fx_fy": [
+            null,
+            null
+          ],
+          "camera_apertures": [
+            24.0,
+            18.0
+          ],
+          "mean_rgb": [
+            110.77568287037037,
+            110.95388888888888,
+            110.29853009259259
+          ],
+          "parameter": [
+            1.57,
+            1.2
+          ],
+          "directional_orientation": [
+            -0.5646422842674966,
+            0.0004496102713765871,
+            0.0,
+            0.8253356218338013
+          ]
+        }
+      ],
+      "pixel_mean_absolute_difference": 14.221332947530865,
+      "checks": {
+        "finite_state": true,
+        "nonblack_frames": true,
+        "visible_difference": true,
+        "direction_changed": true
+      },
+      "kind": "direction",
+      "source": [
+        "LightDirectionVariation"
+      ],
+      "run_source": "/home/tangyuan/WorldSimReady-Home/.worktrees/arena-openarm-domain-20261016/runs/arena-openarm-light-readback",
+      "binding": "新增 DirectionalLight"
+    },
+    {
+      "id": "hdr",
+      "label": "HDR 环境",
+      "phase": "build-time",
+      "note": "本机真实 studio / beach HDR；未联网下载",
+      "parameters": [
+        "probe_studio",
+        "probe_beach"
+      ],
+      "status": "passed",
+      "samples": [
+        {
+          "file": "0.png",
+          "original_camera_file": "original-0.png",
+          "cube_pose": [
+            0.5297610759735107,
+            0.11979784071445465,
+            1.078355312347412,
+            0.004851908423006535,
+            -0.004305667243897915,
+            -0.0012929036747664213,
+            0.9999780654907227
+          ],
+          "mass_kg": 0.03999999910593033,
+          "camera_position_m": [
+            1.350000023841858,
+            1.0499999523162842,
+            1.75
+          ],
+          "opencv_fx_fy": [
+            null,
+            null
+          ],
+          "camera_apertures": [
+            24.0,
+            18.0
+          ],
+          "mean_rgb": [
+            134.6418923611111,
+            136.9940625,
+            137.4485648148148
+          ],
+          "parameter": "probe_studio",
+          "hdr_texture": "/opt/isaac-sim6.0/extscache/omni.kit.thumbnails.mdl-1.0.28+110.1.1/data/tests/template/SubUSDs/textures/photo_studio_01_4k.hdr"
+        },
+        {
+          "file": "1.png",
+          "original_camera_file": "original-1.png",
+          "cube_pose": [
+            0.5297610759735107,
+            0.11979784071445465,
+            1.078355312347412,
+            0.004851908423006535,
+            -0.004305667243897915,
+            -0.0012929036747664213,
+            0.9999780654907227
+          ],
+          "mass_kg": 0.03999999910593033,
+          "camera_position_m": [
+            1.350000023841858,
+            1.0499999523162842,
+            1.75
+          ],
+          "opencv_fx_fy": [
+            null,
+            null
+          ],
+          "camera_apertures": [
+            24.0,
+            18.0
+          ],
+          "mean_rgb": [
+            122.71321180555556,
+            125.79817708333333,
+            130.28968171296296
+          ],
+          "parameter": "probe_beach",
+          "hdr_texture": "/opt/isaac-sim6.0/extscache/omni.usd.libs-1.0.3+6312fa25.lx64.r.cp312/bin/usd/hdx/resources/textures/StinsonBeach.hdr"
+        }
+      ],
+      "pixel_mean_absolute_difference": 17.01176311728395,
+      "checks": {
+        "finite_state": true,
+        "nonblack_frames": true,
+        "visible_difference": true,
+        "hdr_texture_applied": true
+      },
+      "kind": "hdr",
+      "source": [
+        "HDRImageVariation"
+      ],
+      "run_source": "/home/tangyuan/WorldSimReady-Home/.worktrees/arena-openarm-domain-20261016/runs/arena-openarm-light-readback",
+      "binding": "原场景穹顶光"
+    },
+    {
+      "id": "extrinsics",
+      "label": "相机外参平移",
+      "phase": "reset",
+      "note": "ROS 光学 X -30 / +30 mm；为便于观察扩展测试幅度，库默认 ±5 mm",
+      "parameters": [
+        [
+          -0.03,
+          0.0,
+          0.0
+        ],
+        [
+          0.03,
+          0.0,
+          0.0
+        ]
+      ],
+      "status": "passed",
+      "samples": [
+        {
+          "file": "0.png",
+          "original_camera_file": "original-0.png",
+          "cube_pose": [
+            0.5297610759735107,
+            0.11979784071445465,
+            1.078355312347412,
+            0.004851908423006535,
+            -0.004305667243897915,
+            -0.0012929036747664213,
+            0.9999780654907227
+          ],
+          "mass_kg": 0.03999999910593033,
+          "camera_position_m": [
+            1.372710108757019,
+            1.0303975343704224,
+            1.75
+          ],
+          "opencv_fx_fy": [
+            null,
+            null
+          ],
+          "camera_apertures": [
+            24.0,
+            18.0
+          ],
+          "mean_rgb": [
+            158.9061111111111,
+            159.58929976851852,
+            159.18211226851852
+          ],
+          "parameter": [
+            -0.03,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "file": "1.png",
+          "original_camera_file": "original-1.png",
+          "cube_pose": [
+            0.5297610759735107,
+            0.11979784071445465,
+            1.078355312347412,
+            0.004851908423006535,
+            -0.004305667243897915,
+            -0.0012929036747664213,
+            0.9999780654907227
+          ],
+          "mass_kg": 0.03999999910593033,
+          "camera_position_m": [
+            1.3272899389266968,
+            1.069602370262146,
+            1.75
+          ],
+          "opencv_fx_fy": [
+            null,
+            null
+          ],
+          "camera_apertures": [
+            24.0,
+            18.0
+          ],
+          "mean_rgb": [
+            158.51723958333332,
+            159.17546875,
+            158.78677662037038
+          ],
+          "parameter": [
+            0.03,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "pixel_mean_absolute_difference": 19.629380787037036,
+      "camera_shift_m": 0.06000009153919932,
+      "checks": {
+        "finite_state": true,
+        "nonblack_frames": true,
+        "visible_difference": true,
+        "camera_shift_applied": true
+      },
+      "kind": "extrinsics",
+      "source": [
+        "CameraExtrinsicsVariation"
+      ],
+      "run_source": "/home/tangyuan/WorldSimReady-Home/.worktrees/arena-openarm-domain-20261016/runs/arena-openarm-domain-r01",
+      "binding": "新增诊断针孔相机"
+    },
+    {
+      "id": "intrinsics",
+      "label": "相机内参",
+      "phase": "reset",
+      "note": "fx/fy -10% / +10%，使用库默认范围端点",
+      "parameters": [
+        [
+          -0.1,
+          -0.1
+        ],
+        [
+          0.1,
+          0.1
+        ]
+      ],
+      "status": "passed",
+      "samples": [
+        {
+          "file": "0.png",
+          "original_camera_file": "original-0.png",
+          "cube_pose": [
+            0.5297610759735107,
+            0.11979784071445465,
+            1.078355312347412,
+            0.004851908423006535,
+            -0.004305667243897915,
+            -0.0012929036747664213,
+            0.9999780654907227
+          ],
+          "mass_kg": 0.03999999910593033,
+          "camera_position_m": [
+            1.350000023841858,
+            1.0499999523162842,
+            1.75
+          ],
+          "opencv_fx_fy": [
+            null,
+            null
+          ],
+          "camera_apertures": [
+            26.66666603088379,
+            20.0
+          ],
+          "mean_rgb": [
+            152.9096585648148,
+            153.6074710648148,
+            153.16878472222223
+          ],
+          "parameter": [
+            -0.1,
+            -0.1
+          ]
+        },
+        {
+          "file": "1.png",
+          "original_camera_file": "original-1.png",
+          "cube_pose": [
+            0.5297610759735107,
+            0.11979784071445465,
+            1.078355312347412,
+            0.004851908423006535,
+            -0.004305667243897915,
+            -0.0012929036747664213,
+            0.9999780654907227
+          ],
+          "mass_kg": 0.03999999910593033,
+          "camera_position_m": [
+            1.350000023841858,
+            1.0499999523162842,
+            1.75
+          ],
+          "opencv_fx_fy": [
+            null,
+            null
+          ],
+          "camera_apertures": [
+            21.81818199157715,
+            16.363636016845703
+          ],
+          "mean_rgb": [
+            163.69705439814814,
+            164.25923032407408,
+            163.84736689814815
+          ],
+          "parameter": [
+            0.1,
+            0.1
+          ]
+        }
+      ],
+      "pixel_mean_absolute_difference": 26.54447337962963,
+      "checks": {
+        "finite_state": true,
+        "nonblack_frames": true,
+        "visible_difference": true,
+        "aperture_ratio": true
+      },
+      "kind": "intrinsics",
+      "source": [
+        "CameraIntrinsicsVariation"
+      ],
+      "run_source": "/home/tangyuan/WorldSimReady-Home/.worktrees/arena-openarm-domain-20261016/runs/arena-openarm-domain-r01",
+      "binding": "新增诊断针孔相机"
+    },
+    {
+      "id": "mass",
+      "label": "物体质量",
+      "phase": "reset",
+      "note": "原方块 0.04 / 0.12 kg；同一水平外力 1 N 持续 0.2 s；保留桌面接触与重力",
+      "parameters": [
+        0.04,
+        0.12
+      ],
+      "status": "passed",
+      "samples": [
+        {
+          "file": "0.png",
+          "original_camera_file": "original-0.png",
+          "cube_pose": [
+            0.545501172542572,
+            0.4284951984882355,
+            1.1082922220230103,
+            0.4747817814350128,
+            0.3355454206466675,
+            0.014597857370972633,
+            -0.8134977221488953
+          ],
+          "mass_kg": 0.03999999910593033,
+          "camera_position_m": [
+            1.350000023841858,
+            1.0499999523162842,
+            1.75
+          ],
+          "opencv_fx_fy": [
+            null,
+            null
+          ],
+          "camera_apertures": [
+            24.0,
+            18.0
+          ],
+          "mean_rgb": [
+            158.64706018518518,
+            159.37497685185184,
+            158.98179398148147
+          ],
+          "parameter": 0.04
+        },
+        {
+          "file": "1.png",
+          "original_camera_file": "original-1.png",
+          "cube_pose": [
+            0.5310512185096741,
+            0.13286174833774567,
+            1.0841147899627686,
+            -0.1914258450269699,
+            -0.016529589891433716,
+            0.05483611673116684,
+            0.9798345565795898
+          ],
+          "mass_kg": 0.11999999731779099,
+          "camera_position_m": [
+            1.350000023841858,
+            1.0499999523162842,
+            1.75
+          ],
+          "opencv_fx_fy": [
+            null,
+            null
+          ],
+          "camera_apertures": [
+            24.0,
+            18.0
+          ],
+          "mean_rgb": [
+            158.66230324074073,
+            159.34905671296298,
+            158.93747106481482
+          ],
+          "parameter": 0.12
+        }
+      ],
+      "displacement_y_m": [
+        0.30869728326797485,
+        0.013063900172710419
+      ],
+      "pixel_mean_absolute_difference": 0.8798996913580247,
+      "checks": {
+        "finite_state": true,
+        "nonblack_frames": true,
+        "visible_difference": true,
+        "masses_applied": true,
+        "mass_contact_response": true
+      },
+      "kind": "mass",
+      "source": [
+        "ObjectMassVariation"
+      ],
+      "run_source": "/home/tangyuan/WorldSimReady-Home/.worktrees/arena-openarm-domain-20261016/runs/arena-openarm-domain-r01",
+      "binding": "原蓝色方块"
+    },
+    {
+      "id": "disappear",
+      "label": "物体消失",
+      "phase": "reset",
+      "note": "消失概率 0 / 1；检查返回概率 0 后物体恢复",
+      "parameters": [
+        0.0,
+        1.0
+      ],
+      "status": "passed",
+      "samples": [
+        {
+          "file": "0.png",
+          "original_camera_file": "original-0.png",
+          "cube_pose": [
+            0.5297610759735107,
+            0.11979784071445465,
+            1.078355312347412,
+            0.004851908423006535,
+            -0.004305667243897915,
+            -0.0012929036747664213,
+            0.9999780654907227
+          ],
+          "mass_kg": 0.03999999910593033,
+          "camera_position_m": [
+            1.350000023841858,
+            1.0499999523162842,
+            1.75
+          ],
+          "opencv_fx_fy": [
+            null,
+            null
+          ],
+          "camera_apertures": [
+            24.0,
+            18.0
+          ],
+          "mean_rgb": [
+            158.5962210648148,
+            159.30994212962963,
+            158.90613425925926
+          ],
+          "parameter": 0.0
+        },
+        {
+          "file": "1.png",
+          "original_camera_file": "original-1.png",
+          "cube_pose": [
+            999.9998779296875,
+            -0.00016179392696358263,
+            0.018199952319264412,
+            0.0046918801963329315,
+            -0.004132209811359644,
+            -0.00039372759056277573,
+            0.9999803304672241
+          ],
+          "mass_kg": 0.03999999910593033,
+          "camera_position_m": [
+            1.350000023841858,
+            1.0499999523162842,
+            1.75
+          ],
+          "opencv_fx_fy": [
+            null,
+            null
+          ],
+          "camera_apertures": [
+            24.0,
+            18.0
+          ],
+          "mean_rgb": [
+            158.93346064814816,
+            159.5368287037037,
+            158.97447337962964
+          ],
+          "parameter": 1.0
+        }
+      ],
+      "pixel_mean_absolute_difference": 0.7567013888888889,
+      "checks": {
+        "finite_state": true,
+        "nonblack_frames": true,
+        "visible_difference": true,
+        "parked_away": true,
+        "returns_after_reset": true
+      },
+      "kind": "disappear",
+      "source": [
+        "ObjectDisappearVariation"
+      ],
+      "run_source": "/home/tangyuan/WorldSimReady-Home/.worktrees/arena-openarm-domain-20261016/runs/arena-openarm-domain-r01",
+      "binding": "原蓝色方块"
+    },
+    {
+      "id": "pose",
+      "label": "物体位姿",
+      "phase": "reset",
+      "note": "原任务 XY ±40/60 mm、yaw 固定，两个 seed 实际采样",
+      "parameters": [
+        101,
+        102
+      ],
+      "status": "passed",
+      "samples": [
+        {
+          "file": "0.png",
+          "original_camera_file": "original-0.png",
+          "cube_pose": [
+            0.5297610759735107,
+            0.11979784071445465,
+            1.078355312347412,
+            0.004851908423006535,
+            -0.004305667243897915,
+            -0.0012929036747664213,
+            0.9999780654907227
+          ],
+          "mass_kg": 0.03999999910593033,
+          "camera_position_m": [
+            1.350000023841858,
+            1.0499999523162842,
+            1.75
+          ],
+          "opencv_fx_fy": [
+            null,
+            null
+          ],
+          "camera_apertures": [
+            24.0,
+            18.0
+          ],
+          "mean_rgb": [
+            158.5962210648148,
+            159.30994212962963,
+            158.90613425925926
+          ],
+          "parameter": 101
+        },
+        {
+          "file": "1.png",
+          "original_camera_file": "original-1.png",
+          "cube_pose": [
+            0.5297610759735107,
+            0.11979784071445465,
+            1.078355312347412,
+            0.004851908423006535,
+            -0.004305667243897915,
+            -0.0012929036747664213,
+            0.9999780654907227
+          ],
+          "mass_kg": 0.03999999910593033,
+          "camera_position_m": [
+            1.350000023841858,
+            1.0499999523162842,
+            1.75
+          ],
+          "opencv_fx_fy": [
+            null,
+            null
+          ],
+          "camera_apertures": [
+            24.0,
+            18.0
+          ],
+          "mean_rgb": [
+            158.70444444444445,
+            159.38446759259259,
+            158.97952546296295
+          ],
+          "parameter": 102
+        }
+      ],
+      "pixel_mean_absolute_difference": 0.6277411265432099,
+      "checks": {
+        "finite_state": true,
+        "nonblack_frames": true,
+        "visible_difference": true,
+        "within_range": true
+      },
+      "kind": "pose",
+      "source": [
+        "PoseRange"
+      ],
+      "run_source": "/home/tangyuan/WorldSimReady-Home/.worktrees/arena-openarm-domain-20261016/runs/arena-openarm-domain-r01",
+      "binding": "原蓝色方块"
+    },
+    {
+      "id": "original-intrinsics",
+      "label": "原相机 · 内参",
+      "phase": "reset",
+      "note": "fx/fy -10% / +10%，使用库默认范围端点；检查原标定 K 或原安装位姿是否实际改变；aperture 已变化，但 OpenCV fx/fy 未变",
+      "parameters": [
+        [
+          -0.1,
+          -0.1
+        ],
+        [
+          0.1,
+          0.1
+        ]
+      ],
+      "status": "failed",
+      "samples": [
+        {
+          "file": "0.png",
+          "original_camera_file": "original-0.png",
+          "cube_pose": [
+            0.5297610759735107,
+            0.11979784071445465,
+            1.078355312347412,
+            0.004851908423006535,
+            -0.004305667243897915,
+            -0.0012929036747664213,
+            0.9999780654907227
+          ],
+          "mass_kg": 0.03999999910593033,
+          "camera_position_m": [
+            0.21033358573913574,
+            0.01660304144024849,
+            1.3300367593765259
+          ],
+          "opencv_fx_fy": [
+            603.1517333984375,
+            603.1273193359375
+          ],
+          "camera_apertures": [
+            28.295808792114258,
+            21.22271728515625
+          ],
+          "mean_rgb": [
+            177.35328776041666,
+            178.155703125,
+            178.593984375
+          ],
+          "parameter": [
+            -0.1,
+            -0.1
+          ],
+          "before_observation_position_m": [
+            0.21033358573913574,
+            0.01660304144024849,
+            1.3300367593765259
+          ],
+          "after_observation_position_m": [
+            0.21033358573913574,
+            0.01660304144024849,
+            1.3300367593765259
+          ],
+          "after_observation_file": "after-observation-0.png",
+          "after_observation_rgb_mad": 0.0
+        },
+        {
+          "file": "1.png",
+          "original_camera_file": "original-1.png",
+          "cube_pose": [
+            0.5297610759735107,
+            0.11979784071445465,
+            1.078355312347412,
+            0.004851908423006535,
+            -0.004305667243897915,
+            -0.0012929036747664213,
+            0.9999780654907227
+          ],
+          "mass_kg": 0.03999999910593033,
+          "camera_position_m": [
+            0.21033358573913574,
+            0.016603119671344757,
+            1.3300366401672363
+          ],
+          "opencv_fx_fy": [
+            603.1517333984375,
+            603.1273193359375
+          ],
+          "camera_apertures": [
+            23.1511173248291,
+            17.36404037475586
+          ],
+          "mean_rgb": [
+            174.046533203125,
+            174.80173828125,
+            175.47802083333335
+          ],
+          "parameter": [
+            0.1,
+            0.1
+          ],
+          "before_observation_position_m": [
+            0.21033358573913574,
+            0.016603119671344757,
+            1.3300366401672363
+          ],
+          "after_observation_position_m": [
+            0.21033358573913574,
+            0.016603119671344757,
+            1.3300366401672363
+          ],
+          "after_observation_file": "after-observation-1.png",
+          "after_observation_rgb_mad": 0.0
+        }
+      ],
+      "pixel_mean_absolute_difference": 3.9827723524305556,
+      "opencv_focal_lengths_changed": false,
+      "checks": {
+        "finite_state": true,
+        "nonblack_frames": true,
+        "visible_difference": true,
+        "aperture_ratio": true,
+        "opencv_focal_lengths_changed": false
+      },
+      "kind": "intrinsics",
+      "source": [
+        "CameraIntrinsicsVariation"
+      ],
+      "run_source": "/home/tangyuan/WorldSimReady-Home/.worktrees/arena-openarm-domain-20261016/runs/arena-openarm-original-refresh",
+      "binding": "原 third_person_camera"
+    },
+    {
+      "id": "original-extrinsics",
+      "label": "原相机 · 外参",
+      "phase": "reset",
+      "note": "ROS 光学 X -30 / +30 mm；为便于观察扩展测试幅度，库默认 ±5 mm；检查原标定 K 或原安装位姿是否实际改变；画面为 3 个零动作控制步后，A/B 相机位置差回到 0 mm",
+      "parameters": [
+        [
+          -0.03,
+          0.0,
+          0.0
+        ],
+        [
+          0.03,
+          0.0,
+          0.0
+        ]
+      ],
+      "status": "failed",
+      "samples": [
+        {
+          "file": "0.png",
+          "original_camera_file": "original-0.png",
+          "cube_pose": [
+            0.5297610759735107,
+            0.11979784071445465,
+            1.078355312347412,
+            0.004851908423006535,
+            -0.004305667243897915,
+            -0.0012929036747664213,
+            0.9999780654907227
+          ],
+          "mass_kg": 0.03999999910593033,
+          "camera_position_m": [
+            0.20842525362968445,
+            0.046536047011613846,
+            1.3306478261947632
+          ],
+          "opencv_fx_fy": [
+            603.1517333984375,
+            603.1273193359375
+          ],
+          "camera_apertures": [
+            25.466228485107422,
+            19.100444793701172
+          ],
+          "mean_rgb": [
+            172.717861328125,
+            173.39833984375,
+            173.38349934895834
+          ],
+          "parameter": [
+            -0.03,
+            0.0,
+            0.0
+          ],
+          "before_observation_position_m": [
+            0.20842525362968445,
+            0.046536047011613846,
+            1.3306478261947632
+          ],
+          "after_observation_position_m": [
+            0.21033358573913574,
+            0.016603117808699608,
+            1.3300366401672363
+          ],
+          "after_observation_file": "after-observation-0.png",
+          "after_observation_rgb_mad": 18.125850694444445
+        },
+        {
+          "file": "1.png",
+          "original_camera_file": "original-1.png",
+          "cube_pose": [
+            0.5297610759735107,
+            0.11979784071445465,
+            1.078355312347412,
+            0.004851908423006535,
+            -0.004305667243897915,
+            -0.0012929036747664213,
+            0.9999780654907227
+          ],
+          "mass_kg": 0.03999999910593033,
+          "camera_position_m": [
+            0.21033358573913574,
+            0.016603119671344757,
+            1.3300366401672363
+          ],
+          "opencv_fx_fy": [
+            603.1517333984375,
+            603.1273193359375
+          ],
+          "camera_apertures": [
+            25.466228485107422,
+            19.100444793701172
+          ],
+          "mean_rgb": [
+            172.13024088541667,
+            172.79460611979167,
+            173.387587890625
+          ],
+          "parameter": [
+            0.03,
+            0.0,
+            0.0
+          ],
+          "before_observation_position_m": [
+            0.21033358573913574,
+            0.016603119671344757,
+            1.3300366401672363
+          ],
+          "after_observation_position_m": [
+            0.21033358573913574,
+            0.016603117808699608,
+            1.3300366401672363
+          ],
+          "after_observation_file": "after-observation-1.png",
+          "after_observation_rgb_mad": 1.3281998697916666
+        }
+      ],
+      "pixel_mean_absolute_difference": 0.929462890625,
+      "camera_shift_m": 0.029999923649203435,
+      "after_observation_camera_shift_m": 0.0,
+      "checks": {
+        "finite_state": true,
+        "nonblack_frames": true,
+        "visible_difference": true,
+        "camera_shift_applied": false,
+        "shift_survives_observation": false
+      },
+      "kind": "extrinsics",
+      "source": [
+        "CameraExtrinsicsVariation"
+      ],
+      "run_source": "/home/tangyuan/WorldSimReady-Home/.worktrees/arena-openarm-domain-20261016/runs/arena-openarm-original-control-refresh",
+      "binding": "原 third_person_camera",
+      "before_control_pixel_mean_absolute_difference": 18.37937934027778
+    }
+  ],
+  "scope": "Actual OpenArm left pick-place production scene in native Arena, PhysX; source robot/table/cube assets and calibrated cameras retained. Diagnostic pinhole camera added. No planner or task-success evaluation.",
+  "arena_head": "98866596fd024d96c874fe6fb95ae916d1133629",
+  "arena_has_local_changes": true
+}

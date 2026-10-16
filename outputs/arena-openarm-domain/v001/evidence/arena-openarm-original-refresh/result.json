@@ -1,0 +1,309 @@
+{
+  "scope": "Actual OpenArm left pick-place production scene in native Arena, PhysX; source robot/table/cube assets and calibrated cameras retained. Diagnostic pinhole camera added. No planner or task-success evaluation.",
+  "cases": [
+    {
+      "id": "extrinsics",
+      "label": "相机外参平移",
+      "phase": "reset",
+      "note": "ROS 光学 X -30 / +30 mm；为便于观察扩展测试幅度，库默认 ±5 mm",
+      "parameters": [
+        [
+          -0.03,
+          0.0,
+          0.0
+        ],
+        [
+          0.03,
+          0.0,
+          0.0
+        ]
+      ],
+      "status": "failed",
+      "samples": [
+        {
+          "file": "0.png",
+          "original_camera_file": "original-0.png",
+          "cube_pose": [
+            0.5297610759735107,
+            0.11979784071445465,
+            1.078355312347412,
+            0.004851908423006535,
+            -0.004305667243897915,
+            -0.0012929036747664213,
+            0.9999780654907227
+          ],
+          "mass_kg": 0.03999999910593033,
+          "camera_position_m": [
+            0.20842525362968445,
+            0.046536047011613846,
+            1.3306478261947632
+          ],
+          "opencv_fx_fy": [
+            603.1517333984375,
+            603.1273193359375
+          ],
+          "camera_apertures": [
+            25.466228485107422,
+            19.100444793701172
+          ],
+          "mean_rgb": [
+            172.717861328125,
+            173.39833984375,
+            173.38349934895834
+          ],
+          "parameter": [
+            -0.03,
+            0.0,
+            0.0
+          ],
+          "before_observation_position_m": [
+            0.20842525362968445,
+            0.046536047011613846,
+            1.3306478261947632
+          ],
+          "after_observation_position_m": [
+            0.20842525362968445,
+            0.046536047011613846,
+            1.3306478261947632
+          ],
+          "after_observation_file": "after-observation-0.png",
+          "after_observation_rgb_mad": 0.0
+        },
+        {
+          "file": "1.png",
+          "original_camera_file": "original-1.png",
+          "cube_pose": [
+            0.5297610759735107,
+            0.11979784071445465,
+            1.078355312347412,
+            0.004851908423006535,
+            -0.004305667243897915,
+            -0.0012929036747664213,
+            0.9999780654907227
+          ],
+          "mass_kg": 0.03999999910593033,
+          "camera_position_m": [
+            0.21033358573913574,
+            0.016603119671344757,
+            1.3300366401672363
+          ],
+          "opencv_fx_fy": [
+            603.1517333984375,
+            603.1273193359375
+          ],
+          "camera_apertures": [
+            25.466228485107422,
+            19.100444793701172
+          ],
+          "mean_rgb": [
+            171.97050130208333,
+            172.68916015625,
+            173.33569010416667
+          ],
+          "parameter": [
+            0.03,
+            0.0,
+            0.0
+          ],
+          "before_observation_position_m": [
+            0.21033358573913574,
+            0.016603119671344757,
+            1.3300366401672363
+          ],
+          "after_observation_position_m": [
+            0.21033358573913574,
+            0.016603119671344757,
+            1.3300366401672363
+          ],
+          "after_observation_file": "after-observation-1.png",
+          "after_observation_rgb_mad": 0.0
+        }
+      ],
+      "pixel_mean_absolute_difference": 18.222612847222223,
+      "camera_shift_m": 0.029999923649203435,
+      "after_observation_camera_shift_m": 0.029999923649203435,
+      "checks": {
+        "finite_state": true,
+        "nonblack_frames": true,
+        "visible_difference": true,
+        "camera_shift_applied": false,
+        "shift_survives_observation": false
+      }
+    },
+    {
+      "id": "intrinsics",
+      "label": "相机内参",
+      "phase": "reset",
+      "note": "fx/fy -10% / +10%，使用库默认范围端点",
+      "parameters": [
+        [
+          -0.1,
+          -0.1
+        ],
+        [
+          0.1,
+          0.1
+        ]
+      ],
+      "status": "failed",
+      "samples": [
+        {
+          "file": "0.png",
+          "original_camera_file": "original-0.png",
+          "cube_pose": [
+            0.5297610759735107,
+            0.11979784071445465,
+            1.078355312347412,
+            0.004851908423006535,
+            -0.004305667243897915,
+            -0.0012929036747664213,
+            0.9999780654907227
+          ],
+          "mass_kg": 0.03999999910593033,
+          "camera_position_m": [
+            0.21033358573913574,
+            0.01660304144024849,
+            1.3300367593765259
+          ],
+          "opencv_fx_fy": [
+            603.1517333984375,
+            603.1273193359375
+          ],
+          "camera_apertures": [
+            28.295808792114258,
+            21.22271728515625
+          ],
+          "mean_rgb": [
+            177.35328776041666,
+            178.155703125,
+            178.593984375
+          ],
+          "parameter": [
+            -0.1,
+            -0.1
+          ],
+          "before_observation_position_m": [
+            0.21033358573913574,
+            0.01660304144024849,
+            1.3300367593765259
+          ],
+          "after_observation_position_m": [
+            0.21033358573913574,
+            0.01660304144024849,
+            1.3300367593765259
+          ],
+          "after_observation_file": "after-observation-0.png",
+          "after_observation_rgb_mad": 0.0
+        },
+        {
+          "file": "1.png",
+          "original_camera_file": "original-1.png",
+          "cube_pose": [
+            0.5297610759735107,
+            0.11979784071445465,
+            1.078355312347412,
+            0.004851908423006535,
+            -0.004305667243897915,
+            -0.0012929036747664213,
+            0.9999780654907227
+          ],
+          "mass_kg": 0.03999999910593033,
+          "camera_position_m": [
+            0.21033358573913574,
+            0.016603119671344757,
+            1.3300366401672363
+          ],
+          "opencv_fx_fy": [
+            603.1517333984375,
+            603.1273193359375
+          ],
+          "camera_apertures": [
+            23.1511173248291,
+            17.36404037475586
+          ],
+          "mean_rgb": [
+            174.046533203125,
+            174.80173828125,
+            175.47802083333335
+          ],
+          "parameter": [
+            0.1,
+            0.1
+          ],
+          "before_observation_position_m": [
+            0.21033358573913574,
+            0.016603119671344757,
+            1.3300366401672363
+          ],
+          "after_observation_position_m": [
+            0.21033358573913574,
+            0.016603119671344757,
+            1.3300366401672363
+          ],
+          "after_observation_file": "after-observation-1.png",
+          "after_observation_rgb_mad": 0.0
+        }
+      ],
+      "pixel_mean_absolute_difference": 3.9827723524305556,
+      "opencv_focal_lengths_changed": false,
+      "checks": {
+        "finite_state": true,
+        "nonblack_frames": true,
+        "visible_difference": true,
+        "aperture_ratio": true,
+        "opencv_focal_lengths_changed": false
+      }
+    }
+  ],
+  "source_root": "/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena",
+  "status": "failed",
+  "camera_target": "third_person_camera",
+  "concrete_variations": [
+    {
+      "class": "LightIntensityVariation",
+      "source": "/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/isaaclab_arena/variations/light_intensity_variation.py",
+      "line": 28
+    },
+    {
+      "class": "ObjectMassVariation",
+      "source": "/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/isaaclab_arena/variations/object_mass_variation.py",
+      "line": 45
+    },
+    {
+      "class": "LightDirectionVariation",
+      "source": "/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/isaaclab_arena/variations/light_direction_variation.py",
+      "line": 73
+    },
+    {
+      "class": "ObjectDisappearVariation",
+      "source": "/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/isaaclab_arena/variations/object_disappear_variation.py",
+      "line": 74
+    },
+    {
+      "class": "LightColorTemperatureVariation",
+      "source": "/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/isaaclab_arena/variations/light_color_temperature_variation.py",
+      "line": 30
+    },
+    {
+      "class": "LightColorVariation",
+      "source": "/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/isaaclab_arena/variations/light_color_variation.py",
+      "line": 32
+    },
+    {
+      "class": "CameraExtrinsicsVariation",
+      "source": "/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/isaaclab_arena/variations/camera_extrinsics_variation.py",
+      "line": 54
+    },
+    {
+      "class": "CameraIntrinsicsVariation",
+      "source": "/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/isaaclab_arena/variations/camera_intrinsics_variation.py",
+      "line": 48
+    },
+    {
+      "class": "HDRImageVariation",
+      "source": "/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/isaaclab_arena/variations/hdr_image_variation.py",
+      "line": 37
+    }
+  ],
+  "source_unchanged": true
+}

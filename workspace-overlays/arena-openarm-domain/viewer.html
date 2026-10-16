@@ -1,0 +1,70 @@
+<div id="openarm-domain-check">
+<style>
+#openarm-domain-check{color:var(--foreground)}
+#openarm-domain-check .heading{padding-right:96px;margin-bottom:18px}
+#openarm-domain-check .selected{display:flex;flex-wrap:wrap;align-items:baseline;gap:12px;margin-top:20px}
+#openarm-domain-check .comparison{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:18px 0}
+#openarm-domain-check img{display:block;width:100%;aspect-ratio:4/3;object-fit:contain;background:var(--muted)}
+#openarm-domain-check .sample-label{margin-bottom:8px}
+#openarm-domain-check .sample-state{margin:10px 0;overflow-wrap:anywhere}
+#openarm-domain-check .check-list{display:flex;flex-wrap:wrap;gap:12px;margin:15px 0}
+#openarm-domain-check code{white-space:normal;overflow-wrap:anywhere}
+@media(max-width:600px){#openarm-domain-check .comparison{grid-template-columns:1fr}}
+</style>
+<div class="heading"><h2>OpenArm 场景 · Arena 域随机化实测</h2><div class="text-small">真实机器人、扫描桌面、蓝色方块 · PhysX · RTX 5090</div></div>
+<div class="viz-grid" id="oad-methods"></div>
+<div class="selected" aria-live="polite"><h3 id="oad-name"></h3><span id="oad-status"></span></div>
+<div id="oad-note" class="text-small"></div>
+<div class="comparison" id="oad-comparison">
+<div><div id="oad-a-label" class="sample-label tabular-nums"></div><img id="oad-a" alt="OpenArm 条件 A 实际 RTX 渲染"><div id="oad-a-state" class="sample-state text-small tabular-nums"></div></div>
+<div><div id="oad-b-label" class="sample-label tabular-nums"></div><img id="oad-b" alt="OpenArm 条件 B 实际 RTX 渲染"><div id="oad-b-state" class="sample-state text-small tabular-nums"></div></div>
+</div>
+<div id="oad-error" class="sample-state text-small" hidden></div>
+<div class="check-list text-small" id="oad-checks"></div>
+<details><summary class="cursor-interaction">本项参数与运行证据</summary><table class="table table-sm"><tbody id="oad-details"></tbody></table></details>
+<hr>
+<h3>支持情况汇总</h3>
+<div class="table-responsive"><table class="table table-sm"><thead><tr><th>方法</th><th>测试绑定</th><th>画面差异¹</th><th>结果</th></tr></thead><tbody id="oad-summary"></tbody></table></div>
+<div class="text-small">¹ RGB 平均绝对像素差 / 255；原相机兼容性检查单独列出。</div>
+<script type="application/json" id="oad-data">__OPENARM_DATA__</script>
+<script>
+(()=>{
+const root=document.getElementById('openarm-domain-check');
+const data=JSON.parse(root.querySelector('#oad-data').textContent);
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const labels={finite_state:'状态有限',nonblack_frames:'非黑屏',visible_difference:'画面变化',live_parameter_applied:'USD 参数一致',masses_applied:'质量读回一致',mass_contact_response:'质量影响接触响应',camera_shift_applied:'外参位移一致',aperture_ratio:'aperture 比例一致',hdr_texture_applied:'HDR 纹理一致',direction_changed:'方向光旋转改变',shift_survives_observation:'控制刷新后外参保留',opencv_focal_lengths_changed:'OpenCV 焦距改变',parked_away:'方块移出场景',returns_after_reset:'reset 后恢复',within_range:'位置在原范围内'};
+let selected=data.cases[0].id;
+function status(c){return c.status==='passed'?'通过':'未通过';}
+function state(c,s,i){
+const kind=c.kind||c.id;
+if(kind==='mass')return `质量 ${s.mass_kg.toFixed(3)} kg · Y 位移 ${(c.displacement_y_m[i]*1000).toFixed(2)} mm`;
+if(kind==='extrinsics')return `相机 XYZ [m]：${(s.after_observation_position_m||s.camera_position_m).map(x=>x.toFixed(4)).join(', ')}${s.after_observation_position_m?' · 原任务控制刷新后':''}`;
+if(kind==='intrinsics')return `aperture [mm]：${s.camera_apertures.map(x=>x.toFixed(3)).join(' / ')}${s.opencv_fx_fy?.[0]!=null?' · OpenCV fx/fy '+s.opencv_fx_fy.map(x=>x.toFixed(2)).join(' / '):''}`;
+if(kind==='pose'||kind==='disappear')return `方块 XYZ [m]：${s.cube_pose.slice(0,3).map(x=>x.toFixed(3)).join(', ')}`;
+if(s.live_light)return kind==='color'?`USD RGB：${s.live_light.color.map(x=>x.toFixed(2)).join(', ')}`:kind==='temperature'?`USD 色温 ${s.live_light.color_temperature} K`:`USD intensity ${s.live_light.intensity}`;
+return `平均 RGB：${s.mean_rgb.map(x=>x.toFixed(1)).join(', ')}`;
+}
+function draw(){
+const c=data.cases.find(x=>x.id===selected);
+root.querySelectorAll('button[data-id]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.id===selected)));
+root.querySelector('#oad-name').textContent=c.label;
+root.querySelector('#oad-status').textContent=status(c)+' · '+c.binding;
+root.querySelector('#oad-note').textContent=c.note;
+const enough=c.samples.length===2;
+root.querySelector('#oad-comparison').hidden=!enough;
+// Author styles for grid must yield to the native hidden state.
+root.querySelector('#oad-comparison').style.display=enough?'':'none';
+root.querySelector('#oad-error').hidden=enough;
+root.querySelector('#oad-error').textContent=c.error?c.error.trim().split('\n').slice(-1)[0]:'未生成两组对照帧';
+if(enough)c.samples.forEach((s,i)=>{const k=i?'b':'a';root.querySelector(`#oad-${k}`).src=s.image;root.querySelector(`#oad-${k}-label`).textContent=`${i?'B':'A'} · ${JSON.stringify(s.parameter)}`;root.querySelector(`#oad-${k}-state`).textContent=state(c,s,i);});
+root.querySelector('#oad-checks').innerHTML=Object.entries(c.checks||{}).map(([k,v])=>`<span>${v?'✓':'×'} ${esc(labels[k]||k)}</span>`).join('');
+const details=[['生效阶段',c.phase==='build-time'?'构建时':'reset 时'],['测试绑定',c.binding],['原生代码',c.source.join(', ')],['控制刷新后相机差距',c.after_observation_camera_shift_m==null?'—':(c.after_observation_camera_shift_m*1000).toFixed(4)+' mm'],['画面差异',c.pixel_mean_absolute_difference==null?'未生成':c.pixel_mean_absolute_difference.toFixed(4)],['运行目录',c.run_source]];
+root.querySelector('#oad-details').innerHTML=details.map(([k,v])=>`<tr><td>${esc(k)}</td><td>${esc(v)}</td></tr>`).join('');
+}
+for(const c of data.cases){const b=document.createElement('button');b.className='btn viz-tile';b.type='button';b.dataset.id=c.id;b.textContent=c.label;b.addEventListener('click',()=>{selected=c.id;draw();window.openai?.setWidgetState?.({modelContent:{openarmDomainCase:c.id},privateContent:null})?.catch(()=>{});});root.querySelector('#oad-methods').appendChild(b);}
+root.querySelector('#oad-summary').innerHTML=data.cases.map(c=>`<tr><td>${esc(c.label)}</td><td>${esc(c.binding)}</td><td class="tabular-nums">${c.pixel_mean_absolute_difference==null?'—':c.pixel_mean_absolute_difference.toFixed(3)}</td><td>${status(c)}</td></tr>`).join('');
+function restore(s){const id=s?.modelContent?.openarmDomainCase;if(data.cases.some(c=>c.id===id))selected=id;draw();}
+restore(window.openai?.widgetState);window.addEventListener('openai:set_globals',e=>restore(e.detail?.globals?.widgetState));
+})();
+</script>
+</div>

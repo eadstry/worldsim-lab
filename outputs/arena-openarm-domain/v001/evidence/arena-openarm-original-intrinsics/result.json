@@ -1,0 +1,75 @@
+{
+  "scope": "Actual OpenArm left pick-place production scene in native Arena, PhysX; source robot/table/cube assets and calibrated cameras retained. Diagnostic pinhole camera added. No planner or task-success evaluation.",
+  "cases": [
+    {
+      "id": "intrinsics",
+      "label": "相机内参",
+      "phase": "reset",
+      "note": "fx/fy -10% / +10%，使用库默认范围端点",
+      "parameters": [
+        [
+          -0.1,
+          -0.1
+        ],
+        [
+          0.1,
+          0.1
+        ]
+      ],
+      "status": "failed",
+      "samples": [],
+      "error": "Traceback (most recent call last):\n  File \"/home/tangyuan/WorldSimReady-Home/.worktrees/arena-openarm-domain-20261016/workspace-overlays/arena-openarm-domain/run.py\", line 217, in <module>\n    env, variation = build(kind, value)\n                     ^^^^^^^^^^^^^^^^^^\n  File \"/home/tangyuan/WorldSimReady-Home/.worktrees/arena-openarm-domain-20261016/workspace-overlays/arena-openarm-domain/run.py\", line 149, in build\n    if args.camera_target!='probe_camera': embodiment.scene_config.third_person_camera=rig.get_cfg().third_person_camera\n                                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'ProbeRig' object has no attribute 'third_person_camera'\n"
+    }
+  ],
+  "source_root": "/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena",
+  "status": "failed",
+  "camera_target": "third_person_camera",
+  "concrete_variations": [
+    {
+      "class": "LightIntensityVariation",
+      "source": "/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/isaaclab_arena/variations/light_intensity_variation.py",
+      "line": 28
+    },
+    {
+      "class": "ObjectMassVariation",
+      "source": "/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/isaaclab_arena/variations/object_mass_variation.py",
+      "line": 45
+    },
+    {
+      "class": "LightDirectionVariation",
+      "source": "/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/isaaclab_arena/variations/light_direction_variation.py",
+      "line": 73
+    },
+    {
+      "class": "ObjectDisappearVariation",
+      "source": "/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/isaaclab_arena/variations/object_disappear_variation.py",
+      "line": 74
+    },
+    {
+      "class": "LightColorTemperatureVariation",
+      "source": "/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/isaaclab_arena/variations/light_color_temperature_variation.py",
+      "line": 30
+    },
+    {
+      "class": "LightColorVariation",
+      "source": "/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/isaaclab_arena/variations/light_color_variation.py",
+      "line": 32
+    },
+    {
+      "class": "CameraExtrinsicsVariation",
+      "source": "/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/isaaclab_arena/variations/camera_extrinsics_variation.py",
+      "line": 54
+    },
+    {
+      "class": "CameraIntrinsicsVariation",
+      "source": "/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/isaaclab_arena/variations/camera_intrinsics_variation.py",
+      "line": 48
+    },
+    {
+      "class": "HDRImageVariation",
+      "source": "/home/tangyuan/WorldSimReady-Home/IsaacLab-Arena/isaaclab_arena/variations/hdr_image_variation.py",
+      "line": 37
+    }
+  ],
+  "source_unchanged": true
+}
