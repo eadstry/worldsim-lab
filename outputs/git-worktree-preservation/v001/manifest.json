@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "artifact_id": "git-worktree-preservation",
+  "version": "v001",
+  "created_at": "2026-10-16T10:56:07.101084+08:00",
+  "sealed_at": "2026-10-16T10:56:07.101084+08:00",
+  "sources": [
+    "Local worktrees 5b06, c46d and e476; original commits and hashes in inventory.json"
+  ],
+  "files": {
+    "README.md": "2bc4487f4f25e8ad250bb301cb7e60a2ad790c3e84fb7ef69b99c84ed65463e9",
+    "files/5b06/workspace-overlays/curobo-v2-mvp/trajectory.py": "1dac1ab5841cd5b389757607eb789dc94e2820026d3b400862734d278aaec949",
+    "files/c46d/outputs/openarm-32-episode-benchmark/v001/CHANGELOG.md": "085492216a0d588420b0d4f30c9841ad078287a8157935fb8dc8816b5cb86902",
+    "files/c46d/outputs/openarm-32-episode-benchmark/v001/manifest.json": "9bbf36d79a8620055d54fee1dac90996abdbd752e456b45e4fe36af727101793",
+    "files/c46d/outputs/openarm-32-episode-benchmark/v001/report.md": "b82caaaf9fd60aadc0ee1ca7be6a1b0ee02d34935b9364ada58ac31e6a633e44",
+    "files/c46d/workspace-overlays/openarm-benchmark/.gitignore": "e5edb728f6d3abe327d754b437ef55819fc81dc5dcad725c8e32c7c95de1e288",
+    "files/c46d/workspace-overlays/openarm-benchmark/README.md": "92fb79edfce33f7a5f9a3e25d6a7b2519a1b483d0daf27b4d6dba06f0a414c23",
+    "files/c46d/workspace-overlays/openarm-benchmark/bench32.py": "da1bd3e4a01d647778569b34e8c2648a13bd6c9cfbec9a3d0e06792b5b9864eb",
+    "files/c46d/workspace-overlays/openarm-benchmark/collect.py": "47f72e1d6ca33670779b4720cd8fc8cd87a465d2add84c6f084326d8cac2ec2c",
+    "files/c46d/workspace-overlays/openarm-benchmark/owned_launch.py": "0d7899ba47d16eecc5a9e38fd3263b42f1e8a02f46715fa104cc181dc1c0dc9b",
+    "files/c46d/workspace-overlays/openarm-benchmark/terminal_gate.py": "6e6bfd20bf0ab0c4fcf1c7a515842477bf014d748c0bf60c1ce85760927b4b8e",
+    "files/c46d/workspace-overlays/openarm-benchmark/terminal_launch.py": "6849c9c976a54ac2acd007424bdfa6f49fee11a82cde63c723f7f4015b06313d",
+    "files/c46d/workspace-overlays/openarm-benchmark/test_bench32.py": "8bfc8134dc3c7a1be3676b6e6256e1f91635f52861169c1849455dc7ee66b464",
+    "files/c46d/workspace-overlays/openarm-benchmark/test_cleanup.py": "401c20654aab24abd496b8fb0550d4f79a114f4af26cdad33b57b13cee9c049f",
+    "files/c46d/workspace-overlays/openarm-benchmark/test_launch.py": "37c4b0e0b47c4819634f841c377a73f34eda89711b10c18b8f616d5ccb3e237a",
+    "files/c46d/workspace-overlays/openarm-benchmark/test_terminal_gate.py": "a597b7cfc532d37c1b0cdd1b8c631e79475d08fd2ea497b12a5bfff86f575df8",
+    "files/e476/AGENTS.md": "f8cab5055b3438b87e853f74854c0a319e2f732edfbd53f0ae0f39fb4c32f525",
+    "files/e476/outputs/autodata-efficiency-review/v021/charts.md": "6a6120caa3d0106fae1a14ab882dc3567e4494660d733d4d175ed1af68e34320",
+    "inventory.json": "f3d0daf1d9b52dfd69ee687949e1dd7bfcd14b720bd144a09078ee9d6592c302"
+  },
+  "validation": {
+    "kind": "historical-source-byte-preservation",
+    "runtime_files_copied": 0,
+    "gpu_runs": 0,
+    "scope": "No integration or runtime correctness claim"
+  },
+  "delivery": {
+    "local": {
+      "status": "saved"
+    }
+  }
+}

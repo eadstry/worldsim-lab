@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" role="img"><title>组合契约：规划后端与保存策略分别选择</title>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="none" stroke="#75879b" stroke-width="1.5"/></marker></defs>
+<rect width="1200" height="640" rx="22" fill="#f7f9fc"/>
+<style>text{font-family:"Noto Sans CJK SC","WenQuanYi Micro Hei","Microsoft YaHei",sans-serif} .t{font-size:29px;font-weight:700;fill:#122c46}.sub{font-size:17px;fill:#52677c}.head{font-size:21px;font-weight:700}.body{font-size:18px;fill:#233d56}</style>
+<text x="40" y="53" class="t">组合契约：规划后端与保存策略分别选择</text>
+<text x="40" y="87" class="sub">本图展示接口关系；不表示两种规划器会在同一次任务中串联执行。</text>
+<rect x="40.0" y="120" width="350.6666666666667" height="420" rx="16" fill="white" stroke="#dae3ed"/>
+<rect x="40.0" y="120" width="350.6666666666667" height="53" rx="14" fill="#eaf2ff"/>
+<text x="58.0" y="154" class="head" fill="#2563eb">任务输入</text>
+<rect x="54.0" y="194" width="322.6666666666667" height="93" rx="10" fill="#eaf2ff"/>
+<text x="67.0" y="222" font-size="19" font-weight="700" fill="#2563eb">任务阶段</text>
+<text x="67.0" y="247" class="body">抓取 / 搬运 / 放置</text>
+<rect x="54.0" y="304" width="322.6666666666667" height="93" rx="10" fill="#eaf2ff"/>
+<text x="67.0" y="332" font-size="19" font-weight="700" fill="#2563eb">规划输入契约</text>
+<text x="67.0" y="357" class="body">当前状态 + 目标位姿</text>
+<text x="67.0" y="381" class="body">机器人模型 + 碰撞场景</text>
+<rect x="54.0" y="414" width="322.6666666666667" height="93" rx="10" fill="#eaf2ff"/>
+<text x="67.0" y="442" font-size="19" font-weight="700" fill="#2563eb">配置与语义</text>
+<text x="67.0" y="467" class="body">关节名 / 坐标系</text>
+<text x="67.0" y="491" class="body">接触与附着物状态</text>
+<path d="M393.6666666666667,335 H418.6666666666667" stroke="#75879b" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="424.6666666666667" y="120" width="350.6666666666667" height="420" rx="16" fill="white" stroke="#dae3ed"/>
+<rect x="424.6666666666667" y="120" width="350.6666666666667" height="53" rx="14" fill="#f0ebff"/>
+<text x="442.6666666666667" y="154" class="head" fill="#7954bc">后端二选一</text>
+<rect x="438.6666666666667" y="194" width="322.6666666666667" height="93" rx="10" fill="#f0ebff"/>
+<text x="451.6666666666667" y="222" font-size="19" font-weight="700" fill="#7954bc">v1 路线</text>
+<text x="451.6666666666667" y="247" class="body">MotionGen</text>
+<text x="451.6666666666667" y="271" class="body">原规划封装</text>
+<rect x="438.6666666666667" y="304" width="322.6666666666667" height="93" rx="10" fill="#f0ebff"/>
+<text x="451.6666666666667" y="332" font-size="19" font-weight="700" fill="#7954bc">v2 实验路线</text>
+<text x="451.6666666666667" y="357" class="body">MotionPlanner</text>
+<text x="451.6666666666667" y="381" class="body">输入转换 + 结果恢复</text>
+<rect x="438.6666666666667" y="414" width="322.6666666666667" height="93" rx="10" fill="#f0ebff"/>
+<text x="451.6666666666667" y="442" font-size="19" font-weight="700" fill="#7954bc">共同返回契约</text>
+<text x="451.6666666666667" y="467" class="body">任务可消费的轨迹</text>
+<text x="451.6666666666667" y="491" class="body">成功 / 失败状态</text>
+<path d="M778.3333333333334,335 H803.3333333333334" stroke="#75879b" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="809.3333333333334" y="120" width="350.6666666666667" height="420" rx="16" fill="white" stroke="#dae3ed"/>
+<rect x="809.3333333333334" y="120" width="350.6666666666667" height="53" rx="14" fill="#e5f5ef"/>
+<text x="827.3333333333334" y="154" class="head" fill="#148269">执行与保存</text>
+<rect x="823.3333333333334" y="194" width="322.6666666666667" height="93" rx="10" fill="#e5f5ef"/>
+<text x="836.3333333333334" y="222" font-size="19" font-weight="700" fill="#148269">执行</text>
+<text x="836.3333333333334" y="247" class="body">动作队列 → env.step</text>
+<text x="836.3333333333334" y="271" class="body">物理与观测更新</text>
+<rect x="823.3333333333334" y="304" width="322.6666666666667" height="93" rx="10" fill="#e5f5ef"/>
+<text x="836.3333333333334" y="332" font-size="19" font-weight="700" fill="#148269">录制</text>
+<text x="836.3333333333334" y="357" class="body">EpisodeData</text>
+<rect x="823.3333333333334" y="414" width="322.6666666666667" height="93" rx="10" fill="#e5f5ef"/>
+<text x="836.3333333333334" y="442" font-size="19" font-weight="700" fill="#148269">保存另行选择</text>
+<text x="836.3333333333334" y="467" class="body">同步 或 异步 writer</text>
+<text x="836.3333333333334" y="491" class="body">最终输出与质量检查</text>
+<text x="42" y="584" class="sub">已覆盖：v1 同步、v1 异步、v2 异步的历史实验；其余组合不能据此视为已验收。</text>
+<text x="42" y="613" font-size="13" fill="#7a8da0">AUTODATA · ARCHITECTURE NOTES / v022 · 2026-10-16 · 箭头表示关系，不表示耗时比例</text></svg>

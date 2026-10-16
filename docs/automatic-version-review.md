@@ -6,7 +6,7 @@
 
 ## 新任务的基线
 
-版本策略保存在 `config/version-policy.json`。默认起点为本机已获取的 `origin/codex/experimental-analysis-20261015`；最低祖先是整合提交 `f7304e4`，起点同时必须包含自动审查策略。先 fetch，再创建任务：
+版本策略保存在 `config/version-policy.json`。默认起点为本机已获取的 `origin/codex/git-all-worktrees-20261016`，包含本次全工作树整理与成果归档；最低祖先是整合提交 `f7304e4`，起点同时必须包含自动审查策略。先 fetch，再创建任务：
 
 ```bash
 git fetch origin

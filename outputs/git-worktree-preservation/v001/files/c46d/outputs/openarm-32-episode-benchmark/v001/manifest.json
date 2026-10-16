@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "artifact_id": "openarm-32-episode-benchmark",
+  "version": "v001",
+  "created_at": "2026-10-14T10:42:50.628421+00:00",
+  "material_cutoff": null,
+  "sources": [],
+  "limitations": [],
+  "sealed_at": null,
+  "files": {},
+  "delivery": {
+    "feishu": {
+      "status": "blocked_destination",
+      "target": null,
+      "receipt": null,
+      "files": [],
+      "updated_at": null,
+      "error": "No authorized destination configured; no upload performed"
+    },
+    "gpt": {
+      "status": "blocked_destination",
+      "target": null,
+      "receipt": null,
+      "files": [],
+      "updated_at": null,
+      "error": "No authorized destination configured; no upload performed"
+    }
+  }
+}

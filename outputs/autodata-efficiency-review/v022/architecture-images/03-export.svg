@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" role="img"><title>异步保存：数据向右走，完成回执向左返回</title>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="none" stroke="#75879b" stroke-width="1.5"/></marker></defs>
+<rect width="1200" height="640" rx="22" fill="#f7f9fc"/>
+<style>text{font-family:"Noto Sans CJK SC","WenQuanYi Micro Hei","Microsoft YaHei",sans-serif} .t{font-size:29px;font-weight:700;fill:#122c46}.sub{font-size:17px;fill:#52677c}.head{font-size:21px;font-weight:700}.body{font-size:18px;fill:#233d56}</style>
+<text x="40" y="53" class="t">异步保存：数据向右走，完成回执向左返回</text>
+<text x="40" y="87" class="sub">生成主进程管理多个环境；CPU writer 只处理保存，不运行新的仿真环境。</text>
+<rect x="40.0" y="120" width="350.6666666666667" height="420" rx="16" fill="white" stroke="#dae3ed"/>
+<rect x="40.0" y="120" width="350.6666666666667" height="53" rx="14" fill="#eaf2ff"/>
+<text x="58.0" y="154" class="head" fill="#2563eb">生成侧 / Bridge</text>
+<rect x="54.0" y="194" width="322.6666666666667" height="93" rx="10" fill="#eaf2ff"/>
+<text x="67.0" y="222" font-size="19" font-weight="700" fill="#2563eb">录制</text>
+<text x="67.0" y="247" class="body">帧、动作、状态</text>
+<text x="67.0" y="271" class="body">组成 EpisodeData</text>
+<rect x="54.0" y="304" width="322.6666666666667" height="93" rx="10" fill="#eaf2ff"/>
+<text x="67.0" y="332" font-size="19" font-weight="700" fill="#2563eb">移交</text>
+<text x="67.0" y="357" class="body">导出接口交给 Bridge</text>
+<text x="67.0" y="381" class="body">打包后释放不再需要的源帧</text>
+<rect x="54.0" y="414" width="322.6666666666667" height="93" rx="10" fill="#eaf2ff"/>
+<text x="67.0" y="442" font-size="19" font-weight="700" fill="#2563eb">继续生成</text>
+<text x="67.0" y="467" class="body">提交可以先返回</text>
+<text x="67.0" y="491" class="body">预算不足时仍然等待</text>
+<path d="M393.6666666666667,335 H418.6666666666667" stroke="#75879b" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="424.6666666666667" y="120" width="350.6666666666667" height="420" rx="16" fill="white" stroke="#dae3ed"/>
+<rect x="424.6666666666667" y="120" width="350.6666666666667" height="53" rx="14" fill="#e5f5ef"/>
+<text x="442.6666666666667" y="154" class="head" fill="#148269">协调侧 / ExportPool</text>
+<rect x="438.6666666666667" y="194" width="322.6666666666667" height="93" rx="10" fill="#e5f5ef"/>
+<text x="451.6666666666667" y="222" font-size="19" font-weight="700" fill="#148269">共享内存</text>
+<text x="451.6666666666667" y="247" class="body">保存数据与描述信息</text>
+<text x="451.6666666666667" y="271" class="body">在途字节预算限制积压</text>
+<rect x="438.6666666666667" y="304" width="322.6666666666667" height="93" rx="10" fill="#e5f5ef"/>
+<text x="451.6666666666667" y="332" font-size="19" font-weight="700" fill="#148269">任务调度</text>
+<text x="451.6666666666667" y="357" class="body">提交到 writer 队列</text>
+<text x="451.6666666666667" y="381" class="body">按上限与资源准入扩容</text>
+<rect x="438.6666666666667" y="414" width="322.6666666666667" height="93" rx="10" fill="#e5f5ef"/>
+<text x="451.6666666666667" y="442" font-size="19" font-weight="700" fill="#148269">回执与回收</text>
+<text x="451.6666666666667" y="467" class="body">收到 saved 后更新计数</text>
+<text x="451.6666666666667" y="491" class="body">释放共享内存、归还预算</text>
+<path d="M778.3333333333334,335 H803.3333333333334" stroke="#75879b" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="809.3333333333334" y="120" width="350.6666666666667" height="420" rx="16" fill="white" stroke="#dae3ed"/>
+<rect x="809.3333333333334" y="120" width="350.6666666666667" height="53" rx="14" fill="#eef2f6"/>
+<text x="827.3333333333334" y="154" class="head" fill="#516579">保存侧 / writer</text>
+<rect x="823.3333333333334" y="194" width="322.6666666666667" height="93" rx="10" fill="#eef2f6"/>
+<text x="836.3333333333334" y="222" font-size="19" font-weight="700" fill="#516579">读取与压缩</text>
+<text x="836.3333333333334" y="247" class="body">按描述读取共享内存</text>
+<text x="836.3333333333334" y="271" class="body">CPU 压缩与磁盘写入</text>
+<rect x="823.3333333333334" y="304" width="322.6666666666667" height="93" rx="10" fill="#eef2f6"/>
+<text x="836.3333333333334" y="332" font-size="19" font-weight="700" fill="#516579">独立分片</text>
+<text x="836.3333333333334" y="357" class="body">每个 writer 写各自分片</text>
+<text x="836.3333333333334" y="381" class="body">完成后返回 saved</text>
+<rect x="823.3333333333334" y="414" width="322.6666666666667" height="93" rx="10" fill="#eef2f6"/>
+<text x="836.3333333333334" y="442" font-size="19" font-weight="700" fill="#516579">最终收尾</text>
+<text x="836.3333333333334" y="467" class="body">主流程排空并合并</text>
+<text x="836.3333333333334" y="491" class="body">关闭后记录 output_ready</text>
+<path d="M990,550 H210" fill="none" stroke="#75879b" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#arrow)"/>
+<text x="42" y="584" class="sub">虚线回执：writer ┄ saved ┄→ ExportPool ┄ 更新计数 ┄→ Bridge；入队成功 ≠ 文件就绪</text>
+<text x="42" y="613" font-size="13" fill="#7a8da0">AUTODATA · ARCHITECTURE NOTES / v022 · 2026-10-16 · 箭头表示关系，不表示耗时比例</text></svg>
