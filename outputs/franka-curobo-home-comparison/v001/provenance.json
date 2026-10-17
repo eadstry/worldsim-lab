@@ -1,0 +1,2745 @@
+{
+  "manifests": [
+    {
+      "protocol": "2x2; 3 paired fixed pick positions; compared transfer and pre-place, same final IK contact",
+      "gpu_info": "NVIDIA GeForce RTX 5090, 595.91.07, 32607 MiB",
+      "source_sha256": {
+        "capture.py": "6d85b4cddfd18a20d25b32255f151b6807008ad1eb76f1aa47d9fc87c7948d25",
+        "metrics.py": "bed0ab5e5d06851263a7e29ec6839b86b84da1bf7a9a28b2d067a5782c0971b5",
+        "planner_worker.py": "e29f92f1c554d2e63d2388996d1073c84b16bb8a026722ad4c8df4c264ef8a35",
+        "planner_client.py": "591c9c16d725e1fcf6a1ac54f80d2ed96394a1b454ff617f902b5af8e00ce64b",
+        "run.sh": "0d48618775e07e952d5d6a6e451f80492bd95f62d2196b23bd713bbd5e8741b3",
+        "experiment.py": "50f74d6d1d3539a1820d186f60f86eb32a27c43075c4870b6bd58d78e53ffc5d"
+      },
+      "cases": [
+        {
+          "name": "ik-clear-t0",
+          "method": "ik",
+          "obstacle": false,
+          "trial": 0,
+          "status": "completed",
+          "command": [
+            "bash",
+            "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/workspace-overlays/franka-curobo-comparison/run.sh",
+            "--home",
+            "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/runs/prepared/home-franka.usda",
+            "--robot-usd",
+            "/home/tangyuan/WorldSimReady-Home/.worktrees/arm-home-scene-20261017/runs/assets/Isaac/IsaacLab/Robots/FrankaEmika/Legacy/panda_instanceable.usd",
+            "--planner-python",
+            "/home/tangyuan/miniconda3/envs/autodata/bin/python",
+            "--output",
+            "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/runs/comparison-r01/ik-clear-t0",
+            "--method",
+            "ik",
+            "--trial",
+            "0"
+          ],
+          "output": "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/runs/comparison-r01/ik-clear-t0",
+          "foreign_gpu_before": [],
+          "returncode": 0,
+          "process_wall_s": 61.860360332997516,
+          "result": {
+            "success": true,
+            "frames": 1000,
+            "fps": 50,
+            "seconds": 20.0,
+            "robot": "Franka Panda",
+            "native_surface": "scene000430 original dining table",
+            "initial_cube_z": 0.01999986171722412,
+            "peak_cube_z": 0.2451505959033966,
+            "final_cube_state": [
+              0.5000004172325134,
+              -0.29925045371055603,
+              0.018104571849107742,
+              0.0034773233346641064,
+              0.0013223042478784919,
+              -0.04311896488070488,
+              0.9990630149841309,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "final_speed_m_s": 0.0,
+            "final_stable_steps": 200,
+            "success_criterion": "lift > .15 m then place within .04 m XY and .015 m Z of target, released, speed < .02 m/s for final >=50 steps",
+            "method": "ik",
+            "obstacle": false,
+            "trial": 0,
+            "planning_failed": false,
+            "completed": true,
+            "collision_free_success": true,
+            "peak_blocker_contact_n": 0.0,
+            "blocker_contact_steps": 0,
+            "minimum_cube_aabb_blocker_clearance_m": null,
+            "initial_robot_joint_pos": [
+              0.0,
+              -0.5690000057220459,
+              0.0,
+              -2.809999942779541,
+              0.0,
+              3.0369999408721924,
+              0.7409999966621399,
+              0.03999999910593033,
+              0.03999999910593033
+            ],
+            "initial_cube_state": [
+              0.5,
+              0.0,
+              0.02376576140522957,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              -0.2452501803636551,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "control_compute_s": 0.9244638080708683,
+            "phase_wall_s": {
+              "approach": 5.80224582797382,
+              "descend": 7.9203956220299006,
+              "grasp": 3.9384242109954357,
+              "lift": 6.625452449021395,
+              "transfer": 6.6420952240005136,
+              "lower_prepare": 4.770722207031213,
+              "lower": 3.2511013979674317,
+              "release": 3.969527509994805,
+              "retreat": 5.313098678016104,
+              "settle": 5.216091228998266
+            },
+            "planning": [],
+            "planner_initialization_s": 0,
+            "planner_startup_wall_s": 0,
+            "episode_wall_s": 53.451789390004706,
+            "measured_process_s": 61.07766182499472,
+            "trajectory": {
+              "joint_path_rad": 4.850162506103516,
+              "tcp_path_m": 1.516603708267212,
+              "max_joint_speed_rad_s": 0.9690642356872559,
+              "joint_target_rmse_rad": 0.027174118906259537
+            },
+            "generator": "common IK contact stages; transfer and pre-place: local IK versus cuRobo joint plan",
+            "snapshots": [
+              "00-approach.png",
+              "01-descend.png",
+              "02-grasp.png",
+              "03-lift.png",
+              "04-transfer.png",
+              "05-lower_prepare.png",
+              "06-lower.png",
+              "07-release.png",
+              "08-retreat.png",
+              "09-settle.png"
+            ],
+            "home": "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/runs/prepared/home-franka.usda",
+            "robot_usd": "/home/tangyuan/WorldSimReady-Home/.worktrees/arm-home-scene-20261017/runs/assets/Isaac/IsaacLab/Robots/FrankaEmika/Legacy/panda_instanceable.usd",
+            "source_sha256": "6d85b4cddfd18a20d25b32255f151b6807008ad1eb76f1aa47d9fc87c7948d25",
+            "cameras": {
+              "overview": {
+                "eye": [
+                  1.65,
+                  -1.1,
+                  1.55
+                ],
+                "rotation_xyzw": [
+                  0.3981914222240448,
+                  0.1855517029762268,
+                  0.37943974137306213,
+                  0.8142724633216858
+                ],
+                "width": 960,
+                "height": 540,
+                "focal_length": 22,
+                "horizontal_aperture": 36
+              },
+              "detail": {
+                "eye": [
+                  1.25,
+                  -0.5,
+                  0.85
+                ],
+                "rotation_xyzw": [
+                  0.3939386308193207,
+                  0.24346746504306793,
+                  0.4659579396247864,
+                  0.7539358139038086
+                ],
+                "width": 640,
+                "height": 480,
+                "focal_length": 28,
+                "horizontal_aperture": 36
+              }
+            }
+          }
+        },
+        {
+          "name": "curobo-blocked-t0",
+          "method": "curobo",
+          "obstacle": true,
+          "trial": 0,
+          "status": "completed",
+          "command": [
+            "bash",
+            "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/workspace-overlays/franka-curobo-comparison/run.sh",
+            "--home",
+            "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/runs/prepared/home-franka.usda",
+            "--robot-usd",
+            "/home/tangyuan/WorldSimReady-Home/.worktrees/arm-home-scene-20261017/runs/assets/Isaac/IsaacLab/Robots/FrankaEmika/Legacy/panda_instanceable.usd",
+            "--planner-python",
+            "/home/tangyuan/miniconda3/envs/autodata/bin/python",
+            "--output",
+            "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/runs/comparison-r01/curobo-blocked-t0",
+            "--method",
+            "curobo",
+            "--trial",
+            "0",
+            "--obstacle"
+          ],
+          "output": "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/runs/comparison-r01/curobo-blocked-t0",
+          "foreign_gpu_before": [],
+          "returncode": 0,
+          "process_wall_s": 68.06494132301304,
+          "result": {
+            "success": true,
+            "frames": 1000,
+            "fps": 50,
+            "seconds": 20.0,
+            "robot": "Franka Panda",
+            "native_surface": "scene000430 original dining table",
+            "initial_cube_z": 0.01999986171722412,
+            "peak_cube_z": 0.36653101444244385,
+            "final_cube_state": [
+              0.49929967522621155,
+              -0.3000432252883911,
+              0.0181004349142313,
+              0.0035580608528107405,
+              0.0011083964491263032,
+              0.017284110188484192,
+              0.9998436570167542,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "final_speed_m_s": 0.0,
+            "final_stable_steps": 200,
+            "success_criterion": "lift > .15 m then place within .04 m XY and .015 m Z of target, released, speed < .02 m/s for final >=50 steps",
+            "method": "curobo",
+            "obstacle": true,
+            "trial": 0,
+            "planning_failed": false,
+            "completed": true,
+            "collision_free_success": true,
+            "peak_blocker_contact_n": 0.0,
+            "blocker_contact_steps": 0,
+            "minimum_cube_aabb_blocker_clearance_m": 0.01414664028298227,
+            "initial_robot_joint_pos": [
+              0.0,
+              -0.5690000057220459,
+              0.0,
+              -2.809999942779541,
+              0.0,
+              3.0369999408721924,
+              0.7409999966621399,
+              0.03999999910593033,
+              0.03999999910593033
+            ],
+            "initial_cube_state": [
+              0.5,
+              0.0,
+              0.02376576140522957,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              -0.2452501803636551,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "control_compute_s": 0.902669127273839,
+            "phase_wall_s": {
+              "approach": 5.894561577995773,
+              "descend": 8.154562675976194,
+              "grasp": 4.2126846359460615,
+              "lift": 6.837645178020466,
+              "transfer": 6.830519094015472,
+              "lower_prepare": 4.885210376000032,
+              "lower": 3.315864062984474,
+              "release": 4.065528055012692,
+              "retreat": 5.495116944017354,
+              "settle": 5.319891783001367
+            },
+            "planning": [
+              {
+                "fk_position": [
+                  0.49989405274391174,
+                  -5.9390302340034395e-05,
+                  0.35261309146881104
+                ],
+                "fk_quaternion_wxyz": [
+                  4.108267239644192e-05,
+                  -1.0,
+                  0.00012612450518645346,
+                  0.0003326705191284418
+                ],
+                "fk_position_error_m": 2.2414971862760752e-07,
+                "fk_rotation_error_rad": 0.0,
+                "success": true,
+                "status": "None",
+                "synchronized_request_s": 0.12341454304987565,
+                "reported_solve_s": 0.08904242515563965,
+                "initialization_s": 2.601366618007887,
+                "torch_allocated_mib": 332.60107421875,
+                "torch_reserved_mib": 392.0,
+                "interpolation_dt": 0.02,
+                "planned_seconds": 0.6,
+                "phase": "transfer"
+              },
+              {
+                "fk_position": [
+                  0.49987688660621643,
+                  -0.2998686730861664,
+                  0.35310685634613037
+                ],
+                "fk_quaternion_wxyz": [
+                  0.00012965238420292735,
+                  -0.9999998211860657,
+                  0.0006233042804524302,
+                  0.0001891368447104469
+                ],
+                "fk_position_error_m": 4.470348358154297e-07,
+                "fk_rotation_error_rad": 0.0,
+                "success": true,
+                "status": "None",
+                "synchronized_request_s": 0.11810203403001651,
+                "reported_solve_s": 0.0898139476776123,
+                "initialization_s": 2.601366618007887,
+                "torch_allocated_mib": 332.60302734375,
+                "torch_reserved_mib": 392.0,
+                "interpolation_dt": 0.02,
+                "planned_seconds": 0.78,
+                "phase": "lower_prepare"
+              }
+            ],
+            "planner_initialization_s": 2.601366618007887,
+            "planner_startup_wall_s": 4.13066774001345,
+            "episode_wall_s": 59.14503195800353,
+            "measured_process_s": 66.81397729198216,
+            "trajectory": {
+              "joint_path_rad": 6.738424301147461,
+              "tcp_path_m": 1.801985502243042,
+              "max_joint_speed_rad_s": 0.98380446434021,
+              "joint_target_rmse_rad": 0.041036855429410934
+            },
+            "generator": "common IK contact stages; transfer and pre-place: local IK versus cuRobo joint plan",
+            "snapshots": [
+              "00-approach.png",
+              "01-descend.png",
+              "02-grasp.png",
+              "03-lift.png",
+              "04-transfer.png",
+              "05-lower_prepare.png",
+              "06-lower.png",
+              "07-release.png",
+              "08-retreat.png",
+              "09-settle.png"
+            ],
+            "home": "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/runs/prepared/home-franka.usda",
+            "robot_usd": "/home/tangyuan/WorldSimReady-Home/.worktrees/arm-home-scene-20261017/runs/assets/Isaac/IsaacLab/Robots/FrankaEmika/Legacy/panda_instanceable.usd",
+            "source_sha256": "6d85b4cddfd18a20d25b32255f151b6807008ad1eb76f1aa47d9fc87c7948d25",
+            "cameras": {
+              "overview": {
+                "eye": [
+                  1.65,
+                  -1.1,
+                  1.55
+                ],
+                "rotation_xyzw": [
+                  0.3981914222240448,
+                  0.1855517029762268,
+                  0.37943974137306213,
+                  0.8142724633216858
+                ],
+                "width": 960,
+                "height": 540,
+                "focal_length": 22,
+                "horizontal_aperture": 36
+              },
+              "detail": {
+                "eye": [
+                  1.25,
+                  -0.5,
+                  0.85
+                ],
+                "rotation_xyzw": [
+                  0.3939386308193207,
+                  0.24346746504306793,
+                  0.4659579396247864,
+                  0.7539358139038086
+                ],
+                "width": 640,
+                "height": 480,
+                "focal_length": 28,
+                "horizontal_aperture": 36
+              }
+            }
+          }
+        },
+        {
+          "name": "ik-blocked-t0",
+          "method": "ik",
+          "obstacle": true,
+          "trial": 0,
+          "status": "completed",
+          "command": [
+            "bash",
+            "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/workspace-overlays/franka-curobo-comparison/run.sh",
+            "--home",
+            "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/runs/prepared/home-franka.usda",
+            "--robot-usd",
+            "/home/tangyuan/WorldSimReady-Home/.worktrees/arm-home-scene-20261017/runs/assets/Isaac/IsaacLab/Robots/FrankaEmika/Legacy/panda_instanceable.usd",
+            "--planner-python",
+            "/home/tangyuan/miniconda3/envs/autodata/bin/python",
+            "--output",
+            "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/runs/comparison-r01/ik-blocked-t0",
+            "--method",
+            "ik",
+            "--trial",
+            "0",
+            "--obstacle"
+          ],
+          "output": "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/runs/comparison-r01/ik-blocked-t0",
+          "foreign_gpu_before": [],
+          "returncode": 0,
+          "process_wall_s": 63.116410214977805,
+          "result": {
+            "success": false,
+            "frames": 1000,
+            "fps": 50,
+            "seconds": 20.0,
+            "robot": "Franka Panda",
+            "native_surface": "scene000430 original dining table",
+            "initial_cube_z": 0.01999986171722412,
+            "peak_cube_z": 0.2462361603975296,
+            "final_cube_state": [
+              0.5560850501060486,
+              -0.015978483483195305,
+              0.01998201198875904,
+              0.002465188270434737,
+              -0.0013722870498895645,
+              0.17157681286334991,
+              0.9851667881011963,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "final_speed_m_s": 0.0,
+            "final_stable_steps": 0,
+            "success_criterion": "lift > .15 m then place within .04 m XY and .015 m Z of target, released, speed < .02 m/s for final >=50 steps",
+            "method": "ik",
+            "obstacle": true,
+            "trial": 0,
+            "planning_failed": false,
+            "completed": true,
+            "collision_free_success": false,
+            "peak_blocker_contact_n": 355.7034912109375,
+            "blocker_contact_steps": 495,
+            "minimum_cube_aabb_blocker_clearance_m": 0.07062970623373985,
+            "initial_robot_joint_pos": [
+              0.0,
+              -0.5690000057220459,
+              0.0,
+              -2.809999942779541,
+              0.0,
+              3.0369999408721924,
+              0.7409999966621399,
+              0.03999999910593033,
+              0.03999999910593033
+            ],
+            "initial_cube_state": [
+              0.5,
+              0.0,
+              0.02376576140522957,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              -0.2452501803636551,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "control_compute_s": 0.9462424446246587,
+            "phase_wall_s": {
+              "approach": 5.836591875005979,
+              "descend": 8.026786926027853,
+              "grasp": 4.099482039979193,
+              "lift": 6.802312144951429,
+              "transfer": 6.7596972190076485,
+              "lower_prepare": 4.832911546982359,
+              "lower": 3.3018954169820063,
+              "release": 4.112001867033541,
+              "retreat": 5.422941304044798,
+              "settle": 5.40269601700129
+            },
+            "planning": [],
+            "planner_initialization_s": 0,
+            "planner_startup_wall_s": 0,
+            "episode_wall_s": 54.59998279303545,
+            "measured_process_s": 62.281271746964194,
+            "trajectory": {
+              "joint_path_rad": 11.482975959777832,
+              "tcp_path_m": 1.4403842687606812,
+              "max_joint_speed_rad_s": 1.9922226667404175,
+              "joint_target_rmse_rad": 0.08206646889448166
+            },
+            "generator": "common IK contact stages; transfer and pre-place: local IK versus cuRobo joint plan",
+            "snapshots": [
+              "00-approach.png",
+              "01-descend.png",
+              "02-grasp.png",
+              "03-lift.png",
+              "04-transfer.png",
+              "05-lower_prepare.png",
+              "06-lower.png",
+              "07-release.png",
+              "08-retreat.png",
+              "09-settle.png"
+            ],
+            "home": "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/runs/prepared/home-franka.usda",
+            "robot_usd": "/home/tangyuan/WorldSimReady-Home/.worktrees/arm-home-scene-20261017/runs/assets/Isaac/IsaacLab/Robots/FrankaEmika/Legacy/panda_instanceable.usd",
+            "source_sha256": "6d85b4cddfd18a20d25b32255f151b6807008ad1eb76f1aa47d9fc87c7948d25",
+            "cameras": {
+              "overview": {
+                "eye": [
+                  1.65,
+                  -1.1,
+                  1.55
+                ],
+                "rotation_xyzw": [
+                  0.3981914222240448,
+                  0.1855517029762268,
+                  0.37943974137306213,
+                  0.8142724633216858
+                ],
+                "width": 960,
+                "height": 540,
+                "focal_length": 22,
+                "horizontal_aperture": 36
+              },
+              "detail": {
+                "eye": [
+                  1.25,
+                  -0.5,
+                  0.85
+                ],
+                "rotation_xyzw": [
+                  0.3939386308193207,
+                  0.24346746504306793,
+                  0.4659579396247864,
+                  0.7539358139038086
+                ],
+                "width": 640,
+                "height": 480,
+                "focal_length": 28,
+                "horizontal_aperture": 36
+              }
+            }
+          }
+        },
+        {
+          "name": "curobo-clear-t0",
+          "method": "curobo",
+          "obstacle": false,
+          "trial": 0,
+          "status": "completed",
+          "command": [
+            "bash",
+            "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/workspace-overlays/franka-curobo-comparison/run.sh",
+            "--home",
+            "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/runs/prepared/home-franka.usda",
+            "--robot-usd",
+            "/home/tangyuan/WorldSimReady-Home/.worktrees/arm-home-scene-20261017/runs/assets/Isaac/IsaacLab/Robots/FrankaEmika/Legacy/panda_instanceable.usd",
+            "--planner-python",
+            "/home/tangyuan/miniconda3/envs/autodata/bin/python",
+            "--output",
+            "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/runs/comparison-r01/curobo-clear-t0",
+            "--method",
+            "curobo",
+            "--trial",
+            "0"
+          ],
+          "output": "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/runs/comparison-r01/curobo-clear-t0",
+          "foreign_gpu_before": [],
+          "returncode": 0,
+          "process_wall_s": 67.06773488101317,
+          "result": {
+            "success": true,
+            "frames": 1000,
+            "fps": 50,
+            "seconds": 20.0,
+            "robot": "Franka Panda",
+            "native_surface": "scene000430 original dining table",
+            "initial_cube_z": 0.01999986171722412,
+            "peak_cube_z": 0.2466515600681305,
+            "final_cube_state": [
+              0.5000095367431641,
+              -0.2992260754108429,
+              0.01810437999665737,
+              0.0034781883005052805,
+              0.0013218179810792208,
+              -0.04319906234741211,
+              0.9990595579147339,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "final_speed_m_s": 0.0,
+            "final_stable_steps": 200,
+            "success_criterion": "lift > .15 m then place within .04 m XY and .015 m Z of target, released, speed < .02 m/s for final >=50 steps",
+            "method": "curobo",
+            "obstacle": false,
+            "trial": 0,
+            "planning_failed": false,
+            "completed": true,
+            "collision_free_success": true,
+            "peak_blocker_contact_n": 0.0,
+            "blocker_contact_steps": 0,
+            "minimum_cube_aabb_blocker_clearance_m": null,
+            "initial_robot_joint_pos": [
+              0.0,
+              -0.5690000057220459,
+              0.0,
+              -2.809999942779541,
+              0.0,
+              3.0369999408721924,
+              0.7409999966621399,
+              0.03999999910593033,
+              0.03999999910593033
+            ],
+            "initial_cube_state": [
+              0.5,
+              0.0,
+              0.02376576140522957,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              -0.2452501803636551,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "control_compute_s": 0.868103499931749,
+            "phase_wall_s": {
+              "approach": 5.933517161000054,
+              "descend": 8.002897923986893,
+              "grasp": 3.8909855720121413,
+              "lift": 6.7592077879817225,
+              "transfer": 6.693192576000001,
+              "lower_prepare": 5.054760705039371,
+              "lower": 3.2653921750024892,
+              "release": 3.993467227963265,
+              "retreat": 5.294308031036053,
+              "settle": 5.23884864296997
+            },
+            "planning": [
+              {
+                "fk_position": [
+                  0.49989405274391174,
+                  -5.9390302340034395e-05,
+                  0.35261309146881104
+                ],
+                "fk_quaternion_wxyz": [
+                  4.108267239644192e-05,
+                  -1.0,
+                  0.00012612450518645346,
+                  0.0003326705191284418
+                ],
+                "fk_position_error_m": 2.2414971862760752e-07,
+                "fk_rotation_error_rad": 0.0,
+                "success": true,
+                "status": "None",
+                "synchronized_request_s": 0.10407483397284523,
+                "reported_solve_s": 0.07938981056213379,
+                "initialization_s": 2.725426642980892,
+                "torch_allocated_mib": 332.60107421875,
+                "torch_reserved_mib": 392.0,
+                "interpolation_dt": 0.02,
+                "planned_seconds": 0.6,
+                "phase": "transfer"
+              },
+              {
+                "fk_position": [
+                  0.49974143505096436,
+                  -0.29981371760368347,
+                  0.35268712043762207
+                ],
+                "fk_quaternion_wxyz": [
+                  0.00037809310015290976,
+                  -0.9999995231628418,
+                  0.0006490256055258214,
+                  0.0006258870125748217
+                ],
+                "fk_position_error_m": 3.0683368864616754e-07,
+                "fk_rotation_error_rad": 0.0,
+                "success": true,
+                "status": "None",
+                "synchronized_request_s": 0.10721538600046188,
+                "reported_solve_s": 0.08337998390197754,
+                "initialization_s": 2.725426642980892,
+                "torch_allocated_mib": 332.60107421875,
+                "torch_reserved_mib": 392.0,
+                "interpolation_dt": 0.02,
+                "planned_seconds": 0.6,
+                "phase": "lower_prepare"
+              }
+            ],
+            "planner_initialization_s": 2.725426642980892,
+            "planner_startup_wall_s": 4.284014700970147,
+            "episode_wall_s": 58.41335277503822,
+            "measured_process_s": 65.90464396600146,
+            "trajectory": {
+              "joint_path_rad": 4.782096862792969,
+              "tcp_path_m": 1.5223318338394165,
+              "max_joint_speed_rad_s": 0.9690642356872559,
+              "joint_target_rmse_rad": 0.02715238928794861
+            },
+            "generator": "common IK contact stages; transfer and pre-place: local IK versus cuRobo joint plan",
+            "snapshots": [
+              "00-approach.png",
+              "01-descend.png",
+              "02-grasp.png",
+              "03-lift.png",
+              "04-transfer.png",
+              "05-lower_prepare.png",
+              "06-lower.png",
+              "07-release.png",
+              "08-retreat.png",
+              "09-settle.png"
+            ],
+            "home": "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/runs/prepared/home-franka.usda",
+            "robot_usd": "/home/tangyuan/WorldSimReady-Home/.worktrees/arm-home-scene-20261017/runs/assets/Isaac/IsaacLab/Robots/FrankaEmika/Legacy/panda_instanceable.usd",
+            "source_sha256": "6d85b4cddfd18a20d25b32255f151b6807008ad1eb76f1aa47d9fc87c7948d25",
+            "cameras": {
+              "overview": {
+                "eye": [
+                  1.65,
+                  -1.1,
+                  1.55
+                ],
+                "rotation_xyzw": [
+                  0.3981914222240448,
+                  0.1855517029762268,
+                  0.37943974137306213,
+                  0.8142724633216858
+                ],
+                "width": 960,
+                "height": 540,
+                "focal_length": 22,
+                "horizontal_aperture": 36
+              },
+              "detail": {
+                "eye": [
+                  1.25,
+                  -0.5,
+                  0.85
+                ],
+                "rotation_xyzw": [
+                  0.3939386308193207,
+                  0.24346746504306793,
+                  0.4659579396247864,
+                  0.7539358139038086
+                ],
+                "width": 640,
+                "height": 480,
+                "focal_length": 28,
+                "horizontal_aperture": 36
+              }
+            }
+          }
+        },
+        {
+          "name": "curobo-clear-t1",
+          "method": "curobo",
+          "obstacle": false,
+          "trial": 1,
+          "status": "completed",
+          "command": [
+            "bash",
+            "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/workspace-overlays/franka-curobo-comparison/run.sh",
+            "--home",
+            "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/runs/prepared/home-franka.usda",
+            "--robot-usd",
+            "/home/tangyuan/WorldSimReady-Home/.worktrees/arm-home-scene-20261017/runs/assets/Isaac/IsaacLab/Robots/FrankaEmika/Legacy/panda_instanceable.usd",
+            "--planner-python",
+            "/home/tangyuan/miniconda3/envs/autodata/bin/python",
+            "--output",
+            "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/runs/comparison-r01/curobo-clear-t1",
+            "--method",
+            "curobo",
+            "--trial",
+            "1"
+          ],
+          "output": "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/runs/comparison-r01/curobo-clear-t1",
+          "foreign_gpu_before": [],
+          "returncode": 0,
+          "process_wall_s": 66.41632294899318,
+          "result": {
+            "success": true,
+            "frames": 1000,
+            "fps": 50,
+            "seconds": 20.0,
+            "robot": "Franka Panda",
+            "native_surface": "scene000430 original dining table",
+            "initial_cube_z": 0.019999880343675613,
+            "peak_cube_z": 0.24768522381782532,
+            "final_cube_state": [
+              0.4996907114982605,
+              -0.2998944818973541,
+              0.01810072548687458,
+              0.0034854684490710497,
+              0.0013155011693015695,
+              -0.040986139327287674,
+              0.9991527795791626,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "final_speed_m_s": 0.0,
+            "final_stable_steps": 200,
+            "success_criterion": "lift > .15 m then place within .04 m XY and .015 m Z of target, released, speed < .02 m/s for final >=50 steps",
+            "method": "curobo",
+            "obstacle": false,
+            "trial": 1,
+            "planning_failed": false,
+            "completed": true,
+            "collision_free_success": true,
+            "peak_blocker_contact_n": 0.0,
+            "blocker_contact_steps": 0,
+            "minimum_cube_aabb_blocker_clearance_m": null,
+            "initial_robot_joint_pos": [
+              0.0,
+              -0.5690000057220459,
+              0.0,
+              -2.809999942779541,
+              0.0,
+              3.0369999408721924,
+              0.7409999966621399,
+              0.03999999910593033,
+              0.03999999910593033
+            ],
+            "initial_cube_state": [
+              0.49000000953674316,
+              0.009999999776482582,
+              0.02376576140522957,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              -0.2452501803636551,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "control_compute_s": 0.8733548929449171,
+            "phase_wall_s": {
+              "approach": 5.554280157026369,
+              "descend": 7.9124407460330985,
+              "grasp": 3.9028066500322893,
+              "lift": 6.658788741973694,
+              "transfer": 6.6546059240354225,
+              "lower_prepare": 5.055714412010275,
+              "lower": 3.20944356394466,
+              "release": 4.04201977502089,
+              "retreat": 5.232464187021833,
+              "settle": 5.224625827977434
+            },
+            "planning": [
+              {
+                "fk_position": [
+                  0.48989444971084595,
+                  0.009936974383890629,
+                  0.3526197671890259
+                ],
+                "fk_quaternion_wxyz": [
+                  3.6556306440616027e-05,
+                  -1.0,
+                  0.00013106242113281041,
+                  0.00032861530780792236
+                ],
+                "fk_position_error_m": 3.840946376255591e-07,
+                "fk_rotation_error_rad": 0.0,
+                "success": true,
+                "status": "None",
+                "synchronized_request_s": 0.09451895399251953,
+                "reported_solve_s": 0.0740208625793457,
+                "initialization_s": 2.6255760950152762,
+                "torch_allocated_mib": 332.60107421875,
+                "torch_reserved_mib": 392.0,
+                "interpolation_dt": 0.02,
+                "planned_seconds": 0.6,
+                "phase": "transfer"
+              },
+              {
+                "fk_position": [
+                  0.4997268617153168,
+                  -0.29980841279029846,
+                  0.35269126296043396
+                ],
+                "fk_quaternion_wxyz": [
+                  0.0003797261160798371,
+                  -0.9999995231628418,
+                  0.0006719857919961214,
+                  0.0006225050310604274
+                ],
+                "fk_position_error_m": 4.410340960904581e-07,
+                "fk_rotation_error_rad": 0.0,
+                "success": true,
+                "status": "None",
+                "synchronized_request_s": 0.11584287998266518,
+                "reported_solve_s": 0.0853569507598877,
+                "initialization_s": 2.6255760950152762,
+                "torch_allocated_mib": 332.60107421875,
+                "torch_reserved_mib": 392.0,
+                "interpolation_dt": 0.02,
+                "planned_seconds": 0.6,
+                "phase": "lower_prepare"
+              }
+            ],
+            "planner_initialization_s": 2.6255760950152762,
+            "planner_startup_wall_s": 4.202513299998827,
+            "episode_wall_s": 57.652466993022244,
+            "measured_process_s": 65.22730511100963,
+            "trajectory": {
+              "joint_path_rad": 4.8400068283081055,
+              "tcp_path_m": 1.534371018409729,
+              "max_joint_speed_rad_s": 0.9688973426818848,
+              "joint_target_rmse_rad": 0.02736610174179077
+            },
+            "generator": "common IK contact stages; transfer and pre-place: local IK versus cuRobo joint plan",
+            "snapshots": [
+              "00-approach.png",
+              "01-descend.png",
+              "02-grasp.png",
+              "03-lift.png",
+              "04-transfer.png",
+              "05-lower_prepare.png",
+              "06-lower.png",
+              "07-release.png",
+              "08-retreat.png",
+              "09-settle.png"
+            ],
+            "home": "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/runs/prepared/home-franka.usda",
+            "robot_usd": "/home/tangyuan/WorldSimReady-Home/.worktrees/arm-home-scene-20261017/runs/assets/Isaac/IsaacLab/Robots/FrankaEmika/Legacy/panda_instanceable.usd",
+            "source_sha256": "6d85b4cddfd18a20d25b32255f151b6807008ad1eb76f1aa47d9fc87c7948d25",
+            "cameras": {
+              "overview": {
+                "eye": [
+                  1.65,
+                  -1.1,
+                  1.55
+                ],
+                "rotation_xyzw": [
+                  0.3981914222240448,
+                  0.1855517029762268,
+                  0.37943974137306213,
+                  0.8142724633216858
+                ],
+                "width": 960,
+                "height": 540,
+                "focal_length": 22,
+                "horizontal_aperture": 36
+              },
+              "detail": {
+                "eye": [
+                  1.25,
+                  -0.5,
+                  0.85
+                ],
+                "rotation_xyzw": [
+                  0.3939386308193207,
+                  0.24346746504306793,
+                  0.4659579396247864,
+                  0.7539358139038086
+                ],
+                "width": 640,
+                "height": 480,
+                "focal_length": 28,
+                "horizontal_aperture": 36
+              }
+            }
+          }
+        },
+        {
+          "name": "ik-blocked-t1",
+          "method": "ik",
+          "obstacle": true,
+          "trial": 1,
+          "status": "completed",
+          "command": [
+            "bash",
+            "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/workspace-overlays/franka-curobo-comparison/run.sh",
+            "--home",
+            "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/runs/prepared/home-franka.usda",
+            "--robot-usd",
+            "/home/tangyuan/WorldSimReady-Home/.worktrees/arm-home-scene-20261017/runs/assets/Isaac/IsaacLab/Robots/FrankaEmika/Legacy/panda_instanceable.usd",
+            "--planner-python",
+            "/home/tangyuan/miniconda3/envs/autodata/bin/python",
+            "--output",
+            "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/runs/comparison-r01/ik-blocked-t1",
+            "--method",
+            "ik",
+            "--trial",
+            "1",
+            "--obstacle"
+          ],
+          "output": "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/runs/comparison-r01/ik-blocked-t1",
+          "foreign_gpu_before": [],
+          "returncode": 0,
+          "process_wall_s": 62.662908861006144,
+          "result": {
+            "success": false,
+            "frames": 1000,
+            "fps": 50,
+            "seconds": 20.0,
+            "robot": "Franka Panda",
+            "native_surface": "scene000430 original dining table",
+            "initial_cube_z": 0.019999880343675613,
+            "peak_cube_z": 0.24582920968532562,
+            "final_cube_state": [
+              0.5556188821792603,
+              -0.018481936305761337,
+              0.019968969747424126,
+              0.0019613804761320353,
+              -0.0006949588423594832,
+              0.17883820831775665,
+              0.9838763475418091,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "final_speed_m_s": 0.0,
+            "final_stable_steps": 0,
+            "success_criterion": "lift > .15 m then place within .04 m XY and .015 m Z of target, released, speed < .02 m/s for final >=50 steps",
+            "method": "ik",
+            "obstacle": true,
+            "trial": 1,
+            "planning_failed": false,
+            "completed": true,
+            "collision_free_success": false,
+            "peak_blocker_contact_n": 381.7936096191406,
+            "blocker_contact_steps": 491,
+            "minimum_cube_aabb_blocker_clearance_m": 0.07078754559159278,
+            "initial_robot_joint_pos": [
+              0.0,
+              -0.5690000057220459,
+              0.0,
+              -2.809999942779541,
+              0.0,
+              3.0369999408721924,
+              0.7409999966621399,
+              0.03999999910593033,
+              0.03999999910593033
+            ],
+            "initial_cube_state": [
+              0.49000000953674316,
+              0.009999999776482582,
+              0.02376576140522957,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              -0.2452501803636551,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "control_compute_s": 0.9174435913446359,
+            "phase_wall_s": {
+              "approach": 5.6703259909991175,
+              "descend": 8.03619814600097,
+              "grasp": 4.112052173994016,
+              "lift": 6.834451553004328,
+              "transfer": 6.705958526988979,
+              "lower_prepare": 4.76361501798965,
+              "lower": 3.244423429016024,
+              "release": 4.157883836014662,
+              "retreat": 5.264803220052272,
+              "settle": 5.35310110199498
+            },
+            "planning": [],
+            "planner_initialization_s": 0,
+            "planner_startup_wall_s": 0,
+            "episode_wall_s": 54.145506008004304,
+            "measured_process_s": 61.83489064098103,
+            "trajectory": {
+              "joint_path_rad": 11.526471138000488,
+              "tcp_path_m": 1.4540244340896606,
+              "max_joint_speed_rad_s": 2.0038485527038574,
+              "joint_target_rmse_rad": 0.0821288451552391
+            },
+            "generator": "common IK contact stages; transfer and pre-place: local IK versus cuRobo joint plan",
+            "snapshots": [
+              "00-approach.png",
+              "01-descend.png",
+              "02-grasp.png",
+              "03-lift.png",
+              "04-transfer.png",
+              "05-lower_prepare.png",
+              "06-lower.png",
+              "07-release.png",
+              "08-retreat.png",
+              "09-settle.png"
+            ],
+            "home": "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/runs/prepared/home-franka.usda",
+            "robot_usd": "/home/tangyuan/WorldSimReady-Home/.worktrees/arm-home-scene-20261017/runs/assets/Isaac/IsaacLab/Robots/FrankaEmika/Legacy/panda_instanceable.usd",
+            "source_sha256": "6d85b4cddfd18a20d25b32255f151b6807008ad1eb76f1aa47d9fc87c7948d25",
+            "cameras": {
+              "overview": {
+                "eye": [
+                  1.65,
+                  -1.1,
+                  1.55
+                ],
+                "rotation_xyzw": [
+                  0.3981914222240448,
+                  0.1855517029762268,
+                  0.37943974137306213,
+                  0.8142724633216858
+                ],
+                "width": 960,
+                "height": 540,
+                "focal_length": 22,
+                "horizontal_aperture": 36
+              },
+              "detail": {
+                "eye": [
+                  1.25,
+                  -0.5,
+                  0.85
+                ],
+                "rotation_xyzw": [
+                  0.3939386308193207,
+                  0.24346746504306793,
+                  0.4659579396247864,
+                  0.7539358139038086
+                ],
+                "width": 640,
+                "height": 480,
+                "focal_length": 28,
+                "horizontal_aperture": 36
+              }
+            }
+          }
+        },
+        {
+          "name": "curobo-blocked-t1",
+          "method": "curobo",
+          "obstacle": true,
+          "trial": 1,
+          "status": "completed",
+          "command": [
+            "bash",
+            "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/workspace-overlays/franka-curobo-comparison/run.sh",
+            "--home",
+            "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/runs/prepared/home-franka.usda",
+            "--robot-usd",
+            "/home/tangyuan/WorldSimReady-Home/.worktrees/arm-home-scene-20261017/runs/assets/Isaac/IsaacLab/Robots/FrankaEmika/Legacy/panda_instanceable.usd",
+            "--planner-python",
+            "/home/tangyuan/miniconda3/envs/autodata/bin/python",
+            "--output",
+            "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/runs/comparison-r01/curobo-blocked-t1",
+            "--method",
+            "curobo",
+            "--trial",
+            "1",
+            "--obstacle"
+          ],
+          "output": "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/runs/comparison-r01/curobo-blocked-t1",
+          "foreign_gpu_before": [],
+          "returncode": 0,
+          "process_wall_s": 67.94478515000083,
+          "result": {
+            "success": true,
+            "frames": 1000,
+            "fps": 50,
+            "seconds": 20.0,
+            "robot": "Franka Panda",
+            "native_surface": "scene000430 original dining table",
+            "initial_cube_z": 0.019999880343675613,
+            "peak_cube_z": 0.3667185604572296,
+            "final_cube_state": [
+              0.4991554617881775,
+              -0.2970200479030609,
+              0.018122097477316856,
+              0.003597751259803772,
+              0.000977908493950963,
+              0.053457245230674744,
+              0.9985631704330444,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "final_speed_m_s": 0.0,
+            "final_stable_steps": 200,
+            "success_criterion": "lift > .15 m then place within .04 m XY and .015 m Z of target, released, speed < .02 m/s for final >=50 steps",
+            "method": "curobo",
+            "obstacle": true,
+            "trial": 1,
+            "planning_failed": false,
+            "completed": true,
+            "collision_free_success": true,
+            "peak_blocker_contact_n": 0.0,
+            "blocker_contact_steps": 0,
+            "minimum_cube_aabb_blocker_clearance_m": 0.013984685383566502,
+            "initial_robot_joint_pos": [
+              0.0,
+              -0.5690000057220459,
+              0.0,
+              -2.809999942779541,
+              0.0,
+              3.0369999408721924,
+              0.7409999966621399,
+              0.03999999910593033,
+              0.03999999910593033
+            ],
+            "initial_cube_state": [
+              0.49000000953674316,
+              0.009999999776482582,
+              0.02376576140522957,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              -0.2452501803636551,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "control_compute_s": 0.8996039279154502,
+            "phase_wall_s": {
+              "approach": 5.725010066991672,
+              "descend": 8.00840747996699,
+              "grasp": 3.996050728019327,
+              "lift": 6.781367296993267,
+              "transfer": 6.937040465010796,
+              "lower_prepare": 4.919643595989328,
+              "lower": 3.2643788610002957,
+              "release": 4.045124772004783,
+              "retreat": 5.400669599010143,
+              "settle": 5.263805230963044
+            },
+            "planning": [
+              {
+                "fk_position": [
+                  0.48989444971084595,
+                  0.009936974383890629,
+                  0.3526197671890259
+                ],
+                "fk_quaternion_wxyz": [
+                  3.6556306440616027e-05,
+                  -1.0,
+                  0.00013106242113281041,
+                  0.00032861530780792236
+                ],
+                "fk_position_error_m": 3.840946376255591e-07,
+                "fk_rotation_error_rad": 0.0,
+                "success": true,
+                "status": "None",
+                "synchronized_request_s": 0.08945053000934422,
+                "reported_solve_s": 0.06533432006835938,
+                "initialization_s": 2.70504173199879,
+                "torch_allocated_mib": 332.60107421875,
+                "torch_reserved_mib": 392.0,
+                "interpolation_dt": 0.02,
+                "planned_seconds": 0.6,
+                "phase": "transfer"
+              },
+              {
+                "fk_position": [
+                  0.4998597502708435,
+                  -0.2998467683792114,
+                  0.3531002998352051
+                ],
+                "fk_quaternion_wxyz": [
+                  0.00013313177623786032,
+                  -0.9999997615814209,
+                  0.0006292707403190434,
+                  0.0001983626716537401
+                ],
+                "fk_position_error_m": 3.82817762454305e-07,
+                "fk_rotation_error_rad": 0.0,
+                "success": true,
+                "status": "None",
+                "synchronized_request_s": 0.11377420101780444,
+                "reported_solve_s": 0.08830809593200684,
+                "initialization_s": 2.70504173199879,
+                "torch_allocated_mib": 332.60302734375,
+                "torch_reserved_mib": 392.0,
+                "interpolation_dt": 0.02,
+                "planned_seconds": 0.8,
+                "phase": "lower_prepare"
+              }
+            ],
+            "planner_initialization_s": 2.70504173199879,
+            "planner_startup_wall_s": 4.262762313010171,
+            "episode_wall_s": 58.60697771795094,
+            "measured_process_s": 66.68858486897079,
+            "trajectory": {
+              "joint_path_rad": 6.841916084289551,
+              "tcp_path_m": 1.8161948919296265,
+              "max_joint_speed_rad_s": 1.0143756866455078,
+              "joint_target_rmse_rad": 0.041459765285253525
+            },
+            "generator": "common IK contact stages; transfer and pre-place: local IK versus cuRobo joint plan",
+            "snapshots": [
+              "00-approach.png",
+              "01-descend.png",
+              "02-grasp.png",
+              "03-lift.png",
+              "04-transfer.png",
+              "05-lower_prepare.png",
+              "06-lower.png",
+              "07-release.png",
+              "08-retreat.png",
+              "09-settle.png"
+            ],
+            "home": "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/runs/prepared/home-franka.usda",
+            "robot_usd": "/home/tangyuan/WorldSimReady-Home/.worktrees/arm-home-scene-20261017/runs/assets/Isaac/IsaacLab/Robots/FrankaEmika/Legacy/panda_instanceable.usd",
+            "source_sha256": "6d85b4cddfd18a20d25b32255f151b6807008ad1eb76f1aa47d9fc87c7948d25",
+            "cameras": {
+              "overview": {
+                "eye": [
+                  1.65,
+                  -1.1,
+                  1.55
+                ],
+                "rotation_xyzw": [
+                  0.3981914222240448,
+                  0.1855517029762268,
+                  0.37943974137306213,
+                  0.8142724633216858
+                ],
+                "width": 960,
+                "height": 540,
+                "focal_length": 22,
+                "horizontal_aperture": 36
+              },
+              "detail": {
+                "eye": [
+                  1.25,
+                  -0.5,
+                  0.85
+                ],
+                "rotation_xyzw": [
+                  0.3939386308193207,
+                  0.24346746504306793,
+                  0.4659579396247864,
+                  0.7539358139038086
+                ],
+                "width": 640,
+                "height": 480,
+                "focal_length": 28,
+                "horizontal_aperture": 36
+              }
+            }
+          }
+        },
+        {
+          "name": "ik-clear-t1",
+          "method": "ik",
+          "obstacle": false,
+          "trial": 1,
+          "status": "completed",
+          "command": [
+            "bash",
+            "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/workspace-overlays/franka-curobo-comparison/run.sh",
+            "--home",
+            "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/runs/prepared/home-franka.usda",
+            "--robot-usd",
+            "/home/tangyuan/WorldSimReady-Home/.worktrees/arm-home-scene-20261017/runs/assets/Isaac/IsaacLab/Robots/FrankaEmika/Legacy/panda_instanceable.usd",
+            "--planner-python",
+            "/home/tangyuan/miniconda3/envs/autodata/bin/python",
+            "--output",
+            "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/runs/comparison-r01/ik-clear-t1",
+            "--method",
+            "ik",
+            "--trial",
+            "1"
+          ],
+          "output": "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/runs/comparison-r01/ik-clear-t1",
+          "foreign_gpu_before": [],
+          "returncode": 0,
+          "process_wall_s": 67.42506670102011,
+          "result": {
+            "success": true,
+            "frames": 1000,
+            "fps": 50,
+            "seconds": 20.0,
+            "robot": "Franka Panda",
+            "native_surface": "scene000430 original dining table",
+            "initial_cube_z": 0.019999880343675613,
+            "peak_cube_z": 0.24524657428264618,
+            "final_cube_state": [
+              0.4996677041053772,
+              -0.29993903636932373,
+              0.018100354820489883,
+              0.0034855918493121862,
+              0.001314653316512704,
+              -0.04081893712282181,
+              0.9991596937179565,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "final_speed_m_s": 0.0,
+            "final_stable_steps": 200,
+            "success_criterion": "lift > .15 m then place within .04 m XY and .015 m Z of target, released, speed < .02 m/s for final >=50 steps",
+            "method": "ik",
+            "obstacle": false,
+            "trial": 1,
+            "planning_failed": false,
+            "completed": true,
+            "collision_free_success": true,
+            "peak_blocker_contact_n": 0.0,
+            "blocker_contact_steps": 0,
+            "minimum_cube_aabb_blocker_clearance_m": null,
+            "initial_robot_joint_pos": [
+              0.0,
+              -0.5690000057220459,
+              0.0,
+              -2.809999942779541,
+              0.0,
+              3.0369999408721924,
+              0.7409999966621399,
+              0.03999999910593033,
+              0.03999999910593033
+            ],
+            "initial_cube_state": [
+              0.49000000953674316,
+              0.009999999776482582,
+              0.02376576140522957,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              -0.2452501803636551,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "control_compute_s": 0.9081430243095383,
+            "phase_wall_s": {
+              "approach": 6.725645979982801,
+              "descend": 8.101852420018986,
+              "grasp": 3.9038340550032444,
+              "lift": 6.691223591042217,
+              "transfer": 6.704867550986819,
+              "lower_prepare": 4.80209620995447,
+              "lower": 3.188627049967181,
+              "release": 4.008967268047854,
+              "retreat": 5.652012290956918,
+              "settle": 5.2940933930221945
+            },
+            "planning": [],
+            "planner_initialization_s": 0,
+            "planner_startup_wall_s": 0,
+            "episode_wall_s": 55.07583741500275,
+            "measured_process_s": 66.60375327698421,
+            "trajectory": {
+              "joint_path_rad": 4.914736747741699,
+              "tcp_path_m": 1.5277605056762695,
+              "max_joint_speed_rad_s": 0.9688973426818848,
+              "joint_target_rmse_rad": 0.02740710787475109
+            },
+            "generator": "common IK contact stages; transfer and pre-place: local IK versus cuRobo joint plan",
+            "snapshots": [
+              "00-approach.png",
+              "01-descend.png",
+              "02-grasp.png",
+              "03-lift.png",
+              "04-transfer.png",
+              "05-lower_prepare.png",
+              "06-lower.png",
+              "07-release.png",
+              "08-retreat.png",
+              "09-settle.png"
+            ],
+            "home": "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/runs/prepared/home-franka.usda",
+            "robot_usd": "/home/tangyuan/WorldSimReady-Home/.worktrees/arm-home-scene-20261017/runs/assets/Isaac/IsaacLab/Robots/FrankaEmika/Legacy/panda_instanceable.usd",
+            "source_sha256": "6d85b4cddfd18a20d25b32255f151b6807008ad1eb76f1aa47d9fc87c7948d25",
+            "cameras": {
+              "overview": {
+                "eye": [
+                  1.65,
+                  -1.1,
+                  1.55
+                ],
+                "rotation_xyzw": [
+                  0.3981914222240448,
+                  0.1855517029762268,
+                  0.37943974137306213,
+                  0.8142724633216858
+                ],
+                "width": 960,
+                "height": 540,
+                "focal_length": 22,
+                "horizontal_aperture": 36
+              },
+              "detail": {
+                "eye": [
+                  1.25,
+                  -0.5,
+                  0.85
+                ],
+                "rotation_xyzw": [
+                  0.3939386308193207,
+                  0.24346746504306793,
+                  0.4659579396247864,
+                  0.7539358139038086
+                ],
+                "width": 640,
+                "height": 480,
+                "focal_length": 28,
+                "horizontal_aperture": 36
+              }
+            }
+          }
+        },
+        {
+          "name": "ik-clear-t2",
+          "method": "ik",
+          "obstacle": false,
+          "trial": 2,
+          "status": "completed",
+          "command": [
+            "bash",
+            "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/workspace-overlays/franka-curobo-comparison/run.sh",
+            "--home",
+            "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/runs/prepared/home-franka.usda",
+            "--robot-usd",
+            "/home/tangyuan/WorldSimReady-Home/.worktrees/arm-home-scene-20261017/runs/assets/Isaac/IsaacLab/Robots/FrankaEmika/Legacy/panda_instanceable.usd",
+            "--planner-python",
+            "/home/tangyuan/miniconda3/envs/autodata/bin/python",
+            "--output",
+            "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/runs/comparison-r01/ik-clear-t2",
+            "--method",
+            "ik",
+            "--trial",
+            "2"
+          ],
+          "output": "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/runs/comparison-r01/ik-clear-t2",
+          "foreign_gpu_before": [],
+          "returncode": 0,
+          "process_wall_s": 61.70861659402726,
+          "result": {
+            "success": true,
+            "frames": 1000,
+            "fps": 50,
+            "seconds": 20.0,
+            "robot": "Franka Panda",
+            "native_surface": "scene000430 original dining table",
+            "initial_cube_z": 0.019999496638774872,
+            "peak_cube_z": 0.2452421337366104,
+            "final_cube_state": [
+              0.4996832311153412,
+              -0.2999367117881775,
+              0.018100125715136528,
+              0.003485793247818947,
+              0.0013147195568308234,
+              -0.04083634540438652,
+              0.9991589188575745,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "final_speed_m_s": 0.0,
+            "final_stable_steps": 200,
+            "success_criterion": "lift > .15 m then place within .04 m XY and .015 m Z of target, released, speed < .02 m/s for final >=50 steps",
+            "method": "ik",
+            "obstacle": false,
+            "trial": 2,
+            "planning_failed": false,
+            "completed": true,
+            "collision_free_success": true,
+            "peak_blocker_contact_n": 0.0,
+            "blocker_contact_steps": 0,
+            "minimum_cube_aabb_blocker_clearance_m": null,
+            "initial_robot_joint_pos": [
+              0.0,
+              -0.5690000057220459,
+              0.0,
+              -2.809999942779541,
+              0.0,
+              3.0369999408721924,
+              0.7409999966621399,
+              0.03999999910593033,
+              0.03999999910593033
+            ],
+            "initial_cube_state": [
+              0.5099999904632568,
+              -0.009999999776482582,
+              0.02376576140522957,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              -0.2452501803636551,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "control_compute_s": 0.9153269006637856,
+            "phase_wall_s": {
+              "approach": 5.66948899498675,
+              "descend": 7.9190241930191405,
+              "grasp": 4.006944189954083,
+              "lift": 6.863113166997209,
+              "transfer": 6.532907204004005,
+              "lower_prepare": 4.831758852000348,
+              "lower": 3.194579533999786,
+              "release": 3.978810393018648,
+              "retreat": 5.196063841984142,
+              "settle": 5.271854354010429
+            },
+            "planning": [],
+            "planner_initialization_s": 0,
+            "planner_startup_wall_s": 0,
+            "episode_wall_s": 53.4678975190036,
+            "measured_process_s": 60.909670900029596,
+            "trajectory": {
+              "joint_path_rad": 4.7915754318237305,
+              "tcp_path_m": 1.5063071250915527,
+              "max_joint_speed_rad_s": 0.9692072868347168,
+              "joint_target_rmse_rad": 0.02698243223130703
+            },
+            "generator": "common IK contact stages; transfer and pre-place: local IK versus cuRobo joint plan",
+            "snapshots": [
+              "00-approach.png",
+              "01-descend.png",
+              "02-grasp.png",
+              "03-lift.png",
+              "04-transfer.png",
+              "05-lower_prepare.png",
+              "06-lower.png",
+              "07-release.png",
+              "08-retreat.png",
+              "09-settle.png"
+            ],
+            "home": "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/runs/prepared/home-franka.usda",
+            "robot_usd": "/home/tangyuan/WorldSimReady-Home/.worktrees/arm-home-scene-20261017/runs/assets/Isaac/IsaacLab/Robots/FrankaEmika/Legacy/panda_instanceable.usd",
+            "source_sha256": "6d85b4cddfd18a20d25b32255f151b6807008ad1eb76f1aa47d9fc87c7948d25",
+            "cameras": {
+              "overview": {
+                "eye": [
+                  1.65,
+                  -1.1,
+                  1.55
+                ],
+                "rotation_xyzw": [
+                  0.3981914222240448,
+                  0.1855517029762268,
+                  0.37943974137306213,
+                  0.8142724633216858
+                ],
+                "width": 960,
+                "height": 540,
+                "focal_length": 22,
+                "horizontal_aperture": 36
+              },
+              "detail": {
+                "eye": [
+                  1.25,
+                  -0.5,
+                  0.85
+                ],
+                "rotation_xyzw": [
+                  0.3939386308193207,
+                  0.24346746504306793,
+                  0.4659579396247864,
+                  0.7539358139038086
+                ],
+                "width": 640,
+                "height": 480,
+                "focal_length": 28,
+                "horizontal_aperture": 36
+              }
+            }
+          }
+        },
+        {
+          "name": "curobo-blocked-t2",
+          "method": "curobo",
+          "obstacle": true,
+          "trial": 2,
+          "status": "completed",
+          "command": [
+            "bash",
+            "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/workspace-overlays/franka-curobo-comparison/run.sh",
+            "--home",
+            "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/runs/prepared/home-franka.usda",
+            "--robot-usd",
+            "/home/tangyuan/WorldSimReady-Home/.worktrees/arm-home-scene-20261017/runs/assets/Isaac/IsaacLab/Robots/FrankaEmika/Legacy/panda_instanceable.usd",
+            "--planner-python",
+            "/home/tangyuan/miniconda3/envs/autodata/bin/python",
+            "--output",
+            "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/runs/comparison-r01/curobo-blocked-t2",
+            "--method",
+            "curobo",
+            "--trial",
+            "2",
+            "--obstacle"
+          ],
+          "output": "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/runs/comparison-r01/curobo-blocked-t2",
+          "foreign_gpu_before": [],
+          "returncode": 0,
+          "process_wall_s": 70.87188295501983,
+          "result": {
+            "success": true,
+            "frames": 1000,
+            "fps": 50,
+            "seconds": 20.0,
+            "robot": "Franka Panda",
+            "native_surface": "scene000430 original dining table",
+            "initial_cube_z": 0.019999496638774872,
+            "peak_cube_z": 0.39750024676322937,
+            "final_cube_state": [
+              0.4994479715824127,
+              -0.297846257686615,
+              0.018115581944584846,
+              0.0036177905276417732,
+              0.0008725837687961757,
+              0.08295118063688278,
+              0.996546745300293,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "final_speed_m_s": 0.0,
+            "final_stable_steps": 200,
+            "success_criterion": "lift > .15 m then place within .04 m XY and .015 m Z of target, released, speed < .02 m/s for final >=50 steps",
+            "method": "curobo",
+            "obstacle": true,
+            "trial": 2,
+            "planning_failed": false,
+            "completed": true,
+            "collision_free_success": true,
+            "peak_blocker_contact_n": 0.0,
+            "blocker_contact_steps": 0,
+            "minimum_cube_aabb_blocker_clearance_m": 0.017610237537411512,
+            "initial_robot_joint_pos": [
+              0.0,
+              -0.5690000057220459,
+              0.0,
+              -2.809999942779541,
+              0.0,
+              3.0369999408721924,
+              0.7409999966621399,
+              0.03999999910593033,
+              0.03999999910593033
+            ],
+            "initial_cube_state": [
+              0.5099999904632568,
+              -0.009999999776482582,
+              0.02376576140522957,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              -0.2452501803636551,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "control_compute_s": 0.8912260322249494,
+            "phase_wall_s": {
+              "approach": 5.647751926037017,
+              "descend": 8.07883806398604,
+              "grasp": 4.103231307002716,
+              "lift": 6.766290433995891,
+              "transfer": 6.791196744015906,
+              "lower_prepare": 4.951726522995159,
+              "lower": 3.233638303994667,
+              "release": 4.006055166013539,
+              "retreat": 5.319391105032992,
+              "settle": 5.357784840976819
+            },
+            "planning": [
+              {
+                "fk_position": [
+                  0.5098931193351746,
+                  -0.010065965354442596,
+                  0.3526051640510559
+                ],
+                "fk_quaternion_wxyz": [
+                  4.533756145974621e-05,
+                  -1.0,
+                  0.00013809652591589838,
+                  0.00033661414636299014
+                ],
+                "fk_position_error_m": 3.1899123758161063e-07,
+                "fk_rotation_error_rad": 0.0,
+                "success": true,
+                "status": "None",
+                "synchronized_request_s": 0.12346930499188602,
+                "reported_solve_s": 0.0887753963470459,
+                "initialization_s": 2.717163413995877,
+                "torch_allocated_mib": 332.60107421875,
+                "torch_reserved_mib": 392.0,
+                "interpolation_dt": 0.02,
+                "planned_seconds": 0.62,
+                "phase": "transfer"
+              },
+              {
+                "fk_position": [
+                  0.49978941679000854,
+                  -0.29977595806121826,
+                  0.35312792658805847
+                ],
+                "fk_quaternion_wxyz": [
+                  0.00012366236478555948,
+                  -1.0,
+                  0.00013329635839909315,
+                  0.0002372548042330891
+                ],
+                "fk_position_error_m": 4.150983177776372e-07,
+                "fk_rotation_error_rad": 0.0,
+                "success": true,
+                "status": "None",
+                "synchronized_request_s": 0.11353286495432258,
+                "reported_solve_s": 0.08562707901000977,
+                "initialization_s": 2.717163413995877,
+                "torch_allocated_mib": 332.60302734375,
+                "torch_reserved_mib": 392.0,
+                "interpolation_dt": 0.02,
+                "planned_seconds": 0.8,
+                "phase": "lower_prepare"
+              }
+            ],
+            "planner_initialization_s": 2.717163413995877,
+            "planner_startup_wall_s": 4.267321006976999,
+            "episode_wall_s": 58.525997072982136,
+            "measured_process_s": 69.62005645898171,
+            "trajectory": {
+              "joint_path_rad": 6.924376487731934,
+              "tcp_path_m": 1.8829779624938965,
+              "max_joint_speed_rad_s": 1.0318338871002197,
+              "joint_target_rmse_rad": 0.0420369952917099
+            },
+            "generator": "common IK contact stages; transfer and pre-place: local IK versus cuRobo joint plan",
+            "snapshots": [
+              "00-approach.png",
+              "01-descend.png",
+              "02-grasp.png",
+              "03-lift.png",
+              "04-transfer.png",
+              "05-lower_prepare.png",
+              "06-lower.png",
+              "07-release.png",
+              "08-retreat.png",
+              "09-settle.png"
+            ],
+            "home": "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/runs/prepared/home-franka.usda",
+            "robot_usd": "/home/tangyuan/WorldSimReady-Home/.worktrees/arm-home-scene-20261017/runs/assets/Isaac/IsaacLab/Robots/FrankaEmika/Legacy/panda_instanceable.usd",
+            "source_sha256": "6d85b4cddfd18a20d25b32255f151b6807008ad1eb76f1aa47d9fc87c7948d25",
+            "cameras": {
+              "overview": {
+                "eye": [
+                  1.65,
+                  -1.1,
+                  1.55
+                ],
+                "rotation_xyzw": [
+                  0.3981914222240448,
+                  0.1855517029762268,
+                  0.37943974137306213,
+                  0.8142724633216858
+                ],
+                "width": 960,
+                "height": 540,
+                "focal_length": 22,
+                "horizontal_aperture": 36
+              },
+              "detail": {
+                "eye": [
+                  1.25,
+                  -0.5,
+                  0.85
+                ],
+                "rotation_xyzw": [
+                  0.3939386308193207,
+                  0.24346746504306793,
+                  0.4659579396247864,
+                  0.7539358139038086
+                ],
+                "width": 640,
+                "height": 480,
+                "focal_length": 28,
+                "horizontal_aperture": 36
+              }
+            }
+          }
+        },
+        {
+          "name": "ik-blocked-t2",
+          "method": "ik",
+          "obstacle": true,
+          "trial": 2,
+          "status": "completed",
+          "command": [
+            "bash",
+            "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/workspace-overlays/franka-curobo-comparison/run.sh",
+            "--home",
+            "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/runs/prepared/home-franka.usda",
+            "--robot-usd",
+            "/home/tangyuan/WorldSimReady-Home/.worktrees/arm-home-scene-20261017/runs/assets/Isaac/IsaacLab/Robots/FrankaEmika/Legacy/panda_instanceable.usd",
+            "--planner-python",
+            "/home/tangyuan/miniconda3/envs/autodata/bin/python",
+            "--output",
+            "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/runs/comparison-r01/ik-blocked-t2",
+            "--method",
+            "ik",
+            "--trial",
+            "2",
+            "--obstacle"
+          ],
+          "output": "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/runs/comparison-r01/ik-blocked-t2",
+          "foreign_gpu_before": [],
+          "returncode": 0,
+          "process_wall_s": 63.46674318204168,
+          "result": {
+            "success": false,
+            "frames": 1000,
+            "fps": 50,
+            "seconds": 20.0,
+            "robot": "Franka Panda",
+            "native_surface": "scene000430 original dining table",
+            "initial_cube_z": 0.019999496638774872,
+            "peak_cube_z": 0.2469576895236969,
+            "final_cube_state": [
+              0.5552193522453308,
+              -0.017627375200390816,
+              0.01994306594133377,
+              0.002499001333490014,
+              -0.0005155132384970784,
+              0.17926983535289764,
+              0.9837967157363892,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "final_speed_m_s": 0.0,
+            "final_stable_steps": 0,
+            "success_criterion": "lift > .15 m then place within .04 m XY and .015 m Z of target, released, speed < .02 m/s for final >=50 steps",
+            "method": "ik",
+            "obstacle": true,
+            "trial": 2,
+            "planning_failed": false,
+            "completed": true,
+            "collision_free_success": false,
+            "peak_blocker_contact_n": 322.7286376953125,
+            "blocker_contact_steps": 497,
+            "minimum_cube_aabb_blocker_clearance_m": 0.0707402717322111,
+            "initial_robot_joint_pos": [
+              0.0,
+              -0.5690000057220459,
+              0.0,
+              -2.809999942779541,
+              0.0,
+              3.0369999408721924,
+              0.7409999966621399,
+              0.03999999910593033,
+              0.03999999910593033
+            ],
+            "initial_cube_state": [
+              0.5099999904632568,
+              -0.009999999776482582,
+              0.02376576140522957,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              -0.2452501803636551,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "control_compute_s": 0.9582154162926599,
+            "phase_wall_s": {
+              "approach": 5.765746744989883,
+              "descend": 8.07739369297633,
+              "grasp": 4.067903019953519,
+              "lift": 6.856821145047434,
+              "transfer": 6.794555790023878,
+              "lower_prepare": 4.890074947034009,
+              "lower": 3.3073975869920105,
+              "release": 4.212370980007108,
+              "retreat": 5.502280314976815,
+              "settle": 5.462760158989113
+            },
+            "planning": [],
+            "planner_initialization_s": 0,
+            "planner_startup_wall_s": 0,
+            "episode_wall_s": 54.94001692999154,
+            "measured_process_s": 62.63453403499443,
+            "trajectory": {
+              "joint_path_rad": 11.448324203491211,
+              "tcp_path_m": 1.433941125869751,
+              "max_joint_speed_rad_s": 1.983112096786499,
+              "joint_target_rmse_rad": 0.08204863965511322
+            },
+            "generator": "common IK contact stages; transfer and pre-place: local IK versus cuRobo joint plan",
+            "snapshots": [
+              "00-approach.png",
+              "01-descend.png",
+              "02-grasp.png",
+              "03-lift.png",
+              "04-transfer.png",
+              "05-lower_prepare.png",
+              "06-lower.png",
+              "07-release.png",
+              "08-retreat.png",
+              "09-settle.png"
+            ],
+            "home": "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/runs/prepared/home-franka.usda",
+            "robot_usd": "/home/tangyuan/WorldSimReady-Home/.worktrees/arm-home-scene-20261017/runs/assets/Isaac/IsaacLab/Robots/FrankaEmika/Legacy/panda_instanceable.usd",
+            "source_sha256": "6d85b4cddfd18a20d25b32255f151b6807008ad1eb76f1aa47d9fc87c7948d25",
+            "cameras": {
+              "overview": {
+                "eye": [
+                  1.65,
+                  -1.1,
+                  1.55
+                ],
+                "rotation_xyzw": [
+                  0.3981914222240448,
+                  0.1855517029762268,
+                  0.37943974137306213,
+                  0.8142724633216858
+                ],
+                "width": 960,
+                "height": 540,
+                "focal_length": 22,
+                "horizontal_aperture": 36
+              },
+              "detail": {
+                "eye": [
+                  1.25,
+                  -0.5,
+                  0.85
+                ],
+                "rotation_xyzw": [
+                  0.3939386308193207,
+                  0.24346746504306793,
+                  0.4659579396247864,
+                  0.7539358139038086
+                ],
+                "width": 640,
+                "height": 480,
+                "focal_length": 28,
+                "horizontal_aperture": 36
+              }
+            }
+          }
+        },
+        {
+          "name": "curobo-clear-t2",
+          "method": "curobo",
+          "obstacle": false,
+          "trial": 2,
+          "status": "completed",
+          "command": [
+            "bash",
+            "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/workspace-overlays/franka-curobo-comparison/run.sh",
+            "--home",
+            "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/runs/prepared/home-franka.usda",
+            "--robot-usd",
+            "/home/tangyuan/WorldSimReady-Home/.worktrees/arm-home-scene-20261017/runs/assets/Isaac/IsaacLab/Robots/FrankaEmika/Legacy/panda_instanceable.usd",
+            "--planner-python",
+            "/home/tangyuan/miniconda3/envs/autodata/bin/python",
+            "--output",
+            "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/runs/comparison-r01/curobo-clear-t2",
+            "--method",
+            "curobo",
+            "--trial",
+            "2"
+          ],
+          "output": "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/runs/comparison-r01/curobo-clear-t2",
+          "foreign_gpu_before": [],
+          "returncode": 0,
+          "process_wall_s": 67.86709155101562,
+          "result": {
+            "success": true,
+            "frames": 1000,
+            "fps": 50,
+            "seconds": 20.0,
+            "robot": "Franka Panda",
+            "native_surface": "scene000430 original dining table",
+            "initial_cube_z": 0.019999496638774872,
+            "peak_cube_z": 0.24691623449325562,
+            "final_cube_state": [
+              0.4996906518936157,
+              -0.29989901185035706,
+              0.018100395798683167,
+              0.0034855969715863466,
+              0.0013151589082553983,
+              -0.040986619889736176,
+              0.9991528391838074,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "final_speed_m_s": 0.0,
+            "final_stable_steps": 200,
+            "success_criterion": "lift > .15 m then place within .04 m XY and .015 m Z of target, released, speed < .02 m/s for final >=50 steps",
+            "method": "curobo",
+            "obstacle": false,
+            "trial": 2,
+            "planning_failed": false,
+            "completed": true,
+            "collision_free_success": true,
+            "peak_blocker_contact_n": 0.0,
+            "blocker_contact_steps": 0,
+            "minimum_cube_aabb_blocker_clearance_m": null,
+            "initial_robot_joint_pos": [
+              0.0,
+              -0.5690000057220459,
+              0.0,
+              -2.809999942779541,
+              0.0,
+              3.0369999408721924,
+              0.7409999966621399,
+              0.03999999910593033,
+              0.03999999910593033
+            ],
+            "initial_cube_state": [
+              0.5099999904632568,
+              -0.009999999776482582,
+              0.02376576140522957,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              -0.2452501803636551,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "control_compute_s": 0.898339145409409,
+            "phase_wall_s": {
+              "approach": 5.793060883006547,
+              "descend": 8.357674753002357,
+              "grasp": 3.9513384280144237,
+              "lift": 6.665081162995193,
+              "transfer": 6.82965183199849,
+              "lower_prepare": 5.003378815017641,
+              "lower": 3.2815381879918277,
+              "release": 4.067803306039423,
+              "retreat": 5.378702565969434,
+              "settle": 5.416672187973745
+            },
+            "planning": [
+              {
+                "fk_position": [
+                  0.5098931193351746,
+                  -0.010065965354442596,
+                  0.3526051640510559
+                ],
+                "fk_quaternion_wxyz": [
+                  4.533756145974621e-05,
+                  -1.0,
+                  0.00013809652591589838,
+                  0.00033661414636299014
+                ],
+                "fk_position_error_m": 3.1899123758161063e-07,
+                "fk_rotation_error_rad": 0.0,
+                "success": true,
+                "status": "None",
+                "synchronized_request_s": 0.11094131600111723,
+                "reported_solve_s": 0.08222174644470215,
+                "initialization_s": 2.7256322540342808,
+                "torch_allocated_mib": 332.60107421875,
+                "torch_reserved_mib": 392.0,
+                "interpolation_dt": 0.02,
+                "planned_seconds": 0.6,
+                "phase": "transfer"
+              },
+              {
+                "fk_position": [
+                  0.49975353479385376,
+                  -0.2998286485671997,
+                  0.35269656777381897
+                ],
+                "fk_quaternion_wxyz": [
+                  0.00036768015706911683,
+                  -0.9999995827674866,
+                  0.0006547284428961575,
+                  0.0006192393484525383
+                ],
+                "fk_position_error_m": 3.11145380404906e-07,
+                "fk_rotation_error_rad": 0.0,
+                "success": true,
+                "status": "None",
+                "synchronized_request_s": 0.11416486697271466,
+                "reported_solve_s": 0.08564567565917969,
+                "initialization_s": 2.7256322540342808,
+                "torch_allocated_mib": 332.60107421875,
+                "torch_reserved_mib": 392.0,
+                "interpolation_dt": 0.02,
+                "planned_seconds": 0.6,
+                "phase": "lower_prepare"
+              }
+            ],
+            "planner_initialization_s": 2.7256322540342808,
+            "planner_startup_wall_s": 4.282644674007315,
+            "episode_wall_s": 59.03039428801276,
+            "measured_process_s": 66.63447123899823,
+            "trajectory": {
+              "joint_path_rad": 4.7299699783325195,
+              "tcp_path_m": 1.5117974281311035,
+              "max_joint_speed_rad_s": 0.9692072868347168,
+              "joint_target_rmse_rad": 0.02699143998324871
+            },
+            "generator": "common IK contact stages; transfer and pre-place: local IK versus cuRobo joint plan",
+            "snapshots": [
+              "00-approach.png",
+              "01-descend.png",
+              "02-grasp.png",
+              "03-lift.png",
+              "04-transfer.png",
+              "05-lower_prepare.png",
+              "06-lower.png",
+              "07-release.png",
+              "08-retreat.png",
+              "09-settle.png"
+            ],
+            "home": "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/runs/prepared/home-franka.usda",
+            "robot_usd": "/home/tangyuan/WorldSimReady-Home/.worktrees/arm-home-scene-20261017/runs/assets/Isaac/IsaacLab/Robots/FrankaEmika/Legacy/panda_instanceable.usd",
+            "source_sha256": "6d85b4cddfd18a20d25b32255f151b6807008ad1eb76f1aa47d9fc87c7948d25",
+            "cameras": {
+              "overview": {
+                "eye": [
+                  1.65,
+                  -1.1,
+                  1.55
+                ],
+                "rotation_xyzw": [
+                  0.3981914222240448,
+                  0.1855517029762268,
+                  0.37943974137306213,
+                  0.8142724633216858
+                ],
+                "width": 960,
+                "height": 540,
+                "focal_length": 22,
+                "horizontal_aperture": 36
+              },
+              "detail": {
+                "eye": [
+                  1.25,
+                  -0.5,
+                  0.85
+                ],
+                "rotation_xyzw": [
+                  0.3939386308193207,
+                  0.24346746504306793,
+                  0.4659579396247864,
+                  0.7539358139038086
+                ],
+                "width": 640,
+                "height": 480,
+                "focal_length": 28,
+                "horizontal_aperture": 36
+              }
+            }
+          }
+        }
+      ],
+      "started_unix": 1792249436.8525116,
+      "args": {
+        "home": "runs/prepared/home-franka.usda",
+        "robot_usd": "/home/tangyuan/WorldSimReady-Home/.worktrees/arm-home-scene-20261017/runs/assets/Isaac/IsaacLab/Robots/FrankaEmika/Legacy/panda_instanceable.usd",
+        "planner_python": "/home/tangyuan/miniconda3/envs/autodata/bin/python",
+        "output": "runs/comparison-r01",
+        "trials": [
+          0,
+          1,
+          2
+        ]
+      },
+      "finished_unix": 1792250225.6131809
+    }
+  ],
+  "evidence": {
+    "ik-clear-t0": {
+      "task_success": true,
+      "collision_free_success": true,
+      "lift_m": 0.22515073418617249,
+      "actual_fingers_open": true,
+      "tool_withdrawn": true,
+      "peak_blocker_contact_n": 0.0,
+      "dataset_sha256": "137b85e3346defe8e478088918b6fbc11fe558c167bfb0f84c2794dfb901060e",
+      "videos": {
+        "overview": {
+          "frames": 1000,
+          "size": [
+            960,
+            540
+          ],
+          "fps": 50.0,
+          "sha256": "808acf1ccb903d6df3563d440850fcffb49c49cfd90346562802987b5bc9e3dd"
+        },
+        "detail": {
+          "frames": 1000,
+          "size": [
+            640,
+            480
+          ],
+          "fps": 50.0,
+          "sha256": "b2bf7bd5f3736ae92002ea2c392d9d38e38c89ba12076090b66000b16592473f"
+        }
+      }
+    },
+    "curobo-blocked-t0": {
+      "task_success": true,
+      "collision_free_success": true,
+      "lift_m": 0.3465311527252197,
+      "actual_fingers_open": true,
+      "tool_withdrawn": true,
+      "peak_blocker_contact_n": 0.0,
+      "dataset_sha256": "b96a04c0149d287ea46cf63d5a47488cc4feb76f3dfb420625b4f46a295030ad",
+      "videos": {
+        "overview": {
+          "frames": 1000,
+          "size": [
+            960,
+            540
+          ],
+          "fps": 50.0,
+          "sha256": "07a4465fa7cc8cb3b989d66c9585514108e91372668c450d5cc1da2714baa353"
+        },
+        "detail": {
+          "frames": 1000,
+          "size": [
+            640,
+            480
+          ],
+          "fps": 50.0,
+          "sha256": "c3869247dbf60441ec974a3499387555f16fe0f0f2c66982c59c9ed5e35b3a3a"
+        }
+      }
+    },
+    "ik-blocked-t0": {
+      "task_success": false,
+      "collision_free_success": false,
+      "lift_m": 0.22623629868030548,
+      "actual_fingers_open": true,
+      "tool_withdrawn": true,
+      "peak_blocker_contact_n": 355.7034912109375,
+      "dataset_sha256": "1d2960171d1e8d64a85e173f5dcca2fbe02d776355fd4abcfefac6e75c3f2001",
+      "videos": {
+        "overview": {
+          "frames": 1000,
+          "size": [
+            960,
+            540
+          ],
+          "fps": 50.0,
+          "sha256": "ede72ede93246909641cf328e26d04b7013d685322790c7c0e62ff24c7d610c2"
+        },
+        "detail": {
+          "frames": 1000,
+          "size": [
+            640,
+            480
+          ],
+          "fps": 50.0,
+          "sha256": "df9e2fe383641e8ffe5aa38f842f96989f654b6324886afe4839db1a624a8763"
+        }
+      }
+    },
+    "curobo-clear-t0": {
+      "task_success": true,
+      "collision_free_success": true,
+      "lift_m": 0.22665169835090637,
+      "actual_fingers_open": true,
+      "tool_withdrawn": true,
+      "peak_blocker_contact_n": 0.0,
+      "dataset_sha256": "146d088618cf47be27ee5cb7e658a369540698eddfcc6faf0a30b8c9afa9e2ea",
+      "videos": {
+        "overview": {
+          "frames": 1000,
+          "size": [
+            960,
+            540
+          ],
+          "fps": 50.0,
+          "sha256": "920af7d2b3036556eb8472395c639bc658fe285a23a5dea6d46b9f7a30d24d19"
+        },
+        "detail": {
+          "frames": 1000,
+          "size": [
+            640,
+            480
+          ],
+          "fps": 50.0,
+          "sha256": "e02291953c5412b0de42d4cc075ecac056b38a0dbf4454277ceb74bf4fa70f4f"
+        }
+      }
+    },
+    "curobo-clear-t1": {
+      "task_success": true,
+      "collision_free_success": true,
+      "lift_m": 0.22768534719944,
+      "actual_fingers_open": true,
+      "tool_withdrawn": true,
+      "peak_blocker_contact_n": 0.0,
+      "dataset_sha256": "522de639b707d07631a096549c67a99c1fd49dae388fac10360370a06f65f31d",
+      "videos": {
+        "overview": {
+          "frames": 1000,
+          "size": [
+            960,
+            540
+          ],
+          "fps": 50.0,
+          "sha256": "db6bb6b00d944b9badc72d53b382e1ff363bba407d95a91727be00ad380073ea"
+        },
+        "detail": {
+          "frames": 1000,
+          "size": [
+            640,
+            480
+          ],
+          "fps": 50.0,
+          "sha256": "9fd44d99810103d4a5b9d19383d382b9aa94ad6e2cfc492fce537ce37a591684"
+        }
+      }
+    },
+    "ik-blocked-t1": {
+      "task_success": false,
+      "collision_free_success": false,
+      "lift_m": 0.2258293330669403,
+      "actual_fingers_open": true,
+      "tool_withdrawn": true,
+      "peak_blocker_contact_n": 381.7936096191406,
+      "dataset_sha256": "410bc4bfd9c34bd4659c066f3f1f2ba22f5430aac847ded10441e9d685df305e",
+      "videos": {
+        "overview": {
+          "frames": 1000,
+          "size": [
+            960,
+            540
+          ],
+          "fps": 50.0,
+          "sha256": "b587ee273a8a2b6ef4e99cd4a72cd529675323b982dc6099d7210230f2aa5eb5"
+        },
+        "detail": {
+          "frames": 1000,
+          "size": [
+            640,
+            480
+          ],
+          "fps": 50.0,
+          "sha256": "3038c81d7e9a1430b34a8f3bc0563f8a1823b40a8e9e6c0416bd285d104f9af9"
+        }
+      }
+    },
+    "curobo-blocked-t1": {
+      "task_success": true,
+      "collision_free_success": true,
+      "lift_m": 0.3467186689376831,
+      "actual_fingers_open": true,
+      "tool_withdrawn": true,
+      "peak_blocker_contact_n": 0.0,
+      "dataset_sha256": "5b743b06f60b97a2e044c788b260b06cebf83603074d4c225e54c458593073e3",
+      "videos": {
+        "overview": {
+          "frames": 1000,
+          "size": [
+            960,
+            540
+          ],
+          "fps": 50.0,
+          "sha256": "4e396f38eeb6788e9d1d8c38b68db4bb3d8ffe90f83dd1f12f9591b175faae7a"
+        },
+        "detail": {
+          "frames": 1000,
+          "size": [
+            640,
+            480
+          ],
+          "fps": 50.0,
+          "sha256": "fb949824bc3976a4d64bc8052f7486bd635905fe4149bf4e204d0b4a318e1b88"
+        }
+      }
+    },
+    "ik-clear-t1": {
+      "task_success": true,
+      "collision_free_success": true,
+      "lift_m": 0.22524669766426086,
+      "actual_fingers_open": true,
+      "tool_withdrawn": true,
+      "peak_blocker_contact_n": 0.0,
+      "dataset_sha256": "2bfa8a0bb1a0594fd6cc7d41d9428d70a9803eb09b4ad8d3fd8a99f6a91987b9",
+      "videos": {
+        "overview": {
+          "frames": 1000,
+          "size": [
+            960,
+            540
+          ],
+          "fps": 50.0,
+          "sha256": "d7918be98144c4e4412b10ca4a7f91f61e3b990756beb5f771b6c47c0771f9d5"
+        },
+        "detail": {
+          "frames": 1000,
+          "size": [
+            640,
+            480
+          ],
+          "fps": 50.0,
+          "sha256": "9d3537e7db056836b2408cf8bf06f9c917d096e7a906f7814ee4c4cb250a6195"
+        }
+      }
+    },
+    "ik-clear-t2": {
+      "task_success": true,
+      "collision_free_success": true,
+      "lift_m": 0.22524264454841614,
+      "actual_fingers_open": true,
+      "tool_withdrawn": true,
+      "peak_blocker_contact_n": 0.0,
+      "dataset_sha256": "c8833c491ac0127073434a478916491edf4540965937c0a5c1ed0b55fea3ee44",
+      "videos": {
+        "overview": {
+          "frames": 1000,
+          "size": [
+            960,
+            540
+          ],
+          "fps": 50.0,
+          "sha256": "37f281a34473d9668ef0d97b201aa541207f4db8f972d44db4f1e12a1d5dcbae"
+        },
+        "detail": {
+          "frames": 1000,
+          "size": [
+            640,
+            480
+          ],
+          "fps": 50.0,
+          "sha256": "c3a66f26b65411874cbac96eace4746def02f9345427b6d25d12a4a31e57deee"
+        }
+      }
+    },
+    "curobo-blocked-t2": {
+      "task_success": true,
+      "collision_free_success": true,
+      "lift_m": 0.3775007426738739,
+      "actual_fingers_open": true,
+      "tool_withdrawn": true,
+      "peak_blocker_contact_n": 0.0,
+      "dataset_sha256": "be4ca5a3efa5e24af85674d02aae162a4ed326faae388b109de3916e81bed993",
+      "videos": {
+        "overview": {
+          "frames": 1000,
+          "size": [
+            960,
+            540
+          ],
+          "fps": 50.0,
+          "sha256": "e5f1618eb440bf0e524bff639cd4c781d0d7a8ce35d5b8d89c06e46142f1bd3a"
+        },
+        "detail": {
+          "frames": 1000,
+          "size": [
+            640,
+            480
+          ],
+          "fps": 50.0,
+          "sha256": "71b66bd7fedc192cb571b4a27e6bdf4cc5b6c48dea513800668d46fe9427fd24"
+        }
+      }
+    },
+    "ik-blocked-t2": {
+      "task_success": false,
+      "collision_free_success": false,
+      "lift_m": 0.22695818543434143,
+      "actual_fingers_open": true,
+      "tool_withdrawn": true,
+      "peak_blocker_contact_n": 322.7286376953125,
+      "dataset_sha256": "46e274d17d942563cd7847d7a3e8b6adc8e49a11131a36fd54fa6a593169e322",
+      "videos": {
+        "overview": {
+          "frames": 1000,
+          "size": [
+            960,
+            540
+          ],
+          "fps": 50.0,
+          "sha256": "01fa0fc2b4822370aebf87d6c872e60e629fa8f3d58c470590b6e8de47c9c30f"
+        },
+        "detail": {
+          "frames": 1000,
+          "size": [
+            640,
+            480
+          ],
+          "fps": 50.0,
+          "sha256": "dd6c83cd6b8b4d5f7477a6fa922aa80f9e5ca6b1f462db12481ee398a64fc11e"
+        }
+      }
+    },
+    "curobo-clear-t2": {
+      "task_success": true,
+      "collision_free_success": true,
+      "lift_m": 0.22691673040390015,
+      "actual_fingers_open": true,
+      "tool_withdrawn": true,
+      "peak_blocker_contact_n": 0.0,
+      "dataset_sha256": "6c6fe21e34e188b5c4d3199ed45fa435d22b8c4dcb147759fb41cbeb790f3487",
+      "videos": {
+        "overview": {
+          "frames": 1000,
+          "size": [
+            960,
+            540
+          ],
+          "fps": 50.0,
+          "sha256": "a93d93840365f28c229cffa282572e3e34d2802e3671a72ca87c64c8203d9f95"
+        },
+        "detail": {
+          "frames": 1000,
+          "size": [
+            640,
+            480
+          ],
+          "fps": 50.0,
+          "sha256": "040440f226a0db11192d44b029107175195e7155f88030d918ff0f4b1e2a84a5"
+        }
+      }
+    }
+  },
+  "runtime": {
+    "gpu": "NVIDIA GeForce RTX 5090, 595.91.07, 32607 MiB",
+    "simulation": {
+      "isaacsim": "6.1.0.0",
+      "isaaclab": "16.4.0",
+      "torch": "2.11.0+cu128",
+      "h5py": "3.16.0"
+    },
+    "planner": {
+      "versions": {
+        "nvidia-curobo": "0.0.post1.dev1",
+        "torch": "2.11.0"
+      },
+      "curobo_file": "/home/tangyuan/miniconda3/envs/autodata/lib/python3.12/site-packages/curobo/__init__.py"
+    },
+    "planner_model_sha256": {
+      "/home/tangyuan/miniconda3/envs/autodata/lib/python3.12/site-packages/curobo/content/configs/robot/franka.yml": "c809e9c1d044c8cf98d888552fb55739077419fb3568d5e696242cdecb457430",
+      "/home/tangyuan/miniconda3/envs/autodata/lib/python3.12/site-packages/curobo/content/configs/robot/spheres/franka_mesh.yml": "6e3e032a01cc0904b115d24953b2b55d0a91e79d6965b8f0bc224ad2591dec83",
+      "/home/tangyuan/miniconda3/envs/autodata/lib/python3.12/site-packages/curobo/content/assets/robot/franka_description/franka_panda.urdf": "6a0044e6e72ee667927f17d1871ec3e2615a8bc5fe978882fc909e4094667967",
+      "/home/tangyuan/miniconda3/envs/autodata/lib/python3.12/site-packages/curobo/wrap/reacher/motion_gen.py": "348ee2fa858b1d651a70fa2b2b5a5d4e240ea724b7817d7769473c3f7a7e46e8"
+    },
+    "original_scene": {
+      "repository": "Yootta/World-SimReady-Home-mini",
+      "revision": "f2c633749e7fdf3f981dfd1dd83fc253786713ac",
+      "home": "/home/tangyuan/WorldSimReady-Home/.worktrees/g1-home-scene-20261017/runs/home-input/scene/scene000430/scene000430.usdz",
+      "home_sha256": "d38ebd9e8312c46125bee1412c3a45933c245b890ea081c307fcfc4e37814ee6",
+      "layer": "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/runs/prepared/home-franka.usda",
+      "layer_sha256": "be2ad3c4c96c988e9d3d5c9ae6e798ef870a2d406c7e5f987ac1326da71c6519",
+      "translation": [
+        -22.35,
+        4.75,
+        -0.75
+      ],
+      "native_tabletop_z": 0.0,
+      "native_floor_z": -0.75,
+      "task_surface": "original diningTable002/mesh059; original collisions retained",
+      "removed": [
+        "/HomeTask/Home/livingRoom1/livingRoom1_diningtable_1587793_yflib019/ornament_1441482",
+        "/HomeTask/Home/livingRoom1/livingRoom1_diningtable_1587793_yflib019/ornament_1437192",
+        "/HomeTask/Home/livingRoom1/livingRoom1_diningtable_1587793_yflib019/ornament_1433619",
+        "/HomeTask/Home/livingRoom1/livingRoom1_diningtable_1587793_yflib019/lib_1587793/diningChair005",
+        "/HomeTask/Home/livingRoom1/livingRoom1_diningtable_1587793_yflib019/lib_1587793/diningChair006",
+        "/HomeTask/Home/livingRoom1/livingRoom1_diningtable_1587793_yflib019/lib_1587793/diningChair007",
+        "/HomeTask/Home/livingRoom1/livingRoom1_diningtable_1587793_yflib019/lib_1587793/diningChair008"
+      ],
+      "household_physics": "static collision; unrelated joints disabled",
+      "frozen_bodies": 501,
+      "disabled_joints": 120,
+      "disabled_lights": 278
+    },
+    "all_case_gpu_preflight_empty": true
+  },
+  "runtime_source_sha256": {
+    "capture.py": "6d85b4cddfd18a20d25b32255f151b6807008ad1eb76f1aa47d9fc87c7948d25",
+    "metrics.py": "bed0ab5e5d06851263a7e29ec6839b86b84da1bf7a9a28b2d067a5782c0971b5",
+    "planner_worker.py": "e29f92f1c554d2e63d2388996d1073c84b16bb8a026722ad4c8df4c264ef8a35",
+    "planner_client.py": "591c9c16d725e1fcf6a1ac54f80d2ed96394a1b454ff617f902b5af8e00ce64b",
+    "run.sh": "0d48618775e07e952d5d6a6e451f80492bd95f62d2196b23bd713bbd5e8741b3",
+    "experiment.py": "50f74d6d1d3539a1820d186f60f86eb32a27c43075c4870b6bd58d78e53ffc5d"
+  }
+}

@@ -24,6 +24,8 @@ AutoData 文章历史版本：[v001](autodata-guide/v001/CHANGELOG.md)、[v002](
 
 ## 保存约定
 
+最新物理对照：[Franka cuRobo × 有无障碍物 v001](franka-curobo-home-comparison/v001/report.md) · [图文和视频](franka-curobo-home-comparison/v001/index.html) · [逐次数据](franka-curobo-home-comparison/v001/cases.csv)。2026-10-17 新增 12 次配对仿真，每组 3 个固定状态；无障碍时 IK/cuRobo 均 3/3，有障碍时完成且无新增障碍物接触分别为 0/3、3/3。仅验证局部桌面代理规划和这三个状态，非总体成功率；本地交付，未上传或发布。
+
 - 使用 `outputs/<artifact-id>/<version>/`，同一主题沿用稳定 ID，内容修订新增版本。
 - 已封存版本的正文、资源和校验值保持不变；交付状态按双端交付规则独立记录。
 - 新增版本后更新本索引，说明验证范围；不要将“已有文件”或“已封存”写成运行成功。

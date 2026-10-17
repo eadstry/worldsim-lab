@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "artifact_id": "franka-curobo-home-comparison",
+  "version": "v001",
+  "created_at": "2026-10-17T23:22:25.375711+08:00",
+  "sealed_at": "2026-10-17T23:22:25.375711+08:00",
+  "sources": [
+    "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/runs/comparison-r01"
+  ],
+  "files": {
+    "cases.csv": "00774aff95580fdfa10fd7f7dd616fd914319801d4911f55f38f3103c150b5fc",
+    "comparison.mp4": "de03926fef1f06f9d8d505748d57469fd66cace8cadd13b7a69bfd2ecdb538b2",
+    "comparison.png": "bda71ef4760d24d2fbcdf7fa58ca30ee71d601e2e628fc009d048c0977fa2a01",
+    "curobo_blocked_detail.mp4": "c3869247dbf60441ec974a3499387555f16fe0f0f2c66982c59c9ed5e35b3a3a",
+    "curobo_clear_detail.mp4": "e02291953c5412b0de42d4cc075ecac056b38a0dbf4454277ceb74bf4fa70f4f",
+    "ik_blocked_detail.mp4": "df9e2fe383641e8ffe5aa38f842f96989f654b6324886afe4839db1a624a8763",
+    "ik_clear_detail.mp4": "b2bf7bd5f3736ae92002ea2c392d9d38e38c89ba12076090b66000b16592473f",
+    "index.html": "902d64b5f6e8d4a74cb8ce5d4ea6df4d8b3beb1a57c7a7771be7ffad04bf8181",
+    "provenance.json": "df99801fa3d2ad62409752076cb268220e50cce23e587dc5827fbb990bb043a1",
+    "report.md": "96592c88fb6d67a5708c21b836b9c8d671ac3d57ab594338429ba0034f24339c",
+    "results.png": "fe5b40bfcf31ee6dd78d8c57c65b90c2567c9e7ae3ac5ed84c5c5dd5ce24f8d3",
+    "results.svg": "18d554f6d727e0fd68d26df8bbb66b9b74c3c85bb33b566e7f5320818f6a66f8",
+    "summary.json": "cdf51adab1db1a2e6d6e4f624dc9d241e770e12371a5d3d89716da0b12bc9e32"
+  },
+  "validation": {
+    "all_12_attempts_completed": true,
+    "paired_initial_states": true,
+    "state_and_video_readback": true
+  },
+  "delivery": {
+    "local": {
+      "status": "saved"
+    }
+  }
+}
