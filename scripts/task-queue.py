@@ -51,6 +51,42 @@ def git_metadata(cwd):
         return None, None
 
 
+def prepare_submission(args):
+    """Explicit non-GPU preparation runs before registration or resource locking."""
+    command = args.command[1:] if args.command[:1] == ['--'] else args.command
+    if not command:
+        raise ValueError('Supply a command after --')
+    cwd = Path(args.cwd).expanduser().resolve(strict=True)
+    if not cwd.is_dir():
+        raise ValueError('Task cwd must be a directory')
+    if args.prepare_command is None:
+        return
+    preparation = shlex.split(args.prepare_command)
+    if not preparation:
+        raise ValueError('Preparation command must not be empty')
+    process = None
+
+    def terminated(signum, frame):
+        raise SystemExit(128 + signum)
+
+    previous = signal.signal(signal.SIGTERM, terminated)
+    try:
+        print('Preparing before GPU queue admission: ' + shlex.join(preparation),
+              file=sys.stderr, flush=True)
+        process = subprocess.Popen(preparation, cwd=cwd, stdout=sys.stderr,
+                                   stderr=sys.stderr, start_new_session=True)
+        try:
+            code = process.wait(timeout=args.prepare_timeout)
+        except subprocess.TimeoutExpired:
+            raise ValueError(f'Preparation exceeded {args.prepare_timeout}s; task not queued') from None
+        if code:
+            raise ValueError(f'Preparation exited with code {code}; task not queued')
+    finally:
+        if process is not None:
+            stop_group(process)
+        signal.signal(signal.SIGTERM, previous)
+
+
 def enqueue(db, args):
     command = args.command[1:] if args.command[:1] == ['--'] else args.command
     if not command:
@@ -172,6 +208,9 @@ def main():
     submit.add_argument('--cwd', default=os.getcwd())
     submit.add_argument('--name')
     submit.add_argument('--timeout', type=positive_seconds, help='Maximum running seconds')
+    submit.add_argument('--prepare-command', help='Quoted non-GPU argv; run before joining the queue (no shell)')
+    submit.add_argument('--prepare-timeout', type=positive_seconds, default=1800,
+                        help='Preparation time limit in seconds (default: 1800)')
     submit.add_argument('--no-start', action='store_true', help='Queue only; run worker later')
     submit.add_argument('command', nargs=argparse.REMAINDER)
     commands.add_parser('worker', help='Wait for the shared lock and drain the queue')
@@ -186,6 +225,7 @@ def main():
     db = connect(directory)
     try:
         if args.action == 'submit':
+            prepare_submission(args)
             task_id = enqueue(db, args)
             print(task_id, flush=True)
             if not args.no_start:

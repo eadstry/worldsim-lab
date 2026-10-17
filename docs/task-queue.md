@@ -29,6 +29,30 @@ python3 /path/to/task-queue.py submit --name autodata-auto --timeout 7200 \
 
 请替换路径和原任务参数。队列不准备 Isaac Sim、资产或 GPU 环境。该例没有执行 GPU 验证。
 
+## 环境准备与 GPU 入队分开
+
+镜像构建、模型下载及依赖安装属于非 GPU 准备，不能放在占用 GPU 队列锁的命令中。
+可以显式指定入队前的准备命令：
+
+```bash
+python3 scripts/task-queue.py submit --name policy-eval --timeout 7200 \
+  --prepare-command 'bash /path/to/prepare-policy-image.sh' --prepare-timeout 1800 \
+  -- bash /path/to/run-prepared-policy-eval.sh
+```
+
+准备命令同步执行，使用提交的工作目录和环境，不取得 GPU 锁。准备成功后才记录任务、
+捕获 Git 元数据和分配 FIFO 顺序；准备期间已有 GPU 任务继续执行。
+准备失败、超时或被中断时不会入队；超时及终止会清理准备命令的进程组。
+`--no-start` 仍会先执行准备，只禁止入队后自动启动 worker。
+命令按 argv 解析，不自动经过 shell；管道等操作应写入脚本或显式使用 `bash -c`。
+准备输出写入 stderr，stdout 仍只返回任务 ID；需要保留准备日志时由调用方重定向 stderr。
+准备期间尚无任务 ID，也不能使用队列的 `cancel` 取消；应终止提交进程。
+
+准备仅执行用户显式提供的命令，不自动安装仿真依赖。不得在此步骤运行 GPU 仿真、训练或
+其他需要独占主机的重负载。并行准备应使用独立目录和镜像标签，避免缓存以外的写入冲突。
+GPU 执行入口应只使用已准备好的镜像和模型，缺失时快速失败，不能再次悄悄触发构建或下载。
+已有任务不会自动改写或迁移到此流程。
+
 ## 共享状态与恢复
 
 默认状态目录为 `${XDG_STATE_HOME:-~/.local/state}/worldsimready/task-queue`，保存 SQLite、锁和每个任务的日志，权限为目录 0700、文件 0600；环境快照可能包含凭据，仅在本机保存。不要提交或分享状态目录。

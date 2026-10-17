@@ -3,6 +3,7 @@
 import concurrent.futures
 import json
 import os
+import shlex
 from pathlib import Path
 import sqlite3
 import subprocess
@@ -99,6 +100,70 @@ active.rmdir()
         expected = [[phase, index] for _, index in sorted(submissions)
                     for phase in ('start', 'end')]
         self.assertEqual([json.loads(line) for line in trace.read_text().splitlines()], expected)
+
+    def test_preparation_does_not_reserve_gpu_slot_and_uses_submission_cwd(self):
+        started = self.root / 'preparing'
+        release = self.root / 'release'
+        code = ("from pathlib import Path; import time; "
+                "Path('preparing').touch(); "
+                "exec(\"while not Path('release').exists(): time.sleep(.03)\")")
+        preparation = shlex.join([sys.executable, '-c', code])
+        submitter = subprocess.Popen(self.command(
+            'submit', '--no-start', '--cwd', str(self.root),
+            '--prepare-command', preparation, '--', sys.executable, '-c', 'print("prepared")'),
+            stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+        self.workers.append(submitter)
+        self.await_condition(started.exists)
+        self.assertEqual(self.rows(), [])
+        ready = self.submit('print("GPU work proceeds during preparation")')
+        self.join_worker(self.worker())
+        self.assertEqual(self.rows()[0]['status'], 'succeeded')
+        release.touch()
+        stdout, stderr = submitter.communicate(timeout=10)
+        self.assertEqual(submitter.returncode, 0, stderr)
+        prepared = int(stdout)
+        self.assertGreater(prepared, ready)
+        self.join_worker(self.worker())
+        self.assertTrue(all(row['status'] == 'succeeded' for row in self.rows()))
+
+    def test_preparation_failure_and_timeout_never_admit_task(self):
+        pid_file = self.root / 'prepare-child.pid'
+        child = ("import os, signal, time; from pathlib import Path; "
+                 "signal.signal(signal.SIGTERM, signal.SIG_IGN); "
+                 f"Path({str(pid_file)!r}).write_text(str(os.getpid())); time.sleep(30)")
+        slow = (f'import subprocess, sys, time; subprocess.Popen([sys.executable, "-c", {child!r}]); '
+                'time.sleep(30)')
+        for code, timeout, error in [('raise SystemExit(7)', '5', 'code 7'),
+                                     (slow, '.7', 'exceeded')]:
+            result = self.cli('submit', '--prepare-command',
+                              shlex.join([sys.executable, '-c', code]),
+                              '--prepare-timeout', timeout, '--',
+                              sys.executable, '-c', 'raise AssertionError()', check=False)
+            self.assertNotEqual(result.returncode, 0)
+            self.assertEqual(result.stdout, '')
+            self.assertIn(error, result.stderr)
+            self.assertEqual(self.rows(), [])
+        status_file = Path(f'/proc/{int(pid_file.read_text())}/stat')
+        self.await_condition(lambda: not status_file.exists() or
+                             status_file.read_text().rsplit(')', 1)[1].split()[0] == 'Z')
+
+    def test_sigterm_preparation_cleans_child_and_does_not_admit_task(self):
+        active = self.root / 'prepare.pid'
+        code = (f'import os, time; from pathlib import Path; '
+                f'Path({str(active)!r}).write_text(str(os.getpid())); time.sleep(30)')
+        submitter = subprocess.Popen(self.command(
+            'submit', '--prepare-command', shlex.join([sys.executable, '-c', code]),
+            '--', sys.executable, '-c', 'print("must not run")'),
+            stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+        self.workers.append(submitter)
+        self.await_condition(active.exists)
+        pid = int(active.read_text())
+        submitter.terminate()
+        stdout, stderr = submitter.communicate(timeout=10)
+        self.assertEqual(submitter.returncode, 143, stderr)
+        self.assertEqual(stdout, '')
+        self.assertFalse(Path(f'/proc/{pid}').exists())
+        self.assertEqual(self.rows(), [])
 
     def test_cwd_environment_and_argument_boundaries_are_per_submission(self):
         for index in range(2):
