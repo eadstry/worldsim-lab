@@ -23,4 +23,5 @@ This repository combines upstream source references with local AutoData research
 
 ## Shared host validation
 
+- For subsequent Arena runs on the RTX 5090, default to 24 parallel environments unless the user explicitly requests another count. For the Lightwheel kitchen runner, pass `runs.lightwheel_mustard.environment_builder.num_envs=24`. This is the user's selected default, not a validated capacity: 16 environments ran, while 32 exhausted GPU memory with the current three-camera 720p configuration. Validate 24 on its first run; do not launch GPU work merely to save this preference.
 - Submit GPU simulation, training and resource-intensive validation through `scripts/task-queue.py` with the same host-local queue directory. Read `docs/task-queue.md`; keep queued/running code unchanged and preserve independent outputs. Ordinary host unit tests do not require GPU resources.
