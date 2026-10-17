@@ -6,13 +6,14 @@ import json
 import random
 from pathlib import Path
 
-from pxr import Gf, Sdf, Usd, UsdGeom, UsdLux, UsdShade
+from pxr import Gf, Sdf, Usd, UsdGeom, UsdLux, UsdShade, UsdPhysics
 
 PROFILES = [
     ('baseline', 1, 100, []),
     ('lighting', 1, 101, ['lighting']),
     ('camera', 1, 102, ['camera']),
     ('material', 1, 103, ['material']),
+    ('visual_only', 1, 104, ['lighting', 'camera', 'material']),
     ('combined_s1', 1, 104, ['lighting', 'camera', 'material', 'pose_mild']),
     ('combined_s2', 2, 105, ['lighting', 'camera', 'material', 'pose_mild']),
     ('pose_wide', 1, 106, ['pose_wide']),
@@ -20,6 +21,22 @@ PROFILES = [
 
 
 def material(stage, path, color, roughness, targets):
+    # A visual all-purpose binding can otherwise hide a descendant material
+    # that also carries PhysicsMaterialAPI. Preserve resolved physics purpose
+    # bindings explicitly before replacing the rendered appearance.
+    physics_bindings = {}
+    for target in targets:
+        root = stage.GetPrimAtPath(target)
+        assert root.IsValid(), target
+        for prim in Usd.PrimRange(root):
+            if prim.IsA(UsdGeom.Gprim) or prim.IsA(UsdGeom.Subset):
+                original, _ = UsdShade.MaterialBindingAPI(prim).ComputeBoundMaterial(materialPurpose='physics')
+                if original and original.GetPrim().HasAPI(UsdPhysics.MaterialAPI):
+                    physics_bindings[str(prim.GetPath())] = str(original.GetPath())
+    for prim_path, material_path in physics_bindings.items():
+        prim = stage.GetPrimAtPath(prim_path)
+        original = UsdShade.Material(stage.GetPrimAtPath(material_path))
+        UsdShade.MaterialBindingAPI.Apply(prim).Bind(original, materialPurpose='physics')
     mat = UsdShade.Material.Define(stage, path)
     shader = UsdShade.Shader.Define(stage, path + '/Surface')
     shader.CreateIdAttr('UsdPreviewSurface')
@@ -31,6 +48,9 @@ def material(stage, path, color, roughness, targets):
         prim = stage.GetPrimAtPath(target)
         assert prim.IsValid(), target
         UsdShade.MaterialBindingAPI.Apply(prim).Bind(mat, bindingStrength=UsdShade.Tokens.strongerThanDescendants)
+    for prim_path, material_path in physics_bindings.items():
+        actual, _ = UsdShade.MaterialBindingAPI(stage.GetPrimAtPath(prim_path)).ComputeBoundMaterial(materialPurpose='physics')
+        assert str(actual.GetPath()) == material_path, f'Physics material changed: {prim_path}'
 
 
 def sample(seed, active):

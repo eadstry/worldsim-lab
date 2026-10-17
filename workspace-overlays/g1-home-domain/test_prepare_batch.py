@@ -40,6 +40,12 @@ class PreparationTests(unittest.TestCase):
             floor_path = '/HomeTask/Home/ground/ground_livingRoom1_YF_yaguangzhuan_333289'
             floor = UsdGeom.Mesh.Define(stage, floor_path).GetPrim()
             UsdPhysics.CollisionAPI.Apply(floor).CreateCollisionEnabledAttr(True)
+            physics_mat = UsdShade.Material.Define(stage, '/HomeTask/OriginalPhysics')
+            physics = UsdPhysics.MaterialAPI.Apply(physics_mat.GetPrim())
+            physics.CreateStaticFrictionAttr(.58)
+            physics.CreateDynamicFrictionAttr(.48)
+            physics.CreateRestitutionAttr(.13)
+            UsdShade.MaterialBindingAPI.Apply(floor).Bind(physics_mat)
             UsdGeom.Xform.Define(stage, '/HomeTask/Home/wall')
             UsdLux.DomeLight.Define(stage, '/HomeTask/DiagnosticDome').CreateIntensityAttr(1000)
             UsdLux.RectLight.Define(stage, '/HomeTask/DiagnosticKey').CreateIntensityAttr(1000)
@@ -51,7 +57,7 @@ class PreparationTests(unittest.TestCase):
                        '--hdr', str(hdr), '--output', str(folder / 'output')]
             subprocess.run(command, check=True, capture_output=True)
             plans = json.loads((folder / 'output/plans.json').read_text())
-            self.assertEqual(len(plans), 7)
+            self.assertEqual(len(plans), 8)
             for path in plans:
                 plan = json.loads(Path(path).read_text())
                 variant = Usd.Stage.Open(plan['scene'])
@@ -62,6 +68,12 @@ class PreparationTests(unittest.TestCase):
                 if 'material' in plan['sampled']:
                     bound, _ = UsdShade.MaterialBindingAPI(variant.GetPrimAtPath(floor_path)).ComputeBoundMaterial()
                     self.assertEqual(str(bound.GetPath()), '/HomeTask/DRFloor')
+                    original, _ = UsdShade.MaterialBindingAPI(variant.GetPrimAtPath(floor_path)).ComputeBoundMaterial(materialPurpose='physics')
+                    self.assertEqual(str(original.GetPath()), '/HomeTask/OriginalPhysics')
+                    physical = UsdPhysics.MaterialAPI(original.GetPrim())
+                    self.assertAlmostEqual(physical.GetStaticFrictionAttr().Get(), .58, places=6)
+                    self.assertAlmostEqual(physical.GetDynamicFrictionAttr().Get(), .48, places=6)
+                    self.assertAlmostEqual(physical.GetRestitutionAttr().Get(), .13, places=6)
                 if 'lighting' in plan['sampled']:
                     light = UsdLux.DomeLight(variant.GetPrimAtPath('/HomeTask/DiagnosticDome'))
                     self.assertAlmostEqual(light.GetIntensityAttr().Get(), plan['sampled']['lighting']['dome_intensity'], places=3)

@@ -16,6 +16,7 @@
 | lighting | 1 / 101 | 室内 HDR、光强、色温、HDR 朝向 |
 | camera | 1 / 102 | 头部相机外参和焦距 |
 | material | 1 / 103 | 客厅地板和墙的颜色、粗糙度 |
+| visual_only | 1 / 104 | 光照、相机、材质；箱子沿用基线位姿范围 |
 | combined_s1 | 1 / 104 | 光照、相机、材质、箱子 XY ±3.5 cm / yaw ±3° |
 | combined_s2 | 2 / 105 | 同上，独立采样 |
 | pose_wide | 1 / 106 | 箱子 XY ±8 cm / yaw ±10°；其余同 baseline |
@@ -97,3 +98,20 @@ python3 scripts/task-queue.py submit --name g1-dr-lighting --timeout 600 -- \
 可见抓取与放置目标；搬运阶段箱子上缘本来就存在裁切。因此相机扰动应保持小幅，并检查
 手部接触区和放置目标的可见性，不能仅凭第三视角好看来筛选。
 本批只改变同一住宅内的外观与有限位姿，不等于已经覆盖新户型和家具布局的泛化。
+
+## 物理材质绑定修复与补测
+
+初版视觉材质覆盖了原来的 all-purpose 绑定，而原材质同时带有 PhysicsMaterialAPI，
+导致原地板静摩擦 0.58、动摩擦 0.48、恢复系数 0.13 回落到引擎默认值。
+仅检查碰撞体数量不足以发现这个问题。旧材质与旧组合组样本保留在 domain-r02，作为有混杂因素的诊断数据，
+不用于推荐材质随机化效果；旧 combined_s1 发生倒伏且 success=False，也不能归因于箱子位姿。
+
+修复在覆盖外观前，为几何 prim 和子集显式保留原 physics purpose 材质绑定，
+随后验证原物理材质仍然解析到同一路径。回归测试同时检查摩擦与恢复系数，
+防止仅验证图像变色而遗漏接触动力学变化。原 USDZ 不修改，旧运行与旧参数文件均保留。
+
+补测 material、visual_only、combined_s1、combined_s2；visual_only 与 combined_s1 使用完全相同的
+光照、相机和材质采样，前者沿用原箱子 XY ±2.5 cm、固定 yaw，后者增加 XY ±3.5 cm / yaw ±3°，
+用于区分视觉变化与位姿扰动的影响。
+正式分析使用这四条补测和已有 baseline、lighting、camera 共七条。大位姿组为额外诊断，
+不要求它进入头部视觉训练候选集。prepare_batch.py 提供八个候选配置，按需选择。
