@@ -21,6 +21,7 @@ parser.add_argument("--robot-usd", type=Path, required=True)
 parser.add_argument("--output", type=Path, required=True)
 parser.add_argument("--object-kind", choices=("cube", "banana"), default="cube")
 parser.add_argument("--object-usd", type=Path)
+parser.add_argument("--capture-sensors", action="store_true", help="Record wrist RGB, close-up RGB and physical force sensors")
 AppLauncher.add_app_launcher_args(parser)
 args = parser.parse_args()
 assert args.home.is_file() and args.robot_usd.is_file()
@@ -40,7 +41,7 @@ from isaaclab.assets import AssetBaseCfg, RigidObjectCfg
 from isaaclab.controllers import DifferentialIKController, DifferentialIKControllerCfg
 from isaaclab.managers import SceneEntityCfg
 from isaaclab.scene import InteractiveScene, InteractiveSceneCfg
-from isaaclab.sensors import CameraCfg
+from isaaclab.sensors import CameraCfg, ContactSensorCfg, JointWrenchSensorCfg
 from isaaclab.utils.configclass import configclass
 from isaaclab.utils.math import (
     create_rotation_matrix_from_view, quat_apply, quat_from_matrix,
@@ -73,6 +74,8 @@ class HomeSceneCfg(InteractiveSceneCfg):
         intensity=1000, radius=1.5), init_state=AssetBaseCfg.InitialStateCfg(pos=(0.4, 0.0, 2.0)))
     robot = FRANKA_PANDA_HIGH_PD_CFG.replace(prim_path="{ENV_REGEX_NS}/Robot")
     robot.spawn.usd_path = str(args.robot_usd.resolve())
+    if args.capture_sensors:
+        robot.spawn.activate_contact_sensors = True
     cube = RigidObjectCfg(
         prim_path="{ENV_REGEX_NS}/Cube",
         spawn=sim_utils.CuboidCfg(
@@ -106,6 +109,22 @@ class HomeSceneCfg(InteractiveSceneCfg):
                     width=640, height=480, focal=28)
     house = camera("{ENV_REGEX_NS}/House", (0.6, -3.2, 10.5), (0.6, -3.0, -0.75),
                    width=640, height=640, focal=26)
+    if args.capture_sensors:
+        detail = camera("{ENV_REGEX_NS}/Detail", (0.9, -0.55, 0.45), (0.48, -0.1, 0.14),
+                        width=960, height=720, focal=36)
+        # Arena's physical mount position, aimed at the gripper TCP in the hand frame.
+        wrist = camera("{ENV_REGEX_NS}/Robot/panda_hand/WristCamera",
+                       (0.11, -0.031, -0.074), (0.0, 0.0, 0.1034), width=640, height=480, focal=18)
+        wrist.update_latest_camera_pose = True
+        left_contact = ContactSensorCfg(
+            prim_path="{ENV_REGEX_NS}/Robot/panda_leftfinger", update_period=0,
+            filter_prim_paths_expr=["{ENV_REGEX_NS}/Banana" if args.object_kind == "banana" else "{ENV_REGEX_NS}/Cube"],
+            track_friction_forces=True, max_contact_data_count_per_prim=64)
+        right_contact = ContactSensorCfg(
+            prim_path="{ENV_REGEX_NS}/Robot/panda_rightfinger", update_period=0,
+            filter_prim_paths_expr=["{ENV_REGEX_NS}/Banana" if args.object_kind == "banana" else "{ENV_REGEX_NS}/Cube"],
+            track_friction_forces=True, max_contact_data_count_per_prim=64)
+        joint_wrench = JointWrenchSensorCfg(prim_path="{ENV_REGEX_NS}/Robot", update_period=0)
 
 
 def main():
@@ -114,6 +133,7 @@ def main():
     sim.reset()
     scene.reset()
     robot, cube = scene["robot"], scene["cube"]
+    wrist_body_index = scene["joint_wrench"].body_names.index("panda_hand") if args.capture_sensors else None
     # InteractiveScene stores default joint poses but does not apply the state
     # reset used by ManagerBasedEnv. Match the native IK tutorial explicitly.
     initial_q = robot.data.default_joint_pos.torch.clone()
@@ -156,13 +176,19 @@ def main():
         ("settle", 100, (grasp_x, -0.2, 0.23), 0.04),
     ]
     snapshots = []
-    video = imageio_ffmpeg.write_frames(str(args.output / "overview.mp4"), (960, 540), fps=50,
-        codec="libx264", pix_fmt_in="rgb24", macro_block_size=1, output_params=["-crf", "21"])
-    video.send(None)
-    close_video = imageio_ffmpeg.write_frames(str(args.output / "detail.mp4"), (640, 480), fps=50,
-        codec="libx264", pix_fmt_in="rgb24", macro_block_size=1, output_params=["-crf", "21"])
-    close_video.send(None)
+    camera_names = ("overview", "detail", "wrist") if args.capture_sensors else ("overview", "detail")
+    writers = {}
+    for name in camera_names:
+        cfg = scene[name].cfg
+        writer = imageio_ffmpeg.write_frames(str(args.output / f"{name}.mp4"), (cfg.width, cfg.height), fps=50,
+            codec="libx264", pix_fmt_in="rgb24", macro_block_size=1, output_params=["-crf", "21", "-threads", "2"])
+        writer.send(None)
+        writers[name] = writer
     records = {k: [] for k in ("actions", "joint_pos", "joint_vel", state_key, "tcp_pose", "phase")}
+    if args.capture_sensors:
+        for name in ("finger_normal_force_w", "finger_friction_force_w", "wrist_joint_wrench",
+                     "sensor_time_s", "wrist_pose_ros_w", "hand_pose_w"):
+            records[name] = []
     # Open the dataset early so partial output remains inspectable on a later failure.
     f = h5py.File(args.output / "episodes.hdf5", "x")
     group = f.create_group("data/demo_0")
@@ -170,10 +196,12 @@ def main():
     group.attrs["object_kind"] = args.object_kind
     group.attrs["placement_reference_z"] = placement_z
     obs = group.create_group("obs")
-    rgb_ds = obs.create_dataset("overview_rgb", (0, 540, 960, 3), maxshape=(None, 540, 960, 3),
-                               dtype="u1", chunks=(1, 540, 960, 3), compression="gzip", compression_opts=1)
-    detail_ds = obs.create_dataset("detail_rgb", (0, 480, 640, 3), maxshape=(None, 480, 640, 3),
-                                  dtype="u1", chunks=(1, 480, 640, 3), compression="gzip", compression_opts=1)
+    rgb_datasets = {}
+    for name in camera_names:
+        cfg = scene[name].cfg
+        shape = (cfg.height, cfg.width, 3)
+        rgb_datasets[name] = obs.create_dataset(f"{name}_rgb", (0, *shape), maxshape=(None, *shape),
+            dtype="u1", chunks=(1, *shape), compression="gzip", compression_opts=1)
     peak_z = -float("inf")
     settled_run = 0
     max_settled_run = 0
@@ -209,10 +237,19 @@ def main():
                 robot.set_joint_position_target_index(target=q_target, joint_ids=entity.joint_ids)
                 robot.set_joint_position_target_index(
                     target=torch.full((1, len(fingers)), gripper, device=sim.device), joint_ids=fingers)
+                force_steps, friction_steps, wrench_steps = [], [], []
                 for _ in range(4):
                     scene.write_data_to_sim()
                     sim.step(render=False)
                     scene.update(0.005)
+                    if args.capture_sensors:
+                        force_steps.append(np.stack([scene[s].data.force_matrix_w.torch[0, 0, 0].cpu().numpy().copy()
+                            for s in ("left_contact", "right_contact")]))
+                        friction_steps.append(np.stack([scene[s].data.friction_forces_w.torch[0, 0, 0].cpu().numpy().copy()
+                            for s in ("left_contact", "right_contact")]))
+                        data = scene["joint_wrench"].data
+                        wrench_steps.append(np.r_[data.force.torch[0, wrist_body_index].cpu().numpy().copy(),
+                            data.torque.torch[0, wrist_body_index].cpu().numpy().copy()])
                 sim.render()
                 state = cube.data.root_state_w.torch[0].cpu().numpy().copy()
                 assert np.isfinite(state).all(), "Nonfinite object state"
@@ -226,14 +263,23 @@ def main():
                 good = lifted and in_target and speed < 0.02 and gripper == 0.04 and name in ("retreat", "settle")
                 settled_run = settled_run + 1 if good else 0
                 max_settled_run = max(max_settled_run, settled_run)
-                rgb = scene["overview"].data.output["rgb"][0, ..., :3].cpu().numpy().copy()
-                detail = scene["detail"].data.output["rgb"][0, ..., :3].cpu().numpy().copy()
-                video.send(rgb)
-                close_video.send(detail)
-                rgb_ds.resize(frame + 1, axis=0)
-                detail_ds.resize(frame + 1, axis=0)
-                rgb_ds[frame] = rgb
-                detail_ds[frame] = detail
+                images = {}
+                for camera_name in camera_names:
+                    pixels = scene[camera_name].data.output["rgb"].torch[0, ..., :3].cpu().numpy().copy()
+                    images[camera_name] = pixels
+                    writers[camera_name].send(pixels)
+                    rgb_datasets[camera_name].resize(frame + 1, axis=0)
+                    rgb_datasets[camera_name][frame] = pixels
+                rgb = images["overview"]
+                if args.capture_sensors:
+                    records["finger_normal_force_w"].append(np.asarray(force_steps))
+                    records["finger_friction_force_w"].append(np.asarray(friction_steps))
+                    records["wrist_joint_wrench"].append(np.asarray(wrench_steps))
+                    records["sensor_time_s"].append((4 * frame + np.arange(1, 5)) * .005)
+                    camera_data = scene["wrist"].data
+                    records["wrist_pose_ros_w"].append(np.r_[camera_data.pos_w.torch[0].cpu().numpy().copy(),
+                        camera_data.quat_w_ros.torch[0].cpu().numpy().copy()])
+                    records["hand_pose_w"].append(robot.data.body_pose_w.torch[0, entity.body_ids[0]].cpu().numpy().copy())
                 records["actions"].append(np.r_[command[0].cpu().numpy(), gripper])
                 records["joint_pos"].append(robot.data.joint_pos.torch[0].cpu().numpy().copy())
                 records["joint_vel"].append(robot.data.joint_vel.torch[0].cpu().numpy().copy())
@@ -244,6 +290,9 @@ def main():
                 records["phase"].append(phase_id)
                 if i == steps - 1:
                     Image.fromarray(rgb).save(args.output / f"{phase_id:02d}-{name}.png")
+                    if args.capture_sensors:
+                        for camera_name in ("wrist", "detail"):
+                            Image.fromarray(images[camera_name]).save(args.output / f"{camera_name}-{phase_id:02d}-{name}.png")
                     if name == "lift":
                         house = scene["house"].data.output["rgb"][0, ..., :3].cpu().numpy().copy()
                         Image.fromarray(house).save(args.output / "house-with-robot.png")
@@ -256,6 +305,24 @@ def main():
         group.create_dataset("actions", data=np.asarray(records.pop("actions")))
         for key, value in records.items():
             obs.create_dataset(key, data=np.asarray(value))
+        if args.capture_sensors:
+            for key in ("finger_normal_force_w", "finger_friction_force_w"):
+                obs[key].attrs["units"] = "N"
+                obs[key].attrs["frame"] = "world; force on sensing finger; filtered to manipulated object"
+                obs[key].attrs["axes"] = "control_step,physics_substep,left_right,xyz"
+            obs["wrist_joint_wrench"].attrs["frame"] = "panda_hand incoming joint frame; child-side joint anchor"
+            obs["wrist_joint_wrench"].attrs["components"] = "Fx,Fy,Fz [N], Tx,Ty,Tz [N*m]; reaction wrench, not isolated external load"
+            obs["wrist_pose_ros_w"].attrs["convention"] = "world xyz + ROS optical-frame quaternion XYZW"
+            obs["sensor_time_s"].attrs["description"] = "seconds since start of recorded control sequence; 4 samples per RGB frame"
+            group.attrs["force_hz"] = 200
+        calibration = group.create_group("calibration")
+        for camera_name in camera_names:
+            camera_data = scene[camera_name].data
+            item = calibration.create_group(camera_name)
+            item.create_dataset("K", data=camera_data.intrinsic_matrices.torch[0].cpu().numpy())
+            item.attrs["mount_parent"] = "panda_hand" if camera_name == "wrist" else "world"
+            item.attrs["offset_pos"] = scene[camera_name].cfg.offset.pos
+            item.attrs["offset_rot_opengl_xyzw"] = scene[camera_name].cfg.offset.rot
         group.attrs["success"] = bool(success)
         group.attrs["num_samples"] = frame
         f["data"].attrs["total"] = frame
@@ -276,15 +343,17 @@ def main():
             cameras={name: dict(eye=list(scene[name].cfg.offset.pos), rotation_xyzw=list(scene[name].cfg.offset.rot),
                 width=scene[name].cfg.width, height=scene[name].cfg.height,
                 focal_length=scene[name].cfg.spawn.focal_length,
-                horizontal_aperture=scene[name].cfg.spawn.horizontal_aperture) for name in ("overview", "detail")})
+                horizontal_aperture=scene[name].cfg.spawn.horizontal_aperture,
+                mount_parent="panda_hand" if name == "wrist" else "world") for name in camera_names},
+            sensors_enabled=args.capture_sensors, force_hz=200 if args.capture_sensors else None)
         if args.object_kind == "cube":
             summary.update(initial_cube_z=initial_z, peak_cube_z=peak_z, final_cube_state=state.tolist())
         (args.output / "summary.json").write_text(json.dumps(summary, indent=2))
         print(json.dumps(summary, indent=2), flush=True)
     finally:
         f.close()
-        video.close()
-        close_video.close()
+        for writer in writers.values():
+            writer.close()
     assert success, "Physical task unsuccessful; failed data and videos preserved"
 
 

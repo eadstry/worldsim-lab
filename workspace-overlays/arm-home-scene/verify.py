@@ -53,7 +53,7 @@ def main():
         if report["object_kind"] == "cube":
             report["max_cube_step_displacement_m"] = report["max_object_step_displacement_m"]
         video_report = {}
-        for camera in ("overview", "detail"):
+        for camera in (key.removesuffix("_rgb") for key in obs if key.endswith("_rgb")):
             rgb = obs[camera + "_rgb"]
             for index in (100, frames // 2, frames - 1):
                 assert rgb[index].std() > 2, f"Blank {camera} frame"
