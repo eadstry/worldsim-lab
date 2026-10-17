@@ -21,27 +21,37 @@ def main():
         d = f["data/demo_0"]
         actions = d["actions"][:]
         obs = d["obs"]
-        state = obs["cube_state"][:]
+        state_key = "object_state" if "object_state" in obs else "cube_state"
+        state = obs[state_key][:]
         frames = len(actions)
         assert all(len(v) == frames for v in obs.values())
         assert np.isfinite(actions).all()
-        assert all(np.isfinite(obs[k][:]).all() for k in ("joint_pos", "joint_vel", "cube_state", "tcp_pose"))
+        assert all(np.isfinite(obs[k][:]).all() for k in ("joint_pos", "joint_vel", state_key, "tcp_pose"))
         initial_z = state[30, 2]
         lift = float(state[:, 2].max() - initial_z)
         final = state[-50:]
         speed = np.linalg.norm(final[:, 7:10], axis=-1)
         xy = np.abs(final[:, :2] - [0.5, -0.2])
-        z = np.abs(final[:, 2] - 0.02)
+        z = np.abs(final[:, 2] - float(d.attrs.get("placement_reference_z", 0.02)))
         assert lift > 0.15
         assert (xy < 0.04).all() and (z < 0.015).all() and (speed < 0.02).all()
-        assert (obs["joint_pos"][-50:, -2:] > 0.035).all(), "Fingers not open at end"
+        names = json.loads(d.attrs["joint_names"])
+        finger_ids = [names.index("panda_finger_joint1"), names.index("panda_finger_joint2")]
+        assert (obs["joint_pos"][-50:][:, finger_ids] > 0.035).all(), "Fingers not open at end"
         separation = np.linalg.norm(obs["tcp_pose"][-50:, :3] - final[:, :3], axis=-1)
         assert (separation > 0.15).all(), "Gripper has not withdrawn"
+        carry = (obs["phase"][:] == 4) & (state[:, 2] - initial_z > 0.15)
+        assert carry.sum() >= 50, "No sustained elevated transfer"
+        carry_distance = np.linalg.norm(obs["tcp_pose"][:][carry, :3] - state[carry, :3], axis=-1)
+        assert (carry_distance < 0.08).all(), "Object separated from tool during transfer"
         assert bool(d.attrs["success"])
         report.update(frames=frames, success=True, measured_lift_m=lift,
                       final_max_speed_m_s=float(speed.max()), final_stable_seconds=1.0,
                       final_min_tool_separation_m=float(separation.min()), finite_actions_and_states=True,
-                      max_cube_step_displacement_m=float(np.linalg.norm(np.diff(state[:, :3], axis=0), axis=-1).max()))
+                      object_kind=d.attrs.get("object_kind", "cube"), elevated_transfer_steps=int(carry.sum()),
+                      max_object_step_displacement_m=float(np.linalg.norm(np.diff(state[:, :3], axis=0), axis=-1).max()))
+        if report["object_kind"] == "cube":
+            report["max_cube_step_displacement_m"] = report["max_object_step_displacement_m"]
         video_report = {}
         for camera in ("overview", "detail"):
             rgb = obs[camera + "_rgb"]

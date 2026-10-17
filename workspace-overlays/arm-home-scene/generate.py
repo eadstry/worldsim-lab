@@ -2,7 +2,7 @@
 
 Uses the current Isaac Lab Franka high-PD configuration and differential-IK tutorial
 controller. This is a scripted demonstration, not Mimic augmentation or policy inference.
-All manipulator motion after initialization uses joint targets; no cube attachment,
+All manipulator motion after initialization uses joint targets; no object attachment,
 pose writes, collision disabling, or kinematic animation is used during the episode.
 """
 import argparse
@@ -19,9 +19,13 @@ parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument("--home", type=Path, required=True)
 parser.add_argument("--robot-usd", type=Path, required=True)
 parser.add_argument("--output", type=Path, required=True)
+parser.add_argument("--object-kind", choices=("cube", "banana"), default="cube")
+parser.add_argument("--object-usd", type=Path)
 AppLauncher.add_app_launcher_args(parser)
 args = parser.parse_args()
 assert args.home.is_file() and args.robot_usd.is_file()
+if args.object_kind == "banana":
+    assert args.object_usd is not None and args.object_usd.is_file(), "Banana requires --object-usd"
 args.output.mkdir(parents=True, exist_ok=False)
 app = AppLauncher(vars(args).copy(), enable_cameras=True).app
 
@@ -43,6 +47,11 @@ from isaaclab.utils.math import (
     skew_symmetric_matrix, subtract_frame_transforms,
 )
 from isaaclab_assets.robots.franka import FRANKA_PANDA_HIGH_PD_CFG
+
+# Measured in the unscaled Arena YCB asset: the y=0 cross-section is ~39 mm wide.
+grasp_x = 0.5 - 0.03291 if args.object_kind == "banana" else 0.5
+placement_z = 0.018335 if args.object_kind == "banana" else 0.02
+state_key = "object_state" if args.object_kind == "banana" else "cube_state"
 
 
 def camera(prim, eye, target, width=960, height=540, focal=24):
@@ -76,10 +85,19 @@ class HomeSceneCfg(InteractiveSceneCfg):
         ),
         init_state=RigidObjectCfg.InitialStateCfg(pos=(0.5, 0.0, 0.027)),
     )
+    if args.object_kind == "banana":
+        # Keep the asset's native 0.12 kg mass and convex-decomposition collision.
+        cube = RigidObjectCfg(
+            prim_path="{ENV_REGEX_NS}/Banana",
+            spawn=sim_utils.UsdFileCfg(usd_path=str(args.object_usd.resolve()),
+                rigid_props=sim_utils.RigidBodyPropertiesCfg(solver_position_iteration_count=16,
+                    solver_velocity_iteration_count=4, max_depenetration_velocity=1)),
+            init_state=RigidObjectCfg.InitialStateCfg(pos=(0.5, 0.0, placement_z + 0.007)),
+        )
     # A visual target painted onto the original dining tabletop; not a replacement table.
     target = AssetBaseCfg(
         prim_path="{ENV_REGEX_NS}/Target",
-        spawn=sim_utils.CuboidCfg(size=(0.12, 0.12, 0.001),
+        spawn=sim_utils.CuboidCfg(size=(0.22, 0.24, 0.001) if args.object_kind == "banana" else (0.12, 0.12, 0.001),
             visual_material=sim_utils.PreviewSurfaceCfg(diffuse_color=(0.08, 0.5, 0.15))),
         init_state=AssetBaseCfg.InitialStateCfg(pos=(0.5, -0.2, 0.001)),
     )
@@ -123,16 +141,19 @@ def main():
         command_type="pose", use_relative_mode=False, ik_method="dls"), 1, sim.device)
     tip_offset = torch.tensor([[0, 0, 0.1034]], device=sim.device)
     quat = [1.0, 0.0, 0.0, 0.0]  # XYZW: tool z points down.
+    if args.object_kind == "banana":
+        # Rotate jaws from world Y to world X to pinch across the banana's width.
+        quat = [2 ** -0.5, 2 ** -0.5, 0.0, 0.0]
     phases = [
-        ("approach", 100, (0.5, 0, 0.22), 0.04),
-        ("descend", 150, (0.5, 0, 0.024), 0.04),
-        ("grasp", 75, (0.5, 0, 0.024), 0.0),
-        ("lift", 125, (0.5, 0, 0.25), 0.0),
-        ("transfer", 125, (0.5, -0.2, 0.25), 0.0),
-        ("lower", 100, (0.5, -0.2, 0.026), 0.0),
-        ("release", 75, (0.5, -0.2, 0.026), 0.04),
-        ("retreat", 100, (0.5, -0.2, 0.23), 0.04),
-        ("settle", 100, (0.5, -0.2, 0.23), 0.04),
+        ("approach", 100, (grasp_x, 0, 0.22), 0.04),
+        ("descend", 150, (grasp_x, 0, placement_z + 0.004), 0.04),
+        ("grasp", 75, (grasp_x, 0, placement_z + 0.004), 0.0),
+        ("lift", 125, (grasp_x, 0, 0.25), 0.0),
+        ("transfer", 125, (grasp_x, -0.2, 0.25), 0.0),
+        ("lower", 100, (grasp_x, -0.2, placement_z + 0.006), 0.0),
+        ("release", 75, (grasp_x, -0.2, placement_z + 0.006), 0.04),
+        ("retreat", 100, (grasp_x, -0.2, 0.23), 0.04),
+        ("settle", 100, (grasp_x, -0.2, 0.23), 0.04),
     ]
     snapshots = []
     video = imageio_ffmpeg.write_frames(str(args.output / "overview.mp4"), (960, 540), fps=50,
@@ -141,11 +162,13 @@ def main():
     close_video = imageio_ffmpeg.write_frames(str(args.output / "detail.mp4"), (640, 480), fps=50,
         codec="libx264", pix_fmt_in="rgb24", macro_block_size=1, output_params=["-crf", "21"])
     close_video.send(None)
-    records = {k: [] for k in ("actions", "joint_pos", "joint_vel", "cube_state", "tcp_pose", "phase")}
+    records = {k: [] for k in ("actions", "joint_pos", "joint_vel", state_key, "tcp_pose", "phase")}
     # Open the dataset early so partial output remains inspectable on a later failure.
     f = h5py.File(args.output / "episodes.hdf5", "x")
     group = f.create_group("data/demo_0")
     group.attrs["joint_names"] = json.dumps(robot.joint_names)
+    group.attrs["object_kind"] = args.object_kind
+    group.attrs["placement_reference_z"] = placement_z
     obs = group.create_group("obs")
     rgb_ds = obs.create_dataset("overview_rgb", (0, 540, 960, 3), maxshape=(None, 540, 960, 3),
                                dtype="u1", chunks=(1, 540, 960, 3), compression="gzip", compression_opts=1)
@@ -192,14 +215,14 @@ def main():
                     scene.update(0.005)
                 sim.render()
                 state = cube.data.root_state_w.torch[0].cpu().numpy().copy()
-                assert np.isfinite(state).all(), "Nonfinite cube state"
+                assert np.isfinite(state).all(), "Nonfinite object state"
                 if initial_z is None and frame >= 30:
                     initial_z = float(state[2])
                 peak_z = max(peak_z, float(state[2]))
                 lifted |= bool(initial_z is not None and float(state[2]) - initial_z > 0.15)
                 speed = float(np.linalg.norm(state[7:10]))
                 in_target = bool(abs(state[0] - 0.5) < 0.04 and abs(state[1] + 0.2) < 0.04
-                                 and abs(state[2] - 0.02) < 0.015)
+                                 and abs(state[2] - placement_z) < 0.015)
                 good = lifted and in_target and speed < 0.02 and gripper == 0.04 and name in ("retreat", "settle")
                 settled_run = settled_run + 1 if good else 0
                 max_settled_run = max(max_settled_run, settled_run)
@@ -214,7 +237,7 @@ def main():
                 records["actions"].append(np.r_[command[0].cpu().numpy(), gripper])
                 records["joint_pos"].append(robot.data.joint_pos.torch[0].cpu().numpy().copy())
                 records["joint_vel"].append(robot.data.joint_vel.torch[0].cpu().numpy().copy())
-                records["cube_state"].append(state)
+                records[state_key].append(state)
                 hand_now = robot.data.body_pose_w.torch[:, entity.body_ids[0]]
                 tip_now = hand_now[:, :3] + quat_apply(hand_now[:, 3:], tip_offset)
                 records["tcp_pose"].append(torch.cat((tip_now, hand_now[:, 3:]), -1)[0].cpu().numpy().copy())
@@ -226,7 +249,7 @@ def main():
                         Image.fromarray(house).save(args.output / "house-with-robot.png")
                     snapshots.append(f"{phase_id:02d}-{name}.png")
                 frame += 1
-            print(json.dumps(dict(phase=name, frames=frame, cube=state[:3].tolist(),
+            print(json.dumps(dict(phase=name, frames=frame, object_kind=args.object_kind, object_position=state[:3].tolist(),
                 tcp=records["tcp_pose"][-1][:3].tolist(),
                 speed=speed, lifted=lifted, max_stable_steps=max_settled_run)), flush=True)
         success = lifted and settled_run >= 50
@@ -241,9 +264,12 @@ def main():
         group.attrs["generator"] = "scripted differential IK, physical grasp; no learned policy or Mimic augmentation"
         summary = dict(success=bool(success), frames=frame, fps=50, seconds=frame / 50,
             robot="Franka Panda", native_surface="scene000430 original dining table",
-            initial_cube_z=initial_z, peak_cube_z=peak_z, final_cube_state=state.tolist(),
+            object_kind=args.object_kind, initial_object_z=initial_z, peak_object_z=peak_z, final_object_state=state.tolist(),
+            object_usd=str(args.object_usd.resolve()) if args.object_usd else None,
+            object_asset_sha256=hashlib.sha256(args.object_usd.read_bytes()).hexdigest() if args.object_usd else None,
+            grasp_x=grasp_x, tool_quaternion_xyzw=quat, placement_reference_z=placement_z,
             final_speed_m_s=speed, final_stable_steps=settled_run,
-            success_criterion="lift > .15 m then place within .04 m XY and .015 m Z of target, released, speed < .02 m/s for final >=50 steps",
+            success_criterion=f"lift > .15 m then place within .04 m XY and .015 m Z of target (z={placement_z}), released, speed < .02 m/s for final >=50 steps",
             generator="scripted demonstration using current Franka IK tutorial; custom task criterion",
             snapshots=snapshots, home=str(args.home.resolve()), robot_usd=str(args.robot_usd.resolve()),
             source_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
@@ -251,6 +277,8 @@ def main():
                 width=scene[name].cfg.width, height=scene[name].cfg.height,
                 focal_length=scene[name].cfg.spawn.focal_length,
                 horizontal_aperture=scene[name].cfg.spawn.horizontal_aperture) for name in ("overview", "detail")})
+        if args.object_kind == "cube":
+            summary.update(initial_cube_z=initial_z, peak_cube_z=peak_z, final_cube_state=state.tolist())
         (args.output / "summary.json").write_text(json.dumps(summary, indent=2))
         print(json.dumps(summary, indent=2), flush=True)
     finally:
