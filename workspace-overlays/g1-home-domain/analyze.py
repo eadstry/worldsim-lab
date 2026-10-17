@@ -85,7 +85,7 @@ def main():
             result['matched_step_rgb_mae_255'] = {view: float(np.abs(frame.astype(float) - baseline_frames[view]).mean())
                                                  for view, frame in comparison.items()}
             result['overview_video'] = export_view(e['overview_rgb'], output / 'overview.mp4', fps)
-            if name in ('baseline', 'camera', 'combined_s1', 'combined_s2', 'pose_wide'):
+            if name in ('baseline', 'camera', 'combined_s1', 'combined_s2', 'pose_wide') or 'camera' in plan['sampled']:
                 result['head_video'] = export_view(e['camera_obs/robot_head_cam_rgb'], output / 'head.mp4', fps)
             for label, index in [('start', 0), ('middle', count//2), ('end', count-1)]:
                 Image.fromarray(e['overview_rgb'][index]).save(output / f'overview-{label}.png')

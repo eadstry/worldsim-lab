@@ -16,15 +16,18 @@ class AnalysisTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             plans = []
-            for name, success, brightness in [('baseline', True, 80), ('camera', False, 120)]:
+            for name, success, brightness in [('baseline', True, 80), ('camera', False, 120), ('visual_only', True, 140)]:
                 folder = root / 'runs' / name
                 folder.mkdir(parents=True)
                 plan = dict(name=name, generation_seed=1, randomization_seed=100, active=[], sampled={})
+                if name == 'visual_only':
+                    plan['sampled'] = {'camera': {'focal_scale': 1.0}}
                 path = root / (name + '.json')
                 path.write_text(json.dumps(plan))
                 plans.append(str(path))
                 for label in ('resolved', 'readback'):
-                    (folder / f'dr-{label}.json').write_text('{}')
+                    values = {'camera_intrinsics': [[10, 0, 16], [0, 10, 12], [0, 0, 1]]} if label == 'readback' else {}
+                    (folder / f'dr-{label}.json').write_text(json.dumps(values))
                 with h5py.File(folder / 'episodes.hdf5', 'w') as f:
                     data = f.create_group('data')
                     data.attrs['env_args'] = json.dumps({'sim_args': {'dt': .005, 'decimation': 4}})
@@ -43,9 +46,10 @@ class AnalysisTests(unittest.TestCase):
                             '--runs', str(root / 'runs'), '--output', str(root / 'analysis')],
                            check=True, capture_output=True)
             result = json.loads((root / 'analysis/summary.json').read_text())
-            self.assertEqual(result['num_attempts'], 2)
-            self.assertEqual(result['num_success'], 1)
+            self.assertEqual(result['num_attempts'], 3)
+            self.assertEqual(result['num_success'], 2)
             failed = result['episodes'][1]
+            self.assertEqual(result['episodes'][2]['head_video']['decoded_frames'], 5)
             self.assertFalse(failed['success'])
             self.assertEqual(failed['overview_video']['decoded_frames'], 5)
             self.assertEqual(failed['head_video']['decoded_frames'], 5)
