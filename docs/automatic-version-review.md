@@ -6,7 +6,7 @@
 
 ## 新任务的基线
 
-版本策略保存在 `config/version-policy.json`。默认起点为本机已获取的 `origin/codex/git-all-worktrees-20261016`，包含本次全工作树整理与成果归档；最低祖先是整合提交 `f7304e4`，起点同时必须包含自动审查策略。先 fetch，再创建任务：
+版本策略保存在 `config/version-policy.json`。默认起点为 `origin/main`，最低祖先是 2026-10-20 的分支收敛提交 `7420954`（该提交把此前各研究分支合并为一次快照导入，旧分支链已归档到 Release `archive-branches-20261020`）。起点同时必须包含自动审查策略。先 fetch，再创建任务：
 
 ```bash
 git fetch origin
@@ -56,7 +56,7 @@ git push -u origin "$(git branch --show-current)"
 | 分支 | `codex/`，包含最低整合祖先及策略文件；拒绝 detached HEAD、main、release 分支 |
 | 暂存范围 | 拒绝运行数据、模型、凭据文件名、`.local/`、runtime、整体根目录和上游 pin 更新 |
 | 版本完整性 | 上游 URL/gitlink/锁定一致、已初始化上游干净、封存文件哈希正确、历史版本未删除或重封 |
-| 基础检查 | `cloud-check.sh`：版本管理、审查门禁和共享队列测试、共享配置测试、博客构建及完整性检查 |
+| 基础检查 | `cloud-check.sh`：版本管理、成果索引与文档链接一致性、审查门禁和共享队列测试、共享配置测试、博客构建及完整性检查 |
 | 相关模块 | 对修改 Python 的 production、cuRobo v2、内部计时、生产吞吐、Arena benchmark 自动运行对应主机测试 |
 | 内容一致 | 审查前后 HEAD、分支、Git 暂存树一致；提交和推送时再次匹配 |
 | 推送 | 仅当前已审查分支、指定 origin；拒绝其他目标、远端删除及非 fast-forward 历史 |
