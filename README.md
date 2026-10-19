@@ -16,6 +16,7 @@
 | 查找报告、配置示例与历史验证 | [成果索引](outputs/README.md) |
 | 查看 OpenArm 生成、监控和并行导出 | [生产扩展说明](workspace-overlays/openarm-production/README.md) |
 | 配置 AutoData 生成与 Arena 评估 | [共享配置说明](config/README.md) |
+| 在新机器或容器里配置运行环境 | [运行环境配置](docs/environment-setup.md) |
 | 修改博客或在本机预览 | [博客维护说明](private-blog/README.md) |
 | 管理分支、worktree 和上游修改 | [版本管理约定](docs/version-management.md) · [过程记录](docs/process-log.md) |
 
