@@ -134,3 +134,24 @@ class ValidationTests(unittest.TestCase):
             self.fixture(output.with_name('dataset_failed.hdf5'),label=False,moving=True)
             result=validate(output,0)
             self.assertFalse(result['episodes'][0]['terminal_pass'])
+
+class VideoTests(ValidationTests):
+    def test_nested_video_destination_and_encoded_dimensions(self):
+        import tempfile
+        import imageio_ffmpeg
+        from run import validate, videos
+        with tempfile.TemporaryDirectory() as tmp:
+            base = Path(tmp)
+            output = base/'dataset.hdf5'
+            self.fixture(output)
+            destination = base/'videos'/'env1-workers0'
+            already_saved = set()
+            result = videos(output, validate(output, 1), destination, already_saved)
+            self.assertEqual(result['status'], 'complete')
+            self.assertEqual(already_saved, {'success'})
+            self.assertEqual(videos(output, validate(output, 1), destination, already_saved)['files'], [])
+            reader = imageio_ffmpeg.read_frames(str(destination/'success.mp4'))
+            metadata = next(reader)
+            self.assertEqual(metadata['size'], (320,240))
+            self.assertEqual(metadata['fps'], 15)
+            reader.close()

@@ -126,7 +126,7 @@ def videos(output, validation, destination, already_saved):
         if outcome in already_saved:
             continue
         target = destination / (outcome + '.mp4')
-        destination.mkdir(exist_ok=True)
+        destination.mkdir(parents=True, exist_ok=True)
         with h5py.File(output.parent / episode['file'], 'r') as file:
             group = file['data/' + episode['episode']]
             camera = group['obs/left_hand_rgb']
@@ -261,16 +261,62 @@ def run_cell(args, label, envs, workers, seed, attempts, provenance):
         raise
 
 
+def reuse_sync_pilot(args, provenance):
+    """Recover only the known post-validation video failure; no new GPU work."""
+    original = args.reuse_sync_pilot
+    source = original / 'pilot-workers0'
+    row = json.loads((source / 'cell.json').read_text())
+    supervisor = json.loads((source / 'dataset.run.json').read_text())
+    if (row.get('label') != 'pilot-workers0' or row.get('envs') != 1 or row.get('workers') != 0
+            or row.get('seed') != 101 or row.get('attempts_requested') != 1
+            or row.get('stats', {}).get('num_attempts') != 1
+            or row.get('stats', {}).get('num_success') != 1
+            or supervisor.get('status') != 'succeeded'
+            or not row.get('error', '').startswith('FileNotFoundError:')
+            or '/videos/env1-workers0' not in row['error']):
+        raise ValueError('Only the verified sync pilot video-directory failure can be reused')
+    old_manifest = json.loads((original / 'provenance.json').read_text())
+    harness = Path(__file__).parent.resolve()
+    # Only the controller and its tests/docs may change for this recovery.
+    # The launch transform, simulation inputs/assets and production code must match.
+    for name, expected in old_manifest.items():
+        path = Path(name)
+        if path.parent == harness and path.name in ('run.py', 'test_capacity.py', 'README.md'):
+            continue
+        if provenance.get(name) != expected:
+            raise ValueError('Pilot dependency changed; refusing reuse: ' + name)
+    recorded = json.loads((source / 'validation.json').read_text())
+    for name, details in recorded['files'].items():
+        if digest(source / name) != details['sha256']:
+            raise ValueError('Recovered pilot file hash changed: ' + name)
+    target = args.directory / 'pilot-workers0'
+    shutil.copytree(source, target)
+    before = time.monotonic()
+    recovered = validate(target / 'dataset.hdf5', 1)
+    if recovered != recorded:
+        raise ValueError('Recovered pilot validation differs from original evidence')
+    row['recovery_validation_seconds'] = time.monotonic() - before
+    row['original_error'] = row.pop('error')
+    row.update(status='complete', reused_from=str(source),
+        reused_revision=json.loads((original/'environment.json').read_text())['workspace_commit'])
+    row['review_videos'] = videos(target/'dataset.hdf5', recovered,
+        args.directory/'videos/env1-workers0', set())
+    write(target/'cell.json', row)
+    return row
+
+
 def main():
     parser = argparse.ArgumentParser()
     for name in ('directory', 'production-root', 'gate-root', 'autodata-root', 'input', 'task'):
         parser.add_argument('--' + name, type=Path, required=True)
+    parser.add_argument('--reuse-sync-pilot', type=Path, default=None)
     args = parser.parse_args()
     def interrupted(signum, frame):
         raise KeyboardInterrupt('Controller received signal ' + str(signum))
     signal.signal(signal.SIGTERM, interrupted)
     for name, value in vars(args).items():
-        setattr(args, name, value.resolve())
+        if value is not None:
+            setattr(args, name, value.resolve())
     args.directory.mkdir(parents=True, exist_ok=False)
     sys.path[:0] = [str(args.production_root), str(args.gate_root)]
     runtime = args.production_root / 'runtime'
@@ -297,7 +343,10 @@ def main():
         return row
     write(args.directory / 'report.json', report)
     try:
-        for worker in (0, 2):
+        if args.reuse_sync_pilot is not None:
+            report['rows'].append(reuse_sync_pilot(args, provenance))
+            write(args.directory / 'report.json', report)
+        for worker in ((2,) if args.reuse_sync_pilot is not None else (0, 2)):
             row = run(f'pilot-workers{worker}', 1, worker, 101, 1)
             if row['stats']['num_success'] != 1:
                 raise RuntimeError('Pilot task unsuccessful; screening not started')
