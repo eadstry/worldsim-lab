@@ -4,7 +4,7 @@
 
 [自动提交与审查](docs/automatic-version-review.md) · [实验版本检查记录](docs/experimental-analysis-20261015.md) · [研究资料](docs/README.md) · [实验成果](outputs/README.md) · [OpenArm 扩展](workspace-overlays/openarm-production/README.md) · [共享配置](config/README.md) · [博客维护](private-blog/README.md)
 
-> 2026-10-14 的本机保存快照已归档到 tag `archive/local-frontier-20261014`，来源、上游补丁和当时的检查记录仍见[快照说明](workspace-overlays/local-frontier-20261014/README.md)；当前实现和验证状态以 main 中的文件为准。
+> 2026-10-14 的本机保存快照已归档到 Release `archive-branches-20261020`，来源、上游补丁和当时的检查记录仍见[快照说明](workspace-overlays/local-frontier-20261014/README.md)；当前实现和验证状态以 main 中的文件为准。
 
 ## 从这里开始
 

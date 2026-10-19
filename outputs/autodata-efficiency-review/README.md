@@ -6,11 +6,12 @@ v022 以 e476 worktree 的 `v021/charts.md` 为基准，重写项目架构说明
 
 ## 历史版本
 
-v001–v021（含 v015 的 51 页 PDF 图册）已从此树移出，完整内容保存在 tag `archive/autodata-efficiency-review-v001-v021`：
+v001–v021（含 v015 的 51 页 PDF 图册）已从此树移出，完整内容见 Release
+[`archive-autodata-review-20261020`](https://github.com/eadstry/worldsim-lab/releases/tag/archive-autodata-review-20261020)
+的附件 `autodata-review-v001-v021.zip`：
 
 ```bash
-git fetch --tags
-git checkout archive/autodata-efficiency-review-v001-v021 -- outputs/autodata-efficiency-review/v015
+unzip autodata-review-v001-v021.zip -d outputs/autodata-efficiency-review/
 ```
 
 移出原因、体积数据与恢复方式见 [ARCHIVE.md](ARCHIVE.md)。
