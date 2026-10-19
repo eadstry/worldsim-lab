@@ -7,3 +7,5 @@
 这次保存及主机检查不代表新的 GPU 仿真或训练验证。报告和运行验证 JSON 是原目录已有记录。
 
 本目录记录历史保存时点。PR 整理时仅提取本目录及根 README 的独有内容；导出实现与效率报告由对应的独立 PR 提供。历史 manifest 和 validation 不代表当前文件重新通过检查，尤其不能用历史 `runtime-check-result.json` 的通过值覆盖当前失败记录。
+
+2026-10-20 分支收敛：`codex/local-frontier-20261014` 已从远端删除，完整工作树与删除前的全部历史保存在 Release `archive-branches-20261020`（`archive-local-frontier-20261014.zip`、`worldsim-lab-archive-20261020.bundle`）。本目录内容继续保留在 main。

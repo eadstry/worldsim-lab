@@ -1,10 +1,13 @@
 {
   "schema_version": 1,
-  "required_ancestor": "f7304e48cb5ff1446d64100ba29c00a794e0d383",
-  "default_start_ref": "origin/codex/git-all-worktrees-20261016",
+  "required_ancestor": "742095485302d8ac5b02624ac06740bcf4adc671",
+  "default_start_ref": "origin/main",
   "branch_prefix": "codex/",
   "remote": "origin",
-  "remote_url": "https://github.com/eadstry/WorldSimReady-Home.git",
-  "protected_branches": ["main", "release/*"],
+  "remote_url": "https://github.com/eadstry/worldsim-lab.git",
+  "protected_branches": [
+    "main",
+    "release/*"
+  ],
   "large_change_files": 100
 }
