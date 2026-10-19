@@ -38,5 +38,6 @@ AutoData 文章历史版本：[v001](autodata-guide/v001/CHANGELOG.md)、[v002](
 - 已封存版本的正文、资源和校验值保持不变；交付状态按双端交付规则独立记录。
 - 新增工件或版本后运行 `python3 scripts/build-outputs-index.py` 并提交生成结果；CI 会校验索引是否最新。
 - 新增工件需在 `config/outputs-status.json` 登记状态、标题与验证范围；不要将“已有文件”或“已封存”写成运行成功。
+- 交付包不复制 `workspace-overlays/` 的源码；用 `code-ref.json` 指向 overlay，需要可分发包时放 zip 附件。
 - 环境、原始数据集和批量日志保留在其运行或存储位置，不作为报告附件重复堆放。
 - 文件存在不等于已提交 Git。提交前使用 `git status --short` 检查新成果及子模块内的独立变更。
