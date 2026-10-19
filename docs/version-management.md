@@ -11,6 +11,7 @@
 | 上游已有修改 | `workspace-overlays/upstream-patches/` | 补丁、原提交和 SHA256；不自动应用 |
 | 研究说明 | `docs/` | 根仓库提交，主题索引提供入口 |
 | 交付成果 | `outputs/<artifact-id>/vNNN/` | 新版本新增目录；已封存内容和来源不改写，交付回执可独立更新。确需控制仓库体积时，旧版本整体移出主树，用 `archive-*` Release 附件保留并在该 artifact 的 `ARCHIVE.md` 登记 |
+| 成果索引 | `outputs/index.json`、`outputs/README.md` 的表格、`config/outputs-status.json` | 前两者由 `scripts/build-outputs-index.py` 生成；状态、标题与验证范围在 status 文件登记 |
 | 博客 | `private-blog/content/` | 正文源、构建脚本与现有 `dist/` 一起提交；首页和备份继续保留 |
 | 数据和运行环境 | `runs/`、扩展 `runtime/`、`config/.local/` 等 | 本地保存和单独备份，不加入 Git |
 
@@ -41,7 +42,7 @@ python3 scripts/review-workspace.py prepare --allow-uninitialized \
 git commit -m "Describe the change"
 ```
 
-`check-version-management.py` 检查上游 URL、索引 gitlink、锁定提交、已初始化子模块 HEAD、嵌套版本偏移、成果文件 SHA256 和暂存文件边界。暂存文件还有未暂存修改时要求重新审阅和暂存，避免检查版本与提交版本不同。已封存 manifest 的内容元数据不可改写。历史版本默认保留；确需移出主树时，必须先以 `archive-*` Release 附件归档、在对应 `ARCHIVE.md` 登记取回方法，并保证 `check-version-management.py` 仍能追溯封存快照。
+`check-version-management.py` 检查上游 URL、索引 gitlink、锁定提交、已初始化子模块 HEAD、嵌套版本偏移、成果文件 SHA256 和暂存文件边界。`build-outputs-index.py --check` 校验成果索引与各 `manifest.json` 一致，`check-doc-links.py` 校验 Markdown 相对链接（跳过上游子模块、保留快照与已归档版本）。暂存文件还有未暂存修改时要求重新审阅和暂存，避免检查版本与提交版本不同。已封存 manifest 的内容元数据不可改写。历史版本默认保留；确需移出主树时，必须先以 `archive-*` Release 附件归档、在对应 `ARCHIVE.md` 登记取回方法，并保证 `check-version-management.py` 仍能追溯封存快照。
 
 默认将未保存的上游修改显示为警告，以保留已有工作。需要验证完全干净的源码基线时，执行：
 

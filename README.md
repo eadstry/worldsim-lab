@@ -101,7 +101,7 @@ GPU 实验需要另外配置 NVIDIA GPU、Isaac Sim、cuRobo、任务资产和�
 
 - **上游版本固定**：阅读或修改前遵守最近的 `AGENTS.md`；本地扩展优先放在 `workspace-overlays/`，上游改动保存为补丁。父仓库只记录子模块提交引用。
 - **正文来源明确**：AutoData 全流程文章以 `private-blog/content/autodata/AutoData-全流程可视化讲解.md` 为唯一正文源；`docs/autodata/` 中的同名 HTML 保留为历史参考。
-- **成果按版本封存**：使用 `outputs/<artifact-id>/<version>/`，修订时新增版本。正文、资源和校验值保持一致，交付状态以各版本 `manifest.json` 为准。
+- **成果按版本封存**：使用 `outputs/<artifact-id>/<version>/`，修订时新增版本。正文、资源和校验值保持一致，交付状态以各版本 `manifest.json` 为准；成果索引与生命周期见 [`outputs/index.json`](outputs/index.json) 和 `config/outputs-status.json`。
 - **站点文件按维护规则保留**：`private-blog/dist/` 包含手工维护的首页，`backups/` 被检查脚本引用，不能作为缓存整体清空。
 - **同步以提交为单位**：通过必要检查后提交并推送；其他机器需获取已推送提交，未提交文件不会自动镜像。VS Code 排除设置仅影响编辑器显示与搜索。
 
