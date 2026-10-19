@@ -1,0 +1,23 @@
+{
+  "files.exclude": {
+    "**/.git": true,
+    "**/.venv": true,
+    "**/node_modules": true,
+    "**/__pycache__": true,
+    "**/.sites-runtime": true,
+    "private-blog/dist": true,
+    "private-blog/backups": true
+  },
+  "search.exclude": {
+    "**/.venv/**": true,
+    "**/node_modules/**": true,
+    "**/__pycache__/**": true,
+    "**/.sites-runtime/**": true,
+    "**/logs/**": true,
+    "**/submodules/**": true,
+    "private-blog/dist/**": true,
+    "private-blog/backups/**": true,
+    "outputs/autodata-guide/v001/**": true,
+    "outputs/autodata-guide/v002/**": true
+  }
+}

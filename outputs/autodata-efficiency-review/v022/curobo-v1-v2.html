@@ -1,0 +1,116 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>cuRobo v1 与 v2：改变了什么，当前项目是否需要升级</title><style>*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f4f7fb;color:#24384e;font:17px/1.9 system-ui,'Noto Sans CJK SC',sans-serif}header{background:#102c46;color:white;padding:28px 5vw}header span{font-size:12px;letter-spacing:3px;color:#8acdbc}nav{display:flex;gap:24px;flex-wrap:wrap;margin-top:12px}nav a{color:#fff;text-decoration:none}main{max-width:1240px;margin:36px auto;padding:42px 52px;background:white;border-radius:18px;box-shadow:0 8px 40px #1232}h1{font-size:36px;line-height:1.4;color:#123653;letter-spacing:-.6px}h2{font-size:27px;line-height:1.5;margin:64px 0 24px;padding-top:20px;border-top:2px solid #d9e7f0;color:#174b65}h3{color:#246e79;margin-top:30px}p{margin:18px 0}a{color:#216b99;text-underline-offset:4px}strong{color:#134b63}blockquote{margin:28px 0;padding:8px 24px;border-left:5px solid #239481;background:#eff9f6;border-radius:0 12px 12px 0}img{display:block;width:100%;height:auto;margin:30px auto;border-radius:12px}table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.7;margin:28px 0}th{background:#173d59;color:white;text-align:left}th,td{padding:14px 16px;border:1px solid #dbe4ec;vertical-align:top}tr:nth-child(even){background:#f4f8fb}code{font-size:.85em;overflow-wrap:anywhere;background:#eef3f7;padding:2px 5px;border-radius:4px}.toc{padding:16px 24px;background:#f4f8fb;border-radius:12px}.toc a{display:block;padding:3px}footer{text-align:center;padding:25px;color:#637b8c;font-size:14px}@media(max-width:760px){main{margin:12px;padding:22px 18px}h1{font-size:27px}h2{font-size:23px}table{display:block;overflow-x:auto}body{font-size:16px}}@media print{body{background:white;font-size:11pt}header,.toc,footer{display:none}main{padding:0;margin:0;max-width:none;box-shadow:none}h2{break-before:page}img,tr{break-inside:avoid}a{color:inherit}}</style></head><body><header><span>AUTODATA / ARCHITECTURE REVIEW · V022</span><nav><a href="architecture.html">项目架构</a><a href="curobo-v1-v2.html">cuRobo v1 / v2</a><a href="charts.html">完整图册与原实验</a></nav></header><main><details class="toc"><summary>阅读目录 · 5 个章节</summary><a href="#section-1">01 · cuRobo 在项目里只负责哪一层</a><a href="#section-2">02 · 从求解架构看 v1 与 v2 的区别</a><a href="#section-3">03 · 本项目为了接入 v2 实际改了什么</a><a href="#section-4">04 · V2 到底有什么用途，当前用了多少</a><a href="#section-5">05 · 当前有没有必要升级</a></details><h1>cuRobo v1 与 v2：改变了什么，当前项目是否需要升级</h1>
+<blockquote>
+<p>当前判断：v2 值得保留为独立研究路线，但已有证据不足以将它替换为本项目的默认生产规划器。它的主要价值在于动力学约束、深度场景建图与高自由度扩展；本次 OpenArm 接入尚未逐项验证这些能力。<a href="architecture.html">返回项目架构</a></p>
+</blockquote>
+<h2 id="section-1">01 · cuRobo 在项目里只负责哪一层</h2>
+<p><a href="architecture-images/04-contract.svg" target="_blank" title="打开原图放大查看"><img src="architecture-images/04-contract.svg" alt="规划器在 AutoData 中的位置与两个后端"></a></p>
+<p>从图的左侧开始：任务层先决定目标与阶段，规划器根据当前机器人状态和碰撞场景生成轨迹。返回后，执行与仿真继续推进任务，录制器收集数据，保存模块交付文件。这条边界决定了升级的影响范围：规划库变化会影响轨迹、成功率与规划耗时，但不会直接替代渲染、录像、压缩和磁盘写入。</p>
+<p>v1 在本项目中承担原始规划和保存优化实验的共同基线。v2 则用来验证新版求解接口是否能够接回同一条任务链路。两者是不同运行配置下的替代后端，不是一次任务先后必须经过的两个阶段。</p>
+<p>“cuRoboV2”是研究与新版架构的名称，不等于包标签必须写成 <code>2.x</code>。官方将 v0.8.0 列为引入 V2 研究功能的重构版本，并明确提示 API 破坏性变化；依赖 v1 API 的用户应固定到 v0.7.8。本文历史 v2 实验具体记录的提交是 <code>78fd485fa82d9b9a063fb4985e371814587e666a</code>，不能用今天的 main 分支代替它复现。<a href="https://github.com/NVlabs/curobo/releases">官方发布记录</a>、<a href="https://github.com/NVlabs/curobo">官方仓库说明</a>、<a href="../v014/v2-provenance.json">本地版本证据</a>。</p>
+<h2 id="section-2">02 · 从求解架构看 v1 与 v2 的区别</h2>
+<p><a href="architecture-images/05-curobo.svg" target="_blank" title="打开原图放大查看"><img src="architecture-images/05-curobo.svg" alt="cuRobo 版本能力对照及本项目实际使用范围"></a></p>
+<p>两者都沿着“状态和目标 → 求解 → 可执行轨迹”的方向工作。v1 已经具备 GPU 并行运动生成、逆运动学、碰撞检查、几何规划与轨迹优化；v2 的意义不在于首次使用 GPU。v1 的 MotionGen 会组织不同求解环节，在直接轨迹优化不成功时可使用图规划提供种子。<a href="https://curobo.org/_api/curobo.wrap.reacher.motion_gen.html">v1 MotionGen 文档</a>。</p>
+<p>图中 v2 的三个能力方向值得分开理解。<strong>B-spline 轨迹与动力学约束</strong>将运动表示和力矩等约束联系起来；<strong>深度融合距离场</strong>将传感器观测转换为规划可用的环境距离信息；<strong>高自由度计算</strong>面向更复杂的机器人运动学、逆动力学与自碰撞计算。它们分别服务于“运动是否可实现”“环境如何进入规划”“机器人规模如何扩大”，并非三项必然同时启用的开关。<a href="https://github.com/NVlabs/curobo/blob/main/docs/technical_reports.rst?plain=true">官方技术报告入口</a>、<a href="https://github.com/NVlabs/curobo">官方能力说明</a>。</p>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>v1 路线</th>
+<th>v2 路线</th>
+<th>对当前项目的意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>高层 API</td>
+<td>MotionGenConfig / MotionGen</td>
+<td>MotionPlannerCfg / MotionPlanner</td>
+<td>需要重写适配接口，不能只改依赖版本</td>
+</tr>
+<tr>
+<td>目标与调用</td>
+<td>Pose、plan_single</td>
+<td>GoalToolPose、plan_pose</td>
+<td>目标工具帧和状态类型需要对应转换</td>
+</tr>
+<tr>
+<td>轨迹优化</td>
+<td>已有平滑轨迹优化与运动限制</td>
+<td>B-spline 表示，强化动力学相关能力</td>
+<td>需检查采样、执行与质量；不能把“新版”视为更好末态的保证</td>
+</tr>
+<tr>
+<td>场景来源</td>
+<td>已有几何和碰撞世界接口</td>
+<td>增加 GPU 原生深度融合距离场路线</td>
+<td>本项目仍读取 USD 几何，没有因此自动获得在线感知</td>
+</tr>
+<tr>
+<td>机器人规模</td>
+<td>已有 GPU 运动学与碰撞计算</td>
+<td>扩展面向高自由度的计算结构</td>
+<td>当前单臂任务不足以说明全身规划优势</td>
+</tr>
+<tr>
+<td>实现组织</td>
+<td>wrap/reacher 等 v1 模块布局</td>
+<td>公共接口与 <code>_src</code> 内部模块重组</td>
+<td>依赖内部模块的适配代码需要固定提交</td>
+</tr>
+</tbody>
+</table>
+<p>API 对照来自 <a href="https://curobo.org/_api/curobo.wrap.reacher.motion_gen.html">v1 文档</a> 与 <a href="https://nvlabs.github.io/curobo/latest/api/curobo.motion_planner.html">v2 文档</a>，实现重组见 <a href="https://github.com/NVlabs/curobo/blob/main/CHANGELOG.md">官方变更记录</a>。这些是库级事实；表中项目影响是结合本地适配器作出的工程分析。官方其他机器人或场景上的加速数字，不作为本项目吞吐承诺。</p>
+<h2 id="section-3">03 · 本项目为了接入 v2 实际改了什么</h2>
+<p><a href="architecture-images/06-adapter.svg" target="_blank" title="打开原图放大查看"><img src="architecture-images/06-adapter.svg" alt="v2 接入：输入转换、求解和结果恢复"></a></p>
+<p>沿图逐项看，适配器承担的是一组语义转换，而不只是函数改名。</p>
+<p><strong>输入端：统一机器人和场景。</strong> <code>convert_robot</code> 转换机器人配置；适配器从 USD stage 读取当前环境的障碍物，按机器人参考坐标构造场景。当前关节状态按规划器的关节名字重排；目标位姿从世界坐标转换到机器人基坐标。否则即使张量维度正确，也可能在错误关节或错误坐标系下求解。</p>
+<p><strong>求解端：保持抓取阶段语义。</strong> 适配器预先准备夹爪开闭模型，保留锁定关节信息；接触阶段控制相关碰撞开关，抓取后将物体附着到机器人碰撞模型，结束后解除。它使用 <code>MotionPlannerCfg.create</code> 构造求解器，再将工具目标封装成 <code>GoalToolPose</code> 交给 <code>plan_pose</code>。冻结版本还通过局部包装关闭额外 refinement，以匹配原任务配置，不改写库源文件。</p>
+<p><strong>输出端：恢复原任务契约。</strong> 成功结果先取插值轨迹，核对关节身份并重排，再通过正运动学（FK）获得末端位姿，恢复世界坐标和任务需要的路径形式。原任务最终执行的接口因此可以保留，但轨迹数值和接触结果仍可能改变，必须检查执行末态。</p>
+<p>这些处理可在 <a href="../../../AutoData/datasets/efficiency_20261014_201834/v2/launchers/v2/v2_planner.py">冻结 v2 适配器</a> 中逐项核对。该实现使用了冻结提交中未公开导出的 <code>RobotCfg</code> 和 <code>UsdSceneParser</code> 内部路径；这是明确的维护负担。当前官方 API 文档不能证明这些历史内部导入在未来版本继续可用。</p>
+<p>多环境也不能直接等同于批量规划。当前官方 <code>MotionPlanner</code> 文档说明它一次处理一个规划问题，批量接口另有 <code>BatchMotionPlanner</code>；历史适配器按 <code>env_id</code> 读取环境状态。项目有 8 个仿真环境，并不能据此声称已经使用 v2 批量规划能力。<a href="https://nvlabs.github.io/curobo/latest/api/curobo.motion_planner.html">v2 MotionPlanner 文档</a>。</p>
+<h2 id="section-4">04 · V2 到底有什么用途，当前用了多少</h2>
+<table>
+<thead>
+<tr>
+<th>用途</th>
+<th>什么时候值得使用</th>
+<th>当前接入状态</th>
+<th>尚缺什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>规划后端迁移</td>
+<td>希望保留现有任务，评估新版轨迹求解</td>
+<td>已有适配器与整轮历史运行</td>
+<td>同条件质量与效率优势</td>
+</tr>
+<tr>
+<td>动力学感知运动</td>
+<td>任务对力矩、负载、快速运动可行性敏感</td>
+<td>有新版求解入口；未做力矩约束专项对照</td>
+<td>可信惯性与负载配置、约束启用核对、执行验证</td>
+</tr>
+<tr>
+<td>深度感知避障</td>
+<td>场景来自传感器，几何事先不完整或发生变化</td>
+<td>本次仍由 USD 几何构造障碍物</td>
+<td>深度接入、标定、融合更新和避障验证</td>
+</tr>
+<tr>
+<td>高自由度 / 全身运动</td>
+<td>双臂、躯干或更复杂机器人的协同任务</td>
+<td>本次不是全身规划专项实验</td>
+<td>对应模型、任务、碰撞与控制验收</td>
+</tr>
+</tbody>
+</table>
+<p>表中后面三行是依据官方能力提出的潜在应用，不是当前项目已经完成的功能。尤其是“保存了相机图像”与“将深度图融合进规划场景”完全不同；当前录制 RGB 的链路不能证明已经启用 v2 感知能力。</p>
+<h2 id="section-5">05 · 当前有没有必要升级</h2>
+<p><strong>如果目标是提高现有 OpenArm 数据生产效率，目前没有足够理由强制升级 v2。</strong> 已有证据支持优先保留 v1 异步保存路线。历史 v1 auto 保存数据严格末态为 16/16 合格；历史 v2 虽完成 16 条保存与结构回读，严格末态为 15/16。v2 与 v1 还存在跨日期、单轮等限制，因此既不能宣称 v2 更优，也不能把一次结果推成 v2 在所有任务上更差。<a href="charts.html">原实验记录与解释</a>。</p>
+<p><strong>如果目标转向深度感知、动力学约束或高自由度任务，v2 的研究价值会更明确。</strong> 升级应由具体任务需要驱动：先选择要启用的能力，再验证该能力能否解决现有瓶颈。当前最合理的角色划分是 v1 维持基线与已验证的保存优化，v2 用独立环境和冻结启动器继续研究。</p>
+<p>替换生产后端前，至少需要三类证据：第一，场景、关节映射、附着物和执行末态均满足原质量条件；第二，相同任务、环境数、保存策略与计时口径下，同日交替重复比较质量合格吞吐；第三，长时间运行、失败恢复和依赖复现可接受。若收益只出现在规划阶段，还要确认它在最终文件就绪时间上没有被仿真、渲染和保存成本抵消。</p>
+<p>这组条件用于解释升级决策，不改写原实验方案或结果。本版只做源码和资料核对，没有新增 GPU 运行。</p>
+<h3>阅读与证据范围</h3>
+<p>官方网页于 2026-10-16 查阅；<code>latest</code> 页面用于解释当前公开接口，历史运行仍以本地冻结提交为准。本文涉及的运行数值沿用图册与 v014 来源记录，未重新统计、修正或替换原实验。本文和项目架构文章均为本地交付。</p>
+</main><footer>本地研究说明 · 2026-10-16 · 原实验保留 · 点击架构图可放大</footer></body></html>

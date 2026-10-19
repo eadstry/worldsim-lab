@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-14",
+  "scope": "Host-only preservation validation; no GPU simulation or training rerun",
+  "cloud_check": {
+    "command": "bash scripts/cloud-check.sh --allow-uninitialized",
+    "status": "passed",
+    "version_management_tests": 11,
+    "shared_config_tests": 8,
+    "blog_build": "passed",
+    "blog_check": "passed",
+    "note": "Top-level upstream checkouts intentionally uninitialized in the snapshot worktree."
+  },
+  "openarm_production_tests": {
+    "status": "passed",
+    "tests": 31,
+    "note": "Used existing Python environment without modifying it. Test implementations loaded from snapshot; test source paths redirected in memory to the original local upstream checkout for AST-based host checks."
+  },
+  "preservation": {
+    "copied_file_sha256": "verified",
+    "upstream_patch_sha256": "verified",
+    "python_syntax": "passed"
+  }
+}

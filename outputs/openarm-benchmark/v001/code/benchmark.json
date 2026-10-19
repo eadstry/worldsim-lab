@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "benchmark_id": "openarm-left-pick-place-demo",
+  "environment": "openarm_left_pick_place_benchmark",
+  "scope": "Evaluation infrastructure example; no learned-policy score",
+  "cases": [
+    {
+      "name": "smoke_timeout",
+      "group": "smoke",
+      "purpose": "Check parallel resets, episode completion, and negative scoring",
+      "policy_type": "zero_action",
+      "num_envs": 2,
+      "num_episodes": 2,
+      "episode_length_s": 0.5,
+      "seeds": [11],
+      "fixture": null,
+      "expected": "all_failed"
+    },
+    {
+      "name": "fixture_regression",
+      "group": "regression",
+      "purpose": "Check the original placement rule with recorded actions and fixed initial state",
+      "policy_type": "openarm_arena.policy.OpenArmFixtureReplayPolicy",
+      "num_envs": 1,
+      "num_episodes": 1,
+      "episode_length_s": 90.0,
+      "seeds": [11],
+      "fixture": "fixtures/replay_left.npz",
+      "expected": "all_succeeded"
+    },
+    {
+      "name": "zero_action_baseline",
+      "group": "baseline",
+      "purpose": "Optional random-reset baseline with the full episode budget",
+      "policy_type": "zero_action",
+      "num_envs": 4,
+      "num_episodes": 8,
+      "episode_length_s": 90.0,
+      "seeds": [11, 22, 33],
+      "fixture": null,
+      "expected": "all_failed"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "task_id": "openarm_left_cube_on_scanned_pad",
+  "common": {
+    "gym_id": "Isaac-PickPlace-Cube-OpenArm-Bimanual-Left-IK-Rel-v0",
+    "seed": 1,
+    "action": {
+      "position_scale_m": 0.02,
+      "rotation_scale_rad": 0.1,
+      "gripper_negative": "close"
+    },
+    "reset_pose_range": {
+      "x": [
+        -0.04,
+        0.04
+      ],
+      "y": [
+        -0.06,
+        0.06
+      ]
+    },
+    "success": {
+      "height_tolerance": 0.008,
+      "release_position": 0.3,
+      "max_linear_speed": 0.03,
+      "max_angular_speed": 0.5
+    }
+  },
+  "generation": {
+    "task_descriptor": "task.json",
+    "embodiment": "embodiment.json",
+    "env_profile": "env_profile.json",
+    "num_envs": 1
+  },
+  "evaluation": {
+    "seed": 11,
+    "num_envs": 1,
+    "num_episodes": 100,
+    "episode_length_s": 90.0,
+    "policy_type": "zero_action",
+    "policy_args": {}
+  }
+}

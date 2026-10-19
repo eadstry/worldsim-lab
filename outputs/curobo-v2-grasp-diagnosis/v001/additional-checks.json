@@ -1,0 +1,39 @@
+{
+  "joint_names": [
+    "openarm_left_joint1",
+    "openarm_right_joint1",
+    "openarm_left_joint2",
+    "openarm_right_joint2",
+    "openarm_left_joint3",
+    "openarm_right_joint3",
+    "openarm_left_joint4",
+    "openarm_right_joint4",
+    "openarm_left_joint5",
+    "openarm_right_joint5",
+    "openarm_left_joint6",
+    "openarm_right_joint6",
+    "openarm_left_joint7",
+    "openarm_right_joint7",
+    "openarm_left_finger_joint1",
+    "openarm_left_finger_joint2",
+    "openarm_right_finger_joint1",
+    "openarm_right_finger_joint2"
+  ],
+  "diagnostic_and_plain_state_action_max_errors": {
+    "actions": 0.0,
+    "obs/joint_pos": 0.0,
+    "obs/left_tcp_pos_env": 0.0,
+    "obs/cube_pose": 0.0
+  },
+  "jacobian_check": {
+    "evidence_kind": "CPU finite-difference URDF Jacobian at original closure poses",
+    "translation_unit": "m",
+    "rotation_unit": "rad",
+    "finite_difference_rad": 1e-05,
+    "v1_condition_number": 39.45307601436889,
+    "v2_condition_number": 39.45002968635739,
+    "v1_FK_vs_observation_error_mm": 0.00020656620534914233,
+    "v2_FK_vs_observation_error_mm": 0.0002803554902832122,
+    "scope": "closure configurations only; not a path-wide singularity audit"
+  }
+}

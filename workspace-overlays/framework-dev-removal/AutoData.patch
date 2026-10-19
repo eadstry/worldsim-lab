@@ -1,0 +1,174 @@
+diff --git a/autodata_core/data_generator.py b/autodata_core/data_generator.py
+index 213de6f..f7d8996 100644
+--- a/autodata_core/data_generator.py
++++ b/autodata_core/data_generator.py
+@@ -600,6 +600,17 @@ class DataGenerator:
+             if self._all_subtasks_completed(eef_states):
+                 break
+ 
++        final_hold_steps = self.datastream.get_generation_policy().num_steps_final_hold
++        assert final_hold_steps >= 0, "num_steps_final_hold must be non-negative"
++        for _ in range(final_hold_steps):
++            exec_success = await multi_waypoint.execute(
++                datastream=self.datastream,
++                success_term=success_term,
++                env_id=env_id,
++                env_action_queue=env_action_queue,
++            )
++            buffers.success = buffers.success or exec_success
++
+         # Recorder lifecycle stays on env by design: the Datastream is
+         # a read interface; controller-side mutation is reached through the get_env() escape hatch.
+         env = self.datastream.get_env()
+diff --git a/autodata_interfaces/tasks/generation_policy_spec.py b/autodata_interfaces/tasks/generation_policy_spec.py
+index c3b1904..239b4f6 100644
+--- a/autodata_interfaces/tasks/generation_policy_spec.py
++++ b/autodata_interfaces/tasks/generation_policy_spec.py
+@@ -25,6 +25,8 @@ class GenerationPolicy:
+         use_skillgen: Whether SkillGen is used to generate motion trajectories.
+         use_navigation_controller: Whether a navigation controller generates loco-manipulation
+             trajectories.
++        num_steps_final_hold: Additional control steps holding the final waypoint before export,
++            allowing released objects to settle while checking the original success condition.
+ 
+     Segment stitching parameters:
+         select_src_per_subtask: If True, re-select a source demo for every subtask. If False, the
+@@ -50,6 +52,7 @@ class GenerationPolicy:
+     task_name: str | None = None
+     use_skillgen: bool = False
+     use_navigation_controller: bool = False
++    num_steps_final_hold: int = 0
+ 
+     # --- segment stitching ---
+     select_src_per_subtask: bool = False
+diff --git a/openarm_autodata/tasks/pick_place/__init__.py b/openarm_autodata/tasks/pick_place/__init__.py
+index 1261058..396aaa0 100644
+--- a/openarm_autodata/tasks/pick_place/__init__.py
++++ b/openarm_autodata/tasks/pick_place/__init__.py
+@@ -10,13 +10,6 @@
+ 
+ import gymnasium as gym
+ 
+-from autodata_interfaces.motion_planners.curobo.curobo_planner_cfg import PLANNER_PROFILES
+-
+-from .planner_cfg import make_openarm_left_planner_cfg, make_openarm_right_planner_cfg
+-
+-PLANNER_PROFILES["openarm_pick_place"] = make_openarm_right_planner_cfg
+-PLANNER_PROFILES["openarm_pick_place_left"] = make_openarm_left_planner_cfg
+-
+ OPENARM_TASK_ID = "Isaac-PickPlace-Cube-OpenArm-Bimanual-Right-IK-Rel-v0"
+ """Gymnasium task identifier for the OpenArm right-arm pick-and-place environment."""
+ 
+@@ -34,6 +27,16 @@ def register_for_tools() -> list[str]:
+     return []
+ 
+ 
++def register_motion_planners() -> None:
++    """Register SkillGen planners when generation requests cuRobo support."""
++    from autodata_interfaces.motion_planners.curobo.curobo_planner_cfg import PLANNER_PROFILES
++
++    from .planner_cfg import make_openarm_left_planner_cfg, make_openarm_right_planner_cfg
++
++    PLANNER_PROFILES["openarm_pick_place"] = make_openarm_right_planner_cfg
++    PLANNER_PROFILES["openarm_pick_place_left"] = make_openarm_left_planner_cfg
++
++
+ gym.register(
+     id="Isaac-PickPlace-Cube-OpenArm-KER-Right-Joint-v0",
+     entry_point="isaaclab.envs:ManagerBasedRLEnv",
+diff --git a/openarm_autodata/tasks/pick_place/autodata_configs/tasks/openarm_bimanual_left_pick_place.yaml b/openarm_autodata/tasks/pick_place/autodata_configs/tasks/openarm_bimanual_left_pick_place.yaml
+index abae69e..b1fd470 100644
+--- a/openarm_autodata/tasks/pick_place/autodata_configs/tasks/openarm_bimanual_left_pick_place.yaml
++++ b/openarm_autodata/tasks/pick_place/autodata_configs/tasks/openarm_bimanual_left_pick_place.yaml
+@@ -12,6 +12,8 @@ generation_policy:
+   guarantee_success: true
+   keep_failed: false
+   max_num_failures: 25
++  # Hold the released final pose for 2 seconds at the configured 30 Hz control rate.
++  num_steps_final_hold: 60
+   use_skillgen: true
+   select_src_per_subtask: true
+   transform_first_robot_pose: false
+diff --git a/scripts/annotate_demos.py b/scripts/annotate_demos.py
+index c2bd4b0..cd7fe6c 100644
+--- a/scripts/annotate_demos.py
++++ b/scripts/annotate_demos.py
+@@ -46,6 +46,12 @@ parser = argparse.ArgumentParser(
+     description="Manually annotate AutoData source demonstrations with subtask signals.",
+     formatter_class=argparse.RawDescriptionHelpFormatter,
+ )
++parser.add_argument(
++    "--task_module",
++    action="append",
++    default=[],
++    help="Import a task registration module after simulator startup; repeat for multiple modules.",
++)
+ parser.add_argument(
+     "--env_name",
+     type=str,
+@@ -122,6 +128,8 @@ import omni.ui as ui  # noqa: E402
+ 
+ if args_cli.env_module:
+     importlib.import_module(args_cli.env_module)
++for module_name in args_cli.task_module:
++    importlib.import_module(module_name)
+ from isaaclab.devices import Se3Keyboard, Se3KeyboardCfg  # noqa: E402
+ from isaaclab.envs.mdp.recorders.recorders_cfg import ActionStateRecorderManagerCfg  # noqa: E402
+ from isaaclab.managers import DatasetExportMode, RecorderTerm, RecorderTermCfg, TerminationTermCfg  # noqa: E402
+diff --git a/scripts/generate_dataset.py b/scripts/generate_dataset.py
+index c3d5176..eb87f0d 100755
+--- a/scripts/generate_dataset.py
++++ b/scripts/generate_dataset.py
+@@ -40,6 +40,12 @@ from isaaclab.app import AppLauncher
+ _ALG_CHOICES = ["mimicgen", "dexmimicgen", "skillgen"]
+ 
+ parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
++parser.add_argument(
++    "--task_module",
++    action="append",
++    default=[],
++    help="Import a task or planner registration module after simulator startup; repeat for multiple modules.",
++)
+ parser.add_argument(
+     "--env_name",
+     type=str,
+@@ -138,8 +144,11 @@ from autodata_interfaces.env import (  # noqa: E402
+ from autodata_interfaces.tasks.task_descriptor import TaskDescriptor  # noqa: E402
+ from autodata_utils.generation_result import write_generation_result  # noqa: E402
+ 
+-if args_cli.env_module:
+-    importlib.import_module(args_cli.env_module)
++for module_name in ([args_cli.env_module] if args_cli.env_module else []) + args_cli.task_module:
++    task_module = importlib.import_module(module_name)
++    register_motion_planners = getattr(task_module, "register_motion_planners", None)
++    if args_cli.alg == "skillgen" and register_motion_planners is not None:
++        register_motion_planners()
+ 
+ 
+ async def run_data_generator(
+@@ -391,13 +400,24 @@ def main() -> None:
+                     else None
+                 ),
+             )
++        failure_limit = generation_policy_params.max_num_failures
++        if not generation_completed and failure_limit is not None:
++            if async_components["stats"]["num_failures"] >= failure_limit:
++                raise RuntimeError(f"Generation stopped after {failure_limit} failures before reaching the trial target")
+     finally:
+         env.close()
+ 
+ 
+ if __name__ == "__main__":
++    exit_code = 0
+     try:
+         main()
+     except KeyboardInterrupt:
+         print("\nInterrupted; exiting.")
+-    simulation_app.close()
++        exit_code = 130
++    except Exception:
++        traceback.print_exc()
++        exit_code = 1
++    finally:
++        simulation_app.close(exit_code=exit_code)
++    sys.exit(exit_code)

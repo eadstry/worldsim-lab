@@ -1,0 +1,51 @@
+diff --git a/AGENTS.md b/AGENTS.md
+index 5ab3409..9e8de23 100644
+--- a/AGENTS.md
++++ b/AGENTS.md
+@@ -8,7 +8,7 @@ Isaac Lab-Arena is a composable environment-creation and policy-evaluation libra
+ 
+ ## Skill library
+ 
+-Recurring multi-step workflows (container management, the three-phase test suite, commits and PRs) are captured as Agent Skills under `.agents/skills/`. When a task matches a skill, prefer invoking it over re-deriving the procedure from this file.
++Recurring multi-step workflows (runtime setup, the three-phase test suite, commits and PRs) are captured as Agent Skills under `.agents/skills/`. When a task matches a skill, prefer invoking it over re-deriving the procedure from this file.
+ 
+ Claude Code reads the library via the committed `.claude/skills` symlink; Codex scans `.agents/skills/` directly.
+ 
+@@ -18,26 +18,15 @@ Fresh-clone setup (run once):
+ pre-commit install    # on the host — registers git pre-commit hooks
+ ```
+ 
+-## Docker environment
++## Runtime environment
+ 
+-Commands that touch Isaac Sim or Arena's package code (tests, training, evaluation, runtime scripts) run inside the local repo clone's Docker container. The repo root is mounted at `/workspaces/isaaclab_arena`. Inside the container, `python` is aliased to `/isaac-sim/python.sh` — prefer the explicit path in `docker exec` invocations from outside the container, where the alias is not active.
+-
+-Each clone gets its own container (shared image, per-clone name), so clones run in parallel. **Don't hardcode the container name** — use the `dev-container` skill to build, start, attach to, discover, or exec into the local clone's container.
+-
+-Run as the host user, not root.
+-
+-```bash
+-docker exec "$ARENA_CONTAINER" su $(id -un) -c \
+-  "cd /workspaces/isaaclab_arena && <command>"
+-```
+-
+-Lint and format tooling (`pre-commit` and the hooks it runs — black, flake8, isort, pyupgrade, codespell) runs **on the host**.
++Commands that touch Isaac Sim or Arena's package code (tests, training, evaluation, runtime scripts) require a
++compatible configured runtime environment. Lint and formatting tooling (`pre-commit` and its hooks) runs on the host.
+ 
+ ## Repository layout
+ 
+ - `isaaclab_arena/` — core package: `tasks/`, `policy/`, `evaluation/`, `embodiments/`, `scene/`, `assets/`, `tests/`
+ - `isaaclab_arena_environments/`, `isaaclab_arena_examples/`, `isaaclab_arena_g1/`, `isaaclab_arena_gr00t/` — first-party extension packages
+-- `docker/` — container build and run scripts
+ - `submodules/` — vendored dependencies (IsaacLab, Isaac-GR00T, …)
+ - `osmo/` — OSMO policy-runner workflow
+ - `docs/` — Sphinx documentation
+@@ -90,5 +79,5 @@ def test_foo():  # pytest-visible outer function
+ 
+ - **Never** force-push to `main` or `release/*`. **Instead**, push to a `<username>/<type>/<short-description>` branch (`<type>` ∈ `feature`, `fix`, `docs`, `refactor`, `chore`, `ci`) and open a PR against `main`.
+ - **Never** add AI-attribution lines to commits (no `Co-Authored-By: Claude…`, no `Generated with…`). **Instead**, sign off with `git commit -s` — DCO is the only required trailer.
+-- **Never** commit models, datasets, or secrets. **Instead**, keep them on the host and mount them via `./docker/run_docker.sh -d <datasets> -m <models> -e <eval>`.
+-- **Ask first** before changing `docker/`, `.github/workflows/`, `.pre-commit-config.yaml`, or `submodules/` — these affect every contributor. **Instead** of pushing directly, open a draft PR or raise it in the relevant channel before merging.
++- **Never** commit models, datasets, or secrets.
++- **Ask first** before changing `.github/workflows/`, `.pre-commit-config.yaml`, or `submodules/` — these affect every contributor. **Instead** of pushing directly, open a draft PR or raise it in the relevant channel before merging.

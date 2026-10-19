@@ -1,0 +1,180 @@
+{
+  "backend": "autodata",
+  "status": "passed",
+  "interpreter": "${AUTODATA_ENV}/bin/python",
+  "scope": "environment construction, action processing, short steps and direct success predicate cases",
+  "task_contract_hash": "97775534dc3c1d916117c650ad2e7fabc7992f7ed3b3b79b694abdfc13737b50",
+  "package_paths": {
+    "openarm_autodata": "${WORKSPACE}/AutoData/openarm_autodata/__init__.py",
+    "isaaclab": "${WORKSPACE}/AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab/isaaclab/__init__.py"
+  },
+  "generation_terminations_removed": true,
+  "environment_loaded": true,
+  "action_shape": [
+    1,
+    7
+  ],
+  "physics_dt": 0.008333333333333333,
+  "step_dt": 0.03333333333333333,
+  "reset_pose_range": {
+    "x": [
+      -0.04,
+      0.04
+    ],
+    "y": [
+      -0.06,
+      0.06
+    ]
+  },
+  "success_function": "openarm_autodata.tasks.pick_place.envs.mdp:cube_placed_on_pad",
+  "success_params": {
+    "height_tolerance": 0.008,
+    "release_position": 0.3,
+    "max_linear_speed": 0.03,
+    "max_angular_speed": 0.5
+  },
+  "observations": {
+    "left_hand_rgb": {
+      "shape": [
+        1,
+        480,
+        640,
+        3
+      ],
+      "dtype": "torch.uint8"
+    },
+    "right_hand_rgb": {
+      "shape": [
+        1,
+        480,
+        640,
+        3
+      ],
+      "dtype": "torch.uint8"
+    },
+    "third_person_rgb": {
+      "shape": [
+        1,
+        480,
+        640,
+        3
+      ],
+      "dtype": "torch.uint8"
+    },
+    "joint_pos": {
+      "shape": [
+        1,
+        18
+      ],
+      "dtype": "torch.float32"
+    },
+    "joint_vel": {
+      "shape": [
+        1,
+        18
+      ],
+      "dtype": "torch.float32"
+    },
+    "cube_pose": {
+      "shape": [
+        1,
+        7
+      ],
+      "dtype": "torch.float32"
+    },
+    "table_pose": {
+      "shape": [
+        1,
+        7
+      ],
+      "dtype": "torch.float32"
+    },
+    "actions": {
+      "shape": [
+        1,
+        7
+      ],
+      "dtype": "torch.float32"
+    },
+    "left_tcp_pos": {
+      "shape": [
+        1,
+        3
+      ],
+      "dtype": "torch.float32"
+    },
+    "left_tcp_quat": {
+      "shape": [
+        1,
+        4
+      ],
+      "dtype": "torch.float32"
+    },
+    "left_tcp_pos_env": {
+      "shape": [
+        1,
+        3
+      ],
+      "dtype": "torch.float32"
+    },
+    "left_tcp_quat_env": {
+      "shape": [
+        1,
+        4
+      ],
+      "dtype": "torch.float32"
+    },
+    "left_gripper_pos": {
+      "shape": [
+        1,
+        1
+      ],
+      "dtype": "torch.float32"
+    }
+  },
+  "processed_arm_probe": [
+    [
+      0.0020000000949949026,
+      0.0020000000949949026,
+      0.0020000000949949026,
+      0.010000000707805157,
+      0.010000000707805157,
+      0.010000000707805157
+    ]
+  ],
+  "gripper_targets": {
+    "negative": [
+      [
+        0.0,
+        0.0
+      ]
+    ],
+    "positive": [
+      [
+        0.699999988079071,
+        0.699999988079071
+      ]
+    ]
+  },
+  "physics_steps_completed": 6,
+  "success_cases": {
+    "inside_released_still": [
+      true
+    ],
+    "outside_pad": [
+      false
+    ],
+    "above_pad": [
+      false
+    ],
+    "gripper_closed": [
+      false
+    ],
+    "moving_linear": [
+      false
+    ],
+    "moving_angular": [
+      false
+    ]
+  }
+}

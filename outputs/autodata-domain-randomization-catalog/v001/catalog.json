@@ -1,0 +1,971 @@
+{
+  "date": "2026-10-16",
+  "scope": "当前 AutoData 工作树 + 内嵌 Arena + 其 Isaac Lab 稳定通用接口及 stack 扩展；排除根目录独立 Arena、实验 Warp 接口和 GR00T 外部仿真生态",
+  "validation": "本轮源码清点；示意图非 GPU 实测。此前仅 OpenArm XY reset 已实测。",
+  "coverage": {
+    "common_mdp_randomized_events": 20,
+    "concrete_arena_variations": 6,
+    "method_families": 45
+  },
+  "integration_limits": [
+    "AutoData profile 的事件 mode 仅 startup/reset/interval；不能配置 usd/prestartup。",
+    "profile.add 未暴露 interval_range_s；profile.override 仅更新 params，不能覆盖事件时间间隔。",
+    "Arena VariationBaseCfg.enabled 默认 False；build-time 与 per-reset 不同。",
+    "现有 OpenArm 默认只随机 XY；观测 enable_corruption=False；相机更新与外参 Variation 需检查覆盖。",
+    "纹理需要 Replicator、纹理文件及匹配网格路径；存在 API 不代表任意资产可直接运行。",
+    "尺寸与实例变化后须核对 cuRobo 碰撞模型；默认 spawn 状态与 reset 物理状态也须一致。"
+  ],
+  "not_claimed": [
+    "相机旋转/焦距/内参/镜头畸变随机化未找到本范围通用实现",
+    "粗糙度/金属度/透明度随机化未找到本范围通用封装",
+    "RGB 曝光/运动模糊/遮挡增强未找到 AutoData 配置入口",
+    "固定场景覆盖、reset_scene_to_default、常量偏置、随机种子本身不计独立域随机化"
+  ],
+  "items": [
+    {
+      "id": "m01",
+      "group": "初始状态与布局",
+      "name": "根位姿与速度",
+      "kind": "pose",
+      "stage": "reset",
+      "params": "XYZ / RPY [m, rad]；线速度 / 角速度",
+      "sampling": "各维均匀采样",
+      "access": "AutoData event profile",
+      "note": "OpenArm 当前仅启用 XY 偏移；上一轮 GPU 256 样本验证通过。函数本身还支持 Z、RPY 和速度，不代表当前任务启用。",
+      "sources": [
+        {
+          "path": "AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab/isaaclab/envs/mdp/events.py",
+          "symbol": "reset_root_state_uniform",
+          "line": 1758,
+          "sha256": "d261ff59e6253e0d125a0bf5bac498256f36c87dd3a8974da50166a1bd8fb30e"
+        }
+      ]
+    },
+    {
+      "id": "m02",
+      "group": "初始状态与布局",
+      "name": "全空间随机朝向",
+      "kind": "rotation",
+      "stage": "reset",
+      "params": "位置范围；速度范围；完整朝向",
+      "sampling": "random_orientation 四元数采样",
+      "access": "AutoData event profile",
+      "note": "与限定 roll/pitch/yaw 区间不同；会改变完整三维朝向。",
+      "sources": [
+        {
+          "path": "AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab/isaaclab/envs/mdp/events.py",
+          "symbol": "reset_root_state_with_random_orientation",
+          "line": 1804,
+          "sha256": "d261ff59e6253e0d125a0bf5bac498256f36c87dd3a8974da50166a1bd8fb30e"
+        }
+      ]
+    },
+    {
+      "id": "m03",
+      "group": "初始状态与布局",
+      "name": "地形有效点出生",
+      "kind": "terrain",
+      "stage": "reset",
+      "params": "flat_patches；位姿和速度范围",
+      "sampling": "从已生成地形有效 patch 中随机选点",
+      "access": "任务配置 + event profile",
+      "note": "需要 TerrainImporter 和有效 flat patches；OpenArm 桌面任务未配置。",
+      "sources": [
+        {
+          "path": "AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab/isaaclab/envs/mdp/events.py",
+          "symbol": "reset_root_state_from_terrain",
+          "line": 1857,
+          "sha256": "d261ff59e6253e0d125a0bf5bac498256f36c87dd3a8974da50166a1bd8fb30e"
+        }
+      ]
+    },
+    {
+      "id": "m04",
+      "group": "初始状态与布局",
+      "name": "关节比例初始化",
+      "kind": "joint",
+      "stage": "reset",
+      "params": "position_range；velocity_range",
+      "sampling": "默认关节位置/速度乘均匀随机比例",
+      "access": "AutoData event profile",
+      "note": "位置裁剪到关节限位；不是控制增益随机化。",
+      "sources": [
+        {
+          "path": "AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab/isaaclab/envs/mdp/events.py",
+          "symbol": "reset_joints_by_scale",
+          "line": 1924,
+          "sha256": "d261ff59e6253e0d125a0bf5bac498256f36c87dd3a8974da50166a1bd8fb30e"
+        }
+      ]
+    },
+    {
+      "id": "m05",
+      "group": "初始状态与布局",
+      "name": "关节偏移初始化",
+      "kind": "joint",
+      "stage": "reset",
+      "params": "position_range；velocity_range",
+      "sampling": "默认关节位置/速度加均匀随机偏移",
+      "access": "AutoData event profile",
+      "note": "按关节限位裁剪。",
+      "sources": [
+        {
+          "path": "AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab/isaaclab/envs/mdp/events.py",
+          "symbol": "reset_joints_by_offset",
+          "line": 1965,
+          "sha256": "d261ff59e6253e0d125a0bf5bac498256f36c87dd3a8974da50166a1bd8fb30e"
+        }
+      ]
+    },
+    {
+      "id": "m06",
+      "group": "初始状态与布局",
+      "name": "Franka 高斯关节偏移",
+      "kind": "joint",
+      "stage": "reset",
+      "params": "mean；std",
+      "sampling": "关节位置高斯偏移",
+      "access": "任务专用 event profile",
+      "note": "实现保留最后两个夹爪关节默认位置，不能无审查直接套到其他机器人。",
+      "sources": [
+        {
+          "path": "AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab_tasks/isaaclab_tasks/manager_based/manipulation/stack/mdp/franka_stack_events.py",
+          "symbol": "randomize_joint_by_gaussian_offset",
+          "line": 51,
+          "sha256": "9e33aa4a217b50bad92bbd153d7cc1735bb24f544cfb7202473026052cb3fbdb"
+        }
+      ]
+    },
+    {
+      "id": "m07",
+      "group": "初始状态与布局",
+      "name": "柔体节点状态",
+      "kind": "deform",
+      "stage": "reset",
+      "params": "position_range；velocity_range",
+      "sampling": "节点状态叠加均匀位移/速度采样",
+      "access": "柔体任务配置",
+      "note": "需要支持节点状态写入的 deformable asset；不适用于刚体 cube。",
+      "sources": [
+        {
+          "path": "AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab/isaaclab/envs/mdp/events.py",
+          "symbol": "reset_nodal_state_uniform",
+          "line": 2006,
+          "sha256": "d261ff59e6253e0d125a0bf5bac498256f36c87dd3a8974da50166a1bd8fb30e"
+        }
+      ]
+    },
+    {
+      "id": "m08",
+      "group": "初始状态与布局",
+      "name": "多物体间距约束",
+      "kind": "layout",
+      "stage": "reset",
+      "params": "pose_range；min_separation；max_sample_tries",
+      "sampling": "位姿均匀候选 + 间距拒绝采样",
+      "access": "AutoData event profile",
+      "note": "franka_bin_stack 示例将 cube_1 固定，cube_2/cube_3 随机；采样次数有上限。",
+      "sources": [
+        {
+          "path": "AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab_tasks/isaaclab_tasks/manager_based/manipulation/stack/mdp/franka_stack_events.py",
+          "symbol": "randomize_object_pose",
+          "line": 177,
+          "sha256": "9e33aa4a217b50bad92bbd153d7cc1735bb24f544cfb7202473026052cb3fbdb"
+        },
+        {
+          "path": "AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab_tasks/isaaclab_tasks/manager_based/manipulation/stack/mdp/franka_stack_events.py",
+          "symbol": "sample_object_poses",
+          "line": 150,
+          "sha256": "9e33aa4a217b50bad92bbd153d7cc1735bb24f544cfb7202473026052cb3fbdb"
+        }
+      ]
+    },
+    {
+      "id": "m09",
+      "group": "初始状态与布局",
+      "name": "Arena 位姿区间",
+      "kind": "pose",
+      "stage": "reset",
+      "params": "PoseRange：XYZ 最小/最大；RPY 最小/最大",
+      "sampling": "区间配置 → reset 事件",
+      "access": "Arena 场景构建",
+      "note": "PoseRange 是区间描述；实际采样由构建器注册的事件负责。",
+      "sources": [
+        {
+          "path": "AutoData/submodules/IsaacLab-Arena/isaaclab_arena/utils/pose.py",
+          "symbol": "PoseRange",
+          "line": 93,
+          "sha256": "59cbd519af58abf4abc068a268e4701ecca65ec29871d31033ab8d4d6852dd25"
+        }
+      ]
+    },
+    {
+      "id": "m10",
+      "group": "初始状态与布局",
+      "name": "辅助物体联动",
+      "kind": "layout",
+      "stage": "reset",
+      "params": "held_and_fixed_only / held_fixed_and_auxiliary",
+      "sampling": "独立采样主体，辅助物体按主体对齐",
+      "access": "Arena task event",
+      "note": "当前辅助资产写入同一位姿，要求资产坐标系匹配；不是任意相对偏移采样。",
+      "sources": [
+        {
+          "path": "AutoData/submodules/IsaacLab-Arena/isaaclab_arena/tasks/events.py",
+          "symbol": "randomize_poses_and_align_auxiliary_assets",
+          "line": 20,
+          "sha256": "4e8897c797d5fab32127f9b6a9b7c0e0fd1d87f362e254a52450a56abecde0d6"
+        }
+      ]
+    },
+    {
+      "id": "m11",
+      "group": "初始状态与布局",
+      "name": "关系解周围扰动",
+      "kind": "layout",
+      "stage": "求解后 / reset",
+      "params": "RandomAroundSolution：XY 半径；yaw 半范围",
+      "sampling": "解附近的 PoseRange",
+      "access": "Arena 关系布局构建",
+      "note": "以关系解为中心增加位姿范围；RandomAroundSolution 不等于重新验证所有扰动后布局。",
+      "sources": [
+        {
+          "path": "AutoData/submodules/IsaacLab-Arena/isaaclab_arena/relations/relations.py",
+          "symbol": "RandomAroundSolution",
+          "line": 277,
+          "sha256": "55cc2ba1ff3828cef3a6a580935596f6c56187ea11672d2f467d209b1a30cf30"
+        }
+      ]
+    },
+    {
+      "id": "m12",
+      "group": "初始状态与布局",
+      "name": "关系布局池与随机 yaw",
+      "kind": "layout",
+      "stage": "构建候选 / reset 消费",
+      "params": "random_yaw_init；placement_seed；布局池",
+      "sampling": "初始 yaw 均匀采样；候选池有/无放回接口",
+      "access": "Arena ObjectPlacer / PooledObjectPlacer",
+      "note": "实际 reset 用 sample_for_envs；约束求解有验证与失败回退，不能把所有写入结果当作约束通过。",
+      "sources": [
+        {
+          "path": "AutoData/submodules/IsaacLab-Arena/isaaclab_arena/relations/object_placer.py",
+          "symbol": "ObjectPlacer",
+          "line": 79,
+          "sha256": "341aef2237abc71249d66db09af97cd4c2549c2123df2ad113a38cd3acef835f"
+        },
+        {
+          "path": "AutoData/submodules/IsaacLab-Arena/isaaclab_arena/relations/pooled_object_placer.py",
+          "symbol": "PooledObjectPlacer",
+          "line": 51,
+          "sha256": "4f4b29c0e605d4bada7f291248ff147e30faf80c411c1e6d32117c0d65d8b472"
+        },
+        {
+          "path": "AutoData/submodules/IsaacLab-Arena/isaaclab_arena/relations/placement_events.py",
+          "symbol": "solve_and_place_objects",
+          "line": 99,
+          "sha256": "238cc3a2e54b12c8a5a9ce115b5860ce4ceac113b61d2c3258d728343252057a"
+        }
+      ]
+    },
+    {
+      "id": "m13",
+      "group": "外观、光照与相机",
+      "name": "物体颜色",
+      "kind": "color",
+      "stage": "event 阶段可配置",
+      "params": "colors：RGB 候选或通道范围；mesh_name",
+      "sampling": "离散颜色或 RGB 均匀采样",
+      "access": "Isaac Lab event",
+      "note": "需要 Replicator、匹配的 mesh/body 路径及 replicate_physics=False；当前 OpenArm 未接入。",
+      "sources": [
+        {
+          "path": "AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab/isaaclab/envs/mdp/events.py",
+          "symbol": "randomize_visual_color",
+          "line": 2268,
+          "sha256": "d261ff59e6253e0d125a0bf5bac498256f36c87dd3a8974da50166a1bd8fb30e"
+        }
+      ]
+    },
+    {
+      "id": "m14",
+      "group": "外观、光照与相机",
+      "name": "纹理与纹理旋转",
+      "kind": "texture",
+      "stage": "event 阶段可配置",
+      "params": "texture_paths；texture_rotation [rad]",
+      "sampling": "纹理池随机选择 + 旋转范围",
+      "access": "Isaac Lab / stack task event",
+      "note": "需要 Replicator、可访问纹理与匹配视觉路径，replicate_physics=False。不是自动随机粗糙度、金属度或透明度。",
+      "sources": [
+        {
+          "path": "AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab/isaaclab/envs/mdp/events.py",
+          "symbol": "randomize_visual_texture_material",
+          "line": 2091,
+          "sha256": "d261ff59e6253e0d125a0bf5bac498256f36c87dd3a8974da50166a1bd8fb30e"
+        },
+        {
+          "path": "AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab_tasks/isaaclab_tasks/manager_based/manipulation/stack/mdp/franka_stack_events.py",
+          "symbol": "randomize_visual_texture_material",
+          "line": 267,
+          "sha256": "9e33aa4a217b50bad92bbd153d7cc1735bb24f544cfb7202473026052cb3fbdb"
+        }
+      ]
+    },
+    {
+      "id": "m15",
+      "group": "外观、光照与相机",
+      "name": "灯光强度",
+      "kind": "light",
+      "stage": "Arena build-time；stack reset 可配置",
+      "params": "UniformSampler low/high；intensity_range",
+      "sampling": "连续均匀采样",
+      "access": "Arena Variation / stack task event",
+      "note": "Arena 默认范围 100–2000，默认关闭；stack domelight 分支要求 eval_mode 与 eval_type=light_intensity/all。单位遵循 USD 灯光设置。",
+      "sources": [
+        {
+          "path": "AutoData/submodules/IsaacLab-Arena/isaaclab_arena/variations/light_intensity_variation.py",
+          "symbol": "LightIntensityVariation",
+          "line": 28,
+          "sha256": "da8889d03377a2f988f5d3bf529e5277bcab4a084348272f9966850c48699af1"
+        },
+        {
+          "path": "AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab_tasks/isaaclab_tasks/manager_based/manipulation/stack/mdp/franka_stack_events.py",
+          "symbol": "randomize_scene_lighting_domelight",
+          "line": 105,
+          "sha256": "9e33aa4a217b50bad92bbd153d7cc1735bb24f544cfb7202473026052cb3fbdb"
+        }
+      ]
+    },
+    {
+      "id": "m16",
+      "group": "外观、光照与相机",
+      "name": "灯光颜色",
+      "kind": "lightcolor",
+      "stage": "Arena build-time；stack reset 可配置",
+      "params": "RGB low/high；color_variation",
+      "sampling": "Arena RGB 均匀；stack 平衡通道扰动",
+      "access": "Arena Variation / stack task event",
+      "note": "Arena 默认关闭；stack 要求 eval_mode 与 eval_type=light_color/all。两条路径的颜色分布不同。",
+      "sources": [
+        {
+          "path": "AutoData/submodules/IsaacLab-Arena/isaaclab_arena/variations/light_color_variation.py",
+          "symbol": "LightColorVariation",
+          "line": 32,
+          "sha256": "87f5b60093058ab26910bb7c076db9e5fc0436704cf90a015b6437c2e2227e6b"
+        },
+        {
+          "path": "AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab_tasks/isaaclab_tasks/manager_based/manipulation/stack/mdp/franka_stack_events.py",
+          "symbol": "sample_random_color",
+          "line": 79,
+          "sha256": "9e33aa4a217b50bad92bbd153d7cc1735bb24f544cfb7202473026052cb3fbdb"
+        }
+      ]
+    },
+    {
+      "id": "m17",
+      "group": "外观、光照与相机",
+      "name": "方向光入射角",
+      "kind": "direction",
+      "stage": "build-time",
+      "params": "azimuth / elevation [rad]",
+      "sampling": "方位角与仰角均匀采样",
+      "access": "Arena LightDirectionVariation",
+      "note": "默认方位角 ±π，偏离正上方 0–80°；默认关闭，采样发生在构建阶段而非每次 reset。",
+      "sources": [
+        {
+          "path": "AutoData/submodules/IsaacLab-Arena/isaaclab_arena/variations/light_direction_variation.py",
+          "symbol": "LightDirectionVariation",
+          "line": 66,
+          "sha256": "f8f701d4c7bfab8dae3e1c4f3a0c2ea7ff08c43cade3611f919bc35a9dd83733"
+        }
+      ]
+    },
+    {
+      "id": "m18",
+      "group": "外观、光照与相机",
+      "name": "HDR 环境与背景",
+      "kind": "hdr",
+      "stage": "Arena build-time；stack reset 可配置",
+      "params": "hdr_names；textures",
+      "sampling": "HDR 注册池 / 纹理池离散选择",
+      "access": "Arena HDRImageVariation / stack task event",
+      "note": "HDR 会影响照明和背景；Arena 默认关闭且需已注册 HDR。stack 要求 eval_type=light_texture/all。",
+      "sources": [
+        {
+          "path": "AutoData/submodules/IsaacLab-Arena/isaaclab_arena/variations/hdr_image_variation.py",
+          "symbol": "HDRImageVariation",
+          "line": 37,
+          "sha256": "d5045faca9ec4bc6c5bc5bc43932a488e4698b55e5feea6437ae6cd1af3e5ec1"
+        },
+        {
+          "path": "AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab_tasks/isaaclab_tasks/manager_based/manipulation/stack/mdp/franka_stack_events.py",
+          "symbol": "randomize_scene_lighting_domelight",
+          "line": 105,
+          "sha256": "9e33aa4a217b50bad92bbd153d7cc1735bb24f544cfb7202473026052cb3fbdb"
+        }
+      ]
+    },
+    {
+      "id": "m19",
+      "group": "外观、光照与相机",
+      "name": "相机安装平移偏差",
+      "kind": "camera",
+      "stage": "reset",
+      "params": "ROS 光学坐标 XYZ 偏移 [m]",
+      "sampling": "默认各轴 Uniform(-0.005, 0.005)",
+      "access": "Arena CameraExtrinsicsVariation",
+      "note": "仅平移，不采样旋转、焦距或畸变；默认关闭。OpenArm 的 mounted-camera 更新会重设标定位姿，接入时须检查覆盖冲突。",
+      "sources": [
+        {
+          "path": "AutoData/submodules/IsaacLab-Arena/isaaclab_arena/variations/camera_extrinsics_variation.py",
+          "symbol": "CameraExtrinsicsVariation",
+          "line": 54,
+          "sha256": "7fa166d6ebe9e76273f79fefba32b4c3560201615de49f7c72faccc6a2b77b71"
+        }
+      ]
+    },
+    {
+      "id": "m20",
+      "group": "动力学参数",
+      "name": "刚体摩擦与恢复",
+      "kind": "friction",
+      "stage": "startup / reset（按后端与任务配置）",
+      "params": "static_friction / dynamic_friction；restitution；num_buckets",
+      "sampling": "均匀生成物理材质桶后分配",
+      "access": "Isaac Lab event；兼容时可用 AutoData profile",
+      "note": "make_consistent 可保证动摩擦不大于静摩擦。 当前 OpenArm 未启用，未做本轮 GPU 验证。",
+      "sources": [
+        {
+          "path": "AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab/isaaclab/envs/mdp/events.py",
+          "symbol": "randomize_rigid_body_material",
+          "line": 335,
+          "sha256": "d261ff59e6253e0d125a0bf5bac498256f36c87dd3a8974da50166a1bd8fb30e"
+        }
+      ]
+    },
+    {
+      "id": "m21",
+      "group": "动力学参数",
+      "name": "质量",
+      "kind": "mass",
+      "stage": "startup / reset（按后端与任务配置）",
+      "params": "mass_distribution_params；recompute_inertia",
+      "sampling": "uniform / log_uniform / gaussian；add / scale / abs",
+      "access": "Isaac Lab event；兼容时可用 AutoData profile",
+      "note": "Isaac Lab 可重算惯量；Arena ObjectMassVariation 默认绝对质量 0.05–2 kg，支持单个选中 body，默认关闭。 当前 OpenArm 未启用，未做本轮 GPU 验证。",
+      "sources": [
+        {
+          "path": "AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab/isaaclab/envs/mdp/events.py",
+          "symbol": "randomize_rigid_body_mass",
+          "line": 443,
+          "sha256": "d261ff59e6253e0d125a0bf5bac498256f36c87dd3a8974da50166a1bd8fb30e"
+        },
+        {
+          "path": "AutoData/submodules/IsaacLab-Arena/isaaclab_arena/variations/object_mass_variation.py",
+          "symbol": "ObjectMassVariation",
+          "line": 45,
+          "sha256": "0f9f607bf4793ab0feb448fb7920c003fca33bcdbc61b1ff0ad5dc3fcd53dcb6"
+        }
+      ]
+    },
+    {
+      "id": "m22",
+      "group": "动力学参数",
+      "name": "惯性张量",
+      "kind": "inertia",
+      "stage": "startup / reset（按后端与任务配置）",
+      "params": "inertia_distribution_params；diagonal_only",
+      "sampling": "uniform / log_uniform / gaussian；add / scale / abs",
+      "access": "Isaac Lab event；兼容时可用 AutoData profile",
+      "note": "diagonal_only 默认 True；不是物体外观尺寸变化。 当前 OpenArm 未启用，未做本轮 GPU 验证。",
+      "sources": [
+        {
+          "path": "AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab/isaaclab/envs/mdp/events.py",
+          "symbol": "randomize_rigid_body_inertia",
+          "line": 562,
+          "sha256": "d261ff59e6253e0d125a0bf5bac498256f36c87dd3a8974da50166a1bd8fb30e"
+        }
+      ]
+    },
+    {
+      "id": "m23",
+      "group": "动力学参数",
+      "name": "质心偏移",
+      "kind": "com",
+      "stage": "startup / reset（按后端与任务配置）",
+      "params": "com_range：XYZ [m]",
+      "sampling": "各轴均匀偏移",
+      "access": "Isaac Lab event；兼容时可用 AutoData profile",
+      "note": "改变质量中心，不移动可见网格。 当前 OpenArm 未启用，未做本轮 GPU 验证。",
+      "sources": [
+        {
+          "path": "AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab/isaaclab/envs/mdp/events.py",
+          "symbol": "randomize_rigid_body_com",
+          "line": 700,
+          "sha256": "d261ff59e6253e0d125a0bf5bac498256f36c87dd3a8974da50166a1bd8fb30e"
+        }
+      ]
+    },
+    {
+      "id": "m24",
+      "group": "动力学参数",
+      "name": "碰撞接触偏置",
+      "kind": "contact",
+      "stage": "startup / reset（按后端与任务配置）",
+      "params": "rest_offset / contact_offset [m]",
+      "sampling": "uniform / log_uniform / gaussian",
+      "access": "Isaac Lab event；兼容时可用 AutoData profile",
+      "note": "修改接触/静止偏置，受物理后端约束。 当前 OpenArm 未启用，未做本轮 GPU 验证。",
+      "sources": [
+        {
+          "path": "AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab/isaaclab/envs/mdp/events.py",
+          "symbol": "randomize_rigid_body_collider_offsets",
+          "line": 904,
+          "sha256": "d261ff59e6253e0d125a0bf5bac498256f36c87dd3a8974da50166a1bd8fb30e"
+        }
+      ]
+    },
+    {
+      "id": "m25",
+      "group": "动力学参数",
+      "name": "重力",
+      "kind": "gravity",
+      "stage": "startup / reset（按后端与任务配置）",
+      "params": "gravity_distribution_params：XYZ [m/s²]",
+      "sampling": "uniform / log_uniform / gaussian；add / scale / abs",
+      "access": "Isaac Lab event；兼容时可用 AutoData profile",
+      "note": "PhysX 修改整个场景共享的重力；Newton 源码另有按环境路径，本次未运行验证。 当前 OpenArm 未启用，未做本轮 GPU 验证。",
+      "sources": [
+        {
+          "path": "AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab/isaaclab/envs/mdp/events.py",
+          "symbol": "randomize_physics_scene_gravity",
+          "line": 978,
+          "sha256": "d261ff59e6253e0d125a0bf5bac498256f36c87dd3a8974da50166a1bd8fb30e"
+        }
+      ]
+    },
+    {
+      "id": "m26",
+      "group": "动力学参数",
+      "name": "驱动器刚度与阻尼",
+      "kind": "gain",
+      "stage": "startup / reset（按后端与任务配置）",
+      "params": "stiffness_distribution_params；damping_distribution_params",
+      "sampling": "uniform / log_uniform / gaussian；add / scale / abs",
+      "access": "Isaac Lab event；兼容时可用 AutoData profile",
+      "note": "需要 articulation 与受支持 actuator；对不同 actuator 的后端写入路径不同。 当前 OpenArm 未启用，未做本轮 GPU 验证。",
+      "sources": [
+        {
+          "path": "AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab/isaaclab/envs/mdp/events.py",
+          "symbol": "randomize_actuator_gains",
+          "line": 1127,
+          "sha256": "d261ff59e6253e0d125a0bf5bac498256f36c87dd3a8974da50166a1bd8fb30e"
+        }
+      ]
+    },
+    {
+      "id": "m27",
+      "group": "动力学参数",
+      "name": "关节物理参数",
+      "kind": "jointparam",
+      "stage": "startup / reset（按后端与任务配置）",
+      "params": "friction；armature；lower_limit；upper_limit",
+      "sampling": "uniform / log_uniform / gaussian；add / scale / abs",
+      "access": "Isaac Lab event；兼容时可用 AutoData profile",
+      "note": "关节摩擦、转子惯量和限位；不是关节初始位置。 当前 OpenArm 未启用，未做本轮 GPU 验证。",
+      "sources": [
+        {
+          "path": "AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab/isaaclab/envs/mdp/events.py",
+          "symbol": "randomize_joint_parameters",
+          "line": 1303,
+          "sha256": "d261ff59e6253e0d125a0bf5bac498256f36c87dd3a8974da50166a1bd8fb30e"
+        }
+      ]
+    },
+    {
+      "id": "m28",
+      "group": "动力学参数",
+      "name": "固定肌腱参数",
+      "kind": "tendon",
+      "stage": "startup / reset（按后端与任务配置）",
+      "params": "stiffness；damping；limit stiffness；limits；rest length；offset",
+      "sampling": "uniform / log_uniform / gaussian；add / scale / abs",
+      "access": "Isaac Lab event；兼容时可用 AutoData profile",
+      "note": "仅适用于具有固定肌腱结构且后端支持的 articulation。 当前 OpenArm 未启用，未做本轮 GPU 验证。",
+      "sources": [
+        {
+          "path": "AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab/isaaclab/envs/mdp/events.py",
+          "symbol": "randomize_fixed_tendon_parameters",
+          "line": 1506,
+          "sha256": "d261ff59e6253e0d125a0bf5bac498256f36c87dd3a8974da50166a1bd8fb30e"
+        }
+      ]
+    },
+    {
+      "id": "m29",
+      "group": "扰动与传感噪声",
+      "name": "外力与外力矩",
+      "kind": "force",
+      "stage": "reset / interval",
+      "params": "force_range [N]；torque_range [N·m]",
+      "sampling": "各维均匀采样",
+      "access": "Isaac Lab event",
+      "note": "interval 需 interval_range_s，AutoData profile 当前未暴露该字段；需任务 EventTermCfg。写入外力缓冲不等于单帧冲量。",
+      "sources": [
+        {
+          "path": "AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab/isaaclab/envs/mdp/events.py",
+          "symbol": "apply_external_force_torque",
+          "line": 1688,
+          "sha256": "d261ff59e6253e0d125a0bf5bac498256f36c87dd3a8974da50166a1bd8fb30e"
+        }
+      ]
+    },
+    {
+      "id": "m30",
+      "group": "扰动与传感噪声",
+      "name": "随机速度推扰",
+      "kind": "velocity",
+      "stage": "reset / interval",
+      "params": "velocity_range：线速度/角速度",
+      "sampling": "均匀采样并重设根速度",
+      "access": "Isaac Lab event",
+      "note": "通过速度设置施加扰动；不是物理力。interval 同样需任务配置时间间隔。",
+      "sources": [
+        {
+          "path": "AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab/isaaclab/envs/mdp/events.py",
+          "symbol": "push_by_setting_velocity",
+          "line": 1730,
+          "sha256": "d261ff59e6253e0d125a0bf5bac498256f36c87dd3a8974da50166a1bd8fb30e"
+        }
+      ]
+    },
+    {
+      "id": "m31",
+      "group": "扰动与传感噪声",
+      "name": "均匀观测噪声",
+      "kind": "noise",
+      "stage": "观测计算 / NoiseModel",
+      "params": "n_min；n_max；add / scale / abs",
+      "sampling": "逐元素均匀采样",
+      "access": "Isaac Lab observation/noise 配置",
+      "note": "需启用观测 corruption；OpenArm 当前 enable_corruption=False。不能直接等同于 RGB 图像增强。",
+      "sources": [
+        {
+          "path": "AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab/isaaclab/utils/noise/noise_cfg.py",
+          "symbol": "UniformNoiseCfg",
+          "line": 45,
+          "sha256": "52ad7352569fbc0e09a665c2b254d2dd3d0e3aeecf2dd13a13786b68d88b55bd"
+        }
+      ]
+    },
+    {
+      "id": "m32",
+      "group": "扰动与传感噪声",
+      "name": "高斯观测噪声",
+      "kind": "noise",
+      "stage": "观测计算 / NoiseModel",
+      "params": "mean；std；add / scale / abs",
+      "sampling": "逐元素高斯采样",
+      "access": "Isaac Lab observation/noise 配置",
+      "note": "默认均值 0、标准差 1 是库默认值，不是 OpenArm 当前配置。",
+      "sources": [
+        {
+          "path": "AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab/isaaclab/utils/noise/noise_cfg.py",
+          "symbol": "GaussianNoiseCfg",
+          "line": 57,
+          "sha256": "52ad7352569fbc0e09a665c2b254d2dd3d0e3aeecf2dd13a13786b68d88b55bd"
+        }
+      ]
+    },
+    {
+      "id": "m33",
+      "group": "扰动与传感噪声",
+      "name": "回合偏置与常量偏置",
+      "kind": "bias",
+      "stage": "reset 采样偏置；逐步叠加噪声",
+      "params": "bias_noise_cfg；noise_cfg；sample_bias_per_component",
+      "sampling": "随机回合偏置 + 逐步噪声；也支持固定 bias",
+      "access": "NoiseModelWithAdditiveBiasCfg",
+      "note": "ConstantNoiseCfg 本身是确定性偏置，只有偏置采样配置才是随机化。",
+      "sources": [
+        {
+          "path": "AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab/isaaclab/utils/noise/noise_cfg.py",
+          "symbol": "NoiseModelWithAdditiveBiasCfg",
+          "line": 98,
+          "sha256": "52ad7352569fbc0e09a665c2b254d2dd3d0e3aeecf2dd13a13786b68d88b55bd"
+        },
+        {
+          "path": "AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab/isaaclab/utils/noise/noise_cfg.py",
+          "symbol": "ConstantNoiseCfg",
+          "line": 35,
+          "sha256": "52ad7352569fbc0e09a665c2b254d2dd3d0e3aeecf2dd13a13786b68d88b55bd"
+        }
+      ]
+    },
+    {
+      "id": "m34",
+      "group": "扰动与传感噪声",
+      "name": "执行器随机延迟",
+      "kind": "delay",
+      "stage": "actuator reset 采样 / 每步应用",
+      "params": "min_delay；max_delay [物理步]",
+      "sampling": "整数区间随机延迟",
+      "access": "DelayedPDActuatorCfg",
+      "note": "需要显式使用 DelayedPDActuator，OpenArm 当前未配置；不等于相机/网络延迟。",
+      "sources": [
+        {
+          "path": "AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab/isaaclab/actuators/actuator_pd_cfg.py",
+          "symbol": "DelayedPDActuatorCfg",
+          "line": 55,
+          "sha256": "df83f242fcf9156d81ceab0bd50cfed0440d99d651ddb397d5d2b37e8c1d64f9"
+        }
+      ]
+    },
+    {
+      "id": "m35",
+      "group": "几何、实例与地形",
+      "name": "刚体尺寸缩放",
+      "kind": "scale",
+      "stage": "usd：仿真播放前",
+      "params": "scale_range；各轴独立或等比",
+      "sampling": "连续均匀采样",
+      "access": "Isaac Lab usd event；AutoData profile 不支持 usd",
+      "note": "需 replicate_physics=False；禁止仿真运行中调用，不支持直接缩放 articulation。profile 中固定 scale 不算随机化。",
+      "sources": [
+        {
+          "path": "AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab/isaaclab/envs/mdp/events.py",
+          "symbol": "randomize_rigid_body_scale",
+          "line": 42,
+          "sha256": "d261ff59e6253e0d125a0bf5bac498256f36c87dd3a8974da50166a1bd8fb30e"
+        }
+      ]
+    },
+    {
+      "id": "m36",
+      "group": "几何、实例与地形",
+      "name": "多资产实例抽样",
+      "kind": "asset",
+      "stage": "构建 / 克隆阶段",
+      "params": "RigidObjectSet；MultiUsdFileCfg / MultiAssetSpawnerCfg",
+      "sampling": "实例池选择 / heterogeneous cloning",
+      "access": "Arena / Isaac Lab 场景配置",
+      "note": "不是每回合自动换 USD；底层 wrapper 的 random_choice 已弃用，应使用场景 random_heterogeneous_cloning。",
+      "sources": [
+        {
+          "path": "AutoData/submodules/IsaacLab-Arena/isaaclab_arena/assets/object_set.py",
+          "symbol": "RigidObjectSet",
+          "line": 21,
+          "sha256": "899ef475ff8942ca39fb1a8c2b42c70912c1c9dfea961676e7c475968494af5e"
+        },
+        {
+          "path": "AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab/isaaclab/sim/spawners/wrappers/wrappers_cfg.py",
+          "symbol": "MultiUsdFileCfg",
+          "line": 55,
+          "sha256": "ce073f03584f9cab400735fce1af92b261b0e9217592c7ce79c1b8f541399574"
+        },
+        {
+          "path": "AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab/isaaclab/scene/interactive_scene_cfg.py",
+          "symbol": "InteractiveSceneCfg",
+          "line": 12,
+          "sha256": "b518a9781d40824933710b6e2a1408a3d1313c3510edff7cc2510f769b37f5e6"
+        }
+      ]
+    },
+    {
+      "id": "m37",
+      "group": "几何、实例与地形",
+      "name": "焦点物体实例切换",
+      "kind": "asset",
+      "stage": "reset",
+      "params": "asset_cfgs；out_focus_state；pose_range",
+      "sampling": "每组随机选一个实例进入工作区",
+      "access": "stack 专用 rigid-object 集合事件",
+      "note": "未选实例移到 out_focus_state；需要多实例资产集合，不能直接作用于单个 cube。",
+      "sources": [
+        {
+          "path": "AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab_tasks/isaaclab_tasks/manager_based/manipulation/stack/mdp/franka_stack_events.py",
+          "symbol": "randomize_rigid_objects_in_focus",
+          "line": 215,
+          "sha256": "9e33aa4a217b50bad92bbd153d7cc1735bb24f544cfb7202473026052cb3fbdb"
+        }
+      ]
+    },
+    {
+      "id": "m38",
+      "group": "几何、实例与地形",
+      "name": "地形类型与粗糙度",
+      "kind": "terrain",
+      "stage": "地形生成阶段",
+      "params": "sub_terrains；proportion；difficulty_range；seed",
+      "sampling": "地形类型/难度随机 + 几何噪声",
+      "access": "TerrainGeneratorCfg",
+      "note": "包含均匀高度场与随机网格等具体子地形；不等于 OpenArm 桌面材质随机化。",
+      "sources": [
+        {
+          "path": "AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab/isaaclab/terrains/terrain_generator_cfg.py",
+          "symbol": "TerrainGeneratorCfg",
+          "line": 29,
+          "sha256": "0c5429b74a54374ad53f141ae59f5273e1164dbc092c909e1f81f6bc537d45f0"
+        },
+        {
+          "path": "AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab/isaaclab/terrains/height_field/hf_terrains_cfg.py",
+          "symbol": "HfRandomUniformTerrainCfg",
+          "line": 41,
+          "sha256": "948516bf23f7ad847926ba875c436e469e5c1e327e259ebe01a1fbeff2e81f3b"
+        },
+        {
+          "path": "AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab/isaaclab/terrains/trimesh/mesh_terrains_cfg.py",
+          "symbol": "MeshRandomGridTerrainCfg",
+          "line": 68,
+          "sha256": "b249a84c0443ed49c30ae169a34d30be31dd62edc096ab2d496947c9d8bfee25"
+        }
+      ]
+    },
+    {
+      "id": "m39",
+      "group": "AutoData 轨迹增强",
+      "name": "子任务边界抖动",
+      "kind": "boundary",
+      "stage": "源片段准备 / 池刷新",
+      "params": "subtask_term_offset_range；subtask_start_offset_range [帧]",
+      "sampling": "离散整数采样",
+      "access": "AutoData TaskDescriptor",
+      "note": "SkillGen 起止均可抖动；其他算法主要抖动终点。当前 first_subtask_start_offset_range 实现只取下界，不能宣称该字段完整区间采样。属于数据增强。",
+      "sources": [
+        {
+          "path": "AutoData/autodata_core/data_generator.py",
+          "symbol": "randomize_subtask_boundaries",
+          "line": 151,
+          "sha256": "b50ae85f09da9a75f4c8123a6f3e2103a6e99e098049237af44d708b53f0d35b"
+        }
+      ]
+    },
+    {
+      "id": "m40",
+      "group": "AutoData 轨迹增强",
+      "name": "源演示随机选择",
+      "kind": "selection",
+      "stage": "每个子任务选源",
+      "params": "selection_strategy=random",
+      "sampling": "源池均匀随机",
+      "access": "AutoData TaskDescriptor",
+      "note": "源池只有一条时不会产生多源多样性。属于数据增强，不改变物理域参数。",
+      "sources": [
+        {
+          "path": "AutoData/autodata_core/selection_strategy.py",
+          "symbol": "RandomStrategy",
+          "line": 65,
+          "sha256": "d1a828eaff9baf4f82b3da3d9df629a550bf31712f0dbd75af868e21d0f86c9b"
+        }
+      ]
+    },
+    {
+      "id": "m41",
+      "group": "AutoData 轨迹增强",
+      "name": "物体近邻 top-k 抽样",
+      "kind": "selection",
+      "stage": "每个子任务选源",
+      "params": "nearest_neighbor_object；nn_k；pos_weight；rot_weight",
+      "sampling": "按物体位姿排序后 top-k 均匀选择",
+      "access": "AutoData TaskDescriptor",
+      "note": "k=1 时选源不随机；k 截断到可用源片段数量。",
+      "sources": [
+        {
+          "path": "AutoData/autodata_core/selection_strategy.py",
+          "symbol": "NearestNeighborObjectStrategy",
+          "line": 75,
+          "sha256": "d1a828eaff9baf4f82b3da3d9df629a550bf31712f0dbd75af868e21d0f86c9b"
+        }
+      ]
+    },
+    {
+      "id": "m42",
+      "group": "AutoData 轨迹增强",
+      "name": "机器人距离 top-k 抽样",
+      "kind": "selection",
+      "stage": "每个子任务选源",
+      "params": "nearest_neighbor_robot_distance；nn_k",
+      "sampling": "按机器人相关位姿距离排序后 top-k 选择",
+      "access": "AutoData TaskDescriptor",
+      "note": "不是在全池等概率随机；受距离排序与可用源数量约束。",
+      "sources": [
+        {
+          "path": "AutoData/autodata_core/selection_strategy.py",
+          "symbol": "NearestNeighborRobotDistanceStrategy",
+          "line": 116,
+          "sha256": "d1a828eaff9baf4f82b3da3d9df629a550bf31712f0dbd75af868e21d0f86c9b"
+        }
+      ]
+    },
+    {
+      "id": "m43",
+      "group": "AutoData 轨迹增强",
+      "name": "执行动作噪声",
+      "kind": "trajectory",
+      "stage": "每步执行；插值阶段可开关",
+      "params": "action_noise；apply_noise_during_interpolation",
+      "sampling": "高斯噪声",
+      "access": "AutoData subtask + embodiment adapter",
+      "note": "单臂实现对六维 pose action 加噪、夹爪直通，可裁剪；双臂实现对位置和四元数分量加噪，两者不能混写成同一种姿态噪声。",
+      "sources": [
+        {
+          "path": "AutoData/autodata_interfaces/embodiments/single_arm_embodiment_adapter.py",
+          "symbol": "DeltaPoseIKSingleArmAdapter",
+          "line": 115,
+          "sha256": "681ed6f1db2169681cb4b7ce773494fcfe179e26fea64d12a607d9c548bf60ee"
+        },
+        {
+          "path": "AutoData/autodata_interfaces/embodiments/bimanual_embodiment_adapter.py",
+          "symbol": "_add_noise",
+          "line": 295,
+          "sha256": "080e1d9ab4497931039ef195e4f346b0738bf4ed9f9520c01a9dfba696709248"
+        }
+      ]
+    },
+    {
+      "id": "m44",
+      "group": "AutoData 轨迹增强",
+      "name": "规划轨迹执行噪声",
+      "kind": "trajectory",
+      "stage": "规划完成后的 waypoint 执行",
+      "params": "motion_noise_scale",
+      "sampling": "规划 waypoint 携带执行噪声幅度",
+      "access": "AutoData SkillGen / planner profile",
+      "note": "不是随机化 cuRobo 求解器或障碍物；噪声最终由 embodiment 执行路径施加。",
+      "sources": [
+        {
+          "path": "AutoData/autodata_core/algorithms.py",
+          "symbol": "SkillGen",
+          "line": 168,
+          "sha256": "2288cae36381dd36a2e13a80bc20c47e514f8568c1ec8a028af1512244f95939"
+        },
+        {
+          "path": "AutoData/autodata_interfaces/motion_planners/curobo/curobo_planner_cfg.py",
+          "symbol": "CuroboPlannerCfg",
+          "line": 17,
+          "sha256": "beccfad62458e98a68c3c6a63a0f9911a8c4c8d0c54765378f7cad7e29dd4259"
+        }
+      ]
+    },
+    {
+      "id": "m45",
+      "group": "AutoData 轨迹增强",
+      "name": "双臂协调位姿扰动",
+      "kind": "coordination",
+      "stage": "协调变换构造",
+      "params": "coordination_scheme_pos_noise_scale [m]；rot_noise_scale [rad]",
+      "sampling": "XYZ 与逐轴 Euler 均匀噪声",
+      "access": "AutoData task constraint",
+      "note": "位置平移与欧拉角扰动叠加到协调变换；只有声明了相应约束的任务生效。",
+      "sources": [
+        {
+          "path": "AutoData/autodata_core/transforms.py",
+          "symbol": "_add_uniform_noise_to_pose",
+          "line": 56,
+          "sha256": "1539a22f202cb8480f15cd983c12f51c279554d07d58663feea221f2825b4e99"
+        }
+      ]
+    }
+  ]
+}

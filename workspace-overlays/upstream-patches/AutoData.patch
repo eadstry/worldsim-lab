@@ -1,0 +1,23 @@
+diff --git a/AGENTS.md b/AGENTS.md
+index 45021c4..3ade302 100644
+--- a/AGENTS.md
++++ b/AGENTS.md
+@@ -4,9 +4,15 @@ This file provides guidance to AI coding agents (Claude Code, OpenAI Codex, etc.
+ 
+ ## Environment
+ 
+-All scripts and commands from this repo must be run inside a Docker container started with
+-`./docker/run_docker.sh` (or `./docker/run_docker.sh -c` for cuRobo). Users must start the container manually; if
+-no container started by the appropriate command exists, prompt the user to start it.
++Commands that use Isaac Sim, GPU/CUDA, cuRobo, or AutoData's simulation runtime require a compatible configured
++runtime environment. Do not substitute an incompatible host Python environment for these runtime checks.
++
++Source inspection, documentation work, shell syntax checks, and host-only validation that does not import or
++execute simulation dependencies may run on the host. Prefer checks explicitly documented as host-safe, and report
++what they cover. A static inspection or host-only check is not runtime validation.
++
++If the required runtime or GPU environment is unavailable, continue with independent host-safe work. Skip blocked
++runtime commands and state that runtime validation remains outstanding.
+ 
+ ## Common Commands
+ 

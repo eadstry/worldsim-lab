@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "artifact_id": "arena-robolab-config-guide",
+  "version": "v001",
+  "created_at": "2026-10-13T03:28:11.698575+00:00",
+  "material_cutoff": "2026-10-13 Asia/Shanghai",
+  "sources": [
+    {
+      "type": "upstream_source",
+      "commit": "98866596fd024d96c874fe6fb95ae916d1133629",
+      "url": "https://github.com/isaac-sim/IsaacLab-Arena/tree/98866596fd024d96c874fe6fb95ae916d1133629",
+      "files": [
+        "isaaclab_arena_environments/robolab/scenes/banana_bowl.yaml",
+        "isaaclab_arena_environments/robolab/tasks/banana_in_bowl.yaml",
+        "isaaclab_arena/environment_spec/arena_env_graph_yaml_loader.py",
+        "isaaclab_arena/environment_spec/arena_env_graph_task_conversion_utils.py",
+        "isaaclab_arena/hydra/typed_experiment_loader.py",
+        "isaaclab_arena/evaluation/run_execution.py",
+        "isaaclab_arena/tasks/pick_and_place_task.py",
+        "isaaclab_arena/embodiments/droid/droid.py"
+      ]
+    }
+  ],
+  "limitations": [
+    "Static code inspection only; no simulation, policy or full Arena schema validation",
+    "evaluation.yaml is locally authored, not an upstream official example",
+    "No authorized Feishu/ChatGPT destination configured; no upload capability obtained"
+  ],
+  "sealed_at": "2026-10-13T03:30:11.623945+00:00",
+  "files": {
+    "CHANGELOG.md": "2ade9c0dc0ba531396b253d7e241001d3839552b5d1d76650d4fcd48b586d262",
+    "configs/evaluation.yaml": "4a1f14edd7dab8de8be3939a8ab3987329bc2bb404a3e9a6d4b41e6d08a5fdf6",
+    "configs/scenes/banana_bowl.yaml": "c557e22dec20fab68499e992a2369a9fe16dd7462ac7a84f854b240767df1dc6",
+    "configs/tasks/banana_in_bowl.yaml": "45f0bb3c80307a407d0fe8fd2d21093f20427abc05d8484b18ffb2657d817b85",
+    "report.md": "455c9873f54216b07a3f2f839d0e4c3851a3eb291d706c271d62438306a1c724"
+  },
+  "delivery": {
+    "feishu": {
+      "status": "blocked_destination",
+      "target": null,
+      "receipt": null,
+      "files": [],
+      "updated_at": "2026-10-13T03:30:11.602159+00:00",
+      "error": "Missing configured authorized destination; upload capability also unavailable"
+    },
+    "gpt": {
+      "status": "blocked_destination",
+      "target": null,
+      "receipt": null,
+      "files": [],
+      "updated_at": "2026-10-13T03:30:11.602172+00:00",
+      "error": "Missing configured authorized destination; upload capability also unavailable"
+    }
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "artifact_id": "openarm-benchmark",
+  "version": "v002",
+  "created_at": "2026-10-15T09:27:31.571462+00:00",
+  "material_cutoff": "2026-10-15T09:29:19.966690+00:00",
+  "sources": [
+    {
+      "kind": "source_snapshot",
+      "path": "code/input-lock.json"
+    },
+    {
+      "kind": "new_gpu_runtime",
+      "path": "results.json"
+    },
+    {
+      "kind": "new_gpu_recording_followup",
+      "path": "recording-followup.json"
+    },
+    {
+      "kind": "validation",
+      "path": "validation.json"
+    },
+    {
+      "kind": "static_comparison_and_historical_records",
+      "path": "source-evidence.json"
+    }
+  ],
+  "limitations": [
+    "No trained-policy or generalization score; deterministic single-episode positive regression.",
+    "Full original OpenArm bundle and configured GPU runtime must be provided separately.",
+    "Only current Arena revision GPU tested; optional full-budget baseline not run.",
+    "Viewport captures env 0; other parallel environments have episode records, not individual videos.",
+    "Positive run report association was performed after rollout; final automatic association GPU tested with smoke.",
+    "User requested local delivery first; Feishu and ChatGPT uploads deferred."
+  ],
+  "sealed_at": "2026-10-15T09:30:12.127905+00:00",
+  "files": {
+    "CHANGELOG.md": "139089c12a45aec4e78683a838e709a43f1905438cabcefa98b264a8db14584e",
+    "code/.gitignore": "247681cefffa8448d973f21147c92b38b63f492a98a50aca3b3c490bc97499e1",
+    "code/README.md": "862789f2118bdea26ebb8a185b68dae60b57dd288f6590f1584b9af2ac993a30",
+    "code/benchmark.json": "9effc8e0be1f9e20dd9ca7be0e04af090e1817212e6deb4137893f01a496a059",
+    "code/input-lock.json": "9a75e3f7b8faa1fc1774cfcc0dba4da0a10295b36e7060e85a4ec3ba0a5a4348",
+    "code/openarm_benchmark/__init__.py": "1822c5ef70a6a194bf8d3f6b74f002f277d76b88e19f87321b626cc2d204e0c9",
+    "code/openarm_benchmark/actions.py": "63d3c64fd99649a12c675ad8bb5d95b52df657d70e84faea060eaa9507b90cba",
+    "code/openarm_benchmark/environment.py": "e6eace781173bcf4a19a0a3f1bee8fed6b7bfeafb9a88aa05b820361ff67a4a7",
+    "code/openarm_benchmark/recording.py": "ad823cbac8acb8316b4122964e4af08962728599a700ef18d59cf3012499d2aa",
+    "code/run.py": "f8fb0c8bba2e4e15a3999e74b4414b291a34ec045b1f333f3efc807a02c7d4aa",
+    "code/runtime.py": "d8e04f88d8a68259a509bcd0323f575fb9b686c180f4675438bca3bf7e83c48e",
+    "code/tests/test_benchmark.py": "1ea1fb153ac0ca90a2c49755dea648955e34fd59b4a27e6cf758307393e4e393",
+    "fixture_regression_seed11/2026-10-15_17-16-28/arena-native-env0-viewport-episode-0.mp4": "c17e1000751a4bb90457d0764e85c804879acc59a34c68b1350359c011b5a25d",
+    "fixture_regression_seed11/2026-10-15_17-16-28/episode_results_rank0.jsonl": "e8d5d9b3c9a0c116245ec13b2c31320545726ec964080636f3ed5ee64cd9f69e",
+    "fixture_regression_seed11/2026-10-15_17-16-28/index.html": "00ae12d399df4220326ddd560f85a5f783e28bf78bf51b6ac003deb1475666ae",
+    "fixture_regression_seed11/2026-10-15_17-16-28/report/job_unnamed.html": "e0a026286bbc3926c2610c8d4a0827b474d81b55de58538901f9c5746b6d2dd1",
+    "fixture_regression_seed11/2026-10-15_17-16-28/report/task_ungrouped.html": "4169ab34ddee6c1123ac8b15552c6a57aaffaf79319f74e1aa587b1dddebb4d2",
+    "index.html": "ab11a9858851ffcdd96cfa6f61b2d96b7bab337101153888653c6827aed4f55b",
+    "recording-followup/index.html": "50ca6ee37694c606e5e7fc4a8942df982d412c6e07617109102aa919876a3d9d",
+    "recording-followup/smoke_timeout_seed11/2026-10-15_17-23-18/arena-native-env0-viewport-episode-0.mp4": "84a4117abc237a15d3cb4c7a677ac0991edb9b251f280f059fbfec22bed97870",
+    "recording-followup/smoke_timeout_seed11/2026-10-15_17-23-18/episode_results_rank0.jsonl": "6389fcc3f0c145006d6b5855b2639759c55463d2c888e405e0fa0385b976c27e",
+    "recording-followup/smoke_timeout_seed11/2026-10-15_17-23-18/index.html": "529354a752b634167e995d8c93ef233be8d2fe4e8d12801befd9a2ed8bcf1c16",
+    "recording-followup/smoke_timeout_seed11/2026-10-15_17-23-18/report/job_unnamed.html": "cd3e520c07254cab98a4ce758f4e39c8754c5e4d7126dc8b54603182ad369bca",
+    "recording-followup/smoke_timeout_seed11/2026-10-15_17-23-18/report/task_ungrouped.html": "2bc89f3c575334afbdaa4ed010facd05e8d5563b59afd5acc894cab6bda21e2a",
+    "recording-followup.json": "2497834d35349d7ed57cb19a7e26315495c5944fbf6457e5c016b114b6c42726",
+    "report.md": "6a479d1bfd8cf5d99b1ac8bb6ad7b383d5630eb18cdd61c0b8d7aaa7434c44d0",
+    "results.json": "1c09974efbbdebaf727a013892c98a74ecee4584a7e3d3f3170863731f8d2669",
+    "smoke_timeout_seed11/2026-10-15_17-16-12/arena-native-env0-viewport-episode-0.mp4": "84a4117abc237a15d3cb4c7a677ac0991edb9b251f280f059fbfec22bed97870",
+    "smoke_timeout_seed11/2026-10-15_17-16-12/episode_results_rank0.jsonl": "4522fd3bfda408228963663c0b4cd62d1d16e7d8620b37d83f9d63e2e6065e50",
+    "smoke_timeout_seed11/2026-10-15_17-16-12/index.html": "529354a752b634167e995d8c93ef233be8d2fe4e8d12801befd9a2ed8bcf1c16",
+    "smoke_timeout_seed11/2026-10-15_17-16-12/report/job_unnamed.html": "35bc30d30d35e5c6d1b084ce85c7484cee2739ed0595b50f3047c50b64a6f37a",
+    "smoke_timeout_seed11/2026-10-15_17-16-12/report/task_ungrouped.html": "2bc89f3c575334afbdaa4ed010facd05e8d5563b59afd5acc894cab6bda21e2a",
+    "source-evidence.json": "b6cda2a9a291e57db2d7fbf2bd52ce49cbfd18f77eef70305cba92b775f85e92",
+    "validation.json": "357a5f90f6bfee49133151ab14e7191d58c75c918b2671d1cc61a0afaa01b816"
+  },
+  "delivery": {
+    "feishu": {
+      "status": "pending",
+      "target": null,
+      "receipt": null,
+      "files": [],
+      "updated_at": null,
+      "error": "Deferred: user requested local delivery first."
+    },
+    "gpt": {
+      "status": "pending",
+      "target": null,
+      "receipt": null,
+      "files": [],
+      "updated_at": null,
+      "error": "Deferred: user requested local delivery first."
+    }
+  }
+}

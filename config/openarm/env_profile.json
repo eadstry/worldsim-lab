@@ -1,0 +1,5 @@
+{
+  "name": "openarm_left_skillgen",
+  "base_env": "Isaac-PickPlace-Cube-OpenArm-Bimanual-Left-IK-Rel-v0",
+  "planner": "openarm_pick_place_left"
+}

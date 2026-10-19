@@ -36,12 +36,11 @@ const readme=`# AutoData · Markdown 阅读包\n\n- 原文：${filename}\n- 图�
 fs.writeFileSync(`${out}/阅读说明.md`,readme);
 const files=['index.html',filename,'article.css','阅读说明.md','figures'];
 const zip=`${out}/autodata-markdown.zip`;
-fs.rmSync(zip,{force:true});
 const staging=fs.mkdtempSync(path.join(os.tmpdir(),'autodata-offline-'));
 try{
  for(const file of files)fs.cpSync(`${out}/${file}`,`${staging}/${file}`,{recursive:true});
  const offline=html.replace(/<a href=\"autodata-markdown.zip\"[^>]*>[\s\S]*?<\/a>/,'').replace(/<a href=\"..\/..\/\"[^>]*>[\s\S]*?<\/a>/,'<span>AutoData · 离线阅读</span>');
  fs.writeFileSync(`${staging}/index.html`,offline);
- execFileSync('zip',['-q','-r',path.resolve(zip),...files],{cwd:staging});
+ execFileSync('python3',[path.resolve('scripts/offline-archive.py'),'build',staging,path.resolve(zip)]);
 }finally{fs.rmSync(staging,{recursive:true,force:true});}
 console.log(`Built AutoData: ${section} sections, Markdown + SVG + offline ZIP`);

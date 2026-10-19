@@ -1,0 +1,37 @@
+{
+  "checked_at": "2026-10-15T08:24:56.717852+00:00",
+  "host_only": true,
+  "host_tests": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s workspace-overlays/openarm-benchmark/tests -v",
+    "passed": 12,
+    "failed": 0,
+    "uses_simulation_test_doubles": true
+  },
+  "dry_runs": [
+    {
+      "arena_revision": "8b82dca224f2b5af08f339f987613c59ce9cdbaa",
+      "status": "passed",
+      "bundle_files_verified": 181,
+      "planned_runs": 2,
+      "simulation_started": false
+    },
+    {
+      "arena_revision": "98866596fd024d96c874fe6fb95ae916d1133629",
+      "status": "passed",
+      "bundle_files_verified": 181,
+      "planned_runs": 2,
+      "simulation_started": false
+    }
+  ],
+  "workspace_check": {
+    "command": "bash scripts/cloud-check.sh",
+    "status": "passed",
+    "dependencies": "Existing machine-local node_modules reused; package-lock files identical; no dependency installation"
+  },
+  "python_syntax": "passed",
+  "gpu_runtime": {
+    "status": "not_performed",
+    "reason": "NVIDIA-SMI could not communicate with the NVIDIA driver in the current session"
+  },
+  "learned_policy_evaluation": "not_applicable_no_checkpoint"
+}

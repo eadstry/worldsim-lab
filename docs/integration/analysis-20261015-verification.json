@@ -1,0 +1,28 @@
+{
+  "checked_date": "2026-10-15 Asia/Shanghai",
+  "scope": "Offline artifact and host checks only; no new GPU simulation, training or profiler run",
+  "imported_files": 1013,
+  "imported_bytes": 114561545,
+  "imported_snapshot_hashes": "passed except two documented nonfunctional overlay text adjustments",
+  "artifact_manifests": 27,
+  "sealed_payload_files": 1087,
+  "sealed_hashes": "passed",
+  "latest_review_pdf_pages": 43,
+  "latest_review_relative_html_links": "passed",
+  "internal_timing_accounting_and_speedup": "passed; 1.472375053460725 from archived pair",
+  "host_test_suites": {
+    "openarm-production": 31,
+    "curobo-v2-mvp": 7,
+    "openarm-v1-timing": 4,
+    "openarm-throughput-benchmark": 8,
+    "arena-benchmark": 12
+  },
+  "host_tests_status": "passed",
+  "initial_test_environment_failures": [
+    "cuRobo v2 test run under v1 Python: corrected by using preserved dedicated v2 environment",
+    "Production source-inspection tests without AutoData checkout: corrected with temporary read-only link to existing source worktree, removed after tests"
+  ],
+  "upstream_gitlinks": "unchanged",
+  "cloud_check": "passed with --allow-uninitialized; see analysis-20261015-cloud-check.txt",
+  "whitespace_check": "Sealed generated SVG/CSV and archived source retain original whitespace; maintained files checked separately"
+}

@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "artifact_id": "autodata-domain-randomization",
+  "version": "v002",
+  "created_at": "2026-10-16T10:28:00.505441+08:00",
+  "sealed_at": "2026-10-16T10:28:00.505441+08:00",
+  "sources": [
+    "/home/tangyuan/WorldSimReady-Home/runs/domain-randomization-20261016/probe-r04"
+  ],
+  "files": {
+    "distribution.png": "d53e50143f452b0a2ffc6e383ce098d76770058ba7ce3441298fc5462d13b047",
+    "distribution.svg": "08770a3664db9a1726f6af9faaf98428ea7b67870f5463f420de13991fb2e371",
+    "image-check.json": "de81245541a490bae3eb1bbd76418898ddb6d75a75240034c042937463cb5a0c",
+    "index.html": "b559ea6b00fd13ec9b8e79433835f5e53989d8eadfefd9270e957f2aa6b48192",
+    "overview-00.png": "93b10970a433c14abdc6ec4d3ceb77e5889f503ec01d3ea0c72ff750ab0ea8f5",
+    "overview-01.png": "0fb75db8a43a5a93104a7f6e1eeae73f64ecbb1dc344c60607ef184bd323a95f",
+    "overview-02.png": "869d8ee5f9d8c3d6880dc4252d85b6b0f22aabf83082cb264a3cf94abe785da2",
+    "overview-03.png": "f4c36b8ec68a92460deba97c73de7ea1e7879cbb53adce2b28566c9bcdf526cd",
+    "overview-04.png": "d3e1bbf8a43778ef8f88d93be2911fddf45f19aff0840ea6d98ddc04ee836615",
+    "overview-05.png": "18a38786cc63bcbbdfaa7d2445f9347a8e2f38ebf75dd29c72823f40d733f814",
+    "overview-06.png": "84f6919ad26eb7de41c23f88931805ec3c6a2a741b884f8c317c57cb56c22188",
+    "overview-07.png": "061b0dc97f211953256a40d66c14337a4886dc7c62547a443194cfb1d5b9020a",
+    "overview-08.png": "fe40a628308fe85d25e745b026ce5ad5a42a7b1a6fe8f7a53eae048a9646d791",
+    "renders.png": "15f7835e7e0121e2b61fb106e18a06f3e1b58afeccb3ce8f182f4e51fb95a398",
+    "report.md": "16c5b1fe31829f2ace29c5af2b58a93ab56a3648f8cd71a6533efe2441cc1f64",
+    "reset-00.png": "d7a09d644b1236d0392f3d12099bd2541d7846fa660116bdd1765be552164cff",
+    "reset-01.png": "05cd527a61123613b47bba5660274a33391fc9a83824828670f20a17a8db2f03",
+    "reset-02.png": "e3c2e1f258351c505027eff795aefdd98856d8ccbb09fd0df132fdc061041083",
+    "reset-03.png": "8cfc294a0947f8529336e99ad86f7486fe5bf2be918953a91808a5263c32a467",
+    "reset-04.png": "f84cb18994b320ddc7703aa5b7b5a154a905ac90ea6b3e019961a1371ff6b25e",
+    "reset-05.png": "0bbe0ae1fc42bf136b191ebd09dbbb7bcc7811c8aa33a3dd8bc9cae09e26a534",
+    "reset-06.png": "bd0a295548fe493579f9b597022b031546352cf6303be8b55d98af5b71520b24",
+    "reset-07.png": "e01b1f9657167836be29015b73670cfd3bf3ea62bbf45d28199c07a6aa57f9f6",
+    "reset-08.png": "17221153b06cf2a1b5a732daf3808f23795d24eacf0ea2c73d1fb1812497dc43",
+    "result.json": "4a3ea48fcbfc6fc517d430cb59214a5ccfb1ae8ea264fe332c85a155a5662cb9",
+    "samples.npz": "34a267833cce37995e469b0c1385d861c8b05463b9f909bcb9b2f10a8343dc2d"
+  },
+  "validation": {
+    "finite_poses": true,
+    "configured_bounds": true,
+    "xy_changes": true,
+    "z_fixed": true,
+    "orientation_fixed": true,
+    "same_seed_reproduces": true,
+    "different_seed_changes": true,
+    "disabled_randomization_fixed": true,
+    "physics_steps_finite": true
+  },
+  "delivery": {
+    "local": {
+      "status": "saved"
+    }
+  }
+}

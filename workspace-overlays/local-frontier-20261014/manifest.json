@@ -1,0 +1,292 @@
+{
+  "branch": "codex/local-frontier-20261014",
+  "source_branch": "codex/episode-export-workers",
+  "source_commit": "3871b045803620aa5f76557cfcc6e53f6b39d341",
+  "copied_files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "0372f8ccd2ed061de59ccb55e486c76e3f32318e196ebcc88bf1d6840ab46009"
+    },
+    {
+      "path": "outputs/README.md",
+      "sha256": "7a968b95ba5515bea2e17bfe00c789faec9793a7573aff3278b37359dc2123af"
+    },
+    {
+      "path": "outputs/autodata-efficiency-report/v001/AutoData-效率优化报告.pdf",
+      "sha256": "86b9b843519f49391d7b2febbcbe3a16965205c940b2ab72bfab27725846df5e"
+    },
+    {
+      "path": "outputs/autodata-efficiency-report/v001/build_report.py",
+      "sha256": "d0cb70959c26ed381cfa5695e47b48df1402f9b38eb244070c826dc994595c42"
+    },
+    {
+      "path": "outputs/autodata-efficiency-report/v001/evidence.json",
+      "sha256": "c86c49528ebd6f3c83ac314eb8ea3acdf34daaa269fd53b29dd8da2e6a10ece4"
+    },
+    {
+      "path": "outputs/autodata-efficiency-report/v001/figures/figure-01.png",
+      "sha256": "a66b463d3583c61015a6d646d6ac94eb40c46dd57af20f3ca7be23c6f89d8274"
+    },
+    {
+      "path": "outputs/autodata-efficiency-report/v001/figures/figure-01.svg",
+      "sha256": "9e2f5582082043f4a82376937b46e36035a3156deb93a02c8d65bb80fd931262"
+    },
+    {
+      "path": "outputs/autodata-efficiency-report/v001/figures/figure-02.png",
+      "sha256": "10872705e79f0593ea3f3480570ef60c2275fc0678ee966195d50c93928fc5b7"
+    },
+    {
+      "path": "outputs/autodata-efficiency-report/v001/figures/figure-02.svg",
+      "sha256": "0ece7a484454920434e8edf76e0a6e3c723d6c07a23606c754fa63b907a90a8f"
+    },
+    {
+      "path": "outputs/autodata-efficiency-report/v001/figures/figure-03.png",
+      "sha256": "8ed6cb6b5f2818c3bc09eb2b77d628919d934179a191fa1f5376dd3c4e004b24"
+    },
+    {
+      "path": "outputs/autodata-efficiency-report/v001/figures/figure-03.svg",
+      "sha256": "d797d67eab31811fd47af3728e63f4e59673beca3b2842f8003a7fb5956ddb57"
+    },
+    {
+      "path": "outputs/autodata-efficiency-report/v001/figures/figure-04.png",
+      "sha256": "b4ad498dcdc8707202e12c617cedba868e421835b0a3c0d56156c4a99b3a2680"
+    },
+    {
+      "path": "outputs/autodata-efficiency-report/v001/figures/figure-04.svg",
+      "sha256": "03bd94d4e9d0a9d53c9cf75e5a5b35019c0ca4d0e8097632fc83d4eaa4047841"
+    },
+    {
+      "path": "outputs/autodata-efficiency-report/v001/figures/figure-05.png",
+      "sha256": "c879f546f6bf0b2836699a4d6352e7dc666757e905049eda891af935885c3297"
+    },
+    {
+      "path": "outputs/autodata-efficiency-report/v001/figures/figure-05.svg",
+      "sha256": "e88b6464f2659463e05807deff636c708638de782db357ef5ccdff6f9b108005"
+    },
+    {
+      "path": "outputs/autodata-efficiency-report/v001/figures/figure-06.png",
+      "sha256": "1201032b90367a6daa87276e9d56efa7010e8ab2aa89a7fd7f4dcc872e8cee1a"
+    },
+    {
+      "path": "outputs/autodata-efficiency-report/v001/figures/figure-06.svg",
+      "sha256": "9c86ad126945395b4d30e936892d3a33c2553e968bf20c7026657dfc4ed40199"
+    },
+    {
+      "path": "outputs/autodata-efficiency-report/v001/figures/figure-07.png",
+      "sha256": "976b8888bdfe3b4344db00e4b9613c1608685f4622d0fdec34d6d2cfc79d14b7"
+    },
+    {
+      "path": "outputs/autodata-efficiency-report/v001/figures/figure-07.svg",
+      "sha256": "b1535220a7f29cbeb4a45d782d0a9274392a26644115fb48ef6533a59b482fd0"
+    },
+    {
+      "path": "outputs/autodata-efficiency-report/v001/figures/figure-08.png",
+      "sha256": "8fd3de14a2087bc73c26f384abfb52b202ef655c35ca04b1cff12a023b647b95"
+    },
+    {
+      "path": "outputs/autodata-efficiency-report/v001/figures/figure-08.svg",
+      "sha256": "5625f03a3473ff98dd0db91d210a8676c191744c889b39a2b414bee237ec6f08"
+    },
+    {
+      "path": "outputs/autodata-efficiency-report/v001/figures/figure-09.png",
+      "sha256": "ccff7d485469e30c328fbe61aa7fde8b5c0e724f15d8bc21fa957f2159fb7080"
+    },
+    {
+      "path": "outputs/autodata-efficiency-report/v001/figures/figure-09.svg",
+      "sha256": "8e4dc77a2ca09d160d751ed0a0537bd3087964252ecea51cbe16b1882b212117"
+    },
+    {
+      "path": "outputs/autodata-efficiency-report/v001/figures/figure-10.png",
+      "sha256": "b5a7cba23fbecc5c134c47fb6d562f5b76ca898de43e93909097ad726d0cf2d0"
+    },
+    {
+      "path": "outputs/autodata-efficiency-report/v001/figures/figure-10.svg",
+      "sha256": "93664de00c9075a463dc7c51992c51f13356ba90f95b6958210a1592cc51bece"
+    },
+    {
+      "path": "outputs/autodata-efficiency-report/v001/figures/figure-11.png",
+      "sha256": "0683a7f15ba35c3086dc858cf3b45bd925d99d7afdfd72960034c9c6ed982eb3"
+    },
+    {
+      "path": "outputs/autodata-efficiency-report/v001/figures/figure-11.svg",
+      "sha256": "aa4cc4dc224e896aebf3b0a2ee8914b62668b9887af91a60eba310bffde636f0"
+    },
+    {
+      "path": "outputs/autodata-efficiency-report/v001/figures/figure-12.png",
+      "sha256": "77ea7aa3605eac8687111f9ef6cf8c51b9bcc4277d2dbbf978c9e0b58c70491c"
+    },
+    {
+      "path": "outputs/autodata-efficiency-report/v001/figures/figure-12.svg",
+      "sha256": "52356a354bb759ded17d136dc676e3cf08d8e748611ff26ee1c9a57f0387c2a4"
+    },
+    {
+      "path": "outputs/autodata-efficiency-report/v001/index.html",
+      "sha256": "85cff80b8a179da972dccf2899692eee5eed2021836628d79afc9628dadb45e0"
+    },
+    {
+      "path": "outputs/autodata-efficiency-report/v001/manifest.json",
+      "sha256": "fc3e9078c0fae69f240ac70ba5d6e854988780f8279d895fc1be39f21d9a7ae3"
+    },
+    {
+      "path": "outputs/autodata-efficiency-report/v001/verification.json",
+      "sha256": "efd86320be6af8b77c106e5bb99cf79b2ebcb73a744ce8d67cfe49200e443843"
+    },
+    {
+      "path": "workspace-overlays/openarm-production/README.md",
+      "sha256": "a69501dd27972c87fee175482bda0ce54b27014df728316b8d18f085531160a6"
+    },
+    {
+      "path": "workspace-overlays/openarm-production/async-export-validation.json",
+      "sha256": "43f4f7d27d6a4dd1e07b92cab004b32ebb48d8465caca8c85e0b27e2a8b3a182"
+    },
+    {
+      "path": "workspace-overlays/openarm-production/async_export.py",
+      "sha256": "b44c38db5f28faecc316369e5bfafa73d627eeddf26eb757a1dcce26a2da6573"
+    },
+    {
+      "path": "workspace-overlays/openarm-production/benchmark_gpu.py",
+      "sha256": "f63557f290bec0661b9c217a506a62e83c0d6f4bb569bfd9361405bc5ed59f80"
+    },
+    {
+      "path": "workspace-overlays/openarm-production/benchmark_pool.py",
+      "sha256": "bdfbe437703c276235761144fec0692e34ff8cd5493a374295b909c32674a4ef"
+    },
+    {
+      "path": "workspace-overlays/openarm-production/compat.py",
+      "sha256": "0f7df8d7a65f1178645aa02c53d733baa2dfc13e0a5435d81b54235d16f6023a"
+    },
+    {
+      "path": "workspace-overlays/openarm-production/export_governor.py",
+      "sha256": "d2dc630a91dc890c57ac36db381ac2759518a25b3a582704ccf783584dee808b"
+    },
+    {
+      "path": "workspace-overlays/openarm-production/export_pool.py",
+      "sha256": "ef03ef54bbbc7276205b15030358ee691fc3f422c6449f263acd8c7887768aef"
+    },
+    {
+      "path": "workspace-overlays/openarm-production/export_resources.py",
+      "sha256": "18e6cc143c037063a51cf5e9e52c529d7619214ef6b35a241b6c2aa5cf74f8af"
+    },
+    {
+      "path": "workspace-overlays/openarm-production/generate.py",
+      "sha256": "028a03f3c75fe46131bd03f17634cb6ed44ae0f4f7274e01ba4fe41d92195ff4"
+    },
+    {
+      "path": "workspace-overlays/openarm-production/monitor.py",
+      "sha256": "5c811c281b653e9ad018702526b03b7ee62db511f43becb5c15baf906fab1ae2"
+    },
+    {
+      "path": "workspace-overlays/openarm-production/run_local.py",
+      "sha256": "6423e4e287fc14b3151ce089f5d8eb58c0ace0a82521b725923aa503eb4dcfa2"
+    },
+    {
+      "path": "workspace-overlays/openarm-production/telemetry.py",
+      "sha256": "a6425d399ba0de11e8ef6233772a6af1117c99f8c62ed0249d7a7acbf2ab4e8c"
+    },
+    {
+      "path": "workspace-overlays/openarm-production/test_export_governor.py",
+      "sha256": "abc8de4d19c3171c87b9deaff5332d7b8a3fcb698d273f749446c36c87cc5fa0"
+    },
+    {
+      "path": "workspace-overlays/openarm-production/test_export_pool.py",
+      "sha256": "2cdffb15839f4ccd52c1852115db73e609c1c55139c3be8f3a8d1f6f8dcdd9e1"
+    },
+    {
+      "path": "workspace-overlays/openarm-production/test_export_resources.py",
+      "sha256": "ad1b3f3384622415399ae83d8a191779f7b6529239219525d1e31ecf2e185a0b"
+    },
+    {
+      "path": "workspace-overlays/openarm-production/verify_handoff.py",
+      "sha256": "58ec21b695b00e8e753dc33fae472293f851aa40647d7fb1c79843d6b671e550"
+    }
+  ],
+  "upstream_repositories": [
+    {
+      "repository": "AutoData",
+      "recorded_commit": "1c7360d85c9ad131ca6c8c70f1f731a6312616f3",
+      "head": "1c7360d85c9ad131ca6c8c70f1f731a6312616f3",
+      "untracked_file_count_excluded": 48,
+      "patch": "AutoData.patch",
+      "sha256": "eb3976607d17b7ac94df0a10930e944385f3ff28b22508d25c62b7bc44c144be"
+    },
+    {
+      "repository": "AutoData/submodules/IsaacLab-Arena",
+      "recorded_commit": "8b82dca224f2b5af08f339f987613c59ce9cdbaa",
+      "head": "8b82dca224f2b5af08f339f987613c59ce9cdbaa",
+      "untracked_file_count_excluded": 0,
+      "patch": "AutoData__submodules__IsaacLab-Arena.patch",
+      "sha256": "62b706eaf37cd48b832ace3cbd5f00e0cbbea49b9b64558762f0a24857774d51"
+    },
+    {
+      "repository": "AutoData/submodules/IsaacLab-Arena/submodules/Isaac-GR00T",
+      "recorded_commit": "e29d8fc50b0e4745120ae3fb72447986fe638aa6",
+      "head": "e29d8fc50b0e4745120ae3fb72447986fe638aa6",
+      "untracked_file_count_excluded": 0
+    },
+    {
+      "repository": "AutoData/submodules/IsaacLab-Arena/submodules/Isaac-GR00T/external_dependencies/GR00T-WholeBodyControl",
+      "recorded_commit": "3966393ed7a37612af16c9b77e7aaed91231c407",
+      "head": "3966393ed7a37612af16c9b77e7aaed91231c407",
+      "untracked_file_count_excluded": 0
+    },
+    {
+      "repository": "AutoData/submodules/IsaacLab-Arena/submodules/Isaac-GR00T/external_dependencies/LIBERO",
+      "recorded_commit": "8f1084e3132a39270c3a13ebe37270a43ece2a01",
+      "head": "8f1084e3132a39270c3a13ebe37270a43ece2a01",
+      "snapshot_note": "Empty-index partial checkout; no materialized source changes captured. Existing staged deletions are checkout state.",
+      "status_entry_count": 1116
+    },
+    {
+      "repository": "AutoData/submodules/IsaacLab-Arena/submodules/Isaac-GR00T/external_dependencies/SimplerEnv",
+      "recorded_commit": "8a2d286c926c1371927caa7651a412b4cc331756",
+      "head": "8a2d286c926c1371927caa7651a412b4cc331756",
+      "snapshot_note": "Empty-index partial checkout; no materialized source changes captured. Existing staged deletions are checkout state.",
+      "status_entry_count": 98
+    },
+    {
+      "repository": "AutoData/submodules/IsaacLab-Arena/submodules/Isaac-GR00T/external_dependencies/robocasa",
+      "recorded_commit": "d89d481ce9c76da7f179466981676e268aa842e5",
+      "head": "d89d481ce9c76da7f179466981676e268aa842e5",
+      "snapshot_note": "Empty-index partial checkout; no materialized source changes captured. Existing staged deletions are checkout state.",
+      "status_entry_count": 399
+    },
+    {
+      "repository": "AutoData/submodules/IsaacLab-Arena/submodules/Isaac-GR00T/external_dependencies/robocasa-gr1-tabletop-tasks",
+      "recorded_commit": "4840e671596f93ca03651524b9f72ffb1aadfeff",
+      "head": "4840e671596f93ca03651524b9f72ffb1aadfeff",
+      "snapshot_note": "Empty-index partial checkout; no materialized source changes captured. Existing staged deletions are checkout state.",
+      "status_entry_count": 249
+    },
+    {
+      "repository": "AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab",
+      "recorded_commit": "ffff603eafc6b74264a5261cc0183d6a65390d78",
+      "head": "ffff603eafc6b74264a5261cc0183d6a65390d78",
+      "untracked_file_count_excluded": 0,
+      "patch": "AutoData__submodules__IsaacLab-Arena__submodules__IsaacLab.patch",
+      "sha256": "71be35bdfcda78bd1dba563921ce2d780c5d5c875a57695ed13b4c61462293e3"
+    },
+    {
+      "repository": "IsaacLab-Arena",
+      "recorded_commit": "98866596fd024d96c874fe6fb95ae916d1133629",
+      "head": "98866596fd024d96c874fe6fb95ae916d1133629",
+      "untracked_file_count_excluded": 0,
+      "patch": "IsaacLab-Arena.patch",
+      "sha256": "bdee979db6ca893cfed46cf70c8628d4c4ef0f4d2af3aa681919749c3850f1f1"
+    },
+    {
+      "repository": "IsaacLab-Arena/submodules/Isaac-GR00T",
+      "recorded_commit": "e29d8fc50b0e4745120ae3fb72447986fe638aa6",
+      "head": "e29d8fc50b0e4745120ae3fb72447986fe638aa6",
+      "untracked_file_count_excluded": 0
+    },
+    {
+      "repository": "IsaacLab-Arena/submodules/IsaacLab",
+      "recorded_commit": "bb0c8e1b9af381bf13064ec3303e17db79e4b6ef",
+      "head": "bb0c8e1b9af381bf13064ec3303e17db79e4b6ef",
+      "untracked_file_count_excluded": 0,
+      "patch": "IsaacLab-Arena__submodules__IsaacLab.patch",
+      "sha256": "b7feba3494153e5001cc7ebf84654e596893e695373ffb16a882aeec5c272234"
+    }
+  ],
+  "excluded": "Upstream untracked runtime files and datasets remain on the source machine; no submodule commits changed."
+}

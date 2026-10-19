@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "bundle_id": "openarm_pick_place_arena_20261013_120511",
+  "bundle_manifest_sha256": "d0ec138ada82f89b1bd24006de335240f305457b1031f9c4670b1a181ea8f6d4",
+  "arena_versions": [
+    {
+      "revision": "8b82dca224f2b5af08f339f987613c59ce9cdbaa",
+      "task_api": "legacy_isaaclab_terms",
+      "api_files": {
+        "isaaclab_arena/tasks/task_base.py": "8b03b6fa2360a98768701c8514faa13a9e765f18ca0532e91ec9edeaafe14f3f",
+        "isaaclab_arena/environments/arena_env_builder.py": "4e53931ab333bc40b15518f5ac621f6f2923a242683f6c0dacbde16578312f9b",
+        "isaaclab_arena/evaluation/policy_runner.py": "f542b8098763242ea718752004fa1bb26a3434201432fd69a82bc7ab5e2e7040",
+        "isaaclab_arena/evaluation/policy_runner_cli.py": "a3439244af7d7a6e32f7ae015ebefbc3f94d8e101da8735ecb108ff099283106",
+        "isaaclab_arena_environments/cli.py": "3bec178c6830efc1c1d670ecbaa687571b78dbd12f806f623e6d237dde1fd5dc",
+        "isaaclab_arena/policy/policy_base.py": "d522a6e5f6d3622f91449f3797609548b2ecd38dade8a7ab0e885a409ea5011f"
+      }
+    },
+    {
+      "revision": "98866596fd024d96c874fe6fb95ae916d1133629",
+      "task_api": "typed_task_termination",
+      "api_files": {
+        "isaaclab_arena/tasks/task_base.py": "3519fd6c241facfa0ca3b7b681ee28e3be0a5cdc1942fb483b48869afbce86c9",
+        "isaaclab_arena/environments/arena_env_builder.py": "5627218287785c4caaf24c39babda139d99b137606651b91f74e3ca4442b9d47",
+        "isaaclab_arena/evaluation/policy_runner.py": "968fe6193c4413ba8c6deec0f24a3d020f3e40dc2cad55f35c0ad0f15aa9a7f8",
+        "isaaclab_arena/evaluation/policy_runner_cli.py": "5da102260bebfe217b99a2343701ca4893f195bfaa783a880319c79d79a1f535",
+        "isaaclab_arena_environments/cli.py": "b1311a34090f12f36690f400eba9a3b7be518842c6f56c2d5f96cb7dea352721",
+        "isaaclab_arena/policy/policy_base.py": "d522a6e5f6d3622f91449f3797609548b2ecd38dade8a7ab0e885a409ea5011f"
+      }
+    }
+  ],
+  "historical_runtime_validation": {
+    "arena_revision": "8b82dca224f2b5af08f339f987613c59ce9cdbaa",
+    "isaaclab_revision": "ffff603eafc6b74264a5261cc0183d6a65390d78",
+    "date": "2026-10-13",
+    "fixture_successes": 1,
+    "fixture_episodes": 1,
+    "negative_successes": 0,
+    "negative_episodes": 2,
+    "scope": "Existing delivery records only; new overlay has not been GPU validated"
+  }
+}

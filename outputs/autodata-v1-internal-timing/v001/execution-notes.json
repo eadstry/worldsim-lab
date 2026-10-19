@@ -1,0 +1,21 @@
+{
+  "formal_run": "/home/tangyuan/WorldSimReady-Home/runs/v1-internal-timing-20261015-r03",
+  "num_envs": 4,
+  "target_successes_per_variant": 8,
+  "excluded_pilot": {
+    "path": "runs/v1-internal-timing-20261015-r01",
+    "child_returncode": -9,
+    "exit_signal": "SIGKILL",
+    "completed_episodes": 0,
+    "last_sample_rss_bytes": 50908258304,
+    "cgroup_oom_kill_delta": 1
+  },
+  "excluded_hook_startup_failure": {
+    "path": "runs/v1-internal-timing-20261015-r02",
+    "reason": "Read-only RenderContext instance attribute; fixed by wrapping class method",
+    "completed_episodes": 0
+  },
+  "unchanged_runtime_sources": 70,
+  "unchanged_launchers": 25,
+  "source_hashes_unchanged": true
+}

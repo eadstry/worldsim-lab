@@ -1,0 +1,61 @@
+{
+  "quaternion_convention": "xyzw, per OpenArm MDP and recorded poses",
+  "evidence_kind": "readback_of_runtime_recordings",
+  "runs": [
+    {
+      "backend": "v1",
+      "seed": 105,
+      "success": true,
+      "recorded_frames": 1409,
+      "cube_final_position_table_m": [
+        0.3584699630737304,
+        0.20628401637077326,
+        0.5391563773155211
+      ],
+      "cube_final_projected_half_extent_m": [
+        0.02148088970204187,
+        0.021313222503945267,
+        0.019516092776345348
+      ],
+      "inside_pad": true,
+      "cube_bottom_height_table_m": 0.5196402845391758,
+      "height_condition": true,
+      "gripper_final_rad": 0.6997807025909424,
+      "released": true,
+      "final_linear_speed_m_s": 0.0009967853548005223,
+      "final_angular_speed_rad_s": 0.034074679017066956,
+      "max_cube_z_world_m": 1.1855313777923584,
+      "initial_cube_z_world_m": 1.0809999704360962,
+      "max_lift_above_initial_m": 0.10453140735626221,
+      "gripper_min_abs_rad": 0.0030656270682811737
+    },
+    {
+      "backend": "v2",
+      "seed": 105,
+      "success": false,
+      "recorded_frames": 1410,
+      "cube_final_position_table_m": [
+        0.08044167608022688,
+        0.21822759509086603,
+        0.5390933156013488
+      ],
+      "cube_final_projected_half_extent_m": [
+        0.022432167749154314,
+        0.022507887478735812,
+        0.019404014763921985
+      ],
+      "inside_pad": false,
+      "cube_bottom_height_table_m": 0.5196893008374268,
+      "height_condition": true,
+      "gripper_final_rad": 0.699781596660614,
+      "released": true,
+      "final_linear_speed_m_s": 0.0018317931098863482,
+      "final_angular_speed_rad_s": 0.09625410288572311,
+      "max_cube_z_world_m": 1.0897622108459473,
+      "initial_cube_z_world_m": 1.0809999704360962,
+      "max_lift_above_initial_m": 0.008762240409851074,
+      "gripper_min_abs_rad": 2.3508458468768367e-07
+    }
+  ],
+  "interpretation": "v2 seed 105 fails pad XY containment; lift is small. Missed grasp is consistent with the recording; exact controller/planner cause remains unproven."
+}

@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "migrations": [
+    {
+      "path": "/home/tangyuan/.codex/worktrees/5b06/WorldSimReady-Home",
+      "branch": "codex/organized-5b06-20261016",
+      "head": "755b2295292a05f05113e2de4391d61e34a85cda",
+      "recovery_stash": "5b75cb6086096640e0be3ac3e40ac259a7d09de2",
+      "recovery_label": "before-all-worktrees-20261016-5b06",
+      "status_count": 0,
+      "runtime_size_and_mtime_preserved": true
+    },
+    {
+      "path": "/home/tangyuan/.codex/worktrees/c46d/WorldSimReady-Home",
+      "branch": "codex/organized-c46d-20261016",
+      "head": "755b2295292a05f05113e2de4391d61e34a85cda",
+      "recovery_stash": "647e1e790ad0bdd14d30aac41358f367573c9e3f",
+      "recovery_label": "before-all-worktrees-20261016-c46d",
+      "status_count": 0,
+      "runtime_size_and_mtime_preserved": true
+    },
+    {
+      "path": "/home/tangyuan/.codex/worktrees/e476/WorldSimReady-Home",
+      "branch": "codex/organized-e476-20261016",
+      "head": "755b2295292a05f05113e2de4391d61e34a85cda",
+      "recovery_stash": "ca039db0689b918769885b9f37f117d15423f8f1",
+      "recovery_label": "before-all-worktrees-20261016-e476",
+      "status_count": 0,
+      "runtime_size_and_mtime_preserved": true
+    }
+  ]
+}
