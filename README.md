@@ -96,6 +96,7 @@ GPU 实验需要另外配置 NVIDIA GPU、Isaac Sim、cuRobo、任务资产和�
 | [`outputs/`](outputs/README.md) | 按主题和版本封存的报告、附件与验证记录 |
 | [`private-blog/`](private-blog/README.md) | 博客正文、资源、构建脚本和已有站点文件 |
 | `scripts/` | 初始化、共享配置启动及工作区检查脚本 |
+| [`skills/`](skills/research-dual-delivery/SKILL.md) | 可复用的研究交付打包工具；当前默认本地交付，不强制双端上传 |
 
 ## 维护约定
 
