@@ -1,4 +1,4 @@
-# WorldSimReady-Home
+# worldsim-lab
 
 Private workspace for embodied AI source exploration, AutoData research documents and a private blog.
 
@@ -17,7 +17,7 @@ The upstream repositories retain their own licenses and instructions. A private 
 
 ## Codex Cloud setup
 
-Select `eadstry/WorldSimReady-Home`, branch `main`, when creating a cloud environment. Keep environment access private. Use a Node.js runtime compatible with `private-blog/package-lock.json` (Node 22 or later) and Git. Allow GitHub and npm registry access during setup.
+Select `eadstry/worldsim-lab`, branch `main`, when creating a cloud environment. Keep environment access private. Use a Node.js runtime compatible with `private-blog/package-lock.json` (Node 22 or later) and Git. Allow GitHub and npm registry access during setup.
 
 Install/setup command:
 
@@ -38,8 +38,8 @@ After setup succeeds, publish the environment and verify the branch/commit and c
 ## Clone
 
 ```bash
-git clone https://github.com/eadstry/WorldSimReady-Home.git
-cd WorldSimReady-Home
+git clone https://github.com/eadstry/worldsim-lab.git
+cd worldsim-lab
 bash scripts/cloud-setup.sh
 ```
 
