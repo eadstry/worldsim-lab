@@ -10,7 +10,7 @@
 | 本地实现 | `workspace-overlays/`、`scripts/`、`config/` | 根仓库提交；不在上游工作树中保存新增实现 |
 | 上游已有修改 | `workspace-overlays/upstream-patches/` | 补丁、原提交和 SHA256；不自动应用 |
 | 研究说明 | `docs/` | 根仓库提交，主题索引提供入口 |
-| 交付成果 | `outputs/<artifact-id>/vNNN/` | 新版本新增目录；已封存内容和来源不改写，交付回执可独立更新。确需控制仓库体积时，旧版本整体移出主树，用 `archive/<artifact-id>-<范围>` tag 保留并在该 artifact 的 `ARCHIVE.md` 登记 |
+| 交付成果 | `outputs/<artifact-id>/vNNN/` | 新版本新增目录；已封存内容和来源不改写，交付回执可独立更新。确需控制仓库体积时，旧版本整体移出主树，用 `archive-*` Release 附件保留并在该 artifact 的 `ARCHIVE.md` 登记 |
 | 博客 | `private-blog/content/` | 正文源、构建脚本与现有 `dist/` 一起提交；首页和备份继续保留 |
 | 数据和运行环境 | `runs/`、扩展 `runtime/`、`config/.local/` 等 | 本地保存和单独备份，不加入 Git |
 
@@ -41,7 +41,7 @@ python3 scripts/review-workspace.py prepare --allow-uninitialized \
 git commit -m "Describe the change"
 ```
 
-`check-version-management.py` 检查上游 URL、索引 gitlink、锁定提交、已初始化子模块 HEAD、嵌套版本偏移、成果文件 SHA256 和暂存文件边界。暂存文件还有未暂存修改时要求重新审阅和暂存，避免检查版本与提交版本不同。已封存 manifest 的内容元数据不可改写。历史版本默认保留；确需移出主树时，必须先用 `archive/` tag 归档、在对应 `ARCHIVE.md` 登记取回方法，并保证 `check-version-management.py` 仍能追溯封存快照。
+`check-version-management.py` 检查上游 URL、索引 gitlink、锁定提交、已初始化子模块 HEAD、嵌套版本偏移、成果文件 SHA256 和暂存文件边界。暂存文件还有未暂存修改时要求重新审阅和暂存，避免检查版本与提交版本不同。已封存 manifest 的内容元数据不可改写。历史版本默认保留；确需移出主树时，必须先以 `archive-*` Release 附件归档、在对应 `ARCHIVE.md` 登记取回方法，并保证 `check-version-management.py` 仍能追溯封存快照。
 
 默认将未保存的上游修改显示为警告，以保留已有工作。需要验证完全干净的源码基线时，执行：
 
