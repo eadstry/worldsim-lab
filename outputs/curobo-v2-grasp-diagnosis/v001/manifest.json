@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "artifact_id": "curobo-v2-grasp-diagnosis",
+  "version": "v001",
+  "created_at": "2026-10-14T09:24:10.308615+00:00",
+  "material_cutoff": "2026-10-14T09:34:16.232716+00:00",
+  "sources": [
+    {
+      "kind": "sealed_original_GPU_comparison",
+      "artifact_id": "curobo-v2-openarm-mvp",
+      "version": "v001",
+      "hashes": "provenance.json"
+    },
+    {
+      "kind": "new_targeted_GPU_reproductions",
+      "details": "reproductions.json",
+      "readback": "verification.json"
+    },
+    {
+      "kind": "offline_HDF5_contact_analysis",
+      "details": [
+        "contact-analysis.json",
+        "contact-timeline.csv",
+        "additional-checks.json"
+      ]
+    },
+    {
+      "kind": "pinned_v2_source_and_CPU_sampler_execution",
+      "commit": "78fd485fa82d9b9a063fb4985e371814587e666a",
+      "url": "https://github.com/NVlabs/curobo/tree/78fd485fa82d9b9a063fb4985e371814587e666a",
+      "details": [
+        "sampler-check.json",
+        "provenance.json"
+      ]
+    }
+  ],
+  "limitations": [
+    "One original discordant pair; no population success-rate inference.",
+    "Fresh-process trials change planner history and other process state; private sampler contribution is not isolated.",
+    "Diagnostic trace alters observation overhead; an untraced rerun produced identical recorded state/action arrays.",
+    "Offline command-target reconstruction uses already clipped actions, not original unclipped waypoints.",
+    "Jacobian finite differences cover closure configurations only, with a fixed meter/radian convention.",
+    "Physical contact forces and exact missed-grasp cause were not isolated by a controlled intervention.",
+    "Original fixture annotations are experimental inferred skill boundaries; no source relabeling or conversion performed.",
+    "Targeted reruns are excluded from the original benchmark and from performance comparison.",
+    "Raw recordings remain in machine-local configured roots."
+  ],
+  "sealed_at": "2026-10-14T09:34:16.288217+00:00",
+  "files": {
+    "CHANGELOG.md": "869ab25c5ef8c82f089362b83fbab0183bcdd189f1392b699dcc35393d97b176",
+    "additional-checks.json": "85a8d4c63d950e4968bb51b706f8d70fb23e6e82ba55d9b56ff2a68dd4b46f41",
+    "code/analyze_grasp.py": "c16b14af5dece44c42c490528a0962ebaacae3c5c3a336c348670f70403da1a9",
+    "code/compare.py": "44afbf592f8f7c89bba57a4366344129ef2637862d3cd284fa48d6fb4325a164",
+    "code/diagnose_failure.py": "c99ee2702bd827b6695142c875262cc332ba23009ab19f593bdbdfc8d9cc8717",
+    "code/diagnostic_trace.py": "91a6fe174a94a418ae23b73244fbf49683fa38123451dbf29d41273cf9cdbe96",
+    "code/launch.py": "4eb6efec43b76999fa079ce87f07cdac8644caf73280bf24b289c2daa7030861",
+    "code/metrics.py": "47d0e8cdb64cf656f77d66229ba1913a1340b9e15541cba69e530a969c65f7da",
+    "code/model.py": "a8b87f6ba410ec8ee838349f3c8c009e35f7878fb7bec16151e990c8a7a9a32a",
+    "code/prepare.py": "605c2062746d7e9f356c7213d662eee438bf7e852e04feef7fda2295462c3cfb",
+    "code/probe_model.py": "9656cf18f0639e4653da86e9680dfc0c009ad8201342b2b7178cda074140a57e",
+    "code/run.py": "487a2db5bd688f28dc602fce257f7305be3d82472ff802f94516bb9bff089217",
+    "code/summarize.py": "b4fbd170760fa3a1d5b446d1dbfb14522f1982daa46d32e269c78735ecce7d9c",
+    "code/test_host.py": "ff2bf93eb8a8a7c43063b3a38f3c62ff4c40e7f05cc9c57dcc7da955620f62af",
+    "code/trajectory.py": "1dac1ab5841cd5b389757607eb789dc94e2820026d3b400862734d278aaec949",
+    "code/v2_planner.py": "78b58d08f9503d302325a35775ffbd6ec8e98e366d0663c54b724f7808c779ea",
+    "code/verify_artifacts.py": "99f9fb90fb7d59e3fddc579fe00211431e83eb08dfeba3fa313c587200668014",
+    "contact-analysis.json": "842402c7f917da68c10e5419558e9c3c7e8252c1f9831cf8a3a7ee0a350d1efc",
+    "contact-timeline.csv": "f8d7c232dceb80009438e610dc1423c35861f70c432658d99e8cd7641e88af70",
+    "contact-timeline.png": "ece29f528eac2206b742caa9c9ca31c5d8e5ccb610184d837ad2477fb7840628",
+    "provenance.json": "0be7a6ea8c1dff4a0cdc2231acefc9bc5a6b93fb098eec727995633736e20c0d",
+    "report.md": "831eef888ca8c5e243097b89445969a243d4406fe6412f1150197978131bf02c",
+    "reproductions.json": "649b12fe875fccc7e8063be8eaad3f5af0a45d71aa9d98ae0242b3b88b5983f6",
+    "sampler-check.json": "b1a1640284fc7fa01ac0a96aedda7489f52ca44aa2b1fb1996902980aacafd97",
+    "verification.json": "9988e9f78f7af1fcbe2b0f06e33157240959edc0dfd965edc52192e8f06e8b0d"
+  },
+  "delivery": {
+    "feishu": {
+      "status": "blocked_destination",
+      "target": null,
+      "receipt": null,
+      "files": [],
+      "updated_at": "2026-10-14T09:34:16.232716+00:00",
+      "error": "Outside scope: user requested local delivery only; no upload attempted.",
+      "requested": false
+    },
+    "gpt": {
+      "status": "blocked_destination",
+      "target": null,
+      "receipt": null,
+      "files": [],
+      "updated_at": "2026-10-14T09:34:16.232716+00:00",
+      "error": "Outside scope: user requested local delivery only; no upload attempted.",
+      "requested": false
+    }
+  },
+  "delivery_scope": "local_only_user_instruction"
+}

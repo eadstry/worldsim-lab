@@ -1,0 +1,40 @@
+name: Workspace review
+on:
+  push:
+    branches: ['codex/**', main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: workspace-review-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  host-review:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          submodules: false
+          persist-credentials: false
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+          package-manager-cache: false
+      - name: Install locked blog dependencies
+        run: npm --prefix private-blog ci
+      - name: Review changes and run host checks
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          PR_BASE: ${{ github.event.pull_request.base.sha }}
+          PUSH_BASE: ${{ github.event.before }}
+          PYTHONDONTWRITEBYTECODE: '1'
+        run: |
+          base="$PUSH_BASE"
+          if [ "$EVENT_NAME" = pull_request ]; then base="$PR_BASE"; fi
+          if [ -z "$base" ] || [ "$base" = 0000000000000000000000000000000000000000 ]; then
+            base="$(python3 -c 'import json; print(json.load(open("config/version-policy.json"))["required_ancestor"])')"
+          fi
+          python3 -B scripts/review-workspace.py ci --base "$base"

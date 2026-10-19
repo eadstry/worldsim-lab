@@ -1,0 +1,12 @@
+{
+  "python": "3.12.15 | packaged by Anaconda, Inc. | (main, Oct  1 2026, 20:20:25) [GCC 14.3.0]",
+  "packages": {
+    "torch": "2.11.0",
+    "isaacsim": "6.0.1.0",
+    "isaaclab": "6.1.14",
+    "isaaclab-arena": "1.0.0",
+    "warp-lang": "1.13.0",
+    "numpy": "2.3.1",
+    "nvidia-cuda-nvrtc": "13.0.88"
+  }
+}

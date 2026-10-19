@@ -1,0 +1,372 @@
+{
+  "schema_version": 2,
+  "time_utc": "2026-10-15T08:55:05.019558+00:00",
+  "elapsed_seconds": 370.3568785549869,
+  "observed_environment_count": 4,
+  "generation_elapsed_seconds": 350.1776285549869,
+  "telemetry_last_elapsed_seconds": 370.356765,
+  "episodes_started": 12,
+  "episodes_completed": 8,
+  "successes": 8,
+  "failures": 0,
+  "unknown_outcomes": 0,
+  "cancelled": 4,
+  "in_flight": 0,
+  "episode_success_rate": 1.0,
+  "planner_requests": 38,
+  "planner_request_success_rate": 1.0,
+  "solver_iterations": 38,
+  "solver_iterations_completed": 38,
+  "solver_iterations_in_flight": 0,
+  "solver_iteration_success_rate": 1.0,
+  "solver_iterations_per_request": 1.0,
+  "solver_iteration_instrumentation_available": true,
+  "solver_retry_requests": 0,
+  "solver_iterations_per_request_distribution": {
+    "count": 38,
+    "mean": 1.0,
+    "p50": 1,
+    "p95": 1,
+    "max": 1
+  },
+  "generation_policy": {
+    "schema_version": 2,
+    "run_id": "97869e1c93ce4878821391d9f14c1cdc",
+    "time_utc": "2026-10-15T08:48:54.665427+00:00",
+    "elapsed_seconds": 0.003107,
+    "event": "generation_policy",
+    "requested_trials": 8,
+    "num_envs": 4,
+    "guarantee_success": true,
+    "max_failures": 25,
+    "final_hold_steps": 60
+  },
+  "successful_episodes_per_minute": 1.3707329105537869,
+  "recent_window_seconds": 60,
+  "recent_successes_per_minute": 4.0,
+  "amortized_wall_seconds_per_success": 43.77220356937336,
+  "target_kind": "successes",
+  "remaining_target": 0,
+  "eta_seconds": 0.0,
+  "episode_duration_seconds": {
+    "count": 8,
+    "mean": 154.69678785475116,
+    "p50": 153.40841434100003,
+    "p95": 161.03120663799928,
+    "max": 161.03120663799928
+  },
+  "successful_episode_duration_seconds": {
+    "count": 8,
+    "mean": 154.69678785475116,
+    "p50": 153.40841434100003,
+    "p95": 161.03120663799928,
+    "max": 161.03120663799928
+  },
+  "planner_request_duration_seconds": {
+    "count": 38,
+    "mean": 0.24922201955211531,
+    "p50": 0.07378679800604004,
+    "p95": 0.787802863997058,
+    "max": 1.1042653530021198
+  },
+  "solver_iteration_duration_seconds": {
+    "count": 38,
+    "mean": 0.2431795573414236,
+    "p50": 0.06910492799943313,
+    "p95": 0.7827246980014024,
+    "max": 1.099822057003621
+  },
+  "solver_iterations_per_episode": {
+    "count": 8,
+    "mean": 4.0,
+    "p50": 4,
+    "p95": 4,
+    "max": 4
+  },
+  "execution_steps_per_wall_second": {
+    "count": 8,
+    "mean": 8.865730345862497,
+    "p50": 8.756206196535267,
+    "p95": 9.257727432997035,
+    "max": 9.257727432997035
+  },
+  "simulation_seconds_per_wall_second": {
+    "count": 8,
+    "mean": 0.2955243421424033,
+    "p50": 0.29187353682391526,
+    "p95": 0.3085909112100138,
+    "max": 0.3085909112100138
+  },
+  "stage_duration_seconds": {
+    "reset": {
+      "count": 8,
+      "mean": 0.12540659262049303,
+      "p50": 0.0545647389953956,
+      "p95": 0.2121504529932281,
+      "max": 0.2121504529932281
+    },
+    "motion_plan": {
+      "count": 8,
+      "mean": 1.636576798877286,
+      "p50": 1.5128237189928768,
+      "p95": 2.2975166280084522,
+      "max": 2.2975166280084522
+    },
+    "execution_wait": {
+      "count": 8,
+      "mean": 142.69007988189514,
+      "p50": 143.0632274261734,
+      "p95": 151.146983209881,
+      "max": 151.146983209881
+    },
+    "export": {
+      "count": 8,
+      "mean": 0.0,
+      "p50": 0,
+      "p95": 0,
+      "max": 0
+    },
+    "export_enqueue": {
+      "count": 8,
+      "mean": 1.454794041626883,
+      "p50": 1.4535924500087276,
+      "p95": 1.5567361139983404,
+      "max": 1.5567361139983404
+    }
+  },
+  "async_export": {
+    "max_workers": null,
+    "scaling_policy": "server_resources",
+    "resource_admission": {
+      "schema_version": 2,
+      "run_id": "97869e1c93ce4878821391d9f14c1cdc",
+      "time_utc": "2026-10-15T08:51:41.583616+00:00",
+      "elapsed_seconds": 166.921299,
+      "event": "export_scaling_decision",
+      "workers": 0,
+      "allow": true,
+      "reason": "available",
+      "resources": {
+        "cpu_sample_ready": true,
+        "cpu_capacity": 28.0,
+        "free_cpu_cores": 24.81314664930887,
+        "cpu_reserve_cores": 2.0,
+        "memory_available_bytes": 76354031616,
+        "memory_capacity_bytes": 101012905984,
+        "memory_reserve_bytes": 15151935897,
+        "worker_private_bytes": 268435456,
+        "task_headroom": 235077,
+        "worker_task_slots": 48,
+        "shared_memory_free_bytes": 46775779328,
+        "io_pressure_percent": 0.0,
+        "disk_free_bytes": 34033631232
+      }
+    },
+    "workers_started": 4,
+    "submitted": 8,
+    "saved": 8,
+    "pending": 0,
+    "peak_queue_memory_bytes": 15237622976,
+    "packing_seconds": 11.579030763008632,
+    "queue_wait_seconds": 3.487002686597407e-06,
+    "write_seconds": {
+      "count": 8,
+      "mean": 27.319062101250893,
+      "p50": 27.780350842003827,
+      "p95": 29.243276262001018,
+      "max": 29.243276262001018
+    },
+    "complete": {
+      "schema_version": 2,
+      "run_id": "97869e1c93ce4878821391d9f14c1cdc",
+      "time_utc": "2026-10-15T08:55:04.222510+00:00",
+      "elapsed_seconds": 369.560193,
+      "event": "export_complete",
+      "saved_episodes": 8,
+      "drain_seconds": 28.21385566900426,
+      "merge_seconds": 2.204256536992034,
+      "peak_memory_bytes": 15237622976,
+      "queue_wait_seconds": 3.487002686597407e-06,
+      "packing_seconds": 11.579030763008632,
+      "final_ready_seconds": 364.77431209500355
+    }
+  },
+  "export_breakdown": {
+    "count": 0,
+    "phases_seconds": {
+      "prepare_stack": {
+        "count": 0,
+        "mean": null,
+        "p50": null,
+        "p95": null,
+        "max": null
+      },
+      "cpu_numpy": {
+        "count": 0,
+        "mean": null,
+        "p50": null,
+        "p95": null,
+        "max": null
+      },
+      "dataset_create": {
+        "count": 0,
+        "mean": null,
+        "p50": null,
+        "p95": null,
+        "max": null
+      },
+      "flush": {
+        "count": 0,
+        "mean": null,
+        "p50": null,
+        "p95": null,
+        "max": null
+      }
+    },
+    "other_seconds": {
+      "count": 0,
+      "mean": null,
+      "p50": null,
+      "p95": null,
+      "max": null
+    },
+    "last": null
+  },
+  "active_episodes": [],
+  "last_progress": {
+    "schema_version": 2,
+    "run_id": "97869e1c93ce4878821391d9f14c1cdc",
+    "time_utc": "2026-10-15T08:54:33.790178+00:00",
+    "elapsed_seconds": 339.127858,
+    "event": "stage_finished",
+    "episode_id": "env2-attempt3",
+    "env_id": 2,
+    "stage": "reset",
+    "duration_seconds": 0.010994423006195575,
+    "error": "CancelledError: "
+  },
+  "errors": [
+    {
+      "schema_version": 2,
+      "run_id": "97869e1c93ce4878821391d9f14c1cdc",
+      "time_utc": "2026-10-15T08:54:33.785910+00:00",
+      "elapsed_seconds": 339.123592,
+      "event": "episode_cancelled",
+      "episode_id": "env0-attempt3",
+      "env_id": 0,
+      "success": null,
+      "error": "CancelledError: ",
+      "duration_seconds": 16.987435089002247,
+      "planner_calls": 2,
+      "planner_successes": 2,
+      "planner_failures": 0,
+      "curobo_solver_iterations": 2,
+      "curobo_iteration_successes": 2,
+      "execution_steps": 63,
+      "recorder_export_calls": 0,
+      "simulated_seconds": 2.1,
+      "execution_steps_per_wall_second": 3.708623235594592,
+      "simulation_seconds_per_wall_second": 0.12362076591092126,
+      "stages_seconds": {
+        "reset": 0.028545203007524833,
+        "motion_plan": 0.7025011259975145,
+        "execution_wait": 15.890838619001443
+      }
+    },
+    {
+      "schema_version": 2,
+      "run_id": "97869e1c93ce4878821391d9f14c1cdc",
+      "time_utc": "2026-10-15T08:54:33.788058+00:00",
+      "elapsed_seconds": 339.125739,
+      "event": "episode_cancelled",
+      "episode_id": "env1-attempt3",
+      "env_id": 1,
+      "success": null,
+      "error": "CancelledError: ",
+      "duration_seconds": 9.002224615003797,
+      "planner_calls": 2,
+      "planner_successes": 2,
+      "planner_failures": 0,
+      "curobo_solver_iterations": 2,
+      "curobo_iteration_successes": 2,
+      "execution_steps": 41,
+      "recorder_export_calls": 0,
+      "simulated_seconds": 1.3666666666666667,
+      "execution_steps_per_wall_second": 4.554429335760305,
+      "simulation_seconds_per_wall_second": 0.15181428724517212,
+      "stages_seconds": {
+        "reset": 0.029292720995726995,
+        "motion_plan": 1.2387529349944089,
+        "execution_wait": 7.34718450102082
+      }
+    },
+    {
+      "schema_version": 2,
+      "run_id": "97869e1c93ce4878821391d9f14c1cdc",
+      "time_utc": "2026-10-15T08:54:33.790178+00:00",
+      "elapsed_seconds": 339.127858,
+      "event": "stage_finished",
+      "episode_id": "env2-attempt3",
+      "env_id": 2,
+      "stage": "reset",
+      "duration_seconds": 0.010994423006195575,
+      "error": "CancelledError: "
+    },
+    {
+      "schema_version": 2,
+      "run_id": "97869e1c93ce4878821391d9f14c1cdc",
+      "time_utc": "2026-10-15T08:54:33.790221+00:00",
+      "elapsed_seconds": 339.1279,
+      "event": "episode_cancelled",
+      "episode_id": "env2-attempt3",
+      "env_id": 2,
+      "success": null,
+      "error": "CancelledError: ",
+      "duration_seconds": 0.011107787999208085,
+      "planner_calls": 0,
+      "planner_successes": 0,
+      "planner_failures": 0,
+      "curobo_solver_iterations": 0,
+      "curobo_iteration_successes": 0,
+      "execution_steps": 0,
+      "recorder_export_calls": 0,
+      "simulated_seconds": 0.0,
+      "execution_steps_per_wall_second": 0.0,
+      "simulation_seconds_per_wall_second": 0.0,
+      "stages_seconds": {
+        "reset": 0.010994423006195575,
+        "execution_wait": 0.0
+      }
+    },
+    {
+      "schema_version": 2,
+      "run_id": "97869e1c93ce4878821391d9f14c1cdc",
+      "time_utc": "2026-10-15T08:54:33.791150+00:00",
+      "elapsed_seconds": 339.128829,
+      "event": "episode_cancelled",
+      "episode_id": "env3-attempt3",
+      "env_id": 3,
+      "success": null,
+      "error": "CancelledError: ",
+      "duration_seconds": 12.198157570004696,
+      "planner_calls": 2,
+      "planner_successes": 2,
+      "planner_failures": 0,
+      "curobo_solver_iterations": 2,
+      "curobo_iteration_successes": 2,
+      "execution_steps": 45,
+      "recorder_export_calls": 0,
+      "simulated_seconds": 1.5,
+      "execution_steps_per_wall_second": 3.689081458519554,
+      "simulation_seconds_per_wall_second": 0.12296937281740936,
+      "stages_seconds": {
+        "reset": 0.027546060999156907,
+        "motion_plan": 0.8329673679982079,
+        "execution_wait": 10.953946878027637
+      }
+    }
+  ],
+  "solver_status_counts": {
+    "None": 38
+  }
+}

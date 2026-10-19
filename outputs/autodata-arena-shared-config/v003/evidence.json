@@ -1,0 +1,241 @@
+{
+  "date": "2026-10-13",
+  "timezone": "Asia/Shanghai",
+  "route": "existing native Python runtimes, explicitly authorized by user after Docker route unavailable",
+  "gpu": "NVIDIA GeForce RTX 5090, 595.91.07, 32607 MiB",
+  "runs": {
+    "autodata-001": {
+      "status": "failed",
+      "cause": "CUDA 13 NVRTC builtins library not in process search path",
+      "process_exit_code": 0
+    },
+    "autodata-002": {
+      "status": "passed",
+      "change": "existing cu13/lib added to this process LD_LIBRARY_PATH"
+    },
+    "arena-001": {
+      "status": "passed"
+    },
+    "arena-launcher-smoke": {
+      "status": "failed",
+      "cause": "missing environment subcommand; environment-specific flags parsed at root",
+      "process_exit_code": 1
+    },
+    "arena-launcher-smoke-002": {
+      "status": "passed",
+      "num_episodes": 1,
+      "episode_steps": 6,
+      "success_rate": 0.0,
+      "policy": "zero_action",
+      "episode_length_s": 0.2,
+      "process_exit_code": 0
+    }
+  },
+  "comparison": {
+    "status": "passed",
+    "checks": {
+      "both_passed": true,
+      "correct_backends": true,
+      "same_openarm_source": true,
+      "task_contract_hash": true,
+      "action_shape": true,
+      "physics_dt": true,
+      "step_dt": true,
+      "reset_pose_range": true,
+      "success_function": true,
+      "success_params": true,
+      "observations": true,
+      "processed_arm_probe": true,
+      "gripper_targets": true,
+      "success_cases": true,
+      "physics_steps_completed": true,
+      "same_working_tree_sources": true
+    },
+    "scope": "matching task interfaces and predicate cases; not full-trajectory or learned-policy equivalence"
+  },
+  "raw_record_hashes": [
+    {
+      "path": "runs/shared-runtime-20261013/arena-001/embodiment.json",
+      "sha256_raw": "4c15680711296dd21e547b71da8b092fe8757f42a652fd43d3521c4c20c694a4"
+    },
+    {
+      "path": "runs/shared-runtime-20261013/arena-001/env_profile.json",
+      "sha256_raw": "ae8dce90e596d7b6f85fded43030ce21e9dac2cb44bb143fbdf7b1569aff847e"
+    },
+    {
+      "path": "runs/shared-runtime-20261013/arena-001/resolved_config.json",
+      "sha256_raw": "d9c037572b33e67cd0d8ecda3a1c2c7fd2b64c219e68602f605624ce5db0ccb7"
+    },
+    {
+      "path": "runs/shared-runtime-20261013/arena-001/runtime_result.json",
+      "sha256_raw": "ca2a6e907db0f7bb7cb9f7bf1ee05a336d79362a28a481d37a9ca08cf35f286d"
+    },
+    {
+      "path": "runs/shared-runtime-20261013/arena-001/task_descriptor.json",
+      "sha256_raw": "e55a777e2bef3e27e3e95ce71796210f9baf99747f0144872a799251c6b3101d"
+    },
+    {
+      "path": "runs/shared-runtime-20261013/arena-001.log",
+      "sha256_raw": "836e9b6fe144a1ce1f2371c9e87e303801eaf987392e1e8efd39fece8d6c524a"
+    },
+    {
+      "path": "runs/shared-runtime-20261013/arena-launcher-smoke/embodiment.json",
+      "sha256_raw": "4c15680711296dd21e547b71da8b092fe8757f42a652fd43d3521c4c20c694a4"
+    },
+    {
+      "path": "runs/shared-runtime-20261013/arena-launcher-smoke/env_profile.json",
+      "sha256_raw": "ae8dce90e596d7b6f85fded43030ce21e9dac2cb44bb143fbdf7b1569aff847e"
+    },
+    {
+      "path": "runs/shared-runtime-20261013/arena-launcher-smoke/process_result.json",
+      "sha256_raw": "b1bf48e4fa2fc9578e24aaa08cf76fa1cd7e69eeda909eacf2850cd70b4515be"
+    },
+    {
+      "path": "runs/shared-runtime-20261013/arena-launcher-smoke/resolved_config.json",
+      "sha256_raw": "abbd3f1c9677e87b88802333d7ed8ec32b8faae4f4b1cd283be169f7e8dd49b2"
+    },
+    {
+      "path": "runs/shared-runtime-20261013/arena-launcher-smoke/task_descriptor.json",
+      "sha256_raw": "e55a777e2bef3e27e3e95ce71796210f9baf99747f0144872a799251c6b3101d"
+    },
+    {
+      "path": "runs/shared-runtime-20261013/arena-launcher-smoke-002/embodiment.json",
+      "sha256_raw": "4c15680711296dd21e547b71da8b092fe8757f42a652fd43d3521c4c20c694a4"
+    },
+    {
+      "path": "runs/shared-runtime-20261013/arena-launcher-smoke-002/env_profile.json",
+      "sha256_raw": "ae8dce90e596d7b6f85fded43030ce21e9dac2cb44bb143fbdf7b1569aff847e"
+    },
+    {
+      "path": "runs/shared-runtime-20261013/arena-launcher-smoke-002/evaluation/2026-10-13_17-02-47/episode_results_rank0.jsonl",
+      "sha256_raw": "f59ef9c35e458f66849b7ec1552301834e1c38044b4991e36f078979f9994892"
+    },
+    {
+      "path": "runs/shared-runtime-20261013/arena-launcher-smoke-002/evaluation/2026-10-13_17-02-47/index.html",
+      "sha256_raw": "5c0426d742c9cacbfc8288cf65b5af18ad7ce1f249b5a5f138038e600f30702d"
+    },
+    {
+      "path": "runs/shared-runtime-20261013/arena-launcher-smoke-002/evaluation/2026-10-13_17-02-47/report/job_unnamed.html",
+      "sha256_raw": "12b612cbcf3fbe724bbec171f5bb76697d14474ca832c96d461680aa2c438fd1"
+    },
+    {
+      "path": "runs/shared-runtime-20261013/arena-launcher-smoke-002/evaluation/2026-10-13_17-02-47/report/task_ungrouped.html",
+      "sha256_raw": "bd3e9b3b42c9e2dd3804b890a12137046be9402cd1ac4fd2413fed3ceaead0ac"
+    },
+    {
+      "path": "runs/shared-runtime-20261013/arena-launcher-smoke-002/process_result.json",
+      "sha256_raw": "60701a7f8e8c13f677409b59dd5dc35847f40cd0ade686463fbe7eb5d8b91380"
+    },
+    {
+      "path": "runs/shared-runtime-20261013/arena-launcher-smoke-002/resolved_config.json",
+      "sha256_raw": "0c1ad2e637a9bcb525b8d391ddfd79b912768aa59270914c1012ee8b8e08c723"
+    },
+    {
+      "path": "runs/shared-runtime-20261013/arena-launcher-smoke-002/task_descriptor.json",
+      "sha256_raw": "e55a777e2bef3e27e3e95ce71796210f9baf99747f0144872a799251c6b3101d"
+    },
+    {
+      "path": "runs/shared-runtime-20261013/arena-launcher-smoke-002.log",
+      "sha256_raw": "7ca8d5de886ef151eb68f2da42527c4440cd6948f7995f119e0b9ee3f5ce2c45"
+    },
+    {
+      "path": "runs/shared-runtime-20261013/arena-launcher-smoke.log",
+      "sha256_raw": "0e14cb1862ac57bc82e7231ad7e90401edbef69c1dfd2e5209f33d6b01cba0a2"
+    },
+    {
+      "path": "runs/shared-runtime-20261013/arena-versions.json",
+      "sha256_raw": "a4542688eb47e784e98defb3583004109d17e855a7ab63a096444a901f71f0ce"
+    },
+    {
+      "path": "runs/shared-runtime-20261013/autodata-001/embodiment.json",
+      "sha256_raw": "4c15680711296dd21e547b71da8b092fe8757f42a652fd43d3521c4c20c694a4"
+    },
+    {
+      "path": "runs/shared-runtime-20261013/autodata-001/env_profile.json",
+      "sha256_raw": "ae8dce90e596d7b6f85fded43030ce21e9dac2cb44bb143fbdf7b1569aff847e"
+    },
+    {
+      "path": "runs/shared-runtime-20261013/autodata-001/resolved_config.json",
+      "sha256_raw": "a454fa3c49a3de1947a62b32ad61d25e8bf27e3f294e70ec17d36652988aab7d"
+    },
+    {
+      "path": "runs/shared-runtime-20261013/autodata-001/runtime_result.json",
+      "sha256_raw": "26aa1009149ae6ecc7a3af191f54d7f96b9a8f0082e5014282d36613c22e704c"
+    },
+    {
+      "path": "runs/shared-runtime-20261013/autodata-001/task_descriptor.json",
+      "sha256_raw": "e55a777e2bef3e27e3e95ce71796210f9baf99747f0144872a799251c6b3101d"
+    },
+    {
+      "path": "runs/shared-runtime-20261013/autodata-001.log",
+      "sha256_raw": "646ad4f83990546986f68e767331b5d252fa8ea591213eca18fc425af8d15abe"
+    },
+    {
+      "path": "runs/shared-runtime-20261013/autodata-002/embodiment.json",
+      "sha256_raw": "4c15680711296dd21e547b71da8b092fe8757f42a652fd43d3521c4c20c694a4"
+    },
+    {
+      "path": "runs/shared-runtime-20261013/autodata-002/env_profile.json",
+      "sha256_raw": "ae8dce90e596d7b6f85fded43030ce21e9dac2cb44bb143fbdf7b1569aff847e"
+    },
+    {
+      "path": "runs/shared-runtime-20261013/autodata-002/resolved_config.json",
+      "sha256_raw": "c057f00f4dfecac3f3f7194f0548f1b31422a2f9f8307d3a114e4086d03b71fd"
+    },
+    {
+      "path": "runs/shared-runtime-20261013/autodata-002/runtime_result.json",
+      "sha256_raw": "f667ee2a317e3d51211869fdf70a371d4a227f8a9c2ff41ddb48234d1a92f69f"
+    },
+    {
+      "path": "runs/shared-runtime-20261013/autodata-002/task_descriptor.json",
+      "sha256_raw": "e55a777e2bef3e27e3e95ce71796210f9baf99747f0144872a799251c6b3101d"
+    },
+    {
+      "path": "runs/shared-runtime-20261013/autodata-002.log",
+      "sha256_raw": "a6d2e66c177086d1b58a4a0853c16e169a0839a1cfc2d693e0f2a26a663c808d"
+    },
+    {
+      "path": "runs/shared-runtime-20261013/autodata-versions.json",
+      "sha256_raw": "1eefaf8c3fd36003c758229645ae71e2cccf12339b016ee3d17dd83b5f5884ef"
+    },
+    {
+      "path": "runs/shared-runtime-20261013/comparison.json",
+      "sha256_raw": "b6b6388fc088299c3c259eafb82aa56b5bdce051c0f6a06f8ba06de6fd828766"
+    },
+    {
+      "path": "runs/shared-runtime-20261013/gpu.txt",
+      "sha256_raw": "9d6659aa3860131155268343e833043a4803052df914dd7b26b82497a172c9d9"
+    },
+    {
+      "path": "runs/shared-runtime-20261013/smoke-config/embodiment.json",
+      "sha256_raw": "e0cf9c6cceab098623769fd58a00eaa064a2ebcc84ac1d736edf5788d38795ed"
+    },
+    {
+      "path": "runs/shared-runtime-20261013/smoke-config/env_profile.json",
+      "sha256_raw": "ae8dce90e596d7b6f85fded43030ce21e9dac2cb44bb143fbdf7b1569aff847e"
+    },
+    {
+      "path": "runs/shared-runtime-20261013/smoke-config/experiment.json",
+      "sha256_raw": "db9f73ed61072d8fa555997a2be17439562461086b84070c72c7b3966f4a1306"
+    },
+    {
+      "path": "runs/shared-runtime-20261013/smoke-config/task.json",
+      "sha256_raw": "f1f94b07229a1ddcbeb8e3690d7c8a538d7198703d573f87ca7393f2cf77c2d2"
+    }
+  ],
+  "portable_archive_note": "run-records.zip replaces machine roots with WORKSPACE and AUTODATA_ENV placeholders; raw originals remain under runs/",
+  "limitations": [
+    "Direct predicate cases, not full trajectory equivalence",
+    "No learned policy, SkillGen dataset generation, annotation persistence or dataset readback tested"
+  ],
+  "repository_states": {
+    "AutoData": {
+      "head": "945806ed1cd85cc8734ddeaae196aca891fd06bf",
+      "status_observed_at_end": " M autodata_core/data_generator.py\n M autodata_interfaces/tasks/generation_policy_spec.py\n M openarm_autodata/tasks/pick_place/__init__.py\n M openarm_autodata/tasks/pick_place/autodata_configs/tasks/openarm_bimanual_left_pick_place.yaml\n M scripts/annotate_demos.py\n M scripts/generate_dataset.py\n M submodules/IsaacLab-Arena\n?? agentic_design/environment_repair/\n?? autodata_tests/interfaces/tasks/test_openarm_task.py\n?? datasets/teleop_datasets/openarm_left_fixture_raw.hdf5\n?? logs/\n?? openarm_autodata/generation.py\n?? scripts/openarm_fixture_source.py\n?? scripts/openarm_prepare.py\n?? scripts/openarm_workflow.sh\n"
+    },
+    "IsaacLab-Arena": {
+      "head": "98866596fd024d96c874fe6fb95ae916d1133629",
+      "status_observed_at_end": ""
+    }
+  }
+}

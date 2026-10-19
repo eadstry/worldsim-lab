@@ -1,0 +1,35 @@
+{
+  "v2_backend_unchanged": true,
+  "original_fifth_attempt": {
+    "seed": 105,
+    "success": false,
+    "max_lift_mm": 8.762240409851074
+  },
+  "fresh_process_reproductions": [
+    {
+      "run": "v2-seed105-trace-01",
+      "diagnostics": true,
+      "position_in_batch": 1,
+      "seed": 105,
+      "successes": 1,
+      "attempts": 1,
+      "initial_state_matches_original": true,
+      "max_lift_mm": 102.64706611633301,
+      "close_frame": 608,
+      "request_successes": 2
+    },
+    {
+      "run": "v2-seed105-repeat-01",
+      "diagnostics": false,
+      "position_in_batch": 1,
+      "seed": 105,
+      "successes": 1,
+      "attempts": 1,
+      "initial_state_matches_original": true,
+      "max_lift_mm": 102.64706611633301,
+      "close_frame": 608,
+      "request_successes": 2
+    }
+  ],
+  "not_pooled_with_original_benchmark": true
+}

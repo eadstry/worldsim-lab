@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" role="img"><title>v2 适配器：把新版规划接回原任务</title>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="none" stroke="#75879b" stroke-width="1.5"/></marker></defs>
+<rect width="1200" height="640" rx="22" fill="#f7f9fc"/>
+<style>text{font-family:"Noto Sans CJK SC","WenQuanYi Micro Hei","Microsoft YaHei",sans-serif} .t{font-size:29px;font-weight:700;fill:#122c46}.sub{font-size:17px;fill:#52677c}.head{font-size:21px;font-weight:700}.body{font-size:18px;fill:#233d56}</style>
+<text x="40" y="53" class="t">v2 适配器：把新版规划接回原任务</text>
+<text x="40" y="87" class="sub">输入保持语义，内部更换求解，输出恢复契约。</text>
+<rect x="40.0" y="120" width="350.6666666666667" height="420" rx="16" fill="white" stroke="#dae3ed"/>
+<rect x="40.0" y="120" width="350.6666666666667" height="53" rx="14" fill="#eaf2ff"/>
+<text x="58.0" y="154" class="head" fill="#2563eb">输入转换</text>
+<rect x="54.0" y="194" width="322.6666666666667" height="93" rx="10" fill="#eaf2ff"/>
+<text x="67.0" y="222" font-size="19" font-weight="700" fill="#2563eb">机器人</text>
+<text x="67.0" y="247" class="body">convert_robot</text>
+<text x="67.0" y="271" class="body">关节重排、夹爪锁定</text>
+<rect x="54.0" y="304" width="322.6666666666667" height="93" rx="10" fill="#eaf2ff"/>
+<text x="67.0" y="332" font-size="19" font-weight="700" fill="#2563eb">场景</text>
+<text x="67.0" y="357" class="body">USD 几何 → 碰撞场景</text>
+<text x="67.0" y="381" class="body">动态障碍位姿更新</text>
+<rect x="54.0" y="414" width="322.6666666666667" height="93" rx="10" fill="#eaf2ff"/>
+<text x="67.0" y="442" font-size="19" font-weight="700" fill="#2563eb">目标</text>
+<text x="67.0" y="467" class="body">世界坐标 → 基坐标</text>
+<text x="67.0" y="491" class="body">GoalToolPose</text>
+<path d="M393.6666666666667,335 H418.6666666666667" stroke="#75879b" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="424.6666666666667" y="120" width="350.6666666666667" height="420" rx="16" fill="white" stroke="#dae3ed"/>
+<rect x="424.6666666666667" y="120" width="350.6666666666667" height="53" rx="14" fill="#f0ebff"/>
+<text x="442.6666666666667" y="154" class="head" fill="#7954bc">v2 求解</text>
+<rect x="438.6666666666667" y="194" width="322.6666666666667" height="93" rx="10" fill="#f0ebff"/>
+<text x="451.6666666666667" y="222" font-size="19" font-weight="700" fill="#7954bc">配置</text>
+<text x="451.6666666666667" y="247" class="body">MotionPlannerCfg.create</text>
+<text x="451.6666666666667" y="271" class="body">固定种子、容差与采样设置</text>
+<rect x="438.6666666666667" y="304" width="322.6666666666667" height="93" rx="10" fill="#f0ebff"/>
+<text x="451.6666666666667" y="332" font-size="19" font-weight="700" fill="#7954bc">阶段处理</text>
+<text x="451.6666666666667" y="357" class="body">接触碰撞 / 物体附着</text>
+<text x="451.6666666666667" y="381" class="body">按任务配置控制 refinement</text>
+<rect x="438.6666666666667" y="414" width="322.6666666666667" height="93" rx="10" fill="#f0ebff"/>
+<text x="451.6666666666667" y="442" font-size="19" font-weight="700" fill="#7954bc">调用</text>
+<text x="451.6666666666667" y="467" class="body">plan_pose</text>
+<text x="451.6666666666667" y="491" class="body">读取成功状态与轨迹</text>
+<path d="M778.3333333333334,335 H803.3333333333334" stroke="#75879b" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="809.3333333333334" y="120" width="350.6666666666667" height="420" rx="16" fill="white" stroke="#dae3ed"/>
+<rect x="809.3333333333334" y="120" width="350.6666666666667" height="53" rx="14" fill="#e5f5ef"/>
+<text x="827.3333333333334" y="154" class="head" fill="#148269">结果恢复</text>
+<rect x="823.3333333333334" y="194" width="322.6666666666667" height="93" rx="10" fill="#e5f5ef"/>
+<text x="836.3333333333334" y="222" font-size="19" font-weight="700" fill="#148269">轨迹</text>
+<text x="836.3333333333334" y="247" class="body">get_interpolated_plan</text>
+<text x="836.3333333333334" y="271" class="body">检查并重排关节名字</text>
+<rect x="823.3333333333334" y="304" width="322.6666666666667" height="93" rx="10" fill="#e5f5ef"/>
+<text x="836.3333333333334" y="332" font-size="19" font-weight="700" fill="#148269">末端路径</text>
+<text x="836.3333333333334" y="357" class="body">FK 与坐标恢复</text>
+<text x="836.3333333333334" y="381" class="body">任务需要的路径重采样</text>
+<rect x="823.3333333333334" y="414" width="322.6666666666667" height="93" rx="10" fill="#e5f5ef"/>
+<text x="836.3333333333334" y="442" font-size="19" font-weight="700" fill="#148269">原任务执行</text>
+<text x="836.3333333333334" y="467" class="body">动作执行 → 录制 → 保存</text>
+<text x="836.3333333333334" y="491" class="body">重新检查物理末态</text>
+<text x="42" y="584" class="sub">本地实现依据冻结 v2 提交；内部 API 引用和局部包装会增加后续升级维护成本。</text>
+<text x="42" y="613" font-size="13" fill="#7a8da0">AUTODATA · ARCHITECTURE NOTES / v022 · 2026-10-16 · 箭头表示关系，不表示耗时比例</text></svg>

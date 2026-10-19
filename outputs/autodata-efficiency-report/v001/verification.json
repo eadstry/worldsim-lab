@@ -1,0 +1,20 @@
+{
+  "created_at": "2026-10-14T14:50:49.736323+08:00",
+  "scope": "Report structure, derived values, links, source hashes and rendered PDF; no new GPU run or HDF5 full-data revalidation",
+  "figure_count": 12,
+  "unique_html_ids": true,
+  "offline_external_dependencies": 0,
+  "internal_links_and_sources_exist": true,
+  "source_hashes_checked": 28,
+  "implementation_hashes_match": 11,
+  "key_derived_values_checked": true,
+  "pdf_pages": 11,
+  "pdf_all_12_figure_captions_present": true,
+  "visual_review": "All 12 chart thumbnails plus full-size charts 1/5/7 and desktop/mobile browser screenshots reviewed",
+  "limitations": [
+    "Existing GPU results are cited, not rerun",
+    "Existing physical acceptance remains failed: 23/24 per mode",
+    "No usable historical writing-style retrieval tool was available",
+    "Narrow screens retain readable chart widths through horizontal figure scrolling"
+  ]
+}

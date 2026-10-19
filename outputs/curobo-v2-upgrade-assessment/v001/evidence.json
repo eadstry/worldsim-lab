@@ -1,0 +1,344 @@
+{
+  "schema_version": 1,
+  "collected_at": "2026-10-14T07:09:52.510401+00:00",
+  "evidence_kind": "static_inspection",
+  "root_aliases": {
+    "workspace_source": "same-machine primary workspace; machine mapping intentionally omitted",
+    "installed_site_packages": "autodata Python 3.12 environment; machine mapping intentionally omitted"
+  },
+  "autodata_commit": "1c7360d85c9ad131ca6c8c70f1f731a6312616f3",
+  "runtime_validation_performed": false,
+  "gpu_inventory_probe": "nvidia-smi could not communicate with driver in isolated execution context",
+  "inputs": [
+    {
+      "root": "workspace_source",
+      "path": "AutoData/autodata_interfaces/motion_planners/__init__.py",
+      "sha256": "ee9ce0b70709b6e11bee685abdabc813bdbee7cb1f6b2c2a6f58d16ef6d61787",
+      "line_count": 36,
+      "matches": [
+        {
+          "line": 6,
+          "text": "This branch ships the cuRobo v1 backend only. The package exposes the abstract"
+        }
+      ],
+      "source_url": "https://github.com/isaac-sim/AutoData/blob/1c7360d85c9ad131ca6c8c70f1f731a6312616f3/autodata_interfaces/motion_planners/__init__.py"
+    },
+    {
+      "root": "workspace_source",
+      "path": "AutoData/autodata_interfaces/motion_planners/curobo/__init__.py",
+      "sha256": "cd9741ca11e773fab11af94a24dc200d71064355405d7b1f5a4dfd5925e88dc5",
+      "line_count": 30,
+      "matches": [
+        {
+          "line": 4,
+          "text": "\"\"\"cuRobo v1 backend for the SkillGen motion planner."
+        }
+      ],
+      "source_url": "https://github.com/isaac-sim/AutoData/blob/1c7360d85c9ad131ca6c8c70f1f731a6312616f3/autodata_interfaces/motion_planners/curobo/__init__.py"
+    },
+    {
+      "root": "workspace_source",
+      "path": "AutoData/docker/setup/install_curobo.sh",
+      "sha256": "b237a96272d9851874cd9aee754f6544b895286f9e326286597f1b6882743d3e",
+      "line_count": 57,
+      "matches": [
+        {
+          "line": 7,
+          "text": "CUROBO_GIT_COMMIT=\"ebb71702f3f70e767f40fd8e050674af0288abe8\""
+        }
+      ],
+      "source_url": "https://github.com/isaac-sim/AutoData/blob/1c7360d85c9ad131ca6c8c70f1f731a6312616f3/docker/setup/install_curobo.sh"
+    },
+    {
+      "root": "workspace_source",
+      "path": "AutoData/autodata_interfaces/motion_planners/curobo/curobo_planner.py",
+      "sha256": "59a38b465dd073b8173b1a588347e7321f5f18685fc774ff5759d21f1748daaa",
+      "line_count": 2019,
+      "matches": [
+        {
+          "line": 23,
+          "text": "from curobo.wrap.reacher.motion_gen import MotionGen, MotionGenConfig, MotionGenPlanConfig"
+        },
+        {
+          "line": 244,
+          "text": "motion_gen_config: MotionGenConfig = MotionGenConfig.load_from_robot_config("
+        },
+        {
+          "line": 862,
+          "text": "success = self.motion_gen.attach_objects_to_robot("
+        },
+        {
+          "line": 886,
+          "text": "self.logger.error(f\"cuRobo attach_objects_to_robot failed for {object_name}\")"
+        },
+        {
+          "line": 1305,
+          "text": "result: Any = self.motion_gen.plan_single(start_state, goal_pose, self.plan_config)"
+        },
+        {
+          "line": 1573,
+          "text": "def get_planned_poses(self) -> list[torch.Tensor]:"
+        }
+      ],
+      "source_url": "https://github.com/isaac-sim/AutoData/blob/1c7360d85c9ad131ca6c8c70f1f731a6312616f3/autodata_interfaces/motion_planners/curobo/curobo_planner.py"
+    },
+    {
+      "root": "workspace_source",
+      "path": "AutoData/autodata_interfaces/motion_planners/curobo/curobo_planner_cfg.py",
+      "sha256": "beccfad62458e98a68c3c6a63a0f9911a8c4c8d0c54765378f7cad7e29dd4259",
+      "line_count": 494,
+      "matches": [
+        {
+          "line": 86,
+          "text": "num_trajopt_seeds: int = 12"
+        },
+        {
+          "line": 92,
+          "text": "interpolation_dt: float = 0.05"
+        },
+        {
+          "line": 101,
+          "text": "collision_activation_distance: float = 0.0"
+        },
+        {
+          "line": 161,
+          "text": "position_threshold: float = 0.005"
+        }
+      ],
+      "source_url": "https://github.com/isaac-sim/AutoData/blob/1c7360d85c9ad131ca6c8c70f1f731a6312616f3/autodata_interfaces/motion_planners/curobo/curobo_planner_cfg.py"
+    },
+    {
+      "root": "workspace_source",
+      "path": "AutoData/autodata_interfaces/motion_planners/curobo/plan_visualizer.py",
+      "sha256": "538e18ad26f58ccb0dfb85c9dc1ea94af976960cd0253c8262b24623cee24b24",
+      "line_count": 907,
+      "matches": [
+        {
+          "line": 29,
+          "text": "from curobo.types.state import JointState"
+        },
+        {
+          "line": 760,
+          "text": "sphere_list = motion_gen.kinematics.get_robot_as_spheres(sphere_position)[0]"
+        }
+      ],
+      "source_url": "https://github.com/isaac-sim/AutoData/blob/1c7360d85c9ad131ca6c8c70f1f731a6312616f3/autodata_interfaces/motion_planners/curobo/plan_visualizer.py"
+    },
+    {
+      "root": "workspace_source",
+      "path": "AutoData/autodata_interfaces/motion_planners/motion_planner_base.py",
+      "sha256": "c48dded102892a44d668e09b9ac0253cdbbb8109843da9bd16035a9ae03cf053",
+      "line_count": 149,
+      "matches": [
+        {
+          "line": 16,
+          "text": "class MotionPlannerBase(ABC):"
+        }
+      ],
+      "source_url": "https://github.com/isaac-sim/AutoData/blob/1c7360d85c9ad131ca6c8c70f1f731a6312616f3/autodata_interfaces/motion_planners/motion_planner_base.py"
+    },
+    {
+      "root": "workspace_source",
+      "path": "AutoData/autodata_core/algorithms.py",
+      "sha256": "2288cae36381dd36a2e13a80bc20c47e514f8568c1ec8a028af1512244f95939",
+      "line_count": 273,
+      "matches": [
+        {
+          "line": 152,
+          "text": "expected_eef_count = 1"
+        },
+        {
+          "line": 168,
+          "text": "class SkillGen(GenerationAlgorithm):"
+        },
+        {
+          "line": 177,
+          "text": "expected_eef_count = 1"
+        },
+        {
+          "line": 272,
+          "text": "for pose in motion_planner.get_planned_poses()"
+        }
+      ],
+      "source_url": "https://github.com/isaac-sim/AutoData/blob/1c7360d85c9ad131ca6c8c70f1f731a6312616f3/autodata_core/algorithms.py"
+    },
+    {
+      "root": "workspace_source",
+      "path": "AutoData/scripts/generate_dataset.py",
+      "sha256": "bb36958579a7e20d8b2b4cccc7f4dd545a89ad956e21434572699cfd3999df01",
+      "line_count": 393,
+      "matches": [
+        {
+          "line": 206,
+          "text": "for env_id in range(num_envs):"
+        },
+        {
+          "line": 231,
+          "text": "def _build_motion_planners("
+        },
+        {
+          "line": 246,
+          "text": "for env_id in range(num_envs):"
+        },
+        {
+          "line": 328,
+          "text": "if args_cli.alg == \"skillgen\":"
+        }
+      ],
+      "source_url": "https://github.com/isaac-sim/AutoData/blob/1c7360d85c9ad131ca6c8c70f1f731a6312616f3/scripts/generate_dataset.py"
+    },
+    {
+      "root": "workspace_source",
+      "path": "workspace-overlays/openarm-production/generate.py",
+      "sha256": "203216c03c8bc47983005e16f84763f0144b7d4e012adb22f83bd63f9f3ee652",
+      "line_count": 164,
+      "matches": [
+        {
+          "line": 135,
+          "text": "\"--alg\", \"skillgen\", \"--task_descriptor\", str(args.task_descriptor.resolve() if args.task_descriptor else configs / f\"tasks/openarm_bimanual_{args.arm}_pick_place.yaml\"),"
+        }
+      ]
+    },
+    {
+      "root": "workspace_source",
+      "path": "workspace-overlays/openarm-production/prepare.py",
+      "sha256": "117c0e1688c69928e9f025de9962ff6b2eeae4aa670f6bb4c73fbf1a1d68acae",
+      "line_count": 132,
+      "matches": [
+        {
+          "line": 67,
+          "text": "planner_source = autodata / \"autodata_interfaces/motion_planners/curobo/curobo_planner.py\""
+        },
+        {
+          "line": 76,
+          "text": "'    @torch.inference_mode(False)\\n    @torch.enable_grad()\\n    def update_world_and_plan_motion(',"
+        },
+        {
+          "line": 77,
+          "text": "'        self.motion_gen.update_locked_joints(locked_joints, self.robot_cfg)':"
+        },
+        {
+          "line": 78,
+          "text": "'        all_locked_joints = dict(self.robot_cfg[\"kinematics\"].get(\"lock_joints\") or {})\\n        all_locked_joints.update(locked_joints)\\n        self.motion_gen.update_locked_joints(all_locked_joints, self.robot_cfg)',"
+        },
+        {
+          "line": 93,
+          "text": "assert source.count(old) == 1, f\"Planner changed; review replacement: {old}\""
+        },
+        {
+          "line": 121,
+          "text": "assert source.count(old) == 1, f\"Adapter changed; review replacement: {old}\""
+        }
+      ]
+    },
+    {
+      "root": "workspace_source",
+      "path": "workspace-overlays/openarm-production/compat.py",
+      "sha256": "0f7df8d7a65f1178645aa02c53d733baa2dfc13e0a5435d81b54235d16f6023a",
+      "line_count": 127,
+      "matches": [
+        {
+          "line": 100,
+          "text": "path = Path(__file__).resolve().parent / \"runtime/patches/curobo_planner.py\""
+        },
+        {
+          "line": 123,
+          "text": "from telemetry import install as install_telemetry"
+        },
+        {
+          "line": 127,
+          "text": "install_telemetry(data_generator, planner_module, Path(telemetry_file))"
+        }
+      ]
+    },
+    {
+      "root": "workspace_source",
+      "path": "workspace-overlays/openarm-production/telemetry.py",
+      "sha256": "a6425d399ba0de11e8ef6233772a6af1117c99f8c62ed0249d7a7acbf2ab4e8c",
+      "line_count": 344,
+      "matches": [
+        {
+          "line": 270,
+          "text": "original_plan = planner_class._plan_to_contact_pose"
+        },
+        {
+          "line": 304,
+          "text": "from curobo.wrap.reacher.motion_gen import MotionGen"
+        },
+        {
+          "line": 306,
+          "text": "for name in ('_plan_from_solve_state', '_plan_from_solve_state_batch'):"
+        },
+        {
+          "line": 344,
+          "text": "planner_class._plan_to_contact_pose = tracked_plan"
+        }
+      ]
+    },
+    {
+      "root": "workspace_source",
+      "path": "workspace-overlays/openarm-production/runtime/patches/curobo_planner.py",
+      "sha256": "95bee7d993e66fc3028c7bed509fa0e13b86d00d2bb5648cb3a765e34452dda0",
+      "line_count": 2031,
+      "matches": [
+        {
+          "line": 23,
+          "text": "from curobo.wrap.reacher.motion_gen import MotionGen, MotionGenConfig, MotionGenPlanConfig"
+        },
+        {
+          "line": 244,
+          "text": "motion_gen_config: MotionGenConfig = MotionGenConfig.load_from_robot_config("
+        }
+      ]
+    },
+    {
+      "root": "installed_site_packages",
+      "path": "nvidia_curobo-0.0.post1.dev1.dist-info/METADATA",
+      "sha256": "391e8d7624585fc7aaddfa7e1864407f858cecfef787f66fd9dcd339d931c1ec",
+      "distribution_metadata": [
+        "Name: nvidia_curobo",
+        "Version: 0.0.post1.dev1"
+      ]
+    },
+    {
+      "root": "installed_site_packages",
+      "path": "nvidia_curobo-0.0.post1.dev1.dist-info/direct_url.json",
+      "sha256": "5be245b465f47117b89f9ff5019c2dd7126447a9aad9829448ea68fb4d3c4429",
+      "source_kind": "local source directory, now absent; no vcs commit recorded; absolute path intentionally omitted"
+    },
+    {
+      "root": "installed_site_packages",
+      "path": "curobo/wrap/reacher/motion_gen.py",
+      "sha256": "348ee2fa858b1d651a70fa2b2b5a5d4e240ea724b7817d7769473c3f7a7e46e8",
+      "api_family": "v1 MotionGen",
+      "class_line": 1425
+    },
+    {
+      "root": "installed_site_packages",
+      "path": "torch-2.11.0.dist-info/METADATA",
+      "sha256": "d65e0ab5a65ced0dce799a2f6f32bff57b3d3e9d050069f607ef71eb24dd9976",
+      "distribution_metadata": [
+        "Name: torch",
+        "Version: 2.11.0"
+      ]
+    },
+    {
+      "root": "installed_site_packages",
+      "path": "warp_lang-1.13.0.dist-info/METADATA",
+      "sha256": "d32aaa0e5f553a6f539c48a4598405e0d60eb3cebb97f689bf126fa28cce2621",
+      "distribution_metadata": [
+        "Name: warp-lang",
+        "Version: 1.13.0"
+      ]
+    },
+    {
+      "root": "installed_site_packages",
+      "path": "isaacsim-6.0.1.0.dist-info/METADATA",
+      "sha256": "669025a97a28badc2c69d1584d7bb51e07c9371e5f77e2d47f4783a14ca622c9",
+      "distribution_metadata": [
+        "Name: isaacsim",
+        "Version: 6.0.1.0"
+      ]
+    }
+  ]
+}

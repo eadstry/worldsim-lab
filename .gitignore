@@ -13,8 +13,32 @@
 **/.openai/
 **/node_modules/
 **/__pycache__/
+*.py[cod]
 **/.venv/
 **/.sites-runtime/
 *.pem
 *.key
 *.log
+
+# Historical Arena delivery bundles moved out of upstream; retained locally.
+/workspace-overlays/arena-deliveries/
+/config/.local/
+/runs/
+
+# Retired development-clone location; prevent accidental reintroduction.
+/framework-dev/
+
+# Local recovery snapshot contains runtime data and is not a source deliverable.
+/workspace-overlays/dev-state-snapshot-20261013/
+
+# Additional worktrees and machine runtime products are never source deliverables.
+/.worktrees/
+**/.pytest_cache/
+*.hdf5
+*.h5
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.telemetry.jsonl
+*.resources.jsonl

@@ -1,0 +1,12 @@
+diff --git a/source/isaaclab/test/install_ci/AGENTS.md b/source/isaaclab/test/install_ci/AGENTS.md
+index 35d9b4e..3ec3956 100644
+--- a/source/isaaclab/test/install_ci/AGENTS.md
++++ b/source/isaaclab/test/install_ci/AGENTS.md
+@@ -24,7 +24,6 @@
+ - List every setup and test command in full; do not abbreviate commands or use shell line continuations.
+ - Keep setup commands aligned with the installation documentation in `docs/source/setup/installation/`.
+ - Update the documentation in the same change when adding an installation path.
+-- Use exactly one of `@pytest.mark.docker` or `@pytest.mark.native` when either applies.
+ - Use `@pytest.mark.uv` or `@pytest.mark.conda` when a package manager is required, `@pytest.mark.gpu` when a GPU is required, and `@pytest.mark.slow` whenever an installation runs.
+ - Apply `@pytest.mark.install_path_cli` to CLI tests and `@pytest.mark.install_path_uv_pip` to wheel-install tests.
+ - Set an explicit `@pytest.mark.timeout(<seconds>)` for every test.

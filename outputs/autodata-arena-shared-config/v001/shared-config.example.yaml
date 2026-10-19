@@ -1,0 +1,52 @@
+# DESIGN ONLY: proposed schema; current launchers do not accept this file.
+# Paths below are logical project references resolved by a future launcher.
+schema_version: 1
+task_id: openarm_left_cube_on_scanned_pad
+common:
+  core:
+    module: openarm_autodata.tasks.pick_place.configs.left_env_cfg
+    class: OpenArmLeftPickPlaceEnvCfg
+    package_version: REQUIRED_LOCKED_VERSION
+  gym_id: Isaac-PickPlace-Cube-OpenArm-Bimanual-Left-IK-Rel-v0
+  environment_profile_ref: openarm_autodata/tasks/pick_place/autodata_configs/env_profiles/openarm_left_skillgen.yaml
+  contract:
+    arm: left
+    action: {kind: relative_tcp_ik, dimensions: 7, position_scale_m: 0.02, rotation_scale_rad: 0.10}
+    gripper_positive: close
+    quaternion_order: xyzw
+    physics_hz: 120
+    control_hz: 30
+    target: {region: scanned_pad, frame: table}
+    success:
+      predicate: openarm_autodata.tasks.pick_place.envs.mdp:cube_placed_on_pad
+      height_tolerance: 0.008
+      release_position: 0.30
+      max_linear_speed: 0.03
+      max_angular_speed: 0.5
+      require_grasp_history: false
+generation:
+  algorithm: skillgen
+  task_descriptor_ref: openarm_autodata/tasks/pick_place/autodata_configs/tasks/openarm_bimanual_left_pick_place.yaml
+  embodiment_ref: openarm_autodata/tasks/pick_place/autodata_configs/embodiments/openarm_bimanual_left_ik_rel.yaml
+  planner_profile: openarm_pick_place_left
+  seed: 1
+  num_trials: 10
+  guarantee_success: true
+  keep_failed: false
+  max_num_failures: 25
+  environment_terminations: disabled_success_checked_by_generator
+  input_dataset: local://annotated_openarm_left
+  output_dataset: local://generated_openarm_left
+evaluation:
+  seeds: [11, 22, 33]
+  episodes_per_seed: 100
+  num_envs: 4
+  episode_length_s: 90.0
+  failures: [cube_dropped, time_out]
+  metric: success_rate_all_completed_episodes
+  replay_fixture: null
+  policy_adapter: REQUIRED_MODEL_ADAPTER
+  checkpoint: local://policy_checkpoint
+# contract values are requirements: the future factory must apply them or
+# reject a mismatch; silently treating them as documentation is invalid.
+# refs and values are deduplicated during resolve; conflicting sources fail.

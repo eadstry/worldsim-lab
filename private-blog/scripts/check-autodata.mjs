@@ -25,6 +25,6 @@ for(const e of page('[src],a[href],link[href]').toArray()){
  if(link.startsWith('#')){assert.ok(page(`[id="${link.slice(1)}"]`).length,link);continue;}
  assert.ok(fs.existsSync(path.resolve(base,decodeURIComponent(link.split('#')[0]))),link);
 }
-execFileSync('unzip',['-t',`${base}/autodata-markdown.zip`],{stdio:'ignore'});
+execFileSync('python3',['scripts/offline-archive.py','check',`${base}/autodata-markdown.zip`],{stdio:'ignore'});
 assert.equal(fs.readFileSync(`${base}/AutoData-全流程可视化讲解.md`,'utf8'),fs.readFileSync('content/autodata/AutoData-全流程可视化讲解.md','utf8'));
 console.log('PASS: original text, headings, tables, code, layouts, 11 SVGs, links, MD source and ZIP integrity');

@@ -1,0 +1,9 @@
+{
+  "original_parser_rejection": "subtasks['right'][1].algo_params has unknown keys ['expected_attached_object'] for algo 'skillgen'. Allowed: ['subtask_start_offset_range']",
+  "task_schema_with_compat": "passed, left and right",
+  "explicit_cube_attachment": "passed, left and right",
+  "planner_constructor_fields": "passed",
+  "urdf_mesh_references": 42,
+  "python_syntax": "passed",
+  "runtime_generation": "Reported separately in local-runtime-validation.json; this script checks static properties only"
+}
