@@ -1,0 +1,289 @@
+{
+  "schema_version": 1,
+  "artifact_count": 14,
+  "version_count": 20,
+  "artifacts": [
+    {
+      "id": "arena-examples-guide",
+      "title": "Arena 示例运行与使用说明",
+      "status": "current",
+      "supersedes": [],
+      "superseded_by": null,
+      "current_version": "v001",
+      "versions": [
+        {
+          "version": "v001",
+          "sealed_at": "2026-10-12T12:30:57.640451+00:00",
+          "files": 2,
+          "bytes": 9552,
+          "current": true
+        }
+      ]
+    },
+    {
+      "id": "arena-robolab-config-guide",
+      "title": "Arena RoboLab 配置解耦",
+      "status": "current",
+      "supersedes": [],
+      "superseded_by": null,
+      "current_version": "v001",
+      "versions": [
+        {
+          "version": "v001",
+          "sealed_at": "2026-10-13T03:30:11.623945+00:00",
+          "files": 5,
+          "bytes": 12638,
+          "current": true
+        }
+      ]
+    },
+    {
+      "id": "autodata-arena-shared-config",
+      "title": "AutoData / Arena 共用配置",
+      "status": "current",
+      "supersedes": [],
+      "superseded_by": null,
+      "current_version": "v003",
+      "versions": [
+        {
+          "version": "v001",
+          "sealed_at": "2026-10-13T08:12:52.759584+00:00",
+          "files": 4,
+          "bytes": 25710,
+          "current": false
+        },
+        {
+          "version": "v002",
+          "sealed_at": "2026-10-13T08:52:57.834455+00:00",
+          "files": 4,
+          "bytes": 57431,
+          "current": false
+        },
+        {
+          "version": "v003",
+          "sealed_at": "2026-10-13T09:06:24.853837+00:00",
+          "files": 10,
+          "bytes": 376949,
+          "current": true
+        }
+      ]
+    },
+    {
+      "id": "autodata-domain-randomization",
+      "title": "AutoData 域随机化实测",
+      "status": "current",
+      "supersedes": [],
+      "superseded_by": null,
+      "current_version": "v002",
+      "versions": [
+        {
+          "version": "v001",
+          "sealed_at": "2026-10-16T10:25:47.813094+08:00",
+          "files": 17,
+          "bytes": 2490317,
+          "current": false
+        },
+        {
+          "version": "v002",
+          "sealed_at": "2026-10-16T10:28:00.505441+08:00",
+          "files": 26,
+          "bytes": 5763413,
+          "current": true
+        }
+      ]
+    },
+    {
+      "id": "autodata-domain-randomization-catalog",
+      "title": "AutoData 域随机化方法总览",
+      "status": "current",
+      "supersedes": [],
+      "superseded_by": null,
+      "current_version": "v001",
+      "versions": [
+        {
+          "version": "v001",
+          "sealed_at": "2026-10-16T10:44:57.105859+08:00",
+          "files": 4,
+          "bytes": 99795,
+          "current": true
+        }
+      ]
+    },
+    {
+      "id": "autodata-efficiency-review",
+      "title": "AutoData 效率复盘图册",
+      "status": "current",
+      "supersedes": [
+        "autodata-efficiency-report"
+      ],
+      "superseded_by": null,
+      "current_version": "v022",
+      "versions": [
+        {
+          "version": "v022",
+          "sealed_at": "2026-10-16T10:55:23.832293+08:00",
+          "files": 69,
+          "bytes": 15737466,
+          "current": true
+        }
+      ]
+    },
+    {
+      "id": "autodata-guide",
+      "title": "AutoData 全流程文章",
+      "status": "current",
+      "supersedes": [],
+      "superseded_by": null,
+      "current_version": "v003",
+      "versions": [
+        {
+          "version": "v001",
+          "sealed_at": "2026-10-08T06:59:50.233795+00:00",
+          "files": 15,
+          "bytes": 264939,
+          "current": false
+        },
+        {
+          "version": "v002",
+          "sealed_at": "2026-10-08T07:16:25.520692+00:00",
+          "files": 16,
+          "bytes": 2219294,
+          "current": false
+        },
+        {
+          "version": "v003",
+          "sealed_at": "2026-10-08T07:39:28.520877+00:00",
+          "files": 33,
+          "bytes": 2340863,
+          "current": true
+        }
+      ]
+    },
+    {
+      "id": "autodata-v1-internal-timing",
+      "title": "AutoData v1 内部耗时对照",
+      "status": "current",
+      "supersedes": [],
+      "superseded_by": null,
+      "current_version": "v001",
+      "versions": [
+        {
+          "version": "v001",
+          "sealed_at": "2026-10-15T16:57:45.233960+08:00",
+          "files": 24,
+          "bytes": 503010,
+          "current": true
+        }
+      ]
+    },
+    {
+      "id": "curobo-v2-upgrade-assessment",
+      "title": "cuRobo v2 升级评估",
+      "status": "current",
+      "supersedes": [],
+      "superseded_by": null,
+      "current_version": "v001",
+      "versions": [
+        {
+          "version": "v001",
+          "sealed_at": "2026-10-14T07:10:21.772878+00:00",
+          "files": 3,
+          "bytes": 27266,
+          "current": true
+        }
+      ]
+    },
+    {
+      "id": "openarm-benchmark",
+      "title": "Arena OpenArm 评测示例",
+      "status": "current",
+      "supersedes": [],
+      "superseded_by": null,
+      "current_version": "v002",
+      "versions": [
+        {
+          "version": "v001",
+          "sealed_at": "2026-10-15T08:24:56.737598+00:00",
+          "files": 12,
+          "bytes": 46644,
+          "current": false
+        },
+        {
+          "version": "v002",
+          "sealed_at": "2026-10-15T09:30:12.127905+00:00",
+          "files": 34,
+          "bytes": 1419794,
+          "current": true
+        }
+      ]
+    },
+    {
+      "id": "curobo-v2-grasp-diagnosis",
+      "title": "cuRobo v2 抓取诊断",
+      "status": "supporting",
+      "supersedes": [],
+      "superseded_by": null,
+      "current_version": "v001",
+      "versions": [
+        {
+          "version": "v001",
+          "sealed_at": "2026-10-14T09:34:16.288217+00:00",
+          "files": 25,
+          "bytes": 235038,
+          "current": true
+        }
+      ]
+    },
+    {
+      "id": "curobo-v2-openarm-mvp",
+      "title": "cuRobo v2 OpenArm 尝试对照",
+      "status": "supporting",
+      "supersedes": [],
+      "superseded_by": null,
+      "current_version": "v001",
+      "versions": [
+        {
+          "version": "v001",
+          "sealed_at": "2026-10-14T09:13:30.931423+00:00",
+          "files": 22,
+          "bytes": 212458,
+          "current": true
+        }
+      ]
+    },
+    {
+      "id": "autodata-efficiency-report",
+      "title": "AutoData 效率优化报告",
+      "status": "superseded",
+      "supersedes": [],
+      "superseded_by": "autodata-efficiency-review",
+      "current_version": "v001",
+      "versions": [
+        {
+          "version": "v001",
+          "sealed_at": "2026-10-14T14:50:49.736323+08:00",
+          "files": 29,
+          "bytes": 2749091,
+          "current": true
+        }
+      ]
+    },
+    {
+      "id": "git-worktree-preservation",
+      "title": "全库 Git 历史差异保留",
+      "status": "archived",
+      "supersedes": [],
+      "superseded_by": null,
+      "current_version": "v001",
+      "versions": [
+        {
+          "version": "v001",
+          "sealed_at": "2026-10-16T10:56:07.101084+08:00",
+          "files": 19,
+          "bytes": 820768,
+          "current": true
+        }
+      ]
+    }
+  ]
+}
