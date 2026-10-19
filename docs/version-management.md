@@ -21,6 +21,17 @@
 
 覆盖所有工作树的后续整理见 [全库工作树记录](git-worktrees-20261016.md)；不能只凭主目录干净就认定整个项目库已整理。
 
+## 交付包与代码引用
+
+`outputs/<artifact-id>/vNNN/` 保存交付所需的正文、图表与数据。**不要**把 `workspace-overlays/` 的源码整份复制进去：副本会与单一事实来源分叉，而封存后无法再同步修正。
+
+- 包内需要指明实现位置时，写 `code-ref.json`，例如：
+  ```json
+  {"overlay": "workspace-overlays/openarm-benchmark", "commit": "<sha>", "entrypoint": "run.py", "notes": "评测入口，代码以 overlay 为准"}
+  ```
+- 需要给外部一份可直接运行的包时，在版本目录放 `*.zip` 附件，并在该版本 `README.md` 写清解压后的入口；zip 是交付物，源码仍以 overlay 为准。
+- `check-version-management.py` 拒绝 2026-10-20 起封存版本中的 `code/` 目录。此前的 `curobo-v2-grasp-diagnosis`、`curobo-v2-openarm-mvp`、`openarm-benchmark` v001/v002 保留原有副本，仅作历史参考，不再更新。
+
 ## 提交与检查
 
 ```bash

@@ -64,6 +64,28 @@ class VersionChecks(unittest.TestCase):
         (folder / 'manifest.json').unlink()
         self.assertTrue(any('recorded version deleted' in x for x in self.check()))
 
+    def seal_with_code(self, version, sealed_at):
+        folder = self.root / 'outputs/example' / version
+        (folder / 'code').mkdir(parents=True)
+        (folder / 'code/run.py').write_text('print(1)')
+        (folder / 'report.md').write_text('sealed content')
+        manifest = {'sealed_at': sealed_at,
+                    'files': {'report.md': hashlib.sha256(b'sealed content').hexdigest(),
+                              'code/run.py': hashlib.sha256(b'print(1)').hexdigest()},
+                    'delivery': {}}
+        (folder / 'manifest.json').write_text(json.dumps(manifest))
+        self.git('add', '.')
+        self.git('-c', 'user.name=Test', '-c', 'user.email=test@example.invalid', 'commit', '-qm', 'Seal ' + version)
+        return folder
+
+    def test_code_copy_rejected_for_versions_sealed_after_cutoff(self):
+        self.seal_with_code('v002', '2026-10-21T10:00:00+08:00')
+        self.assertTrue(any('copies code/' in x for x in self.check()))
+
+    def test_legacy_code_copy_allowed(self):
+        self.seal_with_code('v003', '2026-10-14T10:00:00+08:00')
+        self.assertEqual(self.check(), [])
+
     def test_delivery_receipt_update_allowed(self):
         folder, manifest = self.seal()
         manifest['delivery'] = {'local': {'status': 'verified'}}

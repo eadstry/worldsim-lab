@@ -9,6 +9,9 @@ import subprocess
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
+# Sealed versions created from this date on must reference overlay code instead of
+# copying it into the delivery package.
+CODE_COPY_CUTOFF = '2026-10-20'
 
 
 def git(root, *args):
@@ -102,6 +105,9 @@ def check(root, allow_uninitialized=False, require_clean_upstream=False, baselin
                 if not target.is_file() or hashlib.sha256(target.read_bytes()).hexdigest() != expected:
                     errors.append(f'{relative}: missing or changed sealed file {name}')
                 count += 1
+            sealed_at = str(manifest.get('sealed_at', ''))[:10]
+            if sealed_at and sealed_at >= CODE_COPY_CUTOFF and (path.parent / 'code').is_dir():
+                errors.append(f'{relative}: sealed version copies code/; reference workspace-overlays/ in code-ref.json instead')
             previous = git(root, 'show', f'{baseline_ref}:{relative}')
             if previous.returncode == 0:
                 old = json.loads(previous.stdout)
