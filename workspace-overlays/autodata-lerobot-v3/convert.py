@@ -35,12 +35,18 @@ def leaves(group):
 
 def feature_map(episode):
     """Map every time-series leaf, preserving pre/post-step semantics."""
-    result = {"action": "actions"}
+    joint_space = "joint_actions" in episode
+    result = {"action": "joint_actions" if joint_space else "actions"}
+    if joint_space:
+        result["source_action"] = "actions"
+        result["diagnostics.applied_joint_target"] = "joint_applied_targets"
     for path in leaves(episode["obs"]):
-        if path == "joint_pos":
+        if path == "joint_pos_absolute" and joint_space:
             key = "observation.state"
+        elif path == "joint_pos":
+            key = "observation.joint_pos_relative" if joint_space else "observation.state"
         elif path == "actions":
-            key = "observation.last_action"
+            key = "observation.last_tcp_action" if joint_space else "observation.last_action"
         elif path.endswith("_rgb"):
             key = "observation.images." + path.removesuffix("_rgb").replace("/", ".")
         else:
@@ -49,7 +55,7 @@ def feature_map(episode):
     for path in leaves(episode["states"]):
         result["next.sim_state." + path.replace("/", ".")] = "states/" + path
     if "processed_actions" in episode:
-        result["processed_action"] = "processed_actions"
+        result["source_processed_action" if joint_space else "processed_action"] = "processed_actions"
     if len(set(result.values())) != len(result):
         raise ValueError("Ambiguous feature mapping")
     return result
@@ -127,6 +133,18 @@ def inspect_source(source, semantic_metadata=None):
             if key in features and feature != features[key]:
                 raise ValueError(f"{name}/{path}: inconsistent feature schema")
             features[key] = feature
+    if mapping['action'] == 'joint_actions':
+        action, state = features['action'], features['observation.state']
+        if (action['names'] != state['names'] or action['shape'] != (9,)
+                or state['shape'] != (9,)
+                or semantics.get('joint_control', {}).get('names') != action['names']):
+            raise ValueError('Joint action/state must have identical verified nine-joint names and order')
+        for path in ('joint_actions', 'obs/joint_pos_absolute', 'joint_applied_targets'):
+            if (semantics['fields'][path]['units'] != ['rad'] * 9
+                    or semantics['fields'][path]['names'] != action['names']):
+                raise ValueError('Joint action/state and applied targets must use identical names and radians')
+        if semantics['fields']['joint_actions'].get('representation') != 'absolute_joint_position_target':
+            raise ValueError('Joint actions must be recorded absolute controller targets')
     return episodes, lengths, fps, mapping, features, env_args
 
 
@@ -172,8 +190,8 @@ def validate(source_path, output):
         for name, length in zip(episodes, lengths):
             for local in sorted({0, length // 2, length - 1}):
                 frame = ds[offset + local]
-                np.testing.assert_array_equal(frame["action"].numpy(), source["data"][name]["actions"][local])
-                np.testing.assert_array_equal(frame["observation.state"].numpy(), source["data"][name]["obs/joint_pos"][local])
+                np.testing.assert_array_equal(frame["action"].numpy(), source["data"][name][mapping["action"]][local])
+                np.testing.assert_array_equal(frame["observation.state"].numpy(), source["data"][name][mapping["observation.state"]][local])
                 for key in ds.meta.video_keys:
                     image = frame[key].numpy()
                     original = source["data"][name][mapping[key]][local].astype(np.float32) / 255
@@ -257,8 +275,8 @@ def convert(source_path, output, repo_id, metadata_path=None):
                       "source_env_args": env_args, "episodes": episodes, "lengths": lengths,
                       'semantic_metadata': semantics,
                       "feature_mapping": mapping, "initial_states": initial_states,
-                      "semantics": {"observation.state": "Exact pre-step obs/joint_pos, relative to default joint positions per archived environment configuration",
-                                    "action": "Exact raw 7-D relative end-effector pose plus binary gripper command; not joint targets",
+                      "semantics": {"observation.state": ("Active-arm absolute pre-step joint angles in radians" if mapping["action"] == "joint_actions" else "Exact pre-step obs/joint_pos, relative to default joint positions"),
+                                    "action": ("Recorded absolute controller joint targets in radians; rate-limited internally, not measured next-state angles" if mapping["action"] == "joint_actions" else "Exact raw 7-D relative end-effector pose plus binary gripper command"),
                                     "next.sim_state.*": "Exact post-step simulation states, absolute joint positions, root positions relative to environment origins",
                                     "timestamp": "Episode-local command/observation time, frame_index / fps; post-step simulation states are one control interval later",
                                     "video": "Three RGB streams encoded as lossy H.264 yuv420p at original size and rate",
@@ -266,9 +284,11 @@ def convert(source_path, output, repo_id, metadata_path=None):
         (output / "conversion.json").write_text(json.dumps(provenance, indent=2) + "\n")
         (output / "README.md").write_text(
             "# AutoData OpenArm — LeRobot v3.0\n\n"
-            f"{len(episodes)} successful episodes, {sum(lengths)} frames, {fps} Hz.\n\n"
-            "`action`: 7-D raw relative TCP command, not joint angles.\n"
-            "`observation.state`: 18-D pre-action obs/joint_pos (relative to defaults).\n"
+            f"{len(episodes)} successful episodes, {sum(lengths)} frames, {fps} Hz.\n\n" +
+            ("`action` and `observation.state`: same nine active-arm joint names/order, radians; target vs measured pre-step angle.\n"
+             "Original TCP actions retained as `source_action`; final ramped targets as `diagnostics.applied_joint_target`.\n"
+             if mapping["action"] == "joint_actions" else
+             "`action`: raw 7-D TCP command; `observation.state`: 18-D relative pre-step joint observation.\n") +
             "`next.sim_state.*`: post-action full scene state, including absolute joint positions.\n"
             "Other numeric observations, processed actions and three RGB cameras are preserved.\n"
             "Video is lossy H.264; numeric data is exact. No simulation, policy training or Hub upload was performed.\n\n"
@@ -320,7 +340,13 @@ def main():
     parser.add_argument("--validate-only", action="store_true")
     parser.add_argument('--metadata', type=Path, help='Checksum-bound semantic sidecar for historical HDF5')
     parser.add_argument('--rename-from', type=Path, help='Create a new named version of an existing conversion')
+    parser.add_argument("--require-joint-space", action="store_true", help="Reject sources without recorded joint targets")
     args = parser.parse_args()
+    if args.require_joint_space:
+        with h5py.File(args.source, "r") as source:
+            _, _, _, mapping, _, _ = inspect_source(source)
+            if mapping["action"] != "joint_actions":
+                raise ValueError("Source lacks recorded joint targets; regenerate instead of relabeling TCP actions")
     # Local caches only; never contact or publish to the Hub when reading output.
     os.environ["HF_HUB_OFFLINE"] = "1"
     os.environ["HF_DATASETS_OFFLINE"] = "1"

@@ -57,6 +57,8 @@ def build_source(source, args):
     source = source.replace(semantic_anchor, semantic_anchor + """
     from dataset_metadata import attach as attach_dataset_metadata
     attach_dataset_metadata(env)
+    from joint_targets import attach as attach_joint_targets
+    attach_joint_targets(env)
 """, 1)
     close_anchor = "        env.close()"
     assert source.count(close_anchor) == 1

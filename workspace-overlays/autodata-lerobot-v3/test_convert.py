@@ -41,6 +41,37 @@ def fixture(path, malformed=False):
 
 
 class ConversionTests(unittest.TestCase):
+    def test_joint_targets_roundtrip_and_mismatched_names_rejected(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            fixture(root / 'source.hdf5')
+            names = [f'test_joint_{j}' for j in range(9)]
+            with h5py.File(root / 'source.hdf5', 'r+') as f:
+                env = json.loads(f['data'].attrs['env_args'])
+                schema = env['semantic_metadata']
+                schema['joint_control'] = {'names': names}
+                for path in ('obs/joint_pos_absolute', 'joint_actions', 'joint_applied_targets'):
+                    schema['fields'][path] = dict(names=names, units=['rad']*9,
+                        representation='absolute_joint_position_target' if path == 'joint_actions' else 'absolute_joint_position')
+                f['data'].attrs['env_args'] = json.dumps(env)
+                for ep in f['data'].values():
+                    count = len(ep['actions'])
+                    ep.create_dataset('obs/joint_pos_absolute', data=ep['obs/joint_pos'][:,:9] + 10)
+                    # Deliberately distinct from measured pre/post state and applied ramp target.
+                    ep.create_dataset('joint_actions', data=np.full((count,9), 42, dtype=np.float32))
+                    ep.create_dataset('joint_applied_targets', data=np.full((count,9), 21, dtype=np.float32))
+            convert(root / 'source.hdf5', root / 'converted', 'local/joint-test')
+            info = json.loads((root / 'converted/meta/info.json').read_text())
+            self.assertEqual(info['features']['action']['names'], names)
+            self.assertEqual(info['features']['action'], info['features']['observation.state'])
+            self.assertEqual(info['features']['source_action']['shape'], [7])
+            with h5py.File(root / 'source.hdf5', 'r+') as f:
+                env = json.loads(f['data'].attrs['env_args'])
+                env['semantic_metadata']['fields']['joint_actions']['names'] = names[::-1]
+                f['data'].attrs['env_args'] = json.dumps(env)
+                with self.assertRaisesRegex(ValueError, 'identical verified'):
+                    inspect_source(f)
+
     def test_runtime_joint_table_must_be_complete_and_unambiguous(self):
         rows = [f'| {i} | openarm_test_joint{i} | 0 |' for i in range(18)]
         self.assertEqual(joint_table('\n'.join(reversed(rows))), [f'openarm_test_joint{i}' for i in range(18)])

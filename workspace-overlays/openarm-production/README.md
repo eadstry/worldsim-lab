@@ -400,3 +400,22 @@ tests can use `WORLDSIM_SOURCE_ROOT` to point at a separate read-only source che
 is an explicit, queue-submitted GPU smoke using an already prepared runtime. It
 saves three zero-action steps and compares HDF5 metadata with the live articulation;
 it does not assert that a pick-and-place demonstration succeeded.
+
+## Joint-space training records
+
+New launches additionally record `obs/joint_pos_absolute` (pre-step actual angles),
+`joint_actions` (absolute controller commands for that step), and
+`joint_applied_targets` (final physics-substep rate-limited targets). All three
+use the same canonical active-arm joint1..7, finger1, finger2 order, in radians.
+The original TCP action and full scene state remain recorded for provenance.
+The planner still operates in TCP space; the recorder captures its actual held IK
+joint command and binary finger joint targets, rather than reconstructing actions
+from measured future state. The velocity limits and the final applied targets
+are described in `semantic_metadata.joint_control`.
+
+The LeRobot converter automatically uses these records for a nine-dimensional
+`action` and `observation.state` with identical names. Use `--require-joint-space`
+to reject legacy sources lacking recorded joint commands. Deploying a learned
+joint policy requires a matching joint-position controller with these limits;
+these nine-dimensional outputs must not be fed into the old seven-dimensional
+TCP-action environment interface.

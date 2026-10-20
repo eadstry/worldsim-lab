@@ -125,3 +125,24 @@ value exact, 5453 decoded frames per camera, 12 official-loader samples, and all
 exported semantic names matching the verified recovery schema. The previous
 delivery and original HDF5 were preserved. The v002 archive additionally includes
 the recovery sidecar and GPU smoke metadata report.
+
+## Unified joint action/state
+
+For new producer recordings containing `joint_actions`, conversion automatically
+selects absolute active-arm joint commands as `action` and pre-step
+`obs/joint_pos_absolute` as `observation.state`. Both have exactly the same nine
+names, units (radians), and order: arm joint1..7 followed by finger1 and finger2.
+The action is the held IK command plus the binary finger target, resolved during
+that control step. It is not the measured next-state angle. The existing arm and
+finger velocity limits ramp toward the command; final physics-substep applied
+targets are preserved as `diagnostics.applied_joint_target`.
+
+Original TCP commands remain `source_action`, processed TCP/finger commands remain
+`source_processed_action`, and the previous TCP command is explicitly named
+`observation.last_tcp_action`. The original full relative joint observation is
+`observation.joint_pos_relative`; the full post-step scene remains `next.sim_state.*`.
+
+Run with `--require-joint-space` when joint commands are required; historical TCP
+sources are rejected, not silently renamed or replaced by future measured angles.
+The original TCP simulator action interface is still seven-dimensional; deployment
+of nine-dimensional policy actions requires an appropriate joint controller.
