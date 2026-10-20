@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "artifact_id": "embodied-experiment-portfolio",
+  "version": "v001",
+  "created_at": "2026-10-19",
+  "material_cutoff": "2026-10-19 Asia/Shanghai",
+  "sources": [
+    "outputs/autodata-efficiency-report/v001",
+    "outputs/autodata-v1-internal-timing/v001",
+    "outputs/autodata-domain-randomization/v002",
+    "outputs/curobo-v2-upgrade-assessment/v001",
+    "outputs/curobo-v2-openarm-mvp/v001",
+    "completed project experiment records from Franka, banana and G1 task worktrees; details and limits in report.md"
+  ],
+  "scope": "Synthesis of already completed experiments; no new simulation or training.",
+  "limitations": [
+    "Different robots, tasks, metrics and sample sizes are not pooled as a single A/B comparison.",
+    "Some Franka, banana and G1 run artifacts remain in separate local worktrees and are not bundled.",
+    "Existing reports are cited as saved; no full HDF5 revalidation was performed."
+  ],
+  "files": {
+    "figures/async-throughput.png": "a66b463d3583c61015a6d646d6ac94eb40c46dd57af20f3ca7be23c6f89d8274",
+    "figures/domain-randomization-renders.png": "15f7835e7e0121e2b61fb106e18a06f3e1b58afeccb3ce8f182f4e51fb95a398",
+    "figures/domain-randomization.png": "d53e50143f452b0a2ffc6e383ce098d76770058ba7ce3441298fc5462d13b047",
+    "figures/franka-obstacle-comparison.png": "fe5b40bfcf31ee6dd78d8c57c65b90c2567c9e7ae3ac5ed84c5c5dd5ce24f8d3",
+    "figures/internal-timing.png": "b6f1a090354b94a7ff3973e0720ae12ca656f45c4e52a6bf4097861c05b8b2fc",
+    "figures/timing-comparison.png": "8fd3de14a2087bc73c26f384abfb52b202ef655c35ca04b1cff12a023b647b95",
+    "report.md": "34f5ff96e6b48e5b5112b2f90f7e7fbcb7cf7de8dfdbe3dccf51515fd73d6f12"
+  },
+  "delivery": {
+    "local": {
+      "status": "saved"
+    },
+    "external": {
+      "status": "not_requested",
+      "published": false
+    }
+  }
+}
