@@ -19,7 +19,14 @@ GIB = 1024**3
 def summarize_closed(directory, envs, workers, seed, attempts):
     output = directory / 'dataset.hdf5'
     supervisor = json.loads(output.with_suffix('.run.json').read_text())
-    if supervisor['status'] != 'succeeded':
+    original_cell = json.loads((directory/'cell.json').read_text()) if (directory/'cell.json').exists() else {}
+    recovered_monitor_exit = (
+        supervisor['status'] == 'interrupted' and supervisor.get('returncode') == 0
+        and supervisor.get('exit_signal') is None and supervisor.get('received_signals') == [15]
+        and supervisor.get('completion_error') is None
+        and original_cell.get('error') == "TypeError: '>' not supported between instances of 'NoneType' and 'int'"
+    )
+    if supervisor['status'] != 'succeeded' and not recovered_monitor_exit:
         raise ValueError('Supervisor has not successfully closed: ' + str(directory))
     config = supervisor['config']
     if (config['num_envs'] != envs or str(config['export_workers']) != str(workers)
@@ -40,6 +47,9 @@ def summarize_closed(directory, envs, workers, seed, attempts):
             or any(r['event']=='episode_cancelled' for r in telemetry)):
         raise ValueError('Attempt accounting mismatch or execution error')
     ready = next(r for r in reversed(telemetry) if r['event']=='output_ready')
+    if recovered_monitor_exit:
+        if supervisor.get('result') != stats or ready['elapsed_seconds'] < max(r['elapsed_seconds'] for r in finished):
+            raise ValueError('Interrupted monitor lacks consistent completed-export evidence')
     seconds = ready['elapsed_seconds']-starts[0]['elapsed_seconds']
     if seconds<=0:
         raise ValueError('Invalid timing interval')
@@ -50,7 +60,7 @@ def summarize_closed(directory, envs, workers, seed, attempts):
     files = {p.name:p.stat().st_size for p in (output,output.with_name('dataset_failed.hdf5')) if p.exists()}
     if stats['num_success'] and not output.exists():
         raise ValueError('Expected production output is absent')
-    return dict(status='production_complete', source_directory=str(directory), envs=envs, workers=workers, seed=seed,
+    return dict(status='production_complete', source_directory=str(directory), recovered_monitor_exit=recovered_monitor_exit, supervisor_status=supervisor['status'], envs=envs, workers=workers, seed=seed,
         attempts_requested=attempts, stats=stats, final_ready_seconds=seconds,
         terminal_accepted_per_minute=stats['num_success']*60/seconds,
         actual_workers_started=sum(r['event']=='export_worker_started' for r in telemetry),
@@ -102,7 +112,7 @@ def launch_cell(args, label, envs, workers, seed, attempts):
                 resources=output.with_suffix('.resources.jsonl')
                 if resources.exists():
                     samples=read_rows(resources)
-                    if samples and samples[-1].get('process_rss_bytes',0)>44*GIB:
+                    if rss_limit_exceeded(samples,44*GIB):
                         raise RuntimeError('Producer RSS above 44 GiB')
                 time.sleep(2)
             if process.returncode:
@@ -119,6 +129,39 @@ def launch_cell(args, label, envs, workers, seed, attempts):
     finally:
         if process is not None and process.poll() is None:
             terminate(process)
+
+
+def rss_limit_exceeded(samples, limit):
+    # A final resource sample may arrive after /proc/<pid> disappears. Missing
+    # RSS is unavailable, not a numeric zero and not a reason to abort exports.
+    rss = samples[-1].get('process_rss_bytes') if samples else None
+    return rss is not None and rss > limit
+
+
+def prior_context(root):
+    lineage = []
+    visited = set()
+    current = root
+    while True:
+        current = current.resolve()
+        if current in visited or len(lineage) >= 8:
+            raise ValueError('Invalid recovery lineage')
+        visited.add(current)
+        lineage.append(current)
+        if (current/'environment.json').exists():
+            environment = json.loads((current/'environment.json').read_text())
+            break
+        previous = json.loads((current/'report.json').read_text()).get('prior_run')
+        if not previous:
+            raise ValueError('Missing original production workspace context')
+        current = Path(previous)
+    cells = {}
+    # Prefer the newest actual batch directory. A directory that exists but is
+    # unfinished must be rejected by summarize_closed rather than regenerated.
+    for directory in reversed(lineage):
+        for manifest in directory.glob('*/dataset.run.json'):
+            cells[manifest.parent.name] = manifest.parent
+    return environment, cells
 
 
 def main():
@@ -138,13 +181,13 @@ def main():
         code_commit=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),
         prior_run=str(args.reuse_run), automatic_retries=False)
     write(args.directory/'report.json',report)
-    old_environment=json.loads((args.reuse_run/'environment.json').read_text())
+    old_environment, prior_cells=prior_context(args.reuse_run)
     old_workspace=Path(old_environment['worktree'])
     if old_workspace!=args.production_root.parents[1]:
         raise ValueError('Recovery must use the same production/runtime workspace')
     def run(label,envs,workers,seed,attempts):
-        previous=args.reuse_run/label
-        if previous.exists():
+        previous=prior_cells.get(label)
+        if previous is not None:
             row=summarize_closed(previous,envs,workers,seed,attempts)
             row.update(label=label,reused=True,reused_run_commit=old_environment['workspace_commit'])
             old_cell=json.loads((previous/'cell.json').read_text())
@@ -191,7 +234,7 @@ def main():
         raise RuntimeError('Archive would exceed conservative storage reserve')
     command=['tar','-cf',str(archive),'-C',str(args.directory),'.']
     for row in report['rows']:
-        if row.get('reused'):command.extend(['-C',str(args.reuse_run),row['label']])
+        if row.get('reused'):command.extend(['-C',str(Path(row['source_directory']).parent),row['label']])
     subprocess.run(command,check=True)
     write(archive.with_suffix('.receipt.json'),dict(archive=str(archive),bytes=archive.stat().st_size,
         hash='not computed per user instruction',upload_status='pending_destination_and_authenticated_uploader'))

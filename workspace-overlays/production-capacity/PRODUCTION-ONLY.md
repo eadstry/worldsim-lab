@@ -19,3 +19,11 @@
 完成后用不额外压缩的 `.tar` 归档，因为HDF5本身已压缩；不再运行SHA256。归档仍需要一次磁盘读取但不做数据解码。收据明确哈希未计算。保留所有数据，夸克上传待目的目录与已认证入口，不误报完成。
 
 轻量主机测试：`<现有autodata Python> -B -m unittest discover -s workspace-overlays/production-capacity -p test_production_only.py -v`。使用非HDF5的占位文件验证入口不会解码输出，覆盖错误计数、配置不一致、异步未关闭的拒绝。没有使用仿真或生成数据进行解压测试。
+
+## 监控收尾空读数与多轮恢复
+
+任务114在最后一组筛选关闭时，资源采样中的 `process_rss_bytes=null` 触发了控制器的数值比较异常。修复将空值视为不可用，不触发RSS超限。保留仿真与导出设置。
+
+仅当旧监督器为 `interrupted` 但子进程返回0、无completion_error、信号仅SIGTERM，且原控制器记录该特定TypeError，并有完整匹配的result/attempt计数和位于全部episode_finished之后的output_ready，才允许从日志恢复此已关闭批次。保留原监督器状态及 `recovered_monitor_exit=true`，不将其改写为原本成功。恢复不打开HDF5或计算哈希。
+
+恢复入口沿 `prior_run` 读取原生产工作区上下文及已有批次目录，优先最新实际批次，拒绝循环链和未关闭批次，不重跑已生产的pilot/screen。归档引用每个批次真实来源目录；不假设多轮恢复将数据复制到新目录。

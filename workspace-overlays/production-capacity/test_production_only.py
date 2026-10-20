@@ -47,3 +47,37 @@ class MetadataOnlyTests(unittest.TestCase):
 
 
 if __name__=='__main__':unittest.main()
+
+class RecoveryTests(MetadataOnlyTests):
+    def test_missing_final_rss_does_not_abort_closed_production(self):
+        self.assertFalse(produce.rss_limit_exceeded([],44))
+        self.assertFalse(produce.rss_limit_exceeded([{'process_rss_bytes':None}],44))
+        self.assertFalse(produce.rss_limit_exceeded([{}],44))
+        self.assertTrue(produce.rss_limit_exceeded([{'process_rss_bytes':45}],44))
+
+    def test_known_monitor_exit_needs_completed_export_evidence(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path=Path(tmp);self.fixture(path)
+            run=json.loads((path/'dataset.run.json').read_text())
+            run.update(status='interrupted',returncode=0,exit_signal=None,received_signals=[15],completion_error=None,
+                       result=json.loads((path/'dataset.result.json').read_text()))
+            (path/'dataset.run.json').write_text(json.dumps(run))
+            (path/'cell.json').write_text(json.dumps(dict(error="TypeError: '>' not supported between instances of 'NoneType' and 'int'")))
+            self.assertTrue(produce.summarize_closed(path,1,0,101,1)['recovered_monitor_exit'])
+            rows=(path/'dataset.telemetry.jsonl').read_text().splitlines()
+            (path/'dataset.telemetry.jsonl').write_text('\n'.join(rows[:-1])+'\n')
+            with self.assertRaises((ValueError,StopIteration)):
+                produce.summarize_closed(path,1,0,101,1)
+
+    def test_recovery_lineage_finds_original_and_newer_cells(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp);older=root/'r02';newer=root/'r03'
+            older.mkdir();newer.mkdir()
+            (older/'environment.json').write_text(json.dumps(dict(worktree='/frozen/worktree',workspace_commit='original')))
+            (newer/'report.json').write_text(json.dumps(dict(prior_run=str(older))))
+            for parent,label in ((older,'pilot-workers0'),(older,'screen-old'),(newer,'screen-new')):
+                (parent/label).mkdir();(parent/label/'dataset.run.json').write_text('{}')
+            context,cells=produce.prior_context(newer)
+            self.assertEqual(context['workspace_commit'],'original')
+            self.assertEqual(cells['pilot-workers0'],older/'pilot-workers0')
+            self.assertEqual(cells['screen-new'],newer/'screen-new')
