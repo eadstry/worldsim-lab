@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "artifact_count": 14,
-  "version_count": 20,
+  "artifact_count": 15,
+  "version_count": 24,
   "artifacts": [
     {
       "id": "arena-examples-guide",
@@ -189,6 +189,44 @@
           "sealed_at": "2026-10-14T07:10:21.772878+00:00",
           "files": 3,
           "bytes": 27266,
+          "current": true
+        }
+      ]
+    },
+    {
+      "id": "embodied-experiment-portfolio",
+      "title": "具身数据生产实验总览",
+      "status": "current",
+      "supersedes": [],
+      "superseded_by": null,
+      "current_version": "v004",
+      "versions": [
+        {
+          "version": "v001",
+          "sealed_at": "",
+          "files": 7,
+          "bytes": 2468616,
+          "current": false
+        },
+        {
+          "version": "v002",
+          "sealed_at": "",
+          "files": 8,
+          "bytes": 2691177,
+          "current": false
+        },
+        {
+          "version": "v003",
+          "sealed_at": "",
+          "files": 6,
+          "bytes": 874998,
+          "current": false
+        },
+        {
+          "version": "v004",
+          "sealed_at": "",
+          "files": 15,
+          "bytes": 1851474,
           "current": true
         }
       ]

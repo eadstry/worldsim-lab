@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "artifact_id": "embodied-experiment-portfolio",
+  "version": "v003",
+  "created_at": "2026-10-20",
+  "material_cutoff": "2026-10-20 Asia/Shanghai",
+  "supersedes": "v002",
+  "change_summary": [
+    "在 v002 六组结构上新增固定尝试预算产能（10-19/20）、HDR 生产（10-16）、GPU 并发（10-17）三组批次，覆盖 13 组实验/运行",
+    "新增“三种成功”与“三种吞吐”口径表，区分成功标签、文件结构、严格物理终态与三种吞吐",
+    "更正 v002 的“同一套生成器”表述：AutoData 与 Arena/IsaacLab 是两套技术栈，共享 GPU 不等于共享生成器",
+    "补入 24 条对照的峰值 RSS（56.17 到 40.54/40.68 GiB）与内部耗时 RSS（33.48 到 25.22 GiB）",
+    "新增 5 张图：4 张沿用 v002 内容并重命名，1 张按 10-20 产能批次新绘；图注写明 n 与来源",
+    "明确 16 条批次四个导出配置各 17 次尝试、每配置 16 条保存样本，共 64 条通过末态检查"
+  ],
+  "corrections": [
+    {
+      "item": "同一套生成器",
+      "v002_value": "六组实验全部在同一套生成器上完成",
+      "v003_value": "两套技术栈：AutoData/OpenArm 与 Arena/IsaacLab；共享 GPU 不等于共享生成器"
+    },
+    {
+      "item": "覆盖范围",
+      "v002_value": "六组实验，截至 10-17",
+      "v003_value": "13 组实验/运行，截至 10-20；新增产能、HDR、并发"
+    },
+    {
+      "item": "资源收益",
+      "v002_value": "未写峰值 RSS",
+      "v003_value": "24 条对照 56.17 到 40.54/40.68 GiB；内部耗时 33.48 到 25.22 GiB"
+    }
+  ],
+  "sources": [
+    {
+      "path": "outputs/autodata-efficiency-report/v001/evidence.json",
+      "use": "24 条对照、压缩、非 RGB 一致性、峰值 RSS"
+    },
+    {
+      "path": "outputs/autodata-v1-internal-timing/v001/report.json",
+      "use": "1.472 倍、8 对动作匹配、execute 归因"
+    },
+    {
+      "path": "outputs/autodata-efficiency-review/v003/report.md",
+      "use": "16 条批次、v2 补跑 15/16"
+    },
+    {
+      "path": "outputs/autodata-efficiency-review/v003/v2-result.json",
+      "use": "v2 补跑逐项结果"
+    },
+    {
+      "path": "outputs/autodata-domain-randomization/v002/result.json",
+      "use": "9 项检查"
+    },
+    {
+      "path": "outputs/autodata-arena-shared-config/v003/comparison.json",
+      "use": "16 项接口检查"
+    },
+    {
+      "path": "outputs/curobo-v2-openarm-mvp/v001/data.json",
+      "use": "cuRobo v2 最小对照"
+    },
+    {
+      "path": "outputs/curobo-v2-grasp-diagnosis/v001/report.md",
+      "use": "seed 105 抓取诊断"
+    },
+    {
+      "task_worktree": "g1-home-domain-20261017",
+      "path": "runs/final-review/summary.json",
+      "use": "G1 七段正式结果"
+    },
+    {
+      "task_worktree": "franka-curobo-comparison-20261017",
+      "path": "outputs/franka-curobo-home-comparison/v001/summary.json",
+      "use": "Franka 四格结果"
+    },
+    {
+      "task_worktree": "banana-wrist-force-20261017",
+      "path": "runs/wrist-force-r02/sensor-verification.json",
+      "use": "香蕉力中位数与腕部安装误差"
+    },
+    {
+      "task_worktree": "banana-wrist-force-20261017",
+      "path": "runs/wrist-force-r02/verification.json",
+      "use": "香蕉抬升与视频帧数"
+    },
+    {
+      "task_worktree": "openarm-hdr-production-20261016",
+      "path": "runs/hdr-production/summary-console.json",
+      "use": "HDR 5 批"
+    },
+    {
+      "task_worktree": "gpu-environment-parallelism-20261017",
+      "path": "runs/gpu-parallelism-summary-20261017.json",
+      "use": "4 到 5 并发资源观测"
+    },
+    {
+      "task_worktree": "production-capacity-20261019",
+      "machine_path": "/data/WorldSimReady-Home/production-capacity-20261020-r04/report.json",
+      "use": "固定预算产能 20 格、74 次尝试"
+    }
+  ],
+  "scope": "对外讲解版汇总与核验。仅重写组织方式、补充已保存批次并核对原始证据；没有新增仿真、训练或 GPU 运行。",
+  "limitations": [
+    "不同机器人、任务、指标与样本量不合并计算，也不作为同一个 A/B 比较。",
+    "产能批次运行在仅生产模式，未做独立 HDF5 校验、图像解码、逐数组哈希与视频，只能称仿真终态接受吞吐。",
+    "部分原始运行记录与视频保留在独立任务工作树，未随本报告包复制。",
+    "既有报告按保存内容引用，未对完整 HDF5 做逐帧物理重放。",
+    "13 组实验的样本量均不足以估计总体成功率。"
+  ],
+  "figure_provenance": {
+    "figures/01-async-throughput.png": "取自 v002 figures/02-async-throughput.png，内容未改，仅重命名",
+    "figures/02-internal-timing.png": "取自 v002 figures/03-internal-timing.png，内容未改，仅重命名",
+    "figures/03-domain-randomization.png": "取自 v002 figures/04-domain-randomization.png，内容未改，仅重命名",
+    "figures/04-franka-obstacle-comparison.png": "取自 v002 figures/06-franka-obstacle-comparison.png，内容未改，仅重命名",
+    "figures/05-capacity-scaling.png": "2026-10-20 按 production-capacity-20261020-r04/report.json 新绘，matplotlib，180 dpi"
+  },
+  "files": {
+    "report.md": "55a702202370691736d15f5794c7b54a3cb9953d0983b851eaeef66b1d512a67",
+    "figures/01-async-throughput.png": "a66b463d3583c61015a6d646d6ac94eb40c46dd57af20f3ca7be23c6f89d8274",
+    "figures/02-internal-timing.png": "b6f1a090354b94a7ff3973e0720ae12ca656f45c4e52a6bf4097861c05b8b2fc",
+    "figures/03-domain-randomization.png": "d53e50143f452b0a2ffc6e383ce098d76770058ba7ce3441298fc5462d13b047",
+    "figures/04-franka-obstacle-comparison.png": "fe5b40bfcf31ee6dd78d8c57c65b90c2567c9e7ae3ac5ed84c5c5dd5ce24f8d3",
+    "figures/05-capacity-scaling.png": "0ff33b8b8dcf01b95e1a7f0333863179fad4275a54a3b57252d8fb33d0a848c7"
+  },
+  "delivery": {
+    "local": {
+      "status": "saved"
+    },
+    "external": {
+      "status": "not_requested",
+      "published": false
+    }
+  },
+  "verification": {
+    "method": "直接读取原始 JSON/CSV 并用脚本计算，未重跑仿真",
+    "numbers_checked_against_sources": true,
+    "report_absolute_paths": "none",
+    "figure_references_resolved": "5/5",
+    "checked_at": "2026-10-20 Asia/Shanghai"
+  }
+}

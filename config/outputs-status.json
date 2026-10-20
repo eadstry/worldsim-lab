@@ -96,6 +96,12 @@
       "status": "current",
       "summary": "v002 含零动作/固定轨迹的 GPU 实测、原生评估视频与主机测试；并行环境判定分开记录",
       "delivery": "本地版本归档，未新增双端交付"
+    },
+    "embodied-experiment-portfolio": {
+      "title": "具身数据生产实验总览",
+      "status": "current",
+      "summary": "14 组实验每组一图；正文 154 行、结论前置；第 5 节附阶段职责表；按 anti-defensive-writing 改写；数据与 v003 相同，未新增实验",
+      "delivery": "本地保存并随 Git 同步，未发布站点"
     }
   }
 }
