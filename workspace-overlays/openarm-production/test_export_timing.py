@@ -3,6 +3,7 @@
 """Host-only real HDF5 checks using extracted upstream methods, no simulator imports."""
 import ast
 import json
+import os
 import tempfile
 import textwrap
 import unittest
@@ -17,7 +18,7 @@ from export_timing import export_scope, install
 from monitor import summarize
 
 ROOT = Path(__file__).resolve().parents[2]
-DATASETS = ROOT / 'AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab/isaaclab/utils/datasets'
+DATASETS = Path(os.environ.get('WORLDSIM_SOURCE_ROOT', ROOT)) / 'AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab/isaaclab/utils/datasets'
 
 
 def upstream_method(file, cls, method):

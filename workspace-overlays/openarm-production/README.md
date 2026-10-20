@@ -377,3 +377,26 @@ PYTHONDONTWRITEBYTECODE=1 /home/tangyuan/miniconda3/envs/autodata/bin/python \
   workspace-overlays/openarm-production/verify_handoff.py /path/to/closed.hdf5 \
   --demo demo_0 --directory /path/to/new-verification-directory
 ```
+
+## Semantic metadata
+
+The production launch hook now captures `env.scene['robot'].joint_names` in native
+runtime order and adds `semantic_metadata` to the JSON `data.attrs['env_args']`.
+The same `get_ep_meta()` hook is used by synchronous and asynchronous writers.
+Metadata is captured once, copied for each export and never added to per-frame
+GPU tensors or shared-memory buffers.
+
+The supported profile is OpenArm v2 relative TCP control with XYZW quaternions.
+Metadata includes per-field names/units, pre/post-step timing, coordinate frames,
+joint defaults, configured action scales, action term order and resolved processed
+gripper joint order. Resolved observation joint subsets retain their own order.
+Unsupported controls/observations fail before generation instead of receiving
+invented labels. Other robot profiles require their own semantic adapter.
+
+`test_dataset_metadata.py` tests native order and subset handling, schema isolation,
+and actual HDF5 attribute / spawned export persistence on the CPU. Source-extraction
+tests can use `WORLDSIM_SOURCE_ROOT` to point at a separate read-only source checkout.
+`check_dataset_metadata_runtime.py --source-root ROOT --output NEW_DIRECTORY`
+is an explicit, queue-submitted GPU smoke using an already prepared runtime. It
+saves three zero-action steps and compares HDF5 metadata with the live articulation;
+it does not assert that a pick-and-place demonstration succeeded.

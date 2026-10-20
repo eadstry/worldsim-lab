@@ -9,6 +9,7 @@ import importlib.metadata
 import json
 import os
 import platform
+import shutil
 from pathlib import Path
 
 import h5py
@@ -54,10 +55,29 @@ def feature_map(episode):
     return result
 
 
-def inspect_source(source):
+def load_semantics(source, metadata_path=None):
+    """Prefer recorded metadata; legacy sidecars must bind to this exact HDF5."""
+    env = json.loads(source['data'].attrs['env_args'])
+    embedded = env.get('semantic_metadata')
+    if metadata_path is not None:
+        sidecar = json.loads(Path(metadata_path).read_text())
+        if sidecar.get('source_sha256') != sha256(source.filename):
+            raise ValueError('Semantic sidecar does not match the source HDF5 checksum')
+        schema = sidecar['semantic_metadata']
+        if embedded is not None and embedded != schema:
+            raise ValueError('Sidecar conflicts with embedded semantic metadata')
+    else:
+        schema = embedded
+    if not isinstance(schema, dict) or schema.get('schema_version') != 1:
+        raise ValueError('Missing semantic_metadata; legacy HDF5 requires a verified --metadata sidecar')
+    return schema
+
+
+def inspect_source(source, semantic_metadata=None):
     """Reject inconsistent sources before creating output; never load full RGB arrays."""
     data = source["data"]
     env_args = json.loads(data.attrs["env_args"])
+    semantics = load_semantics(source) if semantic_metadata is None else semantic_metadata
     sim = env_args["sim_args"]
     fps_float = 1 / (sim["dt"] * sim["decimation"])
     fps = round(fps_float)
@@ -95,7 +115,14 @@ def inspect_source(source):
                     raise ValueError(f"{path}: expected float32 vector")
                 if not np.isfinite(value[:]).all():
                     raise ValueError(f"{path}: non-finite values")
-                names = ACTION_NAMES if key == "action" else [f"column_{i}" for i in range(shape[0])]
+                spec = semantics.get('fields', {}).get(path, {})
+                names = spec.get('names')
+                if (not isinstance(names, list) or len(names) != shape[0]
+                        or any(not isinstance(n, str) or not n or n.startswith('column_') for n in names)
+                        or len(set(names)) != len(names)):
+                    raise ValueError(f'{path}: missing or invalid semantic dimension names')
+                if len(spec.get('units', [])) != shape[0]:
+                    raise ValueError(f'{path}: missing per-dimension units')
                 feature = {"dtype": "float32", "shape": shape, "names": names}
             if key in features and feature != features[key]:
                 raise ValueError(f"{name}/{path}: inconsistent feature schema")
@@ -116,7 +143,12 @@ def validate(source_path, output):
     import pyarrow as pa
     table = pa.concat_tables([pq.read_table(path) for path in table_files]).to_pandas()
     with h5py.File(source_path, "r") as source:
-        episodes, lengths, fps, mapping, features, _ = inspect_source(source)
+        semantics = provenance['semantic_metadata']
+        episodes, lengths, fps, mapping, features, _ = inspect_source(source, semantics)
+        info = json.loads((output / 'meta/info.json').read_text())
+        for key, feature in features.items():
+            if info['features'][key]['names'] != feature['names']:
+                raise ValueError(f'{key}: output dimension names differ from source semantics')
         if len(table) != sum(lengths):
             raise ValueError("Output frame count differs")
         for index, (name, length) in enumerate(zip(episodes, lengths)):
@@ -167,12 +199,13 @@ def validate(source_path, output):
             video_counts[key] = count
     report = {"status": "passed", "episodes": len(episodes), "frames": sum(lengths),
               "fps": fps, "numeric_roundtrip": "all values exact", "official_loader_samples": sample_count,
-              "fully_decoded_video_frames": video_counts, "scope": "CPU data conversion and decoding; no simulation or training"}
+              "fully_decoded_video_frames": video_counts, 'semantic_names': 'all exported feature names match source schema',
+              "scope": "CPU data conversion and decoding; no simulation or training"}
     (output / "validation.json").write_text(json.dumps(report, indent=2) + "\n")
     print(json.dumps(report), flush=True)
 
 
-def convert(source_path, output, repo_id):
+def convert(source_path, output, repo_id, metadata_path=None):
     if output.exists():
         raise FileExistsError(f"Output already exists: {output}")
     from lerobot.datasets.lerobot_dataset import LeRobotDataset
@@ -180,7 +213,8 @@ def convert(source_path, output, repo_id):
     source_stat = source_path.stat()
     digest = sha256(source_path)
     with h5py.File(source_path, "r") as source:
-        episodes, lengths, fps, mapping, features, env_args = inspect_source(source)
+        semantics = load_semantics(source, metadata_path)
+        episodes, lengths, fps, mapping, features, env_args = inspect_source(source, semantics)
         dataset = LeRobotDataset.create(repo_id=repo_id, root=output, fps=fps, features=features,
                                        robot_type="openarm_bimanual_left_ik_rel", use_videos=True,
                                        video_backend="torchcodec", vcodec="h264", image_writer_threads=2)
@@ -221,13 +255,14 @@ def convert(source_path, output, repo_id):
                                             "numpy", "h5py", "pyarrow", "accelerate", "draccus"]},
                       "python_version": platform.python_version(),
                       "source_env_args": env_args, "episodes": episodes, "lengths": lengths,
+                      'semantic_metadata': semantics,
                       "feature_mapping": mapping, "initial_states": initial_states,
                       "semantics": {"observation.state": "Exact pre-step obs/joint_pos, relative to default joint positions per archived environment configuration",
                                     "action": "Exact raw 7-D relative end-effector pose plus binary gripper command; not joint targets",
                                     "next.sim_state.*": "Exact post-step simulation states, absolute joint positions, root positions relative to environment origins",
                                     "timestamp": "Episode-local command/observation time, frame_index / fps; post-step simulation states are one control interval later",
                                     "video": "Three RGB streams encoded as lossy H.264 yuv420p at original size and rate",
-                                    "joint_names": "Source has no names; column_N preserves original column order"}}
+                                    "joint_names": "Dimension names use recorded metadata or a checksum-bound historical recovery sidecar"}}
         (output / "conversion.json").write_text(json.dumps(provenance, indent=2) + "\n")
         (output / "README.md").write_text(
             "# AutoData OpenArm — LeRobot v3.0\n\n"
@@ -245,20 +280,56 @@ def convert(source_path, output, repo_id):
     validate(source_path, output)
 
 
+def rename_existing(source_path, previous, output, metadata_path):
+    """Create a new named version without recompressing or changing any numeric/video payload."""
+    if output.exists():
+        raise FileExistsError(output)
+    if metadata_path is None:
+        raise ValueError('Historical renaming requires a checksum-bound --metadata sidecar')
+    with h5py.File(source_path, 'r') as source:
+        semantics = load_semantics(source, metadata_path)
+        _, _, _, mapping, features, _ = inspect_source(source, semantics)
+    old_provenance = json.loads((previous / 'conversion.json').read_text())
+    if old_provenance['source_sha256'] != sha256(source_path) or old_provenance['feature_mapping'] != mapping:
+        raise ValueError('Existing LeRobot dataset does not match the source')
+    info = json.loads((previous / 'meta/info.json').read_text())
+    for key, feature in features.items():
+        old = info['features'][key]
+        if tuple(old['shape']) != tuple(feature['shape']) or old['dtype'] != feature['dtype']:
+            raise ValueError(f'{key}: schema cannot be changed by renaming')
+        old['names'] = feature['names']
+    shutil.copytree(previous, output)
+    for stale in ('validation.json', 'delivery-manifest.json'):
+        (output / stale).unlink(missing_ok=True)
+    (output / 'meta/info.json').write_text(json.dumps(info, indent=4) + '\n')
+    old_provenance['semantic_metadata'] = semantics
+    old_provenance['semantics']['joint_names'] = 'Recovered from archived runtime evidence; see semantic_metadata.evidence'
+    old_provenance['renamed_from'] = str(previous)
+    (output / 'conversion.json').write_text(json.dumps(old_provenance, indent=2) + '\n')
+    with (output / 'README.md').open('a') as stream:
+        stream.write('\nSemantic names restored in a new version from checksum-bound historical evidence.\n'
+                     'See conversion.json for joint order, units, coordinate frames, action scales and recovery provenance.\n')
+    validate(source_path, output)
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("source", type=Path)
     parser.add_argument("output", type=Path)
     parser.add_argument("--repo-id", default="local/autodata-openarm-left")
     parser.add_argument("--validate-only", action="store_true")
+    parser.add_argument('--metadata', type=Path, help='Checksum-bound semantic sidecar for historical HDF5')
+    parser.add_argument('--rename-from', type=Path, help='Create a new named version of an existing conversion')
     args = parser.parse_args()
     # Local caches only; never contact or publish to the Hub when reading output.
     os.environ["HF_HUB_OFFLINE"] = "1"
     os.environ["HF_DATASETS_OFFLINE"] = "1"
-    if args.validate_only:
+    if args.rename_from:
+        rename_existing(args.source.resolve(), args.rename_from.resolve(), args.output.resolve(), args.metadata)
+    elif args.validate_only:
         validate(args.source.resolve(), args.output.resolve())
     else:
-        convert(args.source.resolve(), args.output.resolve(), args.repo_id)
+        convert(args.source.resolve(), args.output.resolve(), args.repo_id, args.metadata)
 
 
 if __name__ == "__main__":

@@ -52,6 +52,12 @@ def build_source(source, args):
 """ + finish_anchor, 1)
     else:
         os.environ.pop("OPENARM_ASYNC_EXPORT", None)
+    semantic_anchor = "    env = gym.make(env_name, cfg=env_cfg).unwrapped"
+    assert source.count(semantic_anchor) == 1, "Upstream environment creation changed; review metadata capture"
+    source = source.replace(semantic_anchor, semantic_anchor + """
+    from dataset_metadata import attach as attach_dataset_metadata
+    attach_dataset_metadata(env)
+""", 1)
     close_anchor = "        env.close()"
     assert source.count(close_anchor) == 1
     source = source.replace(close_anchor, close_anchor + """

@@ -1,0 +1,16 @@
+--- a/scripts/generate_dataset.py
++++ b/scripts/generate_dataset.py
+@@ -307,6 +307,13 @@
+     )
+
+     env = gym.make(env_name, cfg=env_cfg).unwrapped
++    if env_name in (
++        "Isaac-PickPlace-Cube-OpenArm-Bimanual-Left-IK-Rel-v0",
++        "Isaac-PickPlace-Cube-OpenArm-Bimanual-Right-IK-Rel-v0",
++    ):
++        from dataset_metadata import attach as attach_dataset_metadata
++        attach_dataset_metadata(env)
++
+
+     random.seed(generation_policy_params.seed)
+     np.random.seed(generation_policy_params.seed)

@@ -24,7 +24,10 @@ rejects inconsistent schemas and frame counts rather than guessing.
 
 Episode-local `timestamp = frame_index / fps` timestamps the command and pre-action
 observation. The corresponding `next.sim_state.*` is one control step later.
-Source joint names are absent; `column_N` preserves column order without inventing names.
+Numeric dimension names and units must be supplied by `env_args.semantic_metadata`.
+The converter rejects missing names, `column_N` placeholders, conflicting schemas,
+and sidecars whose source checksum does not match. It never assumes URDF declaration
+order equals the articulation's runtime order.
 
 ## Run
 
@@ -42,6 +45,26 @@ python convert.py /absolute/path/to/source.hdf5 /absolute/path/to/new-output
 python convert.py /absolute/path/to/source.hdf5 /absolute/path/to/new-output --validate-only
 python -m unittest discover -s workspace-overlays/autodata-lerobot-v3 -v
 ```
+
+For a historical HDF5 lacking metadata, pass a verified `--metadata /path/to/sidecar.json`.
+The sidecar contains `source_sha256` and `semantic_metadata`. To create a new named
+version without modifying Parquet/MP4 payloads or the previous delivery:
+
+```bash
+python convert.py source.hdf5 new-output --metadata verified.json --rename-from previous-output
+```
+
+`recover_legacy_metadata.py` supports this specific OpenArm source. It reads indexed
+runtime joint tables, checks the supplied URDF's joint types, verifies every source
+frame's default offsets/gripper column/action scale, and can compare labels with a
+fresh GPU metadata smoke report. Evidence and checksums remain in the sidecar;
+historical recovery is explicitly distinguished from original runtime capture.
+
+The local production launcher captures metadata automatically. The accompanying
+`AutoData-openarm-semantic-metadata.patch` offers the equivalent OpenArm-only hook
+for direct use of the upstream generation script. It is provided for review and is
+not automatically applied to upstream. That hook requires
+`workspace-overlays/openarm-production` on `PYTHONPATH`; its `attach()` is idempotent.
 
 Submit resource-intensive conversion to the shared host queue described in
 `docs/task-queue.md`. Keep queued code unchanged and use a new output directory.
@@ -78,3 +101,27 @@ bounded asynchronous image buffers, official metadata generation/finalization,
 dependency provenance and the limits of lossy video checks. No unresolved
 high-severity issue was found for the supplied OpenArm source. This is agent
 self-review and CPU evidence, not independent reviewer approval or GPU validation.
+
+## Semantic metadata repair
+
+The original delivery checked numeric preservation but left dimension-name
+placeholders. The repair adds strict name/unit checks and a naming-only migration.
+Five conversion tests cover semantic names, singleton fields, exact numeric/video
+payload preservation, incomplete/conflicting runtime tables, missing metadata,
+wrong-source sidecars and refusal to overwrite outputs.
+
+The OpenArm producer's 36 host tests passed, including native joint-order capture,
+resolved observation subsets, processed gripper order, mutation isolation and
+real synchronous HDF5/async spawn persistence. Tests that extract upstream methods
+accept `WORLDSIM_SOURCE_ROOT` as a read-only fixture source in isolated worktrees.
+
+Shared queue task 124 passed a real one-environment GPU smoke: environment creation,
+three zero-action steps, synchronous HDF5 export and metadata readback. Its live joint
+order and 28 field label sets match the historical recovery; joint default offsets
+also match. This does not validate task success, full generation or training.
+
+Shared queue task 125 verified the named v002 delivery: 5453 frames, every numeric
+value exact, 5453 decoded frames per camera, 12 official-loader samples, and all
+exported semantic names matching the verified recovery schema. The previous
+delivery and original HDF5 were preserved. The v002 archive additionally includes
+the recovery sidecar and GPU smoke metadata report.
