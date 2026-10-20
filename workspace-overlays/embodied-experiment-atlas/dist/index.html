@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="具身数据生产、效率与仿真实验的可视化版本化报告">
+<title>具身实验图谱 · 版本化实验报告</title>
+<style>
+:root{--paper:#f6f4ef;--ink:#202a2c;--muted:#657174;--line:#d9ddd5;--accent:#17786f;--pale:#e6f0ea;--gold:#bf7436}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.75 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{padding:64px max(24px,calc((100vw - 1040px)/2)) 48px;background:#193b3a;color:#f5f2e9}header .eyebrow{letter-spacing:.15em;text-transform:uppercase;color:#b4d4c5;font-size:12px}header h1{font-size:clamp(34px,6vw,64px);line-height:1.1;max-width:850px;margin:20px 0}header p{max-width:740px;color:#d4dfd7;font-size:18px}
+.toolbar{position:sticky;top:0;z-index:2;background:#f6f4eff0;backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:10px max(20px,calc((100vw - 1040px)/2));display:flex;gap:12px;align-items:center}.toolbar a,.toolbar button{color:var(--accent);font:inherit;text-decoration:none;border:1px solid var(--line);background:#fff;padding:6px 12px;border-radius:20px;cursor:pointer}.toolbar .spacer{flex:1}main{max-width:1040px;margin:42px auto;padding:0 24px 80px}
+h1,h2,h3{line-height:1.3;letter-spacing:-.02em}main h1{display:none}main h2{font-size:31px;margin:62px 0 20px;padding-top:12px}main h3{font-size:22px;margin-top:36px}p{margin:16px 0}a{color:#176c64}blockquote{margin:22px 0;padding:16px 24px;border-left:4px solid var(--gold);background:#fff9ed;border-radius:0 12px 12px 0}ul,ol{padding-left:1.5em}li{padding-left:.25em}table{border-collapse:collapse;width:100%;margin:22px 0;background:#fff;font-size:15px}th,td{border:1px solid var(--line);padding:10px 12px;text-align:left}th{background:#e8eee8}img{display:block;max-width:100%;height:auto;margin:26px auto;border-radius:12px;box-shadow:0 10px 28px #213c3518}code{background:#e9ece7;padding:.12em .35em;border-radius:4px;font-size:.9em}hr{border:0;border-top:1px solid var(--line);margin:40px 0}.local-reference{color:#5d716e;border-bottom:1px dotted #849b92;cursor:help}
+.experiment-flow{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;padding:0;margin:26px 0 34px;counter-reset:flow}.experiment-flow li{position:relative;min-height:100px;padding:15px;background:var(--pale);border:1px solid #cadbd0;border-radius:12px;counter-increment:flow}.experiment-flow li::before{content:counter(flow,decimal-leading-zero);display:block;color:var(--accent);font-size:12px;font-weight:700;letter-spacing:.1em;margin-bottom:8px}.experiment-flow li:not(:nth-child(4n))::after{content:"→";position:absolute;right:-13px;top:34px;color:var(--gold);font-size:20px;z-index:1}.download{display:inline-block;margin:20px 0;padding:9px 15px;border-radius:8px;background:var(--accent);color:white!important;text-decoration:none}footer{max-width:1040px;margin:auto;padding:24px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+@media(max-width:700px){body{font-size:16px}header{padding:46px 24px 36px}main{margin-top:24px;padding-inline:18px}main h2{font-size:26px;margin-top:44px}.experiment-flow{grid-template-columns:repeat(2,minmax(0,1fr))}.experiment-flow li:not(:nth-child(4n))::after{display:none}table{display:block;overflow-x:auto;white-space:nowrap}.toolbar{padding-inline:14px}}
+@media print{.toolbar{display:none}body{background:white}header{background:white;color:var(--ink);padding:20px 0}header p{color:var(--muted)}main{max-width:none;padding:0}}
+</style></head><body>
+<header><div class="eyebrow">Research portfolio · v001 · 2026.10</div><h1>具身实验图谱</h1><p>从数据生产效率和质量验收，延伸到域随机化、避障与多传感操作记录。以图为入口，沿着实验问题和证据边界阅读。</p></header>
+<nav class="toolbar" aria-label="页面工具"><a href="#先看实验如何递进">实验路线</a><a href="#9-下一阶段如何接着做">后续计划</a><span class="spacer"></span><a href="report.md" download>下载 Markdown</a><button onclick="window.print()">打印 / 存为 PDF</button></nav>
+<main><h1>具身数据生产与效率实验：版本化结果总览</h1>
+<blockquote>
+<p><strong>阅读方法：沿着图和实验问题往下读。</strong> 本报告汇总目前可追溯的 AutoData 数据生产、效率、域随机化、规划器和家庭场景操作实验。每张图先给读图结论，再说明实验条件和证据边界。图中数值是各自实验的结果，不跨任务合并计算。</p>
+</blockquote>
+<ul>
+<li>汇总版本：v001</li>
+<li>材料截止：2026-10-19（Asia/Shanghai）</li>
+<li>范围：已保存报告、验证记录及本项目相关聊天中已完成的仿真实验；没有在本报告整理过程中新增 GPU 实验。</li>
+<li>推荐入口：<a href="report.md">本报告</a> · <span class="local-reference" title="项目本地来源，未随本页面发布">成果索引</span> · <span class="local-reference" title="项目本地来源，未随本页面发布">12 图效率优化报告</span> · <span class="local-reference" title="项目本地来源，未随本页面发布">效率复盘图册 v021</span> · <span class="local-reference" title="项目本地来源，未随本页面发布">架构与 cuRobo 图册 v022</span></li>
+</ul>
+<h2>先看实验如何递进</h2>
+<ol class="experiment-flow" aria-label="实验递进路线"><li><span>打通数据生产与成功判定</span></li><li><span>定位导出及内存瓶颈</span></li><li><span>异步导出：提高文件就绪吞吐</span></li><li><span>内部计时：拆出渲染和物理耗时</span></li><li><span>域随机化：验证状态和视觉变化</span></li><li><span>Franka 家庭场景：IK 与 cuRobo 避障</span></li><li><span>香蕉和多视角/力数据：扩展操作对象</span></li><li><span>后续：扩增质量与训练泛化</span></li></ol><p>这条路线从“能不能生成”逐步转向“生成多快、记录是否可靠、场景变化能否处理”。后段的 Franka、香蕉和 G1 域随机化结果来自不同任务、机器人和验证口径；它们用于说明研究方向的推进，不能拿来当作同一个算法的前后 A/B。</p>
+<h3>模板怎么选</h3>
+<p>我对照了项目现有三种写法：单实验的“问题—配置—结果—限制—复现”报告、12 图效率报告的图文叙事，以及 <code>outputs/</code> 的版本索引与 <code>manifest.json</code> 溯源记录。这里采用它们的组合：先给路线图，每个实测图紧跟读法、条件和边界，最后汇总版本差异与来源。单纯复制某一份旧报告会漏掉跨任务版本关系；另造一个大而全的论文模板则会重复维护既有细节。该结构可通过追加版本和图表继续扩展。</p>
+<h2>1. 生产效率：异步导出减少等待，但终态验收暴露质量缺口</h2>
+<p><img src="figures/async-throughput.png" alt="三种导出模式最终就绪吞吐"></p>
+<p><strong>读图：</strong> 8 环境、每模式 24 次尝试中，双 worker 的最终文件就绪速度高于同步导出；单 worker 居中。但三个模式的严格物理终态都是 <strong>23/24</strong>，所以吞吐提高没有消除相同的终态失败样本。</p>
+<table>
+<thead>
+<tr>
+<th>导出方式</th>
+<th style="text-align:right">最终就绪速度（条/分钟）</th>
+<th>文件格式检查</th>
+<th style="text-align:right">严格终态通过</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>同步（0 worker）</td>
+<td style="text-align:right">1.245</td>
+<td>通过</td>
+<td style="text-align:right">23/24</td>
+</tr>
+<tr>
+<td>异步（1 worker）</td>
+<td style="text-align:right">1.409</td>
+<td>通过</td>
+<td style="text-align:right">23/24</td>
+</tr>
+<tr>
+<td>异步（2 worker）</td>
+<td style="text-align:right">1.616</td>
+<td>通过</td>
+<td style="text-align:right">23/24</td>
+</tr>
+</tbody>
+</table>
+<p>双 worker 相对同步的最终就绪加速约 <strong>1.30×</strong>。三组均记录 24 次成功标签，但相同的 <code>demo_2</code> 最终仍在运动，严格物理检查失败；因此不能用 24/24 描述物理合格率。三个模式非 RGB 数据集共 672 项逐值一致；固定轨迹 CPU 回放的文件结构、值、属性、形状和压缩也通过一致性核对。GPU 运行当时报告的全局峰值内存较高，应按原报告中的 RSS、cgroup 与显存各自口径理解。</p>
+<p><strong>这一版推进了什么：</strong> 异步导出、worker 数量与最终文件就绪时间形成端到端 GPU 对照，并检查数据传输和读取。<strong>尚未回答什么：</strong> 是否能改善真实任务成功率、超时与失败样本如何处置，以及相机图像是否逐像素等价。详情见<span class="local-reference" title="项目本地来源，未随本页面发布">效率报告 v001</span>及其<span class="local-reference" title="项目本地来源，未随本页面发布">结构化证据</span>。</p>
+<p><img src="figures/timing-comparison.png" alt="同步与自动异步的文件就绪时间对比"></p>
+<h2>2. 内部计时：再把总耗时拆开，找到下一个瓶颈</h2>
+<p><strong>读图：</strong> 在另一组 4 环境固定 seed 配对实验中，8 条目标示范都完成且物理、文件结构校验通过；异步 auto 导出平均最终文件吞吐从 <strong>0.931</strong> 提高到 <strong>1.370 条/分钟</strong>，约 <strong>1.472×</strong>。这次不是上节 24 条实验的复算。</p>
+<p>改进前后动作数组 SHA256 精确匹配 8 组，说明导出方式变化没有改变该组动作记录。execute 平均累计时间由 <strong>197.53 秒</strong>降至 <strong>142.71 秒</strong>；互斥计时归因中，导出与背压由 <strong>58.41 秒</strong>降至 <strong>3.64 秒</strong>。优化后相机渲染和图像采集占 execute 计时约一半，物理推进与控制约三分之一，因此后续优化重点从导出逐渐移到渲染、相机位姿更新及重复 RGB 读取。</p>
+<p><img src="figures/internal-timing.png" alt="内部计时配对结果"></p>
+<p><strong>版本连续性：</strong> 这组实验保持任务 YAML、输入哈希、4 环境与 8 个成功目标不变，补充了前一轮没有的内部计时解释。它仅有一个 seed 对、一种硬件和一次固定顺序；报告的是主机调用墙钟，不是隔离 GPU kernel 时间。完整方法和逐环节计时见<span class="local-reference" title="项目本地来源，未随本页面发布">内部耗时报告 v001</span>。</p>
+<h2>3. 存储与压缩：速度、体积、训练输入要一起看</h2>
+<p>早期压缩试验使用同一条 1,342 帧、三路 RGB 轨迹；它展示的是格式取舍，不是大样本结论：</p>
+<table>
+<thead>
+<tr>
+<th>格式</th>
+<th style="text-align:right">文件体积</th>
+<th style="text-align:right">建数据集耗时</th>
+<th>该次实验观察</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gzip level 2</td>
+<td style="text-align:right">约 525 MiB</td>
+<td style="text-align:right">约 25.75 秒</td>
+<td>体积较小，写入耗时较长</td>
+</tr>
+<tr>
+<td>LZF</td>
+<td style="text-align:right">约 796 MiB</td>
+<td style="text-align:right">约 16.98 秒</td>
+<td>速度与体积居中</td>
+</tr>
+<tr>
+<td>无压缩</td>
+<td style="text-align:right">约 354 MiB</td>
+<td style="text-align:right">约 10.10 秒</td>
+<td>该样本写入最快，但文件不最小</td>
+</tr>
+</tbody>
+</table>
+<p><strong>读图要点：</strong> “最小文件”“最快生成”“最适合训练”是三个不同目标。当前新实验计划将审阅视频降至 320×240、15 fps；这只适用于审阅视频。若降低训练用相机分辨率或采样率，观测内容与生产成本都会改变，必须建立新的配置版本，并与相同配置的基线配对比较。压缩试验的详细解释在<span class="local-reference" title="项目本地来源，未随本页面发布">效率报告 v001 图 04</span>。</p>
+<h2>4. 域随机化：先验证生成器真的改变了什么</h2>
+<p><img src="figures/domain-randomization.png" alt="OpenArm 左臂起始位姿随机化分布"></p>
+<p>2026-10-16 的 AutoData 实测使用 OpenArm 左臂和 4 个并行环境，共检查 <strong>256 个 reset 位姿</strong>。只随机化物体 XY：相对默认中心 x ±40 mm、y ±60 mm；高度与朝向固定。数值边界、随机种子复现、不同种子差异、关闭随机化对照和短程物理步等 9 项检查通过。</p>
+<p><strong>这证明了什么：</strong> 位姿采样配置能按边界生成，并能按记录的种子复现。<strong>这没有证明什么：</strong> 它没有运行 cuRobo 轨迹生成，没有统计抓取成功率，也没有训练策略验证泛化。初版 v001 的图像未在 reset 后同步更新；v002 修正了取图流程并替代其视觉结论，旧版保留作为版本历史。</p>
+<p><img src="figures/domain-randomization-renders.png" alt="随机化场景渲染示例"></p>
+<p>这里的诊断视角专为看清场景而固定，不是训练用原相机；像素差包含渲染噪声，不能单独作为随机化正确的证据。详见<span class="local-reference" title="项目本地来源，未随本页面发布">域随机化报告 v002</span>。</p>
+<p>同一项目还完成了另一条 <strong>G1 家庭场景视觉随机化</strong>小批次，目标是给头部视觉模仿学习准备候选数据。7 次正式尝试中 6 次成功：单因素基线/光照/相机/材质 4/4，视觉组合 1/1，加入箱体位姿扰动的组合 1/2。纯视觉组合为 928 帧、18.56 秒，动作与基线逐值相同，头部图像平均绝对差约 36.14/255。该结果支持把纯视觉组合选作下一批候选，不证明训练后泛化提升；单因素样本极少，不能估计成功率。此为 G1 任务，与 OpenArm 左臂 reset 位姿实验不是同一个域随机化版本。<span class="local-reference" title="项目本地来源，未随本页面发布">G1 随机化实验记录</span></p>
+<h2>5. cuRobo：从升级评估走到家庭场景避障对照</h2>
+<p>cuRobo v2 的初期评估是源码与接口分析，随后在 OpenArm MVP 中做了 5 次尝试；结果支持保留 v1 作为生产基线、v2 作为独立实验后端，尚不足以替换默认。后续 Franka 家庭场景实验则直接比较现有 IK 与 cuRobo＋IK 的搬运路径，并加入物理障碍物：</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th style="text-align:right">无新增障碍：无障碍接触完成</th>
+<th style="text-align:right">有障碍：无障碍接触完成</th>
+<th style="text-align:right">单次规划请求均值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IK</td>
+<td style="text-align:right">3/3</td>
+<td style="text-align:right">0/3</td>
+<td style="text-align:right">不适用</td>
+</tr>
+<tr>
+<td>cuRobo＋IK</td>
+<td style="text-align:right">3/3</td>
+<td style="text-align:right">3/3</td>
+<td style="text-align:right">约 108–114 ms</td>
+</tr>
+</tbody>
+</table>
+<p>每格仅有 <strong>3 个固定配对初始状态</strong>。该结果支持“在这些布局中，cuRobo 路径绕开新增障碍”的观察，不支持总体成功率保证。cuRobo 模型构建与预热约 2.7 秒，单次规划计时不包含这笔一次性成本；其规划器只覆盖桌面、地面和局部障碍代理几何，未覆盖完整住宅家具。抓取、最后下降与释放仍由共用 IK 接触控制执行。</p>
+<p><img src="figures/franka-obstacle-comparison.png" alt="Franka 有无障碍对照结果"></p>
+<p>实验使用 World-SimReady-Home-mini 的派生静态住宅场景，Franka Panda 与 4 cm 方块。结果及四组同步视频见<span class="local-reference" title="项目本地来源，未随本页面发布">Franka 对照报告 v001</span>（报告保存在独立任务工作树）。</p>
+<h2>6. 操作对象与观测记录：从方块到香蕉</h2>
+<p>后续家庭场景试验将方块替换成香蕉，并扩展腕部相机、外部近景与接触力记录。既有单条示范约 <strong>19 秒、950 帧</strong>，完成抓起、搬运和放置；一条轨迹只证明流程在该固定状态下可执行，不提供成功率估计。</p>
+<p>腕部 RGB 记录为 640×480、50 Hz；外部近景为 960×720、50 Hz；接触与腕部反力以 200 Hz 记录。双指搬运期法向力中位数约 38.7–38.8 N，撤离后归零。香蕉在仿真里按刚体处理，腕部读数包含运动动力学影响，所以这些信号可帮助诊断接触和释放，不能解释为真实香蕉的安全夹持力或软体损伤结果。</p>
+<p>这些轨迹来自项目后续独立 worktree 的已完成任务；其视频与验证文件路径保留在相应运行目录，未复制进本报告包，以免重复占用存储。单条任务成功不表示位置随机化成功率，也不表示策略泛化。实验设计与复用边界见<span class="local-reference" title="项目本地来源，未随本页面发布">香蕉任务说明</span>。</p>
+<h2>7. 已完成实验的版本演进</h2>
+<table>
+<thead>
+<tr>
+<th>主题 / 版本</th>
+<th>版本特点</th>
+<th>相对前版的推进</th>
+<th>证据边界</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>效率优化 v001</td>
+<td>12 张图，汇总 GPU 吞吐、内存、异步导出和格式取舍</td>
+<td>从工程改动转为端到端实测与质量复核</td>
+<td>24 条/模式；每组严格终态 23/24</td>
+</tr>
+<tr>
+<td>内部耗时 v001</td>
+<td>4 环境、固定 seed、8 组动作精确配对</td>
+<td>从“快多少”走到“时间花在哪里”</td>
+<td>一组 seed 对；不是统计总体</td>
+</tr>
+<tr>
+<td>效率图册 v014–v015、v021</td>
+<td>复盘与图表说明逐版丰富；v015 提供 51 页图册，v021 保存 Markdown 图表源</td>
+<td>提高历史数据可解释性，不代表重复 GPU 实验</td>
+<td>后续版本侧重说明、审阅和图表维护</td>
+</tr>
+<tr>
+<td>效率架构 v022</td>
+<td>单列项目架构与 cuRobo v1/v2，新增可编辑 SVG</td>
+<td>从耗时结果扩到代码结构和迁移决策</td>
+<td>静态分析与报告整合，没有新 GPU A/B</td>
+</tr>
+<tr>
+<td>域随机化 v001 → v002</td>
+<td>v001 渲染时序有缺陷；v002 修正同步并重新形成图像证据</td>
+<td>视觉报告版本替换；采样实验按 v002 边界解释</td>
+<td>reset/短程物理，不是轨迹生产或策略训练</td>
+</tr>
+<tr>
+<td>cuRobo 升级评估 v001 → 家庭避障 v001</td>
+<td>由静态迁移风险评估转为 Franka 小样本实际避障比较</td>
+<td>开始验证方法在具体障碍布局中的行为</td>
+<td>不同任务版本，v2 评估不等于家庭场景实验</td>
+</tr>
+<tr>
+<td>cuRobo v2 OpenArm MVP v001</td>
+<td>5 次尝试，保留为试验后端</td>
+<td>用固定小样本检验基本规划与集成路径</td>
+<td>不是 v1/v2 总体性能结论</td>
+</tr>
+<tr>
+<td>香蕉固定示范 → 多传感记录</td>
+<td>从可抓取性演示扩展到多视角、接触与力记录</td>
+<td>支持后续抓持稳定和接触质量分析</td>
+<td>单轨迹、刚体香蕉，不能据此报告总体成功率</td>
+</tr>
+</tbody>
+</table>
+<p>AutoData 效率图册 v001–v022 中有多次内容版本；<strong>图册版本递增并不意味着每版都增加了新实验</strong>。例如 v021 的图表源和 v022 的架构整理主要改善解释与结构分析；v001→v002 域随机化则包含验证流程修正和新的图像证据。各主题仍以其 <code>manifest.json</code> 和报告明确写出的实验版本、来源和验证范围为准。</p>
+<h2>8. 统一阅读指标：吞吐要和合格质量同时报告</h2>
+<p>后续新实验沿用已有“最终文件就绪”计时窗口，并额外报告严格质量通过的样本数：</p>
+<blockquote>
+<p><strong>严格合格吞吐 = 同时通过物理终态验收与数据完整性检查的轨迹数 ÷ 最终文件就绪时间。</strong></p>
+</blockquote>
+<p>每个实验版本都应保留：问题与假设、机器人/任务/场景、固定条件、随机变量及范围、seed、环境数与尝试数、成功判据、失败数、生产与排空计时、数据体积与资源、图表、证据路径、限制、变更记录。规划失败、生产失败和数据校验失败分别计数；不得只报告成功文件数。</p>
+<p>对于低分辨率或低帧率视频，报告应注明它是审阅代理。物理验收依赖原采样率状态、动作、接触和力数据；若视频转为训练输入，则另起配置与对照版本。</p>
+<h2>9. 下一阶段如何接着做</h2>
+<ol>
+<li><strong>先对已有数据做质量回归</strong>：复核历史 <code>demo_2</code> 的终态与成功标签，能回读的 RGB 再比较时序和内容；这一步不需新增仿真。</li>
+<li><strong>再做同配置低存储效率配对</strong>：同步和异步两组使用相同分辨率、相机调用与样本设置；分别报告总吞吐、严格合格吞吐、峰值内存、每条存储量。不能把视频降采样的收益归因给导出改造。</li>
+<li><strong>修复终态判定后再扩到香蕉位姿随机化</strong>：小样本先查接口和失败分类；通过后才扩大数据生产量。</li>
+<li><strong>最后比较 cuRobo/SkillMimicGen 和训练泛化</strong>：同状态配对，报告失败原因、规划成本、每小时合格数据量，并用未见状态测试训练策略。</li>
+</ol>
+<h2>来源与维护方式</h2>
+<p>本版引用的核心可移植证据：</p>
+<ul>
+<li><span class="local-reference" title="项目本地来源，未随本页面发布">AutoData 效率报告 v001</span>、<span class="local-reference" title="项目本地来源，未随本页面发布">结构化证据</span></li>
+<li><span class="local-reference" title="项目本地来源，未随本页面发布">AutoData v1 内部耗时报告 v001</span></li>
+<li><span class="local-reference" title="项目本地来源，未随本页面发布">AutoData 域随机化报告 v002</span></li>
+<li><span class="local-reference" title="项目本地来源，未随本页面发布">cuRobo v2 升级评估 v001</span></li>
+<li><span class="local-reference" title="项目本地来源，未随本页面发布">cuRobo v2 OpenArm MVP v001</span></li>
+<li><span class="local-reference" title="项目本地来源，未随本页面发布">版本化成果索引</span></li>
+</ul>
+<p>图像为本汇总版本为便于离线阅读而选取的现有图表副本；源版本保持封存。后续更新请新增 <code>v002/</code>，在顶部写清材料截止和新增来源，在版本表补一行，并更新 <code>outputs/README.md</code>。每张新增图给出来源、条件、样本数、坐标含义和不可推断的结论；无新增实验的图册/排版版本明确标注“报告更新，无新实验”。不覆盖旧报告，也不复制原始 HDF5、逐帧 RGB 或完整运行目录。</p>
+<p>本报告仅在本地整理，未执行新仿真、策略训练或外部上传。香蕉、Franka 和 G1 结果的部分原始视频与运行记录位于独立工作树；在任务工作树被归档或清理前应保留其路径映射，若要形成完全自包含的外发包，应另行挑选少量低分辨率代表视频。</p>
+</main><footer>汇总版本 v001 · 材料截止 2026-10-19 · 此页面为已有实验资料的可视化整理，没有新增 GPU 仿真或训练。图表为压缩后的可移植副本，原始数据仍按项目版本留存。</footer>
+</body></html>

@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "experiment_id": "openarm-capability24",
+  "status": "preparation",
+  "robot_task": "OpenArm left-arm cube pick and place",
+  "num_envs": 24,
+  "configuration": {
+    "planner": "existing cuRobo v1 production configuration",
+    "cameras": ["left_hand_rgb", "right_hand_rgb", "third_person_rgb"],
+    "image_shape": [480, 640, 3],
+    "image_dtype": "uint8",
+    "control_hz": 30,
+    "final_hold_steps": 60,
+    "compression": "gzip level 2",
+    "export_workers": "auto",
+    "export_queue_gib": 16,
+    "guarantee_success": false,
+    "keep_failed": true,
+    "retry_failed_attempts": false,
+    "allow_parallelism_fallback": false,
+    "allow_observation_reduction": false
+  },
+  "admission": {
+    "base_gib": 12,
+    "recorder_gib_per_env": 4.5,
+    "reserve_gib": 8,
+    "provenance": "Inherited conservative admission model from production-capacity run.py and openarm-throughput-benchmark; not a measured hardware minimum."
+  },
+  "stages": [
+    {
+      "id": "qualification24",
+      "status": "pending_resource_admission",
+      "question": "Can the full production pipeline complete and close files with 24 active environments?",
+      "attempts": 24,
+      "seeds": [606],
+      "acceptance": [
+        "24 actual environments; exact fixed attempt count and unique per-run accounting",
+        "No OOM, infrastructure errors, missing shards or incomplete exports",
+        "Read back all recorded numeric arrays and all RGB chunks; validate shape, finite values and frame counts",
+        "Independently apply existing strict terminal predicate to every success",
+        "Report task failures in denominator; no success-rate acceptance threshold inferred from this pilot"
+      ]
+    },
+    {
+      "id": "pose_capability",
+      "status": "planned_not_implemented",
+      "depends_on": ["qualification24"],
+      "question": "What XY perturbation range can the current SkillGen production generator cover?",
+      "seeds": [707, 808, 909],
+      "attempts_per_condition_per_seed": 24,
+      "conditions": [
+        {"id": "fixed", "xy_half_range_m": [0, 0]},
+        {"id": "half", "xy_half_range_m": [0.02, 0.03]},
+        {"id": "native", "xy_half_range_m": [0.04, 0.06]},
+        {"id": "wide", "xy_half_range_m": [0.08, 0.12]}
+      ],
+      "controls": "Freeze source demonstration, robot, cameras, dynamics, target pad, z and orientation. Pair normalized XY samples across ranges, record actual initial states and verify them independently. Wide range is a stress condition, not an approved production distribution.",
+      "primary_metric": "Strictly accepted and file-validated episodes / all valid attempts, separately per condition and seed",
+      "invalid_initial_states": "Record geometry/reachability exclusions and their denominator separately; never silently resample."
+    },
+    {
+      "id": "visual_capability",
+      "status": "planned_not_implemented",
+      "depends_on": ["qualification24", "pose_capability"],
+      "question": "Can appearance randomization preserve physical production while changing useful camera observations?",
+      "seeds": [1001, 1002, 1003],
+      "attempts_per_condition_per_seed": 24,
+      "conditions": ["baseline", "lighting_only", "appearance_material_only", "lighting_and_appearance_material"],
+      "controls": "Use the accepted pose domain and exact paired initial states; freeze camera extrinsics/intrinsics, controller, mass, friction and restitution. Appearance material must preserve physics material bindings.",
+      "entry_gate": "Calibrate and freeze OpenArm-specific lighting/material ranges in a separate pilot before formal trials; existing G1 ranges are not automatically accepted.",
+      "primary_metric": "Strict acceptance and file validity by condition; image change is auxiliary evidence, not policy generalization"
+    },
+    {
+      "id": "augmentation_methods",
+      "status": "planned_requires_interfaces",
+      "depends_on": ["pose_capability"],
+      "methods": ["object-relative parameterized script", "current SkillGen production generator"],
+      "entry_gate": "Implement and verify a shared OpenArm action interface, common contacts/planning budget, exact reset-state replay and stage labels; pre-register budget before starting.",
+      "controls": "24 environments for each arm of comparison; identical initial-state manifest, source skills, observation streams, attempt count and success predicate.",
+      "primary_metric": "Accepted data yield, coverage and cost on the common state set; report adaptation costs separately"
+    },
+    {
+      "id": "policy_generalization",
+      "status": "planned_requires_training_setup",
+      "depends_on": ["visual_capability", "augmentation_methods"],
+      "training_seeds": [11, 22, 33],
+      "evaluation_num_envs": 24,
+      "evaluation_states_per_domain": 96,
+      "entry_gate": "Select an existing compatible model/checkpoint and action/observation interface, validate loader timing, fix training budget and splits before training; do not install dependencies automatically.",
+      "controls": "Equal accepted trajectory count and updates; group all appearance variants of an underlying trajectory in one split.",
+      "test_domains": ["held-out in-distribution states", "unseen appearance", "unseen poses", "unseen appearance-pose combinations"],
+      "primary_metric": "Full-episode policy success on paired held-out states, separately by training seed and test domain"
+    }
+  ],
+  "evidence_rules": [
+    "A passed preflight permits only a queued qualification attempt; it is not simulation validation.",
+    "All simulation, training and resource-intensive readback uses the same host-local task queue.",
+    "Never mix telemetry from different run_id values or reuse an output path.",
+    "Infrastructure errors stop the affected experiment; retain failures, partial outputs and provenance.",
+    "Do not merge historical speed results with capability success rates.",
+    "Do not call SkillGen and SkillMimicGen interchangeable without verifying implementation and interface provenance."
+  ]
+}
