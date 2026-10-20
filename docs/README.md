@@ -6,6 +6,7 @@
 | --- | --- | --- |
 | AutoData | [资料与阅读顺序](autodata/README.md) | 原理、数据流、随机化可视化及博客正文来源 |
 | Arena 与共用配置 | [成果索引](../outputs/README.md) | 示例运行说明、RoboLab 配置、AutoData/Arena 共用配置建议 |
+| 主机环境 | [存储挂载记录](host-storage.md) | `/data` 挂载容量及截图中的存储信息 |
 | 版本管理与过程记录 | [管理约定](version-management.md) · [问题与改进](process-log.md) | 分支、worktree、锁定检查、快照保护及待解决事项 |
 
 维护约定：
