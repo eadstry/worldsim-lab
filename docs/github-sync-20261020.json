@@ -1,0 +1,258 @@
+{
+  "schema_version": 1,
+  "repository": "https://github.com/eadstry/worldsim-lab",
+  "scope": "Byte-preserving synchronization snapshot. v005 is an unfinished, unsealed draft whose report still identifies v004; additional figures are not yet integrated. Site files are source archives only; hosting metadata is excluded and no deployment was performed. Original worktrees retained. Upstream tracked source differences already appear in workspace-overlays/upstream-patches; dataset deletions and runtime data are not source changes.",
+  "files": [
+    {
+      "source": "docs/experiment-plan-gpu-utilization-20261020.md",
+      "source_head": "4a45d64fc002d16930906c6bd521750dadf0d479",
+      "saved_path": "docs/experiment-plan-gpu-utilization-20261020.md",
+      "sha256": "21932055843b63c0743775a605808f6e53aabd4ddbfec01bccc0cdbb9268797b"
+    },
+    {
+      "source": ".worktrees/openarm-capability24-20261020/workspace-overlays/openarm-capability24/preflight.py",
+      "source_head": "4a45d64fc002d16930906c6bd521750dadf0d479",
+      "saved_path": "workspace-overlays/openarm-capability24/preflight.py",
+      "sha256": "3406b7f1f662bac3a7639eca55083bfdca8dccbfcc67375248dd238add2a0a99"
+    },
+    {
+      "source": ".worktrees/openarm-capability24-20261020/workspace-overlays/openarm-capability24/README.md",
+      "source_head": "4a45d64fc002d16930906c6bd521750dadf0d479",
+      "saved_path": "workspace-overlays/openarm-capability24/README.md",
+      "sha256": "de605c3de6dd35e0c3a7eb9a96aac8351857d2d9cb21b932345e169edcc0d3d8"
+    },
+    {
+      "source": ".worktrees/openarm-capability24-20261020/workspace-overlays/openarm-capability24/test_preflight.py",
+      "source_head": "4a45d64fc002d16930906c6bd521750dadf0d479",
+      "saved_path": "workspace-overlays/openarm-capability24/test_preflight.py",
+      "sha256": "efb530313cecfe1d4f8655dacaf44bee37aa66c0841d1610b288e6a75abc49c8"
+    },
+    {
+      "source": ".worktrees/openarm-capability24-20261020/workspace-overlays/openarm-capability24/protocol.json",
+      "source_head": "4a45d64fc002d16930906c6bd521750dadf0d479",
+      "saved_path": "workspace-overlays/openarm-capability24/protocol.json",
+      "sha256": "63dc39880adcb080615b679f8d79cbb2cc3ab12f7d10871da1671212975bbdf4"
+    },
+    {
+      "source": ".worktrees/experimental-portfolio-report-20261019/outputs/embodied-experiment-portfolio/v005/figures/01-shared-config.png",
+      "source_head": "b2edfeaaf215abc5f225db8ad44678ebd23882fd",
+      "saved_path": "outputs/embodied-experiment-portfolio/v005/figures/01-shared-config.png",
+      "sha256": "ee39b080d835b56c495f02f8bb87aa99156c8a725925625669765150653d5fc1"
+    },
+    {
+      "source": ".worktrees/experimental-portfolio-report-20261019/outputs/embodied-experiment-portfolio/v005/figures/02-export-24.png",
+      "source_head": "b2edfeaaf215abc5f225db8ad44678ebd23882fd",
+      "saved_path": "outputs/embodied-experiment-portfolio/v005/figures/02-export-24.png",
+      "sha256": "325e3bec5230f3d107ab684cef50e9170b6ae83d8dff7a87abdf9635a663ea38"
+    },
+    {
+      "source": ".worktrees/experimental-portfolio-report-20261019/outputs/embodied-experiment-portfolio/v005/figures/03-export-16.png",
+      "source_head": "b2edfeaaf215abc5f225db8ad44678ebd23882fd",
+      "saved_path": "outputs/embodied-experiment-portfolio/v005/figures/03-export-16.png",
+      "sha256": "183a271cc82ef0d9e8d8faa95369e32adc20af3672d8c4b390d288443d7bfe4b"
+    },
+    {
+      "source": ".worktrees/experimental-portfolio-report-20261019/outputs/embodied-experiment-portfolio/v005/figures/04-capacity.png",
+      "source_head": "b2edfeaaf215abc5f225db8ad44678ebd23882fd",
+      "saved_path": "outputs/embodied-experiment-portfolio/v005/figures/04-capacity.png",
+      "sha256": "0ff33b8b8dcf01b95e1a7f0333863179fad4275a54a3b57252d8fb33d0a848c7"
+    },
+    {
+      "source": ".worktrees/experimental-portfolio-report-20261019/outputs/embodied-experiment-portfolio/v005/figures/05-timing.png",
+      "source_head": "b2edfeaaf215abc5f225db8ad44678ebd23882fd",
+      "saved_path": "outputs/embodied-experiment-portfolio/v005/figures/05-timing.png",
+      "sha256": "0bda63a338a4f8309dfdc30ff91fe27579a8f7bba596ed81755a018b6c321a34"
+    },
+    {
+      "source": ".worktrees/experimental-portfolio-report-20261019/outputs/embodied-experiment-portfolio/v005/figures/06-domain-randomization.png",
+      "source_head": "b2edfeaaf215abc5f225db8ad44678ebd23882fd",
+      "saved_path": "outputs/embodied-experiment-portfolio/v005/figures/06-domain-randomization.png",
+      "sha256": "d53e50143f452b0a2ffc6e383ce098d76770058ba7ce3441298fc5462d13b047"
+    },
+    {
+      "source": ".worktrees/experimental-portfolio-report-20261019/outputs/embodied-experiment-portfolio/v005/figures/07-g1.png",
+      "source_head": "b2edfeaaf215abc5f225db8ad44678ebd23882fd",
+      "saved_path": "outputs/embodied-experiment-portfolio/v005/figures/07-g1.png",
+      "sha256": "aacad10a58b9a7dd9aa974a8c2b41bcab4826ee37adc9aba4df8c694792d111f"
+    },
+    {
+      "source": ".worktrees/experimental-portfolio-report-20261019/outputs/embodied-experiment-portfolio/v005/figures/08-curobo-mvp.png",
+      "source_head": "b2edfeaaf215abc5f225db8ad44678ebd23882fd",
+      "saved_path": "outputs/embodied-experiment-portfolio/v005/figures/08-curobo-mvp.png",
+      "sha256": "2c6c4d2ecfd10890a7528ed12eed852706cd3d76e1a1622bf64ff8a4af44bc03"
+    },
+    {
+      "source": ".worktrees/experimental-portfolio-report-20261019/outputs/embodied-experiment-portfolio/v005/figures/09-curobo-rerun.png",
+      "source_head": "b2edfeaaf215abc5f225db8ad44678ebd23882fd",
+      "saved_path": "outputs/embodied-experiment-portfolio/v005/figures/09-curobo-rerun.png",
+      "sha256": "eda548172801123ee42e8794d8e663e8cf0846a58cdbb168a037aab7a1f3a787"
+    },
+    {
+      "source": ".worktrees/experimental-portfolio-report-20261019/outputs/embodied-experiment-portfolio/v005/figures/10-franka.png",
+      "source_head": "b2edfeaaf215abc5f225db8ad44678ebd23882fd",
+      "saved_path": "outputs/embodied-experiment-portfolio/v005/figures/10-franka.png",
+      "sha256": "fe5b40bfcf31ee6dd78d8c57c65b90c2567c9e7ae3ac5ed84c5c5dd5ce24f8d3"
+    },
+    {
+      "source": ".worktrees/experimental-portfolio-report-20261019/outputs/embodied-experiment-portfolio/v005/figures/11-banana.png",
+      "source_head": "b2edfeaaf215abc5f225db8ad44678ebd23882fd",
+      "saved_path": "outputs/embodied-experiment-portfolio/v005/figures/11-banana.png",
+      "sha256": "2ad7adc75e1ca07387a8b2fabe46f047e51782544d8255eb025877a49b89c518"
+    },
+    {
+      "source": ".worktrees/experimental-portfolio-report-20261019/outputs/embodied-experiment-portfolio/v005/figures/12-hdr.png",
+      "source_head": "b2edfeaaf215abc5f225db8ad44678ebd23882fd",
+      "saved_path": "outputs/embodied-experiment-portfolio/v005/figures/12-hdr.png",
+      "sha256": "419fbebd7758b3050f1f8aeb379824e2a105870e64fa5d9ec71d413aed4b3a17"
+    },
+    {
+      "source": ".worktrees/experimental-portfolio-report-20261019/outputs/embodied-experiment-portfolio/v005/figures/13-concurrency.png",
+      "source_head": "b2edfeaaf215abc5f225db8ad44678ebd23882fd",
+      "saved_path": "outputs/embodied-experiment-portfolio/v005/figures/13-concurrency.png",
+      "sha256": "af144bdbab118272102e2cf4f13f34b706a286166024774a872dca2d1da0b57f"
+    },
+    {
+      "source": ".worktrees/experimental-portfolio-report-20261019/outputs/embodied-experiment-portfolio/v005/figures/14-production-100.png",
+      "source_head": "b2edfeaaf215abc5f225db8ad44678ebd23882fd",
+      "saved_path": "outputs/embodied-experiment-portfolio/v005/figures/14-production-100.png",
+      "sha256": "7a1dd38b8d86b34b9dc51d75e4d4d67ba7c0d8f9ada1346d74e2fa0c15af92e5"
+    },
+    {
+      "source": ".worktrees/experimental-portfolio-report-20261019/outputs/embodied-experiment-portfolio/v005/figures/15-lerobot-conversion.png",
+      "source_head": "b2edfeaaf215abc5f225db8ad44678ebd23882fd",
+      "saved_path": "outputs/embodied-experiment-portfolio/v005/figures/15-lerobot-conversion.png",
+      "sha256": "0dc2f9945260f28e2a85c7b179b69421c2916de435b082a35821aa83caac279b"
+    },
+    {
+      "source": ".worktrees/experimental-portfolio-report-20261019/outputs/embodied-experiment-portfolio/v005/figures/16-camera-quality.png",
+      "source_head": "b2edfeaaf215abc5f225db8ad44678ebd23882fd",
+      "saved_path": "outputs/embodied-experiment-portfolio/v005/figures/16-camera-quality.png",
+      "sha256": "bec39213f1f7e38f1705c60cf2ee267a7d998ada99136c915109a1ad52051871"
+    },
+    {
+      "source": ".worktrees/experimental-portfolio-report-20261019/outputs/embodied-experiment-portfolio/v005/figures/17-export-regression.png",
+      "source_head": "b2edfeaaf215abc5f225db8ad44678ebd23882fd",
+      "saved_path": "outputs/embodied-experiment-portfolio/v005/figures/17-export-regression.png",
+      "sha256": "7f8ff5a261a4495cc5b6d867f4a86796dafe667c073cb002a72adbbe2dbf3fbf"
+    },
+    {
+      "source": ".worktrees/experimental-portfolio-report-20261019/outputs/embodied-experiment-portfolio/v005/figures/18-memory-admission.png",
+      "source_head": "b2edfeaaf215abc5f225db8ad44678ebd23882fd",
+      "saved_path": "outputs/embodied-experiment-portfolio/v005/figures/18-memory-admission.png",
+      "sha256": "e36be90de43ed77f54d0d2724750d8d025f1a7b806e8d49c5236e42933105314"
+    },
+    {
+      "source": ".worktrees/experimental-portfolio-report-20261019/outputs/embodied-experiment-portfolio/v005/report.md",
+      "source_head": "b2edfeaaf215abc5f225db8ad44678ebd23882fd",
+      "saved_path": "outputs/embodied-experiment-portfolio/v005/report.md",
+      "sha256": "3434e79b55e70880e6160a0bbd853ab5480f596c0b49a64210e5c3b93b5ccce9"
+    },
+    {
+      "source": ".worktrees/experimental-portfolio-report-20261019/site-publish/embodied-experiment-atlas/build_page.py",
+      "source_head": "9e727ddeba1b3ba3ea5f81298e944a2367698c94",
+      "saved_path": "workspace-overlays/embodied-experiment-atlas/build_page.py",
+      "sha256": "7994eeac3016669b02f2fe40ed9e93c1d5dd678177ead8fea2a3cf6365f289f9"
+    },
+    {
+      "source": ".worktrees/experimental-portfolio-report-20261019/site-publish/embodied-experiment-atlas/dist/figures/async-throughput.png",
+      "source_head": "9e727ddeba1b3ba3ea5f81298e944a2367698c94",
+      "saved_path": "workspace-overlays/embodied-experiment-atlas/dist/figures/async-throughput.png",
+      "sha256": "a66b463d3583c61015a6d646d6ac94eb40c46dd57af20f3ca7be23c6f89d8274"
+    },
+    {
+      "source": ".worktrees/experimental-portfolio-report-20261019/site-publish/embodied-experiment-atlas/dist/figures/domain-randomization-renders.png",
+      "source_head": "9e727ddeba1b3ba3ea5f81298e944a2367698c94",
+      "saved_path": "workspace-overlays/embodied-experiment-atlas/dist/figures/domain-randomization-renders.png",
+      "sha256": "15f7835e7e0121e2b61fb106e18a06f3e1b58afeccb3ce8f182f4e51fb95a398"
+    },
+    {
+      "source": ".worktrees/experimental-portfolio-report-20261019/site-publish/embodied-experiment-atlas/dist/figures/domain-randomization.png",
+      "source_head": "9e727ddeba1b3ba3ea5f81298e944a2367698c94",
+      "saved_path": "workspace-overlays/embodied-experiment-atlas/dist/figures/domain-randomization.png",
+      "sha256": "d53e50143f452b0a2ffc6e383ce098d76770058ba7ce3441298fc5462d13b047"
+    },
+    {
+      "source": ".worktrees/experimental-portfolio-report-20261019/site-publish/embodied-experiment-atlas/dist/figures/franka-obstacle-comparison.png",
+      "source_head": "9e727ddeba1b3ba3ea5f81298e944a2367698c94",
+      "saved_path": "workspace-overlays/embodied-experiment-atlas/dist/figures/franka-obstacle-comparison.png",
+      "sha256": "fe5b40bfcf31ee6dd78d8c57c65b90c2567c9e7ae3ac5ed84c5c5dd5ce24f8d3"
+    },
+    {
+      "source": ".worktrees/experimental-portfolio-report-20261019/site-publish/embodied-experiment-atlas/dist/figures/internal-timing.png",
+      "source_head": "9e727ddeba1b3ba3ea5f81298e944a2367698c94",
+      "saved_path": "workspace-overlays/embodied-experiment-atlas/dist/figures/internal-timing.png",
+      "sha256": "b6f1a090354b94a7ff3973e0720ae12ca656f45c4e52a6bf4097861c05b8b2fc"
+    },
+    {
+      "source": ".worktrees/experimental-portfolio-report-20261019/site-publish/embodied-experiment-atlas/dist/figures/timing-comparison.png",
+      "source_head": "9e727ddeba1b3ba3ea5f81298e944a2367698c94",
+      "saved_path": "workspace-overlays/embodied-experiment-atlas/dist/figures/timing-comparison.png",
+      "sha256": "8fd3de14a2087bc73c26f384abfb52b202ef655c35ca04b1cff12a023b647b95"
+    },
+    {
+      "source": ".worktrees/experimental-portfolio-report-20261019/site-publish/embodied-experiment-atlas/dist/index.html",
+      "source_head": "9e727ddeba1b3ba3ea5f81298e944a2367698c94",
+      "saved_path": "workspace-overlays/embodied-experiment-atlas/dist/index.html",
+      "sha256": "afe86319db301a9c38bbfe92946b83bb4dd2fbdcbf227c2c0c1ba1c5d8995ada"
+    },
+    {
+      "source": ".worktrees/experimental-portfolio-report-20261019/site-publish/embodied-experiment-atlas/dist/report.md",
+      "source_head": "9e727ddeba1b3ba3ea5f81298e944a2367698c94",
+      "saved_path": "workspace-overlays/embodied-experiment-atlas/dist/report.md",
+      "sha256": "88ef4b097d0b8a7af3c309667ccaf7b9a4f9a17ea5f37c3e3f14f8a5fb974aea"
+    },
+    {
+      "source": ".worktrees/experimental-portfolio-report-20261019/site-publish/embodied-experiment-atlas/figures/async-throughput.png",
+      "source_head": "9e727ddeba1b3ba3ea5f81298e944a2367698c94",
+      "saved_path": "workspace-overlays/embodied-experiment-atlas/figures/async-throughput.png",
+      "sha256": "a66b463d3583c61015a6d646d6ac94eb40c46dd57af20f3ca7be23c6f89d8274"
+    },
+    {
+      "source": ".worktrees/experimental-portfolio-report-20261019/site-publish/embodied-experiment-atlas/figures/domain-randomization-renders.png",
+      "source_head": "9e727ddeba1b3ba3ea5f81298e944a2367698c94",
+      "saved_path": "workspace-overlays/embodied-experiment-atlas/figures/domain-randomization-renders.png",
+      "sha256": "15f7835e7e0121e2b61fb106e18a06f3e1b58afeccb3ce8f182f4e51fb95a398"
+    },
+    {
+      "source": ".worktrees/experimental-portfolio-report-20261019/site-publish/embodied-experiment-atlas/figures/domain-randomization.png",
+      "source_head": "9e727ddeba1b3ba3ea5f81298e944a2367698c94",
+      "saved_path": "workspace-overlays/embodied-experiment-atlas/figures/domain-randomization.png",
+      "sha256": "d53e50143f452b0a2ffc6e383ce098d76770058ba7ce3441298fc5462d13b047"
+    },
+    {
+      "source": ".worktrees/experimental-portfolio-report-20261019/site-publish/embodied-experiment-atlas/figures/franka-obstacle-comparison.png",
+      "source_head": "9e727ddeba1b3ba3ea5f81298e944a2367698c94",
+      "saved_path": "workspace-overlays/embodied-experiment-atlas/figures/franka-obstacle-comparison.png",
+      "sha256": "fe5b40bfcf31ee6dd78d8c57c65b90c2567c9e7ae3ac5ed84c5c5dd5ce24f8d3"
+    },
+    {
+      "source": ".worktrees/experimental-portfolio-report-20261019/site-publish/embodied-experiment-atlas/figures/internal-timing.png",
+      "source_head": "9e727ddeba1b3ba3ea5f81298e944a2367698c94",
+      "saved_path": "workspace-overlays/embodied-experiment-atlas/figures/internal-timing.png",
+      "sha256": "b6f1a090354b94a7ff3973e0720ae12ca656f45c4e52a6bf4097861c05b8b2fc"
+    },
+    {
+      "source": ".worktrees/experimental-portfolio-report-20261019/site-publish/embodied-experiment-atlas/figures/timing-comparison.png",
+      "source_head": "9e727ddeba1b3ba3ea5f81298e944a2367698c94",
+      "saved_path": "workspace-overlays/embodied-experiment-atlas/figures/timing-comparison.png",
+      "sha256": "8fd3de14a2087bc73c26f384abfb52b202ef655c35ca04b1cff12a023b647b95"
+    },
+    {
+      "source": ".worktrees/experimental-portfolio-report-20261019/site-publish/embodied-experiment-atlas/report.md",
+      "source_head": "9e727ddeba1b3ba3ea5f81298e944a2367698c94",
+      "saved_path": "workspace-overlays/embodied-experiment-atlas/report.md",
+      "sha256": "88ef4b097d0b8a7af3c309667ccaf7b9a4f9a17ea5f37c3e3f14f8a5fb974aea"
+    }
+  ],
+  "integration_adaptations": {
+    "baseline": "f8949ad799f721d9c0d730bcd9cf2cd8b5b0ca66",
+    "notes": "Original file hashes above identify snapshot e730970. Integration retains main version policy, repairs historical report references with verified commit permalinks, rebuilds local site dist, labels v005 as an unfinished draft, and qualifies A/C causal attribution in the unexecuted experiment plan. No sealed payload is rewritten.",
+    "files": {
+      "workspace-overlays/embodied-experiment-atlas/README.md": "dedddb675f24dfcf12ad5213dd7290f8ab394312a1801d5cfe453f6d1ded9d91",
+      "workspace-overlays/embodied-experiment-atlas/report.md": "ee38cac519a809cd01244aa3ae79316da7266e4dc3b87b3fdb5208f570378af0",
+      "workspace-overlays/embodied-experiment-atlas/dist/report.md": "ee38cac519a809cd01244aa3ae79316da7266e4dc3b87b3fdb5208f570378af0",
+      "workspace-overlays/embodied-experiment-atlas/dist/index.html": "08c0988cd74726db0090a1c5691944bd535d0781e3c41c27d4f3122611657024",
+      "docs/experiment-plan-gpu-utilization-20261020.md": "8dbe6f367ac47d2f4a0de76536b85c1aa5c3e1f8f2e959ee61fae571b2489b4c"
+    }
+  }
+}
