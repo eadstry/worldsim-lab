@@ -4,7 +4,7 @@
   "default_start_ref": "origin/codex/git-all-worktrees-20261016",
   "branch_prefix": "codex/",
   "remote": "origin",
-  "remote_url": "https://github.com/eadstry/WorldSimReady-Home.git",
+  "remote_url": "https://github.com/eadstry/worldsim-lab.git",
   "protected_branches": ["main", "release/*"],
   "large_change_files": 100
 }
