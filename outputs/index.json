@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "artifact_count": 15,
-  "version_count": 24,
+  "artifact_count": 16,
+  "version_count": 25,
   "artifacts": [
     {
       "id": "arena-examples-guide",
@@ -227,6 +227,23 @@
           "sealed_at": "",
           "files": 15,
           "bytes": 1851474,
+          "current": true
+        }
+      ]
+    },
+    {
+      "id": "experiment-chartbook",
+      "title": "具身数据生产实验图册",
+      "status": "current",
+      "supersedes": [],
+      "superseded_by": null,
+      "current_version": "v001",
+      "versions": [
+        {
+          "version": "v001",
+          "sealed_at": "2026-10-20",
+          "files": 53,
+          "bytes": 4879689,
           "current": true
         }
       ]

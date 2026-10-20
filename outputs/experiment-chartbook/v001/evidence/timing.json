@@ -1,0 +1,1365 @@
+{
+  "experiment": "/home/tangyuan/WorldSimReady-Home/runs/v1-internal-timing-20261015-r03/experiment.json",
+  "runs": [
+    {
+      "name": "before_sync",
+      "workers": "0",
+      "episodes": 8,
+      "successes": 8,
+      "failures": 0,
+      "final_ready_seconds": 515.768383,
+      "final_ready_successes_per_minute": 0.9306502992836613,
+      "launcher_wall_seconds": 542.9227042980056,
+      "producer_peak_rss_gib": 33.48487091064453,
+      "mean_episode_seconds": 234.42285561387507,
+      "mean_execute_seconds": 197.5261516665978,
+      "mean_telemetry_execute_seconds": 197.51001173761324,
+      "mean_execution_steps": 1370.375,
+      "mean_queue_join_seconds": 195.42037106651514,
+      "queue_join_fraction_of_execute": 0.9893392313761219,
+      "execute_phase_mean_seconds": {
+        "render_scene_transforms": 0.016419723486251314,
+        "render": 0.03928457247275219,
+        "camera_data_other": 1.7854527566360048,
+        "action_prepare": 2.9084573824839026,
+        "scene_update": 1.2240547585552122,
+        "physics_step": 37.8825038258492,
+        "unattributed": 0.2117390661405807,
+        "reset_other": 0.01440212889428949,
+        "rgb_cpu_copy": 3.802237832745959,
+        "env_step_other": 0.8558089692887734,
+        "action_apply": 6.671580959922721,
+        "camera_render": 29.08966487037287,
+        "rgb_readback_other": 0.21749515225019422,
+        "export_producer_other": 58.41196619338734,
+        "scheduler_other": 1.0706712384762795,
+        "record_buffer_copy": 1.4834963422163128,
+        "record_post_other": 0.5312180739965697,
+        "camera_pose": 35.75650590967416,
+        "scene_write": 4.58768458364284,
+        "success_check": 2.2250162548680237,
+        "observation_other": 6.149630303829326,
+        "motion_plan": 1.7181350626360654,
+        "action_process": 0.8301201490667154,
+        "camera_output_read": 0.013133392840245506,
+        "record_pre_other": 0.029472162865204155
+      },
+      "execute_phase_fraction": {
+        "render_scene_transforms": 8.31268333216251e-05,
+        "render": 0.00019888289292984446,
+        "camera_data_other": 0.009039070227266164,
+        "action_prepare": 0.014724416782001887,
+        "scene_update": 0.006196925056390916,
+        "physics_step": 0.19178475106319418,
+        "unattributed": 0.0010719545961588555,
+        "reset_other": 7.291251701495549e-05,
+        "rgb_cpu_copy": 0.01924928826216244,
+        "env_step_other": 0.0043326362715418254,
+        "action_apply": 0.033775684402456284,
+        "camera_render": 0.1472699418529299,
+        "rgb_readback_other": 0.0011010954773082496,
+        "export_producer_other": 0.29571763384516425,
+        "scheduler_other": 0.005420402460345877,
+        "record_buffer_copy": 0.007510379409002459,
+        "record_post_other": 0.0026893556600708084,
+        "camera_pose": 0.18102162983475306,
+        "scene_write": 0.023225707304753967,
+        "success_check": 0.0112644135274989,
+        "observation_other": 0.031133246164838056,
+        "motion_plan": 0.00869826627076746,
+        "action_process": 0.004202583516474649,
+        "camera_output_read": 6.648938750355048e-05,
+        "record_pre_other": 0.0001492063841498309
+      },
+      "execute_phase_ms_per_step": {
+        "render_scene_transforms": 0.011981919902399937,
+        "render": 0.028667023605036715,
+        "camera_data_other": 1.3028935558777741,
+        "action_prepare": 2.122380649445519,
+        "scene_update": 0.8932261304790383,
+        "physics_step": 27.64389588678223,
+        "unattributed": 0.15451176950877,
+        "reset_other": 0.010509626120068952,
+        "rgb_cpu_copy": 2.774596612420658,
+        "env_step_other": 0.6245071380379629,
+        "action_apply": 4.868434523340488,
+        "camera_render": 21.22752156918571,
+        "rgb_readback_other": 0.1587121424793901,
+        "export_producer_other": 42.62480430056542,
+        "scheduler_other": 0.7812979939624406,
+        "record_buffer_copy": 1.082547727604716,
+        "record_post_other": 0.3876443119559024,
+        "camera_pose": 26.092497243217483,
+        "scene_write": 3.347758521311933,
+        "success_check": 1.623655024988068,
+        "observation_other": 4.487552898899445,
+        "motion_plan": 1.2537699991871316,
+        "action_process": 0.6057613055307601,
+        "camera_output_read": 0.009583794830061484,
+        "record_pre_other": 0.021506640784605787
+      },
+      "generation": {
+        "wall_seconds": 514.9208052759932,
+        "exclusive_wall_seconds": {
+          "render_scene_transforms": 0.03341225422627758,
+          "render": 0.0796331811870914,
+          "camera_data_other": 3.6240591714013135,
+          "action_prepare": 9.35189995613473,
+          "scene_update": 2.472589477605652,
+          "physics_step": 76.65830869674392,
+          "unattributed": 0.4293252792704152,
+          "reset_other": 0.17575685105111916,
+          "rgb_cpu_copy": 7.697177315305453,
+          "env_step_other": 1.729899912053952,
+          "action_apply": 13.497466934495606,
+          "camera_render": 58.90804075010237,
+          "rgb_readback_other": 0.4413611703348579,
+          "export_producer_other": 210.4603924460389,
+          "scheduler_other": 7.079999107780168,
+          "record_buffer_copy": 3.0042030457698274,
+          "record_post_other": 1.0762451584741939,
+          "camera_pose": 72.4751687162061,
+          "scene_write": 9.285517508309567,
+          "success_check": 6.833249787043314,
+          "observation_other": 12.446076486070524,
+          "motion_plan": 15.394172935019014,
+          "action_process": 1.6804110788652906,
+          "camera_output_read": 0.026709210491389968,
+          "record_pre_other": 0.059728846012149006
+        },
+        "exclusive_thread_cpu_seconds": {
+          "render_scene_transforms": 0.030771092998367777,
+          "render": 0.07979614999950613,
+          "camera_data_other": 3.590608377001807,
+          "action_prepare": 9.273949710001496,
+          "scene_update": 2.4429228839989676,
+          "physics_step": 17.41295080799982,
+          "unattributed": 0.42901162500135825,
+          "reset_other": 0.17346683799980767,
+          "rgb_cpu_copy": 7.596141707999067,
+          "env_step_other": 1.6806014129997173,
+          "action_apply": 13.340191719999233,
+          "camera_render": 25.747771332003133,
+          "rgb_readback_other": 0.4014348159997816,
+          "export_producer_other": 208.91283159500014,
+          "scheduler_other": 7.0078636239977286,
+          "record_buffer_copy": 2.0477416119997294,
+          "record_post_other": 1.0559585629995176,
+          "camera_pose": 71.68918573300088,
+          "scene_write": 9.207618653001095,
+          "success_check": 6.789238916999242,
+          "observation_other": 9.974185477998574,
+          "motion_plan": 15.1630182909999,
+          "action_process": 1.658216863001531,
+          "camera_output_read": 0.026354459997087076,
+          "record_pre_other": 0.05934364800249625
+        }
+      },
+      "through_output_ready": {
+        "wall_seconds": 515.7692092210054,
+        "exclusive_wall_seconds": {
+          "render_scene_transforms": 0.03341225422627758,
+          "render": 0.0796331811870914,
+          "camera_data_other": 3.6240591714013135,
+          "action_prepare": 9.35189995613473,
+          "scene_update": 2.472589477605652,
+          "physics_step": 76.65830869674392,
+          "unattributed": 0.44462296727579087,
+          "reset_other": 0.17575685105111916,
+          "rgb_cpu_copy": 7.697177315305453,
+          "env_step_other": 1.729899912053952,
+          "action_apply": 13.497466934495606,
+          "camera_render": 58.90804075010237,
+          "rgb_readback_other": 0.4413611703348579,
+          "export_producer_other": 210.4603924460389,
+          "scheduler_other": 7.091572006786009,
+          "record_buffer_copy": 3.0042030457698274,
+          "record_post_other": 1.0762451584741939,
+          "camera_pose": 72.4751687162061,
+          "scene_write": 9.285517508309567,
+          "success_check": 6.833249787043314,
+          "observation_other": 12.446076486070524,
+          "motion_plan": 15.394172935019014,
+          "action_process": 1.6804110788652906,
+          "camera_output_read": 0.026709210491389968,
+          "record_pre_other": 0.059728846012149006,
+          "env_close_other": 0.8215333580010338
+        },
+        "exclusive_thread_cpu_seconds": {
+          "render_scene_transforms": 0.030771092998367777,
+          "render": 0.07979614999950613,
+          "camera_data_other": 3.590608377001807,
+          "action_prepare": 9.273949710001496,
+          "scene_update": 2.4429228839989676,
+          "physics_step": 17.41295080799982,
+          "unattributed": 0.44211872700146415,
+          "reset_other": 0.17346683799980767,
+          "rgb_cpu_copy": 7.596141707999067,
+          "env_step_other": 1.6806014129997173,
+          "action_apply": 13.340191719999233,
+          "camera_render": 25.747771332003133,
+          "rgb_readback_other": 0.4014348159997816,
+          "export_producer_other": 208.91283159500014,
+          "scheduler_other": 7.019426973997689,
+          "record_buffer_copy": 2.0477416119997294,
+          "record_post_other": 1.0559585629995176,
+          "camera_pose": 71.68918573300088,
+          "scene_write": 9.207618653001095,
+          "success_check": 6.789238916999242,
+          "observation_other": 9.974185477998574,
+          "motion_plan": 15.1630182909999,
+          "action_process": 1.658216863001531,
+          "camera_output_read": 0.026354459997087076,
+          "record_pre_other": 0.05934364800249625,
+          "env_close_other": 0.7958566559999554
+        }
+      },
+      "calls": {
+        "reset_other": 11,
+        "record_buffer_copy": 161399,
+        "export_producer_other": 19,
+        "scene_write": 11123,
+        "observation_other": 5567,
+        "rgb_readback_other": 16701,
+        "camera_pose": 16701,
+        "camera_data_other": 16701,
+        "render_scene_transforms": 8367,
+        "camera_render": 8367,
+        "camera_output_read": 8367,
+        "rgb_cpu_copy": 16701,
+        "scheduler_other": 5566,
+        "motion_plan": 19,
+        "action_prepare": 11115,
+        "env_step_other": 2778,
+        "action_process": 2778,
+        "record_pre_other": 2778,
+        "action_apply": 11112,
+        "physics_step": 11112,
+        "scene_update": 11112,
+        "render": 2778,
+        "record_post_other": 2778,
+        "success_check": 11112,
+        "env_close_other": 1
+      },
+      "inclusive_wall_seconds": {
+        "render_scene_transforms": 0.03341225422627758,
+        "render": 0.0796331811870914,
+        "camera_data_other": 62.592221386221354,
+        "action_prepare": 9.35189995613473,
+        "scene_update": 2.472589477605652,
+        "physics_step": 76.65830869674392,
+        "rgb_cpu_copy": 7.697177315305453,
+        "reset_other": 0.3519646219792776,
+        "action_apply": 13.497466934495606,
+        "env_step_other": 265.01988613873255,
+        "camera_render": 58.90804075010237,
+        "rgb_readback_other": 143.20592858806776,
+        "export_producer_other": 210.4603924460389,
+        "scheduler_other": 249.1312021350168,
+        "record_buffer_copy": 6.5489707505039405,
+        "record_post_other": 1.7570503770693904,
+        "camera_pose": 72.4751687162061,
+        "scene_write": 9.285517508309567,
+        "success_check": 6.833249787043314,
+        "observation_other": 155.6520050741383,
+        "motion_plan": 15.394172935019014,
+        "action_process": 1.6804110788652906,
+        "camera_output_read": 0.026709210491389968,
+        "record_pre_other": 2.286816788779106,
+        "env_close_other": 0.8215333580010338
+      },
+      "physical_validation_passed": true,
+      "schema_validation_passed": true,
+      "accounting_closure_passed": true,
+      "file_bytes": 4286992811,
+      "profile": "/home/tangyuan/WorldSimReady-Home/runs/v1-internal-timing-20261015-r03/before_sync/episodes.internal-summary.json",
+      "execute_groups": {
+        "export": {
+          "label": "导出与背压",
+          "seconds_per_episode": 58.41196619338734,
+          "fraction": 0.29571763384516425
+        },
+        "camera": {
+          "label": "相机渲染与图像采集",
+          "seconds_per_episode": 70.72019421047844,
+          "fraction": 0.35802952476817484
+        },
+        "physics": {
+          "label": "物理推进与控制",
+          "seconds_per_episode": 51.19594427703669,
+          "fraction": 0.25918565134327
+        },
+        "record_observation": {
+          "label": "记录缓冲与其余观测",
+          "seconds_per_episode": 8.193816882907413,
+          "fraction": 0.041482187618061155
+        },
+        "planner_reset": {
+          "label": "规划与重置",
+          "seconds_per_episode": 1.732537191530355,
+          "fraction": 0.008771178787782417
+        },
+        "action_success": {
+          "label": "动作准备与成功检查",
+          "seconds_per_episode": 5.133473637351926,
+          "fraction": 0.025988830309500787
+        },
+        "remaining": {
+          "label": "调度及其余开销",
+          "seconds_per_episode": 2.1382192739056336,
+          "fraction": 0.010824993328046558
+        }
+      },
+      "call_rates": {
+        "batch_env_steps": 2778,
+        "observation_computes_per_batch_step_including_resets": 2.003959683225342,
+        "rgb_copies_per_batch_step_including_resets": 6.0118790496760255,
+        "camera_renders_per_batch_step_including_resets": 3.011879049676026,
+        "camera_pose_update_calls_per_batch_step_including_resets": 6.0118790496760255
+      }
+    },
+    {
+      "name": "after_auto",
+      "workers": "auto",
+      "episodes": 8,
+      "successes": 8,
+      "failures": 0,
+      "final_ready_seconds": 350.296877,
+      "final_ready_successes_per_minute": 1.3702662841610205,
+      "launcher_wall_seconds": 376.03532851500495,
+      "producer_peak_rss_gib": 25.223453521728516,
+      "mean_episode_seconds": 154.69678785475116,
+      "mean_execute_seconds": 142.70607624156582,
+      "mean_telemetry_execute_seconds": 142.69007988189514,
+      "mean_execution_steps": 1370.375,
+      "mean_queue_join_seconds": 140.68159714842113,
+      "queue_join_fraction_of_execute": 0.9858136447552678,
+      "execute_phase_mean_seconds": {
+        "reset_other": 0.014899517120284145,
+        "camera_data_other": 1.8352415804201883,
+        "motion_plan": 1.71715832100017,
+        "record_post_other": 0.46509501906075457,
+        "action_prepare": 2.7929790716534626,
+        "scene_update": 1.1199976128336857,
+        "observation_other": 6.444269662490115,
+        "unattributed": 0.21987660786544438,
+        "render": 0.04308453119301703,
+        "render_scene_transforms": 0.017497344215371413,
+        "record_buffer_copy": 2.1029204747646872,
+        "action_process": 0.7987739519394381,
+        "camera_output_read": 0.014833952713161125,
+        "record_pre_other": 0.028969345445148065,
+        "scheduler_other": 1.0874800274359586,
+        "rgb_readback_other": 0.23432975678952062,
+        "env_step_other": 0.8167218667258567,
+        "success_check": 2.1631080063489208,
+        "export_poll_or_backpressure": 0.4123487773049419,
+        "action_apply": 6.634091076544792,
+        "camera_pose": 36.136163778839546,
+        "physics_step": 36.65614028987147,
+        "camera_render": 28.97249550865854,
+        "scene_write": 4.593650470415014,
+        "export_producer_other": 0.018786258640830056,
+        "rgb_cpu_copy": 4.157939132528554,
+        "export_pack": 3.207224298746951
+      },
+      "execute_phase_fraction": {
+        "reset_other": 0.0001044070267552096,
+        "camera_data_other": 0.012860290386749768,
+        "motion_plan": 0.012032832562037856,
+        "record_post_other": 0.003259111534069962,
+        "action_prepare": 0.019571549756056954,
+        "scene_update": 0.007848282584252466,
+        "observation_other": 0.04515764032066562,
+        "unattributed": 0.0015407655627308265,
+        "render": 0.0003019109790397828,
+        "render_scene_transforms": 0.0001226110665796232,
+        "record_buffer_copy": 0.01473602617456153,
+        "action_process": 0.005597336658512794,
+        "camera_output_read": 0.00010394759006652904,
+        "record_pre_other": 0.0002030000838654563,
+        "scheduler_other": 0.007620418527905749,
+        "rgb_readback_other": 0.0016420447044795678,
+        "env_step_other": 0.005723105057862779,
+        "success_check": 0.015157784891284642,
+        "export_poll_or_backpressure": 0.0028894969868482555,
+        "action_apply": 0.046487796814726576,
+        "camera_pose": 0.2532209190425082,
+        "physics_step": 0.25686460769772523,
+        "camera_render": 0.20302215765231554,
+        "scene_write": 0.03218959270268989,
+        "export_producer_other": 0.00013164301854273956,
+        "rgb_cpu_copy": 0.029136384672858635,
+        "export_pack": 0.02247433594430779
+      },
+      "execute_phase_ms_per_step": {
+        "reset_other": 0.010872583869586169,
+        "camera_data_other": 1.3392258180572385,
+        "motion_plan": 1.25305724418511,
+        "record_post_other": 0.3393925159615102,
+        "action_prepare": 2.0381129775816564,
+        "scene_update": 0.8172927941867633,
+        "observation_other": 4.70255927208984,
+        "unattributed": 0.1604499555708798,
+        "render": 0.03143995708694119,
+        "render_scene_transforms": 0.012768289129159109,
+        "record_buffer_copy": 1.5345584053742132,
+        "action_process": 0.5828871308506344,
+        "camera_output_read": 0.01082473973413199,
+        "record_pre_other": 0.021139721204158034,
+        "scheduler_other": 0.7935638255484511,
+        "rgb_readback_other": 0.1709968123977164,
+        "env_step_other": 0.5959842136100386,
+        "success_check": 1.578478888150266,
+        "export_poll_or_backpressure": 0.3009021452558182,
+        "action_apply": 4.841077133299128,
+        "camera_pose": 26.36954394150473,
+        "physics_step": 26.74898497847047,
+        "camera_render": 21.14201989138633,
+        "scene_write": 3.3521119915461197,
+        "export_producer_other": 0.013708845126939748,
+        "rgb_cpu_copy": 3.0341615488669555,
+        "export_pack": 2.340399013953809
+      },
+      "generation": {
+        "wall_seconds": 318.9435018219956,
+        "exclusive_wall_seconds": {
+          "reset_other": 0.18559183695469983,
+          "camera_data_other": 3.744602795850369,
+          "motion_plan": 15.870196963005583,
+          "record_post_other": 0.9524708398821531,
+          "action_prepare": 9.015653618829674,
+          "scene_update": 2.2976528001890983,
+          "observation_other": 13.16119082221121,
+          "unattributed": 0.446746038942365,
+          "render": 0.08754138920630794,
+          "render_scene_transforms": 0.0356181144452421,
+          "record_buffer_copy": 4.3211764156149,
+          "action_process": 1.6297621616104152,
+          "camera_output_read": 0.030163008472300135,
+          "record_pre_other": 0.058917781891068444,
+          "scheduler_other": 7.0516227155021625,
+          "rgb_readback_other": 0.4771726744220359,
+          "env_step_other": 1.6719079756148858,
+          "success_check": 6.683118590663071,
+          "export_pack": 11.578900415988755,
+          "export_poll_or_backpressure": 0.8293254193558823,
+          "action_apply": 13.551118780203979,
+          "camera_pose": 73.8475908597029,
+          "physics_step": 74.65128048030601,
+          "camera_render": 58.889538046583766,
+          "scene_write": 9.37228238908574,
+          "export_producer_other": 0.05873048707144335,
+          "rgb_cpu_copy": 8.44362840038957
+        },
+        "exclusive_thread_cpu_seconds": {
+          "reset_other": 0.18225176899990458,
+          "camera_data_other": 3.7156968939975528,
+          "motion_plan": 15.733773561,
+          "record_post_other": 0.9441151920010817,
+          "action_prepare": 8.973746252000442,
+          "scene_update": 2.2888986069997195,
+          "observation_other": 9.729972753999856,
+          "unattributed": 0.4459411870004715,
+          "render": 0.0876784470002967,
+          "render_scene_transforms": 0.0325440589997541,
+          "record_buffer_copy": 2.5500885860001823,
+          "action_process": 1.6170746580000603,
+          "camera_output_read": 0.029732951000429608,
+          "record_pre_other": 0.05840117000088085,
+          "scheduler_other": 7.02366065899902,
+          "rgb_readback_other": 0.4274841450041791,
+          "env_step_other": 1.6169965089987635,
+          "success_check": 6.659085147000969,
+          "export_pack": 11.561207402999997,
+          "export_poll_or_backpressure": 0.8225331179988729,
+          "action_apply": 13.458112262000295,
+          "camera_pose": 73.31630112299801,
+          "physics_step": 17.075515180999574,
+          "camera_render": 26.83947462099999,
+          "scene_write": 9.305375272999132,
+          "export_producer_other": 0.05328905300000386,
+          "rgb_cpu_copy": 8.383288861000548
+        }
+      },
+      "through_output_ready": {
+        "wall_seconds": 350.2977471549966,
+        "exclusive_wall_seconds": {
+          "reset_other": 0.18559183695469983,
+          "camera_data_other": 3.744602795850369,
+          "motion_plan": 15.870196963005583,
+          "record_post_other": 0.9524708398821531,
+          "action_prepare": 9.015653618829674,
+          "env_close_other": 0.829709974990692,
+          "scene_update": 2.2976528001890983,
+          "observation_other": 13.16119082221121,
+          "unattributed": 0.5455386719550006,
+          "render": 0.08754138920630794,
+          "render_scene_transforms": 0.0356181144452421,
+          "record_buffer_copy": 4.3211764156149,
+          "action_process": 1.6297621616104152,
+          "camera_output_read": 0.030163008472300135,
+          "record_pre_other": 0.058917781891068444,
+          "scheduler_other": 7.059071339506772,
+          "rgb_readback_other": 0.4771726744220359,
+          "env_step_other": 1.6719079756148858,
+          "success_check": 6.683118590663071,
+          "export_pack": 11.578900415988755,
+          "export_merge": 2.1991877629916416,
+          "export_poll_or_backpressure": 29.011538715232746,
+          "action_apply": 13.551118780203979,
+          "export_drain_other": 0.036893042124575004,
+          "camera_pose": 73.8475908597029,
+          "physics_step": 74.65128048030601,
+          "camera_render": 58.889538046583766,
+          "scene_write": 9.37228238908574,
+          "export_producer_other": 0.05873048707144335,
+          "rgb_cpu_copy": 8.44362840038957
+        },
+        "exclusive_thread_cpu_seconds": {
+          "reset_other": 0.18225176899990458,
+          "camera_data_other": 3.7156968939975528,
+          "motion_plan": 15.733773561,
+          "record_post_other": 0.9441151920010817,
+          "action_prepare": 8.973746252000442,
+          "env_close_other": 0.7987241729999823,
+          "scene_update": 2.2888986069997195,
+          "observation_other": 9.729972753999856,
+          "unattributed": 0.458947377000527,
+          "render": 0.0876784470002967,
+          "render_scene_transforms": 0.0325440589997541,
+          "record_buffer_copy": 2.5500885860001823,
+          "action_process": 1.6170746580000603,
+          "camera_output_read": 0.029732951000429608,
+          "record_pre_other": 0.05840117000088085,
+          "scheduler_other": 7.0311045179989975,
+          "rgb_readback_other": 0.4274841450041791,
+          "env_step_other": 1.6169965089987635,
+          "success_check": 6.659085147000969,
+          "export_pack": 11.561207402999997,
+          "export_merge": 1.6885000329999968,
+          "export_poll_or_backpressure": 1.651451736998709,
+          "action_apply": 13.458112262000295,
+          "export_drain_other": 0.01476461600015,
+          "camera_pose": 73.31630112299801,
+          "physics_step": 17.075515180999574,
+          "camera_render": 26.83947462099999,
+          "scene_write": 9.305375272999132,
+          "export_producer_other": 0.05328905300000386,
+          "rgb_cpu_copy": 8.383288861000548
+        }
+      },
+      "calls": {
+        "reset_other": 11,
+        "record_buffer_copy": 161399,
+        "export_producer_other": 19,
+        "export_poll_or_backpressure": 6149,
+        "scene_write": 11123,
+        "observation_other": 5567,
+        "rgb_readback_other": 16701,
+        "camera_pose": 16701,
+        "camera_data_other": 16701,
+        "render_scene_transforms": 8367,
+        "camera_render": 8367,
+        "camera_output_read": 8367,
+        "rgb_cpu_copy": 16701,
+        "scheduler_other": 5566,
+        "motion_plan": 19,
+        "action_prepare": 11115,
+        "env_step_other": 2778,
+        "action_process": 2778,
+        "record_pre_other": 2778,
+        "action_apply": 11112,
+        "physics_step": 11112,
+        "scene_update": 11112,
+        "render": 2778,
+        "record_post_other": 2778,
+        "success_check": 11112,
+        "export_pack": 8,
+        "export_drain_other": 1,
+        "export_merge": 1,
+        "env_close_other": 1
+      },
+      "inclusive_wall_seconds": {
+        "reset_other": 0.4108687639964046,
+        "camera_data_other": 62.69992196535168,
+        "motion_plan": 15.870196963005583,
+        "record_post_other": 1.673595852116705,
+        "action_prepare": 9.015653618829674,
+        "env_close_other": 0.829709974990692,
+        "scene_update": 2.2976528001890983,
+        "observation_other": 158.6295047220774,
+        "render": 0.08754138920630794,
+        "render_scene_transforms": 0.0356181144452421,
+        "record_buffer_copy": 9.193955671536969,
+        "action_process": 1.6297621616104152,
+        "camera_output_read": 0.030163008472300135,
+        "record_pre_other": 3.5537758917344036,
+        "scheduler_other": 50.266282347001834,
+        "rgb_readback_other": 145.4683138998662,
+        "env_step_other": 266.998702859637,
+        "success_check": 6.683118590663071,
+        "export_pack": 11.578900415988755,
+        "export_merge": 2.1991877629916416,
+        "export_poll_or_backpressure": 29.011538715232746,
+        "action_apply": 13.551118780203979,
+        "export_drain_other": 30.41829410099308,
+        "camera_pose": 73.8475908597029,
+        "physics_step": 74.65128048030601,
+        "camera_render": 58.889538046583766,
+        "scene_write": 9.37228238908574,
+        "export_producer_other": 11.638605885993456,
+        "rgb_cpu_copy": 8.44362840038957
+      },
+      "physical_validation_passed": true,
+      "schema_validation_passed": true,
+      "accounting_closure_passed": true,
+      "file_bytes": 4284626340,
+      "profile": "/home/tangyuan/WorldSimReady-Home/runs/v1-internal-timing-20261015-r03/after_auto/episodes.internal-summary.json",
+      "execute_groups": {
+        "export": {
+          "label": "导出与背压",
+          "seconds_per_episode": 3.6383593346927228,
+          "fraction": 0.025495475949698785
+        },
+        "camera": {
+          "label": "相机渲染与图像采集",
+          "seconds_per_episode": 71.4115855853579,
+          "fraction": 0.5004102660945977
+        },
+        "physics": {
+          "label": "物理推进与控制",
+          "seconds_per_episode": 49.8026534016044,
+          "fraction": 0.34898761645790694
+        },
+        "record_observation": {
+          "label": "记录缓冲与其余观测",
+          "seconds_per_episode": 9.041254501760704,
+          "fraction": 0.06335577811316256
+        },
+        "planner_reset": {
+          "label": "规划与重置",
+          "seconds_per_episode": 1.732057838120454,
+          "fraction": 0.012137239588793064
+        },
+        "action_success": {
+          "label": "动作准备与成功检查",
+          "seconds_per_episode": 4.956087078002383,
+          "fraction": 0.0347293346473416
+        },
+        "remaining": {
+          "label": "调度及其余开销",
+          "seconds_per_episode": 2.1240785020272597,
+          "fraction": 0.014884289148499354
+        }
+      },
+      "call_rates": {
+        "batch_env_steps": 2778,
+        "observation_computes_per_batch_step_including_resets": 2.003959683225342,
+        "rgb_copies_per_batch_step_including_resets": 6.0118790496760255,
+        "camera_renders_per_batch_step_including_resets": 3.011879049676026,
+        "camera_pose_update_calls_per_batch_step_including_resets": 6.0118790496760255
+      }
+    }
+  ],
+  "throughput_speedup": 1.472375053460725,
+  "validation_passed": true,
+  "pair_data_check": {
+    "rgb_metadata_passed": true,
+    "before": [
+      {
+        "episode": "demo_0",
+        "action_shape": [
+          1349,
+          7
+        ],
+        "action_sha256": "ca6f570ece53391ab5c1bf4c453d5dadce02267f5189641077bb7897089a1d5e",
+        "rgb": {
+          "left_hand_rgb": {
+            "shape": [
+              1349,
+              480,
+              640,
+              3
+            ],
+            "dtype": "uint8",
+            "compression": "gzip",
+            "compression_opts": 2
+          },
+          "right_hand_rgb": {
+            "shape": [
+              1349,
+              480,
+              640,
+              3
+            ],
+            "dtype": "uint8",
+            "compression": "gzip",
+            "compression_opts": 2
+          },
+          "third_person_rgb": {
+            "shape": [
+              1349,
+              480,
+              640,
+              3
+            ],
+            "dtype": "uint8",
+            "compression": "gzip",
+            "compression_opts": 2
+          }
+        }
+      },
+      {
+        "episode": "demo_1",
+        "action_shape": [
+          1353,
+          7
+        ],
+        "action_sha256": "63fef3a4b5ac521c65a563fbed5eafd6018cc5381981ebef851f7b9c0ea2038e",
+        "rgb": {
+          "left_hand_rgb": {
+            "shape": [
+              1353,
+              480,
+              640,
+              3
+            ],
+            "dtype": "uint8",
+            "compression": "gzip",
+            "compression_opts": 2
+          },
+          "right_hand_rgb": {
+            "shape": [
+              1353,
+              480,
+              640,
+              3
+            ],
+            "dtype": "uint8",
+            "compression": "gzip",
+            "compression_opts": 2
+          },
+          "third_person_rgb": {
+            "shape": [
+              1353,
+              480,
+              640,
+              3
+            ],
+            "dtype": "uint8",
+            "compression": "gzip",
+            "compression_opts": 2
+          }
+        }
+      },
+      {
+        "episode": "demo_2",
+        "action_shape": [
+          1359,
+          7
+        ],
+        "action_sha256": "065153134b76e38f13614825e4d5b1ab52960eb6108c9cccf23155b2a3b36f46",
+        "rgb": {
+          "left_hand_rgb": {
+            "shape": [
+              1359,
+              480,
+              640,
+              3
+            ],
+            "dtype": "uint8",
+            "compression": "gzip",
+            "compression_opts": 2
+          },
+          "right_hand_rgb": {
+            "shape": [
+              1359,
+              480,
+              640,
+              3
+            ],
+            "dtype": "uint8",
+            "compression": "gzip",
+            "compression_opts": 2
+          },
+          "third_person_rgb": {
+            "shape": [
+              1359,
+              480,
+              640,
+              3
+            ],
+            "dtype": "uint8",
+            "compression": "gzip",
+            "compression_opts": 2
+          }
+        }
+      },
+      {
+        "episode": "demo_3",
+        "action_shape": [
+          1392,
+          7
+        ],
+        "action_sha256": "90bc1f3d78b5fa00be6d06fc9322ae8e11354d0e013187959094d14aaa619353",
+        "rgb": {
+          "left_hand_rgb": {
+            "shape": [
+              1392,
+              480,
+              640,
+              3
+            ],
+            "dtype": "uint8",
+            "compression": "gzip",
+            "compression_opts": 2
+          },
+          "right_hand_rgb": {
+            "shape": [
+              1392,
+              480,
+              640,
+              3
+            ],
+            "dtype": "uint8",
+            "compression": "gzip",
+            "compression_opts": 2
+          },
+          "third_person_rgb": {
+            "shape": [
+              1392,
+              480,
+              640,
+              3
+            ],
+            "dtype": "uint8",
+            "compression": "gzip",
+            "compression_opts": 2
+          }
+        }
+      },
+      {
+        "episode": "demo_4",
+        "action_shape": [
+          1362,
+          7
+        ],
+        "action_sha256": "a171329f0847504f2356c170a952cb0109493062a0892e249794a646487e542b",
+        "rgb": {
+          "left_hand_rgb": {
+            "shape": [
+              1362,
+              480,
+              640,
+              3
+            ],
+            "dtype": "uint8",
+            "compression": "gzip",
+            "compression_opts": 2
+          },
+          "right_hand_rgb": {
+            "shape": [
+              1362,
+              480,
+              640,
+              3
+            ],
+            "dtype": "uint8",
+            "compression": "gzip",
+            "compression_opts": 2
+          },
+          "third_person_rgb": {
+            "shape": [
+              1362,
+              480,
+              640,
+              3
+            ],
+            "dtype": "uint8",
+            "compression": "gzip",
+            "compression_opts": 2
+          }
+        }
+      },
+      {
+        "episode": "demo_5",
+        "action_shape": [
+          1384,
+          7
+        ],
+        "action_sha256": "43ac69bb527949a7613e5e8652a869a50d9c78c5a50652c63f0da91b0fc15195",
+        "rgb": {
+          "left_hand_rgb": {
+            "shape": [
+              1384,
+              480,
+              640,
+              3
+            ],
+            "dtype": "uint8",
+            "compression": "gzip",
+            "compression_opts": 2
+          },
+          "right_hand_rgb": {
+            "shape": [
+              1384,
+              480,
+              640,
+              3
+            ],
+            "dtype": "uint8",
+            "compression": "gzip",
+            "compression_opts": 2
+          },
+          "third_person_rgb": {
+            "shape": [
+              1384,
+              480,
+              640,
+              3
+            ],
+            "dtype": "uint8",
+            "compression": "gzip",
+            "compression_opts": 2
+          }
+        }
+      },
+      {
+        "episode": "demo_6",
+        "action_shape": [
+          1378,
+          7
+        ],
+        "action_sha256": "9d09b742f28b9f11a5d5d4c4e6238540ded5f84a961c6e9e317177e0bd25125e",
+        "rgb": {
+          "left_hand_rgb": {
+            "shape": [
+              1378,
+              480,
+              640,
+              3
+            ],
+            "dtype": "uint8",
+            "compression": "gzip",
+            "compression_opts": 2
+          },
+          "right_hand_rgb": {
+            "shape": [
+              1378,
+              480,
+              640,
+              3
+            ],
+            "dtype": "uint8",
+            "compression": "gzip",
+            "compression_opts": 2
+          },
+          "third_person_rgb": {
+            "shape": [
+              1378,
+              480,
+              640,
+              3
+            ],
+            "dtype": "uint8",
+            "compression": "gzip",
+            "compression_opts": 2
+          }
+        }
+      },
+      {
+        "episode": "demo_7",
+        "action_shape": [
+          1386,
+          7
+        ],
+        "action_sha256": "d57c49e1f176b683a7c582a1e3b4630f859460c7bd36ef6bf3cb248e8594231d",
+        "rgb": {
+          "left_hand_rgb": {
+            "shape": [
+              1386,
+              480,
+              640,
+              3
+            ],
+            "dtype": "uint8",
+            "compression": "gzip",
+            "compression_opts": 2
+          },
+          "right_hand_rgb": {
+            "shape": [
+              1386,
+              480,
+              640,
+              3
+            ],
+            "dtype": "uint8",
+            "compression": "gzip",
+            "compression_opts": 2
+          },
+          "third_person_rgb": {
+            "shape": [
+              1386,
+              480,
+              640,
+              3
+            ],
+            "dtype": "uint8",
+            "compression": "gzip",
+            "compression_opts": 2
+          }
+        }
+      }
+    ],
+    "after": [
+      {
+        "episode": "demo_0",
+        "action_shape": [
+          1349,
+          7
+        ],
+        "action_sha256": "ca6f570ece53391ab5c1bf4c453d5dadce02267f5189641077bb7897089a1d5e",
+        "rgb": {
+          "left_hand_rgb": {
+            "shape": [
+              1349,
+              480,
+              640,
+              3
+            ],
+            "dtype": "uint8",
+            "compression": "gzip",
+            "compression_opts": 2
+          },
+          "right_hand_rgb": {
+            "shape": [
+              1349,
+              480,
+              640,
+              3
+            ],
+            "dtype": "uint8",
+            "compression": "gzip",
+            "compression_opts": 2
+          },
+          "third_person_rgb": {
+            "shape": [
+              1349,
+              480,
+              640,
+              3
+            ],
+            "dtype": "uint8",
+            "compression": "gzip",
+            "compression_opts": 2
+          }
+        }
+      },
+      {
+        "episode": "demo_1",
+        "action_shape": [
+          1353,
+          7
+        ],
+        "action_sha256": "63fef3a4b5ac521c65a563fbed5eafd6018cc5381981ebef851f7b9c0ea2038e",
+        "rgb": {
+          "left_hand_rgb": {
+            "shape": [
+              1353,
+              480,
+              640,
+              3
+            ],
+            "dtype": "uint8",
+            "compression": "gzip",
+            "compression_opts": 2
+          },
+          "right_hand_rgb": {
+            "shape": [
+              1353,
+              480,
+              640,
+              3
+            ],
+            "dtype": "uint8",
+            "compression": "gzip",
+            "compression_opts": 2
+          },
+          "third_person_rgb": {
+            "shape": [
+              1353,
+              480,
+              640,
+              3
+            ],
+            "dtype": "uint8",
+            "compression": "gzip",
+            "compression_opts": 2
+          }
+        }
+      },
+      {
+        "episode": "demo_2",
+        "action_shape": [
+          1359,
+          7
+        ],
+        "action_sha256": "065153134b76e38f13614825e4d5b1ab52960eb6108c9cccf23155b2a3b36f46",
+        "rgb": {
+          "left_hand_rgb": {
+            "shape": [
+              1359,
+              480,
+              640,
+              3
+            ],
+            "dtype": "uint8",
+            "compression": "gzip",
+            "compression_opts": 2
+          },
+          "right_hand_rgb": {
+            "shape": [
+              1359,
+              480,
+              640,
+              3
+            ],
+            "dtype": "uint8",
+            "compression": "gzip",
+            "compression_opts": 2
+          },
+          "third_person_rgb": {
+            "shape": [
+              1359,
+              480,
+              640,
+              3
+            ],
+            "dtype": "uint8",
+            "compression": "gzip",
+            "compression_opts": 2
+          }
+        }
+      },
+      {
+        "episode": "demo_3",
+        "action_shape": [
+          1392,
+          7
+        ],
+        "action_sha256": "90bc1f3d78b5fa00be6d06fc9322ae8e11354d0e013187959094d14aaa619353",
+        "rgb": {
+          "left_hand_rgb": {
+            "shape": [
+              1392,
+              480,
+              640,
+              3
+            ],
+            "dtype": "uint8",
+            "compression": "gzip",
+            "compression_opts": 2
+          },
+          "right_hand_rgb": {
+            "shape": [
+              1392,
+              480,
+              640,
+              3
+            ],
+            "dtype": "uint8",
+            "compression": "gzip",
+            "compression_opts": 2
+          },
+          "third_person_rgb": {
+            "shape": [
+              1392,
+              480,
+              640,
+              3
+            ],
+            "dtype": "uint8",
+            "compression": "gzip",
+            "compression_opts": 2
+          }
+        }
+      },
+      {
+        "episode": "demo_4",
+        "action_shape": [
+          1362,
+          7
+        ],
+        "action_sha256": "a171329f0847504f2356c170a952cb0109493062a0892e249794a646487e542b",
+        "rgb": {
+          "left_hand_rgb": {
+            "shape": [
+              1362,
+              480,
+              640,
+              3
+            ],
+            "dtype": "uint8",
+            "compression": "gzip",
+            "compression_opts": 2
+          },
+          "right_hand_rgb": {
+            "shape": [
+              1362,
+              480,
+              640,
+              3
+            ],
+            "dtype": "uint8",
+            "compression": "gzip",
+            "compression_opts": 2
+          },
+          "third_person_rgb": {
+            "shape": [
+              1362,
+              480,
+              640,
+              3
+            ],
+            "dtype": "uint8",
+            "compression": "gzip",
+            "compression_opts": 2
+          }
+        }
+      },
+      {
+        "episode": "demo_5",
+        "action_shape": [
+          1384,
+          7
+        ],
+        "action_sha256": "43ac69bb527949a7613e5e8652a869a50d9c78c5a50652c63f0da91b0fc15195",
+        "rgb": {
+          "left_hand_rgb": {
+            "shape": [
+              1384,
+              480,
+              640,
+              3
+            ],
+            "dtype": "uint8",
+            "compression": "gzip",
+            "compression_opts": 2
+          },
+          "right_hand_rgb": {
+            "shape": [
+              1384,
+              480,
+              640,
+              3
+            ],
+            "dtype": "uint8",
+            "compression": "gzip",
+            "compression_opts": 2
+          },
+          "third_person_rgb": {
+            "shape": [
+              1384,
+              480,
+              640,
+              3
+            ],
+            "dtype": "uint8",
+            "compression": "gzip",
+            "compression_opts": 2
+          }
+        }
+      },
+      {
+        "episode": "demo_6",
+        "action_shape": [
+          1378,
+          7
+        ],
+        "action_sha256": "9d09b742f28b9f11a5d5d4c4e6238540ded5f84a961c6e9e317177e0bd25125e",
+        "rgb": {
+          "left_hand_rgb": {
+            "shape": [
+              1378,
+              480,
+              640,
+              3
+            ],
+            "dtype": "uint8",
+            "compression": "gzip",
+            "compression_opts": 2
+          },
+          "right_hand_rgb": {
+            "shape": [
+              1378,
+              480,
+              640,
+              3
+            ],
+            "dtype": "uint8",
+            "compression": "gzip",
+            "compression_opts": 2
+          },
+          "third_person_rgb": {
+            "shape": [
+              1378,
+              480,
+              640,
+              3
+            ],
+            "dtype": "uint8",
+            "compression": "gzip",
+            "compression_opts": 2
+          }
+        }
+      },
+      {
+        "episode": "demo_7",
+        "action_shape": [
+          1386,
+          7
+        ],
+        "action_sha256": "d57c49e1f176b683a7c582a1e3b4630f859460c7bd36ef6bf3cb248e8594231d",
+        "rgb": {
+          "left_hand_rgb": {
+            "shape": [
+              1386,
+              480,
+              640,
+              3
+            ],
+            "dtype": "uint8",
+            "compression": "gzip",
+            "compression_opts": 2
+          },
+          "right_hand_rgb": {
+            "shape": [
+              1386,
+              480,
+              640,
+              3
+            ],
+            "dtype": "uint8",
+            "compression": "gzip",
+            "compression_opts": 2
+          },
+          "third_person_rgb": {
+            "shape": [
+              1386,
+              480,
+              640,
+              3
+            ],
+            "dtype": "uint8",
+            "compression": "gzip",
+            "compression_opts": 2
+          }
+        }
+      }
+    ],
+    "exact_action_sequence_matches": 8,
+    "all_action_sequences_match_as_multiset": true,
+    "scope": "Full action arrays and RGB metadata; image pixels are not compared"
+  }
+}

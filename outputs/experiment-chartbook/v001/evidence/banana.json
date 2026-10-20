@@ -1,0 +1,20 @@
+{
+  "frames": 950,
+  "rgb_hz": 50,
+  "force_hz": 200,
+  "physics_force_samples": 3800,
+  "wrist_mount_max_error_m": 7.486453698856426e-08,
+  "median_transfer_finger_normal_N": [
+    38.707672119140625,
+    38.8348388671875
+  ],
+  "peak_finger_normal_N": [
+    40.27736282348633,
+    45.427886962890625
+  ],
+  "released_max_finger_normal_N": 0.0,
+  "peak_wrist_reaction_force_N": 21.97568702697754,
+  "peak_wrist_reaction_torque_Nm": 2.489553928375244,
+  "force_semantics": "Finger normal and friction forces on sensing finger, filtered to object, world frame",
+  "wrench_semantics": "Simulated panda_hand incoming-joint reaction at child-side anchor; includes dynamics; not isolated external F/T"
+}

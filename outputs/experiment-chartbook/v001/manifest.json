@@ -1,0 +1,352 @@
+{
+  "schema_version": 1,
+  "artifact_id": "experiment-chartbook",
+  "version": "v001",
+  "sealed_at": "2026-10-20",
+  "material_cutoff": "2026-10-20 Asia/Shanghai",
+  "files": {
+    "chart-index.csv": {
+      "sha256": "e805f709c210bff7ec0042c46fa6c3deb681a1595a49729d36f74f84c6ef405b",
+      "bytes": 4864
+    },
+    "chart-index.json": {
+      "sha256": "ef7680ab265b662d9bd48022383b166ae1c2920fa246b6367487f9caeefec30a",
+      "bytes": 9584
+    },
+    "evidence/audit.json": {
+      "sha256": "9054f4af6c79d46df92cd6a810471ed612c420b369b9f3f5a07afe7a0257bca5",
+      "bytes": 14557
+    },
+    "evidence/banana.json": {
+      "sha256": "93b4a6becbbd2d30295d09fdca0a3953eeb2f8a9f46743aadac16420a78758d3",
+      "bytes": 698
+    },
+    "evidence/capacity.json": {
+      "sha256": "a53a3888b4f68f135f0b1eb4d1482c9914dd4b22564cc44aed0b2fb40a26e7c0",
+      "bytes": 38437
+    },
+    "evidence/concurrency.json": {
+      "sha256": "3d8489c7871567d0fd845d01f0135e246397aebc8e0452d0daad9e16de2c7376",
+      "bytes": 11010
+    },
+    "evidence/conversion.json": {
+      "sha256": "e03fa8511a81aa7a8b4ec104b8e5505b4371a0ea8d6446fe125a0ff173fb3f80",
+      "bytes": 461
+    },
+    "evidence/export16.json": {
+      "sha256": "085a9ba5657167353f06dd2b34a99002dcf614c4971c8cabdd370af5259e8b2d",
+      "bytes": 79712
+    },
+    "evidence/export24.json": {
+      "sha256": "c86c49528ebd6f3c83ac314eb8ea3acdf34daaa269fd53b29dd8da2e6a10ece4",
+      "bytes": 31776
+    },
+    "evidence/failure.json": {
+      "sha256": "b6960cbc12aa484633701107a376d8ccf154004bd71f2a1ee97daa9808af9fa5",
+      "bytes": 1465
+    },
+    "evidence/franka.json": {
+      "sha256": "cdf51adab1db1a2e6d6e4f624dc9d241e770e12371a5d3d89716da0b12bc9e32",
+      "bytes": 16279
+    },
+    "evidence/g1.json": {
+      "sha256": "029e7009dc859a074dbed867d0696e0f68309d57613418330c28e49b33ce947a",
+      "bytes": 46210
+    },
+    "evidence/hdr.json": {
+      "sha256": "5dd932e9e07a62bf07c1845be33dd73b9afaee420d06c33495452e2a6f1d9c38",
+      "bytes": 2741
+    },
+    "evidence/history.md": {
+      "sha256": "968bd360002fc95ebe1ac2c1eff410872cca9e62ffc0e891c7d778dff27c1286",
+      "bytes": 4075
+    },
+    "evidence/legacy-manifest.json": {
+      "sha256": "814f5f4bcf60c87d04056c92b7e3a0b2d71103411dadaee40f9357fd17472efb",
+      "bytes": 7465
+    },
+    "evidence/mvp.json": {
+      "sha256": "811146dd02c19858388c19bbeca631752406e4ddc52d49e5c62f2ec4ed134b5e",
+      "bytes": 25875
+    },
+    "evidence/randomization.json": {
+      "sha256": "4a3ea48fcbfc6fc517d430cb59214a5ccfb1ae8ea264fe332c85a155a5662cb9",
+      "bytes": 4809
+    },
+    "evidence/readback.json": {
+      "sha256": "b84077cb77f62db99902dd4149edab88ad65f181b3ead90674765eb2a59908e7",
+      "bytes": 28749
+    },
+    "evidence/regression.json": {
+      "sha256": "9922481cde8307f995c70135da4940fb6d544c24bf7d1a333f388c36fb9affe1",
+      "bytes": 3059
+    },
+    "evidence/shared.json": {
+      "sha256": "b6b6388fc088299c3c259eafb82aa56b5bdce051c0f6a06f8ba06de6fd828766",
+      "bytes": 623
+    },
+    "evidence/timing.json": {
+      "sha256": "249267e647d31d45919399a958ea070e0fa5bc227810bfed26915395d51e0891",
+      "bytes": 44650
+    },
+    "evidence/v2.json": {
+      "sha256": "d8aa00969eb48628b5eb8eb10bb88fe95de23f503f9d7ad110d6161a75d2de06",
+      "bytes": 2127
+    },
+    "experiment-chartbook.pdf": {
+      "sha256": "728a70b1337fe5cfe52c22288697b9f5c137ae30f43a23c373061472c67adbf2",
+      "bytes": 917882
+    },
+    "figures/01-shared-config.png": {
+      "sha256": "ee39b080d835b56c495f02f8bb87aa99156c8a725925625669765150653d5fc1",
+      "bytes": 155426
+    },
+    "figures/02-export-24.png": {
+      "sha256": "325e3bec5230f3d107ab684cef50e9170b6ae83d8dff7a87abdf9635a663ea38",
+      "bytes": 101611
+    },
+    "figures/03-export-16.png": {
+      "sha256": "183a271cc82ef0d9e8d8faa95369e32adc20af3672d8c4b390d288443d7bfe4b",
+      "bytes": 93500
+    },
+    "figures/04-capacity.png": {
+      "sha256": "0ff33b8b8dcf01b95e1a7f0333863179fad4275a54a3b57252d8fb33d0a848c7",
+      "bytes": 173081
+    },
+    "figures/05-timing.png": {
+      "sha256": "0bda63a338a4f8309dfdc30ff91fe27579a8f7bba596ed81755a018b6c321a34",
+      "bytes": 169360
+    },
+    "figures/06-domain-randomization.png": {
+      "sha256": "d53e50143f452b0a2ffc6e383ce098d76770058ba7ce3441298fc5462d13b047",
+      "bytes": 202594
+    },
+    "figures/07-g1.png": {
+      "sha256": "aacad10a58b9a7dd9aa974a8c2b41bcab4826ee37adc9aba4df8c694792d111f",
+      "bytes": 99097
+    },
+    "figures/08-curobo-mvp.png": {
+      "sha256": "2c6c4d2ecfd10890a7528ed12eed852706cd3d76e1a1622bf64ff8a4af44bc03",
+      "bytes": 116193
+    },
+    "figures/09-curobo-rerun.png": {
+      "sha256": "eda548172801123ee42e8794d8e663e8cf0846a58cdbb168a037aab7a1f3a787",
+      "bytes": 119196
+    },
+    "figures/10-franka.png": {
+      "sha256": "fe5b40bfcf31ee6dd78d8c57c65b90c2567c9e7ae3ac5ed84c5c5dd5ce24f8d3",
+      "bytes": 228724
+    },
+    "figures/11-banana.png": {
+      "sha256": "2ad7adc75e1ca07387a8b2fabe46f047e51782544d8255eb025877a49b89c518",
+      "bytes": 115885
+    },
+    "figures/12-hdr.png": {
+      "sha256": "419fbebd7758b3050f1f8aeb379824e2a105870e64fa5d9ec71d413aed4b3a17",
+      "bytes": 67541
+    },
+    "figures/13-concurrency.png": {
+      "sha256": "af144bdbab118272102e2cf4f13f34b706a286166024774a872dca2d1da0b57f",
+      "bytes": 107790
+    },
+    "figures/14-production-100.png": {
+      "sha256": "7a1dd38b8d86b34b9dc51d75e4d4d67ba7c0d8f9ada1346d74e2fa0c15af92e5",
+      "bytes": 92334
+    },
+    "figures/15-camera-quality.png": {
+      "sha256": "b88073232d9b42e8bed44d20c389b927c08dd671df6c89c1be34163db05408f6",
+      "bytes": 140724
+    },
+    "figures/15-camera-quality.svg": {
+      "sha256": "96c9cbdfa65392bc36a5536fc41d76ecac7011a0ded04a3a37e5acd718599762",
+      "bytes": 97891
+    },
+    "figures/16-export-closure.png": {
+      "sha256": "a34f9d0186f13ffe61629bc187678a5625902dba2c7cca83957c9220c6e1b0a5",
+      "bytes": 146906
+    },
+    "figures/16-export-closure.svg": {
+      "sha256": "eff7e5fe1503ea98f9bafecaf8ab60656ebd9b14bd5293f4cade7abd1a99328f",
+      "bytes": 100598
+    },
+    "figures/17-memory-admission.png": {
+      "sha256": "04309a9dabf933c9ce917af131312411627bc1c85f72b083ca72ca7b384a9e67",
+      "bytes": 152514
+    },
+    "figures/17-memory-admission.svg": {
+      "sha256": "ed5e8822399aff74dcc40871ee6118c8a3be0f926e06051c9b9eb9aefd518c92",
+      "bytes": 113422
+    },
+    "figures/18-failure-terminal.png": {
+      "sha256": "55803ad1bfd28d9871c45df43946253fa11619620a243a6656653790f107ff55",
+      "bytes": 153589
+    },
+    "figures/18-failure-terminal.svg": {
+      "sha256": "8700934bcf0c7e825b882be46d3eba72e12ab14bb8b3236a4a40f0faf894ca83",
+      "bytes": 111086
+    },
+    "figures/19-lerobot-conversion.png": {
+      "sha256": "00a33777c073df508d1e144c2e3ee066c046bce437a2f6f933de8c9440850ef1",
+      "bytes": 138453
+    },
+    "figures/19-lerobot-conversion.svg": {
+      "sha256": "79d676ec8f416889f73522692483045bbd4b884f8361d6e20f1b3b556749ee63",
+      "bytes": 113570
+    },
+    "index.html": {
+      "sha256": "411ab2d04e926db070d3da153a41b9f592900d38633b04bcb6771a7048b5e9fe",
+      "bytes": 12975
+    },
+    "metrics.csv": {
+      "sha256": "d3c3e71b0fcb71771150cee3461fb3e371b71fa1e77a40248c3da33ab648b1c3",
+      "bytes": 16093
+    },
+    "overview.png": {
+      "sha256": "86107dde5b72caeecaf6b1bd22159cc0685719e73a29eccd2a3e405f394953b3",
+      "bytes": 429260
+    },
+    "report.md": {
+      "sha256": "da403bbba1625f33104af7ad786fbc7972246483d43498fb003684e4ac46ecb8",
+      "bytes": 6756
+    },
+    "sources.json": {
+      "sha256": "a52bf0bfe7812867ecc2de97901edba30641bc06478d8f6dd29d1ed0a08c39c5",
+      "bytes": 5964
+    },
+    "validation.json": {
+      "sha256": "0790d8e2788fcfc731f6aab5854dd86287a2286afd55d22ee56795110ff31fd2",
+      "bytes": 448
+    }
+  },
+  "sources": {
+    "shared": {
+      "original_path": "/home/tangyuan/WorldSimReady-Home/.worktrees/experimental-portfolio-report-20261019/outputs/autodata-arena-shared-config/v003/comparison.json",
+      "local_path": "evidence/shared.json",
+      "sha256": "b6b6388fc088299c3c259eafb82aa56b5bdce051c0f6a06f8ba06de6fd828766",
+      "bytes": 623
+    },
+    "export24": {
+      "original_path": "/home/tangyuan/WorldSimReady-Home/.worktrees/experimental-portfolio-report-20261019/outputs/autodata-efficiency-report/v001/evidence.json",
+      "local_path": "evidence/export24.json",
+      "sha256": "c86c49528ebd6f3c83ac314eb8ea3acdf34daaa269fd53b29dd8da2e6a10ece4",
+      "bytes": 31776
+    },
+    "export16": {
+      "original_path": "/home/tangyuan/WorldSimReady-Home/.worktrees/experimental-portfolio-report-20261019/outputs/autodata-efficiency-review/v003/data.json",
+      "local_path": "evidence/export16.json",
+      "sha256": "085a9ba5657167353f06dd2b34a99002dcf614c4971c8cabdd370af5259e8b2d",
+      "bytes": 79712
+    },
+    "timing": {
+      "original_path": "/home/tangyuan/WorldSimReady-Home/.worktrees/experimental-portfolio-report-20261019/outputs/autodata-v1-internal-timing/v001/report.json",
+      "local_path": "evidence/timing.json",
+      "sha256": "249267e647d31d45919399a958ea070e0fa5bc227810bfed26915395d51e0891",
+      "bytes": 44650
+    },
+    "randomization": {
+      "original_path": "/home/tangyuan/WorldSimReady-Home/.worktrees/experimental-portfolio-report-20261019/outputs/autodata-domain-randomization/v002/result.json",
+      "local_path": "evidence/randomization.json",
+      "sha256": "4a3ea48fcbfc6fc517d430cb59214a5ccfb1ae8ea264fe332c85a155a5662cb9",
+      "bytes": 4809
+    },
+    "mvp": {
+      "original_path": "/home/tangyuan/WorldSimReady-Home/.worktrees/experimental-portfolio-report-20261019/outputs/curobo-v2-openarm-mvp/v001/data.json",
+      "local_path": "evidence/mvp.json",
+      "sha256": "811146dd02c19858388c19bbeca631752406e4ddc52d49e5c62f2ec4ed134b5e",
+      "bytes": 25875
+    },
+    "v2": {
+      "original_path": "/home/tangyuan/WorldSimReady-Home/.worktrees/experimental-portfolio-report-20261019/outputs/autodata-efficiency-review/v003/v2-result.json",
+      "local_path": "evidence/v2.json",
+      "sha256": "d8aa00969eb48628b5eb8eb10bb88fe95de23f503f9d7ad110d6161a75d2de06",
+      "bytes": 2127
+    },
+    "history": {
+      "original_path": "/home/tangyuan/WorldSimReady-Home/.worktrees/experimental-portfolio-report-20261019/docs/process-log.md",
+      "local_path": "evidence/history.md",
+      "sha256": "968bd360002fc95ebe1ac2c1eff410872cca9e62ffc0e891c7d778dff27c1286",
+      "bytes": 4075
+    },
+    "capacity": {
+      "original_path": "/data/WorldSimReady-Home/key-evidence-20261020/portfolio-sources/production-capacity-r04-report.json",
+      "local_path": "evidence/capacity.json",
+      "sha256": "a53a3888b4f68f135f0b1eb4d1482c9914dd4b22564cc44aed0b2fb40a26e7c0",
+      "bytes": 38437
+    },
+    "g1": {
+      "original_path": "/data/WorldSimReady-Home/key-evidence-20261020/portfolio-sources/g1-final-review-summary.json",
+      "local_path": "evidence/g1.json",
+      "sha256": "029e7009dc859a074dbed867d0696e0f68309d57613418330c28e49b33ce947a",
+      "bytes": 46210
+    },
+    "franka": {
+      "original_path": "/data/WorldSimReady-Home/key-evidence-20261020/portfolio-sources/franka-curobo-summary.json",
+      "local_path": "evidence/franka.json",
+      "sha256": "cdf51adab1db1a2e6d6e4f624dc9d241e770e12371a5d3d89716da0b12bc9e32",
+      "bytes": 16279
+    },
+    "banana": {
+      "original_path": "/data/WorldSimReady-Home/key-evidence-20261020/portfolio-sources/banana-sensor-verification.json",
+      "local_path": "evidence/banana.json",
+      "sha256": "93b4a6becbbd2d30295d09fdca0a3953eeb2f8a9f46743aadac16420a78758d3",
+      "bytes": 698
+    },
+    "hdr": {
+      "original_path": "/data/WorldSimReady-Home/key-evidence-20261020/portfolio-sources/hdr-summary-console.json",
+      "local_path": "evidence/hdr.json",
+      "sha256": "5dd932e9e07a62bf07c1845be33dd73b9afaee420d06c33495452e2a6f1d9c38",
+      "bytes": 2741
+    },
+    "concurrency": {
+      "original_path": "/data/WorldSimReady-Home/key-evidence-20261020/portfolio-sources/gpu-parallelism-summary.json",
+      "local_path": "evidence/concurrency.json",
+      "sha256": "3d8489c7871567d0fd845d01f0135e246397aebc8e0452d0daad9e16de2c7376",
+      "bytes": 11010
+    },
+    "audit": {
+      "original_path": "/data/WorldSimReady-Home/openarm-readiness-20261020-r01/audit.json",
+      "local_path": "evidence/audit.json",
+      "sha256": "9054f4af6c79d46df92cd6a810471ed612c420b369b9f3f5a07afe7a0257bca5",
+      "bytes": 14557
+    },
+    "regression": {
+      "original_path": "/data/WorldSimReady-Home/openarm-export-isolated-20261020-r01/report.json",
+      "local_path": "evidence/regression.json",
+      "sha256": "9922481cde8307f995c70135da4940fb6d544c24bf7d1a333f388c36fb9affe1",
+      "bytes": 3059
+    },
+    "readback": {
+      "original_path": "/data/WorldSimReady-Home/openarm-export-isolated-20261020-r01/validation.json",
+      "local_path": "evidence/readback.json",
+      "sha256": "b84077cb77f62db99902dd4149edab88ad65f181b3ead90674765eb2a59908e7",
+      "bytes": 28749
+    },
+    "conversion": {
+      "original_path": "/home/tangyuan/WorldSimReady-Home/runs/autodata-lerobot-v3-20261020/v002/openarm-left-lerobot-v3/validation.json",
+      "local_path": "evidence/conversion.json",
+      "sha256": "e03fa8511a81aa7a8b4ec104b8e5505b4371a0ea8d6446fe125a0ff173fb3f80",
+      "bytes": 461
+    },
+    "failure": {
+      "original_path": "/home/tangyuan/WorldSimReady-Home/.worktrees/experiment-chartbook-20261020/runs/failure-final-state.json",
+      "local_path": "evidence/failure.json",
+      "sha256": "b6960cbc12aa484633701107a376d8ccf154004bd71f2a1ee97daa9808af9fa5",
+      "bytes": 1465
+    },
+    "legacy-manifest": {
+      "original_path": "/home/tangyuan/WorldSimReady-Home/.worktrees/experimental-portfolio-report-20261019/outputs/embodied-experiment-portfolio/v004/manifest.json",
+      "local_path": "evidence/legacy-manifest.json",
+      "sha256": "814f5f4bcf60c87d04056c92b7e3a0b2d71103411dadaee40f9357fd17472efb",
+      "bytes": 7465
+    }
+  },
+  "scope": "Saved-source chart assembly and numerical extraction; no revalidation of old simulation",
+  "delivery": {
+    "local": {
+      "status": "saved"
+    },
+    "external": {
+      "status": "not_uploaded"
+    }
+  }
+}
