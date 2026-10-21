@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "charts": 19,
+  "pdf_pages": 20,
+  "legacy_figures_byte_identical": 14,
+  "new_figures": 5,
+  "metric_rows": 157,
+  "new_simulation": false,
+  "new_training": false,
+  "legacy_source_manifest_sha256": "814f5f4bcf60c87d04056c92b7e3a0b2d71103411dadaee40f9357fd17472efb",
+  "v1_v2_labels_verified_against_raw_json": true,
+  "scope": "Saved-source chart assembly and numerical extraction; no revalidation of old simulation"
+}

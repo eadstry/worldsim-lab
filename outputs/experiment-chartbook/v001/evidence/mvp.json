@@ -1,0 +1,1077 @@
+{
+  "schema_version": 1,
+  "runs": [
+    {
+      "backend": "v1",
+      "status": "completed",
+      "smoke": false,
+      "uncontended": true,
+      "foreign_pids_during_run": [],
+      "attempts": 5,
+      "successes": 5,
+      "success_rate": 1.0,
+      "success_rate_wilson_95": [
+        0.5655175352168251,
+        1
+      ],
+      "request_count": 10,
+      "request_successes": 10,
+      "request_success_rate": 1.0,
+      "request_warm_success_p50_seconds": 0.7531613930000276,
+      "request_failure_p50_seconds": null,
+      "first_request_seconds": 9.342807047000008,
+      "request_all_p50_seconds": 0.820441712499985,
+      "request_all_p95_seconds": 6.450222529250006,
+      "request_warm_sample_count": 9,
+      "request_warm_p50_seconds": 0.7531613930000276,
+      "request_warm_p95_seconds": 2.217390741200051,
+      "phase_all_p50_seconds": 0.0727620935000175,
+      "process_gpu_peak_mib": 7284.0,
+      "torch_peak_allocated_mib": 140.43798828125,
+      "torch_peak_reserved_mib": 214.0,
+      "planner_initialization": {
+        "event": "planner_initialized",
+        "time_unix": 1791966692.6168678,
+        "backend": "v1",
+        "elapsed_seconds": 5.173442086000023,
+        "allocated_before_bytes": 392192,
+        "allocated_after_bytes": 15512576,
+        "reserved_after_bytes": 29360128,
+        "profile": {
+          "num_trajopt_seeds": 2,
+          "num_graph_seeds": 4,
+          "trajopt_tsteps": 20,
+          "interpolation_dt": 0.05,
+          "enable_graph": false,
+          "max_planning_attempts": 2,
+          "position_threshold": 0.005,
+          "rotation_threshold": 0.05,
+          "collision_activation_distance": 0.0,
+          "motion_step_size": 0.005,
+          "n_repeat": 10
+        }
+      },
+      "runtime": {
+        "event": "runtime",
+        "time_unix": 1791966667.511476,
+        "backend": "v1",
+        "curobo_version": "0.0.post1.dev1",
+        "torch_version": "2.11.0",
+        "cuda_version": "13.0",
+        "gpu_name": "NVIDIA GeForce RTX 5090",
+        "pid": 6363,
+        "curobo_source_alias": "original_v1_site_packages",
+        "planner_source_alias": "production_snapshot/runtime/patches/curobo_planner.py"
+      },
+      "backend_configuration": null,
+      "initial_states": [
+        {
+          "event": "episode_reset",
+          "time_unix": 1791966692.8208666,
+          "backend": "v1",
+          "episode_index": 0,
+          "seed": 101,
+          "object_poses": {
+            "table": [
+              [
+                [
+                  5.960464477539063e-08,
+                  -0.9999999403953552,
+                  0.0,
+                  0.75
+                ],
+                [
+                  0.9999999403953552,
+                  5.960464477539063e-08,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0,
+                  0.5400000214576721
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ]
+            ],
+            "cube": [
+              [
+                [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.5455291271209717
+                ],
+                [
+                  0.0,
+                  1.0,
+                  0.0,
+                  0.06856217980384827
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0809999704360962
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ]
+            ]
+          },
+          "joint_positions": [
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.5,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.699999988079071,
+              0.699999988079071,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "event": "episode_reset",
+          "time_unix": 1791966852.17242,
+          "backend": "v1",
+          "episode_index": 1,
+          "seed": 102,
+          "object_poses": {
+            "table": [
+              [
+                [
+                  5.960464477539063e-08,
+                  -0.9999999403953552,
+                  0.0,
+                  0.75
+                ],
+                [
+                  0.9999999403953552,
+                  5.960464477539063e-08,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0,
+                  0.5400000214576721
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ]
+            ],
+            "cube": [
+              [
+                [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.5579710006713867
+                ],
+                [
+                  0.0,
+                  1.0,
+                  0.0,
+                  0.061696819961071014
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0809999704360962
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ]
+            ]
+          },
+          "joint_positions": [
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.5,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.699999988079071,
+              0.699999988079071,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "event": "episode_reset",
+          "time_unix": 1791967029.132099,
+          "backend": "v1",
+          "episode_index": 2,
+          "seed": 103,
+          "object_poses": {
+            "table": [
+              [
+                [
+                  5.960464477539063e-08,
+                  -0.9999999403953552,
+                  0.0,
+                  0.75
+                ],
+                [
+                  0.9999999403953552,
+                  5.960464477539063e-08,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0,
+                  0.5400000214576721
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ]
+            ],
+            "cube": [
+              [
+                [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.49201858043670654
+                ],
+                [
+                  0.0,
+                  1.0,
+                  0.0,
+                  0.17662332952022552
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0809999704360962
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ]
+            ]
+          },
+          "joint_positions": [
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.5,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.699999988079071,
+              0.699999988079071,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "event": "episode_reset",
+          "time_unix": 1791967185.577108,
+          "backend": "v1",
+          "episode_index": 3,
+          "seed": 104,
+          "object_poses": {
+            "table": [
+              [
+                [
+                  5.960464477539063e-08,
+                  -0.9999999403953552,
+                  0.0,
+                  0.75
+                ],
+                [
+                  0.9999999403953552,
+                  5.960464477539063e-08,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0,
+                  0.5400000214576721
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ]
+            ],
+            "cube": [
+              [
+                [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.5183919668197632
+                ],
+                [
+                  0.0,
+                  1.0,
+                  0.0,
+                  0.1505347341299057
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0809999704360962
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ]
+            ]
+          },
+          "joint_positions": [
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.5,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.699999988079071,
+              0.699999988079071,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "event": "episode_reset",
+          "time_unix": 1791967407.861324,
+          "backend": "v1",
+          "episode_index": 4,
+          "seed": 105,
+          "object_poses": {
+            "table": [
+              [
+                [
+                  5.960464477539063e-08,
+                  -0.9999999403953552,
+                  0.0,
+                  0.75
+                ],
+                [
+                  0.9999999403953552,
+                  5.960464477539063e-08,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0,
+                  0.5400000214576721
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ]
+            ],
+            "cube": [
+              [
+                [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.5696840882301331
+                ],
+                [
+                  0.0,
+                  1.0,
+                  0.0,
+                  0.07649120688438416
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0809999704360962
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ]
+            ]
+          },
+          "joint_positions": [
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.5,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.699999988079071,
+              0.699999988079071,
+              0.0,
+              0.0
+            ]
+          ]
+        }
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 949.2810010910034
+    },
+    {
+      "backend": "v2",
+      "status": "completed",
+      "smoke": false,
+      "uncontended": true,
+      "foreign_pids_during_run": [],
+      "attempts": 5,
+      "successes": 4,
+      "success_rate": 0.8,
+      "success_rate_wilson_95": [
+        0.37553462976252533,
+        0.9637758913675698
+      ],
+      "request_count": 10,
+      "request_successes": 10,
+      "request_success_rate": 1.0,
+      "request_warm_success_p50_seconds": 1.3117659330000606,
+      "request_failure_p50_seconds": null,
+      "first_request_seconds": 4.5154474020000634,
+      "request_all_p50_seconds": 1.3786332070001208,
+      "request_all_p95_seconds": 3.3003402120000347,
+      "request_warm_sample_count": 9,
+      "request_warm_p50_seconds": 1.3117659330000606,
+      "request_warm_p95_seconds": 1.763685532800082,
+      "phase_all_p50_seconds": 0.48136631200009106,
+      "process_gpu_peak_mib": 7194.0,
+      "torch_peak_allocated_mib": 56.01318359375,
+      "torch_peak_reserved_mib": 116.0,
+      "planner_initialization": {
+        "event": "planner_initialized",
+        "time_unix": 1791967826.2724547,
+        "backend": "v2",
+        "elapsed_seconds": 6.4268542289999,
+        "allocated_before_bytes": 389632,
+        "allocated_after_bytes": 16002048,
+        "reserved_after_bytes": 29360128,
+        "profile": {
+          "num_trajopt_seeds": 2,
+          "num_graph_seeds": 4,
+          "trajopt_tsteps": 20,
+          "interpolation_dt": 0.05,
+          "enable_graph": false,
+          "max_planning_attempts": 2,
+          "position_threshold": 0.005,
+          "rotation_threshold": 0.05,
+          "collision_activation_distance": 0.0,
+          "motion_step_size": 0.005,
+          "n_repeat": 10
+        }
+      },
+      "runtime": {
+        "event": "runtime",
+        "time_unix": 1791967815.1324165,
+        "backend": "v2",
+        "curobo_version": "0.8.0.dev0+g78fd485",
+        "torch_version": "2.11.0",
+        "cuda_version": "13.0",
+        "gpu_name": "NVIDIA GeForce RTX 5090",
+        "pid": 21625,
+        "curobo_source_alias": "pinned_v2_source",
+        "planner_source_alias": "code/v2_planner.py"
+      },
+      "backend_configuration": {
+        "event": "backend_configuration",
+        "time_unix": 1791967826.2720957,
+        "backend": "v2",
+        "control_space": "BSPLINE_3",
+        "random_seed": 1531,
+        "n_knots": 16,
+        "rollout_horizon": 81,
+        "interpolation_steps": 4,
+        "num_ik_seeds": 32,
+        "num_trajopt_seeds": 2,
+        "finetune_enabled": false,
+        "use_cuda_graph": true,
+        "graph_enabled": false,
+        "active_joint_names": [
+          "openarm_left_joint1",
+          "openarm_left_joint2",
+          "openarm_left_joint3",
+          "openarm_left_joint4",
+          "openarm_left_joint5",
+          "openarm_left_joint6",
+          "openarm_left_joint7"
+        ],
+        "scene_obstacles": [
+          {
+            "name": "/World/envs/env_0/Table/Geometry",
+            "kind": "Mesh"
+          },
+          {
+            "name": "/World/envs/env_0/Cube/BlueCube/BlueCubeMesh",
+            "kind": "Mesh"
+          }
+        ]
+      },
+      "initial_states": [
+        {
+          "event": "episode_reset",
+          "time_unix": 1791967826.3581922,
+          "backend": "v2",
+          "episode_index": 0,
+          "seed": 101,
+          "object_poses": {
+            "table": [
+              [
+                [
+                  5.960464477539063e-08,
+                  -0.9999999403953552,
+                  0.0,
+                  0.75
+                ],
+                [
+                  0.9999999403953552,
+                  5.960464477539063e-08,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0,
+                  0.5400000214576721
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ]
+            ],
+            "cube": [
+              [
+                [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.5455291271209717
+                ],
+                [
+                  0.0,
+                  1.0,
+                  0.0,
+                  0.06856217980384827
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0809999704360962
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ]
+            ]
+          },
+          "joint_positions": [
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.5,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.699999988079071,
+              0.699999988079071,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "event": "episode_reset",
+          "time_unix": 1791968028.1878366,
+          "backend": "v2",
+          "episode_index": 1,
+          "seed": 102,
+          "object_poses": {
+            "table": [
+              [
+                [
+                  5.960464477539063e-08,
+                  -0.9999999403953552,
+                  0.0,
+                  0.75
+                ],
+                [
+                  0.9999999403953552,
+                  5.960464477539063e-08,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0,
+                  0.5400000214576721
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ]
+            ],
+            "cube": [
+              [
+                [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.5579710006713867
+                ],
+                [
+                  0.0,
+                  1.0,
+                  0.0,
+                  0.061696819961071014
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0809999704360962
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ]
+            ]
+          },
+          "joint_positions": [
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.5,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.699999988079071,
+              0.699999988079071,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "event": "episode_reset",
+          "time_unix": 1791968198.3320065,
+          "backend": "v2",
+          "episode_index": 2,
+          "seed": 103,
+          "object_poses": {
+            "table": [
+              [
+                [
+                  5.960464477539063e-08,
+                  -0.9999999403953552,
+                  0.0,
+                  0.75
+                ],
+                [
+                  0.9999999403953552,
+                  5.960464477539063e-08,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0,
+                  0.5400000214576721
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ]
+            ],
+            "cube": [
+              [
+                [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.49201858043670654
+                ],
+                [
+                  0.0,
+                  1.0,
+                  0.0,
+                  0.17662332952022552
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0809999704360962
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ]
+            ]
+          },
+          "joint_positions": [
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.5,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.699999988079071,
+              0.699999988079071,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "event": "episode_reset",
+          "time_unix": 1791968388.1047544,
+          "backend": "v2",
+          "episode_index": 3,
+          "seed": 104,
+          "object_poses": {
+            "table": [
+              [
+                [
+                  5.960464477539063e-08,
+                  -0.9999999403953552,
+                  0.0,
+                  0.75
+                ],
+                [
+                  0.9999999403953552,
+                  5.960464477539063e-08,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0,
+                  0.5400000214576721
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ]
+            ],
+            "cube": [
+              [
+                [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.5183919668197632
+                ],
+                [
+                  0.0,
+                  1.0,
+                  0.0,
+                  0.1505347341299057
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0809999704360962
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ]
+            ]
+          },
+          "joint_positions": [
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.5,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.699999988079071,
+              0.699999988079071,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "event": "episode_reset",
+          "time_unix": 1791968574.4358468,
+          "backend": "v2",
+          "episode_index": 4,
+          "seed": 105,
+          "object_poses": {
+            "table": [
+              [
+                [
+                  5.960464477539063e-08,
+                  -0.9999999403953552,
+                  0.0,
+                  0.75
+                ],
+                [
+                  0.9999999403953552,
+                  5.960464477539063e-08,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0,
+                  0.5400000214576721
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ]
+            ],
+            "cube": [
+              [
+                [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.5696840882301331
+                ],
+                [
+                  0.0,
+                  1.0,
+                  0.0,
+                  0.07649120688438416
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0809999704360962
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ]
+            ]
+          },
+          "joint_positions": [
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.5,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.699999988079071,
+              0.699999988079071,
+              0.0,
+              0.0
+            ]
+          ]
+        }
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 949.1009523868561
+    }
+  ],
+  "initial_state_pairs": [
+    {
+      "seed": 101,
+      "object_matrix_max_absolute_error": 0.0,
+      "joint_max_absolute_error": 0.0,
+      "matched": true
+    },
+    {
+      "seed": 102,
+      "object_matrix_max_absolute_error": 0.0,
+      "joint_max_absolute_error": 0.0,
+      "matched": true
+    },
+    {
+      "seed": 103,
+      "object_matrix_max_absolute_error": 0.0,
+      "joint_max_absolute_error": 0.0,
+      "matched": true
+    },
+    {
+      "seed": 104,
+      "object_matrix_max_absolute_error": 0.0,
+      "joint_max_absolute_error": 0.0,
+      "matched": true
+    },
+    {
+      "seed": 105,
+      "object_matrix_max_absolute_error": 0.0,
+      "joint_max_absolute_error": 0.0,
+      "matched": true
+    }
+  ],
+  "paired_initial_states_match": true
+}

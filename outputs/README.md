@@ -17,6 +17,7 @@
 | AutoData v1 内部耗时对照 | 当前 | v001 · 1 版 · 491 KB | [v001](autodata-v1-internal-timing/v001/index.html) | 2026-10-15 真实 GPU 配对实验：4 环境、同步与 auto 导出各 8/8 成功，8 组动作序列精确匹配；最终文件吞吐提升 47.2% | 本地保存，未上传或发布 |
 | cuRobo v2 升级评估 | 当前 | v001 · 1 版 · 27 KB | [v001](curobo-v2-upgrade-assessment/v001/report.md) | 历史 v1/v2 单环境验证；样本不足以证明总体成功率或性能优劣，v2 保留实验后端 | 本地版本归档，未上传飞书或 ChatGPT |
 | 具身数据生产实验总览 | 当前 | v005 · 5 版 · 9.7 MB | [v005](embodied-experiment-portfolio/v005/report.md) | 18 组实验与检查，每组一图；新增 LeRobot v3 转换、相机审计、8 环境隔离导出、24 环境内存准入；正文 192 行 | 本地保存，未发布站点 |
+| 具身数据生产实验图册 | 当前 | v001 · 1 版 · 4.7 MB | [v001](experiment-chartbook/v001/index.html) | 19 张图、20 页 PDF 与 157 行指标；复用 14 张原图，另 5 张由已保存记录派生。区分任务、帧与资源快照口径；保留右腕近黑与 24 环境准入阻塞。未新增仿真或训练。 | 本地封存并随 Git 同步，未发布站点 |
 | Arena OpenArm 评测示例 | 当前 | v002 · 2 版 · 1.4 MB | [v002](openarm-benchmark/v002/index.html) | v002 含零动作/固定轨迹的 GPU 实测、原生评估视频与主机测试；并行环境判定分开记录 | 本地版本归档，未新增双端交付 |
 | cuRobo v2 抓取诊断 | 支撑材料 | v001 · 1 版 · 230 KB | [v001](curobo-v2-grasp-diagnosis/v001/report.md) | v2 抓取失败的定位记录，作为升级评估的佐证 | 本地版本归档，未上传飞书或 ChatGPT |
 | cuRobo v2 OpenArm 尝试对照 | 支撑材料 | v001 · 1 版 · 207 KB | [v001](curobo-v2-openarm-mvp/v001/report.md) | 5 次尝试的单环境对照，样本不足以证明总体成功率或性能优劣 | 本地版本归档，未上传飞书或 ChatGPT |
