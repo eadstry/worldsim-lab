@@ -5,6 +5,8 @@
 | 主题 | 入口 | 内容 |
 | --- | --- | --- |
 | AutoData | [资料与阅读顺序](autodata/README.md) | 原理、数据流、随机化可视化及博客正文来源 |
+| AutoData 多本体数据（2026-10-22） | [入口](autodata/autodata-multirobot-v3-20261022.md) | 36 条原生末端抓取/排序数据的格式、参数、来源与运行验收 |
+| AutoData 多本体素材（2026-10-22） | [入口](autodata/autodata-multirobot-v3-gallery-20261022.html) | 本地高清 MP4、夹持/终态静帧和域随机化素材选择 |
 | Arena 与共用配置 | [成果索引](../outputs/README.md) | 示例运行说明、RoboLab 配置、AutoData/Arena 共用配置建议 |
 | 运行环境 | [环境配置](environment-setup.md) | 主机、仓库、容器与原生环境、机器本地参数及验收顺序 |
 | 主机环境 | [存储挂载记录](host-storage.md) | `/data` 挂载容量及截图中的存储信息 |
