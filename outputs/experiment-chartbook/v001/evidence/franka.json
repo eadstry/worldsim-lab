@@ -1,0 +1,515 @@
+{
+  "cells": [
+    {
+      "method": "ik",
+      "obstacle": false,
+      "planned": 3,
+      "completed": 3,
+      "task_successes": 3,
+      "collision_free_successes": 3,
+      "task_success_fraction": 1.0,
+      "collision_free_fraction": 1.0,
+      "mean_planning_s": null,
+      "mean_initialization_s": 0.0,
+      "mean_sim_seconds": 20.0,
+      "mean_process_wall_s": 63.664681209348295,
+      "peak_blocker_contact_n": 0.0
+    },
+    {
+      "method": "curobo",
+      "obstacle": false,
+      "planned": 3,
+      "completed": 3,
+      "task_successes": 3,
+      "collision_free_successes": 3,
+      "task_success_fraction": 1.0,
+      "collision_free_fraction": 1.0,
+      "mean_planning_s": 0.10779303948705395,
+      "mean_initialization_s": 2.69221166401015,
+      "mean_sim_seconds": 20.0,
+      "mean_process_wall_s": 67.11704979367398,
+      "peak_blocker_contact_n": 0.0
+    },
+    {
+      "method": "ik",
+      "obstacle": true,
+      "planned": 3,
+      "completed": 3,
+      "task_successes": 0,
+      "collision_free_successes": 0,
+      "task_success_fraction": 0.0,
+      "collision_free_fraction": 0.0,
+      "mean_planning_s": null,
+      "mean_initialization_s": 0.0,
+      "mean_sim_seconds": 20.0,
+      "mean_process_wall_s": 63.08202075267521,
+      "peak_blocker_contact_n": 381.7936096191406
+    },
+    {
+      "method": "curobo",
+      "obstacle": true,
+      "planned": 3,
+      "completed": 3,
+      "task_successes": 3,
+      "collision_free_successes": 3,
+      "task_success_fraction": 1.0,
+      "collision_free_fraction": 1.0,
+      "mean_planning_s": 0.11362391300887491,
+      "mean_initialization_s": 2.6745239213341847,
+      "mean_sim_seconds": 20.0,
+      "mean_process_wall_s": 68.96053647601123,
+      "peak_blocker_contact_n": 0.0
+    }
+  ],
+  "paired_initial_states_verified": true,
+  "trial_pick_xy": [
+    [
+      0.5,
+      0.0
+    ],
+    [
+      0.49,
+      0.01
+    ],
+    [
+      0.51,
+      -0.01
+    ]
+  ],
+  "target_xy": [
+    0.5,
+    -0.3
+  ],
+  "obstacle_center": [
+    0.5,
+    -0.15,
+    0.16
+  ],
+  "obstacle_dimensions": [
+    0.16,
+    0.04,
+    0.32
+  ],
+  "runtime_source_sha256": {
+    "capture.py": "6d85b4cddfd18a20d25b32255f151b6807008ad1eb76f1aa47d9fc87c7948d25",
+    "metrics.py": "bed0ab5e5d06851263a7e29ec6839b86b84da1bf7a9a28b2d067a5782c0971b5",
+    "planner_worker.py": "e29f92f1c554d2e63d2388996d1073c84b16bb8a026722ad4c8df4c264ef8a35",
+    "planner_client.py": "591c9c16d725e1fcf6a1ac54f80d2ed96394a1b454ff617f902b5af8e00ce64b",
+    "run.sh": "0d48618775e07e952d5d6a6e451f80492bd95f62d2196b23bd713bbd5e8741b3",
+    "experiment.py": "50f74d6d1d3539a1820d186f60f86eb32a27c43075c4870b6bd58d78e53ffc5d"
+  },
+  "case_evidence": {
+    "ik-clear-t0": {
+      "task_success": true,
+      "collision_free_success": true,
+      "lift_m": 0.22515073418617249,
+      "actual_fingers_open": true,
+      "tool_withdrawn": true,
+      "peak_blocker_contact_n": 0.0,
+      "dataset_sha256": "137b85e3346defe8e478088918b6fbc11fe558c167bfb0f84c2794dfb901060e",
+      "videos": {
+        "overview": {
+          "frames": 1000,
+          "size": [
+            960,
+            540
+          ],
+          "fps": 50.0,
+          "sha256": "808acf1ccb903d6df3563d440850fcffb49c49cfd90346562802987b5bc9e3dd"
+        },
+        "detail": {
+          "frames": 1000,
+          "size": [
+            640,
+            480
+          ],
+          "fps": 50.0,
+          "sha256": "b2bf7bd5f3736ae92002ea2c392d9d38e38c89ba12076090b66000b16592473f"
+        }
+      }
+    },
+    "curobo-blocked-t0": {
+      "task_success": true,
+      "collision_free_success": true,
+      "lift_m": 0.3465311527252197,
+      "actual_fingers_open": true,
+      "tool_withdrawn": true,
+      "peak_blocker_contact_n": 0.0,
+      "dataset_sha256": "b96a04c0149d287ea46cf63d5a47488cc4feb76f3dfb420625b4f46a295030ad",
+      "videos": {
+        "overview": {
+          "frames": 1000,
+          "size": [
+            960,
+            540
+          ],
+          "fps": 50.0,
+          "sha256": "07a4465fa7cc8cb3b989d66c9585514108e91372668c450d5cc1da2714baa353"
+        },
+        "detail": {
+          "frames": 1000,
+          "size": [
+            640,
+            480
+          ],
+          "fps": 50.0,
+          "sha256": "c3869247dbf60441ec974a3499387555f16fe0f0f2c66982c59c9ed5e35b3a3a"
+        }
+      }
+    },
+    "ik-blocked-t0": {
+      "task_success": false,
+      "collision_free_success": false,
+      "lift_m": 0.22623629868030548,
+      "actual_fingers_open": true,
+      "tool_withdrawn": true,
+      "peak_blocker_contact_n": 355.7034912109375,
+      "dataset_sha256": "1d2960171d1e8d64a85e173f5dcca2fbe02d776355fd4abcfefac6e75c3f2001",
+      "videos": {
+        "overview": {
+          "frames": 1000,
+          "size": [
+            960,
+            540
+          ],
+          "fps": 50.0,
+          "sha256": "ede72ede93246909641cf328e26d04b7013d685322790c7c0e62ff24c7d610c2"
+        },
+        "detail": {
+          "frames": 1000,
+          "size": [
+            640,
+            480
+          ],
+          "fps": 50.0,
+          "sha256": "df9e2fe383641e8ffe5aa38f842f96989f654b6324886afe4839db1a624a8763"
+        }
+      }
+    },
+    "curobo-clear-t0": {
+      "task_success": true,
+      "collision_free_success": true,
+      "lift_m": 0.22665169835090637,
+      "actual_fingers_open": true,
+      "tool_withdrawn": true,
+      "peak_blocker_contact_n": 0.0,
+      "dataset_sha256": "146d088618cf47be27ee5cb7e658a369540698eddfcc6faf0a30b8c9afa9e2ea",
+      "videos": {
+        "overview": {
+          "frames": 1000,
+          "size": [
+            960,
+            540
+          ],
+          "fps": 50.0,
+          "sha256": "920af7d2b3036556eb8472395c639bc658fe285a23a5dea6d46b9f7a30d24d19"
+        },
+        "detail": {
+          "frames": 1000,
+          "size": [
+            640,
+            480
+          ],
+          "fps": 50.0,
+          "sha256": "e02291953c5412b0de42d4cc075ecac056b38a0dbf4454277ceb74bf4fa70f4f"
+        }
+      }
+    },
+    "curobo-clear-t1": {
+      "task_success": true,
+      "collision_free_success": true,
+      "lift_m": 0.22768534719944,
+      "actual_fingers_open": true,
+      "tool_withdrawn": true,
+      "peak_blocker_contact_n": 0.0,
+      "dataset_sha256": "522de639b707d07631a096549c67a99c1fd49dae388fac10360370a06f65f31d",
+      "videos": {
+        "overview": {
+          "frames": 1000,
+          "size": [
+            960,
+            540
+          ],
+          "fps": 50.0,
+          "sha256": "db6bb6b00d944b9badc72d53b382e1ff363bba407d95a91727be00ad380073ea"
+        },
+        "detail": {
+          "frames": 1000,
+          "size": [
+            640,
+            480
+          ],
+          "fps": 50.0,
+          "sha256": "9fd44d99810103d4a5b9d19383d382b9aa94ad6e2cfc492fce537ce37a591684"
+        }
+      }
+    },
+    "ik-blocked-t1": {
+      "task_success": false,
+      "collision_free_success": false,
+      "lift_m": 0.2258293330669403,
+      "actual_fingers_open": true,
+      "tool_withdrawn": true,
+      "peak_blocker_contact_n": 381.7936096191406,
+      "dataset_sha256": "410bc4bfd9c34bd4659c066f3f1f2ba22f5430aac847ded10441e9d685df305e",
+      "videos": {
+        "overview": {
+          "frames": 1000,
+          "size": [
+            960,
+            540
+          ],
+          "fps": 50.0,
+          "sha256": "b587ee273a8a2b6ef4e99cd4a72cd529675323b982dc6099d7210230f2aa5eb5"
+        },
+        "detail": {
+          "frames": 1000,
+          "size": [
+            640,
+            480
+          ],
+          "fps": 50.0,
+          "sha256": "3038c81d7e9a1430b34a8f3bc0563f8a1823b40a8e9e6c0416bd285d104f9af9"
+        }
+      }
+    },
+    "curobo-blocked-t1": {
+      "task_success": true,
+      "collision_free_success": true,
+      "lift_m": 0.3467186689376831,
+      "actual_fingers_open": true,
+      "tool_withdrawn": true,
+      "peak_blocker_contact_n": 0.0,
+      "dataset_sha256": "5b743b06f60b97a2e044c788b260b06cebf83603074d4c225e54c458593073e3",
+      "videos": {
+        "overview": {
+          "frames": 1000,
+          "size": [
+            960,
+            540
+          ],
+          "fps": 50.0,
+          "sha256": "4e396f38eeb6788e9d1d8c38b68db4bb3d8ffe90f83dd1f12f9591b175faae7a"
+        },
+        "detail": {
+          "frames": 1000,
+          "size": [
+            640,
+            480
+          ],
+          "fps": 50.0,
+          "sha256": "fb949824bc3976a4d64bc8052f7486bd635905fe4149bf4e204d0b4a318e1b88"
+        }
+      }
+    },
+    "ik-clear-t1": {
+      "task_success": true,
+      "collision_free_success": true,
+      "lift_m": 0.22524669766426086,
+      "actual_fingers_open": true,
+      "tool_withdrawn": true,
+      "peak_blocker_contact_n": 0.0,
+      "dataset_sha256": "2bfa8a0bb1a0594fd6cc7d41d9428d70a9803eb09b4ad8d3fd8a99f6a91987b9",
+      "videos": {
+        "overview": {
+          "frames": 1000,
+          "size": [
+            960,
+            540
+          ],
+          "fps": 50.0,
+          "sha256": "d7918be98144c4e4412b10ca4a7f91f61e3b990756beb5f771b6c47c0771f9d5"
+        },
+        "detail": {
+          "frames": 1000,
+          "size": [
+            640,
+            480
+          ],
+          "fps": 50.0,
+          "sha256": "9d3537e7db056836b2408cf8bf06f9c917d096e7a906f7814ee4c4cb250a6195"
+        }
+      }
+    },
+    "ik-clear-t2": {
+      "task_success": true,
+      "collision_free_success": true,
+      "lift_m": 0.22524264454841614,
+      "actual_fingers_open": true,
+      "tool_withdrawn": true,
+      "peak_blocker_contact_n": 0.0,
+      "dataset_sha256": "c8833c491ac0127073434a478916491edf4540965937c0a5c1ed0b55fea3ee44",
+      "videos": {
+        "overview": {
+          "frames": 1000,
+          "size": [
+            960,
+            540
+          ],
+          "fps": 50.0,
+          "sha256": "37f281a34473d9668ef0d97b201aa541207f4db8f972d44db4f1e12a1d5dcbae"
+        },
+        "detail": {
+          "frames": 1000,
+          "size": [
+            640,
+            480
+          ],
+          "fps": 50.0,
+          "sha256": "c3a66f26b65411874cbac96eace4746def02f9345427b6d25d12a4a31e57deee"
+        }
+      }
+    },
+    "curobo-blocked-t2": {
+      "task_success": true,
+      "collision_free_success": true,
+      "lift_m": 0.3775007426738739,
+      "actual_fingers_open": true,
+      "tool_withdrawn": true,
+      "peak_blocker_contact_n": 0.0,
+      "dataset_sha256": "be4ca5a3efa5e24af85674d02aae162a4ed326faae388b109de3916e81bed993",
+      "videos": {
+        "overview": {
+          "frames": 1000,
+          "size": [
+            960,
+            540
+          ],
+          "fps": 50.0,
+          "sha256": "e5f1618eb440bf0e524bff639cd4c781d0d7a8ce35d5b8d89c06e46142f1bd3a"
+        },
+        "detail": {
+          "frames": 1000,
+          "size": [
+            640,
+            480
+          ],
+          "fps": 50.0,
+          "sha256": "71b66bd7fedc192cb571b4a27e6bdf4cc5b6c48dea513800668d46fe9427fd24"
+        }
+      }
+    },
+    "ik-blocked-t2": {
+      "task_success": false,
+      "collision_free_success": false,
+      "lift_m": 0.22695818543434143,
+      "actual_fingers_open": true,
+      "tool_withdrawn": true,
+      "peak_blocker_contact_n": 322.7286376953125,
+      "dataset_sha256": "46e274d17d942563cd7847d7a3e8b6adc8e49a11131a36fd54fa6a593169e322",
+      "videos": {
+        "overview": {
+          "frames": 1000,
+          "size": [
+            960,
+            540
+          ],
+          "fps": 50.0,
+          "sha256": "01fa0fc2b4822370aebf87d6c872e60e629fa8f3d58c470590b6e8de47c9c30f"
+        },
+        "detail": {
+          "frames": 1000,
+          "size": [
+            640,
+            480
+          ],
+          "fps": 50.0,
+          "sha256": "dd6c83cd6b8b4d5f7477a6fa922aa80f9e5ca6b1f462db12481ee398a64fc11e"
+        }
+      }
+    },
+    "curobo-clear-t2": {
+      "task_success": true,
+      "collision_free_success": true,
+      "lift_m": 0.22691673040390015,
+      "actual_fingers_open": true,
+      "tool_withdrawn": true,
+      "peak_blocker_contact_n": 0.0,
+      "dataset_sha256": "6c6fe21e34e188b5c4d3199ed45fa435d22b8c4dcb147759fb41cbeb790f3487",
+      "videos": {
+        "overview": {
+          "frames": 1000,
+          "size": [
+            960,
+            540
+          ],
+          "fps": 50.0,
+          "sha256": "a93d93840365f28c229cffa282572e3e34d2802e3671a72ca87c64c8203d9f95"
+        },
+        "detail": {
+          "frames": 1000,
+          "size": [
+            640,
+            480
+          ],
+          "fps": 50.0,
+          "sha256": "040440f226a0db11192d44b029107175195e7155f88030d918ff0f4b1e2a84a5"
+        }
+      }
+    }
+  },
+  "limitations": [
+    "Three fixed paired states, not a population success-rate estimate",
+    "cuRobo uses local floor/table/blocker proxies; full home mesh is not imported into the planner",
+    "Obstacle contact criterion is >=1 N; it does not certify absence of every possible self/table contact",
+    "Each independent cuRobo worker is initialized/warmed, then makes its first actual attached-object requests",
+    "Physics is simulated; no real robot evaluation or learned policy inference"
+  ],
+  "runtime": {
+    "gpu": "NVIDIA GeForce RTX 5090, 595.91.07, 32607 MiB",
+    "simulation": {
+      "isaacsim": "6.1.0.0",
+      "isaaclab": "16.4.0",
+      "torch": "2.11.0+cu128",
+      "h5py": "3.16.0"
+    },
+    "planner": {
+      "versions": {
+        "nvidia-curobo": "0.0.post1.dev1",
+        "torch": "2.11.0"
+      },
+      "curobo_file": "/home/tangyuan/miniconda3/envs/autodata/lib/python3.12/site-packages/curobo/__init__.py"
+    },
+    "planner_model_sha256": {
+      "/home/tangyuan/miniconda3/envs/autodata/lib/python3.12/site-packages/curobo/content/configs/robot/franka.yml": "c809e9c1d044c8cf98d888552fb55739077419fb3568d5e696242cdecb457430",
+      "/home/tangyuan/miniconda3/envs/autodata/lib/python3.12/site-packages/curobo/content/configs/robot/spheres/franka_mesh.yml": "6e3e032a01cc0904b115d24953b2b55d0a91e79d6965b8f0bc224ad2591dec83",
+      "/home/tangyuan/miniconda3/envs/autodata/lib/python3.12/site-packages/curobo/content/assets/robot/franka_description/franka_panda.urdf": "6a0044e6e72ee667927f17d1871ec3e2615a8bc5fe978882fc909e4094667967",
+      "/home/tangyuan/miniconda3/envs/autodata/lib/python3.12/site-packages/curobo/wrap/reacher/motion_gen.py": "348ee2fa858b1d651a70fa2b2b5a5d4e240ea724b7817d7769473c3f7a7e46e8"
+    },
+    "original_scene": {
+      "repository": "Yootta/World-SimReady-Home-mini",
+      "revision": "f2c633749e7fdf3f981dfd1dd83fc253786713ac",
+      "home": "/home/tangyuan/WorldSimReady-Home/.worktrees/g1-home-scene-20261017/runs/home-input/scene/scene000430/scene000430.usdz",
+      "home_sha256": "d38ebd9e8312c46125bee1412c3a45933c245b890ea081c307fcfc4e37814ee6",
+      "layer": "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/runs/prepared/home-franka.usda",
+      "layer_sha256": "be2ad3c4c96c988e9d3d5c9ae6e798ef870a2d406c7e5f987ac1326da71c6519",
+      "translation": [
+        -22.35,
+        4.75,
+        -0.75
+      ],
+      "native_tabletop_z": 0.0,
+      "native_floor_z": -0.75,
+      "task_surface": "original diningTable002/mesh059; original collisions retained",
+      "removed": [
+        "/HomeTask/Home/livingRoom1/livingRoom1_diningtable_1587793_yflib019/ornament_1441482",
+        "/HomeTask/Home/livingRoom1/livingRoom1_diningtable_1587793_yflib019/ornament_1437192",
+        "/HomeTask/Home/livingRoom1/livingRoom1_diningtable_1587793_yflib019/ornament_1433619",
+        "/HomeTask/Home/livingRoom1/livingRoom1_diningtable_1587793_yflib019/lib_1587793/diningChair005",
+        "/HomeTask/Home/livingRoom1/livingRoom1_diningtable_1587793_yflib019/lib_1587793/diningChair006",
+        "/HomeTask/Home/livingRoom1/livingRoom1_diningtable_1587793_yflib019/lib_1587793/diningChair007",
+        "/HomeTask/Home/livingRoom1/livingRoom1_diningtable_1587793_yflib019/lib_1587793/diningChair008"
+      ],
+      "household_physics": "static collision; unrelated joints disabled",
+      "frozen_bodies": 501,
+      "disabled_joints": 120,
+      "disabled_lights": 278
+    },
+    "all_case_gpu_preflight_empty": true
+  },
+  "comparison_video": {
+    "frames": 1000,
+    "fps": 50,
+    "padding": "shorter cases hold their final frame; original videos remain unmodified"
+  }
+}

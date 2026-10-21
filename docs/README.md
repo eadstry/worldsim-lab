@@ -21,3 +21,12 @@
 [2026-10-15 Codex 分析整合检查记录](experimental-analysis-20261015.md)列出合并来源、验证范围及未纳入的进行中工作。
 
 [自动版本提交与审查](automatic-version-review.md)：任务基线、提交回执、共享钩子和 GitHub 主机检查。
+
+## 2026-10-20 新增准备材料
+
+- [GPU 高负载实验计划](experiment-plan-gpu-utilization-20261020.md)：待执行设计，尚无负载矩阵结果。
+- [OpenArm 24 环境资源预检](../workspace-overlays/openarm-capability24/README.md)：资源准入工具，不等于仿真验收。
+- [源码与草稿同步清单](github-sync-20261020.json)：原始快照来源及集成适配记录。
+- [OpenArm 图像与隔离导出诊断](experiments/openarm-readiness-20261020.md)：历史运行结果及证据边界。
+- [实验图册](../outputs/experiment-chartbook/v001/report.md)：19 张图、原始记录、指标索引与 PDF。
+- [最新改动集成记录](main-integration-20261020.md)：迁移来源、适配和检查范围。
