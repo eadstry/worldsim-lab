@@ -14,6 +14,7 @@
 | AutoData 域随机化方法总览 | 当前 | v001 · 1 版 · 97 KB | [v001](autodata-domain-randomization-catalog/v001/catalog.json) | 45 类方法，附参数、源码入口与接入限制；源码清点和原理示意，未新增 GPU 实验；HTML 为嵌入式片段 | 本地归档并随 Git 同步，未发布站点 |
 | AutoData 效率复盘图册 | 当前 | v022 · 1 版 · 15.0 MB | [v022](autodata-efficiency-review/v022/charts.html) | v022 含 51 页图册、项目架构说明与 cuRobo v1/v2 对比；逐页补充方法、意义、结论与术语；本版仅改善阅读，无新增优化实测 | 本地交付并随 Git 同步 |
 | AutoData 全流程文章 | 当前 | v003 · 3 版 · 4.6 MB | [v003](autodata-guide/v003/index.html) | 文章及飞书排版快照；没有新增仿真实验 | 飞书记录为 verified；GPT 为 blocked_destination |
+| AutoData 面试展示素材与 G1-D RGB 任务 | 当前 | v001 · 1 版 · 163.9 MB | [v001](autodata-interview-media/v001/index.html) | 67 视频、68 图片；新增 33 视频；mini 家居抓取与 RGB 排序、域随机化、图像增强及背景合成；G1-D 使用改装平行夹爪 | 本地媒体 ZIP 与官方模型 ZIP；未发布站点或上传研究平台 |
 | AutoData v1 内部耗时对照 | 当前 | v001 · 1 版 · 491 KB | [v001](autodata-v1-internal-timing/v001/index.html) | 2026-10-15 真实 GPU 配对实验：4 环境、同步与 auto 导出各 8/8 成功，8 组动作序列精确匹配；最终文件吞吐提升 47.2% | 本地保存，未上传或发布 |
 | cuRobo v2 升级评估 | 当前 | v001 · 1 版 · 27 KB | [v001](curobo-v2-upgrade-assessment/v001/report.md) | 历史 v1/v2 单环境验证；样本不足以证明总体成功率或性能优劣，v2 保留实验后端 | 本地版本归档，未上传飞书或 ChatGPT |
 | 具身数据生产实验总览 | 当前 | v005 · 5 版 · 9.7 MB | [v005](embodied-experiment-portfolio/v005/report.md) | 18 组实验与检查，每组一图；新增 LeRobot v3 转换、相机审计、8 环境隔离导出、24 环境内存准入；正文 192 行 | 本地保存，未发布站点 |

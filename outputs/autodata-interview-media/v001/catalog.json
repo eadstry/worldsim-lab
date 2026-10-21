@@ -1,0 +1,2715 @@
+[
+  {
+    "id": "N019",
+    "path": "10_g1d/g1d-final-detail.mp4",
+    "title": "G1-D RGB 颜色排序 · 近景 · 讲解版",
+    "category": "10_g1d",
+    "evidence": "官方 G1-D + 改装夹爪物理仿真渲染",
+    "scope": "原生 Dex3 抓取尝试未通过；本视频使用新增平行夹爪，固定底座、理想重力补偿",
+    "recommend": 1,
+    "source": [
+      "runs/interview-media/g1d-polished-detail/render.json"
+    ],
+    "sha256": "a418066c7834cd0651657a561e9fd65710523f477db83f8e786dd8b0bc6d6206",
+    "bytes": 1843028,
+    "type": "video",
+    "poster": "posters/N019.jpg",
+    "frames": 891,
+    "fps": 30.0,
+    "seconds": 29.7,
+    "size": [
+      1280,
+      720
+    ],
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "id": "N020",
+    "path": "10_g1d/g1d-final-grasp.mp4",
+    "title": "G1-D 单方块抓取 · 全景 · 讲解版",
+    "category": "10_g1d",
+    "evidence": "官方 G1-D + 改装夹爪物理仿真渲染",
+    "scope": "原生 Dex3 抓取尝试未通过；本视频使用新增平行夹爪，固定底座、理想重力补偿",
+    "recommend": 1,
+    "source": [
+      "runs/interview-media/g1d-polished-grasp/render.json"
+    ],
+    "sha256": "0281da060637714bd0e4b4abf476445c7247b377c53ac9443e3391ee288eaa17",
+    "bytes": 490388,
+    "type": "video",
+    "poster": "posters/N020.jpg",
+    "frames": 333,
+    "fps": 30.0,
+    "seconds": 11.1,
+    "size": [
+      1280,
+      720
+    ],
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "id": "N021",
+    "path": "10_g1d/g1d-final-side.mp4",
+    "title": "G1-D RGB 颜色排序 · 侧面 · 讲解版",
+    "category": "10_g1d",
+    "evidence": "官方 G1-D + 改装夹爪物理仿真渲染",
+    "scope": "原生 Dex3 抓取尝试未通过；本视频使用新增平行夹爪，固定底座、理想重力补偿",
+    "recommend": 1,
+    "source": [
+      "runs/interview-media/g1d-polished-side/render.json"
+    ],
+    "sha256": "1317263446c54cf56d6eaed77bcdb53f345280942f1cf049271ad4eae6e05249",
+    "bytes": 1364847,
+    "type": "video",
+    "poster": "posters/N021.jpg",
+    "frames": 891,
+    "fps": 30.0,
+    "seconds": 29.7,
+    "size": [
+      1280,
+      720
+    ],
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "id": "N022",
+    "path": "10_g1d/g1d-final-wide.mp4",
+    "title": "G1-D RGB 颜色排序 · 全景 · 讲解版",
+    "category": "10_g1d",
+    "evidence": "官方 G1-D + 改装夹爪物理仿真渲染",
+    "scope": "原生 Dex3 抓取尝试未通过；本视频使用新增平行夹爪，固定底座、理想重力补偿",
+    "recommend": 1,
+    "source": [
+      "runs/interview-media/g1d-polished-wide/render.json"
+    ],
+    "sha256": "4140447e0a9341b520471ba2eded751a4fb46407a1d6bad7a30bdfd7e2b5ea0d",
+    "bytes": 1077631,
+    "type": "video",
+    "poster": "posters/N022.jpg",
+    "frames": 891,
+    "fps": 30.0,
+    "seconds": 29.7,
+    "size": [
+      1280,
+      720
+    ],
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "id": "N028",
+    "path": "10_g1d/g1d-adapted-gripper-wide_clean.mp4",
+    "title": "G1-D RGB 颜色排序 · 全景 · 无字幕版",
+    "category": "10_g1d",
+    "evidence": "官方 G1-D + 改装夹爪物理仿真渲染",
+    "scope": "原生 Dex3 抓取尝试未通过；本视频使用新增平行夹爪，固定底座、理想重力补偿；无字幕仅省略画面文字，证据范围相同",
+    "recommend": 1,
+    "source": [
+      "runs/interview-media/g1d-polished-wide/render.json"
+    ],
+    "sha256": "cd7c18a24d7092a75add719dc647186e0d43a21c4283e0eeb12eff769af6f238",
+    "bytes": 1118122,
+    "type": "video",
+    "poster": "posters/N028.jpg",
+    "frames": 891,
+    "fps": 30.0,
+    "seconds": 29.7,
+    "size": [
+      1280,
+      720
+    ],
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "id": "N029",
+    "path": "10_g1d/g1d-adapted-gripper-detail_clean.mp4",
+    "title": "G1-D RGB 颜色排序 · 近景 · 无字幕版",
+    "category": "10_g1d",
+    "evidence": "官方 G1-D + 改装夹爪物理仿真渲染",
+    "scope": "原生 Dex3 抓取尝试未通过；本视频使用新增平行夹爪，固定底座、理想重力补偿；无字幕仅省略画面文字，证据范围相同",
+    "recommend": 1,
+    "source": [
+      "runs/interview-media/g1d-polished-detail/render.json"
+    ],
+    "sha256": "6393d30687506c0787b964305b60c19b257fb387b70ea561406383943e3f8a9d",
+    "bytes": 1973452,
+    "type": "video",
+    "poster": "posters/N029.jpg",
+    "frames": 891,
+    "fps": 30.0,
+    "seconds": 29.7,
+    "size": [
+      1280,
+      720
+    ],
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "id": "N030",
+    "path": "10_g1d/g1d-adapted-gripper-side_clean.mp4",
+    "title": "G1-D RGB 颜色排序 · 侧面 · 无字幕版",
+    "category": "10_g1d",
+    "evidence": "官方 G1-D + 改装夹爪物理仿真渲染",
+    "scope": "原生 Dex3 抓取尝试未通过；本视频使用新增平行夹爪，固定底座、理想重力补偿；无字幕仅省略画面文字，证据范围相同",
+    "recommend": 1,
+    "source": [
+      "runs/interview-media/g1d-polished-side/render.json"
+    ],
+    "sha256": "cc2d174b04f2c0c429667b37ea327b3733ceb6b6df7037ef70524b4f6a04d644",
+    "bytes": 1465370,
+    "type": "video",
+    "poster": "posters/N030.jpg",
+    "frames": 891,
+    "fps": 30.0,
+    "seconds": 29.7,
+    "size": [
+      1280,
+      720
+    ],
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "id": "N031",
+    "path": "10_g1d/g1d-adapted-gripper-grasp_clean.mp4",
+    "title": "G1-D 单方块抓取 · 全景 · 无字幕版",
+    "category": "10_g1d",
+    "evidence": "官方 G1-D + 改装夹爪物理仿真渲染",
+    "scope": "原生 Dex3 抓取尝试未通过；本视频使用新增平行夹爪，固定底座、理想重力补偿；无字幕仅省略画面文字，证据范围相同",
+    "recommend": 1,
+    "source": [
+      "runs/interview-media/g1d-polished-grasp/render.json"
+    ],
+    "sha256": "fe6d5f1dc5c9287a6913a4d9b27e747444df6b2760dc8f120c8bd8db65cc81a4",
+    "bytes": 520556,
+    "type": "video",
+    "poster": "posters/N031.jpg",
+    "frames": 333,
+    "fps": 30.0,
+    "seconds": 11.1,
+    "size": [
+      1280,
+      720
+    ],
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "id": "N001",
+    "path": "07_new_rgb/rgb-detail-final_clean.mp4",
+    "title": "RGB 排序 · 近景",
+    "category": "07_new_rgb",
+    "evidence": "新增物理仿真状态渲染",
+    "scope": "MuJoCo 简化笛卡尔夹爪；原餐桌包围盒支撑；家居几何用于渲染；脚本按已知颜色规划",
+    "recommend": 1,
+    "source": [
+      "runs/interview-media/rgb-detail-final/render.json"
+    ],
+    "sha256": "aa28cce4d476da277c0b25ded0ee08a33737219bc5b14e42f42fa8dfb77de149",
+    "bytes": 861997,
+    "type": "video",
+    "poster": "posters/N001.jpg",
+    "frames": 594,
+    "fps": 30.0,
+    "seconds": 19.8,
+    "size": [
+      1280,
+      720
+    ],
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "id": "N002",
+    "path": "07_new_rgb/rgb-detail-final_explained.mp4",
+    "title": "RGB 排序步骤讲解 · 近景",
+    "category": "07_new_rgb",
+    "evidence": "新增物理仿真讲解版",
+    "scope": "与无字幕版相同轨迹，增加阶段说明",
+    "recommend": 1,
+    "source": [
+      "runs/interview-media/rgb-detail-final/render.json"
+    ],
+    "sha256": "486edb31fea1258e363eb357f5ce9bd47717da8f79c2db325315a07fea667aa9",
+    "bytes": 825708,
+    "type": "video",
+    "poster": "posters/N002.jpg",
+    "frames": 594,
+    "fps": 30.0,
+    "seconds": 19.8,
+    "size": [
+      1280,
+      720
+    ],
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "id": "N003",
+    "path": "07_new_rgb/rgb-wide-final_clean.mp4",
+    "title": "RGB 排序 · 家居全景",
+    "category": "07_new_rgb",
+    "evidence": "新增物理仿真状态渲染",
+    "scope": "MuJoCo 简化笛卡尔夹爪；原餐桌包围盒支撑；家居几何用于渲染；脚本按已知颜色规划",
+    "recommend": 1,
+    "source": [
+      "runs/interview-media/rgb-wide-final/render.json"
+    ],
+    "sha256": "4b2eab0dbf1a17e0ddbe5718dd07b5b25e85caa6d553354ac523634780dd32db",
+    "bytes": 675529,
+    "type": "video",
+    "poster": "posters/N003.jpg",
+    "frames": 594,
+    "fps": 30.0,
+    "seconds": 19.8,
+    "size": [
+      1280,
+      720
+    ],
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "id": "N004",
+    "path": "07_new_rgb/rgb-wide-final_explained.mp4",
+    "title": "RGB 排序步骤讲解 · 家居全景",
+    "category": "07_new_rgb",
+    "evidence": "新增物理仿真讲解版",
+    "scope": "与无字幕版相同轨迹，增加阶段说明",
+    "recommend": 1,
+    "source": [
+      "runs/interview-media/rgb-wide-final/render.json"
+    ],
+    "sha256": "084c8e48c46105a014a9da91f7b211329fc8a0285ef6d0184a10eb8792a26c59",
+    "bytes": 618632,
+    "type": "video",
+    "poster": "posters/N004.jpg",
+    "frames": 594,
+    "fps": 30.0,
+    "seconds": 19.8,
+    "size": [
+      1280,
+      720
+    ],
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "id": "N005",
+    "path": "07_new_rgb/rgb-top-final_clean.mp4",
+    "title": "RGB 排序 · 俯视",
+    "category": "07_new_rgb",
+    "evidence": "新增物理仿真状态渲染",
+    "scope": "MuJoCo 简化笛卡尔夹爪；原餐桌包围盒支撑；家居几何用于渲染；脚本按已知颜色规划",
+    "recommend": 1,
+    "source": [
+      "runs/interview-media/rgb-top-final/render.json"
+    ],
+    "sha256": "190929788dd0fe3eeb11b15d23730dca0eecf8f99cd1a27be4b5267c3a3e9054",
+    "bytes": 675844,
+    "type": "video",
+    "poster": "posters/N005.jpg",
+    "frames": 594,
+    "fps": 30.0,
+    "seconds": 19.8,
+    "size": [
+      1280,
+      720
+    ],
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "id": "N006",
+    "path": "07_new_rgb/rgb-top-final_explained.mp4",
+    "title": "RGB 排序步骤讲解 · 俯视",
+    "category": "07_new_rgb",
+    "evidence": "新增物理仿真讲解版",
+    "scope": "与无字幕版相同轨迹，增加阶段说明",
+    "recommend": 1,
+    "source": [
+      "runs/interview-media/rgb-top-final/render.json"
+    ],
+    "sha256": "bdb082f508e1256b5c06724a0c00deec4348fe2243fe7252ecb776e4128141c3",
+    "bytes": 648489,
+    "type": "video",
+    "poster": "posters/N006.jpg",
+    "frames": 594,
+    "fps": 30.0,
+    "seconds": 19.8,
+    "size": [
+      1280,
+      720
+    ],
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "id": "N007",
+    "path": "07_new_rgb/rgb-red-pick-place.mp4",
+    "title": "红方块抓取与放置 · 短版",
+    "category": "07_new_rgb",
+    "evidence": "新增物理仿真状态渲染",
+    "scope": "完整首个方块子任务；截取非加速",
+    "recommend": 1,
+    "source": [
+      "runs/interview-media/rgb-detail-final/render.json"
+    ],
+    "sha256": "3789e24490ed676c0a56250f64d3448f58c014226eab27d399c29d902950af67",
+    "bytes": 256193,
+    "type": "video",
+    "poster": "posters/N007.jpg",
+    "frames": 198,
+    "fps": 30.0,
+    "seconds": 6.6,
+    "size": [
+      1280,
+      720
+    ],
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "id": "E001",
+    "path": "13_explanation/autodata_flow_schematic.mp4",
+    "title": "AutoData 数据生产流程 · 原理讲解动画",
+    "category": "13_explanation",
+    "type": "video",
+    "evidence": "原理示意动画",
+    "scope": "基于本地 AutoData 技术说明绘制；没有将示意流程冒充本次运行结果",
+    "recommend": 1,
+    "source": [
+      "docs/autodata/AutoData-原理与数据流总览.md"
+    ],
+    "sha256": "72f3d8ee1a5f5546426ab692a054becd4803c89d9223dc9f0d67d1b84783bfbe",
+    "bytes": 138193,
+    "poster": "posters/E001.jpg",
+    "frames": 360,
+    "fps": 30.0,
+    "seconds": 12.0,
+    "size": [
+      1280,
+      720
+    ],
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "id": "K001",
+    "path": "14_new_keyframes/K001_g1d-polished-wide_000.png",
+    "title": "G1-D 排序 · 全景 · 初始布局",
+    "category": "14_new_keyframes",
+    "type": "image",
+    "evidence": "新增物理状态渲染关键帧",
+    "scope": "官方 G1-D 机身与手臂 + 演示用平行夹爪；固定底座、简化碰撞；已知颜色脚本任务，无策略推理",
+    "recommend": 1,
+    "source": [
+      "runs/interview-media/g1d-polished-wide/frame_0000.png",
+      "runs/interview-media/g1d-polished-wide/render.json"
+    ],
+    "sha256": "c3512e1c415e3abd8df6221139360c5aee32abef02d995279d5f921e53b0909d",
+    "bytes": 1050693,
+    "poster": "14_new_keyframes/K001_g1d-polished-wide_000.png",
+    "source_frame": 0
+  },
+  {
+    "id": "K002",
+    "path": "14_new_keyframes/K002_g1d-polished-wide_033.png",
+    "title": "G1-D 排序 · 全景 · 夹紧",
+    "category": "14_new_keyframes",
+    "type": "image",
+    "evidence": "新增物理状态渲染关键帧",
+    "scope": "官方 G1-D 机身与手臂 + 演示用平行夹爪；固定底座、简化碰撞；已知颜色脚本任务，无策略推理",
+    "recommend": 1,
+    "source": [
+      "runs/interview-media/g1d-polished-wide/frame_0033.png",
+      "runs/interview-media/g1d-polished-wide/render.json"
+    ],
+    "sha256": "c6867f7f1afe6a67a8d65eae31f770fb86778ac3ea4e2fb7470a964b7b888fb5",
+    "bytes": 1048735,
+    "poster": "14_new_keyframes/K002_g1d-polished-wide_033.png",
+    "source_frame": 99
+  },
+  {
+    "id": "K003",
+    "path": "14_new_keyframes/K003_g1d-polished-wide_046.png",
+    "title": "G1-D 排序 · 全景 · 抬起",
+    "category": "14_new_keyframes",
+    "type": "image",
+    "evidence": "新增物理状态渲染关键帧",
+    "scope": "官方 G1-D 机身与手臂 + 演示用平行夹爪；固定底座、简化碰撞；已知颜色脚本任务，无策略推理",
+    "recommend": 1,
+    "source": [
+      "runs/interview-media/g1d-polished-wide/frame_0046.png",
+      "runs/interview-media/g1d-polished-wide/render.json"
+    ],
+    "sha256": "126d97348d9f649718f533f1e01dd9ba368d809a6fb81811d6c04d6b083335f4",
+    "bytes": 1051757,
+    "poster": "14_new_keyframes/K003_g1d-polished-wide_046.png",
+    "source_frame": 138
+  },
+  {
+    "id": "K004",
+    "path": "14_new_keyframes/K004_g1d-polished-wide_060.png",
+    "title": "G1-D 排序 · 全景 · 搬运",
+    "category": "14_new_keyframes",
+    "type": "image",
+    "evidence": "新增物理状态渲染关键帧",
+    "scope": "官方 G1-D 机身与手臂 + 演示用平行夹爪；固定底座、简化碰撞；已知颜色脚本任务，无策略推理",
+    "recommend": 1,
+    "source": [
+      "runs/interview-media/g1d-polished-wide/frame_0060.png",
+      "runs/interview-media/g1d-polished-wide/render.json"
+    ],
+    "sha256": "7195a91bc6b6d17baf9809fb179713b380a06453d0e13df9ab743779678ec4a8",
+    "bytes": 1049284,
+    "poster": "14_new_keyframes/K004_g1d-polished-wide_060.png",
+    "source_frame": 180
+  },
+  {
+    "id": "K005",
+    "path": "14_new_keyframes/K005_g1d-polished-wide_099.png",
+    "title": "G1-D 排序 · 全景 · 首块归位",
+    "category": "14_new_keyframes",
+    "type": "image",
+    "evidence": "新增物理状态渲染关键帧",
+    "scope": "官方 G1-D 机身与手臂 + 演示用平行夹爪；固定底座、简化碰撞；已知颜色脚本任务，无策略推理",
+    "recommend": 1,
+    "source": [
+      "runs/interview-media/g1d-polished-wide/frame_0099.png",
+      "runs/interview-media/g1d-polished-wide/render.json"
+    ],
+    "sha256": "cb9ecea774664ed5967693a070b58cf4e11f6042bbdaa9aed219e2ead8442d1a",
+    "bytes": 1048982,
+    "poster": "14_new_keyframes/K005_g1d-polished-wide_099.png",
+    "source_frame": 297
+  },
+  {
+    "id": "K006",
+    "path": "14_new_keyframes/K006_g1d-polished-wide_296.png",
+    "title": "G1-D 排序 · 全景 · RGB 排序完成",
+    "category": "14_new_keyframes",
+    "type": "image",
+    "evidence": "新增物理状态渲染关键帧",
+    "scope": "官方 G1-D 机身与手臂 + 演示用平行夹爪；固定底座、简化碰撞；已知颜色脚本任务，无策略推理",
+    "recommend": 1,
+    "source": [
+      "runs/interview-media/g1d-polished-wide/frame_0296.png",
+      "runs/interview-media/g1d-polished-wide/render.json"
+    ],
+    "sha256": "c116a888540318eaa2da6b76a44ad5014b3ba618e37cfc211aea8ba632f6ae66",
+    "bytes": 1051957,
+    "poster": "14_new_keyframes/K006_g1d-polished-wide_296.png",
+    "source_frame": 888
+  },
+  {
+    "id": "K007",
+    "path": "14_new_keyframes/K007_g1d-polished-detail_000.png",
+    "title": "G1-D 排序 · 近景 · 初始布局",
+    "category": "14_new_keyframes",
+    "type": "image",
+    "evidence": "新增物理状态渲染关键帧",
+    "scope": "官方 G1-D 机身与手臂 + 演示用平行夹爪；固定底座、简化碰撞；已知颜色脚本任务，无策略推理",
+    "recommend": 1,
+    "source": [
+      "runs/interview-media/g1d-polished-detail/frame_0000.png",
+      "runs/interview-media/g1d-polished-detail/render.json"
+    ],
+    "sha256": "7a59d2fd52f90ac05599108134c6742a2ee8d0a396205b8c8f35f135af28cfe4",
+    "bytes": 991560,
+    "poster": "14_new_keyframes/K007_g1d-polished-detail_000.png",
+    "source_frame": 0
+  },
+  {
+    "id": "K008",
+    "path": "14_new_keyframes/K008_g1d-polished-detail_033.png",
+    "title": "G1-D 排序 · 近景 · 夹紧",
+    "category": "14_new_keyframes",
+    "type": "image",
+    "evidence": "新增物理状态渲染关键帧",
+    "scope": "官方 G1-D 机身与手臂 + 演示用平行夹爪；固定底座、简化碰撞；已知颜色脚本任务，无策略推理",
+    "recommend": 1,
+    "source": [
+      "runs/interview-media/g1d-polished-detail/frame_0033.png",
+      "runs/interview-media/g1d-polished-detail/render.json"
+    ],
+    "sha256": "57b741af79f62de26d454802e531ead088541ea592bf7f9a845618eee78e5616",
+    "bytes": 993714,
+    "poster": "14_new_keyframes/K008_g1d-polished-detail_033.png",
+    "source_frame": 99
+  },
+  {
+    "id": "K009",
+    "path": "14_new_keyframes/K009_g1d-polished-detail_046.png",
+    "title": "G1-D 排序 · 近景 · 抬起",
+    "category": "14_new_keyframes",
+    "type": "image",
+    "evidence": "新增物理状态渲染关键帧",
+    "scope": "官方 G1-D 机身与手臂 + 演示用平行夹爪；固定底座、简化碰撞；已知颜色脚本任务，无策略推理",
+    "recommend": 1,
+    "source": [
+      "runs/interview-media/g1d-polished-detail/frame_0046.png",
+      "runs/interview-media/g1d-polished-detail/render.json"
+    ],
+    "sha256": "be78ff8e7c215320e03ad53290f90db2014a649499a9fcbdb0a05aaaac5bdef5",
+    "bytes": 1004648,
+    "poster": "14_new_keyframes/K009_g1d-polished-detail_046.png",
+    "source_frame": 138
+  },
+  {
+    "id": "K010",
+    "path": "14_new_keyframes/K010_g1d-polished-detail_060.png",
+    "title": "G1-D 排序 · 近景 · 搬运",
+    "category": "14_new_keyframes",
+    "type": "image",
+    "evidence": "新增物理状态渲染关键帧",
+    "scope": "官方 G1-D 机身与手臂 + 演示用平行夹爪；固定底座、简化碰撞；已知颜色脚本任务，无策略推理",
+    "recommend": 1,
+    "source": [
+      "runs/interview-media/g1d-polished-detail/frame_0060.png",
+      "runs/interview-media/g1d-polished-detail/render.json"
+    ],
+    "sha256": "ab3413dcb5c3cd25a29cf9d8c09d1e33ca8dffa7bdbfdb996e17800f0decd027",
+    "bytes": 1000253,
+    "poster": "14_new_keyframes/K010_g1d-polished-detail_060.png",
+    "source_frame": 180
+  },
+  {
+    "id": "K011",
+    "path": "14_new_keyframes/K011_g1d-polished-detail_099.png",
+    "title": "G1-D 排序 · 近景 · 首块归位",
+    "category": "14_new_keyframes",
+    "type": "image",
+    "evidence": "新增物理状态渲染关键帧",
+    "scope": "官方 G1-D 机身与手臂 + 演示用平行夹爪；固定底座、简化碰撞；已知颜色脚本任务，无策略推理",
+    "recommend": 1,
+    "source": [
+      "runs/interview-media/g1d-polished-detail/frame_0099.png",
+      "runs/interview-media/g1d-polished-detail/render.json"
+    ],
+    "sha256": "bc4af95025a75d3f1680ff43ab4648176f4b3b9c2bbb9d7c83f15903efa802de",
+    "bytes": 994346,
+    "poster": "14_new_keyframes/K011_g1d-polished-detail_099.png",
+    "source_frame": 297
+  },
+  {
+    "id": "K012",
+    "path": "14_new_keyframes/K012_g1d-polished-detail_296.png",
+    "title": "G1-D 排序 · 近景 · RGB 排序完成",
+    "category": "14_new_keyframes",
+    "type": "image",
+    "evidence": "新增物理状态渲染关键帧",
+    "scope": "官方 G1-D 机身与手臂 + 演示用平行夹爪；固定底座、简化碰撞；已知颜色脚本任务，无策略推理",
+    "recommend": 1,
+    "source": [
+      "runs/interview-media/g1d-polished-detail/frame_0296.png",
+      "runs/interview-media/g1d-polished-detail/render.json"
+    ],
+    "sha256": "2e938b1de9d0c2a25193c64c99c5702dff75543fe590d7c2cad4b7f035bf44b1",
+    "bytes": 1002321,
+    "poster": "14_new_keyframes/K012_g1d-polished-detail_296.png",
+    "source_frame": 888
+  },
+  {
+    "id": "K013",
+    "path": "14_new_keyframes/K013_g1d-polished-side_000.png",
+    "title": "G1-D 排序 · 侧面 · 初始布局",
+    "category": "14_new_keyframes",
+    "type": "image",
+    "evidence": "新增物理状态渲染关键帧",
+    "scope": "官方 G1-D 机身与手臂 + 演示用平行夹爪；固定底座、简化碰撞；已知颜色脚本任务，无策略推理",
+    "recommend": 1,
+    "source": [
+      "runs/interview-media/g1d-polished-side/frame_0000.png",
+      "runs/interview-media/g1d-polished-side/render.json"
+    ],
+    "sha256": "f9f65866b320457052184aeafb463a97525e7068ea6a4e52f23b9d9eced77ed6",
+    "bytes": 993547,
+    "poster": "14_new_keyframes/K013_g1d-polished-side_000.png",
+    "source_frame": 0
+  },
+  {
+    "id": "K014",
+    "path": "14_new_keyframes/K014_g1d-polished-side_033.png",
+    "title": "G1-D 排序 · 侧面 · 夹紧",
+    "category": "14_new_keyframes",
+    "type": "image",
+    "evidence": "新增物理状态渲染关键帧",
+    "scope": "官方 G1-D 机身与手臂 + 演示用平行夹爪；固定底座、简化碰撞；已知颜色脚本任务，无策略推理",
+    "recommend": 1,
+    "source": [
+      "runs/interview-media/g1d-polished-side/frame_0033.png",
+      "runs/interview-media/g1d-polished-side/render.json"
+    ],
+    "sha256": "7aa92cfd3a0ab17c36348d5d107f15cf514ac5aaf39e57af71c58d8c40086607",
+    "bytes": 993382,
+    "poster": "14_new_keyframes/K014_g1d-polished-side_033.png",
+    "source_frame": 99
+  },
+  {
+    "id": "K015",
+    "path": "14_new_keyframes/K015_g1d-polished-side_046.png",
+    "title": "G1-D 排序 · 侧面 · 抬起",
+    "category": "14_new_keyframes",
+    "type": "image",
+    "evidence": "新增物理状态渲染关键帧",
+    "scope": "官方 G1-D 机身与手臂 + 演示用平行夹爪；固定底座、简化碰撞；已知颜色脚本任务，无策略推理",
+    "recommend": 1,
+    "source": [
+      "runs/interview-media/g1d-polished-side/frame_0046.png",
+      "runs/interview-media/g1d-polished-side/render.json"
+    ],
+    "sha256": "a353bbc92d980c4ce942ead743643d05c68767b578e01a41ab574818c25662ef",
+    "bytes": 993441,
+    "poster": "14_new_keyframes/K015_g1d-polished-side_046.png",
+    "source_frame": 138
+  },
+  {
+    "id": "K016",
+    "path": "14_new_keyframes/K016_g1d-polished-side_060.png",
+    "title": "G1-D 排序 · 侧面 · 搬运",
+    "category": "14_new_keyframes",
+    "type": "image",
+    "evidence": "新增物理状态渲染关键帧",
+    "scope": "官方 G1-D 机身与手臂 + 演示用平行夹爪；固定底座、简化碰撞；已知颜色脚本任务，无策略推理",
+    "recommend": 1,
+    "source": [
+      "runs/interview-media/g1d-polished-side/frame_0060.png",
+      "runs/interview-media/g1d-polished-side/render.json"
+    ],
+    "sha256": "a8714ab3c398561fdf968daf5daff13ea3a9a2cab90117f43e72b7300556b849",
+    "bytes": 1002091,
+    "poster": "14_new_keyframes/K016_g1d-polished-side_060.png",
+    "source_frame": 180
+  },
+  {
+    "id": "K017",
+    "path": "14_new_keyframes/K017_g1d-polished-side_099.png",
+    "title": "G1-D 排序 · 侧面 · 首块归位",
+    "category": "14_new_keyframes",
+    "type": "image",
+    "evidence": "新增物理状态渲染关键帧",
+    "scope": "官方 G1-D 机身与手臂 + 演示用平行夹爪；固定底座、简化碰撞；已知颜色脚本任务，无策略推理",
+    "recommend": 1,
+    "source": [
+      "runs/interview-media/g1d-polished-side/frame_0099.png",
+      "runs/interview-media/g1d-polished-side/render.json"
+    ],
+    "sha256": "0835d3dd59629e67a67fd6dc84262f25e0c55db5ef9d53a83aee2332aa67b87b",
+    "bytes": 997814,
+    "poster": "14_new_keyframes/K017_g1d-polished-side_099.png",
+    "source_frame": 297
+  },
+  {
+    "id": "K018",
+    "path": "14_new_keyframes/K018_g1d-polished-side_296.png",
+    "title": "G1-D 排序 · 侧面 · RGB 排序完成",
+    "category": "14_new_keyframes",
+    "type": "image",
+    "evidence": "新增物理状态渲染关键帧",
+    "scope": "官方 G1-D 机身与手臂 + 演示用平行夹爪；固定底座、简化碰撞；已知颜色脚本任务，无策略推理",
+    "recommend": 1,
+    "source": [
+      "runs/interview-media/g1d-polished-side/frame_0296.png",
+      "runs/interview-media/g1d-polished-side/render.json"
+    ],
+    "sha256": "2d0d9c6ea1b6b92fdc528b5dedeabd1ca52a3c107539a3e497bfe3c0870df7cc",
+    "bytes": 999173,
+    "poster": "14_new_keyframes/K018_g1d-polished-side_296.png",
+    "source_frame": 888
+  },
+  {
+    "id": "K019",
+    "path": "14_new_keyframes/K019_rgb-detail-final_000.png",
+    "title": "简化夹爪排序 · 近景 · 初始布局",
+    "category": "14_new_keyframes",
+    "type": "image",
+    "evidence": "新增物理状态渲染关键帧",
+    "scope": "简化笛卡尔夹爪；餐桌包围盒支撑；家居几何只作渲染；已知颜色脚本任务，无策略推理",
+    "recommend": 1,
+    "source": [
+      "runs/interview-media/rgb-detail-final/frame_0000.png",
+      "runs/interview-media/rgb-detail-final/render.json"
+    ],
+    "sha256": "67452ad56839ff24608e8a5406d858797f1778c7caadc0aa09c0ab4f16d721ac",
+    "bytes": 915040,
+    "poster": "14_new_keyframes/K019_rgb-detail-final_000.png",
+    "source_frame": 0
+  },
+  {
+    "id": "K020",
+    "path": "14_new_keyframes/K020_rgb-detail-final_025.png",
+    "title": "简化夹爪排序 · 近景 · 夹紧",
+    "category": "14_new_keyframes",
+    "type": "image",
+    "evidence": "新增物理状态渲染关键帧",
+    "scope": "简化笛卡尔夹爪；餐桌包围盒支撑；家居几何只作渲染；已知颜色脚本任务，无策略推理",
+    "recommend": 1,
+    "source": [
+      "runs/interview-media/rgb-detail-final/frame_0025.png",
+      "runs/interview-media/rgb-detail-final/render.json"
+    ],
+    "sha256": "09f5899ee4dfae9bf6db118aefec0bce4e641a525a39da784450baeff2c6b078",
+    "bytes": 914968,
+    "poster": "14_new_keyframes/K020_rgb-detail-final_025.png",
+    "source_frame": 75
+  },
+  {
+    "id": "K021",
+    "path": "14_new_keyframes/K021_rgb-detail-final_032.png",
+    "title": "简化夹爪排序 · 近景 · 抬起",
+    "category": "14_new_keyframes",
+    "type": "image",
+    "evidence": "新增物理状态渲染关键帧",
+    "scope": "简化笛卡尔夹爪；餐桌包围盒支撑；家居几何只作渲染；已知颜色脚本任务，无策略推理",
+    "recommend": 1,
+    "source": [
+      "runs/interview-media/rgb-detail-final/frame_0032.png",
+      "runs/interview-media/rgb-detail-final/render.json"
+    ],
+    "sha256": "ce9e58a60c60419b0984ed4a9cc6ece06abd501fcd8b9e9f4d8576fe08ca7b86",
+    "bytes": 912149,
+    "poster": "14_new_keyframes/K021_rgb-detail-final_032.png",
+    "source_frame": 96
+  },
+  {
+    "id": "K022",
+    "path": "14_new_keyframes/K022_rgb-detail-final_045.png",
+    "title": "简化夹爪排序 · 近景 · 搬运",
+    "category": "14_new_keyframes",
+    "type": "image",
+    "evidence": "新增物理状态渲染关键帧",
+    "scope": "简化笛卡尔夹爪；餐桌包围盒支撑；家居几何只作渲染；已知颜色脚本任务，无策略推理",
+    "recommend": 1,
+    "source": [
+      "runs/interview-media/rgb-detail-final/frame_0045.png",
+      "runs/interview-media/rgb-detail-final/render.json"
+    ],
+    "sha256": "4b6c009bec6c1faa4075ee3e9d0defedfc26bc180b8153106de38f2626bc5e90",
+    "bytes": 918861,
+    "poster": "14_new_keyframes/K022_rgb-detail-final_045.png",
+    "source_frame": 135
+  },
+  {
+    "id": "K023",
+    "path": "14_new_keyframes/K023_rgb-detail-final_065.png",
+    "title": "简化夹爪排序 · 近景 · 首块归位",
+    "category": "14_new_keyframes",
+    "type": "image",
+    "evidence": "新增物理状态渲染关键帧",
+    "scope": "简化笛卡尔夹爪；餐桌包围盒支撑；家居几何只作渲染；已知颜色脚本任务，无策略推理",
+    "recommend": 1,
+    "source": [
+      "runs/interview-media/rgb-detail-final/frame_0065.png",
+      "runs/interview-media/rgb-detail-final/render.json"
+    ],
+    "sha256": "4cca7621652d18ccbd6dc27ffd95a4e3421548e6e20aa78b0ebec2fa3d21de4c",
+    "bytes": 920195,
+    "poster": "14_new_keyframes/K023_rgb-detail-final_065.png",
+    "source_frame": 195
+  },
+  {
+    "id": "K024",
+    "path": "14_new_keyframes/K024_rgb-detail-final_197.png",
+    "title": "简化夹爪排序 · 近景 · RGB 排序完成",
+    "category": "14_new_keyframes",
+    "type": "image",
+    "evidence": "新增物理状态渲染关键帧",
+    "scope": "简化笛卡尔夹爪；餐桌包围盒支撑；家居几何只作渲染；已知颜色脚本任务，无策略推理",
+    "recommend": 1,
+    "source": [
+      "runs/interview-media/rgb-detail-final/frame_0197.png",
+      "runs/interview-media/rgb-detail-final/render.json"
+    ],
+    "sha256": "cff9eb6de57dd84edc4ec060e4cc070d4be7930b91ec64da2dd23ab723575135",
+    "bytes": 910947,
+    "poster": "14_new_keyframes/K024_rgb-detail-final_197.png",
+    "source_frame": 591
+  },
+  {
+    "id": "K025",
+    "path": "14_new_keyframes/K025_rgb-wide-final_000.png",
+    "title": "简化夹爪排序 · 全景 · 初始布局",
+    "category": "14_new_keyframes",
+    "type": "image",
+    "evidence": "新增物理状态渲染关键帧",
+    "scope": "简化笛卡尔夹爪；餐桌包围盒支撑；家居几何只作渲染；已知颜色脚本任务，无策略推理",
+    "recommend": 1,
+    "source": [
+      "runs/interview-media/rgb-wide-final/frame_0000.png",
+      "runs/interview-media/rgb-wide-final/render.json"
+    ],
+    "sha256": "90ee827610cbbbb198d1e7e2676ac62e16c5c5e0454bceb4725e34868df5def1",
+    "bytes": 959123,
+    "poster": "14_new_keyframes/K025_rgb-wide-final_000.png",
+    "source_frame": 0
+  },
+  {
+    "id": "K026",
+    "path": "14_new_keyframes/K026_rgb-wide-final_025.png",
+    "title": "简化夹爪排序 · 全景 · 夹紧",
+    "category": "14_new_keyframes",
+    "type": "image",
+    "evidence": "新增物理状态渲染关键帧",
+    "scope": "简化笛卡尔夹爪；餐桌包围盒支撑；家居几何只作渲染；已知颜色脚本任务，无策略推理",
+    "recommend": 1,
+    "source": [
+      "runs/interview-media/rgb-wide-final/frame_0025.png",
+      "runs/interview-media/rgb-wide-final/render.json"
+    ],
+    "sha256": "a83c000274fbcb903d83b0f11138fd1674b4d9dbf0e4ae29b70f9a289e284cbc",
+    "bytes": 959784,
+    "poster": "14_new_keyframes/K026_rgb-wide-final_025.png",
+    "source_frame": 75
+  },
+  {
+    "id": "K027",
+    "path": "14_new_keyframes/K027_rgb-wide-final_032.png",
+    "title": "简化夹爪排序 · 全景 · 抬起",
+    "category": "14_new_keyframes",
+    "type": "image",
+    "evidence": "新增物理状态渲染关键帧",
+    "scope": "简化笛卡尔夹爪；餐桌包围盒支撑；家居几何只作渲染；已知颜色脚本任务，无策略推理",
+    "recommend": 1,
+    "source": [
+      "runs/interview-media/rgb-wide-final/frame_0032.png",
+      "runs/interview-media/rgb-wide-final/render.json"
+    ],
+    "sha256": "692cf6f9603583a5861131ca773da3227e4a650a28145a5d5aa609bf9f384cde",
+    "bytes": 956073,
+    "poster": "14_new_keyframes/K027_rgb-wide-final_032.png",
+    "source_frame": 96
+  },
+  {
+    "id": "K028",
+    "path": "14_new_keyframes/K028_rgb-wide-final_045.png",
+    "title": "简化夹爪排序 · 全景 · 搬运",
+    "category": "14_new_keyframes",
+    "type": "image",
+    "evidence": "新增物理状态渲染关键帧",
+    "scope": "简化笛卡尔夹爪；餐桌包围盒支撑；家居几何只作渲染；已知颜色脚本任务，无策略推理",
+    "recommend": 1,
+    "source": [
+      "runs/interview-media/rgb-wide-final/frame_0045.png",
+      "runs/interview-media/rgb-wide-final/render.json"
+    ],
+    "sha256": "fd9eccd1073e2327c1d28dffc8ce6c76a50b2fee045e3ffd3b3be48409ef248f",
+    "bytes": 960665,
+    "poster": "14_new_keyframes/K028_rgb-wide-final_045.png",
+    "source_frame": 135
+  },
+  {
+    "id": "K029",
+    "path": "14_new_keyframes/K029_rgb-wide-final_065.png",
+    "title": "简化夹爪排序 · 全景 · 首块归位",
+    "category": "14_new_keyframes",
+    "type": "image",
+    "evidence": "新增物理状态渲染关键帧",
+    "scope": "简化笛卡尔夹爪；餐桌包围盒支撑；家居几何只作渲染；已知颜色脚本任务，无策略推理",
+    "recommend": 1,
+    "source": [
+      "runs/interview-media/rgb-wide-final/frame_0065.png",
+      "runs/interview-media/rgb-wide-final/render.json"
+    ],
+    "sha256": "b435948ca4292171faef3447e52673502dcb7f8b181e87c86b6715f41b0b2880",
+    "bytes": 961432,
+    "poster": "14_new_keyframes/K029_rgb-wide-final_065.png",
+    "source_frame": 195
+  },
+  {
+    "id": "K030",
+    "path": "14_new_keyframes/K030_rgb-wide-final_197.png",
+    "title": "简化夹爪排序 · 全景 · RGB 排序完成",
+    "category": "14_new_keyframes",
+    "type": "image",
+    "evidence": "新增物理状态渲染关键帧",
+    "scope": "简化笛卡尔夹爪；餐桌包围盒支撑；家居几何只作渲染；已知颜色脚本任务，无策略推理",
+    "recommend": 1,
+    "source": [
+      "runs/interview-media/rgb-wide-final/frame_0197.png",
+      "runs/interview-media/rgb-wide-final/render.json"
+    ],
+    "sha256": "4208f56884bfb48d1f26a5ef4ab90229795da97f390ec0bdda25ff0c43ccd5eb",
+    "bytes": 954647,
+    "poster": "14_new_keyframes/K030_rgb-wide-final_197.png",
+    "source_frame": 591
+  },
+  {
+    "id": "K031",
+    "path": "14_new_keyframes/K031_rgb-top-final_000.png",
+    "title": "简化夹爪排序 · 俯视 · 初始布局",
+    "category": "14_new_keyframes",
+    "type": "image",
+    "evidence": "新增物理状态渲染关键帧",
+    "scope": "简化笛卡尔夹爪；餐桌包围盒支撑；家居几何只作渲染；已知颜色脚本任务，无策略推理",
+    "recommend": 1,
+    "source": [
+      "runs/interview-media/rgb-top-final/frame_0000.png",
+      "runs/interview-media/rgb-top-final/render.json"
+    ],
+    "sha256": "33835af2a64afd228d55a96a5ec699562dd66ab7e440144fe8236f18ada9d2be",
+    "bytes": 876556,
+    "poster": "14_new_keyframes/K031_rgb-top-final_000.png",
+    "source_frame": 0
+  },
+  {
+    "id": "K032",
+    "path": "14_new_keyframes/K032_rgb-top-final_025.png",
+    "title": "简化夹爪排序 · 俯视 · 夹紧",
+    "category": "14_new_keyframes",
+    "type": "image",
+    "evidence": "新增物理状态渲染关键帧",
+    "scope": "简化笛卡尔夹爪；餐桌包围盒支撑；家居几何只作渲染；已知颜色脚本任务，无策略推理",
+    "recommend": 1,
+    "source": [
+      "runs/interview-media/rgb-top-final/frame_0025.png",
+      "runs/interview-media/rgb-top-final/render.json"
+    ],
+    "sha256": "60e64651f753dafcb5efafdc9606c0419f2e54f5b6ae8928deb2baea32d64acd",
+    "bytes": 878698,
+    "poster": "14_new_keyframes/K032_rgb-top-final_025.png",
+    "source_frame": 75
+  },
+  {
+    "id": "K033",
+    "path": "14_new_keyframes/K033_rgb-top-final_032.png",
+    "title": "简化夹爪排序 · 俯视 · 抬起",
+    "category": "14_new_keyframes",
+    "type": "image",
+    "evidence": "新增物理状态渲染关键帧",
+    "scope": "简化笛卡尔夹爪；餐桌包围盒支撑；家居几何只作渲染；已知颜色脚本任务，无策略推理",
+    "recommend": 1,
+    "source": [
+      "runs/interview-media/rgb-top-final/frame_0032.png",
+      "runs/interview-media/rgb-top-final/render.json"
+    ],
+    "sha256": "3edd933394c765d7af216e84c795e169c0303e06b8ec91ba24ddee3b735ba467",
+    "bytes": 880002,
+    "poster": "14_new_keyframes/K033_rgb-top-final_032.png",
+    "source_frame": 96
+  },
+  {
+    "id": "K034",
+    "path": "14_new_keyframes/K034_rgb-top-final_045.png",
+    "title": "简化夹爪排序 · 俯视 · 搬运",
+    "category": "14_new_keyframes",
+    "type": "image",
+    "evidence": "新增物理状态渲染关键帧",
+    "scope": "简化笛卡尔夹爪；餐桌包围盒支撑；家居几何只作渲染；已知颜色脚本任务，无策略推理",
+    "recommend": 1,
+    "source": [
+      "runs/interview-media/rgb-top-final/frame_0045.png",
+      "runs/interview-media/rgb-top-final/render.json"
+    ],
+    "sha256": "34bc365be21c6feed0c490c1e9a80caa07c41bf985ab8f1bb41388e11e3bdde6",
+    "bytes": 879798,
+    "poster": "14_new_keyframes/K034_rgb-top-final_045.png",
+    "source_frame": 135
+  },
+  {
+    "id": "K035",
+    "path": "14_new_keyframes/K035_rgb-top-final_065.png",
+    "title": "简化夹爪排序 · 俯视 · 首块归位",
+    "category": "14_new_keyframes",
+    "type": "image",
+    "evidence": "新增物理状态渲染关键帧",
+    "scope": "简化笛卡尔夹爪；餐桌包围盒支撑；家居几何只作渲染；已知颜色脚本任务，无策略推理",
+    "recommend": 1,
+    "source": [
+      "runs/interview-media/rgb-top-final/frame_0065.png",
+      "runs/interview-media/rgb-top-final/render.json"
+    ],
+    "sha256": "048b92fa22f6e45d3d000393a5eaaee141bf57ff736e4ac3a1af449a412b3cb3",
+    "bytes": 880473,
+    "poster": "14_new_keyframes/K035_rgb-top-final_065.png",
+    "source_frame": 195
+  },
+  {
+    "id": "K036",
+    "path": "14_new_keyframes/K036_rgb-top-final_197.png",
+    "title": "简化夹爪排序 · 俯视 · RGB 排序完成",
+    "category": "14_new_keyframes",
+    "type": "image",
+    "evidence": "新增物理状态渲染关键帧",
+    "scope": "简化笛卡尔夹爪；餐桌包围盒支撑；家居几何只作渲染；已知颜色脚本任务，无策略推理",
+    "recommend": 1,
+    "source": [
+      "runs/interview-media/rgb-top-final/frame_0197.png",
+      "runs/interview-media/rgb-top-final/render.json"
+    ],
+    "sha256": "6461c64347dd4812ae8d8367bf391c0b7686f4664b51f49fabac425f38952038",
+    "bytes": 878433,
+    "poster": "14_new_keyframes/K036_rgb-top-final_197.png",
+    "source_frame": 591
+  },
+  {
+    "id": "M001",
+    "path": "01_original_home/M001_overview.mp4",
+    "title": "Franka 原餐桌抓取 · overview",
+    "category": "01_original_home",
+    "evidence": "历史物理仿真录像",
+    "scope": "原记录有抓取/释放稳定性验收；脚本 IK 示范，不是策略推理",
+    "recommend": 1,
+    "source": "/home/tangyuan/WorldSimReady-Home/.worktrees/arm-home-scene-20261017/runs/episode-r07/overview.mp4",
+    "sha256": "b7b1baae9bc2fefd16339af408be6947239b233ef41efc72b433cc7ebff748f3",
+    "bytes": 580297,
+    "type": "video",
+    "fps": 50.0,
+    "frames": 950,
+    "seconds": 19.0,
+    "size": [
+      960,
+      540
+    ],
+    "decoded_all_frames": true,
+    "poster": "posters/M001.jpg",
+    "codec": "h264"
+  },
+  {
+    "id": "M002",
+    "path": "01_original_home/M002_detail.mp4",
+    "title": "Franka 原餐桌抓取 · detail",
+    "category": "01_original_home",
+    "evidence": "历史物理仿真录像",
+    "scope": "原记录有抓取/释放稳定性验收；脚本 IK 示范，不是策略推理",
+    "recommend": 1,
+    "source": "/home/tangyuan/WorldSimReady-Home/.worktrees/arm-home-scene-20261017/runs/episode-r07/detail.mp4",
+    "sha256": "4850aa8e77179cde26d4777404748506857f5dfa00b7ed00bd5f401f8026eef5",
+    "bytes": 527070,
+    "type": "video",
+    "fps": 50.0,
+    "frames": 950,
+    "seconds": 19.0,
+    "size": [
+      640,
+      480
+    ],
+    "decoded_all_frames": true,
+    "poster": "posters/M002.jpg",
+    "codec": "h264"
+  },
+  {
+    "id": "M003",
+    "path": "02_original_domain/M003_overview.mp4",
+    "title": "G1 家居抓取 · baseline · overview",
+    "category": "02_original_domain",
+    "evidence": "历史仿真域随机化录像",
+    "scope": "历史任务与各组条件见同目录 summary；G1 为双足型号，与新增 G1-D 区分",
+    "recommend": 1,
+    "source": "/home/tangyuan/WorldSimReady-Home/.worktrees/g1-home-domain-20261017/runs/final-review/baseline/overview.mp4",
+    "sha256": "e71954170199f928a46a633a14da3e565893c1ffc4e4ef7209d0d0e8ba76edcb",
+    "bytes": 436746,
+    "type": "video",
+    "fps": 50.0,
+    "frames": 928,
+    "seconds": 18.56,
+    "size": [
+      640,
+      360
+    ],
+    "decoded_all_frames": true,
+    "poster": "posters/M003.jpg",
+    "codec": "h264"
+  },
+  {
+    "id": "M004",
+    "path": "02_original_domain/M004_head.mp4",
+    "title": "G1 家居抓取 · baseline · head",
+    "category": "02_original_domain",
+    "evidence": "历史仿真域随机化录像",
+    "scope": "历史任务与各组条件见同目录 summary；G1 为双足型号，与新增 G1-D 区分",
+    "recommend": 1,
+    "source": "/home/tangyuan/WorldSimReady-Home/.worktrees/g1-home-domain-20261017/runs/final-review/baseline/head.mp4",
+    "sha256": "8139164ced73f682dcc9134f38b86e3c28d7d4a4bd45c7bf3798bf92815a9a8d",
+    "bytes": 2335935,
+    "type": "video",
+    "fps": 50.0,
+    "frames": 928,
+    "seconds": 18.56,
+    "size": [
+      640,
+      480
+    ],
+    "decoded_all_frames": true,
+    "poster": "posters/M004.jpg",
+    "codec": "h264"
+  },
+  {
+    "id": "M005",
+    "path": "02_original_domain/M005_overview.mp4",
+    "title": "G1 家居抓取 · lighting · overview",
+    "category": "02_original_domain",
+    "evidence": "历史仿真域随机化录像",
+    "scope": "历史任务与各组条件见同目录 summary；G1 为双足型号，与新增 G1-D 区分",
+    "recommend": 1,
+    "source": "/home/tangyuan/WorldSimReady-Home/.worktrees/g1-home-domain-20261017/runs/final-review/lighting/overview.mp4",
+    "sha256": "ac674111cfede8a0d31dc3300a2f576867b8c759ddf0b2e70f1c50da59362a7e",
+    "bytes": 451311,
+    "type": "video",
+    "fps": 50.0,
+    "frames": 928,
+    "seconds": 18.56,
+    "size": [
+      640,
+      360
+    ],
+    "decoded_all_frames": true,
+    "poster": "posters/M005.jpg",
+    "codec": "h264"
+  },
+  {
+    "id": "M006",
+    "path": "02_original_domain/M006_overview.mp4",
+    "title": "G1 家居抓取 · material · overview",
+    "category": "02_original_domain",
+    "evidence": "历史仿真域随机化录像",
+    "scope": "历史任务与各组条件见同目录 summary；G1 为双足型号，与新增 G1-D 区分",
+    "recommend": 1,
+    "source": "/home/tangyuan/WorldSimReady-Home/.worktrees/g1-home-domain-20261017/runs/final-review/material/overview.mp4",
+    "sha256": "f13102fd75aed67ea521b790cc867167e29adde58f763f121eb3537d3c3ef2e5",
+    "bytes": 440499,
+    "type": "video",
+    "fps": 50.0,
+    "frames": 928,
+    "seconds": 18.56,
+    "size": [
+      640,
+      360
+    ],
+    "decoded_all_frames": true,
+    "poster": "posters/M006.jpg",
+    "codec": "h264"
+  },
+  {
+    "id": "M007",
+    "path": "02_original_domain/M007_overview.mp4",
+    "title": "G1 家居抓取 · camera · overview",
+    "category": "02_original_domain",
+    "evidence": "历史仿真域随机化录像",
+    "scope": "历史任务与各组条件见同目录 summary；G1 为双足型号，与新增 G1-D 区分",
+    "recommend": 1,
+    "source": "/home/tangyuan/WorldSimReady-Home/.worktrees/g1-home-domain-20261017/runs/final-review/camera/overview.mp4",
+    "sha256": "c3d75fc54a1e6d1dacd8f14d4a39254145ab1f5a64a9a1df8830327337b215a6",
+    "bytes": 432781,
+    "type": "video",
+    "fps": 50.0,
+    "frames": 928,
+    "seconds": 18.56,
+    "size": [
+      640,
+      360
+    ],
+    "decoded_all_frames": true,
+    "poster": "posters/M007.jpg",
+    "codec": "h264"
+  },
+  {
+    "id": "M008",
+    "path": "02_original_domain/M008_head.mp4",
+    "title": "G1 家居抓取 · camera · head",
+    "category": "02_original_domain",
+    "evidence": "历史仿真域随机化录像",
+    "scope": "历史任务与各组条件见同目录 summary；G1 为双足型号，与新增 G1-D 区分",
+    "recommend": 1,
+    "source": "/home/tangyuan/WorldSimReady-Home/.worktrees/g1-home-domain-20261017/runs/final-review/camera/head.mp4",
+    "sha256": "8b3aae36a7acfc16da94d18201b23c70d2e2d0f6068824ed9755ddab64f1aae4",
+    "bytes": 2329763,
+    "type": "video",
+    "fps": 50.0,
+    "frames": 928,
+    "seconds": 18.56,
+    "size": [
+      640,
+      480
+    ],
+    "decoded_all_frames": true,
+    "poster": "posters/M008.jpg",
+    "codec": "h264"
+  },
+  {
+    "id": "M009",
+    "path": "02_original_domain/M009_overview.mp4",
+    "title": "G1 家居抓取 · visual_only · overview",
+    "category": "02_original_domain",
+    "evidence": "历史仿真域随机化录像",
+    "scope": "历史任务与各组条件见同目录 summary；G1 为双足型号，与新增 G1-D 区分",
+    "recommend": 1,
+    "source": "/home/tangyuan/WorldSimReady-Home/.worktrees/g1-home-domain-20261017/runs/final-review/visual_only/overview.mp4",
+    "sha256": "efe9840d37557b7d4d1135232fdece5276aed79adeacda5ccb8ff5c76c8996da",
+    "bytes": 438047,
+    "type": "video",
+    "fps": 50.0,
+    "frames": 928,
+    "seconds": 18.56,
+    "size": [
+      640,
+      360
+    ],
+    "decoded_all_frames": true,
+    "poster": "posters/M009.jpg",
+    "codec": "h264"
+  },
+  {
+    "id": "M010",
+    "path": "02_original_domain/M010_head.mp4",
+    "title": "G1 家居抓取 · visual_only · head",
+    "category": "02_original_domain",
+    "evidence": "历史仿真域随机化录像",
+    "scope": "历史任务与各组条件见同目录 summary；G1 为双足型号，与新增 G1-D 区分",
+    "recommend": 1,
+    "source": "/home/tangyuan/WorldSimReady-Home/.worktrees/g1-home-domain-20261017/runs/final-review/visual_only/head.mp4",
+    "sha256": "096532cd9dba899381797975030b17ce95a83035d060447d5c5183b78026cfe9",
+    "bytes": 2203169,
+    "type": "video",
+    "fps": 50.0,
+    "frames": 928,
+    "seconds": 18.56,
+    "size": [
+      640,
+      480
+    ],
+    "decoded_all_frames": true,
+    "poster": "posters/M010.jpg",
+    "codec": "h264"
+  },
+  {
+    "id": "M011",
+    "path": "02_original_domain/M011_overview.mp4",
+    "title": "G1 家居抓取 · combined_s1 · overview",
+    "category": "02_original_domain",
+    "evidence": "历史仿真域随机化录像",
+    "scope": "历史任务与各组条件见同目录 summary；G1 为双足型号，与新增 G1-D 区分",
+    "recommend": 1,
+    "source": "/home/tangyuan/WorldSimReady-Home/.worktrees/g1-home-domain-20261017/runs/final-review/combined_s1/overview.mp4",
+    "sha256": "9648e80207dd6f379fb8aa47d1c02966baa73d9ab71b7e382694b346d262b4d1",
+    "bytes": 479904,
+    "type": "video",
+    "fps": 50.0,
+    "frames": 843,
+    "seconds": 16.86,
+    "size": [
+      640,
+      360
+    ],
+    "decoded_all_frames": true,
+    "poster": "posters/M011.jpg",
+    "codec": "h264"
+  },
+  {
+    "id": "M012",
+    "path": "02_original_domain/M012_head.mp4",
+    "title": "G1 家居抓取 · combined_s1 · head",
+    "category": "02_original_domain",
+    "evidence": "历史仿真域随机化录像",
+    "scope": "历史任务与各组条件见同目录 summary；G1 为双足型号，与新增 G1-D 区分",
+    "recommend": 1,
+    "source": "/home/tangyuan/WorldSimReady-Home/.worktrees/g1-home-domain-20261017/runs/final-review/combined_s1/head.mp4",
+    "sha256": "db2081e6d9de232b250acfbf6b88799d7cf28e72eb62531e7587b6c7f5e48aed",
+    "bytes": 2257668,
+    "type": "video",
+    "fps": 50.0,
+    "frames": 843,
+    "seconds": 16.86,
+    "size": [
+      640,
+      480
+    ],
+    "decoded_all_frames": true,
+    "poster": "posters/M012.jpg",
+    "codec": "h264"
+  },
+  {
+    "id": "M013",
+    "path": "02_original_domain/M013_overview.mp4",
+    "title": "G1 家居抓取 · combined_s2 · overview",
+    "category": "02_original_domain",
+    "evidence": "历史仿真域随机化录像",
+    "scope": "历史任务与各组条件见同目录 summary；G1 为双足型号，与新增 G1-D 区分",
+    "recommend": 1,
+    "source": "/home/tangyuan/WorldSimReady-Home/.worktrees/g1-home-domain-20261017/runs/final-review/combined_s2/overview.mp4",
+    "sha256": "b2949115a657ee7f22c49d3c5a3b60f1decb4326fafcd960f32eddbfd432de7b",
+    "bytes": 425751,
+    "type": "video",
+    "fps": 50.0,
+    "frames": 904,
+    "seconds": 18.08,
+    "size": [
+      640,
+      360
+    ],
+    "decoded_all_frames": true,
+    "poster": "posters/M013.jpg",
+    "codec": "h264"
+  },
+  {
+    "id": "M014",
+    "path": "02_original_domain/M014_head.mp4",
+    "title": "G1 家居抓取 · combined_s2 · head",
+    "category": "02_original_domain",
+    "evidence": "历史仿真域随机化录像",
+    "scope": "历史任务与各组条件见同目录 summary；G1 为双足型号，与新增 G1-D 区分",
+    "recommend": 1,
+    "source": "/home/tangyuan/WorldSimReady-Home/.worktrees/g1-home-domain-20261017/runs/final-review/combined_s2/head.mp4",
+    "sha256": "1735b95a54ddca3052f384b5edde65f35b58e3ea6ad9f5b79acc4795d241e9e5",
+    "bytes": 2125359,
+    "type": "video",
+    "fps": 50.0,
+    "frames": 904,
+    "seconds": 18.08,
+    "size": [
+      640,
+      480
+    ],
+    "decoded_all_frames": true,
+    "poster": "posters/M014.jpg",
+    "codec": "h264"
+  },
+  {
+    "id": "M015",
+    "path": "03_original_hdr/M015_baseline-r02.mp4",
+    "title": "OpenArm HDR · baseline-r02",
+    "category": "03_original_hdr",
+    "evidence": "历史 HDR 仿真渲染",
+    "scope": "原生 HDR 环境/相机录像；不能据视觉变化宣称泛化提升",
+    "recommend": 1,
+    "source": "/home/tangyuan/WorldSimReady-Home/.worktrees/openarm-hdr-production-20261016/runs/hdr-production/third-person-full-20261017-v2/baseline-r02.mp4",
+    "sha256": "82ab71d2c54c23b989cc893419e61c6d20cda5f2c05e22624bfa43ce4e0d31a6",
+    "bytes": 1954322,
+    "type": "video",
+    "fps": 30.0,
+    "frames": 1432,
+    "seconds": 47.733333333333334,
+    "size": [
+      640,
+      480
+    ],
+    "decoded_all_frames": true,
+    "poster": "posters/M015.jpg",
+    "codec": "h264"
+  },
+  {
+    "id": "M016",
+    "path": "03_original_hdr/M016_beach-r03.mp4",
+    "title": "OpenArm HDR · beach-r03",
+    "category": "03_original_hdr",
+    "evidence": "历史 HDR 仿真渲染",
+    "scope": "原生 HDR 环境/相机录像；不能据视觉变化宣称泛化提升",
+    "recommend": 1,
+    "source": "/home/tangyuan/WorldSimReady-Home/.worktrees/openarm-hdr-production-20261016/runs/hdr-production/third-person-full-20261017-v2/beach-r03.mp4",
+    "sha256": "c9651209cbe75a6c1d894bf53551f215b012379d3a0ec56133f2a1599a85db0b",
+    "bytes": 2180681,
+    "type": "video",
+    "fps": 30.0,
+    "frames": 1432,
+    "seconds": 47.733333333333334,
+    "size": [
+      640,
+      480
+    ],
+    "decoded_all_frames": true,
+    "poster": "posters/M016.jpg",
+    "codec": "h264"
+  },
+  {
+    "id": "M017",
+    "path": "03_original_hdr/M017_beach-r04.mp4",
+    "title": "OpenArm HDR · beach-r04",
+    "category": "03_original_hdr",
+    "evidence": "历史 HDR 仿真渲染",
+    "scope": "原生 HDR 环境/相机录像；不能据视觉变化宣称泛化提升",
+    "recommend": 1,
+    "source": "/home/tangyuan/WorldSimReady-Home/.worktrees/openarm-hdr-production-20261016/runs/hdr-production/third-person-full-20261017-v2/beach-r04.mp4",
+    "sha256": "dd2054edf5a05de44c45f57787946fbba02e5c94b1314f0285ae8db7dba25b42",
+    "bytes": 1721077,
+    "type": "video",
+    "fps": 30.0,
+    "frames": 1432,
+    "seconds": 47.733333333333334,
+    "size": [
+      640,
+      480
+    ],
+    "decoded_all_frames": true,
+    "poster": "posters/M017.jpg",
+    "codec": "h264"
+  },
+  {
+    "id": "M018",
+    "path": "03_original_hdr/M018_comparison-full.mp4",
+    "title": "OpenArm HDR · comparison-full",
+    "category": "03_original_hdr",
+    "evidence": "历史 HDR 仿真渲染",
+    "scope": "原生 HDR 环境/相机录像；不能据视觉变化宣称泛化提升",
+    "recommend": 1,
+    "source": "/home/tangyuan/WorldSimReady-Home/.worktrees/openarm-hdr-production-20261016/runs/hdr-production/third-person-full-20261017-v2/comparison-full.mp4",
+    "sha256": "b89c132b50c4cdb54ca6af8fa2cf8869196cc9b8d7af1e1ec4b7a5860023bc78",
+    "bytes": 5708918,
+    "type": "video",
+    "fps": 30.0,
+    "frames": 1432,
+    "seconds": 47.733333333333334,
+    "size": [
+      1920,
+      512
+    ],
+    "decoded_all_frames": true,
+    "poster": "posters/M018.jpg",
+    "codec": "h264"
+  },
+  {
+    "id": "M019",
+    "path": "03_original_hdr/M019_studio-r03.mp4",
+    "title": "OpenArm HDR · studio-r03",
+    "category": "03_original_hdr",
+    "evidence": "历史 HDR 仿真渲染",
+    "scope": "原生 HDR 环境/相机录像；不能据视觉变化宣称泛化提升",
+    "recommend": 1,
+    "source": "/home/tangyuan/WorldSimReady-Home/.worktrees/openarm-hdr-production-20261016/runs/hdr-production/third-person-full-20261017-v2/studio-r03.mp4",
+    "sha256": "9d4435094d8c7c6a8fc36f386c21dc03f8c302ad23e7c44ed878800268018b2b",
+    "bytes": 2075505,
+    "type": "video",
+    "fps": 30.0,
+    "frames": 1432,
+    "seconds": 47.733333333333334,
+    "size": [
+      640,
+      480
+    ],
+    "decoded_all_frames": true,
+    "poster": "posters/M019.jpg",
+    "codec": "h264"
+  },
+  {
+    "id": "M020",
+    "path": "03_original_hdr/M020_studio-r04.mp4",
+    "title": "OpenArm HDR · studio-r04",
+    "category": "03_original_hdr",
+    "evidence": "历史 HDR 仿真渲染",
+    "scope": "原生 HDR 环境/相机录像；不能据视觉变化宣称泛化提升",
+    "recommend": 1,
+    "source": "/home/tangyuan/WorldSimReady-Home/.worktrees/openarm-hdr-production-20261016/runs/hdr-production/third-person-full-20261017-v2/studio-r04.mp4",
+    "sha256": "7d17676aac080f03fc91220e7601cadfbf626c2b9be3830621f27937f099c4f1",
+    "bytes": 1794861,
+    "type": "video",
+    "fps": 30.0,
+    "frames": 1432,
+    "seconds": 47.733333333333334,
+    "size": [
+      640,
+      480
+    ],
+    "decoded_all_frames": true,
+    "poster": "posters/M020.jpg",
+    "codec": "h264"
+  },
+  {
+    "id": "M065",
+    "path": "06_original_figures/M065_00-approach.png",
+    "title": "mini 家居抓取 · 00-approach",
+    "category": "06_original_figures",
+    "evidence": "历史仿真关键帧",
+    "scope": "与对应录像同一场景来源",
+    "recommend": 1,
+    "source": "/home/tangyuan/WorldSimReady-Home/.worktrees/arm-home-scene-20261017/runs/episode-r07/00-approach.png",
+    "sha256": "210bd9182d1c98aeaa97f1be480f6f41305c32526cebb05d8c1c9fab31602400",
+    "bytes": 403406,
+    "type": "image",
+    "poster": "06_original_figures/M065_00-approach.png"
+  },
+  {
+    "id": "M066",
+    "path": "06_original_figures/M066_01-descend.png",
+    "title": "mini 家居抓取 · 01-descend",
+    "category": "06_original_figures",
+    "evidence": "历史仿真关键帧",
+    "scope": "与对应录像同一场景来源",
+    "recommend": 1,
+    "source": "/home/tangyuan/WorldSimReady-Home/.worktrees/arm-home-scene-20261017/runs/episode-r07/01-descend.png",
+    "sha256": "46f55cf7177909380291943db378689203d4f2052805132464f83dffe826f316",
+    "bytes": 406947,
+    "type": "image",
+    "poster": "06_original_figures/M066_01-descend.png"
+  },
+  {
+    "id": "M067",
+    "path": "06_original_figures/M067_02-grasp.png",
+    "title": "mini 家居抓取 · 02-grasp",
+    "category": "06_original_figures",
+    "evidence": "历史仿真关键帧",
+    "scope": "与对应录像同一场景来源",
+    "recommend": 1,
+    "source": "/home/tangyuan/WorldSimReady-Home/.worktrees/arm-home-scene-20261017/runs/episode-r07/02-grasp.png",
+    "sha256": "8da1acc5c1664b9f6a7ccb6c02f189d58ef1be6037dacb4eb177f601820c95e2",
+    "bytes": 407019,
+    "type": "image",
+    "poster": "06_original_figures/M067_02-grasp.png"
+  },
+  {
+    "id": "M068",
+    "path": "06_original_figures/M068_03-lift.png",
+    "title": "mini 家居抓取 · 03-lift",
+    "category": "06_original_figures",
+    "evidence": "历史仿真关键帧",
+    "scope": "与对应录像同一场景来源",
+    "recommend": 1,
+    "source": "/home/tangyuan/WorldSimReady-Home/.worktrees/arm-home-scene-20261017/runs/episode-r07/03-lift.png",
+    "sha256": "a36c49559ed568902e89bbef3eaf10c6f46aadf2259ca929de9266509c28e9ee",
+    "bytes": 407431,
+    "type": "image",
+    "poster": "06_original_figures/M068_03-lift.png"
+  },
+  {
+    "id": "M069",
+    "path": "06_original_figures/M069_04-transfer.png",
+    "title": "mini 家居抓取 · 04-transfer",
+    "category": "06_original_figures",
+    "evidence": "历史仿真关键帧",
+    "scope": "与对应录像同一场景来源",
+    "recommend": 1,
+    "source": "/home/tangyuan/WorldSimReady-Home/.worktrees/arm-home-scene-20261017/runs/episode-r07/04-transfer.png",
+    "sha256": "ce0a60c5f3b60df4ccb29995f31a7f70399703e533fef659512dcf1e046e664d",
+    "bytes": 407165,
+    "type": "image",
+    "poster": "06_original_figures/M069_04-transfer.png"
+  },
+  {
+    "id": "M070",
+    "path": "06_original_figures/M070_05-lower.png",
+    "title": "mini 家居抓取 · 05-lower",
+    "category": "06_original_figures",
+    "evidence": "历史仿真关键帧",
+    "scope": "与对应录像同一场景来源",
+    "recommend": 1,
+    "source": "/home/tangyuan/WorldSimReady-Home/.worktrees/arm-home-scene-20261017/runs/episode-r07/05-lower.png",
+    "sha256": "942928e4ce7e9c5e51600c0155fb36fbaf48536e41f6296e79069d92f49a178d",
+    "bytes": 407863,
+    "type": "image",
+    "poster": "06_original_figures/M070_05-lower.png"
+  },
+  {
+    "id": "M071",
+    "path": "06_original_figures/M071_06-release.png",
+    "title": "mini 家居抓取 · 06-release",
+    "category": "06_original_figures",
+    "evidence": "历史仿真关键帧",
+    "scope": "与对应录像同一场景来源",
+    "recommend": 1,
+    "source": "/home/tangyuan/WorldSimReady-Home/.worktrees/arm-home-scene-20261017/runs/episode-r07/06-release.png",
+    "sha256": "cce9cc6b3d29e696f9ce5993481024c6f47330b75c78524cfc76f8233ebb8afb",
+    "bytes": 405896,
+    "type": "image",
+    "poster": "06_original_figures/M071_06-release.png"
+  },
+  {
+    "id": "M072",
+    "path": "06_original_figures/M072_07-retreat.png",
+    "title": "mini 家居抓取 · 07-retreat",
+    "category": "06_original_figures",
+    "evidence": "历史仿真关键帧",
+    "scope": "与对应录像同一场景来源",
+    "recommend": 1,
+    "source": "/home/tangyuan/WorldSimReady-Home/.worktrees/arm-home-scene-20261017/runs/episode-r07/07-retreat.png",
+    "sha256": "742f973f7b7838c8039b771433cdd01e1c6c3c4739614316f26b2ed090bda722",
+    "bytes": 408969,
+    "type": "image",
+    "poster": "06_original_figures/M072_07-retreat.png"
+  },
+  {
+    "id": "M073",
+    "path": "06_original_figures/M073_08-settle.png",
+    "title": "mini 家居抓取 · 08-settle",
+    "category": "06_original_figures",
+    "evidence": "历史仿真关键帧",
+    "scope": "与对应录像同一场景来源",
+    "recommend": 1,
+    "source": "/home/tangyuan/WorldSimReady-Home/.worktrees/arm-home-scene-20261017/runs/episode-r07/08-settle.png",
+    "sha256": "9a90cbc1b098e85d025aafb69c0d0c71e2e921c08f345a0a790cfe0f304b52e2",
+    "bytes": 407556,
+    "type": "image",
+    "poster": "06_original_figures/M073_08-settle.png"
+  },
+  {
+    "id": "M074",
+    "path": "06_original_figures/M074_contact-sheet.png",
+    "title": "mini 家居抓取 · contact-sheet",
+    "category": "06_original_figures",
+    "evidence": "历史仿真关键帧",
+    "scope": "与对应录像同一场景来源",
+    "recommend": 1,
+    "source": "/home/tangyuan/WorldSimReady-Home/.worktrees/arm-home-scene-20261017/runs/episode-r07/contact-sheet.png",
+    "sha256": "69245bb8b5cc0d5c5b61c7d6d3ffc287fb94492ce7e325cfea10fa2e7c266011",
+    "bytes": 481898,
+    "type": "image",
+    "poster": "06_original_figures/M074_contact-sheet.png"
+  },
+  {
+    "id": "M075",
+    "path": "06_original_figures/M075_house-with-robot.png",
+    "title": "mini 家居抓取 · house-with-robot",
+    "category": "06_original_figures",
+    "evidence": "历史仿真关键帧",
+    "scope": "与对应录像同一场景来源",
+    "recommend": 1,
+    "source": "/home/tangyuan/WorldSimReady-Home/.worktrees/arm-home-scene-20261017/runs/episode-r07/house-with-robot.png",
+    "sha256": "6f1a3cf4105a28e4201d445f763a9940b7872fed99ab0e5618662aa07a6f0b1f",
+    "bytes": 291033,
+    "type": "image",
+    "poster": "06_original_figures/M075_house-with-robot.png"
+  },
+  {
+    "id": "M076",
+    "path": "06_original_figures/M076_comparison.png",
+    "title": "mini 家居抓取 · comparison",
+    "category": "06_original_figures",
+    "evidence": "历史仿真关键帧",
+    "scope": "与对应录像同一场景来源",
+    "recommend": 1,
+    "source": "/home/tangyuan/WorldSimReady-Home/.worktrees/g1-home-domain-20261017/runs/final-review/comparison.png",
+    "sha256": "d39cef3dcd07ec1ab89a2f0b623b1f2d968b780238c9396dc13c7434ebdc93a5",
+    "bytes": 1094515,
+    "type": "image",
+    "poster": "06_original_figures/M076_comparison.png"
+  },
+  {
+    "id": "N023",
+    "path": "11_comparisons/home_domain_2x2.mp4",
+    "title": "家居抓取域随机化四宫格",
+    "category": "11_comparisons",
+    "evidence": "历史录像重新排版",
+    "scope": "按视频时间并排，不是严格逐状态因果对照",
+    "recommend": 1,
+    "source": [
+      "/home/tangyuan/WorldSimReady-Home/.worktrees/g1-home-domain-20261017/runs/final-review/baseline/overview.mp4",
+      "/home/tangyuan/WorldSimReady-Home/.worktrees/g1-home-domain-20261017/runs/final-review/lighting/overview.mp4",
+      "/home/tangyuan/WorldSimReady-Home/.worktrees/g1-home-domain-20261017/runs/final-review/material/overview.mp4",
+      "/home/tangyuan/WorldSimReady-Home/.worktrees/g1-home-domain-20261017/runs/final-review/camera/overview.mp4"
+    ],
+    "sha256": "f58f35491cc611ad4fab558cd93a33ab1855897d49f737f9eef806f21e430c1e",
+    "bytes": 1430461,
+    "type": "video",
+    "poster": "posters/N023.jpg",
+    "frames": 555,
+    "fps": 30.0,
+    "seconds": 18.5,
+    "size": [
+      1280,
+      720
+    ],
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "id": "N024",
+    "path": "11_comparisons/rgb_three_views.mp4",
+    "title": "RGB 排序三视角拼版",
+    "category": "11_comparisons",
+    "evidence": "不同种子任务录像拼版",
+    "scope": "三个布局对应三个物理任务；不是同步相机",
+    "recommend": 1,
+    "source": [
+      "runs/interview-media/rgb-detail-final/render.json",
+      "runs/interview-media/rgb-wide-final/render.json",
+      "runs/interview-media/rgb-top-final/render.json"
+    ],
+    "sha256": "93e2f0e274d3433a7683cd00b687444aa0b18876ec1f96c4a161b23859cb8268",
+    "bytes": 568600,
+    "type": "video",
+    "poster": "posters/N024.jpg",
+    "frames": 594,
+    "fps": 30.0,
+    "seconds": 19.8,
+    "size": [
+      1280,
+      720
+    ],
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "id": "N032",
+    "path": "11_comparisons/g1d_rgb_three_views.mp4",
+    "title": "G1-D RGB 排序 · 同轨迹三视角拼版",
+    "category": "11_comparisons",
+    "type": "video",
+    "evidence": "官方 G1-D + 改装夹爪物理仿真渲染",
+    "scope": "三个视角来自同一物理状态轨迹；固定底座、演示用平行夹爪、简化碰撞、脚本 IK",
+    "recommend": 1,
+    "source": [
+      "runs/interview-media/g1d-polished-wide/render.json",
+      "runs/interview-media/g1d-polished-detail/render.json",
+      "runs/interview-media/g1d-polished-side/render.json"
+    ],
+    "bytes": 1049105,
+    "sha256": "4f64709164b53f59a12ce85e4da630e2f4670092ec9ffe4aa1595ea99326a436",
+    "poster": "posters/N032.jpg",
+    "frames": 891,
+    "fps": 30.0,
+    "seconds": 29.7,
+    "size": [
+      1280,
+      720
+    ],
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "id": "M021",
+    "path": "04_original_grasp/M021_detail.mp4",
+    "title": "家居物品抓取 · banana-home-grasp · detail",
+    "category": "04_original_grasp",
+    "evidence": "历史物理仿真录像",
+    "scope": "单次脚本任务；不是训练策略成功率",
+    "recommend": 2,
+    "source": "/home/tangyuan/WorldSimReady-Home/.worktrees/banana-home-grasp-20261017/runs/banana-r02/detail.mp4",
+    "sha256": "2a412e4a8d158662340c5f042448b59e2f5a61a0ff3ea8ae26e4326b594205b6",
+    "bytes": 574008,
+    "type": "video",
+    "fps": 50.0,
+    "frames": 950,
+    "seconds": 19.0,
+    "size": [
+      640,
+      480
+    ],
+    "decoded_all_frames": true,
+    "poster": "posters/M021.jpg",
+    "codec": "h264"
+  },
+  {
+    "id": "M022",
+    "path": "04_original_grasp/M022_overview.mp4",
+    "title": "家居物品抓取 · banana-home-grasp · overview",
+    "category": "04_original_grasp",
+    "evidence": "历史物理仿真录像",
+    "scope": "单次脚本任务；不是训练策略成功率",
+    "recommend": 2,
+    "source": "/home/tangyuan/WorldSimReady-Home/.worktrees/banana-home-grasp-20261017/runs/banana-r02/overview.mp4",
+    "sha256": "c3e38a046acc4195cf4979b040466b8d1e4c6007315d43c75339fcb14c7a36c2",
+    "bytes": 617258,
+    "type": "video",
+    "fps": 50.0,
+    "frames": 950,
+    "seconds": 19.0,
+    "size": [
+      960,
+      540
+    ],
+    "decoded_all_frames": true,
+    "poster": "posters/M022.jpg",
+    "codec": "h264"
+  },
+  {
+    "id": "M023",
+    "path": "04_original_grasp/M023_detail.mp4",
+    "title": "家居物品抓取 · banana-wrist-force · detail",
+    "category": "04_original_grasp",
+    "evidence": "历史物理仿真录像",
+    "scope": "单次脚本任务；不是训练策略成功率",
+    "recommend": 2,
+    "source": "/home/tangyuan/WorldSimReady-Home/.worktrees/banana-wrist-force-20261017/runs/wrist-force-r02/detail.mp4",
+    "sha256": "61af5593db5b518582ac9a7027b969b57b21d3383956e5758e5384fadd1fda72",
+    "bytes": 1196569,
+    "type": "video",
+    "fps": 50.0,
+    "frames": 950,
+    "seconds": 19.0,
+    "size": [
+      960,
+      720
+    ],
+    "decoded_all_frames": true,
+    "poster": "posters/M023.jpg",
+    "codec": "h264"
+  },
+  {
+    "id": "M024",
+    "path": "04_original_grasp/M024_overview.mp4",
+    "title": "家居物品抓取 · banana-wrist-force · overview",
+    "category": "04_original_grasp",
+    "evidence": "历史物理仿真录像",
+    "scope": "单次脚本任务；不是训练策略成功率",
+    "recommend": 2,
+    "source": "/home/tangyuan/WorldSimReady-Home/.worktrees/banana-wrist-force-20261017/runs/wrist-force-r02/overview.mp4",
+    "sha256": "82c31623aa8f63f7e0780bfd65893cd5133c06dd1a2c333671be8dcbd9d5e782",
+    "bytes": 611495,
+    "type": "video",
+    "fps": 50.0,
+    "frames": 950,
+    "seconds": 19.0,
+    "size": [
+      960,
+      540
+    ],
+    "decoded_all_frames": true,
+    "poster": "posters/M024.jpg",
+    "codec": "h264"
+  },
+  {
+    "id": "M025",
+    "path": "04_original_grasp/M025_wrist.mp4",
+    "title": "家居物品抓取 · banana-wrist-force · wrist",
+    "category": "04_original_grasp",
+    "evidence": "历史物理仿真录像",
+    "scope": "单次脚本任务；不是训练策略成功率",
+    "recommend": 2,
+    "source": "/home/tangyuan/WorldSimReady-Home/.worktrees/banana-wrist-force-20261017/runs/wrist-force-r02/wrist.mp4",
+    "sha256": "5ee497162091bb237c2e11e577210718ab2ac23e52335247c355a82704f47d35",
+    "bytes": 1122580,
+    "type": "video",
+    "fps": 50.0,
+    "frames": 950,
+    "seconds": 19.0,
+    "size": [
+      640,
+      480
+    ],
+    "decoded_all_frames": true,
+    "poster": "posters/M025.jpg",
+    "codec": "h264"
+  },
+  {
+    "id": "M031",
+    "path": "05_original_dataset/M031_file-000.mp4",
+    "title": "OpenArm 数据集相机 · third_person",
+    "category": "05_original_dataset",
+    "evidence": "历史数据集 RGB",
+    "scope": "LeRobot 原始 AV1 视频流，PPT 优先使用 H.264 选段；格式有效不代表物理任务成功",
+    "recommend": 2,
+    "source": "/home/tangyuan/WorldSimReady-Home/runs/openarm-left-joint-space-20261020-v001/openarm-left-joint-lerobot-v3/videos/observation.images.third_person/chunk-000/file-000.mp4",
+    "sha256": "00cb2ddd18419202097f533d49e9834e196e43caef089f8708f1abc2aafc7bb5",
+    "bytes": 17097406,
+    "type": "video",
+    "fps": 30.0,
+    "frames": 5453,
+    "seconds": 181.76666666666668,
+    "size": [
+      640,
+      480
+    ],
+    "decoded_all_frames": true,
+    "poster": "posters/M031.jpg",
+    "codec": "h264"
+  },
+  {
+    "id": "M032",
+    "path": "05_original_dataset/M032_file-000.mp4",
+    "title": "OpenArm 数据集相机 · left_hand",
+    "category": "05_original_dataset",
+    "evidence": "历史数据集 RGB",
+    "scope": "LeRobot 原始 AV1 视频流，PPT 优先使用 H.264 选段；格式有效不代表物理任务成功",
+    "recommend": 2,
+    "source": "/home/tangyuan/WorldSimReady-Home/runs/openarm-left-joint-space-20261020-v001/openarm-left-joint-lerobot-v3/videos/observation.images.left_hand/chunk-000/file-000.mp4",
+    "sha256": "896f4ecf3940a1412d3efac8b83805b8da200aa9f42bd7eb24a22eb31f12f3d3",
+    "bytes": 7030770,
+    "type": "video",
+    "fps": 30.0,
+    "frames": 5453,
+    "seconds": 181.76666666666668,
+    "size": [
+      640,
+      480
+    ],
+    "decoded_all_frames": true,
+    "poster": "posters/M032.jpg",
+    "codec": "h264"
+  },
+  {
+    "id": "M033",
+    "path": "05_original_dataset/M033_file-000.mp4",
+    "title": "OpenArm 数据集相机 · right_hand",
+    "category": "05_original_dataset",
+    "evidence": "历史数据集 RGB",
+    "scope": "LeRobot 原始 AV1 视频流，PPT 优先使用 H.264 选段；格式有效不代表物理任务成功",
+    "recommend": 2,
+    "source": "/home/tangyuan/WorldSimReady-Home/runs/openarm-left-joint-space-20261020-v001/openarm-left-joint-lerobot-v3/videos/observation.images.right_hand/chunk-000/file-000.mp4",
+    "sha256": "08218bd6311f9a02224699fc4035859def5e001123dbbdc056c120f91166d719",
+    "bytes": 1606911,
+    "type": "video",
+    "fps": 30.0,
+    "frames": 5453,
+    "seconds": 181.76666666666668,
+    "size": [
+      640,
+      480
+    ],
+    "decoded_all_frames": true,
+    "poster": "posters/M033.jpg",
+    "codec": "h264"
+  },
+  {
+    "id": "M034",
+    "path": "05_original_dataset/M034_openarm-success-replay.mp4",
+    "title": "OpenArm 历史回放 · openarm-success-replay",
+    "category": "05_original_dataset",
+    "evidence": "历史状态回放",
+    "scope": "状态回放可展示轨迹；不是新一轮动力学执行",
+    "recommend": 2,
+    "source": "/home/tangyuan/WorldSimReady-Home/workspace-overlays/dev-state-snapshot-20261013/AutoData/files/logs/openarm_generation_preparation_20261013/openarm-success-replay.mp4",
+    "sha256": "0843a7dfc57a29f6b3f21a9bc909eacd4f377ba86d13f4f7b1e6719605d3679e",
+    "bytes": 1421091,
+    "type": "video",
+    "fps": 30.0,
+    "frames": 1432,
+    "seconds": 47.733333333333334,
+    "size": [
+      960,
+      404
+    ],
+    "decoded_all_frames": true,
+    "poster": "posters/M034.jpg",
+    "codec": "h264"
+  },
+  {
+    "id": "M035",
+    "path": "06_original_figures/M035_distribution.png",
+    "title": "OpenArm 初始状态随机化 · distribution",
+    "category": "06_original_figures",
+    "evidence": "历史渲染/统计图",
+    "scope": "原图与结论范围见源版本；不作新增实验",
+    "recommend": 2,
+    "source": "/home/tangyuan/WorldSimReady-Home/outputs/autodata-domain-randomization/v002/distribution.png",
+    "sha256": "d53e50143f452b0a2ffc6e383ce098d76770058ba7ce3441298fc5462d13b047",
+    "bytes": 202594,
+    "type": "image",
+    "poster": "06_original_figures/M035_distribution.png"
+  },
+  {
+    "id": "M036",
+    "path": "06_original_figures/M036_overview-00.png",
+    "title": "OpenArm 初始状态随机化 · overview-00",
+    "category": "06_original_figures",
+    "evidence": "历史渲染/统计图",
+    "scope": "原图与结论范围见源版本；不作新增实验",
+    "recommend": 2,
+    "source": "/home/tangyuan/WorldSimReady-Home/outputs/autodata-domain-randomization/v002/overview-00.png",
+    "sha256": "93b10970a433c14abdc6ec4d3ceb77e5889f503ec01d3ea0c72ff750ab0ea8f5",
+    "bytes": 215956,
+    "type": "image",
+    "poster": "06_original_figures/M036_overview-00.png"
+  },
+  {
+    "id": "M037",
+    "path": "06_original_figures/M037_overview-01.png",
+    "title": "OpenArm 初始状态随机化 · overview-01",
+    "category": "06_original_figures",
+    "evidence": "历史渲染/统计图",
+    "scope": "原图与结论范围见源版本；不作新增实验",
+    "recommend": 2,
+    "source": "/home/tangyuan/WorldSimReady-Home/outputs/autodata-domain-randomization/v002/overview-01.png",
+    "sha256": "0fb75db8a43a5a93104a7f6e1eeae73f64ecbb1dc344c60607ef184bd323a95f",
+    "bytes": 217241,
+    "type": "image",
+    "poster": "06_original_figures/M037_overview-01.png"
+  },
+  {
+    "id": "M038",
+    "path": "06_original_figures/M038_overview-02.png",
+    "title": "OpenArm 初始状态随机化 · overview-02",
+    "category": "06_original_figures",
+    "evidence": "历史渲染/统计图",
+    "scope": "原图与结论范围见源版本；不作新增实验",
+    "recommend": 2,
+    "source": "/home/tangyuan/WorldSimReady-Home/outputs/autodata-domain-randomization/v002/overview-02.png",
+    "sha256": "869d8ee5f9d8c3d6880dc4252d85b6b0f22aabf83082cb264a3cf94abe785da2",
+    "bytes": 218871,
+    "type": "image",
+    "poster": "06_original_figures/M038_overview-02.png"
+  },
+  {
+    "id": "M039",
+    "path": "06_original_figures/M039_overview-03.png",
+    "title": "OpenArm 初始状态随机化 · overview-03",
+    "category": "06_original_figures",
+    "evidence": "历史渲染/统计图",
+    "scope": "原图与结论范围见源版本；不作新增实验",
+    "recommend": 2,
+    "source": "/home/tangyuan/WorldSimReady-Home/outputs/autodata-domain-randomization/v002/overview-03.png",
+    "sha256": "f4c36b8ec68a92460deba97c73de7ea1e7879cbb53adce2b28566c9bcdf526cd",
+    "bytes": 214214,
+    "type": "image",
+    "poster": "06_original_figures/M039_overview-03.png"
+  },
+  {
+    "id": "M040",
+    "path": "06_original_figures/M040_overview-04.png",
+    "title": "OpenArm 初始状态随机化 · overview-04",
+    "category": "06_original_figures",
+    "evidence": "历史渲染/统计图",
+    "scope": "原图与结论范围见源版本；不作新增实验",
+    "recommend": 2,
+    "source": "/home/tangyuan/WorldSimReady-Home/outputs/autodata-domain-randomization/v002/overview-04.png",
+    "sha256": "d3e1bbf8a43778ef8f88d93be2911fddf45f19aff0840ea6d98ddc04ee836615",
+    "bytes": 219464,
+    "type": "image",
+    "poster": "06_original_figures/M040_overview-04.png"
+  },
+  {
+    "id": "M041",
+    "path": "06_original_figures/M041_overview-05.png",
+    "title": "OpenArm 初始状态随机化 · overview-05",
+    "category": "06_original_figures",
+    "evidence": "历史渲染/统计图",
+    "scope": "原图与结论范围见源版本；不作新增实验",
+    "recommend": 2,
+    "source": "/home/tangyuan/WorldSimReady-Home/outputs/autodata-domain-randomization/v002/overview-05.png",
+    "sha256": "18a38786cc63bcbbdfaa7d2445f9347a8e2f38ebf75dd29c72823f40d733f814",
+    "bytes": 217888,
+    "type": "image",
+    "poster": "06_original_figures/M041_overview-05.png"
+  },
+  {
+    "id": "M042",
+    "path": "06_original_figures/M042_overview-06.png",
+    "title": "OpenArm 初始状态随机化 · overview-06",
+    "category": "06_original_figures",
+    "evidence": "历史渲染/统计图",
+    "scope": "原图与结论范围见源版本；不作新增实验",
+    "recommend": 2,
+    "source": "/home/tangyuan/WorldSimReady-Home/outputs/autodata-domain-randomization/v002/overview-06.png",
+    "sha256": "84f6919ad26eb7de41c23f88931805ec3c6a2a741b884f8c317c57cb56c22188",
+    "bytes": 218194,
+    "type": "image",
+    "poster": "06_original_figures/M042_overview-06.png"
+  },
+  {
+    "id": "M043",
+    "path": "06_original_figures/M043_overview-07.png",
+    "title": "OpenArm 初始状态随机化 · overview-07",
+    "category": "06_original_figures",
+    "evidence": "历史渲染/统计图",
+    "scope": "原图与结论范围见源版本；不作新增实验",
+    "recommend": 2,
+    "source": "/home/tangyuan/WorldSimReady-Home/outputs/autodata-domain-randomization/v002/overview-07.png",
+    "sha256": "061b0dc97f211953256a40d66c14337a4886dc7c62547a443194cfb1d5b9020a",
+    "bytes": 218988,
+    "type": "image",
+    "poster": "06_original_figures/M043_overview-07.png"
+  },
+  {
+    "id": "M044",
+    "path": "06_original_figures/M044_overview-08.png",
+    "title": "OpenArm 初始状态随机化 · overview-08",
+    "category": "06_original_figures",
+    "evidence": "历史渲染/统计图",
+    "scope": "原图与结论范围见源版本；不作新增实验",
+    "recommend": 2,
+    "source": "/home/tangyuan/WorldSimReady-Home/outputs/autodata-domain-randomization/v002/overview-08.png",
+    "sha256": "fe40a628308fe85d25e745b026ce5ad5a42a7b1a6fe8f7a53eae048a9646d791",
+    "bytes": 218195,
+    "type": "image",
+    "poster": "06_original_figures/M044_overview-08.png"
+  },
+  {
+    "id": "M045",
+    "path": "06_original_figures/M045_renders.png",
+    "title": "OpenArm 初始状态随机化 · renders",
+    "category": "06_original_figures",
+    "evidence": "历史渲染/统计图",
+    "scope": "原图与结论范围见源版本；不作新增实验",
+    "recommend": 2,
+    "source": "/home/tangyuan/WorldSimReady-Home/outputs/autodata-domain-randomization/v002/renders.png",
+    "sha256": "15f7835e7e0121e2b61fb106e18a06f3e1b58afeccb3ce8f182f4e51fb95a398",
+    "bytes": 1711894,
+    "type": "image",
+    "poster": "06_original_figures/M045_renders.png"
+  },
+  {
+    "id": "M046",
+    "path": "06_original_figures/M046_reset-00.png",
+    "title": "OpenArm 初始状态随机化 · reset-00",
+    "category": "06_original_figures",
+    "evidence": "历史渲染/统计图",
+    "scope": "原图与结论范围见源版本；不作新增实验",
+    "recommend": 2,
+    "source": "/home/tangyuan/WorldSimReady-Home/outputs/autodata-domain-randomization/v002/reset-00.png",
+    "sha256": "d7a09d644b1236d0392f3d12099bd2541d7846fa660116bdd1765be552164cff",
+    "bytes": 185547,
+    "type": "image",
+    "poster": "06_original_figures/M046_reset-00.png"
+  },
+  {
+    "id": "M047",
+    "path": "06_original_figures/M047_reset-01.png",
+    "title": "OpenArm 初始状态随机化 · reset-01",
+    "category": "06_original_figures",
+    "evidence": "历史渲染/统计图",
+    "scope": "原图与结论范围见源版本；不作新增实验",
+    "recommend": 2,
+    "source": "/home/tangyuan/WorldSimReady-Home/outputs/autodata-domain-randomization/v002/reset-01.png",
+    "sha256": "05cd527a61123613b47bba5660274a33391fc9a83824828670f20a17a8db2f03",
+    "bytes": 195120,
+    "type": "image",
+    "poster": "06_original_figures/M047_reset-01.png"
+  },
+  {
+    "id": "M048",
+    "path": "06_original_figures/M048_reset-02.png",
+    "title": "OpenArm 初始状态随机化 · reset-02",
+    "category": "06_original_figures",
+    "evidence": "历史渲染/统计图",
+    "scope": "原图与结论范围见源版本；不作新增实验",
+    "recommend": 2,
+    "source": "/home/tangyuan/WorldSimReady-Home/outputs/autodata-domain-randomization/v002/reset-02.png",
+    "sha256": "e3c2e1f258351c505027eff795aefdd98856d8ccbb09fd0df132fdc061041083",
+    "bytes": 192879,
+    "type": "image",
+    "poster": "06_original_figures/M048_reset-02.png"
+  },
+  {
+    "id": "M049",
+    "path": "06_original_figures/M049_reset-03.png",
+    "title": "OpenArm 初始状态随机化 · reset-03",
+    "category": "06_original_figures",
+    "evidence": "历史渲染/统计图",
+    "scope": "原图与结论范围见源版本；不作新增实验",
+    "recommend": 2,
+    "source": "/home/tangyuan/WorldSimReady-Home/outputs/autodata-domain-randomization/v002/reset-03.png",
+    "sha256": "8cfc294a0947f8529336e99ad86f7486fe5bf2be918953a91808a5263c32a467",
+    "bytes": 187860,
+    "type": "image",
+    "poster": "06_original_figures/M049_reset-03.png"
+  },
+  {
+    "id": "M050",
+    "path": "06_original_figures/M050_reset-04.png",
+    "title": "OpenArm 初始状态随机化 · reset-04",
+    "category": "06_original_figures",
+    "evidence": "历史渲染/统计图",
+    "scope": "原图与结论范围见源版本；不作新增实验",
+    "recommend": 2,
+    "source": "/home/tangyuan/WorldSimReady-Home/outputs/autodata-domain-randomization/v002/reset-04.png",
+    "sha256": "f84cb18994b320ddc7703aa5b7b5a154a905ac90ea6b3e019961a1371ff6b25e",
+    "bytes": 194703,
+    "type": "image",
+    "poster": "06_original_figures/M050_reset-04.png"
+  },
+  {
+    "id": "M051",
+    "path": "06_original_figures/M051_reset-05.png",
+    "title": "OpenArm 初始状态随机化 · reset-05",
+    "category": "06_original_figures",
+    "evidence": "历史渲染/统计图",
+    "scope": "原图与结论范围见源版本；不作新增实验",
+    "recommend": 2,
+    "source": "/home/tangyuan/WorldSimReady-Home/outputs/autodata-domain-randomization/v002/reset-05.png",
+    "sha256": "0bbe0ae1fc42bf136b191ebd09dbbb7bcc7811c8aa33a3dd8bc9cae09e26a534",
+    "bytes": 193697,
+    "type": "image",
+    "poster": "06_original_figures/M051_reset-05.png"
+  },
+  {
+    "id": "M052",
+    "path": "06_original_figures/M052_reset-06.png",
+    "title": "OpenArm 初始状态随机化 · reset-06",
+    "category": "06_original_figures",
+    "evidence": "历史渲染/统计图",
+    "scope": "原图与结论范围见源版本；不作新增实验",
+    "recommend": 2,
+    "source": "/home/tangyuan/WorldSimReady-Home/outputs/autodata-domain-randomization/v002/reset-06.png",
+    "sha256": "bd0a295548fe493579f9b597022b031546352cf6303be8b55d98af5b71520b24",
+    "bytes": 193384,
+    "type": "image",
+    "poster": "06_original_figures/M052_reset-06.png"
+  },
+  {
+    "id": "M053",
+    "path": "06_original_figures/M053_reset-07.png",
+    "title": "OpenArm 初始状态随机化 · reset-07",
+    "category": "06_original_figures",
+    "evidence": "历史渲染/统计图",
+    "scope": "原图与结论范围见源版本；不作新增实验",
+    "recommend": 2,
+    "source": "/home/tangyuan/WorldSimReady-Home/outputs/autodata-domain-randomization/v002/reset-07.png",
+    "sha256": "e01b1f9657167836be29015b73670cfd3bf3ea62bbf45d28199c07a6aa57f9f6",
+    "bytes": 194554,
+    "type": "image",
+    "poster": "06_original_figures/M053_reset-07.png"
+  },
+  {
+    "id": "M054",
+    "path": "06_original_figures/M054_reset-08.png",
+    "title": "OpenArm 初始状态随机化 · reset-08",
+    "category": "06_original_figures",
+    "evidence": "历史渲染/统计图",
+    "scope": "原图与结论范围见源版本；不作新增实验",
+    "recommend": 2,
+    "source": "/home/tangyuan/WorldSimReady-Home/outputs/autodata-domain-randomization/v002/reset-08.png",
+    "sha256": "17221153b06cf2a1b5a732daf3808f23795d24eacf0ea2c73d1fb1812497dc43",
+    "bytes": 197028,
+    "type": "image",
+    "poster": "06_original_figures/M054_reset-08.png"
+  },
+  {
+    "id": "N008",
+    "path": "08_image_augmentation/rgb_warm.mp4",
+    "title": "RGB 任务图像增强 · 暖色白平衡",
+    "category": "08_image_augmentation",
+    "evidence": "视频后处理",
+    "scope": "同轨迹像素变换；不能宣称物理参数随机化或泛化性能提升",
+    "recommend": 2,
+    "source": [
+      "runs/interview-media/rgb-detail-final/render.json"
+    ],
+    "sha256": "e62bf62207869c2cee3f91a305956dac1ebe0dc617635122b36a4e9f6111fe96",
+    "bytes": 830136,
+    "type": "video",
+    "poster": "posters/N008.jpg",
+    "frames": 594,
+    "fps": 30.0,
+    "seconds": 19.8,
+    "size": [
+      1280,
+      720
+    ],
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "id": "N009",
+    "path": "08_image_augmentation/rgb_cool.mp4",
+    "title": "RGB 任务图像增强 · 冷色白平衡",
+    "category": "08_image_augmentation",
+    "evidence": "视频后处理",
+    "scope": "同轨迹像素变换；不能宣称物理参数随机化或泛化性能提升",
+    "recommend": 2,
+    "source": [
+      "runs/interview-media/rgb-detail-final/render.json"
+    ],
+    "sha256": "17c7e02a39565b6c133ebeecda385c4eb1c6c5d60690bfe0c1824a31872020dc",
+    "bytes": 790144,
+    "type": "video",
+    "poster": "posters/N009.jpg",
+    "frames": 594,
+    "fps": 30.0,
+    "seconds": 19.8,
+    "size": [
+      1280,
+      720
+    ],
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "id": "N010",
+    "path": "08_image_augmentation/rgb_dim.mp4",
+    "title": "RGB 任务图像增强 · 曝光降低",
+    "category": "08_image_augmentation",
+    "evidence": "视频后处理",
+    "scope": "同轨迹像素变换；不能宣称物理参数随机化或泛化性能提升",
+    "recommend": 2,
+    "source": [
+      "runs/interview-media/rgb-detail-final/render.json"
+    ],
+    "sha256": "d43bc70dbd07f470e667c967194641193e8d31b7cea578d1968c6c32f868424e",
+    "bytes": 611357,
+    "type": "video",
+    "poster": "posters/N010.jpg",
+    "frames": 594,
+    "fps": 30.0,
+    "seconds": 19.8,
+    "size": [
+      1280,
+      720
+    ],
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "id": "N011",
+    "path": "08_image_augmentation/rgb_bright.mp4",
+    "title": "RGB 任务图像增强 · 曝光提高",
+    "category": "08_image_augmentation",
+    "evidence": "视频后处理",
+    "scope": "同轨迹像素变换；不能宣称物理参数随机化或泛化性能提升",
+    "recommend": 2,
+    "source": [
+      "runs/interview-media/rgb-detail-final/render.json"
+    ],
+    "sha256": "d4b893fc9e446791a8f2b5857a94d814b4221da99148d11a549c34e4525a59b8",
+    "bytes": 746182,
+    "type": "video",
+    "poster": "posters/N011.jpg",
+    "frames": 594,
+    "fps": 30.0,
+    "seconds": 19.8,
+    "size": [
+      1280,
+      720
+    ],
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "id": "N012",
+    "path": "08_image_augmentation/rgb_noise.mp4",
+    "title": "RGB 任务图像增强 · 传感噪声",
+    "category": "08_image_augmentation",
+    "evidence": "视频后处理",
+    "scope": "同轨迹像素变换；不能宣称物理参数随机化或泛化性能提升",
+    "recommend": 2,
+    "source": [
+      "runs/interview-media/rgb-detail-final/render.json"
+    ],
+    "sha256": "f80d1a72c1e48f4f218bd81b08b2dd112758c7422c446dad1d568f46461c4c61",
+    "bytes": 15098338,
+    "type": "video",
+    "poster": "posters/N012.jpg",
+    "frames": 594,
+    "fps": 30.0,
+    "seconds": 19.8,
+    "size": [
+      1280,
+      720
+    ],
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "id": "N013",
+    "path": "08_image_augmentation/rgb_blur.mp4",
+    "title": "RGB 任务图像增强 · 轻度模糊",
+    "category": "08_image_augmentation",
+    "evidence": "视频后处理",
+    "scope": "同轨迹像素变换；不能宣称物理参数随机化或泛化性能提升",
+    "recommend": 2,
+    "source": [
+      "runs/interview-media/rgb-detail-final/render.json"
+    ],
+    "sha256": "cf202229c4088f6dd54a02a60c1c23b0d16cf1f0c680c8c59fed5efd3a6f8516",
+    "bytes": 683600,
+    "type": "video",
+    "poster": "posters/N013.jpg",
+    "frames": 594,
+    "fps": 30.0,
+    "seconds": 19.8,
+    "size": [
+      1280,
+      720
+    ],
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "id": "N014",
+    "path": "08_image_augmentation/rgb_contrast.mp4",
+    "title": "RGB 任务图像增强 · 对比度变化",
+    "category": "08_image_augmentation",
+    "evidence": "视频后处理",
+    "scope": "同轨迹像素变换；不能宣称物理参数随机化或泛化性能提升",
+    "recommend": 2,
+    "source": [
+      "runs/interview-media/rgb-detail-final/render.json"
+    ],
+    "sha256": "022e07f0320370bdc434c66a7003fac6f734c6c5caa5f5c028e5c34cd302be10",
+    "bytes": 920246,
+    "type": "video",
+    "poster": "posters/N014.jpg",
+    "frames": 594,
+    "fps": 30.0,
+    "seconds": 19.8,
+    "size": [
+      1280,
+      720
+    ],
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "id": "N015",
+    "path": "08_image_augmentation/rgb_vignette.mp4",
+    "title": "RGB 任务图像增强 · 渐晕变化",
+    "category": "08_image_augmentation",
+    "evidence": "视频后处理",
+    "scope": "同轨迹像素变换；不能宣称物理参数随机化或泛化性能提升",
+    "recommend": 2,
+    "source": [
+      "runs/interview-media/rgb-detail-final/render.json"
+    ],
+    "sha256": "98ad86e75a4269198253d4e1345fc003f945ac8a725f2d18b181e2c8353b42c3",
+    "bytes": 752325,
+    "type": "video",
+    "poster": "posters/N015.jpg",
+    "frames": 594,
+    "fps": 30.0,
+    "seconds": 19.8,
+    "size": [
+      1280,
+      720
+    ],
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "id": "N016",
+    "path": "09_background_composites/rgb_background_home.mp4",
+    "title": "方块排序背景替换 · 原 mini 家居",
+    "category": "09_background_composites",
+    "evidence": "二维背景合成",
+    "scope": "透明前景包含原生餐桌、任务对象与夹爪；背景独立替换，没有 3DGS",
+    "recommend": 2,
+    "source": [
+      "runs/interview-media/rgb-foreground/render.json",
+      "runs/interview-media/rgb-wide-final/frame_0000.png"
+    ],
+    "sha256": "fb4f0136a38d77a71b140442097f0ac3702269b85de36e5cf40d41566dd38e64",
+    "bytes": 666069,
+    "type": "video",
+    "poster": "posters/N016.jpg",
+    "frames": 594,
+    "fps": 30.0,
+    "seconds": 19.8,
+    "size": [
+      1280,
+      720
+    ],
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "id": "N017",
+    "path": "09_background_composites/rgb_background_other_view.mp4",
+    "title": "方块排序背景替换 · mini 家居另一视角",
+    "category": "09_background_composites",
+    "evidence": "二维背景合成",
+    "scope": "透明前景包含原生餐桌、任务对象与夹爪；背景独立替换，没有 3DGS",
+    "recommend": 2,
+    "source": [
+      "runs/interview-media/rgb-foreground/render.json",
+      "runs/interview-media/bundle-v2/posters/M003.jpg"
+    ],
+    "sha256": "4071a22dfa08bd6d4e34a0c770d886b46cc25d64b79ca391922a3f8c89a7504e",
+    "bytes": 685313,
+    "type": "video",
+    "poster": "posters/N017.jpg",
+    "frames": 594,
+    "fps": 30.0,
+    "seconds": 19.8,
+    "size": [
+      1280,
+      720
+    ],
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "id": "N018",
+    "path": "09_background_composites/rgb_background_studio.mp4",
+    "title": "方块排序背景替换 · 纯色演播室",
+    "category": "09_background_composites",
+    "evidence": "二维背景合成",
+    "scope": "透明前景包含原生餐桌、任务对象与夹爪；背景独立替换，没有 3DGS",
+    "recommend": 2,
+    "source": [
+      "runs/interview-media/rgb-foreground/render.json",
+      "None"
+    ],
+    "sha256": "5b05c6325f9aa400b736a03e252856c8f23e5ec49ce9a783f39fb874946f441c",
+    "bytes": 612924,
+    "type": "video",
+    "poster": "posters/N018.jpg",
+    "frames": 594,
+    "fps": 30.0,
+    "seconds": 19.8,
+    "size": [
+      1280,
+      720
+    ],
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "id": "N025",
+    "path": "12_ppt_h264/M031_excerpt_h264.mp4",
+    "title": "OpenArm 数据集相机 · third_person · PPT H.264 选段",
+    "category": "12_ppt_h264",
+    "evidence": "原视频转码选段",
+    "scope": "保留原画幅比例，置入 16:9 留边画布；原视频前 20 秒选段",
+    "recommend": 2,
+    "source": [
+      "/home/tangyuan/WorldSimReady-Home/runs/openarm-left-joint-space-20261020-v001/openarm-left-joint-lerobot-v3/videos/observation.images.third_person/chunk-000/file-000.mp4"
+    ],
+    "sha256": "d75bb6c675bb994495308d829453a8a18ac4381db074ecf9141f061ff2fb64ce",
+    "bytes": 4002393,
+    "type": "video",
+    "poster": "posters/N025.jpg",
+    "frames": 600,
+    "fps": 30.0,
+    "seconds": 20.0,
+    "size": [
+      1280,
+      720
+    ],
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "id": "N026",
+    "path": "12_ppt_h264/M032_excerpt_h264.mp4",
+    "title": "OpenArm 数据集相机 · left_hand · PPT H.264 选段",
+    "category": "12_ppt_h264",
+    "evidence": "原视频转码选段",
+    "scope": "保留原画幅比例，置入 16:9 留边画布；原视频前 20 秒选段",
+    "recommend": 2,
+    "source": [
+      "/home/tangyuan/WorldSimReady-Home/runs/openarm-left-joint-space-20261020-v001/openarm-left-joint-lerobot-v3/videos/observation.images.left_hand/chunk-000/file-000.mp4"
+    ],
+    "sha256": "6ca704aa702f953e600b5f040feda84894f7aaadebc3c45e61cfe954b0f06919",
+    "bytes": 1985401,
+    "type": "video",
+    "poster": "posters/N026.jpg",
+    "frames": 600,
+    "fps": 30.0,
+    "seconds": 20.0,
+    "size": [
+      1280,
+      720
+    ],
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "id": "N027",
+    "path": "12_ppt_h264/M033_excerpt_h264.mp4",
+    "title": "OpenArm 数据集相机 · right_hand · PPT H.264 选段",
+    "category": "12_ppt_h264",
+    "evidence": "原视频转码选段",
+    "scope": "保留原画幅比例，置入 16:9 留边画布；原视频前 20 秒选段",
+    "recommend": 2,
+    "source": [
+      "/home/tangyuan/WorldSimReady-Home/runs/openarm-left-joint-space-20261020-v001/openarm-left-joint-lerobot-v3/videos/observation.images.right_hand/chunk-000/file-000.mp4"
+    ],
+    "sha256": "0884fa513e748414bb0f2d3d63ef7b132566f5efb041a7a0ec4dcae8b6ae7339",
+    "bytes": 64162,
+    "type": "video",
+    "poster": "posters/N027.jpg",
+    "frames": 600,
+    "fps": 30.0,
+    "seconds": 20.0,
+    "size": [
+      1280,
+      720
+    ],
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "id": "M026",
+    "path": "04_original_grasp/M026_comparison.mp4",
+    "title": "抓取路径对照 · comparison",
+    "category": "04_original_grasp",
+    "evidence": "历史对照录像",
+    "scope": "包含受阻失败对照；不可作为全部成功展示",
+    "recommend": 3,
+    "source": "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/outputs/franka-curobo-home-comparison/v001/comparison.mp4",
+    "sha256": "de03926fef1f06f9d8d505748d57469fd66cace8cadd13b7a69bfd2ecdb538b2",
+    "bytes": 980656,
+    "type": "video",
+    "fps": 50.0,
+    "frames": 1000,
+    "seconds": 20.0,
+    "size": [
+      960,
+      600
+    ],
+    "decoded_all_frames": true,
+    "poster": "posters/M026.jpg",
+    "codec": "h264"
+  },
+  {
+    "id": "M027",
+    "path": "04_original_grasp/M027_curobo_blocked_detail.mp4",
+    "title": "抓取路径对照 · curobo_blocked_detail",
+    "category": "04_original_grasp",
+    "evidence": "历史对照录像",
+    "scope": "包含受阻失败对照；不可作为全部成功展示",
+    "recommend": 3,
+    "source": "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/outputs/franka-curobo-home-comparison/v001/curobo_blocked_detail.mp4",
+    "sha256": "c3869247dbf60441ec974a3499387555f16fe0f0f2c66982c59c9ed5e35b3a3a",
+    "bytes": 673189,
+    "type": "video",
+    "fps": 50.0,
+    "frames": 1000,
+    "seconds": 20.0,
+    "size": [
+      640,
+      480
+    ],
+    "decoded_all_frames": true,
+    "poster": "posters/M027.jpg",
+    "codec": "h264"
+  },
+  {
+    "id": "M028",
+    "path": "04_original_grasp/M028_curobo_clear_detail.mp4",
+    "title": "抓取路径对照 · curobo_clear_detail",
+    "category": "04_original_grasp",
+    "evidence": "历史对照录像",
+    "scope": "包含受阻失败对照；不可作为全部成功展示",
+    "recommend": 3,
+    "source": "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/outputs/franka-curobo-home-comparison/v001/curobo_clear_detail.mp4",
+    "sha256": "e02291953c5412b0de42d4cc075ecac056b38a0dbf4454277ceb74bf4fa70f4f",
+    "bytes": 635031,
+    "type": "video",
+    "fps": 50.0,
+    "frames": 1000,
+    "seconds": 20.0,
+    "size": [
+      640,
+      480
+    ],
+    "decoded_all_frames": true,
+    "poster": "posters/M028.jpg",
+    "codec": "h264"
+  },
+  {
+    "id": "M029",
+    "path": "04_original_grasp/M029_ik_blocked_detail.mp4",
+    "title": "抓取路径对照 · ik_blocked_detail",
+    "category": "04_original_grasp",
+    "evidence": "历史对照录像",
+    "scope": "包含受阻失败对照；不可作为全部成功展示",
+    "recommend": 3,
+    "source": "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/outputs/franka-curobo-home-comparison/v001/ik_blocked_detail.mp4",
+    "sha256": "df9e2fe383641e8ffe5aa38f842f96989f654b6324886afe4839db1a624a8763",
+    "bytes": 699694,
+    "type": "video",
+    "fps": 50.0,
+    "frames": 1000,
+    "seconds": 20.0,
+    "size": [
+      640,
+      480
+    ],
+    "decoded_all_frames": true,
+    "poster": "posters/M029.jpg",
+    "codec": "h264"
+  },
+  {
+    "id": "M030",
+    "path": "04_original_grasp/M030_ik_clear_detail.mp4",
+    "title": "抓取路径对照 · ik_clear_detail",
+    "category": "04_original_grasp",
+    "evidence": "历史对照录像",
+    "scope": "包含受阻失败对照；不可作为全部成功展示",
+    "recommend": 3,
+    "source": "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/outputs/franka-curobo-home-comparison/v001/ik_clear_detail.mp4",
+    "sha256": "b2bf7bd5f3736ae92002ea2c392d9d38e38c89ba12076090b66000b16592473f",
+    "bytes": 639137,
+    "type": "video",
+    "fps": 50.0,
+    "frames": 1000,
+    "seconds": 20.0,
+    "size": [
+      640,
+      480
+    ],
+    "decoded_all_frames": true,
+    "poster": "posters/M030.jpg",
+    "codec": "h264"
+  }
+]

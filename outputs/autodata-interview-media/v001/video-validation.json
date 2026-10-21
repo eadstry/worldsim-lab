@@ -1,0 +1,471 @@
+[
+  {
+    "path": "01_original_home/M001_overview.mp4",
+    "frames": 950,
+    "fps": 50.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "01_original_home/M002_detail.mp4",
+    "frames": 950,
+    "fps": 50.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "02_original_domain/M003_overview.mp4",
+    "frames": 928,
+    "fps": 50.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "02_original_domain/M004_head.mp4",
+    "frames": 928,
+    "fps": 50.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "02_original_domain/M005_overview.mp4",
+    "frames": 928,
+    "fps": 50.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "02_original_domain/M006_overview.mp4",
+    "frames": 928,
+    "fps": 50.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "02_original_domain/M007_overview.mp4",
+    "frames": 928,
+    "fps": 50.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "02_original_domain/M008_head.mp4",
+    "frames": 928,
+    "fps": 50.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "02_original_domain/M009_overview.mp4",
+    "frames": 928,
+    "fps": 50.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "02_original_domain/M010_head.mp4",
+    "frames": 928,
+    "fps": 50.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "02_original_domain/M011_overview.mp4",
+    "frames": 843,
+    "fps": 50.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "02_original_domain/M012_head.mp4",
+    "frames": 843,
+    "fps": 50.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "02_original_domain/M013_overview.mp4",
+    "frames": 904,
+    "fps": 50.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "02_original_domain/M014_head.mp4",
+    "frames": 904,
+    "fps": 50.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "03_original_hdr/M015_baseline-r02.mp4",
+    "frames": 1432,
+    "fps": 30.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "03_original_hdr/M016_beach-r03.mp4",
+    "frames": 1432,
+    "fps": 30.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "03_original_hdr/M017_beach-r04.mp4",
+    "frames": 1432,
+    "fps": 30.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "03_original_hdr/M018_comparison-full.mp4",
+    "frames": 1432,
+    "fps": 30.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "03_original_hdr/M019_studio-r03.mp4",
+    "frames": 1432,
+    "fps": 30.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "03_original_hdr/M020_studio-r04.mp4",
+    "frames": 1432,
+    "fps": 30.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "04_original_grasp/M021_detail.mp4",
+    "frames": 950,
+    "fps": 50.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "04_original_grasp/M022_overview.mp4",
+    "frames": 950,
+    "fps": 50.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "04_original_grasp/M023_detail.mp4",
+    "frames": 950,
+    "fps": 50.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "04_original_grasp/M024_overview.mp4",
+    "frames": 950,
+    "fps": 50.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "04_original_grasp/M025_wrist.mp4",
+    "frames": 950,
+    "fps": 50.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "04_original_grasp/M026_comparison.mp4",
+    "frames": 1000,
+    "fps": 50.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "04_original_grasp/M027_curobo_blocked_detail.mp4",
+    "frames": 1000,
+    "fps": 50.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "04_original_grasp/M028_curobo_clear_detail.mp4",
+    "frames": 1000,
+    "fps": 50.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "04_original_grasp/M029_ik_blocked_detail.mp4",
+    "frames": 1000,
+    "fps": 50.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "04_original_grasp/M030_ik_clear_detail.mp4",
+    "frames": 1000,
+    "fps": 50.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "05_original_dataset/M031_file-000.mp4",
+    "frames": 5453,
+    "fps": 30.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "05_original_dataset/M032_file-000.mp4",
+    "frames": 5453,
+    "fps": 30.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "05_original_dataset/M033_file-000.mp4",
+    "frames": 5453,
+    "fps": 30.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "05_original_dataset/M034_openarm-success-replay.mp4",
+    "frames": 1432,
+    "fps": 30.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "07_new_rgb/rgb-detail-final_clean.mp4",
+    "frames": 594,
+    "fps": 30.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "07_new_rgb/rgb-detail-final_explained.mp4",
+    "frames": 594,
+    "fps": 30.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "07_new_rgb/rgb-wide-final_clean.mp4",
+    "frames": 594,
+    "fps": 30.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "07_new_rgb/rgb-wide-final_explained.mp4",
+    "frames": 594,
+    "fps": 30.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "07_new_rgb/rgb-top-final_clean.mp4",
+    "frames": 594,
+    "fps": 30.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "07_new_rgb/rgb-top-final_explained.mp4",
+    "frames": 594,
+    "fps": 30.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "07_new_rgb/rgb-red-pick-place.mp4",
+    "frames": 198,
+    "fps": 30.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "08_image_augmentation/rgb_warm.mp4",
+    "frames": 594,
+    "fps": 30.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "08_image_augmentation/rgb_cool.mp4",
+    "frames": 594,
+    "fps": 30.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "08_image_augmentation/rgb_dim.mp4",
+    "frames": 594,
+    "fps": 30.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "08_image_augmentation/rgb_bright.mp4",
+    "frames": 594,
+    "fps": 30.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "08_image_augmentation/rgb_noise.mp4",
+    "frames": 594,
+    "fps": 30.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "08_image_augmentation/rgb_blur.mp4",
+    "frames": 594,
+    "fps": 30.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "08_image_augmentation/rgb_contrast.mp4",
+    "frames": 594,
+    "fps": 30.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "08_image_augmentation/rgb_vignette.mp4",
+    "frames": 594,
+    "fps": 30.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "09_background_composites/rgb_background_home.mp4",
+    "frames": 594,
+    "fps": 30.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "09_background_composites/rgb_background_other_view.mp4",
+    "frames": 594,
+    "fps": 30.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "09_background_composites/rgb_background_studio.mp4",
+    "frames": 594,
+    "fps": 30.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "10_g1d/g1d-final-detail.mp4",
+    "frames": 891,
+    "fps": 30.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "10_g1d/g1d-final-grasp.mp4",
+    "frames": 333,
+    "fps": 30.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "10_g1d/g1d-final-side.mp4",
+    "frames": 891,
+    "fps": 30.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "10_g1d/g1d-final-wide.mp4",
+    "frames": 891,
+    "fps": 30.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "11_comparisons/home_domain_2x2.mp4",
+    "frames": 555,
+    "fps": 30.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "11_comparisons/rgb_three_views.mp4",
+    "frames": 594,
+    "fps": 30.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "12_ppt_h264/M031_excerpt_h264.mp4",
+    "frames": 600,
+    "fps": 30.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "12_ppt_h264/M032_excerpt_h264.mp4",
+    "frames": 600,
+    "fps": 30.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "12_ppt_h264/M033_excerpt_h264.mp4",
+    "frames": 600,
+    "fps": 30.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "13_explanation/autodata_flow_schematic.mp4",
+    "frames": 360,
+    "fps": 30.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "10_g1d/g1d-adapted-gripper-wide_clean.mp4",
+    "frames": 891,
+    "fps": 30.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "10_g1d/g1d-adapted-gripper-detail_clean.mp4",
+    "frames": 891,
+    "fps": 30.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "10_g1d/g1d-adapted-gripper-side_clean.mp4",
+    "frames": 891,
+    "fps": 30.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "10_g1d/g1d-adapted-gripper-grasp_clean.mp4",
+    "frames": 333,
+    "fps": 30.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  },
+  {
+    "path": "11_comparisons/g1d_rgb_three_views.mp4",
+    "frames": 891,
+    "fps": 30.0,
+    "codec": "h264",
+    "decoded_all_frames": true
+  }
+]

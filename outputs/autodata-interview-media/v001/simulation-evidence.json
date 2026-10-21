@@ -1,0 +1,2346 @@
+{
+  "scene": {
+    "repository": "Yootta/World-SimReady-Home-mini",
+    "revision": "f2c633749e7fdf3f981dfd1dd83fc253786713ac",
+    "scene": "scene000430",
+    "usdz_sha256": "d38ebd9e8312c46125bee1412c3a45933c245b890ea081c307fcfc4e37814ee6",
+    "license": "CC-BY-NC-SA-4.0",
+    "physics": "Native dining-table measured AABB support only; house render-only",
+    "gaussian_scene_used": false
+  },
+  "official_g1d": {
+    "repository": "https://github.com/unitreerobotics/unitree_ros.git",
+    "commit": "5994d4faef0a9cadd3287f8de0199a67eeb2a259",
+    "robot": "G1_D",
+    "files": [
+      {
+        "path": "g1_d.urdf",
+        "bytes": 42820,
+        "sha256": "46527573a7140c7129c3587ba5591f269974deb893a0b095ebca500028b8bf40",
+        "url": "https://raw.githubusercontent.com/unitreerobotics/unitree_ros/5994d4faef0a9cadd3287f8de0199a67eeb2a259/robots/g1_d_description/g1_d.urdf"
+      },
+      {
+        "path": "meshes/AGV_link.STL",
+        "bytes": 323984,
+        "sha256": "31f614f6dba7d325da41a8126e046816e1715a68782deecaf2f54b7b6e8018af",
+        "url": "https://raw.githubusercontent.com/unitreerobotics/unitree_ros/5994d4faef0a9cadd3287f8de0199a67eeb2a259/robots/g1_d_description/meshes/AGV_link.STL"
+      },
+      {
+        "path": "meshes/LZ_it_Link.STL",
+        "bytes": 152484,
+        "sha256": "031fb6edebed09abb62fcff327bfaaa22ab0488e61e252bc5c82581106c7e35d",
+        "url": "https://raw.githubusercontent.com/unitreerobotics/unitree_ros/5994d4faef0a9cadd3287f8de0199a67eeb2a259/robots/g1_d_description/meshes/LZ_it_Link.STL"
+      },
+      {
+        "path": "meshes/LZ_mt_Link.STL",
+        "bytes": 95284,
+        "sha256": "236cc1f805e4b7d678dbfd30fa8fa42585420ef1a1155c056de48ebb99ec460e",
+        "url": "https://raw.githubusercontent.com/unitreerobotics/unitree_ros/5994d4faef0a9cadd3287f8de0199a67eeb2a259/robots/g1_d_description/meshes/LZ_mt_Link.STL"
+      },
+      {
+        "path": "meshes/LZ_ot_Link.STL",
+        "bytes": 142884,
+        "sha256": "10c28c57b042263080dcf5b508da7142f156c6d3e696fc8a0bc59ded81287910",
+        "url": "https://raw.githubusercontent.com/unitreerobotics/unitree_ros/5994d4faef0a9cadd3287f8de0199a67eeb2a259/robots/g1_d_description/meshes/LZ_ot_Link.STL"
+      },
+      {
+        "path": "meshes/Left_Wheel_Link.STL",
+        "bytes": 2215584,
+        "sha256": "f9edcdc9869a490a4cec4cd2d72a8c8e2a708d2b6e0821c14e38d7acd7bef640",
+        "url": "https://raw.githubusercontent.com/unitreerobotics/unitree_ros/5994d4faef0a9cadd3287f8de0199a67eeb2a259/robots/g1_d_description/meshes/Left_Wheel_Link.STL"
+      },
+      {
+        "path": "meshes/Pitching_Link.STL",
+        "bytes": 616284,
+        "sha256": "804e2bfe229bed215e5ad0a551b0c96bdc0980887658b166e193bf6012d27595",
+        "url": "https://raw.githubusercontent.com/unitreerobotics/unitree_ros/5994d4faef0a9cadd3287f8de0199a67eeb2a259/robots/g1_d_description/meshes/Pitching_Link.STL"
+      },
+      {
+        "path": "meshes/RIght_Wheel_Link.STL",
+        "bytes": 2215584,
+        "sha256": "e3e06451891f27e2cda41b5cabdf3ff19f606a94abe86e37fc9fdf253d71a429",
+        "url": "https://raw.githubusercontent.com/unitreerobotics/unitree_ros/5994d4faef0a9cadd3287f8de0199a67eeb2a259/robots/g1_d_description/meshes/RIght_Wheel_Link.STL"
+      },
+      {
+        "path": "meshes/Yaw_Link.STL",
+        "bytes": 1043084,
+        "sha256": "7c8db7f2cc73a7032e338a3dbb6783760202314a256ca4b92ae5a097a54a261a",
+        "url": "https://raw.githubusercontent.com/unitreerobotics/unitree_ros/5994d4faef0a9cadd3287f8de0199a67eeb2a259/robots/g1_d_description/meshes/Yaw_Link.STL"
+      },
+      {
+        "path": "meshes/head_link.STL",
+        "bytes": 932784,
+        "sha256": "005fb67fbd3eff94aa8bf4a6e83238174e9f91b6721f7111594322f223724411",
+        "url": "https://raw.githubusercontent.com/unitreerobotics/unitree_ros/5994d4faef0a9cadd3287f8de0199a67eeb2a259/robots/g1_d_description/meshes/head_link.STL"
+      },
+      {
+        "path": "meshes/left_elbow_link.STL",
+        "bytes": 88784,
+        "sha256": "fa752198accd104d5c4c3a01382e45165b944fbbc5acce085059223324e5bed3",
+        "url": "https://raw.githubusercontent.com/unitreerobotics/unitree_ros/5994d4faef0a9cadd3287f8de0199a67eeb2a259/robots/g1_d_description/meshes/left_elbow_link.STL"
+      },
+      {
+        "path": "meshes/left_hand_index_0_link.STL",
+        "bytes": 475984,
+        "sha256": "6b35f2f77211d5a366f0b9a4e47c4ee35e536731266f1a34e9efa12db579b892",
+        "url": "https://raw.githubusercontent.com/unitreerobotics/unitree_ros/5994d4faef0a9cadd3287f8de0199a67eeb2a259/robots/g1_d_description/meshes/left_hand_index_0_link.STL"
+      },
+      {
+        "path": "meshes/left_hand_index_1_link.STL",
+        "bytes": 1521784,
+        "sha256": "9e315ebc8a7a0cb98e033985b586b20d81cf8aa761181ae61ce56fcb14077a06",
+        "url": "https://raw.githubusercontent.com/unitreerobotics/unitree_ros/5994d4faef0a9cadd3287f8de0199a67eeb2a259/robots/g1_d_description/meshes/left_hand_index_1_link.STL"
+      },
+      {
+        "path": "meshes/left_hand_middle_0_link.STL",
+        "bytes": 475984,
+        "sha256": "6b35f2f77211d5a366f0b9a4e47c4ee35e536731266f1a34e9efa12db579b892",
+        "url": "https://raw.githubusercontent.com/unitreerobotics/unitree_ros/5994d4faef0a9cadd3287f8de0199a67eeb2a259/robots/g1_d_description/meshes/left_hand_middle_0_link.STL"
+      },
+      {
+        "path": "meshes/left_hand_middle_1_link.STL",
+        "bytes": 1521784,
+        "sha256": "9e315ebc8a7a0cb98e033985b586b20d81cf8aa761181ae61ce56fcb14077a06",
+        "url": "https://raw.githubusercontent.com/unitreerobotics/unitree_ros/5994d4faef0a9cadd3287f8de0199a67eeb2a259/robots/g1_d_description/meshes/left_hand_middle_1_link.STL"
+      },
+      {
+        "path": "meshes/left_hand_palm_link.STL",
+        "bytes": 2140184,
+        "sha256": "23a486b75bd78a9bf03cec25d84d87f97f3dae038cf21a743b6d469b337e4004",
+        "url": "https://raw.githubusercontent.com/unitreerobotics/unitree_ros/5994d4faef0a9cadd3287f8de0199a67eeb2a259/robots/g1_d_description/meshes/left_hand_palm_link.STL"
+      },
+      {
+        "path": "meshes/left_hand_thumb_0_link.STL",
+        "bytes": 8884,
+        "sha256": "a90c721661c0622685488a3c74d1e122c7da89242d3a1daef75edb83422d05e0",
+        "url": "https://raw.githubusercontent.com/unitreerobotics/unitree_ros/5994d4faef0a9cadd3287f8de0199a67eeb2a259/robots/g1_d_description/meshes/left_hand_thumb_0_link.STL"
+      },
+      {
+        "path": "meshes/left_hand_thumb_1_link.STL",
+        "bytes": 475984,
+        "sha256": "445c54a45bc13ce36001556f66bc0f49c83cb40321205ae4d676bb2874325684",
+        "url": "https://raw.githubusercontent.com/unitreerobotics/unitree_ros/5994d4faef0a9cadd3287f8de0199a67eeb2a259/robots/g1_d_description/meshes/left_hand_thumb_1_link.STL"
+      },
+      {
+        "path": "meshes/left_hand_thumb_2_link.STL",
+        "bytes": 1521784,
+        "sha256": "3d8dbe5085acfc213d21aa8b0782e89cd79084e9678f3a85fc7b04a86b029db5",
+        "url": "https://raw.githubusercontent.com/unitreerobotics/unitree_ros/5994d4faef0a9cadd3287f8de0199a67eeb2a259/robots/g1_d_description/meshes/left_hand_thumb_2_link.STL"
+      },
+      {
+        "path": "meshes/left_shoulder_pitch_link.STL",
+        "bytes": 176784,
+        "sha256": "f0d1cfd02fcf0d42f95e678eeca33da3afbcc366ffba5c052847773ec4f31d52",
+        "url": "https://raw.githubusercontent.com/unitreerobotics/unitree_ros/5994d4faef0a9cadd3287f8de0199a67eeb2a259/robots/g1_d_description/meshes/left_shoulder_pitch_link.STL"
+      },
+      {
+        "path": "meshes/left_shoulder_roll_link.STL",
+        "bytes": 400284,
+        "sha256": "fb9df21687773522598dc384f1a2945c7519f11cbc8bd372a49170316d6eee88",
+        "url": "https://raw.githubusercontent.com/unitreerobotics/unitree_ros/5994d4faef0a9cadd3287f8de0199a67eeb2a259/robots/g1_d_description/meshes/left_shoulder_roll_link.STL"
+      },
+      {
+        "path": "meshes/left_shoulder_yaw_link.STL",
+        "bytes": 249184,
+        "sha256": "1aa97e9748e924336567992181f78c7cd0652fd52a4afcca3df6b2ef6f9e712e",
+        "url": "https://raw.githubusercontent.com/unitreerobotics/unitree_ros/5994d4faef0a9cadd3287f8de0199a67eeb2a259/robots/g1_d_description/meshes/left_shoulder_yaw_link.STL"
+      },
+      {
+        "path": "meshes/left_wrist_pitch_link.STL",
+        "bytes": 85984,
+        "sha256": "b251d8e05047f695d0f536cd78c11973cfa4e78d08cfe82759336cc3471de3a9",
+        "url": "https://raw.githubusercontent.com/unitreerobotics/unitree_ros/5994d4faef0a9cadd3287f8de0199a67eeb2a259/robots/g1_d_description/meshes/left_wrist_pitch_link.STL"
+      },
+      {
+        "path": "meshes/left_wrist_roll_link.STL",
+        "bytes": 356184,
+        "sha256": "edc387c9a0ba8c2237e9b296d32531426fabeb6f53e58df45c76106bca74148c",
+        "url": "https://raw.githubusercontent.com/unitreerobotics/unitree_ros/5994d4faef0a9cadd3287f8de0199a67eeb2a259/robots/g1_d_description/meshes/left_wrist_roll_link.STL"
+      },
+      {
+        "path": "meshes/left_wrist_yaw_link.STL",
+        "bytes": 318684,
+        "sha256": "83f8fb3a726bf9613d65dd14f0f447cb918c3c95b3938042a0c9c09749267d3b",
+        "url": "https://raw.githubusercontent.com/unitreerobotics/unitree_ros/5994d4faef0a9cadd3287f8de0199a67eeb2a259/robots/g1_d_description/meshes/left_wrist_yaw_link.STL"
+      },
+      {
+        "path": "meshes/logo_link.STL",
+        "bytes": 243384,
+        "sha256": "8571a0a19bc4916fa55f91449f51d5fdefd751000054865a842449429d5f155b",
+        "url": "https://raw.githubusercontent.com/unitreerobotics/unitree_ros/5994d4faef0a9cadd3287f8de0199a67eeb2a259/robots/g1_d_description/meshes/logo_link.STL"
+      },
+      {
+        "path": "meshes/right_elbow_link.STL",
+        "bytes": 88784,
+        "sha256": "1be925d7aa268bb8fddf5362b9173066890c7d32092c05638608126e59d1e2ab",
+        "url": "https://raw.githubusercontent.com/unitreerobotics/unitree_ros/5994d4faef0a9cadd3287f8de0199a67eeb2a259/robots/g1_d_description/meshes/right_elbow_link.STL"
+      },
+      {
+        "path": "meshes/right_hand_index_0_link.STL",
+        "bytes": 475984,
+        "sha256": "12ab4300c95e437e834f9aef772b3b431c671bf34338930b52ad11aef73bbd0d",
+        "url": "https://raw.githubusercontent.com/unitreerobotics/unitree_ros/5994d4faef0a9cadd3287f8de0199a67eeb2a259/robots/g1_d_description/meshes/right_hand_index_0_link.STL"
+      },
+      {
+        "path": "meshes/right_hand_index_1_link.STL",
+        "bytes": 1521784,
+        "sha256": "c9c34efce4563cacdcfd29fc838a982976d40f5442c71219811dcbbf3923a33d",
+        "url": "https://raw.githubusercontent.com/unitreerobotics/unitree_ros/5994d4faef0a9cadd3287f8de0199a67eeb2a259/robots/g1_d_description/meshes/right_hand_index_1_link.STL"
+      },
+      {
+        "path": "meshes/right_hand_middle_0_link.STL",
+        "bytes": 475984,
+        "sha256": "12ab4300c95e437e834f9aef772b3b431c671bf34338930b52ad11aef73bbd0d",
+        "url": "https://raw.githubusercontent.com/unitreerobotics/unitree_ros/5994d4faef0a9cadd3287f8de0199a67eeb2a259/robots/g1_d_description/meshes/right_hand_middle_0_link.STL"
+      },
+      {
+        "path": "meshes/right_hand_middle_1_link.STL",
+        "bytes": 1521784,
+        "sha256": "c9c34efce4563cacdcfd29fc838a982976d40f5442c71219811dcbbf3923a33d",
+        "url": "https://raw.githubusercontent.com/unitreerobotics/unitree_ros/5994d4faef0a9cadd3287f8de0199a67eeb2a259/robots/g1_d_description/meshes/right_hand_middle_1_link.STL"
+      },
+      {
+        "path": "meshes/right_hand_palm_link.STL",
+        "bytes": 2140184,
+        "sha256": "86c0b231cc44477d64a6493e5a427ba16617a00738112dd187c652675b086fb9",
+        "url": "https://raw.githubusercontent.com/unitreerobotics/unitree_ros/5994d4faef0a9cadd3287f8de0199a67eeb2a259/robots/g1_d_description/meshes/right_hand_palm_link.STL"
+      },
+      {
+        "path": "meshes/right_hand_thumb_0_link.STL",
+        "bytes": 8884,
+        "sha256": "544298d0ea1088f5b276a10cc6a6a9e533efdd91594955fdc956c46211d07f83",
+        "url": "https://raw.githubusercontent.com/unitreerobotics/unitree_ros/5994d4faef0a9cadd3287f8de0199a67eeb2a259/robots/g1_d_description/meshes/right_hand_thumb_0_link.STL"
+      },
+      {
+        "path": "meshes/right_hand_thumb_1_link.STL",
+        "bytes": 475984,
+        "sha256": "0a9a820da8dd10f298778b714f1364216e8a5976f4fd3a05689ea26327d44bf6",
+        "url": "https://raw.githubusercontent.com/unitreerobotics/unitree_ros/5994d4faef0a9cadd3287f8de0199a67eeb2a259/robots/g1_d_description/meshes/right_hand_thumb_1_link.STL"
+      },
+      {
+        "path": "meshes/right_hand_thumb_2_link.STL",
+        "bytes": 1521784,
+        "sha256": "3f1bfb37668e8f61801c8d25f171fa1949e08666be86c67acad7e0079937cc45",
+        "url": "https://raw.githubusercontent.com/unitreerobotics/unitree_ros/5994d4faef0a9cadd3287f8de0199a67eeb2a259/robots/g1_d_description/meshes/right_hand_thumb_2_link.STL"
+      },
+      {
+        "path": "meshes/right_shoulder_pitch_link.STL",
+        "bytes": 176784,
+        "sha256": "24cdb387e0128dfe602770a81c56cdce3a0181d34d039a11d1aaf8819b7b8c02",
+        "url": "https://raw.githubusercontent.com/unitreerobotics/unitree_ros/5994d4faef0a9cadd3287f8de0199a67eeb2a259/robots/g1_d_description/meshes/right_shoulder_pitch_link.STL"
+      },
+      {
+        "path": "meshes/right_shoulder_roll_link.STL",
+        "bytes": 401884,
+        "sha256": "962b97c48f9ce9e8399f45dd9522e0865d19aa9fd299406b2d475a8fc4a53e81",
+        "url": "https://raw.githubusercontent.com/unitreerobotics/unitree_ros/5994d4faef0a9cadd3287f8de0199a67eeb2a259/robots/g1_d_description/meshes/right_shoulder_roll_link.STL"
+      },
+      {
+        "path": "meshes/right_shoulder_yaw_link.STL",
+        "bytes": 249984,
+        "sha256": "a0b76489271da0c72461a344c9ffb0f0c6e64f019ea5014c1624886c442a2fe5",
+        "url": "https://raw.githubusercontent.com/unitreerobotics/unitree_ros/5994d4faef0a9cadd3287f8de0199a67eeb2a259/robots/g1_d_description/meshes/right_shoulder_yaw_link.STL"
+      },
+      {
+        "path": "meshes/right_wrist_pitch_link.STL",
+        "bytes": 79584,
+        "sha256": "d22f8f3b3127f15a63e5be1ee273cd5075786c3142f1c3d9f76cbf43d2a26477",
+        "url": "https://raw.githubusercontent.com/unitreerobotics/unitree_ros/5994d4faef0a9cadd3287f8de0199a67eeb2a259/robots/g1_d_description/meshes/right_wrist_pitch_link.STL"
+      },
+      {
+        "path": "meshes/right_wrist_roll_link.STL",
+        "bytes": 356084,
+        "sha256": "a7ee9212ff5b94d6cb7f52bb1bbf3f352194d5b598acff74f4c77d340c5b344f",
+        "url": "https://raw.githubusercontent.com/unitreerobotics/unitree_ros/5994d4faef0a9cadd3287f8de0199a67eeb2a259/robots/g1_d_description/meshes/right_wrist_roll_link.STL"
+      },
+      {
+        "path": "meshes/right_wrist_yaw_link.STL",
+        "bytes": 341484,
+        "sha256": "bc9dece2d12509707e0057ba2e48df8f3d56db0c79410212963a25e8a50f61a6",
+        "url": "https://raw.githubusercontent.com/unitreerobotics/unitree_ros/5994d4faef0a9cadd3287f8de0199a67eeb2a259/robots/g1_d_description/meshes/right_wrist_yaw_link.STL"
+      },
+      {
+        "path": "meshes/torso_link.STL",
+        "bytes": 2232984,
+        "sha256": "e96d023f0368a4e3450b86ca5d4f10227d8141156a373e7da8cb3c93266523e0",
+        "url": "https://raw.githubusercontent.com/unitreerobotics/unitree_ros/5994d4faef0a9cadd3287f8de0199a67eeb2a259/robots/g1_d_description/meshes/torso_link.STL"
+      },
+      {
+        "path": "LICENSE",
+        "bytes": 1558,
+        "sha256": "84aac59fd3246e3ddc49d1387644e8fcf43b0def4f0b9fe687f372e90446df2d",
+        "url": "https://raw.githubusercontent.com/unitreerobotics/unitree_ros/5994d4faef0a9cadd3287f8de0199a67eeb2a259/LICENSE"
+      },
+      {
+        "path": "README.md",
+        "bytes": 5504,
+        "sha256": "765b9d3e1fc64be2cd5e33beab19dbfe00a8e7935505b2820c63e7fe6fb3a35a",
+        "url": "https://raw.githubusercontent.com/unitreerobotics/unitree_ros/5994d4faef0a9cadd3287f8de0199a67eeb2a259/README.md"
+      }
+    ],
+    "links": 41,
+    "joints": [
+      {
+        "name": "Left_Wheel_Joint",
+        "type": "continuous"
+      },
+      {
+        "name": "Right_Wheel_Joint",
+        "type": "continuous"
+      },
+      {
+        "name": "LZ_ot_Joint",
+        "type": "fixed"
+      },
+      {
+        "name": "LZ_mt_Joint",
+        "type": "prismatic"
+      },
+      {
+        "name": "LZ_it_Joint",
+        "type": "prismatic"
+      },
+      {
+        "name": "Pitching_Joint",
+        "type": "fixed"
+      },
+      {
+        "name": "Yaw_Joint",
+        "type": "revolute"
+      },
+      {
+        "name": "torso_Joint",
+        "type": "revolute"
+      },
+      {
+        "name": "logo_joint",
+        "type": "fixed"
+      },
+      {
+        "name": "head_joint",
+        "type": "fixed"
+      },
+      {
+        "name": "left_shoulder_pitch_joint",
+        "type": "revolute"
+      },
+      {
+        "name": "left_shoulder_roll_joint",
+        "type": "revolute"
+      },
+      {
+        "name": "left_shoulder_yaw_joint",
+        "type": "revolute"
+      },
+      {
+        "name": "left_elbow_joint",
+        "type": "revolute"
+      },
+      {
+        "name": "left_wrist_roll_joint",
+        "type": "revolute"
+      },
+      {
+        "name": "left_wrist_pitch_joint",
+        "type": "revolute"
+      },
+      {
+        "name": "left_wrist_yaw_joint",
+        "type": "revolute"
+      },
+      {
+        "name": "left_hand_palm_joint",
+        "type": "fixed"
+      },
+      {
+        "name": "left_hand_thumb_0_joint",
+        "type": "revolute"
+      },
+      {
+        "name": "left_hand_thumb_1_joint",
+        "type": "revolute"
+      },
+      {
+        "name": "left_hand_thumb_2_joint",
+        "type": "revolute"
+      },
+      {
+        "name": "left_hand_middle_0_joint",
+        "type": "revolute"
+      },
+      {
+        "name": "left_hand_middle_1_joint",
+        "type": "revolute"
+      },
+      {
+        "name": "left_hand_index_0_joint",
+        "type": "revolute"
+      },
+      {
+        "name": "left_hand_index_1_joint",
+        "type": "revolute"
+      },
+      {
+        "name": "right_shoulder_pitch_joint",
+        "type": "revolute"
+      },
+      {
+        "name": "right_shoulder_roll_joint",
+        "type": "revolute"
+      },
+      {
+        "name": "right_shoulder_yaw_joint",
+        "type": "revolute"
+      },
+      {
+        "name": "right_elbow_joint",
+        "type": "revolute"
+      },
+      {
+        "name": "right_wrist_roll_joint",
+        "type": "revolute"
+      },
+      {
+        "name": "right_wrist_pitch_joint",
+        "type": "revolute"
+      },
+      {
+        "name": "right_wrist_yaw_joint",
+        "type": "revolute"
+      },
+      {
+        "name": "right_hand_palm_joint",
+        "type": "fixed"
+      },
+      {
+        "name": "right_hand_thumb_0_joint",
+        "type": "revolute"
+      },
+      {
+        "name": "right_hand_thumb_1_joint",
+        "type": "revolute"
+      },
+      {
+        "name": "right_hand_thumb_2_joint",
+        "type": "revolute"
+      },
+      {
+        "name": "right_hand_middle_0_joint",
+        "type": "revolute"
+      },
+      {
+        "name": "right_hand_middle_1_joint",
+        "type": "revolute"
+      },
+      {
+        "name": "right_hand_index_0_joint",
+        "type": "revolute"
+      },
+      {
+        "name": "right_hand_index_1_joint",
+        "type": "revolute"
+      }
+    ]
+  },
+  "successful_tasks": {
+    "physics-s7-final": {
+      "generator": {
+        "success": true,
+        "seed": 7,
+        "frames": 594,
+        "display_fps": 30,
+        "physics_dt": 0.0016666666666666668,
+        "physics_substeps_per_frame": 20,
+        "physical_seconds": 19.79999999999823,
+        "display_seconds": 19.8,
+        "starts": [
+          [
+            0.484503436797768,
+            0.18429969683490474,
+            0.022
+          ],
+          [
+            0.6499246848488269,
+            0.07010745883966131,
+            0.022
+          ],
+          [
+            0.4628059862568041,
+            -0.046552075965734574,
+            0.022
+          ]
+        ],
+        "goals": [
+          [
+            0.39,
+            -0.25,
+            0.022
+          ],
+          [
+            0.58,
+            -0.25,
+            0.022
+          ],
+          [
+            0.77,
+            -0.25,
+            0.022
+          ]
+        ],
+        "final": [
+          [
+            0.3900507178355151,
+            -0.2499999999999999,
+            0.021985441701923087
+          ],
+          [
+            0.5800078310629211,
+            -0.24999999999999986,
+            0.02198544170192307
+          ],
+          [
+            0.7699641137661898,
+            -0.24999999999999986,
+            0.021985441701923097
+          ]
+        ],
+        "xy_errors_m": [
+          5.071783551507947e-05,
+          7.831062921126453e-06,
+          3.5886233810233925e-05
+        ],
+        "lifts": [
+          {
+            "color": "red",
+            "lift_m": 0.1950552093161359
+          },
+          {
+            "color": "green",
+            "lift_m": 0.19505520931613599
+          },
+          {
+            "color": "blue",
+            "lift_m": 0.1950552093161347
+          }
+        ],
+        "phases": [
+          {
+            "name": "initialize",
+            "end_frame": 15
+          },
+          {
+            "name": "red_approach",
+            "end_frame": 45
+          },
+          {
+            "name": "red_descend",
+            "end_frame": 66
+          },
+          {
+            "name": "red_grasp",
+            "end_frame": 84
+          },
+          {
+            "name": "red_lift",
+            "end_frame": 108
+          },
+          {
+            "name": "red_transfer",
+            "end_frame": 141
+          },
+          {
+            "name": "red_lower",
+            "end_frame": 162
+          },
+          {
+            "name": "red_release",
+            "end_frame": 177
+          },
+          {
+            "name": "red_retreat",
+            "end_frame": 198
+          },
+          {
+            "name": "green_approach",
+            "end_frame": 228
+          },
+          {
+            "name": "green_descend",
+            "end_frame": 249
+          },
+          {
+            "name": "green_grasp",
+            "end_frame": 267
+          },
+          {
+            "name": "green_lift",
+            "end_frame": 291
+          },
+          {
+            "name": "green_transfer",
+            "end_frame": 324
+          },
+          {
+            "name": "green_lower",
+            "end_frame": 345
+          },
+          {
+            "name": "green_release",
+            "end_frame": 360
+          },
+          {
+            "name": "green_retreat",
+            "end_frame": 381
+          },
+          {
+            "name": "blue_approach",
+            "end_frame": 411
+          },
+          {
+            "name": "blue_descend",
+            "end_frame": 432
+          },
+          {
+            "name": "blue_grasp",
+            "end_frame": 450
+          },
+          {
+            "name": "blue_lift",
+            "end_frame": 474
+          },
+          {
+            "name": "blue_transfer",
+            "end_frame": 507
+          },
+          {
+            "name": "blue_lower",
+            "end_frame": 528
+          },
+          {
+            "name": "blue_release",
+            "end_frame": 543
+          },
+          {
+            "name": "blue_retreat",
+            "end_frame": 564
+          },
+          {
+            "name": "settle",
+            "end_frame": 594
+          }
+        ],
+        "contact_steps": 594,
+        "model": "idealized Cartesian parallel gripper; MuJoCo rigid contacts; no cube attachment",
+        "scene": "World-SimReady-Home-mini scene000430; measured native dining-table proxy only in physics; full house render only",
+        "source_sha256": "e8de3d6177469979ce7afb3b9b38965058631ecff69ea323748d4d3b2989d769",
+        "mujoco_version": "3.8.0"
+      },
+      "recheck": {
+        "passed": true,
+        "frames": 594,
+        "simulation_seconds": 19.79999999999823,
+        "checks": [
+          {
+            "color": "red",
+            "held_above_12cm_frames": 46,
+            "final_max_xy_error_m": 5.071783552856868e-05,
+            "final_max_speed_m_s": 2.3647750424515834e-13,
+            "open_fingers": true,
+            "min_final_gripper_separation_m": 0.32297854302027207,
+            "jaw_cube_contact_frames": null
+          },
+          {
+            "color": "green",
+            "held_above_12cm_frames": 46,
+            "final_max_xy_error_m": 7.831062938112865e-06,
+            "final_max_speed_m_s": 2.398081733190338e-13,
+            "open_fingers": true,
+            "min_final_gripper_separation_m": 0.24412259037766243,
+            "jaw_cube_contact_frames": null
+          },
+          {
+            "color": "blue",
+            "held_above_12cm_frames": 46,
+            "final_max_xy_error_m": 3.5886233846427196e-05,
+            "final_max_speed_m_s": 2.731148640577885e-13,
+            "open_fingers": true,
+            "min_final_gripper_separation_m": 0.20687477271533386,
+            "jaw_cube_contact_frames": null
+          }
+        ],
+        "trajectory_sha256": "7b39e7ff5c1503ce6ebce33ba1d48307439eb58eb1d658e640fc5a9f8f3bfae2",
+        "scope": "Independent state-level recomputation; no policy/generalization or whole-house collision validation"
+      }
+    },
+    "physics-s19": {
+      "generator": {
+        "success": true,
+        "seed": 19,
+        "frames": 594,
+        "display_fps": 30,
+        "physics_dt": 0.0016666666666666668,
+        "physics_substeps_per_frame": 20,
+        "physical_seconds": 19.79999999999823,
+        "display_seconds": 19.8,
+        "starts": [
+          [
+            0.47713363664625336,
+            0.18533129641340135,
+            0.022
+          ],
+          [
+            0.6318593195643382,
+            0.06416174974841096,
+            0.022
+          ],
+          [
+            0.463179564499272,
+            -0.05214533071660522,
+            0.022
+          ]
+        ],
+        "goals": [
+          [
+            0.39,
+            -0.25,
+            0.022
+          ],
+          [
+            0.58,
+            -0.25,
+            0.022
+          ],
+          [
+            0.77,
+            -0.25,
+            0.022
+          ]
+        ],
+        "final": [
+          [
+            0.3900511607080151,
+            -0.2499999999999999,
+            0.02198544170192307
+          ],
+          [
+            0.5800038777346127,
+            -0.2499999999999999,
+            0.021985441701923084
+          ],
+          [
+            0.7699643955291305,
+            -0.24999999999999986,
+            0.021985441701923084
+          ]
+        ],
+        "xy_errors_m": [
+          5.116070801508554e-05,
+          3.8777346127449874e-06,
+          3.5604470869476934e-05
+        ],
+        "lifts": [
+          {
+            "color": "red",
+            "lift_m": 0.19505520931613493
+          },
+          {
+            "color": "green",
+            "lift_m": 0.19505520931613587
+          },
+          {
+            "color": "blue",
+            "lift_m": 0.1950552093161347
+          }
+        ],
+        "phases": [
+          {
+            "name": "initialize",
+            "end_frame": 15
+          },
+          {
+            "name": "red_approach",
+            "end_frame": 45
+          },
+          {
+            "name": "red_descend",
+            "end_frame": 66
+          },
+          {
+            "name": "red_grasp",
+            "end_frame": 84
+          },
+          {
+            "name": "red_lift",
+            "end_frame": 108
+          },
+          {
+            "name": "red_transfer",
+            "end_frame": 141
+          },
+          {
+            "name": "red_lower",
+            "end_frame": 162
+          },
+          {
+            "name": "red_release",
+            "end_frame": 177
+          },
+          {
+            "name": "red_retreat",
+            "end_frame": 198
+          },
+          {
+            "name": "green_approach",
+            "end_frame": 228
+          },
+          {
+            "name": "green_descend",
+            "end_frame": 249
+          },
+          {
+            "name": "green_grasp",
+            "end_frame": 267
+          },
+          {
+            "name": "green_lift",
+            "end_frame": 291
+          },
+          {
+            "name": "green_transfer",
+            "end_frame": 324
+          },
+          {
+            "name": "green_lower",
+            "end_frame": 345
+          },
+          {
+            "name": "green_release",
+            "end_frame": 360
+          },
+          {
+            "name": "green_retreat",
+            "end_frame": 381
+          },
+          {
+            "name": "blue_approach",
+            "end_frame": 411
+          },
+          {
+            "name": "blue_descend",
+            "end_frame": 432
+          },
+          {
+            "name": "blue_grasp",
+            "end_frame": 450
+          },
+          {
+            "name": "blue_lift",
+            "end_frame": 474
+          },
+          {
+            "name": "blue_transfer",
+            "end_frame": 507
+          },
+          {
+            "name": "blue_lower",
+            "end_frame": 528
+          },
+          {
+            "name": "blue_release",
+            "end_frame": 543
+          },
+          {
+            "name": "blue_retreat",
+            "end_frame": 564
+          },
+          {
+            "name": "settle",
+            "end_frame": 594
+          }
+        ],
+        "contact_steps": 594,
+        "model": "idealized Cartesian parallel gripper; MuJoCo rigid contacts; no cube attachment",
+        "scene": "World-SimReady-Home-mini scene000430; measured native dining-table proxy only in physics; full house render only",
+        "source_sha256": "e8de3d6177469979ce7afb3b9b38965058631ecff69ea323748d4d3b2989d769",
+        "mujoco_version": "3.8.0"
+      },
+      "recheck": {
+        "passed": true,
+        "frames": 594,
+        "simulation_seconds": 19.79999999999823,
+        "checks": [
+          {
+            "color": "red",
+            "held_above_12cm_frames": 46,
+            "final_max_xy_error_m": 5.1160708027686574e-05,
+            "final_max_speed_m_s": 2.381428387820961e-13,
+            "open_fingers": true,
+            "min_final_gripper_separation_m": 0.32297832413898725,
+            "jaw_cube_contact_frames": null
+          },
+          {
+            "color": "green",
+            "held_above_12cm_frames": 46,
+            "final_max_xy_error_m": 3.877734621626772e-06,
+            "final_max_speed_m_s": 2.398081733190338e-13,
+            "open_fingers": true,
+            "min_final_gripper_separation_m": 0.24412389318158167,
+            "jaw_cube_contact_frames": null
+          },
+          {
+            "color": "blue",
+            "held_above_12cm_frames": 46,
+            "final_max_xy_error_m": 3.5604470916217323e-05,
+            "final_max_speed_m_s": 2.831068712794149e-13,
+            "open_fingers": true,
+            "min_final_gripper_separation_m": 0.2068747747218446,
+            "jaw_cube_contact_frames": null
+          }
+        ],
+        "trajectory_sha256": "1c3c131109be9f195f7cc7cf87a90ccd3162a7f9e882ce380bae201dd5d14b1f",
+        "scope": "Independent state-level recomputation; no policy/generalization or whole-house collision validation"
+      }
+    },
+    "physics-s31": {
+      "generator": {
+        "success": true,
+        "seed": 31,
+        "frames": 594,
+        "display_fps": 30,
+        "physics_dt": 0.0016666666666666668,
+        "physics_substeps_per_frame": 20,
+        "physical_seconds": 19.79999999999823,
+        "display_seconds": 19.8,
+        "starts": [
+          [
+            0.49451418519293494,
+            0.1544364174450188,
+            0.022
+          ],
+          [
+            0.6462183093076131,
+            0.07901160941525252,
+            0.022
+          ],
+          [
+            0.4763873999697973,
+            -0.07657231001623387,
+            0.022
+          ]
+        ],
+        "goals": [
+          [
+            0.39,
+            -0.25,
+            0.022
+          ],
+          [
+            0.58,
+            -0.25,
+            0.022
+          ],
+          [
+            0.77,
+            -0.25,
+            0.022
+          ]
+        ],
+        "final": [
+          [
+            0.39005029625671084,
+            -0.24999999999999986,
+            0.02198544170192307
+          ],
+          [
+            0.5800042431588349,
+            -0.24999999999999986,
+            0.02198544170192307
+          ],
+          [
+            0.7699729154287037,
+            -0.2499999999999999,
+            0.02198544170192307
+          ]
+        ],
+        "xy_errors_m": [
+          5.0296256710824494e-05,
+          4.24315883496007e-06,
+          2.70845712962986e-05
+        ],
+        "lifts": [
+          {
+            "color": "red",
+            "lift_m": 0.1950552093161359
+          },
+          {
+            "color": "green",
+            "lift_m": 0.1950552093161349
+          },
+          {
+            "color": "blue",
+            "lift_m": 0.19505520931613457
+          }
+        ],
+        "phases": [
+          {
+            "name": "initialize",
+            "end_frame": 15
+          },
+          {
+            "name": "red_approach",
+            "end_frame": 45
+          },
+          {
+            "name": "red_descend",
+            "end_frame": 66
+          },
+          {
+            "name": "red_grasp",
+            "end_frame": 84
+          },
+          {
+            "name": "red_lift",
+            "end_frame": 108
+          },
+          {
+            "name": "red_transfer",
+            "end_frame": 141
+          },
+          {
+            "name": "red_lower",
+            "end_frame": 162
+          },
+          {
+            "name": "red_release",
+            "end_frame": 177
+          },
+          {
+            "name": "red_retreat",
+            "end_frame": 198
+          },
+          {
+            "name": "green_approach",
+            "end_frame": 228
+          },
+          {
+            "name": "green_descend",
+            "end_frame": 249
+          },
+          {
+            "name": "green_grasp",
+            "end_frame": 267
+          },
+          {
+            "name": "green_lift",
+            "end_frame": 291
+          },
+          {
+            "name": "green_transfer",
+            "end_frame": 324
+          },
+          {
+            "name": "green_lower",
+            "end_frame": 345
+          },
+          {
+            "name": "green_release",
+            "end_frame": 360
+          },
+          {
+            "name": "green_retreat",
+            "end_frame": 381
+          },
+          {
+            "name": "blue_approach",
+            "end_frame": 411
+          },
+          {
+            "name": "blue_descend",
+            "end_frame": 432
+          },
+          {
+            "name": "blue_grasp",
+            "end_frame": 450
+          },
+          {
+            "name": "blue_lift",
+            "end_frame": 474
+          },
+          {
+            "name": "blue_transfer",
+            "end_frame": 507
+          },
+          {
+            "name": "blue_lower",
+            "end_frame": 528
+          },
+          {
+            "name": "blue_release",
+            "end_frame": 543
+          },
+          {
+            "name": "blue_retreat",
+            "end_frame": 564
+          },
+          {
+            "name": "settle",
+            "end_frame": 594
+          }
+        ],
+        "contact_steps": 594,
+        "model": "idealized Cartesian parallel gripper; MuJoCo rigid contacts; no cube attachment",
+        "scene": "World-SimReady-Home-mini scene000430; measured native dining-table proxy only in physics; full house render only",
+        "source_sha256": "e8de3d6177469979ce7afb3b9b38965058631ecff69ea323748d4d3b2989d769",
+        "mujoco_version": "3.8.0"
+      },
+      "recheck": {
+        "passed": true,
+        "frames": 594,
+        "simulation_seconds": 19.79999999999823,
+        "checks": [
+          {
+            "color": "red",
+            "held_above_12cm_frames": 46,
+            "final_max_xy_error_m": 5.029625672109406e-05,
+            "final_max_speed_m_s": 2.431388423929093e-13,
+            "open_fingers": true,
+            "min_final_gripper_separation_m": 0.32297875137798154,
+            "jaw_cube_contact_frames": null
+          },
+          {
+            "color": "green",
+            "held_above_12cm_frames": 46,
+            "final_max_xy_error_m": 4.243158841843453e-06,
+            "final_max_speed_m_s": 2.3314683517128287e-13,
+            "open_fingers": true,
+            "min_final_gripper_separation_m": 0.24412377275506325,
+            "jaw_cube_contact_frames": null
+          },
+          {
+            "color": "blue",
+            "held_above_12cm_frames": 46,
+            "final_max_xy_error_m": 2.70845713291612e-05,
+            "final_max_speed_m_s": 2.5979218776228663e-13,
+            "open_fingers": true,
+            "min_final_gripper_separation_m": 0.20687483557560904,
+            "jaw_cube_contact_frames": null
+          }
+        ],
+        "trajectory_sha256": "19e294c4a22c80d4c85bbfad9d11f8dde1144db70d0a70e4b561c49c83dfa708",
+        "scope": "Independent state-level recomputation; no policy/generalization or whole-house collision validation"
+      }
+    },
+    "g1d-parallel-r2": {
+      "generator": {
+        "gripper": "parallel",
+        "success": true,
+        "checks": [
+          {
+            "color": "red",
+            "lift_m": 0.16890741431463824,
+            "final": [
+              0.4762903628371716,
+              -0.209883707693373,
+              0.021595973274071933
+            ],
+            "error_xy": 0.0037114595215923083
+          }
+        ],
+        "frames": 333,
+        "fps": 30,
+        "body_names": [
+          "world",
+          "AGV_link",
+          "Left_Wheel_Link",
+          "RIght_Wheel_Link",
+          "LZ_ot_Link",
+          "LZ_mt_Link",
+          "LZ_it_Link",
+          "Pitching_Link",
+          "Yaw_Link",
+          "torso_link",
+          "logo_link",
+          "head_link",
+          "left_shoulder_pitch_link",
+          "left_shoulder_roll_link",
+          "left_shoulder_yaw_link",
+          "left_elbow_link",
+          "left_wrist_roll_link",
+          "left_wrist_pitch_link",
+          "left_wrist_yaw_link",
+          "left_hand_palm_link",
+          "left_hand_thumb_0_link",
+          "left_hand_thumb_1_link",
+          "left_hand_thumb_2_link",
+          "left_hand_middle_0_link",
+          "left_hand_middle_1_link",
+          "left_hand_index_0_link",
+          "left_hand_index_1_link",
+          "right_shoulder_pitch_link",
+          "right_shoulder_roll_link",
+          "right_shoulder_yaw_link",
+          "right_elbow_link",
+          "right_wrist_roll_link",
+          "right_wrist_pitch_link",
+          "right_wrist_yaw_link",
+          "right_hand_palm_link",
+          "right_hand_thumb_0_link",
+          "right_hand_thumb_1_link",
+          "right_hand_thumb_2_link",
+          "right_hand_middle_0_link",
+          "right_hand_middle_1_link",
+          "right_hand_index_0_link",
+          "right_hand_index_1_link",
+          "demo_gripper",
+          "demo_jaw_left",
+          "demo_jaw_right",
+          "cube_red",
+          "cube_green",
+          "cube_blue"
+        ],
+        "ik": [
+          {
+            "phase": "initialize",
+            "error_m": 0.008290821349163776
+          },
+          {
+            "phase": "red_approach",
+            "error_m": 0.008288415024204758
+          },
+          {
+            "phase": "red_descend",
+            "error_m": 0.004061313415516888
+          },
+          {
+            "phase": "red_grasp",
+            "error_m": 0.004079608270128939
+          },
+          {
+            "phase": "red_lift",
+            "error_m": 0.008290821349163776
+          },
+          {
+            "phase": "red_transfer",
+            "error_m": 2.365162320427469e-09
+          },
+          {
+            "phase": "red_lower",
+            "error_m": 1.4406337748223768e-09
+          },
+          {
+            "phase": "red_release",
+            "error_m": 3.535291192912192e-07
+          },
+          {
+            "phase": "red_retreat",
+            "error_m": 6.109095048843022e-08
+          }
+        ],
+        "base": [
+          [
+            2.220446049250313e-16,
+            -1.0,
+            0.0,
+            0.42
+          ],
+          [
+            1.0,
+            2.220446049250313e-16,
+            0.0,
+            -0.48
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            -0.6
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "limitations": [
+          "Fixed mobile base; custom parallel-gripper adaptation replaces native Dex3 contacts; non-hand robot/self and house collisions disabled",
+          "Scripted bounded IK, ideal gravity compensation; not official policy or AutoData generation",
+          "Native table approximated by measured bounding-box support; full house render only"
+        ],
+        "urdf_sha256": "46527573a7140c7129c3587ba5591f269974deb893a0b095ebca500028b8bf40",
+        "mujoco": "3.8.0"
+      },
+      "recheck": {
+        "passed": true,
+        "frames": 333,
+        "simulation_seconds": 11.099999999998024,
+        "checks": [
+          {
+            "color": "red",
+            "held_above_12cm_frames": 68,
+            "final_max_xy_error_m": 0.0037114595215523485,
+            "final_max_speed_m_s": 1.2660924181561093e-12,
+            "open_fingers": true,
+            "min_final_gripper_separation_m": 0.17808827713564115,
+            "jaw_cube_contact_frames": 147
+          }
+        ],
+        "trajectory_sha256": "6bbfe3f5f19991bde59998d72292281df672863ccdee1a28de8e3cb54a827460",
+        "scope": "Independent state-level recomputation; no policy/generalization or whole-house collision validation"
+      }
+    },
+    "g1d-sort-r2": {
+      "generator": {
+        "seed": 7,
+        "starts": [
+          [
+            0.68,
+            -0.32,
+            0.022
+          ],
+          [
+            0.48,
+            -0.32,
+            0.022
+          ],
+          [
+            0.58,
+            -0.32,
+            0.022
+          ]
+        ],
+        "goals": [
+          [
+            0.48,
+            -0.21,
+            0.022
+          ],
+          [
+            0.58,
+            -0.21,
+            0.022
+          ],
+          [
+            0.68,
+            -0.21,
+            0.022
+          ]
+        ],
+        "gripper": "parallel",
+        "success": true,
+        "checks": [
+          {
+            "color": "red",
+            "lift_m": 0.16890741431463824,
+            "final": [
+              0.4762903628371716,
+              -0.209883707693373,
+              0.021595973274071933
+            ],
+            "error_xy": 0.0037114595215923083
+          },
+          {
+            "color": "green",
+            "lift_m": 0.17102376458913376,
+            "final": [
+              0.5796959696276894,
+              -0.20972978669337466,
+              0.02159597327407193
+            ],
+            "error_xy": 0.00040675508400592935
+          },
+          {
+            "color": "blue",
+            "lift_m": 0.17019579340404548,
+            "final": [
+              0.6714410544951093,
+              -0.20753898396568854,
+              0.02159597327407194
+            ],
+            "error_xy": 0.008905736807071506
+          }
+        ],
+        "frames": 891,
+        "fps": 30,
+        "body_names": [
+          "world",
+          "AGV_link",
+          "Left_Wheel_Link",
+          "RIght_Wheel_Link",
+          "LZ_ot_Link",
+          "LZ_mt_Link",
+          "LZ_it_Link",
+          "Pitching_Link",
+          "Yaw_Link",
+          "torso_link",
+          "logo_link",
+          "head_link",
+          "left_shoulder_pitch_link",
+          "left_shoulder_roll_link",
+          "left_shoulder_yaw_link",
+          "left_elbow_link",
+          "left_wrist_roll_link",
+          "left_wrist_pitch_link",
+          "left_wrist_yaw_link",
+          "left_hand_palm_link",
+          "left_hand_thumb_0_link",
+          "left_hand_thumb_1_link",
+          "left_hand_thumb_2_link",
+          "left_hand_middle_0_link",
+          "left_hand_middle_1_link",
+          "left_hand_index_0_link",
+          "left_hand_index_1_link",
+          "right_shoulder_pitch_link",
+          "right_shoulder_roll_link",
+          "right_shoulder_yaw_link",
+          "right_elbow_link",
+          "right_wrist_roll_link",
+          "right_wrist_pitch_link",
+          "right_wrist_yaw_link",
+          "right_hand_palm_link",
+          "right_hand_thumb_0_link",
+          "right_hand_thumb_1_link",
+          "right_hand_thumb_2_link",
+          "right_hand_middle_0_link",
+          "right_hand_middle_1_link",
+          "right_hand_index_0_link",
+          "right_hand_index_1_link",
+          "demo_gripper",
+          "demo_jaw_left",
+          "demo_jaw_right",
+          "cube_red",
+          "cube_green",
+          "cube_blue"
+        ],
+        "ik": [
+          {
+            "phase": "initialize",
+            "error_m": 0.008290821349163776
+          },
+          {
+            "phase": "red_approach",
+            "error_m": 0.008288415024204758
+          },
+          {
+            "phase": "red_descend",
+            "error_m": 0.004061313415516888
+          },
+          {
+            "phase": "red_grasp",
+            "error_m": 0.004079608270128939
+          },
+          {
+            "phase": "red_lift",
+            "error_m": 0.008290821349163776
+          },
+          {
+            "phase": "red_transfer",
+            "error_m": 2.365162320427469e-09
+          },
+          {
+            "phase": "red_lower",
+            "error_m": 1.4406337748223768e-09
+          },
+          {
+            "phase": "red_release",
+            "error_m": 3.535291192912192e-07
+          },
+          {
+            "phase": "red_retreat",
+            "error_m": 6.109095048843022e-08
+          },
+          {
+            "phase": "green_approach",
+            "error_m": 3.2384122433876206e-13
+          },
+          {
+            "phase": "green_descend",
+            "error_m": 3.2039718733076364e-11
+          },
+          {
+            "phase": "green_grasp",
+            "error_m": 3.2039718733076364e-11
+          },
+          {
+            "phase": "green_lift",
+            "error_m": 9.025051388201932e-11
+          },
+          {
+            "phase": "green_transfer",
+            "error_m": 9.159976582580727e-12
+          },
+          {
+            "phase": "green_lower",
+            "error_m": 5.90685348612886e-10
+          },
+          {
+            "phase": "green_release",
+            "error_m": 5.90685348612886e-10
+          },
+          {
+            "phase": "green_retreat",
+            "error_m": 3.791095242005464e-05
+          },
+          {
+            "phase": "blue_approach",
+            "error_m": 0.002629922919700145
+          },
+          {
+            "phase": "blue_descend",
+            "error_m": 6.831620951423753e-10
+          },
+          {
+            "phase": "blue_grasp",
+            "error_m": 6.831620951423753e-10
+          },
+          {
+            "phase": "blue_lift",
+            "error_m": 0.00037962542391661294
+          },
+          {
+            "phase": "blue_transfer",
+            "error_m": 0.008657220971889056
+          },
+          {
+            "phase": "blue_lower",
+            "error_m": 0.0037476062474511205
+          },
+          {
+            "phase": "blue_release",
+            "error_m": 0.003755749641169117
+          },
+          {
+            "phase": "blue_retreat",
+            "error_m": 0.008657220971889056
+          }
+        ],
+        "base": [
+          [
+            2.220446049250313e-16,
+            -1.0,
+            0.0,
+            0.42
+          ],
+          [
+            1.0,
+            2.220446049250313e-16,
+            0.0,
+            -0.48
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            -0.6
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "limitations": [
+          "Fixed mobile base; custom parallel-gripper adaptation replaces native Dex3 contacts; non-hand robot/self and house collisions disabled",
+          "Scripted bounded IK, ideal gravity compensation; not official policy or AutoData generation",
+          "Native table approximated by measured bounding-box support; full house render only"
+        ],
+        "urdf_sha256": "46527573a7140c7129c3587ba5591f269974deb893a0b095ebca500028b8bf40",
+        "mujoco": "3.8.0"
+      },
+      "recheck": {
+        "passed": true,
+        "frames": 891,
+        "simulation_seconds": 29.69999999998111,
+        "checks": [
+          {
+            "color": "red",
+            "held_above_12cm_frames": 68,
+            "final_max_xy_error_m": 0.0037114595339993264,
+            "final_max_speed_m_s": 7.205338876476098e-13,
+            "open_fingers": true,
+            "min_final_gripper_separation_m": 0.26279288105938975,
+            "jaw_cube_contact_frames": 147
+          },
+          {
+            "color": "green",
+            "held_above_12cm_frames": 69,
+            "final_max_xy_error_m": 0.0004067550836221012,
+            "final_max_speed_m_s": 1.1728921705286709e-12,
+            "open_fingers": true,
+            "min_final_gripper_separation_m": 0.19833668813942024,
+            "jaw_cube_contact_frames": 146
+          },
+          {
+            "color": "blue",
+            "held_above_12cm_frames": 69,
+            "final_max_xy_error_m": 0.008905736807101378,
+            "final_max_speed_m_s": 1.2106833187511838e-12,
+            "open_fingers": true,
+            "min_final_gripper_separation_m": 0.17572497196823617,
+            "jaw_cube_contact_frames": 147
+          }
+        ],
+        "trajectory_sha256": "53f0dbfb1a523866a60df6f204a2eb9275961a226bff65dcc7ceb84577ad24ef",
+        "scope": "Independent state-level recomputation; no policy/generalization or whole-house collision validation"
+      }
+    }
+  },
+  "failed_tasks": [
+    {
+      "run": "g1d-native-pilot",
+      "success": false,
+      "checks": [
+        {
+          "color": "red",
+          "lift_m": 1.0477729794899915e-15,
+          "final": [
+            0.4605427918418151,
+            -0.4263052749784935,
+            0.021647890443444374
+          ],
+          "error_xy": 0.21717862448416198
+        }
+      ],
+      "scope": "Diagnostic only; excluded from successful task video selection"
+    },
+    {
+      "run": "g1d-native-r2",
+      "success": false,
+      "checks": [
+        {
+          "color": "red",
+          "lift_m": 6.460677607942472e-05,
+          "final": [
+            0.4454034912686911,
+            -0.30259832884825866,
+            0.02159597327407197
+          ],
+          "error_xy": 0.09885023480946205
+        }
+      ],
+      "scope": "Diagnostic only; excluded from successful task video selection"
+    },
+    {
+      "run": "g1d-native-r3",
+      "success": false,
+      "checks": [
+        {
+          "color": "red",
+          "lift_m": -0.0027381519547543774,
+          "final": [
+            0.4804756770653453,
+            -0.2988542668011301,
+            0.021595973274072006
+          ],
+          "error_xy": 0.0888555400492108
+        }
+      ],
+      "scope": "Diagnostic only; excluded from successful task video selection"
+    },
+    {
+      "run": "g1d-native-r4",
+      "success": false,
+      "checks": [
+        {
+          "color": "red",
+          "lift_m": 0.0006539683849829808,
+          "final": [
+            0.47578915739132455,
+            -0.30626356186985115,
+            0.02159597327407193
+          ],
+          "error_xy": 0.09635561498608007
+        }
+      ],
+      "scope": "Diagnostic only; excluded from successful task video selection"
+    },
+    {
+      "run": "g1d-native-r5",
+      "success": false,
+      "checks": [
+        {
+          "color": "red",
+          "lift_m": -1.5235976517251337e-05,
+          "final": [
+            0.476109458290224,
+            -0.30615633700533135,
+            0.021595973274071978
+          ],
+          "error_xy": 0.09623501161780136
+        }
+      ],
+      "scope": "Diagnostic only; excluded from successful task video selection"
+    },
+    {
+      "run": "g1d-parallel-pilot",
+      "success": false,
+      "checks": [
+        {
+          "color": "red",
+          "lift_m": 0.054567232445495606,
+          "final": [
+            0.6567984535967494,
+            -0.3230887290561561,
+            0.02159597327407193
+          ],
+          "error_xy": 0.2098731851231563
+        }
+      ],
+      "scope": "Diagnostic only; excluded from successful task video selection"
+    },
+    {
+      "run": "g1d-sort-final",
+      "success": false,
+      "checks": [
+        {
+          "color": "red",
+          "lift_m": -0.00030837850357139096,
+          "final": [
+            0.690040867498718,
+            -0.3417735770455671,
+            0.021595973274071964
+          ],
+          "error_xy": 0.2479545152381743
+        },
+        {
+          "color": "green",
+          "lift_m": 0.1709245066850411,
+          "final": [
+            0.5801032374760476,
+            -0.20966706535677423,
+            0.021595973274071922
+          ],
+          "error_xy": 0.00034857345441177467
+        },
+        {
+          "color": "blue",
+          "lift_m": 0.17138850759639504,
+          "final": [
+            0.6735546005329138,
+            -0.20802866909760978,
+            0.021595973274071957
+          ],
+          "error_xy": 0.006740127581658522
+        }
+      ],
+      "scope": "Diagnostic only; excluded from successful task video selection"
+    }
+  ],
+  "successful_queue_records": {
+    "165": {
+      "id": 165,
+      "name": "interview-rgb-physical-s7-final",
+      "cwd": "/home/tangyuan/WorldSimReady-Home/.worktrees/autodata-interview-media",
+      "command": [
+        "/home/tangyuan/miniconda3/envs/autodata/bin/python",
+        "workspace-overlays/autodata-interview-media/physical_task.py",
+        "--output",
+        "runs/interview-media/physics-s7-final",
+        "--seed",
+        "7"
+      ],
+      "revision": "c95444be31717edef2f87185c0bfbc70eb4b355a",
+      "dirty": 1,
+      "timeout": 180.0,
+      "status": "succeeded",
+      "submitted": 1792575575.427589,
+      "started": 1792575575.4576857,
+      "finished": 1792575575.775415,
+      "pid": 298390,
+      "returncode": 0,
+      "error": null,
+      "log": "/home/tangyuan/.local/state/worldsimready/task-queue/165.log"
+    },
+    "166": {
+      "id": 166,
+      "name": "interview-rgb-physical-s19",
+      "cwd": "/home/tangyuan/WorldSimReady-Home/.worktrees/autodata-interview-media",
+      "command": [
+        "/home/tangyuan/miniconda3/envs/autodata/bin/python",
+        "workspace-overlays/autodata-interview-media/physical_task.py",
+        "--output",
+        "runs/interview-media/physics-s19",
+        "--seed",
+        "19"
+      ],
+      "revision": "c95444be31717edef2f87185c0bfbc70eb4b355a",
+      "dirty": 1,
+      "timeout": 180.0,
+      "status": "succeeded",
+      "submitted": 1792575575.4669185,
+      "started": 1792575575.7786853,
+      "finished": 1792575576.0954428,
+      "pid": 298426,
+      "returncode": 0,
+      "error": null,
+      "log": "/home/tangyuan/.local/state/worldsimready/task-queue/166.log"
+    },
+    "167": {
+      "id": 167,
+      "name": "interview-rgb-physical-s31",
+      "cwd": "/home/tangyuan/WorldSimReady-Home/.worktrees/autodata-interview-media",
+      "command": [
+        "/home/tangyuan/miniconda3/envs/autodata/bin/python",
+        "workspace-overlays/autodata-interview-media/physical_task.py",
+        "--output",
+        "runs/interview-media/physics-s31",
+        "--seed",
+        "31"
+      ],
+      "revision": "c95444be31717edef2f87185c0bfbc70eb4b355a",
+      "dirty": 1,
+      "timeout": 180.0,
+      "status": "succeeded",
+      "submitted": 1792575575.4974334,
+      "started": 1792575576.099522,
+      "finished": 1792575576.4164429,
+      "pid": 298455,
+      "returncode": 0,
+      "error": null,
+      "log": "/home/tangyuan/.local/state/worldsimready/task-queue/167.log"
+    },
+    "191": {
+      "id": 191,
+      "name": "interview-g1d-parallel-grasp-r2",
+      "cwd": "/home/tangyuan/WorldSimReady-Home/.worktrees/autodata-interview-media",
+      "command": [
+        "/home/tangyuan/miniconda3/envs/autodata/bin/python",
+        "workspace-overlays/autodata-interview-media/g1d_task.py",
+        "--compiled",
+        "runs/interview-media/g1d-compiled-r2/official.xml",
+        "--urdf",
+        "runs/interview-media/g1d-official/g1_d.urdf",
+        "--output",
+        "runs/interview-media/g1d-parallel-r2",
+        "--gripper",
+        "parallel",
+        "--offset-x",
+        ".13",
+        "--offset-y",
+        "0"
+      ],
+      "revision": "c95444be31717edef2f87185c0bfbc70eb4b355a",
+      "dirty": 1,
+      "timeout": 300.0,
+      "status": "succeeded",
+      "submitted": 1792576592.994557,
+      "started": 1792576593.0365996,
+      "finished": 1792576607.3231797,
+      "pid": 304118,
+      "returncode": 0,
+      "error": null,
+      "log": "/home/tangyuan/.local/state/worldsimready/task-queue/191.log"
+    },
+    "197": {
+      "id": 197,
+      "name": "interview-g1d-rgb-sort-r2",
+      "cwd": "/home/tangyuan/WorldSimReady-Home/.worktrees/autodata-interview-media",
+      "command": [
+        "/home/tangyuan/miniconda3/envs/autodata/bin/python",
+        "workspace-overlays/autodata-interview-media/g1d_task.py",
+        "--compiled",
+        "runs/interview-media/g1d-compiled-r2/official.xml",
+        "--urdf",
+        "runs/interview-media/g1d-official/g1_d.urdf",
+        "--output",
+        "runs/interview-media/g1d-sort-r2",
+        "--gripper",
+        "parallel",
+        "--offset-x",
+        ".13",
+        "--offset-y",
+        "0",
+        "--count",
+        "3",
+        "--jitter",
+        "0"
+      ],
+      "revision": "c95444be31717edef2f87185c0bfbc70eb4b355a",
+      "dirty": 1,
+      "timeout": 300.0,
+      "status": "succeeded",
+      "submitted": 1792576780.975009,
+      "started": 1792576789.1534953,
+      "finished": 1792576814.7144415,
+      "pid": 304461,
+      "returncode": 0,
+      "error": null,
+      "log": "/home/tangyuan/.local/state/worldsimready/task-queue/197.log"
+    },
+    "180": {
+      "id": 180,
+      "name": "interview-rgb-detail-animation",
+      "cwd": "/home/tangyuan/WorldSimReady-Home/.worktrees/autodata-interview-media",
+      "command": [
+        "/opt/blender/blender",
+        "-b",
+        "-t",
+        "6",
+        "--python-exit-code",
+        "1",
+        "--python",
+        "workspace-overlays/autodata-interview-media/render_task.py",
+        "--",
+        "--scene",
+        "runs/interview-media/import/home.blend",
+        "--trajectory",
+        "runs/interview-media/physics-s7-final/trajectory.json",
+        "--output",
+        "runs/interview-media/rgb-detail-final",
+        "--view",
+        "detail"
+      ],
+      "revision": "c95444be31717edef2f87185c0bfbc70eb4b355a",
+      "dirty": 1,
+      "timeout": 600.0,
+      "status": "succeeded",
+      "submitted": 1792576152.409417,
+      "started": 1792576152.4378653,
+      "finished": 1792576205.3953955,
+      "pid": 302965,
+      "returncode": 0,
+      "error": null,
+      "log": "/home/tangyuan/.local/state/worldsimready/task-queue/180.log"
+    },
+    "181": {
+      "id": 181,
+      "name": "interview-rgb-wide-animation",
+      "cwd": "/home/tangyuan/WorldSimReady-Home/.worktrees/autodata-interview-media",
+      "command": [
+        "/opt/blender/blender",
+        "-b",
+        "-t",
+        "6",
+        "--python-exit-code",
+        "1",
+        "--python",
+        "workspace-overlays/autodata-interview-media/render_task.py",
+        "--",
+        "--scene",
+        "runs/interview-media/import/home.blend",
+        "--trajectory",
+        "runs/interview-media/physics-s19/trajectory.json",
+        "--output",
+        "runs/interview-media/rgb-wide-final",
+        "--view",
+        "wide",
+        "--style",
+        "warm"
+      ],
+      "revision": "c95444be31717edef2f87185c0bfbc70eb4b355a",
+      "dirty": 1,
+      "timeout": 600.0,
+      "status": "succeeded",
+      "submitted": 1792576152.4429758,
+      "started": 1792576205.4021697,
+      "finished": 1792576258.711102,
+      "pid": 303028,
+      "returncode": 0,
+      "error": null,
+      "log": "/home/tangyuan/.local/state/worldsimready/task-queue/181.log"
+    },
+    "182": {
+      "id": 182,
+      "name": "interview-rgb-top-animation",
+      "cwd": "/home/tangyuan/WorldSimReady-Home/.worktrees/autodata-interview-media",
+      "command": [
+        "/opt/blender/blender",
+        "-b",
+        "-t",
+        "6",
+        "--python-exit-code",
+        "1",
+        "--python",
+        "workspace-overlays/autodata-interview-media/render_task.py",
+        "--",
+        "--scene",
+        "runs/interview-media/import/home.blend",
+        "--trajectory",
+        "runs/interview-media/physics-s31/trajectory.json",
+        "--output",
+        "runs/interview-media/rgb-top-final",
+        "--view",
+        "top",
+        "--style",
+        "wood"
+      ],
+      "revision": "c95444be31717edef2f87185c0bfbc70eb4b355a",
+      "dirty": 1,
+      "timeout": 600.0,
+      "status": "succeeded",
+      "submitted": 1792576152.4798002,
+      "started": 1792576258.7147171,
+      "finished": 1792576312.0177221,
+      "pid": 303111,
+      "returncode": 0,
+      "error": null,
+      "log": "/home/tangyuan/.local/state/worldsimready/task-queue/182.log"
+    },
+    "185": {
+      "id": 185,
+      "name": "interview-rgb-transparent-render",
+      "cwd": "/home/tangyuan/WorldSimReady-Home/.worktrees/autodata-interview-media",
+      "command": [
+        "/opt/blender/blender",
+        "-b",
+        "-t",
+        "6",
+        "--python-exit-code",
+        "1",
+        "--python",
+        "workspace-overlays/autodata-interview-media/render_task.py",
+        "--",
+        "--scene",
+        "runs/interview-media/import/home.blend",
+        "--trajectory",
+        "runs/interview-media/physics-s7-final/trajectory.json",
+        "--output",
+        "runs/interview-media/rgb-foreground",
+        "--view",
+        "detail",
+        "--foreground"
+      ],
+      "revision": "c95444be31717edef2f87185c0bfbc70eb4b355a",
+      "dirty": 1,
+      "timeout": 600.0,
+      "status": "succeeded",
+      "submitted": 1792576358.628735,
+      "started": 1792576363.7433357,
+      "finished": 1792576382.643884,
+      "pid": 303461,
+      "returncode": 0,
+      "error": null,
+      "log": "/home/tangyuan/.local/state/worldsimready/task-queue/185.log"
+    },
+    "201": {
+      "id": 201,
+      "name": "interview-media-ppt-transcode-and-composites",
+      "cwd": "/home/tangyuan/WorldSimReady-Home/.worktrees/autodata-interview-media",
+      "command": [
+        "/home/tangyuan/miniconda3/envs/autodata/bin/python",
+        "workspace-overlays/autodata-interview-media/produce_media.py",
+        "--run",
+        "runs/interview-media",
+        "--bundle",
+        "runs/interview-media/bundle-v2"
+      ],
+      "revision": "c95444be31717edef2f87185c0bfbc70eb4b355a",
+      "dirty": 1,
+      "timeout": 1200.0,
+      "status": "succeeded",
+      "submitted": 1792576887.4843745,
+      "started": 1792577176.8799846,
+      "finished": 1792577317.7182882,
+      "pid": 415169,
+      "returncode": 0,
+      "error": null,
+      "log": "/home/tangyuan/.local/state/worldsimready/task-queue/201.log"
+    },
+    "202": {
+      "id": 202,
+      "name": "interview-autodata-flow-animation",
+      "cwd": "/home/tangyuan/WorldSimReady-Home/.worktrees/autodata-interview-media",
+      "command": [
+        "/home/tangyuan/miniconda3/envs/autodata/bin/python",
+        "workspace-overlays/autodata-interview-media/flow_animation.py",
+        "--bundle",
+        "runs/interview-media/bundle-v2"
+      ],
+      "revision": "c95444be31717edef2f87185c0bfbc70eb4b355a",
+      "dirty": 1,
+      "timeout": 300.0,
+      "status": "succeeded",
+      "submitted": 1792577265.31103,
+      "started": 1792577317.7507818,
+      "finished": 1792577321.87701,
+      "pid": 533943,
+      "returncode": 0,
+      "error": null,
+      "log": "/home/tangyuan/.local/state/worldsimready/task-queue/202.log"
+    },
+    "203": {
+      "id": 203,
+      "name": "interview-g1d-connected-gripper-wide",
+      "cwd": "/home/tangyuan/WorldSimReady-Home/.worktrees/autodata-interview-media",
+      "command": [
+        "/opt/blender/blender",
+        "-b",
+        "-t",
+        "6",
+        "--python-exit-code",
+        "1",
+        "--python",
+        "workspace-overlays/autodata-interview-media/render_g1d.py",
+        "--",
+        "--scene",
+        "runs/interview-media/import/home.blend",
+        "--urdf",
+        "runs/interview-media/g1d-official/g1_d.urdf",
+        "--trajectory",
+        "runs/interview-media/g1d-sort-r2/trajectory.json",
+        "--verification",
+        "runs/interview-media/g1d-sort-r2/verification.json",
+        "--output",
+        "runs/interview-media/g1d-polished-wide",
+        "--view",
+        "wide"
+      ],
+      "revision": "c95444be31717edef2f87185c0bfbc70eb4b355a",
+      "dirty": 1,
+      "timeout": 600.0,
+      "status": "succeeded",
+      "submitted": 1792577265.3627958,
+      "started": 1792577321.8808367,
+      "finished": 1792577427.2677684,
+      "pid": 537598,
+      "returncode": 0,
+      "error": null,
+      "log": "/home/tangyuan/.local/state/worldsimready/task-queue/203.log"
+    },
+    "204": {
+      "id": 204,
+      "name": "interview-g1d-connected-gripper-detail",
+      "cwd": "/home/tangyuan/WorldSimReady-Home/.worktrees/autodata-interview-media",
+      "command": [
+        "/opt/blender/blender",
+        "-b",
+        "-t",
+        "6",
+        "--python-exit-code",
+        "1",
+        "--python",
+        "workspace-overlays/autodata-interview-media/render_g1d.py",
+        "--",
+        "--scene",
+        "runs/interview-media/import/home.blend",
+        "--urdf",
+        "runs/interview-media/g1d-official/g1_d.urdf",
+        "--trajectory",
+        "runs/interview-media/g1d-sort-r2/trajectory.json",
+        "--verification",
+        "runs/interview-media/g1d-sort-r2/verification.json",
+        "--output",
+        "runs/interview-media/g1d-polished-detail",
+        "--view",
+        "detail"
+      ],
+      "revision": "c95444be31717edef2f87185c0bfbc70eb4b355a",
+      "dirty": 1,
+      "timeout": 600.0,
+      "status": "succeeded",
+      "submitted": 1792577265.410388,
+      "started": 1792577427.2732015,
+      "finished": 1792577536.1609278,
+      "pid": 624920,
+      "returncode": 0,
+      "error": null,
+      "log": "/home/tangyuan/.local/state/worldsimready/task-queue/204.log"
+    },
+    "205": {
+      "id": 205,
+      "name": "interview-g1d-connected-gripper-side",
+      "cwd": "/home/tangyuan/WorldSimReady-Home/.worktrees/autodata-interview-media",
+      "command": [
+        "/opt/blender/blender",
+        "-b",
+        "-t",
+        "6",
+        "--python-exit-code",
+        "1",
+        "--python",
+        "workspace-overlays/autodata-interview-media/render_g1d.py",
+        "--",
+        "--scene",
+        "runs/interview-media/import/home.blend",
+        "--urdf",
+        "runs/interview-media/g1d-official/g1_d.urdf",
+        "--trajectory",
+        "runs/interview-media/g1d-sort-r2/trajectory.json",
+        "--verification",
+        "runs/interview-media/g1d-sort-r2/verification.json",
+        "--output",
+        "runs/interview-media/g1d-polished-side",
+        "--view",
+        "side"
+      ],
+      "revision": "c95444be31717edef2f87185c0bfbc70eb4b355a",
+      "dirty": 1,
+      "timeout": 600.0,
+      "status": "succeeded",
+      "submitted": 1792577265.4609146,
+      "started": 1792577536.1663737,
+      "finished": 1792577641.1496587,
+      "pid": 714579,
+      "returncode": 0,
+      "error": null,
+      "log": "/home/tangyuan/.local/state/worldsimready/task-queue/205.log"
+    },
+    "206": {
+      "id": 206,
+      "name": "interview-g1d-connected-gripper-grasp",
+      "cwd": "/home/tangyuan/WorldSimReady-Home/.worktrees/autodata-interview-media",
+      "command": [
+        "/opt/blender/blender",
+        "-b",
+        "-t",
+        "6",
+        "--python-exit-code",
+        "1",
+        "--python",
+        "workspace-overlays/autodata-interview-media/render_g1d.py",
+        "--",
+        "--scene",
+        "runs/interview-media/import/home.blend",
+        "--urdf",
+        "runs/interview-media/g1d-official/g1_d.urdf",
+        "--trajectory",
+        "runs/interview-media/g1d-parallel-r2/trajectory.json",
+        "--verification",
+        "runs/interview-media/g1d-parallel-r2/verification.json",
+        "--output",
+        "runs/interview-media/g1d-polished-grasp",
+        "--view",
+        "wide"
+      ],
+      "revision": "c95444be31717edef2f87185c0bfbc70eb4b355a",
+      "dirty": 1,
+      "timeout": 600.0,
+      "status": "succeeded",
+      "submitted": 1792577265.502476,
+      "started": 1792577641.1539595,
+      "finished": 1792577685.741375,
+      "pid": 801322,
+      "returncode": 0,
+      "error": null,
+      "log": "/home/tangyuan/.local/state/worldsimready/task-queue/206.log"
+    },
+    "207": {
+      "id": 207,
+      "name": "interview-g1d-ppt-final-encoding",
+      "cwd": "/home/tangyuan/WorldSimReady-Home/.worktrees/autodata-interview-media",
+      "command": [
+        "/home/tangyuan/miniconda3/envs/autodata/bin/python",
+        "workspace-overlays/autodata-interview-media/refresh_ppt.py",
+        "--run",
+        "runs/interview-media",
+        "--bundle",
+        "runs/interview-media/bundle-v2"
+      ],
+      "revision": "c95444be31717edef2f87185c0bfbc70eb4b355a",
+      "dirty": 1,
+      "timeout": 900.0,
+      "status": "succeeded",
+      "submitted": 1792577409.0399795,
+      "started": 1792577685.7449968,
+      "finished": 1792577761.279947,
+      "pid": 838184,
+      "returncode": 0,
+      "error": null,
+      "log": "/home/tangyuan/.local/state/worldsimready/task-queue/207.log"
+    },
+    "208": {
+      "id": 208,
+      "name": "interview-keyframes-and-evidence-selection",
+      "cwd": "/home/tangyuan/WorldSimReady-Home/.worktrees/autodata-interview-media",
+      "command": [
+        "/home/tangyuan/miniconda3/envs/autodata/bin/python",
+        "workspace-overlays/autodata-interview-media/finalize_selection.py",
+        "--run",
+        "runs/interview-media",
+        "--bundle",
+        "runs/interview-media/bundle-v2"
+      ],
+      "revision": "c95444be31717edef2f87185c0bfbc70eb4b355a",
+      "dirty": 1,
+      "timeout": 120.0,
+      "status": "succeeded",
+      "submitted": 1792577527.0270684,
+      "started": 1792577761.2848704,
+      "finished": 1792577761.4011858,
+      "pid": 902900,
+      "returncode": 0,
+      "error": null,
+      "log": "/home/tangyuan/.local/state/worldsimready/task-queue/208.log"
+    },
+    "209": {
+      "id": 209,
+      "name": "interview-media-verify-gallery-package",
+      "cwd": "/home/tangyuan/WorldSimReady-Home/.worktrees/autodata-interview-media",
+      "command": [
+        "/home/tangyuan/miniconda3/envs/autodata/bin/python",
+        "workspace-overlays/autodata-interview-media/build_gallery.py",
+        "--bundle",
+        "runs/interview-media/bundle-v2",
+        "--output",
+        "outputs/autodata-interview-media/v001",
+        "--model",
+        "runs/interview-media/g1d-official"
+      ],
+      "revision": "c95444be31717edef2f87185c0bfbc70eb4b355a",
+      "dirty": 1,
+      "timeout": 900.0,
+      "status": "succeeded",
+      "submitted": 1792577527.0814493,
+      "started": 1792577761.4042768,
+      "finished": 1792577776.193931,
+      "pid": 902987,
+      "returncode": 0,
+      "error": null,
+      "log": "/home/tangyuan/.local/state/worldsimready/task-queue/209.log"
+    }
+  },
+  "selection_exclusions": [
+    {
+      "id": "M055",
+      "source": "/home/tangyuan/WorldSimReady-Home/outputs/autodata-domain-randomization/v001/renders.png",
+      "reason": "v001 reset images were not synchronized; superseded by v002; source report explicitly invalidates visual interpretation"
+    },
+    {
+      "id": "M056",
+      "source": "/home/tangyuan/WorldSimReady-Home/outputs/autodata-domain-randomization/v001/reset-00.png",
+      "reason": "v001 reset images were not synchronized; superseded by v002; source report explicitly invalidates visual interpretation"
+    },
+    {
+      "id": "M057",
+      "source": "/home/tangyuan/WorldSimReady-Home/outputs/autodata-domain-randomization/v001/reset-01.png",
+      "reason": "v001 reset images were not synchronized; superseded by v002; source report explicitly invalidates visual interpretation"
+    },
+    {
+      "id": "M058",
+      "source": "/home/tangyuan/WorldSimReady-Home/outputs/autodata-domain-randomization/v001/reset-02.png",
+      "reason": "v001 reset images were not synchronized; superseded by v002; source report explicitly invalidates visual interpretation"
+    },
+    {
+      "id": "M059",
+      "source": "/home/tangyuan/WorldSimReady-Home/outputs/autodata-domain-randomization/v001/reset-03.png",
+      "reason": "v001 reset images were not synchronized; superseded by v002; source report explicitly invalidates visual interpretation"
+    },
+    {
+      "id": "M060",
+      "source": "/home/tangyuan/WorldSimReady-Home/outputs/autodata-domain-randomization/v001/reset-04.png",
+      "reason": "v001 reset images were not synchronized; superseded by v002; source report explicitly invalidates visual interpretation"
+    },
+    {
+      "id": "M061",
+      "source": "/home/tangyuan/WorldSimReady-Home/outputs/autodata-domain-randomization/v001/reset-05.png",
+      "reason": "v001 reset images were not synchronized; superseded by v002; source report explicitly invalidates visual interpretation"
+    },
+    {
+      "id": "M062",
+      "source": "/home/tangyuan/WorldSimReady-Home/outputs/autodata-domain-randomization/v001/reset-06.png",
+      "reason": "v001 reset images were not synchronized; superseded by v002; source report explicitly invalidates visual interpretation"
+    },
+    {
+      "id": "M063",
+      "source": "/home/tangyuan/WorldSimReady-Home/outputs/autodata-domain-randomization/v001/reset-07.png",
+      "reason": "v001 reset images were not synchronized; superseded by v002; source report explicitly invalidates visual interpretation"
+    },
+    {
+      "id": "M064",
+      "source": "/home/tangyuan/WorldSimReady-Home/outputs/autodata-domain-randomization/v001/reset-08.png",
+      "reason": "v001 reset images were not synchronized; superseded by v002; source report explicitly invalidates visual interpretation"
+    }
+  ],
+  "scope": "MuJoCo CPU rigid-body simulation + Blender rendering + local media QA. No AutoData augmentation, policy inference, training, whole-house collision or sim-to-real validation. G1-D successes require a custom parallel-gripper adaptation; native Dex3 attempts failed."
+}

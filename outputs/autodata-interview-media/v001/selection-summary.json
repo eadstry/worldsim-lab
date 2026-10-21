@@ -1,0 +1,56 @@
+{
+  "total": 135,
+  "videos": 67,
+  "images": 68,
+  "new_videos": 33,
+  "categories": {
+    "10_g1d": 8,
+    "07_new_rgb": 7,
+    "13_explanation": 1,
+    "14_new_keyframes": 36,
+    "01_original_home": 2,
+    "02_original_domain": 12,
+    "03_original_hdr": 6,
+    "06_original_figures": 32,
+    "11_comparisons": 3,
+    "04_original_grasp": 10,
+    "05_original_dataset": 4,
+    "08_image_augmentation": 8,
+    "09_background_composites": 3,
+    "12_ppt_h264": 3
+  },
+  "archives": [
+    {
+      "path": "01-existing-media.zip",
+      "bytes": 75160270,
+      "sha256": "2973b56e359d28fa3b409f45dcd3e744276e24b7408f2e7389d8507946d91b28",
+      "entries": 66
+    },
+    {
+      "path": "02-new-ppt-media.zip",
+      "bytes": 81304689,
+      "sha256": "dccc28a7530e0041c6507bdb0aa5bf89b13b94b6a6e6d49f725b81b79596690e",
+      "entries": 69
+    },
+    {
+      "path": "03-official-g1d-model.zip",
+      "bytes": 12501297,
+      "sha256": "5d70c4b374046ac20988a14135b94fd8809802a9be9619689b6403914773902e",
+      "scope": "Unmodified official URDF, referenced meshes, BSD license and pinned download manifest; no local task adaptation"
+    }
+  ],
+  "contact_sheets": [
+    "new-videos-01.jpg",
+    "new-videos-02.jpg",
+    "new-videos-03.jpg",
+    "original-videos-01.jpg",
+    "original-videos-02.jpg",
+    "original-videos-03.jpg",
+    "figures-01.jpg",
+    "figures-02.jpg",
+    "figures-03.jpg",
+    "figures-04.jpg",
+    "figures-05.jpg"
+  ],
+  "all_delivered_videos_decoded": true
+}

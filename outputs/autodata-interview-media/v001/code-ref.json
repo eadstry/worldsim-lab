@@ -1,0 +1,33 @@
+{
+  "overlay": "workspace-overlays/autodata-interview-media",
+  "base_commit": "c95444be31717edef2f87185c0bfbc70eb4b355a",
+  "source_branch": "codex/autodata-interview-media",
+  "entrypoints": [
+    "physical_task.py",
+    "g1d_task.py",
+    "render_task.py",
+    "render_g1d.py",
+    "produce_media.py",
+    "refresh_ppt.py",
+    "build_gallery.py"
+  ],
+  "files_sha256": {
+    "build_gallery.py": "e2456b42e10378230ed4a61c7cc19db55570f17d0c7f147d83de709bf9855a66",
+    "collect_media.py": "efbd6a86ff6eafc0b3c6142a1bc867d33aaa2c99b1da45d5f3735f2e7cbe3747",
+    "download_g1d.py": "2ae9c30a25351ee58563beebf9f4fd177baa3d319d340c68ad8a795db443f255",
+    "finalize_selection.py": "1950e92ee70ad781bf0ba0b7284a988a9cdc7fac58e141c9ee51e0a63aaad0c5",
+    "flow_animation.py": "301c4a7705aed9fe41c27d3564b2ed738cf5ad775d3b9e6524252aed09d3884b",
+    "g1d_kinematics.py": "d7912ece609110ea5391e553ae90a7595505925f0268dd269f3f69666398c805",
+    "g1d_prepare.py": "9f527fa1209b073c71a509cad03a88fcdcc1f608739e58695a59656ea7b22969",
+    "g1d_task.py": "d3719b91085e3aed4392daef20eeb13a97cd307ab756955c0605307320daf44c",
+    "inspect_scene.py": "fd41b1c8ee5cacdeb4f051883cc2c971d899b51c89287002e42af644858c0ff6",
+    "physical_task.py": "e8de3d6177469979ce7afb3b9b38965058631ecff69ea323748d4d3b2989d769",
+    "produce_media.py": "030142eb40ac51436850b4662b3356e5aaa213571489b5afd71a74a144c4602d",
+    "refresh_ppt.py": "8d26df2637fb143d60bbe156bf4c43492e71bb8fac1fa1a9075f83382d294e08",
+    "render_g1d.py": "7755397d1f864cea6c8cee68b39455f3585eb8182530225b7c4bd95bb2fe24f2",
+    "render_task.py": "cb56e7843476e9abdc9cd3eaa37ff9f3b0f193394cb51295b7a435603f5ec980",
+    "seal_delivery.py": "e51e72cfb9a69f06c6e126de3ff83d37764a670b43686e2c7bc1f8cb1f95f1a8",
+    "verify_physics.py": "0f082e74d37f950e02b750fb8d1adf035d517baa443af5226775d2907d80146f"
+  },
+  "note": "Implementation lives only in the root overlay; base_commit predates this overlay. Content hashes identify the implementation. The task commit is reported separately after review; no duplicated code directory is stored in outputs."
+}

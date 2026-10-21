@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "artifact_count": 16,
-  "version_count": 26,
+  "artifact_count": 17,
+  "version_count": 27,
   "artifacts": [
     {
       "id": "arena-examples-guide",
@@ -155,6 +155,23 @@
           "sealed_at": "2026-10-08T07:39:28.520877+00:00",
           "files": 33,
           "bytes": 2340863,
+          "current": true
+        }
+      ]
+    },
+    {
+      "id": "autodata-interview-media",
+      "title": "AutoData 面试展示素材与 G1-D RGB 任务",
+      "status": "current",
+      "supersedes": [],
+      "superseded_by": null,
+      "current_version": "v001",
+      "versions": [
+        {
+          "version": "v001",
+          "sealed_at": "2026-10-21T18:16:25.279030+08:00",
+          "files": 20,
+          "bytes": 171900802,
           "current": true
         }
       ]

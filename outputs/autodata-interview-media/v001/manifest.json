@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "artifact_id": "autodata-interview-media",
+  "version": "v001",
+  "created_at": "2026-10-21T18:16:25.279030+08:00",
+  "sealed_at": "2026-10-21T18:16:25.279030+08:00",
+  "files": {
+    "01-existing-media.zip": "2973b56e359d28fa3b409f45dcd3e744276e24b7408f2e7389d8507946d91b28",
+    "02-new-ppt-media.zip": "dccc28a7530e0041c6507bdb0aa5bf89b13b94b6a6e6d49f725b81b79596690e",
+    "03-official-g1d-model.zip": "5d70c4b374046ac20988a14135b94fd8809802a9be9619689b6403914773902e",
+    "catalog.json": "6beee6222a9bf3d61bf8544241ec8a77aec4951b2385988902e9e5327ae1b890",
+    "code-ref.json": "0d7b0853bfff9c2a55a4a7781380e709e1eae7f780598066790ba357a557e5ea",
+    "figures-01.jpg": "bb790a732fb5f5b2221359a3015d26691dfeebf849d04224aa91c17ccfcf08b3",
+    "figures-02.jpg": "e8a03bfe6166817332ec71307fb67b2ee99b637db63851c455f5416b4aacb9ec",
+    "figures-03.jpg": "fb6ffa8aa492414a227e926d8274205f2d027bd40873ebffc680b4df4aa9bde2",
+    "figures-04.jpg": "9c53c4c73873bf9bc6ef097876207e088870f523f93ef31d690d30472d4c6b3b",
+    "figures-05.jpg": "b2e333f8a17331158538ae1fd3a11b6063be4a80ede33f3cbab18db0e2776a4e",
+    "index.html": "c0763f6bf3481574fb4293a2aed2796317a013b28289c962638e57af8451751d",
+    "new-videos-01.jpg": "fdb0812c068053e9d2d455997ecc8a8d99743422d3f3f5f6ab105a374b0aec01",
+    "new-videos-02.jpg": "47e9768eb6a2ddfa423e8e2829d80e3434806ce05f5355b8b59ee87919c5e649",
+    "new-videos-03.jpg": "9a0b9f561eefb12fe35d969383520c0cec1926d987fa75e2908dba83904ffd89",
+    "original-videos-01.jpg": "1bb2d621ac873ca01b996a76edd121c1c330e2454253e2e5f5838f143fbe651b",
+    "original-videos-02.jpg": "5fc3aba2fb6e6a822b8a3022bd5d75d06544f0d25ae37ab93cd0d142696ddbeb",
+    "original-videos-03.jpg": "808a8060972de6de78c3ba98b15d3c7048325e07e64103c464ad4e63ffc0dacf",
+    "selection-summary.json": "344ac1dc4b522f2512f2dcd7967cb2c735267ead1a2796d923edcc1345165329",
+    "simulation-evidence.json": "bc6d3f498672d06ecded74f57539afef30748ec3e1c5fd41d8f74232345d2dfb",
+    "video-validation.json": "3ef1b9413355505564aa5db656697f2b8f0b9043a4daacc4b6287f180f92e151"
+  },
+  "validation": {
+    "all_videos_fully_decoded": true,
+    "new_video_codec": "H.264 / yuv420p / 30 FPS; renders sampled at 10 unique frames/s",
+    "physical_state_rechecks": 5,
+    "scope": "MuJoCo CPU rigid-body simulation + Blender rendering + local media QA. No AutoData augmentation, policy inference, training, whole-house collision or sim-to-real validation. G1-D successes require a custom parallel-gripper adaptation; native Dex3 attempts failed."
+  },
+  "delivery": {
+    "local": {
+      "status": "saved"
+    },
+    "publication": "No site, Feishu or ChatGPT upload; task branch Git synchronization follows workspace policy"
+  }
+}

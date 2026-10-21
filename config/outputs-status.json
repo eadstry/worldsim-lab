@@ -108,6 +108,12 @@
       "status": "current",
       "summary": "19 张图、20 页 PDF 与 157 行指标；复用 14 张原图，另 5 张由已保存记录派生。区分任务、帧与资源快照口径；保留右腕近黑与 24 环境准入阻塞。未新增仿真或训练。",
       "delivery": "本地封存并随 Git 同步，未发布站点"
+    },
+    "autodata-interview-media": {
+      "title": "AutoData 面试展示素材与 G1-D RGB 任务",
+      "status": "current",
+      "summary": "67 视频、68 图片；新增 33 视频；mini 家居抓取与 RGB 排序、域随机化、图像增强及背景合成；G1-D 使用改装平行夹爪",
+      "delivery": "本地媒体 ZIP 与官方模型 ZIP；未发布站点或上传研究平台"
     }
   }
 }

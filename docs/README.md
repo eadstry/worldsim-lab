@@ -5,6 +5,7 @@
 | 主题 | 入口 | 内容 |
 | --- | --- | --- |
 | AutoData | [资料与阅读顺序](autodata/README.md) | 原理、数据流、随机化可视化及博客正文来源 |
+| AutoData 面试展示（2026-10-21） | [素材包与 G1-D 方块任务](autodata-interview-media-20261021.md) | 现有媒体选片、新增 RGB 抓取排序、域随机化与背景合成，附验证范围 |
 | Arena 与共用配置 | [成果索引](../outputs/README.md) | 示例运行说明、RoboLab 配置、AutoData/Arena 共用配置建议 |
 | 运行环境 | [环境配置](environment-setup.md) | 主机、仓库、容器与原生环境、机器本地参数及验收顺序 |
 | 主机环境 | [存储挂载记录](host-storage.md) | `/data` 挂载容量及截图中的存储信息 |
