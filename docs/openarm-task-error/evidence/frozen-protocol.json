@@ -1,0 +1,85 @@
+{
+  "status": "frozen before final batches",
+  "initial_states": [
+    "demo_0",
+    "demo_1",
+    "demo_2",
+    "demo_3"
+  ],
+  "repeats": 3,
+  "attempts_per_condition": 12,
+  "total_conditions": 16,
+  "expected_trials": 192,
+  "controller_validated_pilot": {
+    "queue": 144,
+    "successes": 4,
+    "attempts": 4
+  },
+  "runtime_preflight": 146,
+  "excluded_initialization_queues": [
+    141,
+    142,
+    143,
+    145
+  ],
+  "script_sha256": "4ff3ade3061920007e74f6e3232ca6b1236ed263fa336e99860152679d9a4dea",
+  "batch_specs": [
+    [
+      "main-120hz",
+      [
+        "--variants",
+        "baseline",
+        "kp_half",
+        "kp_double",
+        "kd_half",
+        "kd_double",
+        "gravity_ff",
+        "speed_half",
+        "speed_double",
+        "friction_half",
+        "friction_double"
+      ]
+    ],
+    [
+      "physics-60hz",
+      [
+        "--physics-hz",
+        "60"
+      ]
+    ],
+    [
+      "physics-240hz",
+      [
+        "--physics-hz",
+        "240"
+      ]
+    ],
+    [
+      "physics-480hz",
+      [
+        "--physics-hz",
+        "480"
+      ]
+    ],
+    [
+      "position-32",
+      [
+        "--position-iterations",
+        "32"
+      ]
+    ],
+    [
+      "velocity-8",
+      [
+        "--velocity-iterations",
+        "8"
+      ]
+    ],
+    [
+      "external-forces",
+      [
+        "--external-forces-every-iteration"
+      ]
+    ]
+  ]
+}

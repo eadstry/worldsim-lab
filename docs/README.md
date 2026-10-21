@@ -8,7 +8,14 @@
 | Arena 与共用配置 | [成果索引](../outputs/README.md) | 示例运行说明、RoboLab 配置、AutoData/Arena 共用配置建议 |
 | 运行环境 | [环境配置](environment-setup.md) | 主机、仓库、容器与原生环境、机器本地参数及验收顺序 |
 | 主机环境 | [存储挂载记录](host-storage.md) | `/data` 挂载容量及截图中的存储信息 |
+| OpenArm action/state差值 | [实验报告与证据](openarm-task-error/README.md) | 完整抓取任务、物理参数对照及相关性读法；2026-10-21 r02 |
 | 版本管理与过程记录 | [管理约定](version-management.md) · [问题与改进](process-log.md) | 分支、worktree、锁定检查、快照保护及待解决事项 |
+
+## 按创建日期归档的报告
+
+| 创建日期 | 文档 | 内容 |
+| --- | --- | --- |
+| 2026-10-21 | [OpenArm完整任务差值实验报告 r02](openarm-task-error-20261021-r02.md) · [PDF](openarm-task-error-20261021-r02.pdf) · [网页版](openarm-task-error-20261021-r02.html) | 沿用192次主实验与96次核查结果，新增相关性两列、角度示例和r读法的通俗解释；[图表、证据及开源参数附件](openarm-task-error/README.md) |
 
 维护约定：
 

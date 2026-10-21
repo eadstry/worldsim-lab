@@ -1,0 +1,91 @@
+{
+  "source_sha256": {
+    "/home/tangyuan/WorldSimReady-Home/runs/openarm-task-error-20261021/report-zh-v001/完成抓取任务后的指令与实际位置差值实验报告.md": "408014c3db942ed8ca5c0de8c2e042da6657a4888de6ba40e9e64647329e5fd9",
+    "/home/tangyuan/WorldSimReady-Home/runs/openarm-task-error-20261021/report-zh-v001/figures/01-overview.svg": "7aa034a2a6c06722f6247070294d9b5d016e4ce33e7141046ba4d47cbc316c39",
+    "/home/tangyuan/WorldSimReady-Home/runs/openarm-task-error-20261021/report-zh-v001/figures/07-task-path.svg": "292ea8530c0f425c3f990f732f11c7a327ca6b2ec6a944fc8e1cd7ec979cccac",
+    "/home/tangyuan/WorldSimReady-Home/runs/openarm-task-error-20261021/report-zh-v001/figures/08-acceptance.svg": "14aab111a57d173b28f8a418fe7d6261fec0a4ffde56061ffef3af1c732bab32",
+    "/home/tangyuan/WorldSimReady-Home/runs/openarm-task-error-20261021/report-zh-v001/figures/02-gains.svg": "2dd8597820eae63d01d6a9997257c213d7efc446c75ef266f2d2085427e43483",
+    "/home/tangyuan/WorldSimReady-Home/runs/openarm-task-error-20261021/report-zh-v001/figures/03-physics.svg": "10caf61fe4aaa23493feb37613f110d947f245648a49edde6f21c532d8b3207a",
+    "/home/tangyuan/WorldSimReady-Home/runs/openarm-task-error-20261021/report-zh-v001/figures/04-solver.svg": "be29eedd4036187b4d67b3c7d2c81129de6163e72cb32ebaff06d0076f6998e5",
+    "/home/tangyuan/WorldSimReady-Home/runs/openarm-task-error-20261021/report-zh-v001/figures/05-load-speed.svg": "2a583cc003eede0963b1ff44489e0db7249ff2b4b1496a4534d9799b7730f542",
+    "/home/tangyuan/WorldSimReady-Home/runs/openarm-task-error-20261021/report-zh-v001/figures/06-phases.svg": "975f91fd0dac99eab37ddaada03710d21433438c0a6b051d03449dd7c4e8aa67",
+    "/home/tangyuan/WorldSimReady-Home/runs/action-state-causality-20261021/open-source-parameter-survey-v001/开源仿真控制参数对比报告.pdf": "2d35ad2c190ba4db5a7216fea38d115c2c77a69fe378f99b44a49c8b703808ad",
+    "/home/tangyuan/WorldSimReady-Home/runs/openarm-task-error-20261021/summary.json": "1189f0b73793fde7ad1b3cce580c5f38764402ff902d580852940ee22aa0c121",
+    "/home/tangyuan/WorldSimReady-Home/runs/openarm-task-error-20261021/acceptance-audit.json": "8f07840d5983bc2b9006e347fb3b4f8421ad32f184314f7f9c5d32a0f1e751d8",
+    "/home/tangyuan/WorldSimReady-Home/runs/openarm-task-error-20261021/physics-step-audit.json": "6cdad59c65eea72aed9343d0bab9b72542e403d07c273a36b84eb591528a6495",
+    "/home/tangyuan/WorldSimReady-Home/runs/openarm-task-error-20261021/layout-acceptance-audit.json": "e47a5662366c1c4883bb84d29813715b39e50b32b1e529e17a2d0101dcc8db81",
+    "/home/tangyuan/WorldSimReady-Home/runs/openarm-task-error-20261021/layout-physics-step-audit.json": "914005f00546c41ab197849b5c737fba71a52b9ef3907d79e4fc58cffe5a980e",
+    "/home/tangyuan/WorldSimReady-Home/runs/openarm-task-error-20261021/physics-bridge-comparison.json": "10abc94a855092f2d8e8c029da37798400f454984fa4e23b3b11f7e90bb06a85",
+    "/home/tangyuan/WorldSimReady-Home/runs/openarm-task-error-20261021/supplementary-metrics.json": "2033915f0e3a1fa01759bd41cdb1370c7f95bfc4c8cd34edeac47ad26d664981",
+    "/home/tangyuan/WorldSimReady-Home/runs/openarm-task-error-20261021/frozen-protocol.json": "37f218baf829e700d82e46c06929c06bab353d4ab080cd5478c94eb4cec61d59",
+    "/home/tangyuan/WorldSimReady-Home/runs/openarm-task-error-20261021/analysis-plan.json": "2b35479ee5c7d3fdf608a17873bcf90993f1c3128b0d7f34637a1fc232d8a201",
+    "/home/tangyuan/WorldSimReady-Home/runs/openarm-task-error-20261021/queue-ids.json": "4d7e0cbe62ca8babfa070624512462c3a9c037c7b1dc4a5c81ea7a366a60fa6c",
+    "/home/tangyuan/WorldSimReady-Home/runs/openarm-task-error-20261021/dependency-provenance.json": "7c641ce0c3eb8306de56d385fccf45f7c35ad6ef1e703bdab5a83ac37fbe16a3",
+    "/home/tangyuan/WorldSimReady-Home/runs/openarm-task-error-20261021/numeric-verification.json": "3d78a11001304663bd0cc3d8c3993e18687928a8a751357a0475f90cb3296c44"
+  },
+  "revision": "Explanation only; no new simulation or metric recomputation; original report unchanged.",
+  "pages": 12,
+  "layout": [
+    {
+      "page": "p1",
+      "contentBottom": 932.90625,
+      "footerTop": 1076.453125
+    },
+    {
+      "page": "p2",
+      "contentBottom": 903.390625,
+      "footerTop": 1075.28125
+    },
+    {
+      "page": "p3",
+      "contentBottom": 906.171875,
+      "footerTop": 1075.28125
+    },
+    {
+      "page": "p4",
+      "contentBottom": 836.953125,
+      "footerTop": 1075.28125
+    },
+    {
+      "page": "p5",
+      "contentBottom": 1007.0625,
+      "footerTop": 1076
+    },
+    {
+      "page": "p6",
+      "contentBottom": 918.28125,
+      "footerTop": 1075.28125
+    },
+    {
+      "page": "p7",
+      "contentBottom": 946.046875,
+      "footerTop": 1075.28125
+    },
+    {
+      "page": "p8",
+      "contentBottom": 625.359375,
+      "footerTop": 1075.28125
+    },
+    {
+      "page": "p9",
+      "contentBottom": 692.53125,
+      "footerTop": 1076
+    },
+    {
+      "page": "p10",
+      "contentBottom": 751.453125,
+      "footerTop": 1075.546875
+    },
+    {
+      "page": "p11",
+      "contentBottom": 683.90625,
+      "footerTop": 1075.28125
+    },
+    {
+      "page": "p12",
+      "contentBottom": 880.1875,
+      "footerTop": 1076
+    }
+  ],
+  "pdf_sha256": "2be75099343d9ab64525a5c5e1878c78f8466ab77f2f1f2c3b8a9265860398e8"
+}

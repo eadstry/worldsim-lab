@@ -1,0 +1,135 @@
+{
+  "timeout_trials": [
+    {
+      "batch": "layout40-default",
+      "variant": "kd_half",
+      "demo": "demo_1",
+      "repeat": 0,
+      "physics_dt": 0.008333333333333333,
+      "samples": 120,
+      "reported_linear_median_m_s": 0.37609636339164937,
+      "derived_linear_median_m_s": 0.005422860186521237,
+      "derived_linear_max_m_s": 0.008481183925119066,
+      "reported_angular_median_rad_s": 14.09168576390357,
+      "derived_angular_median_rad_s": 0.5572407077921597,
+      "derived_angular_max_rad_s": 0.9763421169174318,
+      "derived_angular_below_threshold_fraction": 0.5,
+      "derived_linear_below_threshold_fraction": 1.0,
+      "position_span_mm": [
+        0.026226043701171875,
+        0.0362396240234375,
+        0.06377696990966797
+      ]
+    },
+    {
+      "batch": "layout40-default",
+      "variant": "kd_double",
+      "demo": "demo_1",
+      "repeat": 0,
+      "physics_dt": 0.008333333333333333,
+      "samples": 120,
+      "reported_linear_median_m_s": 0.1585342740959799,
+      "derived_linear_median_m_s": 0.0,
+      "derived_linear_max_m_s": 5.898149908472529e-05,
+      "reported_angular_median_rad_s": 4.731232470541578,
+      "derived_angular_median_rad_s": 0.00034190060315487827,
+      "derived_angular_max_rad_s": 0.0010120679125686274,
+      "derived_angular_below_threshold_fraction": 1.0,
+      "derived_linear_below_threshold_fraction": 1.0,
+      "position_span_mm": [
+        0.000476837158203125,
+        0.0,
+        0.00011920928955078125
+      ]
+    },
+    {
+      "batch": "layout40-default",
+      "variant": "gravity_ff",
+      "demo": "demo_2",
+      "repeat": 0,
+      "physics_dt": 0.008333333333333333,
+      "samples": 120,
+      "reported_linear_median_m_s": 0.022779434231372717,
+      "derived_linear_median_m_s": 7.152557373046875e-06,
+      "derived_linear_max_m_s": 5.898149908472529e-05,
+      "reported_angular_median_rad_s": 0.6842197126183374,
+      "derived_angular_median_rad_s": 0.00018916891498763655,
+      "derived_angular_max_rad_s": 0.00048626870532378504,
+      "derived_angular_below_threshold_fraction": 1.0,
+      "derived_linear_below_threshold_fraction": 1.0,
+      "position_span_mm": [
+        5.9604644775390625e-05,
+        0.000476837158203125,
+        0.00011920928955078125
+      ]
+    },
+    {
+      "batch": "layout40-default",
+      "variant": "friction_double",
+      "demo": "demo_2",
+      "repeat": 0,
+      "physics_dt": 0.008333333333333333,
+      "samples": 120,
+      "reported_linear_median_m_s": 0.0006337623377827167,
+      "derived_linear_median_m_s": 0.00013495418260655312,
+      "derived_linear_max_m_s": 0.0001540708009853698,
+      "reported_angular_median_rad_s": 0.02573584798414969,
+      "derived_angular_median_rad_s": 0.005204283638419805,
+      "derived_angular_max_rad_s": 0.006436870481232395,
+      "derived_angular_below_threshold_fraction": 1.0,
+      "derived_linear_below_threshold_fraction": 1.0,
+      "position_span_mm": [
+        0.00095367431640625,
+        0.0007152557373046875,
+        0.000476837158203125
+      ]
+    },
+    {
+      "batch": "layout40-external-forces",
+      "variant": "kp_double",
+      "demo": "demo_3",
+      "repeat": 0,
+      "physics_dt": 0.008333333333333333,
+      "samples": 120,
+      "reported_linear_median_m_s": 0.051588448952093316,
+      "derived_linear_median_m_s": 1.430511474609375e-05,
+      "derived_linear_max_m_s": 1.430511474609375e-05,
+      "reported_angular_median_rad_s": 2.393786250600259,
+      "derived_angular_median_rad_s": 0.0006309319874594415,
+      "derived_angular_max_rad_s": 0.0014719764969519473,
+      "derived_angular_below_threshold_fraction": 1.0,
+      "derived_linear_below_threshold_fraction": 1.0,
+      "position_span_mm": [
+        0.0,
+        0.0,
+        0.00011920928955078125
+      ]
+    },
+    {
+      "batch": "layout40-external-forces",
+      "variant": "friction_double",
+      "demo": "demo_1",
+      "repeat": 0,
+      "physics_dt": 0.008333333333333333,
+      "samples": 120,
+      "reported_linear_median_m_s": 0.03568031524145439,
+      "derived_linear_median_m_s": 0.0001279488359928011,
+      "derived_linear_max_m_s": 0.0003265203154710768,
+      "reported_angular_median_rad_s": 0.4985746357494797,
+      "derived_angular_median_rad_s": 0.017862813136005525,
+      "derived_angular_max_rad_s": 0.06123679670479388,
+      "derived_angular_below_threshold_fraction": 1.0,
+      "derived_linear_below_threshold_fraction": 1.0,
+      "position_span_mm": [
+        0.00286102294921875,
+        0.002384185791015625,
+        0.000476837158203125
+      ]
+    }
+  ],
+  "source_sha256": {
+    "runs/openarm-task-error-20261021/layout-audit-batches/layout40-default/cube-physics-r0.npz": "1745fd5278459200def9fc40249522a63fbe64b4c1c807bb06960cbf729f3975",
+    "runs/openarm-task-error-20261021/layout-audit-batches/layout40-external-forces/cube-physics-r0.npz": "8c6fcee6eeaa211e8023152b53d66d93fc160b260fb86c33ca57f6f4db0eccde"
+  },
+  "scope": "Final one second of per-physics-step buffer; timeout attempts only; original acceptance unchanged."
+}
