@@ -5,7 +5,7 @@
 - 汇总版本：v001
 - 材料截止：2026-10-19（Asia/Shanghai）
 - 范围：已保存报告、验证记录及本项目相关聊天中已完成的仿真实验；没有在本报告整理过程中新增 GPU 实验。
-- 推荐入口：[本报告](report.md) · [成果索引](https://github.com/eadstry/worldsim-lab/blob/4a45d64fc002d16930906c6bd521750dadf0d479/outputs/README.md) · [12 图效率优化报告](https://github.com/eadstry/worldsim-lab/blob/4a45d64fc002d16930906c6bd521750dadf0d479/outputs/autodata-efficiency-report/v001/index.html) · [效率复盘图册 v021](https://github.com/eadstry/worldsim-lab/blob/4a45d64fc002d16930906c6bd521750dadf0d479/outputs/autodata-efficiency-review/v021/charts.md) · [架构与 cuRobo 图册 v022](https://github.com/eadstry/worldsim-lab/blob/4a45d64fc002d16930906c6bd521750dadf0d479/outputs/autodata-efficiency-review/v022/charts.md)
+- 推荐入口：[本报告](report.md) · [成果索引](../../outputs/README.md) · [12 图效率优化报告](../../outputs/autodata-efficiency-report/v001/index.html) · 效率复盘图册 v021（归档，未随 main 复制） · [架构与 cuRobo 图册 v022](../../outputs/autodata-efficiency-review/v022/charts.md)
 
 ## 先看实验如何递进
 
@@ -40,7 +40,7 @@ flowchart LR
 
 双 worker 相对同步的最终就绪加速约 **1.30×**。三组均记录 24 次成功标签，但相同的 `demo_2` 最终仍在运动，严格物理检查失败；因此不能用 24/24 描述物理合格率。三个模式非 RGB 数据集共 672 项逐值一致；固定轨迹 CPU 回放的文件结构、值、属性、形状和压缩也通过一致性核对。GPU 运行当时报告的全局峰值内存较高，应按原报告中的 RSS、cgroup 与显存各自口径理解。
 
-**这一版推进了什么：** 异步导出、worker 数量与最终文件就绪时间形成端到端 GPU 对照，并检查数据传输和读取。**尚未回答什么：** 是否能改善真实任务成功率、超时与失败样本如何处置，以及相机图像是否逐像素等价。详情见[效率报告 v001](https://github.com/eadstry/worldsim-lab/blob/4a45d64fc002d16930906c6bd521750dadf0d479/outputs/autodata-efficiency-report/v001/index.html)及其[结构化证据](https://github.com/eadstry/worldsim-lab/blob/4a45d64fc002d16930906c6bd521750dadf0d479/outputs/autodata-efficiency-report/v001/evidence.json)。
+**这一版推进了什么：** 异步导出、worker 数量与最终文件就绪时间形成端到端 GPU 对照，并检查数据传输和读取。**尚未回答什么：** 是否能改善真实任务成功率、超时与失败样本如何处置，以及相机图像是否逐像素等价。详情见[效率报告 v001](../../outputs/autodata-efficiency-report/v001/index.html)及其[结构化证据](../../outputs/autodata-efficiency-report/v001/evidence.json)。
 
 ![同步与自动异步的文件就绪时间对比](figures/timing-comparison.png)
 
@@ -52,7 +52,7 @@ flowchart LR
 
 ![内部计时配对结果](figures/internal-timing.png)
 
-**版本连续性：** 这组实验保持任务 YAML、输入哈希、4 环境与 8 个成功目标不变，补充了前一轮没有的内部计时解释。它仅有一个 seed 对、一种硬件和一次固定顺序；报告的是主机调用墙钟，不是隔离 GPU kernel 时间。完整方法和逐环节计时见[内部耗时报告 v001](https://github.com/eadstry/worldsim-lab/blob/4a45d64fc002d16930906c6bd521750dadf0d479/outputs/autodata-v1-internal-timing/v001/report.md)。
+**版本连续性：** 这组实验保持任务 YAML、输入哈希、4 环境与 8 个成功目标不变，补充了前一轮没有的内部计时解释。它仅有一个 seed 对、一种硬件和一次固定顺序；报告的是主机调用墙钟，不是隔离 GPU kernel 时间。完整方法和逐环节计时见[内部耗时报告 v001](../../outputs/autodata-v1-internal-timing/v001/report.md)。
 
 ## 3. 存储与压缩：速度、体积、训练输入要一起看
 
@@ -64,7 +64,7 @@ flowchart LR
 | LZF | 约 796 MiB | 约 16.98 秒 | 速度与体积居中 |
 | 无压缩 | 约 354 MiB | 约 10.10 秒 | 该样本写入最快，但文件不最小 |
 
-**读图要点：** “最小文件”“最快生成”“最适合训练”是三个不同目标。当前新实验计划将审阅视频降至 320×240、15 fps；这只适用于审阅视频。若降低训练用相机分辨率或采样率，观测内容与生产成本都会改变，必须建立新的配置版本，并与相同配置的基线配对比较。压缩试验的详细解释在[效率报告 v001 图 04](https://github.com/eadstry/worldsim-lab/blob/4a45d64fc002d16930906c6bd521750dadf0d479/outputs/autodata-efficiency-report/v001/index.html#s4)。
+**读图要点：** “最小文件”“最快生成”“最适合训练”是三个不同目标。当前新实验计划将审阅视频降至 320×240、15 fps；这只适用于审阅视频。若降低训练用相机分辨率或采样率，观测内容与生产成本都会改变，必须建立新的配置版本，并与相同配置的基线配对比较。压缩试验的详细解释在[效率报告 v001 图 04](../../outputs/autodata-efficiency-report/v001/index.html#s4)。
 
 ## 4. 域随机化：先验证生成器真的改变了什么
 
@@ -76,9 +76,9 @@ flowchart LR
 
 ![随机化场景渲染示例](figures/domain-randomization-renders.png)
 
-这里的诊断视角专为看清场景而固定，不是训练用原相机；像素差包含渲染噪声，不能单独作为随机化正确的证据。详见[域随机化报告 v002](https://github.com/eadstry/worldsim-lab/blob/4a45d64fc002d16930906c6bd521750dadf0d479/outputs/autodata-domain-randomization/v002/report.md)。
+这里的诊断视角专为看清场景而固定，不是训练用原相机；像素差包含渲染噪声，不能单独作为随机化正确的证据。详见[域随机化报告 v002](../../outputs/autodata-domain-randomization/v002/report.md)。
 
-同一项目还完成了另一条 **G1 家庭场景视觉随机化**小批次，目标是给头部视觉模仿学习准备候选数据。7 次正式尝试中 6 次成功：单因素基线/光照/相机/材质 4/4，视觉组合 1/1，加入箱体位姿扰动的组合 1/2。纯视觉组合为 928 帧、18.56 秒，动作与基线逐值相同，头部图像平均绝对差约 36.14/255。该结果支持把纯视觉组合选作下一批候选，不证明训练后泛化提升；单因素样本极少，不能估计成功率。此为 G1 任务，与 OpenArm 左臂 reset 位姿实验不是同一个域随机化版本。[G1 随机化实验记录](https://github.com/eadstry/worldsim-lab/blob/5bf0e536bea8b2f358e0f6a535c790ca39e44b04/workspace-overlays/g1-home-domain/README.md)
+同一项目还完成了另一条 **G1 家庭场景视觉随机化**小批次，目标是给头部视觉模仿学习准备候选数据。7 次正式尝试中 6 次成功：单因素基线/光照/相机/材质 4/4，视觉组合 1/1，加入箱体位姿扰动的组合 1/2。纯视觉组合为 928 帧、18.56 秒，动作与基线逐值相同，头部图像平均绝对差约 36.14/255。该结果支持把纯视觉组合选作下一批候选，不证明训练后泛化提升；单因素样本极少，不能估计成功率。此为 G1 任务，与 OpenArm 左臂 reset 位姿实验不是同一个域随机化版本。G1 随机化实验记录（保存在独立任务工作树 g1-home-domain-20261017，未随仓库复制）
 
 ## 5. cuRobo：从升级评估走到家庭场景避障对照
 
@@ -93,7 +93,7 @@ cuRobo v2 的初期评估是源码与接口分析，随后在 OpenArm MVP 中做
 
 ![Franka 有无障碍对照结果](figures/franka-obstacle-comparison.png)
 
-实验使用 World-SimReady-Home-mini 的派生静态住宅场景，Franka Panda 与 4 cm 方块。结果及四组同步视频见[Franka 对照报告 v001](https://github.com/eadstry/worldsim-lab/blob/f1bad8c475506b27f153664441e7e4bec7ded516/outputs/franka-curobo-home-comparison/v001/report.md)（报告保存在独立任务工作树）。
+实验使用 World-SimReady-Home-mini 的派生静态住宅场景，Franka Panda 与 4 cm 方块。结果及四组同步视频见Franka 对照报告 v001（报告保存在独立任务工作树 franka-curobo-comparison-20261017，未随仓库复制）（报告保存在独立任务工作树）。
 
 ## 6. 操作对象与观测记录：从方块到香蕉
 
@@ -101,7 +101,7 @@ cuRobo v2 的初期评估是源码与接口分析，随后在 OpenArm MVP 中做
 
 腕部 RGB 记录为 640×480、50 Hz；外部近景为 960×720、50 Hz；接触与腕部反力以 200 Hz 记录。双指搬运期法向力中位数约 38.7–38.8 N，撤离后归零。香蕉在仿真里按刚体处理，腕部读数包含运动动力学影响，所以这些信号可帮助诊断接触和释放，不能解释为真实香蕉的安全夹持力或软体损伤结果。
 
-这些轨迹来自项目后续独立 worktree 的已完成任务；其视频与验证文件路径保留在相应运行目录，未复制进本报告包，以免重复占用存储。单条任务成功不表示位置随机化成功率，也不表示策略泛化。实验设计与复用边界见[香蕉任务说明](https://github.com/eadstry/worldsim-lab/blob/a414dd1db40bba50e08381ab70e937d6e34d0fb3/workspace-overlays/arm-home-scene/README.md)。
+这些轨迹来自项目后续独立 worktree 的已完成任务；其视频与验证文件路径保留在相应运行目录，未复制进本报告包，以免重复占用存储。单条任务成功不表示位置随机化成功率，也不表示策略泛化。实验设计与复用边界见香蕉任务说明（保存在独立任务工作树 banana-wrist-force-20261017，未随仓库复制）。
 
 ## 7. 已完成实验的版本演进
 
@@ -139,12 +139,12 @@ AutoData 效率图册 v001–v022 中有多次内容版本；**图册版本递�
 
 本版引用的核心可移植证据：
 
-- [AutoData 效率报告 v001](https://github.com/eadstry/worldsim-lab/blob/4a45d64fc002d16930906c6bd521750dadf0d479/outputs/autodata-efficiency-report/v001/index.html)、[结构化证据](https://github.com/eadstry/worldsim-lab/blob/4a45d64fc002d16930906c6bd521750dadf0d479/outputs/autodata-efficiency-report/v001/evidence.json)
-- [AutoData v1 内部耗时报告 v001](https://github.com/eadstry/worldsim-lab/blob/4a45d64fc002d16930906c6bd521750dadf0d479/outputs/autodata-v1-internal-timing/v001/report.md)
-- [AutoData 域随机化报告 v002](https://github.com/eadstry/worldsim-lab/blob/4a45d64fc002d16930906c6bd521750dadf0d479/outputs/autodata-domain-randomization/v002/report.md)
-- [cuRobo v2 升级评估 v001](https://github.com/eadstry/worldsim-lab/blob/4a45d64fc002d16930906c6bd521750dadf0d479/outputs/curobo-v2-upgrade-assessment/v001/report.md)
-- [cuRobo v2 OpenArm MVP v001](https://github.com/eadstry/worldsim-lab/blob/4a45d64fc002d16930906c6bd521750dadf0d479/outputs/curobo-v2-openarm-mvp/v001/report.md)
-- [版本化成果索引](https://github.com/eadstry/worldsim-lab/blob/4a45d64fc002d16930906c6bd521750dadf0d479/outputs/README.md)
+- [AutoData 效率报告 v001](../../outputs/autodata-efficiency-report/v001/index.html)、[结构化证据](../../outputs/autodata-efficiency-report/v001/evidence.json)
+- [AutoData v1 内部耗时报告 v001](../../outputs/autodata-v1-internal-timing/v001/report.md)
+- [AutoData 域随机化报告 v002](../../outputs/autodata-domain-randomization/v002/report.md)
+- [cuRobo v2 升级评估 v001](../../outputs/curobo-v2-upgrade-assessment/v001/report.md)
+- [cuRobo v2 OpenArm MVP v001](../../outputs/curobo-v2-openarm-mvp/v001/report.md)
+- [版本化成果索引](../../outputs/README.md)
 
 图像为本汇总版本为便于离线阅读而选取的现有图表副本；源版本保持封存。后续更新请新增 `v002/`，在顶部写清材料截止和新增来源，在版本表补一行，并更新 `outputs/README.md`。每张新增图给出来源、条件、样本数、坐标含义和不可推断的结论；无新增实验的图册/排版版本明确标注“报告更新，无新实验”。不覆盖旧报告，也不复制原始 HDF5、逐帧 RGB 或完整运行目录。
 

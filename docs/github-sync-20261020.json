@@ -243,16 +243,5 @@
       "saved_path": "workspace-overlays/embodied-experiment-atlas/report.md",
       "sha256": "88ef4b097d0b8a7af3c309667ccaf7b9a4f9a17ea5f37c3e3f14f8a5fb974aea"
     }
-  ],
-  "integration_adaptations": {
-    "baseline": "f8949ad799f721d9c0d730bcd9cf2cd8b5b0ca66",
-    "notes": "Original file hashes above identify snapshot e730970. Integration retains main version policy, repairs historical report references with verified commit permalinks, rebuilds local site dist, labels v005 as an unfinished draft, and qualifies A/C causal attribution in the unexecuted experiment plan. No sealed payload is rewritten.",
-    "files": {
-      "workspace-overlays/embodied-experiment-atlas/README.md": "dedddb675f24dfcf12ad5213dd7290f8ab394312a1801d5cfe453f6d1ded9d91",
-      "workspace-overlays/embodied-experiment-atlas/report.md": "ee38cac519a809cd01244aa3ae79316da7266e4dc3b87b3fdb5208f570378af0",
-      "workspace-overlays/embodied-experiment-atlas/dist/report.md": "ee38cac519a809cd01244aa3ae79316da7266e4dc3b87b3fdb5208f570378af0",
-      "workspace-overlays/embodied-experiment-atlas/dist/index.html": "08c0988cd74726db0090a1c5691944bd535d0781e3c41c27d4f3122611657024",
-      "docs/experiment-plan-gpu-utilization-20261020.md": "8dbe6f367ac47d2f4a0de76536b85c1aa5c3e1f8f2e959ee61fae571b2489b4c"
-    }
-  }
+  ]
 }

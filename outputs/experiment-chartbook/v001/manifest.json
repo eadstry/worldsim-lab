@@ -220,121 +220,121 @@
   },
   "sources": {
     "shared": {
-      "original_path": "/home/tangyuan/WorldSimReady-Home/.worktrees/experimental-portfolio-report-20261019/outputs/autodata-arena-shared-config/v003/comparison.json",
+      "original_path": "<workspace>/.worktrees/experimental-portfolio-report-20261019/outputs/autodata-arena-shared-config/v003/comparison.json",
       "local_path": "evidence/shared.json",
       "sha256": "b6b6388fc088299c3c259eafb82aa56b5bdce051c0f6a06f8ba06de6fd828766",
       "bytes": 623
     },
     "export24": {
-      "original_path": "/home/tangyuan/WorldSimReady-Home/.worktrees/experimental-portfolio-report-20261019/outputs/autodata-efficiency-report/v001/evidence.json",
+      "original_path": "<workspace>/.worktrees/experimental-portfolio-report-20261019/outputs/autodata-efficiency-report/v001/evidence.json",
       "local_path": "evidence/export24.json",
       "sha256": "c86c49528ebd6f3c83ac314eb8ea3acdf34daaa269fd53b29dd8da2e6a10ece4",
       "bytes": 31776
     },
     "export16": {
-      "original_path": "/home/tangyuan/WorldSimReady-Home/.worktrees/experimental-portfolio-report-20261019/outputs/autodata-efficiency-review/v003/data.json",
+      "original_path": "<workspace>/.worktrees/experimental-portfolio-report-20261019/outputs/autodata-efficiency-review/v003/data.json",
       "local_path": "evidence/export16.json",
       "sha256": "085a9ba5657167353f06dd2b34a99002dcf614c4971c8cabdd370af5259e8b2d",
       "bytes": 79712
     },
     "timing": {
-      "original_path": "/home/tangyuan/WorldSimReady-Home/.worktrees/experimental-portfolio-report-20261019/outputs/autodata-v1-internal-timing/v001/report.json",
+      "original_path": "<workspace>/.worktrees/experimental-portfolio-report-20261019/outputs/autodata-v1-internal-timing/v001/report.json",
       "local_path": "evidence/timing.json",
       "sha256": "249267e647d31d45919399a958ea070e0fa5bc227810bfed26915395d51e0891",
       "bytes": 44650
     },
     "randomization": {
-      "original_path": "/home/tangyuan/WorldSimReady-Home/.worktrees/experimental-portfolio-report-20261019/outputs/autodata-domain-randomization/v002/result.json",
+      "original_path": "<workspace>/.worktrees/experimental-portfolio-report-20261019/outputs/autodata-domain-randomization/v002/result.json",
       "local_path": "evidence/randomization.json",
       "sha256": "4a3ea48fcbfc6fc517d430cb59214a5ccfb1ae8ea264fe332c85a155a5662cb9",
       "bytes": 4809
     },
     "mvp": {
-      "original_path": "/home/tangyuan/WorldSimReady-Home/.worktrees/experimental-portfolio-report-20261019/outputs/curobo-v2-openarm-mvp/v001/data.json",
+      "original_path": "<workspace>/.worktrees/experimental-portfolio-report-20261019/outputs/curobo-v2-openarm-mvp/v001/data.json",
       "local_path": "evidence/mvp.json",
       "sha256": "811146dd02c19858388c19bbeca631752406e4ddc52d49e5c62f2ec4ed134b5e",
       "bytes": 25875
     },
     "v2": {
-      "original_path": "/home/tangyuan/WorldSimReady-Home/.worktrees/experimental-portfolio-report-20261019/outputs/autodata-efficiency-review/v003/v2-result.json",
+      "original_path": "<workspace>/.worktrees/experimental-portfolio-report-20261019/outputs/autodata-efficiency-review/v003/v2-result.json",
       "local_path": "evidence/v2.json",
       "sha256": "d8aa00969eb48628b5eb8eb10bb88fe95de23f503f9d7ad110d6161a75d2de06",
       "bytes": 2127
     },
     "history": {
-      "original_path": "/home/tangyuan/WorldSimReady-Home/.worktrees/experimental-portfolio-report-20261019/docs/process-log.md",
+      "original_path": "<workspace>/.worktrees/experimental-portfolio-report-20261019/docs/process-log.md",
       "local_path": "evidence/history.md",
       "sha256": "968bd360002fc95ebe1ac2c1eff410872cca9e62ffc0e891c7d778dff27c1286",
       "bytes": 4075
     },
     "capacity": {
-      "original_path": "/data/WorldSimReady-Home/key-evidence-20261020/portfolio-sources/production-capacity-r04-report.json",
+      "original_path": "<data-root>/key-evidence-20261020/portfolio-sources/production-capacity-r04-report.json",
       "local_path": "evidence/capacity.json",
       "sha256": "a53a3888b4f68f135f0b1eb4d1482c9914dd4b22564cc44aed0b2fb40a26e7c0",
       "bytes": 38437
     },
     "g1": {
-      "original_path": "/data/WorldSimReady-Home/key-evidence-20261020/portfolio-sources/g1-final-review-summary.json",
+      "original_path": "<data-root>/key-evidence-20261020/portfolio-sources/g1-final-review-summary.json",
       "local_path": "evidence/g1.json",
       "sha256": "029e7009dc859a074dbed867d0696e0f68309d57613418330c28e49b33ce947a",
       "bytes": 46210
     },
     "franka": {
-      "original_path": "/data/WorldSimReady-Home/key-evidence-20261020/portfolio-sources/franka-curobo-summary.json",
+      "original_path": "<data-root>/key-evidence-20261020/portfolio-sources/franka-curobo-summary.json",
       "local_path": "evidence/franka.json",
       "sha256": "cdf51adab1db1a2e6d6e4f624dc9d241e770e12371a5d3d89716da0b12bc9e32",
       "bytes": 16279
     },
     "banana": {
-      "original_path": "/data/WorldSimReady-Home/key-evidence-20261020/portfolio-sources/banana-sensor-verification.json",
+      "original_path": "<data-root>/key-evidence-20261020/portfolio-sources/banana-sensor-verification.json",
       "local_path": "evidence/banana.json",
       "sha256": "93b4a6becbbd2d30295d09fdca0a3953eeb2f8a9f46743aadac16420a78758d3",
       "bytes": 698
     },
     "hdr": {
-      "original_path": "/data/WorldSimReady-Home/key-evidence-20261020/portfolio-sources/hdr-summary-console.json",
+      "original_path": "<data-root>/key-evidence-20261020/portfolio-sources/hdr-summary-console.json",
       "local_path": "evidence/hdr.json",
       "sha256": "5dd932e9e07a62bf07c1845be33dd73b9afaee420d06c33495452e2a6f1d9c38",
       "bytes": 2741
     },
     "concurrency": {
-      "original_path": "/data/WorldSimReady-Home/key-evidence-20261020/portfolio-sources/gpu-parallelism-summary.json",
+      "original_path": "<data-root>/key-evidence-20261020/portfolio-sources/gpu-parallelism-summary.json",
       "local_path": "evidence/concurrency.json",
       "sha256": "3d8489c7871567d0fd845d01f0135e246397aebc8e0452d0daad9e16de2c7376",
       "bytes": 11010
     },
     "audit": {
-      "original_path": "/data/WorldSimReady-Home/openarm-readiness-20261020-r01/audit.json",
+      "original_path": "<data-root>/openarm-readiness-20261020-r01/audit.json",
       "local_path": "evidence/audit.json",
       "sha256": "9054f4af6c79d46df92cd6a810471ed612c420b369b9f3f5a07afe7a0257bca5",
       "bytes": 14557
     },
     "regression": {
-      "original_path": "/data/WorldSimReady-Home/openarm-export-isolated-20261020-r01/report.json",
+      "original_path": "<data-root>/openarm-export-isolated-20261020-r01/report.json",
       "local_path": "evidence/regression.json",
       "sha256": "9922481cde8307f995c70135da4940fb6d544c24bf7d1a333f388c36fb9affe1",
       "bytes": 3059
     },
     "readback": {
-      "original_path": "/data/WorldSimReady-Home/openarm-export-isolated-20261020-r01/validation.json",
+      "original_path": "<data-root>/openarm-export-isolated-20261020-r01/validation.json",
       "local_path": "evidence/readback.json",
       "sha256": "b84077cb77f62db99902dd4149edab88ad65f181b3ead90674765eb2a59908e7",
       "bytes": 28749
     },
     "conversion": {
-      "original_path": "/home/tangyuan/WorldSimReady-Home/runs/autodata-lerobot-v3-20261020/v002/openarm-left-lerobot-v3/validation.json",
+      "original_path": "<workspace>/runs/autodata-lerobot-v3-20261020/v002/openarm-left-lerobot-v3/validation.json",
       "local_path": "evidence/conversion.json",
       "sha256": "e03fa8511a81aa7a8b4ec104b8e5505b4371a0ea8d6446fe125a0ff173fb3f80",
       "bytes": 461
     },
     "failure": {
-      "original_path": "/home/tangyuan/WorldSimReady-Home/.worktrees/experiment-chartbook-20261020/runs/failure-final-state.json",
+      "original_path": "<workspace>/.worktrees/experiment-chartbook-20261020/runs/failure-final-state.json",
       "local_path": "evidence/failure.json",
       "sha256": "b6960cbc12aa484633701107a376d8ccf154004bd71f2a1ee97daa9808af9fa5",
       "bytes": 1465
     },
     "legacy-manifest": {
-      "original_path": "/home/tangyuan/WorldSimReady-Home/.worktrees/experimental-portfolio-report-20261019/outputs/embodied-experiment-portfolio/v004/manifest.json",
+      "original_path": "<workspace>/.worktrees/experimental-portfolio-report-20261019/outputs/embodied-experiment-portfolio/v004/manifest.json",
       "local_path": "evidence/legacy-manifest.json",
       "sha256": "814f5f4bcf60c87d04056c92b7e3a0b2d71103411dadaee40f9357fd17472efb",
       "bytes": 7465

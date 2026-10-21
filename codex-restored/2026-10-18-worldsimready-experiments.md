@@ -38,7 +38,7 @@
 
 主体沿用你已经选定的 **Franka＋家庭餐桌＋香蕉抓取放置**，方块作为简单对照。按“生成正确 → 扩增有效 → 训练受益”的顺序推进。
 
-目前已有的基础是：香蕉单条抓取成功，腕部、近景、广角相机及力信号已接入；IK/cuRobo 避障对比完成了 12 次仿真。但每组只有 3 次，且香蕉尚未接入 SkillMimicGen，不能据此确定批量成功率。已有证据见避障报告（本机来源路径：`/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017/outputs/franka-curobo-home-comparison/v001/report.md`）和香蕉验证记录（本机来源路径：`/home/tangyuan/WorldSimReady-Home/.worktrees/banana-home-grasp-20261017/runs/banana-r02/verification.json`）。
+目前已有的基础是：香蕉单条抓取成功，腕部、近景、广角相机及力信号已接入；IK/cuRobo 避障对比完成了 12 次仿真。但每组只有 3 次，且香蕉尚未接入 SkillMimicGen，不能据此确定批量成功率。已有证据见避障报告（保存在独立任务工作树 franka-curobo-comparison-20261017，未随仓库复制）和香蕉验证记录（保存在独立任务工作树 banana-home-grasp-20261017，未随仓库复制）。
 
 **一、先统一所有实验的验收标准**
 
