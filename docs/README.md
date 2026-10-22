@@ -61,3 +61,9 @@
 | 创建日期 | 文档 | 内容 |
 | --- | --- | --- |
 | 2026-10-22 | [实验与报告汇总](action-state-causality-20261022.md) | 两轮差值实验、历史报告与原始数据的本地压缩包说明；附[文件清单](action-state-causality-20261022-manifest.json)和[完整性校验](action-state-causality-20261022-verification.json)。 |
+
+## 2026-10-23 GS 视频视角
+
+| 创建日期 | 文档 | 内容 |
+| --- | --- | --- |
+| 2026-10-23 | [OpenArm GS 生产视频 r02](openarm-gs-production-20261023-r02.md) | 同一条预设任务的左右腕部原始 RGB 视频、外部视角入口、完整解码检查及右腕黑画面限制 |
