@@ -22,7 +22,7 @@
 | 2026-10-16 | [全库工作树核对](git-worktrees-20261016.md) | 工作树保留策略与迁移前后状态 |
 | 2026-10-19 | [实验讲解重写方案](report-rewrite-plan-20261019.md) | 汇总报告改写思路与底层报告模板统一 |
 | 2026-10-20 | [GPU 利用率实验方案](experiment-plan-gpu-utilization-20261020.md) | 实验设计、资源占用与排队安排 |
-| 2026-10-22 | [服务器停服恢复入口](server-shutdown-recovery-20261022.md) | GitHub 历史备份、后台实验文件上传及恢复程序；完整性以 Release 回执为准 |
+| 2026-10-22 | [服务器停服恢复入口](server-shutdown-recovery-20261022-r01.md) · [原后台方案](server-shutdown-recovery-20261022.md) | 大文件上传已按用户要求停止，实验数据由用户本地保存；保留源码、历史和文件清单 |
 
 ## 常驻说明
 
