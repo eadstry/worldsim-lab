@@ -30,3 +30,9 @@
 - [OpenArm 图像与隔离导出诊断](experiments/openarm-readiness-20261020.md)：历史运行结果及证据边界。
 - [实验图册](../outputs/experiment-chartbook/v001/report.md)：19 张图、原始记录、指标索引与 PDF。
 - [最新改动集成记录](main-integration-20261020.md)：迁移来源、适配和检查范围。
+
+## action–state 差值资料归档
+
+| 创建日期 | 文档 | 内容 |
+| --- | --- | --- |
+| 2026-10-22 | [实验与报告汇总](action-state-causality-20261022.md) | 两轮差值实验、历史报告与原始数据的本地压缩包说明；附[文件清单](action-state-causality-20261022-manifest.json)和[完整性校验](action-state-causality-20261022-verification.json)。 |

@@ -42,3 +42,6 @@
 *.safetensors
 *.telemetry.jsonl
 *.resources.jsonl
+
+# Local action/state archive contains historical raw experiment data.
+/docs/action-state-causality-20261022.zip
