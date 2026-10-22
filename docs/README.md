@@ -35,6 +35,7 @@
 
 | 创建日期 | 资料 | 用途 |
 | --- | --- | --- |
+| 2026-10-22 | [实验图册清晰度修订](experiment-portfolio/experiment-chartbook-20261022.md) | 全部 19 图矢量重绘、大字号 PDF、300 dpi PNG 与来源校验 |
 | 历史资料迁入 | [AutoData-全流程可视化讲解](autodata/AutoData-全流程可视化讲解.html) | 离线阅读版 |
 | 历史资料迁入 | [AutoData-全流程可视化讲解](autodata/AutoData-全流程可视化讲解.md) | 报告或说明，验证范围见正文 |
 | 历史资料迁入 | [AutoData-原理与数据流总览](autodata/AutoData-原理与数据流总览.md) | 报告或说明，验证范围见正文 |

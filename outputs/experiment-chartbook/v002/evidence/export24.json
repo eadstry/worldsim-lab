@@ -1,0 +1,810 @@
+{
+  "material_cutoff": "2026-10-14 Asia/Shanghai",
+  "scope": "Synthesis of saved experiment records and current source inspection; no new GPU run or full HDF5 scan",
+  "async_validation": {
+    "created_at": "2026-10-14T14:15:11.638311+08:00",
+    "feature_status": "Implemented; transport integrity and output compatibility verified",
+    "overall_plan_acceptance_passed": false,
+    "quality_limitation": "The unchanged strict physical validator rejects the same demo_2 in all three modes because the cube is still moving. No threshold or success-label changes were made.",
+    "configuration": {
+      "export_workers_default": 0,
+      "recommended_export_workers": 2,
+      "queue_memory_gib_default": 16,
+      "timeout_seconds_default": 600,
+      "compression": "gzip level 2",
+      "chunk_policy": "unchanged h5py auto chunks",
+      "num_envs": 8,
+      "trials_per_mode": 24
+    },
+    "tests": {
+      "export_pool_tests_passed": 10,
+      "export_timing_tests_passed": 2,
+      "original_recorder_regression_reproduced": true,
+      "static_checks": "passed",
+      "cloud_check": "passed with --allow-uninitialized for intentionally absent RLinf",
+      "full_fixed_episode_replay": {
+        "episodes_per_mode": 4,
+        "modes": [
+          0,
+          1,
+          2
+        ],
+        "all_values_attributes_shapes_dtypes_chunks_compression_equal": true
+      },
+      "destructive_real_episode_handoff": {
+        "source": "/home/tangyuan/WorldSimReady-Home/workspace-overlays/openarm-production/runtime/async-validation/gpu-formal-24/workers-0.hdf5",
+        "demo": "demo_2",
+        "output": "/home/tangyuan/WorldSimReady-Home/workspace-overlays/openarm-production/runtime/async-validation/owned-handoff-demo2/episode.hdf5",
+        "complete_value_and_schema_equality": true,
+        "existing_loader_passed": true,
+        "independent_file_verified_after_shard_removal": true,
+        "sha256": "2141322058ddc305c7be7b85b2f70860354940f2ef926ba6b7cfd1f0c59766d6",
+        "scope": "CPU replay of real saved data, not GPU simulation"
+      },
+      "gpu_non_rgb_arrays_comparison": [
+        {
+          "output": "workspace-overlays/openarm-production/runtime/async-validation/gpu-owned-24/workers-1.hdf5",
+          "checked_non_rgb_datasets": 672,
+          "bitwise_equal_datasets": 672,
+          "different": []
+        },
+        {
+          "output": "workspace-overlays/openarm-production/runtime/async-validation/gpu-owned-24/workers-2.hdf5",
+          "checked_non_rgb_datasets": 672,
+          "bitwise_equal_datasets": 672,
+          "different": []
+        }
+      ]
+    },
+    "offline": [
+      {
+        "workers": 0,
+        "episodes": 4,
+        "final_ready_seconds": 105.13391258311458,
+        "submission_seconds": 105.13391194702126,
+        "episodes_per_minute": 2.28280289492951,
+        "complete_value_and_schema_equality": true
+      },
+      {
+        "workers": 1,
+        "episodes": 4,
+        "final_ready_seconds": 105.45280789607204,
+        "submission_seconds": 4.581834511132911,
+        "episodes_per_minute": 2.2758995686158454,
+        "complete_value_and_schema_equality": true
+      },
+      {
+        "workers": 2,
+        "episodes": 4,
+        "final_ready_seconds": 56.65817517391406,
+        "submission_seconds": 4.594032156979665,
+        "episodes_per_minute": 4.23592887104663,
+        "complete_value_and_schema_equality": true
+      }
+    ],
+    "gpu": {
+      "source": "/home/tangyuan/WorldSimReady-Home/workspace-overlays/openarm-production/runtime/inputs/openarm_left_fixture_clearance_source.hdf5",
+      "source_sha256": "7321968fb3f0037b2b7d94bcaa0f0c0ff609c99c89671cd443fcd210c4fec2da",
+      "task_sha256": "2d1eb17807433f2a898d11574e5b32c0bbdba0cbc9c6b3888ab568f58160823b",
+      "num_envs": 8,
+      "trials": 24,
+      "runs": [
+        {
+          "workers": 0,
+          "successes": 24,
+          "production_seconds": 1155.084939,
+          "final_ready_seconds": 1156.737069,
+          "launcher_wall_seconds": 1201.872661,
+          "production_per_minute": 1.2466615669378058,
+          "final_ready_per_minute": 1.24488100069697,
+          "launcher_per_minute": 1.198130256829263,
+          "async_export": {
+            "submitted": 0,
+            "saved": 0,
+            "pending": 0,
+            "peak_queue_memory_bytes": 0,
+            "packing_seconds": 0,
+            "queue_wait_seconds": 0,
+            "write_seconds": {
+              "count": 0,
+              "mean": null,
+              "p50": null,
+              "p95": null,
+              "max": null
+            },
+            "complete": null
+          },
+          "resource_summary": {
+            "peak_rss_bytes": 60307279872,
+            "process_cpu_percent": {
+              "count": 119,
+              "mean": 157.09667726526476,
+              "p50": 166.98296440101075,
+              "p95": 190.31687799883113,
+              "max": 220.2857773624658
+            },
+            "device_peak_memory_used_mib": {
+              "GPU-62dfb56e-71e5-7565-5b79-ac8dd6a2ff92": 15972.0
+            }
+          },
+          "format_validation_passed": true,
+          "physical_validation_passed": false,
+          "terminal_successes": 23,
+          "output": "workspace-overlays/openarm-production/runtime/async-validation/gpu-formal-24/workers-0.hdf5",
+          "final_ready_speedup": 1.0,
+          "failed_terminal_cases": [
+            {
+              "name": "demo_2",
+              "steps": 1353,
+              "recorded_success": true,
+              "final_state_success": false,
+              "inside_pad": true,
+              "height_error_m": 0.0005409121513366699,
+              "gripper_position_rad": 0.6997836828231812,
+              "linear_speed_m_s": 0.21079635620117188,
+              "angular_speed_rad_s": 5.74807596206665
+            }
+          ],
+          "file_sha256": "495c778a9bcfca9cb2e5c1ee3b6024757090b89482f2970560e3f49e5e8e8e52",
+          "sampled_cgroup_peak_current_bytes": 60152180736,
+          "oom_kill_max_delta": 0,
+          "total_frames": 32959,
+          "format_version": 1,
+          "final_ready_frames_per_second": 28.49307840414683,
+          "launcher_speedup": 1.0
+        },
+        {
+          "workers": 1,
+          "successes": 24,
+          "production_seconds": 908.324572,
+          "final_ready_seconds": 1022.1939950000001,
+          "launcher_wall_seconds": 1068.8739169898909,
+          "production_per_minute": 1.5853363922868753,
+          "final_ready_per_minute": 1.408734552387974,
+          "launcher_per_minute": 1.3472122175600054,
+          "async_export": {
+            "submitted": 24,
+            "saved": 24,
+            "pending": 0,
+            "peak_queue_memory_bytes": 15500341024,
+            "packing_seconds": 39.21386494138278,
+            "queue_wait_seconds": 222.42950287857093,
+            "write_seconds": {
+              "count": 24,
+              "mean": 26.632001179008512,
+              "p50": 26.776499301893637,
+              "p95": 28.465904596960172,
+              "max": 28.556004411075264
+            },
+            "complete": {
+              "schema_version": 2,
+              "run_id": "0e016c83c6ee4a0a8943123d8056f4fc",
+              "time_utc": "2026-10-14T05:49:37.443549+00:00",
+              "elapsed_seconds": 1059.6207,
+              "event": "export_complete",
+              "saved_episodes": 24,
+              "drain_seconds": 104.94976018602028,
+              "merge_seconds": 7.085312992101535,
+              "peak_memory_bytes": 15500341024,
+              "queue_wait_seconds": 222.42950287857093,
+              "packing_seconds": 39.21386494138278,
+              "final_ready_seconds": 1051.482211750932
+            }
+          },
+          "resource_summary": {
+            "peak_rss_bytes": 43525365760,
+            "process_cpu_percent": {
+              "count": 106,
+              "mean": 126.17473271522755,
+              "p50": 156.19094684360155,
+              "p95": 192.98211732081987,
+              "max": 246.67240801859705
+            },
+            "device_peak_memory_used_mib": {
+              "GPU-62dfb56e-71e5-7565-5b79-ac8dd6a2ff92": 18924.0
+            }
+          },
+          "format_validation_passed": true,
+          "physical_validation_passed": false,
+          "terminal_successes": 23,
+          "output": "workspace-overlays/openarm-production/runtime/async-validation/gpu-owned-24/workers-1.hdf5",
+          "final_ready_speedup": 1.1316218591168694,
+          "failed_terminal_cases": [
+            {
+              "name": "demo_2",
+              "steps": 1353,
+              "recorded_success": true,
+              "final_state_success": false,
+              "inside_pad": true,
+              "height_error_m": 0.0005409121513366699,
+              "gripper_position_rad": 0.6997836828231812,
+              "linear_speed_m_s": 0.21079635620117188,
+              "angular_speed_rad_s": 5.74807596206665
+            }
+          ],
+          "file_sha256": "292cc8740c05a5a8ebf66f8a3ffc753c4ebdc09a835ca7ba4390f46e93d17438",
+          "sampled_cgroup_peak_current_bytes": 43102769152,
+          "oom_kill_max_delta": 0,
+          "total_frames": 32959,
+          "format_version": 1,
+          "final_ready_frames_per_second": 32.24339035566336,
+          "launcher_speedup": 1.1244288422573296
+        },
+        {
+          "workers": 2,
+          "successes": 24,
+          "production_seconds": 790.421741,
+          "final_ready_seconds": 891.224906,
+          "launcher_wall_seconds": 936.4500214010477,
+          "production_per_minute": 1.8218122368170033,
+          "final_ready_per_minute": 1.6157537679944505,
+          "launcher_per_minute": 1.5377222137766389,
+          "async_export": {
+            "submitted": 24,
+            "saved": 24,
+            "pending": 0,
+            "peak_queue_memory_bytes": 15500341024,
+            "packing_seconds": 40.853324219817296,
+            "queue_wait_seconds": 80.96071942383423,
+            "write_seconds": {
+              "count": 24,
+              "mean": 26.82980169453852,
+              "p50": 26.882492619100958,
+              "p95": 28.626020007999614,
+              "max": 28.961639957968146
+            },
+            "complete": {
+              "schema_version": 2,
+              "run_id": "7a1c4c2397bf4af38bbe3415f1327848",
+              "time_utc": "2026-10-14T06:05:34.412397+00:00",
+              "elapsed_seconds": 927.063021,
+              "event": "export_complete",
+              "saved_episodes": 24,
+              "drain_seconds": 53.18127145897597,
+              "merge_seconds": 44.42210376798175,
+              "peak_memory_bytes": 15500341024,
+              "queue_wait_seconds": 80.96071942383423,
+              "packing_seconds": 40.853324219817296,
+              "final_ready_seconds": 920.2341384580359
+            }
+          },
+          "resource_summary": {
+            "peak_rss_bytes": 43680276480,
+            "process_cpu_percent": {
+              "count": 93,
+              "mean": 141.6627611139112,
+              "p50": 160.3118682370172,
+              "p95": 196.72749054252736,
+              "max": 224.5315067900364
+            },
+            "device_peak_memory_used_mib": {
+              "GPU-62dfb56e-71e5-7565-5b79-ac8dd6a2ff92": 18963.0
+            }
+          },
+          "format_validation_passed": true,
+          "physical_validation_passed": false,
+          "terminal_successes": 23,
+          "output": "workspace-overlays/openarm-production/runtime/async-validation/gpu-owned-24/workers-2.hdf5",
+          "final_ready_speedup": 1.2979182484830603,
+          "failed_terminal_cases": [
+            {
+              "name": "demo_2",
+              "steps": 1353,
+              "recorded_success": true,
+              "final_state_success": false,
+              "inside_pad": true,
+              "height_error_m": 0.0005409121513366699,
+              "gripper_position_rad": 0.6997836828231812,
+              "linear_speed_m_s": 0.21079635620117188,
+              "angular_speed_rad_s": 5.74807596206665
+            }
+          ],
+          "file_sha256": "6b0a5634ddab157413298d07f45231024ea4b92d314a8a4943744ed9f275ca8f",
+          "sampled_cgroup_peak_current_bytes": 44488359936,
+          "oom_kill_max_delta": 0,
+          "total_frames": 32959,
+          "format_version": 1,
+          "final_ready_frames_per_second": 36.98168641620076,
+          "launcher_speedup": 1.2834349228823194
+        }
+      ],
+      "passed": false
+    },
+    "evidence": {
+      "gpu_report": "runtime/async-validation/gpu-owned-24/report.json",
+      "offline_report": "runtime/async-validation/offline-4-r2/report.json",
+      "handoff_report": "runtime/async-validation/owned-handoff-demo2/report.json"
+    },
+    "initial_failure_and_fix": "An early async GPU attempt hit SIGKILL with oom_kill increment and severe memory pressure. CPU batch views retained other environments. Async recording now owns CPU frames per environment; handoff incrementally releases copied frames and trims free pages. Final GPU runs have zero OOM increments.",
+    "timing_scope": "GPU final_ready starts at first episode start, including drain, merge and output close. Launcher timing includes startup/shutdown. Validation reads are outside throughput windows. Offline replay is CPU export validation, not simulation validation.",
+    "source_sha256": {
+      "export_pool.py": "f7e9a8d0f82fe30cdbee8bbb9153f248b26b3756e4e1da59aa0962e7a26c27b8",
+      "async_export.py": "b44c38db5f28faecc316369e5bfafa73d627eeddf26eb757a1dcce26a2da6573",
+      "generate.py": "e14d4e6562d3a61d481d3bb396ae2564d8878b5e87a94096ffb8fd8463fd8e12",
+      "compat.py": "0f7df8d7a65f1178645aa02c53d733baa2dfc13e0a5435d81b54235d16f6023a",
+      "run_local.py": "4af2abfd050ba10c1ee48284a8496d849b41d5e6af283b5aa869954ec8729857",
+      "telemetry.py": "a6425d399ba0de11e8ef6233772a6af1117c99f8c62ed0249d7a7acbf2ab4e8c",
+      "monitor.py": "0cbfcbb0c2d28cf3a3793806fb6f451819c6b0447894d7fc798477372df601c6",
+      "test_export_pool.py": "3d37cc8bad584626f2d9674f2be8fd2f8d8cf5961eb02ecb3a4d4de19ccf1643",
+      "benchmark_pool.py": "bdfbe437703c276235761144fec0692e34ff8cd5493a374295b909c32674a4ef",
+      "benchmark_gpu.py": "f63557f290bec0661b9c217a506a62e83c0d6f4bb569bfd9361405bc5ed59f80",
+      "verify_handoff.py": "58ec21b695b00e8e753dc33fae472293f851aa40647d7fb1c79843d6b671e550"
+    }
+  },
+  "diagnosis": {
+    "whole_episode_gzip": {
+      "event": "export_breakdown",
+      "episode_id": "demo_0",
+      "env_id": 0,
+      "duration_seconds": 26.181313456967473,
+      "thread_cpu_seconds": 26.142336655999998,
+      "phases_seconds": {
+        "prepare_stack": 0.2298455259297043,
+        "cpu_numpy": 0.0003337303642183542,
+        "dataset_create": 25.832535902038217,
+        "flush": 0.004187660990282893
+      },
+      "other_seconds": 0.11441063764505088,
+      "error": null,
+      "timing_semantics": "host wall and current-thread CPU; dataset_create includes gzip, HDF5 and I/O; flush is HDF5 flush, not fsync; GPU copies may synchronize; write_episode_inclusive overlaps cpu_numpy and dataset_create"
+    },
+    "whole_episode_uncompressed_contiguous": {
+      "event": "export_breakdown",
+      "episode_id": "demo_0",
+      "env_id": 0,
+      "duration_seconds": 0.8586958900559694,
+      "thread_cpu_seconds": 0.6044534089999996,
+      "phases_seconds": {
+        "prepare_stack": 0.26098483381792903,
+        "cpu_numpy": 0.00024171685799956322,
+        "dataset_create": 0.5950065341312438,
+        "flush": 0.0003736130893230438
+      },
+      "other_seconds": 0.002089192159473896,
+      "error": null,
+      "timing_semantics": "host wall and current-thread CPU; dataset_create includes gzip, HDF5 and I/O; flush is HDF5 flush, not fsync; GPU copies may synchronize; write_episode_inclusive overlaps cpu_numpy and dataset_create"
+    },
+    "matched_chunk_comparison": [
+      {
+        "repeat": 0,
+        "compression": "gzip",
+        "create_wall_seconds": 25.745519635966048,
+        "create_thread_cpu_seconds": 25.716271050999996,
+        "flush_wall_seconds": 0.003562317928299308,
+        "post_close_fsync_seconds": 0.05651962198317051,
+        "output_bytes": 550428474
+      },
+      {
+        "repeat": 0,
+        "compression": "none",
+        "create_wall_seconds": 10.10072429687716,
+        "create_thread_cpu_seconds": 9.707125509,
+        "flush_wall_seconds": 0.015517185907810926,
+        "post_close_fsync_seconds": 0.13499892712570727,
+        "output_bytes": 3717111624
+      },
+      {
+        "repeat": 0,
+        "compression": "lzf",
+        "create_wall_seconds": 16.982456621015444,
+        "create_thread_cpu_seconds": 16.802309539,
+        "flush_wall_seconds": 0.008085299981757998,
+        "post_close_fsync_seconds": 0.12142588687129319,
+        "output_bytes": 834781503
+      }
+    ],
+    "source_code_sha256": {
+      "episode_data.py": "5c75e6681240e35515d1c23767f789267d79375b6f36b2ac4b60c858606ded28",
+      "hdf5_dataset_file_handler.py": "b5c4365cfd46107dfe56288b092bbdb03d993dbb83e23415742965db7df8d793"
+    },
+    "conclusion": "Offline replay identifies CPU gzip plus chunk processing as dominant; not trajectory stacking or sustained disk wait. Do not interpret differences as exact isolated compression time.",
+    "scope": "One real saved episode, 1342 frames per camera; full replay roundtrip verified twice. Matching-chunk full comparison one repetition; 32-frame comparison three repetitions. No GPU production validation."
+  },
+  "compression_full": {
+    "source": "/home/tangyuan/WorldSimReady-Home/AutoData/datasets/openarm_left_num_envs_8.hdf5",
+    "demo": "demo_0",
+    "frames": 1342,
+    "datasets": {
+      "obs/left_hand_rgb": {
+        "shape": [
+          1342,
+          480,
+          640,
+          3
+        ],
+        "dtype": "uint8",
+        "raw_bytes": 1236787200,
+        "source_chunks": [
+          84,
+          30,
+          80,
+          1
+        ]
+      },
+      "obs/right_hand_rgb": {
+        "shape": [
+          1342,
+          480,
+          640,
+          3
+        ],
+        "dtype": "uint8",
+        "raw_bytes": 1236787200,
+        "source_chunks": [
+          84,
+          30,
+          80,
+          1
+        ]
+      },
+      "obs/third_person_rgb": {
+        "shape": [
+          1342,
+          480,
+          640,
+          3
+        ],
+        "dtype": "uint8",
+        "raw_bytes": 1236787200,
+        "source_chunks": [
+          84,
+          30,
+          80,
+          1
+        ]
+      }
+    },
+    "results": [
+      {
+        "repeat": 0,
+        "compression": "gzip",
+        "create_wall_seconds": 25.745519635966048,
+        "create_thread_cpu_seconds": 25.716271050999996,
+        "flush_wall_seconds": 0.003562317928299308,
+        "post_close_fsync_seconds": 0.05651962198317051,
+        "output_bytes": 550428474
+      },
+      {
+        "repeat": 0,
+        "compression": "none",
+        "create_wall_seconds": 10.10072429687716,
+        "create_thread_cpu_seconds": 9.707125509,
+        "flush_wall_seconds": 0.015517185907810926,
+        "post_close_fsync_seconds": 0.13499892712570727,
+        "output_bytes": 3717111624
+      },
+      {
+        "repeat": 0,
+        "compression": "lzf",
+        "create_wall_seconds": 16.982456621015444,
+        "create_thread_cpu_seconds": 16.802309539,
+        "flush_wall_seconds": 0.008085299981757998,
+        "post_close_fsync_seconds": 0.12142588687129319,
+        "output_bytes": 834781503
+      }
+    ],
+    "limitations": "Offline bounded RGB replay, not full simulation or whole-episode export. create includes compression and I/O; no-compression difference is comparative, not exact compression time because bytes written differ. Warm page cache is possible. fsync is measured separately and is NOT added to production export."
+  },
+  "compression_32": {
+    "source": "/home/tangyuan/WorldSimReady-Home/AutoData/datasets/openarm_left_num_envs_8.hdf5",
+    "demo": "demo_0",
+    "frames": 32,
+    "datasets": {
+      "obs/left_hand_rgb": {
+        "shape": [
+          32,
+          480,
+          640,
+          3
+        ],
+        "dtype": "uint8",
+        "raw_bytes": 29491200,
+        "source_chunks": [
+          84,
+          30,
+          80,
+          1
+        ]
+      },
+      "obs/right_hand_rgb": {
+        "shape": [
+          32,
+          480,
+          640,
+          3
+        ],
+        "dtype": "uint8",
+        "raw_bytes": 29491200,
+        "source_chunks": [
+          84,
+          30,
+          80,
+          1
+        ]
+      },
+      "obs/third_person_rgb": {
+        "shape": [
+          32,
+          480,
+          640,
+          3
+        ],
+        "dtype": "uint8",
+        "raw_bytes": 29491200,
+        "source_chunks": [
+          84,
+          30,
+          80,
+          1
+        ]
+      }
+    },
+    "results": [
+      {
+        "repeat": 0,
+        "compression": "gzip",
+        "create_wall_seconds": 0.5738827809691429,
+        "create_thread_cpu_seconds": 0.5651207650000001,
+        "flush_wall_seconds": 0.0001467249821871519,
+        "post_close_fsync_seconds": 0.007061975076794624,
+        "output_bytes": 14727587
+      },
+      {
+        "repeat": 0,
+        "compression": "none",
+        "create_wall_seconds": 0.2400390098337084,
+        "create_thread_cpu_seconds": 0.23075999599999997,
+        "flush_wall_seconds": 0.00018197507597506046,
+        "post_close_fsync_seconds": 0.012067747069522738,
+        "output_bytes": 88564320
+      },
+      {
+        "repeat": 0,
+        "compression": "lzf",
+        "create_wall_seconds": 0.3991454381030053,
+        "create_thread_cpu_seconds": 0.39685260099999997,
+        "flush_wall_seconds": 0.00013750488869845867,
+        "post_close_fsync_seconds": 0.007958864094689488,
+        "output_bytes": 19895050
+      },
+      {
+        "repeat": 1,
+        "compression": "none",
+        "create_wall_seconds": 0.23821047600358725,
+        "create_thread_cpu_seconds": 0.22833422699999995,
+        "flush_wall_seconds": 0.00019096513278782368,
+        "post_close_fsync_seconds": 0.01253648498095572,
+        "output_bytes": 88564320
+      },
+      {
+        "repeat": 1,
+        "compression": "lzf",
+        "create_wall_seconds": 0.3971692209597677,
+        "create_thread_cpu_seconds": 0.39509393300000006,
+        "flush_wall_seconds": 0.00015678978525102139,
+        "post_close_fsync_seconds": 0.008783738827332854,
+        "output_bytes": 19895050
+      },
+      {
+        "repeat": 1,
+        "compression": "gzip",
+        "create_wall_seconds": 0.5740669369697571,
+        "create_thread_cpu_seconds": 0.5669720109999998,
+        "flush_wall_seconds": 0.00014154496602714062,
+        "post_close_fsync_seconds": 0.010739536955952644,
+        "output_bytes": 14727587
+      },
+      {
+        "repeat": 2,
+        "compression": "lzf",
+        "create_wall_seconds": 0.4004167919047177,
+        "create_thread_cpu_seconds": 0.39845049500000007,
+        "flush_wall_seconds": 0.00013755611144006252,
+        "post_close_fsync_seconds": 0.008133475901558995,
+        "output_bytes": 19895050
+      },
+      {
+        "repeat": 2,
+        "compression": "gzip",
+        "create_wall_seconds": 0.5751009611412883,
+        "create_thread_cpu_seconds": 0.5677269440000003,
+        "flush_wall_seconds": 0.00015368801541626453,
+        "post_close_fsync_seconds": 0.007178921019658446,
+        "output_bytes": 14727587
+      },
+      {
+        "repeat": 2,
+        "compression": "none",
+        "create_wall_seconds": 0.23782690288498998,
+        "create_thread_cpu_seconds": 0.23058839200000047,
+        "flush_wall_seconds": 0.00020221807062625885,
+        "post_close_fsync_seconds": 0.013514533871784806,
+        "output_bytes": 88564320
+      }
+    ],
+    "limitations": "Offline bounded RGB replay, not full simulation or whole-episode export. create includes compression and I/O; no-compression difference is comparative, not exact compression time because bytes written differ. Warm page cache is possible. fsync is measured separately and is NOT added to production export."
+  },
+  "run_metadata": [
+    {
+      "run_id": "5ba7aedb37da452a8d48b649a1d57bd4",
+      "started_at": "2026-10-14T04:44:06.591813+00:00",
+      "ended_at": "2026-10-14T05:04:08.464474+00:00",
+      "status": "succeeded",
+      "config": {
+        "output_file": "/home/tangyuan/WorldSimReady-Home/workspace-overlays/openarm-production/runtime/async-validation/gpu-formal-24/workers-0.hdf5",
+        "input_file": "/home/tangyuan/WorldSimReady-Home/workspace-overlays/openarm-production/runtime/inputs/openarm_left_fixture_clearance_source.hdf5",
+        "num_envs": 8,
+        "generation_num_trials": 24,
+        "arm": "left",
+        "final_hold_steps": 60,
+        "log_interval": 10.0,
+        "export_workers": 0,
+        "export_queue_memory_gib": 16.0,
+        "export_timeout_seconds": 600
+      }
+    },
+    {
+      "run_id": "0e016c83c6ee4a0a8943123d8056f4fc",
+      "started_at": "2026-10-14T05:31:51.184124+00:00",
+      "ended_at": "2026-10-14T05:49:39.864849+00:00",
+      "status": "succeeded",
+      "config": {
+        "output_file": "/home/tangyuan/WorldSimReady-Home/workspace-overlays/openarm-production/runtime/async-validation/gpu-owned-24/workers-1.hdf5",
+        "input_file": "/home/tangyuan/WorldSimReady-Home/workspace-overlays/openarm-production/runtime/inputs/openarm_left_fixture_clearance_source.hdf5",
+        "num_envs": 8,
+        "generation_num_trials": 24,
+        "arm": "left",
+        "final_hold_steps": 60,
+        "log_interval": 10.0,
+        "export_workers": 1,
+        "export_queue_memory_gib": 16.0,
+        "export_timeout_seconds": 600
+      }
+    },
+    {
+      "run_id": "7a1c4c2397bf4af38bbe3415f1327848",
+      "started_at": "2026-10-14T05:50:01.918069+00:00",
+      "ended_at": "2026-10-14T06:05:38.246993+00:00",
+      "status": "succeeded",
+      "config": {
+        "output_file": "/home/tangyuan/WorldSimReady-Home/workspace-overlays/openarm-production/runtime/async-validation/gpu-owned-24/workers-2.hdf5",
+        "input_file": "/home/tangyuan/WorldSimReady-Home/workspace-overlays/openarm-production/runtime/inputs/openarm_left_fixture_clearance_source.hdf5",
+        "num_envs": 8,
+        "generation_num_trials": 24,
+        "arm": "left",
+        "final_hold_steps": 60,
+        "log_interval": 10.0,
+        "export_workers": 2,
+        "export_queue_memory_gib": 16.0,
+        "export_timeout_seconds": 600
+      }
+    }
+  ],
+  "sources": [
+    {
+      "path": "workspace-overlays/openarm-production/async-export-validation.json",
+      "sha256": "43f4f7d27d6a4dd1e07b92cab004b32ebb48d8465caca8c85e0b27e2a8b3a182"
+    },
+    {
+      "path": "workspace-overlays/openarm-production/runtime/export-diagnosis.json",
+      "sha256": "de973f22704c371c3ba81575ced9bfb8c725982031f427b89d5f0e4909637af5"
+    },
+    {
+      "path": "workspace-overlays/openarm-production/runtime/export-replay-demo0.json",
+      "sha256": "fff4ce7971da9cc4a864d4de369354a54e80b42eb2ca6929c618bb798c631261"
+    },
+    {
+      "path": "workspace-overlays/openarm-production/runtime/export-compression-demo0.json",
+      "sha256": "8c53a9af3028850b80849d95125385234d30188940724adc2fdf7bab1d305a37"
+    },
+    {
+      "path": "workspace-overlays/openarm-production/runtime/export-compression-demo0-full.json",
+      "sha256": "baa2bb5716e62b4d42cd847034d1fb0983026f5d047f6696b9cff2525c1499c6"
+    },
+    {
+      "path": "workspace-overlays/openarm-production/runtime/async-validation/offline-4-r2/report.json",
+      "sha256": "45ab1b25d36c09886e98f65e05fa99f005dc437a0fd2530b3a5e896a92106c8c"
+    },
+    {
+      "path": "workspace-overlays/openarm-production/runtime/async-validation/gpu-owned-24/report.json",
+      "sha256": "2fe4fc88a1653352130b0d1228d902479396eea02e8b332814793c07a1000fd0"
+    },
+    {
+      "path": "workspace-overlays/openarm-production/runtime/async-validation/owned-handoff-demo2/report.json",
+      "sha256": "52b188f2cfd25dd03fdc2913eb36a8d42f4c0eaaf7978849468b2e19e68e3c19"
+    },
+    {
+      "path": "workspace-overlays/openarm-production/local-runtime-validation.json",
+      "sha256": "af842c73b377890a01f8df10e9862e6ffaab06c9cb6b3ab64533af4281b10549"
+    },
+    {
+      "path": "workspace-overlays/openarm-production/validate_output.py",
+      "sha256": "4367f2a7cebe63c56885694b2bbd6a304fc38e4bc4327eae6af2a7ccf74ef46b"
+    },
+    {
+      "path": "workspace-overlays/openarm-production/benchmark_gpu.py",
+      "sha256": "f63557f290bec0661b9c217a506a62e83c0d6f4bb569bfd9361405bc5ed59f80"
+    },
+    {
+      "path": "workspace-overlays/openarm-production/README.md",
+      "sha256": "9bc11c1e00d21d04fe4301c08d3afa8d3610a0b4e370f7be46f94bc709da1a90"
+    },
+    {
+      "path": "workspace-overlays/openarm-production/export_pool.py",
+      "sha256": "f7e9a8d0f82fe30cdbee8bbb9153f248b26b3756e4e1da59aa0962e7a26c27b8"
+    },
+    {
+      "path": "workspace-overlays/openarm-production/async_export.py",
+      "sha256": "b44c38db5f28faecc316369e5bfafa73d627eeddf26eb757a1dcce26a2da6573"
+    },
+    {
+      "path": "workspace-overlays/openarm-production/generate.py",
+      "sha256": "e14d4e6562d3a61d481d3bb396ae2564d8878b5e87a94096ffb8fd8463fd8e12"
+    },
+    {
+      "path": "workspace-overlays/openarm-production/compat.py",
+      "sha256": "0f7df8d7a65f1178645aa02c53d733baa2dfc13e0a5435d81b54235d16f6023a"
+    },
+    {
+      "path": "workspace-overlays/openarm-production/run_local.py",
+      "sha256": "4af2abfd050ba10c1ee48284a8496d849b41d5e6af283b5aa869954ec8729857"
+    },
+    {
+      "path": "workspace-overlays/openarm-production/telemetry.py",
+      "sha256": "a6425d399ba0de11e8ef6233772a6af1117c99f8c62ed0249d7a7acbf2ab4e8c"
+    },
+    {
+      "path": "workspace-overlays/openarm-production/monitor.py",
+      "sha256": "0cbfcbb0c2d28cf3a3793806fb6f451819c6b0447894d7fc798477372df601c6"
+    },
+    {
+      "path": "workspace-overlays/openarm-production/test_export_pool.py",
+      "sha256": "3d37cc8bad584626f2d9674f2be8fd2f8d8cf5961eb02ecb3a4d4de19ccf1643"
+    },
+    {
+      "path": "workspace-overlays/openarm-production/benchmark_pool.py",
+      "sha256": "bdfbe437703c276235761144fec0692e34ff8cd5493a374295b909c32674a4ef"
+    },
+    {
+      "path": "workspace-overlays/openarm-production/verify_handoff.py",
+      "sha256": "58ec21b695b00e8e753dc33fae472293f851aa40647d7fb1c79843d6b671e550"
+    },
+    {
+      "path": "docs/process-log.md",
+      "sha256": "968bd360002fc95ebe1ac2c1eff410872cca9e62ffc0e891c7d778dff27c1286"
+    },
+    {
+      "path": "docs/version-management.md",
+      "sha256": "e9967db615bc68ae3c1d036a463cc19a6b9a62282d574d2640c89a9a81404d08"
+    },
+    {
+      "path": "outputs/autodata-arena-shared-config/v003/report.md",
+      "sha256": "df93398b6eff2ff2bacc1089ffa179aad1659eaa9d20a56b22f500cdb6ac4132"
+    },
+    {
+      "path": "workspace-overlays/openarm-production/runtime/async-validation/gpu-formal-24/workers-0.run.json",
+      "sha256": "a5520fdda7635eb2111e33e98e3b668422164affe2d5526b48e4e4ce79fe52fe"
+    },
+    {
+      "path": "workspace-overlays/openarm-production/runtime/async-validation/gpu-owned-24/workers-1.run.json",
+      "sha256": "ec5397150f01546e8cdb52f6e91534d18b5e23f0d21d46591dbb6a33303ec030"
+    },
+    {
+      "path": "workspace-overlays/openarm-production/runtime/async-validation/gpu-owned-24/workers-2.run.json",
+      "sha256": "ec0fa0d2b0e18c7e5db012187bbc65ee408e2303b40d884ddcfa670e3e671335"
+    }
+  ],
+  "current_implementation_hash_match": {
+    "export_pool.py": true,
+    "async_export.py": true,
+    "generate.py": true,
+    "compat.py": true,
+    "run_local.py": true,
+    "telemetry.py": true,
+    "monitor.py": true,
+    "test_export_pool.py": true,
+    "benchmark_pool.py": true,
+    "benchmark_gpu.py": true,
+    "verify_handoff.py": true
+  }
+}
