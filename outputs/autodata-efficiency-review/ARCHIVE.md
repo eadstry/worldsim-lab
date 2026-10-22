@@ -1,7 +1,7 @@
 # 已归档版本：v001–v021
 
 - 归档日期：2026-10-20
-- 归档位置：GitHub Release [`archive-autodata-review-20261020`](https://github.com/eadstry/worldsim-lab/releases/tag/archive-autodata-review-20261020) 的附件 `autodata-review-v001-v021.zip`（136 MB）
+- 归档文件：`autodata-review-v001-v021.zip`，原 Release 附件已转为本地备份；位置及校验见[仓库整理记录](../../docs/repository-cleanup-20261022.md)。
 - 保留在主树的版本：`v022`
 
 ## 为什么移出
@@ -12,7 +12,7 @@
 
 ## 恢复方法
 
-1. 从 Release 页面下载 `autodata-review-v001-v021.zip`
+1. 从本地 release-backup 目录读取 `autodata-review-v001-v021.zip`
 2. 解压到仓库根目录：`unzip autodata-review-v001-v021.zip -d outputs/autodata-efficiency-review/`
 3. 需要纳入版本控制时再 `git add` 对应版本目录
 
@@ -24,4 +24,4 @@ SHA256 可直接用于校验取回的文件。
 ## 后续约定
 
 新版本继续按 `outputs/<artifact-id>/vNNN/` 新增；不再重复保留同一批图表的位图与矢量两份副本。
-确需再次移出旧版本时，沿用本文件的做法：先发布 `archive-*` Release 附件，再更新本文件与 `docs/version-management.md`。
+确需再次移出旧版本时，沿用本文件的做法：先单独备份并校验归档文件，再更新本文件与 `docs/version-management.md`。

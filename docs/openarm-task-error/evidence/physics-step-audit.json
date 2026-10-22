@@ -1,0 +1,29 @@
+{
+  "timeout_trials": [
+    {
+      "batch": "physics-240hz",
+      "variant": "baseline",
+      "demo": "demo_2",
+      "repeat": 0,
+      "physics_dt": 0.004166666666666667,
+      "samples": 240,
+      "reported_linear_median_m_s": 0.3876428252448305,
+      "derived_linear_median_m_s": 0.0,
+      "derived_linear_max_m_s": 5.7220458984375e-05,
+      "reported_angular_median_rad_s": 12.834205082725626,
+      "derived_angular_median_rad_s": 0.0008381618986420395,
+      "derived_angular_max_rad_s": 0.0015381158459691225,
+      "derived_angular_below_threshold_fraction": 1.0,
+      "derived_linear_below_threshold_fraction": 1.0,
+      "position_span_mm": [
+        0.0002384185791015625,
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "source_sha256": {
+    "runs/openarm-task-error-20261021/diagnostic-batches/physics-240hz/cube-physics-r0.npz": "7ec9dd8014126af7f964a2bf1e5ff6dd1d254f815a7b4fef175b59e9c9682da0"
+  },
+  "scope": "Final one second of per-physics-step buffer; timeout attempts only; original acceptance unchanged."
+}

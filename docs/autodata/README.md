@@ -1,16 +1,16 @@
 # AutoData 资料索引
 
-建议按“原理与数据流 → 随机化专题 → 完整文章 → 源码核对”的顺序阅读。
-
-| 资料 | 用途与维护方式 |
+| 资料 | 用途 |
 | --- | --- |
-| [原理与数据流总览](AutoData-原理与数据流总览.md) | 独立技术笔记；后续修订在此文件进行。示例数值用于说明，不能视为仿真结果 |
-| [数据生成随机化可视化](AutoData-数据生成随机化可视化.html) | 独立专题 HTML，可在浏览器中打开；专题修订在此文件进行 |
-| [全流程可视化讲解：历史 HTML](AutoData-全流程可视化讲解.html) | 保留原始参考版，后续完整文章编辑使用下方博客 Markdown |
-| [全流程文章：正文编辑源](../../private-blog/content/autodata/AutoData-全流程可视化讲解.md) | 博客维护说明指定的唯一正文来源；修改后执行博客构建和检查 |
-| [博客维护说明](../../private-blog/README.md) | 构建命令、图示、样式和章节锚点约定 |
-| [版本化成果](../../outputs/README.md) | 查看 AutoData 文章交付快照及配置研究报告 |
+| [原理与数据流总览](AutoData-原理与数据流总览.md) | 原理与源码阅读入口，数值示例不代表实测 |
+| [数据生成随机化](AutoData-数据生成随机化可视化.html) | 独立专题离线 HTML |
+| [全流程文章 Markdown](AutoData-全流程可视化讲解.md) | 文章唯一编辑源及 11 张 SVG 配图 |
+| [全流程文章离线版](autodata-full-pipeline-20261022.html) | 迁移时保留的离线阅读版；后续正文编辑以 Markdown 为准 |
+| [历史参考 HTML](AutoData-全流程可视化讲解.html) | 早期版本，保留原文 |
+| [多机器人 LeRobot v3](autodata-multirobot-v3-20261022.md) | 多机器人生成、数据格式及验证范围 |
+| [多机器人图册](autodata-multirobot-v3-gallery-20261022.html) | 原记录中的离线可视化 |
+| [Arena 场景复用分析](../autodata-arena-benchmark-20261022.md) | 场景、任务与配置适配分析 |
+| [面试媒体资料](../autodata-interview-media-20261021.md) | 素材索引；附件按原提交读取 |
+| [版本化成果](../../outputs/README.md) | 已封存报告与验证证据 |
 
-本目录三个原始资料文件从工作区根目录移入，保留名称。Markdown 的源码链接相对于本目录指向 `../../AutoData/`；文中以代码形式书写的源码路径仍相对于 AutoData 仓库根目录。阅读源码前先读 [AutoData 工作规则](../../AutoData/AGENTS.md)。
-
-历史 HTML、博客生成页面和 `outputs/` 交付快照各有用途，不采用多处同步编辑。对历史资料作实质更新时，应明确其依据和验证范围，不能把静态源码说明写成运行验证。
+源码路径相对于锁定的 AutoData 上游；阅读前遵守其 [AGENTS.md](../../AutoData/AGENTS.md)。HTML 下载后在本机打开，配图使用相对路径。

@@ -1,0 +1,10 @@
+{
+  "source_hdf5": "/home/tangyuan/WorldSimReady-Home/runs/openarm-left-joint-space-20261020-v001/openarm-left.hdf5",
+  "source_hdf5_sha256": "8834f408740c02b57c9d56f75f599acecd7343f96621d288d5d1bc8dcb23c00a",
+  "frozen_runtime_manifest": "/home/tangyuan/WorldSimReady-Home/runs/action-state-causality-20261021/source-snapshot/sha256.json",
+  "worktree": "/home/tangyuan/WorldSimReady-Home/.worktrees/openarm-task-error-20261021",
+  "baseline": "d2f37966f1f6cf6a10912b8b492492af27070e0d",
+  "queue_protocol": "frozen-protocol.json",
+  "scope": "Own workspace overlay using dependency imports; production and upstream source unchanged.",
+  "runtime_manifest_sha256": "189ae00fa312a03d3c305c95b39bd0d876b10221e462d4c1bf70bab4aebecf72"
+}

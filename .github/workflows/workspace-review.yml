@@ -19,12 +19,6 @@ jobs:
           fetch-depth: 0
           submodules: false
           persist-credentials: false
-      - uses: actions/setup-node@v6
-        with:
-          node-version: '22'
-          package-manager-cache: false
-      - name: Install locked blog dependencies
-        run: npm --prefix private-blog ci
       - name: Review changes and run host checks
         env:
           EVENT_NAME: ${{ github.event_name }}

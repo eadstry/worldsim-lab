@@ -1,0 +1,172 @@
+[
+  {
+    "branch": "codex/action-state-causality-20261021",
+    "sha": "f3e0f870b419d73553ddde949d8be413f804ecd9",
+    "integration": "源码和文档整合；旧附件按该 SHA 保留在 Git 历史中"
+  },
+  {
+    "branch": "codex/arena-5090-default24",
+    "sha": "007732134bba64e47b52beb489f0c7363429cc1f",
+    "integration": "源码和文档整合；旧附件按该 SHA 保留在 Git 历史中"
+  },
+  {
+    "branch": "codex/arena-domain-visual-20261016",
+    "sha": "adbff2f700b89e2d8c248f8ba63c3aa817c55abd",
+    "integration": "源码和文档整合；旧附件按该 SHA 保留在 Git 历史中"
+  },
+  {
+    "branch": "codex/arena-openarm-domain-20261016",
+    "sha": "f236c7b48fdc1c8648428da0262e1cde3125c003",
+    "integration": "源码和文档整合；旧附件按该 SHA 保留在 Git 历史中"
+  },
+  {
+    "branch": "codex/arm-home-scene-20261017",
+    "sha": "755a23f8b26e45b7e8f9e64830138c7c5fd7c942",
+    "integration": "源码和文档整合；旧附件按该 SHA 保留在 Git 历史中"
+  },
+  {
+    "branch": "codex/autodata-arena-benchmark",
+    "sha": "1580a4ee93fb2f72e778741723df5eb82d81d104",
+    "integration": "源码和文档整合；旧附件按该 SHA 保留在 Git 历史中"
+  },
+  {
+    "branch": "codex/autodata-interview-media",
+    "sha": "f68acd394503048b21b7d36d724144783fa68040",
+    "integration": "源码和文档整合；旧附件按该 SHA 保留在 Git 历史中"
+  },
+  {
+    "branch": "codex/autodata-multirobot-v3",
+    "sha": "2c520765ba8bfa4e56de65c1b836a4a33967358d",
+    "integration": "源码和文档整合；旧附件按该 SHA 保留在 Git 历史中"
+  },
+  {
+    "branch": "codex/autodata-plan-scene-20261016",
+    "sha": "b5340ea7ff487a1bd11e6126f7d4fae8f61fa504",
+    "integration": "源码和文档整合；旧附件按该 SHA 保留在 Git 历史中"
+  },
+  {
+    "branch": "codex/autodata-semantic-metadata",
+    "sha": "5ec52e5c0dce0d497efdcaef9a89c302a8f689f4",
+    "integration": "源码和文档整合；旧附件按该 SHA 保留在 Git 历史中"
+  },
+  {
+    "branch": "codex/banana-home-grasp-20261017",
+    "sha": "eb87555e94d448544e7595e8d2693dd8bcc3ca03",
+    "integration": "源码和文档整合；旧附件按该 SHA 保留在 Git 历史中"
+  },
+  {
+    "branch": "codex/banana-wrist-force-20261017",
+    "sha": "a414dd1db40bba50e08381ab70e937d6e34d0fb3",
+    "integration": "源码和文档整合；旧附件按该 SHA 保留在 Git 历史中"
+  },
+  {
+    "branch": "codex/data-mount-note",
+    "sha": "574d8e4cd4592d8dae0169124e4ba97f6564301a",
+    "integration": "源码和文档整合；旧附件按该 SHA 保留在 Git 历史中"
+  },
+  {
+    "branch": "codex/experimental-analysis-20261015",
+    "sha": "e5f361139f19b87ae003558a85b957b907046310",
+    "integration": "源码和文档整合；旧附件按该 SHA 保留在 Git 历史中"
+  },
+  {
+    "branch": "codex/experimental-portfolio-report-20261019",
+    "sha": "b2edfeaaf215abc5f225db8ad44678ebd23882fd",
+    "integration": "源码和文档整合；旧附件按该 SHA 保留在 Git 历史中"
+  },
+  {
+    "branch": "codex/franka-curobo-comparison-20261017",
+    "sha": "f1bad8c475506b27f153664441e7e4bec7ded516",
+    "integration": "源码和文档整合；旧附件按该 SHA 保留在 Git 历史中"
+  },
+  {
+    "branch": "codex/g1-home-domain-20261017",
+    "sha": "5bf0e536bea8b2f358e0f6a535c790ca39e44b04",
+    "integration": "源码和文档整合；旧附件按该 SHA 保留在 Git 历史中"
+  },
+  {
+    "branch": "codex/git-hygiene-20261016",
+    "sha": "f346cc5d93c11fed02e9566953ce337015fa50ad",
+    "integration": "源码和文档整合；旧附件按该 SHA 保留在 Git 历史中"
+  },
+  {
+    "branch": "codex/github-sync-20261022",
+    "sha": "f9d246aa449c3a87072ead4b48e34a3e74dfd7f2",
+    "integration": "源码和文档整合；旧附件按该 SHA 保留在 Git 历史中"
+  },
+  {
+    "branch": "codex/gpu-environment-parallelism-20261017",
+    "sha": "78b4585ef0db03d1228826c4106b820d649de1ed",
+    "integration": "源码和文档整合；旧附件按该 SHA 保留在 Git 历史中"
+  },
+  {
+    "branch": "codex/lightwheel-kitchen-local",
+    "sha": "f20827b3c05e55ed2338e8f6c3b2b9c3e05815b5",
+    "integration": "源码和文档整合；旧附件按该 SHA 保留在 Git 历史中"
+  },
+  {
+    "branch": "codex/lightwheel-openpi-download-20261017",
+    "sha": "b8abf78c129d498315f553f059f744fecd2eb2a7",
+    "integration": "源码和文档整合；旧附件按该 SHA 保留在 Git 历史中"
+  },
+  {
+    "branch": "codex/local-frontier-20261014",
+    "sha": "6339e1fdcff709189b14b0d4b7742b54760d28c4",
+    "integration": "源码和文档整合；旧附件按该 SHA 保留在 Git 历史中"
+  },
+  {
+    "branch": "codex/openarm-32-episode-throughput",
+    "sha": "34301dc6a41049f5986fc19710ed6784a107d2c7",
+    "integration": "源码和文档整合；旧附件按该 SHA 保留在 Git 历史中"
+  },
+  {
+    "branch": "codex/openarm-benchmark-demo",
+    "sha": "a537426a410abc7f5e437b7365effe77af06110c",
+    "integration": "源码和文档整合；旧附件按该 SHA 保留在 Git 历史中"
+  },
+  {
+    "branch": "codex/openarm-hdr-production-20261016",
+    "sha": "653b8bd38c3a7437b42e2cde8a647be9519aa4a6",
+    "integration": "源码和文档整合；旧附件按该 SHA 保留在 Git 历史中"
+  },
+  {
+    "branch": "codex/openarm-joint-space",
+    "sha": "0bc42665ab04eab3bb6d4fe3f50c83cb4188cf24",
+    "integration": "源码和文档整合；旧附件按该 SHA 保留在 Git 历史中"
+  },
+  {
+    "branch": "codex/openarm-task-error-20261021",
+    "sha": "05da984cc7dd20715a001f225e07e54ac872d4b5",
+    "integration": "源码和文档整合；旧附件按该 SHA 保留在 Git 历史中"
+  },
+  {
+    "branch": "codex/openarm-task-error-explanation-20261021",
+    "sha": "3186ff753541446f9740757b2172845735515c05",
+    "integration": "源码和文档整合；旧附件按该 SHA 保留在 Git 历史中"
+  },
+  {
+    "branch": "codex/pr-readme-frontier",
+    "sha": "47d2c5025e4635bdb8448f1cd66d73f8993e064a",
+    "integration": "源码和文档整合；旧附件按该 SHA 保留在 Git 历史中"
+  },
+  {
+    "branch": "codex/production-capacity-20261019",
+    "sha": "4eee8c24a78db0593cb7f95d4c6582caedc4eda2",
+    "integration": "源码和文档整合；旧附件按该 SHA 保留在 Git 历史中"
+  },
+  {
+    "branch": "codex/queue-gpu-preparation-20261017",
+    "sha": "fd1c981a2904daf6385ab5786d511968837c88f8",
+    "integration": "源码和文档整合；旧附件按该 SHA 保留在 Git 历史中"
+  },
+  {
+    "branch": "codex/repair-version-management",
+    "sha": "3871b045803620aa5f76557cfcc6e53f6b39d341",
+    "integration": "源码和文档整合；旧附件按该 SHA 保留在 Git 历史中"
+  },
+  {
+    "branch": "codex/shared-validation-queue",
+    "sha": "47723c155bbb357bdd5c5bc5bdbf812c6b8e733c",
+    "integration": "源码和文档整合；旧附件按该 SHA 保留在 Git 历史中"
+  }
+]

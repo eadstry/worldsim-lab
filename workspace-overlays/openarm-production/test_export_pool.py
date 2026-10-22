@@ -296,7 +296,7 @@ class PoolTests(unittest.TestCase):
         from types import MethodType, SimpleNamespace
         from async_export import owned_recording_method
         from replay_export import load_dataset_classes
-        root = Path(__file__).resolve().parents[2]
+        root = Path(os.environ.get('WORLDSIM_SOURCE_ROOT', Path(__file__).resolve().parents[2]))
         source_root = root / 'AutoData/submodules/IsaacLab-Arena/submodules/IsaacLab/source/isaaclab/isaaclab'
         Episode, _ = load_dataset_classes(source_root / 'utils/datasets')
         path = source_root / 'managers/recorder_manager.py'
@@ -367,7 +367,7 @@ class PoolTests(unittest.TestCase):
     def test_launcher_hooks_compile_for_sync_and_spawn_modes(self):
         from types import SimpleNamespace
         from generate import build_source
-        root = Path(__file__).resolve().parents[2]
+        root = Path(os.environ.get('WORLDSIM_SOURCE_ROOT', Path(__file__).resolve().parents[2]))
         source = (root / 'AutoData/scripts/generate_dataset.py').read_text()
         for workers in (0, 1, 2, 'auto'):
             args = SimpleNamespace(debug_planner=False, final_hold_steps=60,
@@ -377,6 +377,8 @@ class PoolTests(unittest.TestCase):
             patched = build_source(source, args)
             compile(patched, '<patched-generate>', 'exec')
             self.assertEqual('configure(env_cfg)' in patched, bool(workers))
+            self.assertEqual(patched.count('attach_dataset_metadata(env)'), 1)
+            self.assertLess(patched.index('attach_dataset_metadata(env)'), patched.index('    env.reset()'))
             self.assertEqual('        finish(expected_successes=' in patched, bool(workers))
         os.environ.pop('OPENARM_ASYNC_EXPORT', None)
 

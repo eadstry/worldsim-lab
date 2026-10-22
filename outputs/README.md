@@ -24,13 +24,13 @@
 | AutoData 效率优化报告 | 已被取代（→ autodata-efficiency-review） | v001 · 1 版 · 2.6 MB | [v001](autodata-efficiency-report/v001/index.html) | 12 组图表汇总既有实验、内存所有权与并行导出改动；24 条 GPU 对照最终文件吞吐提升约 29.8%，严格终态各 23/24，物理验收未通过 | 本地保存，未上传或发布 |
 | 全库 Git 历史差异保留 | 归档 | v001 · 1 版 · 802 KB | [v001](git-worktree-preservation/v001/README.md) | 保存 3 个旧工作树的独有源码与正文，重复成果引用既有归档；缓存和数据留本机，无新增实验 | Git 归档，非运行验证 |
 
-**已归档版本**（移出主树，原文与校验值保存在 GitHub Release 附件中）：
+**已归档版本**（移出主树，原文与校验值保存在单独归档中，位置见仓库整理记录）：
 
-- `autodata-efficiency-review` v001–v021 → [archive-autodata-review-20261020](https://github.com/eadstry/worldsim-lab/releases/tag/archive-autodata-review-20261020)
+- `autodata-efficiency-review` v001–v021 → [autodata-review-v001-v021.zip](https://github.com/eadstry/worldsim-lab/blob/main/docs/repository-cleanup-20261022.md)
 
 <!-- outputs-index:end -->
 
-AutoData 文章历史版本：[v001](autodata-guide/v001/CHANGELOG.md)、[v002](autodata-guide/v002/CHANGELOG.md)。持续编辑文章请使用[博客正文源](../private-blog/content/autodata/AutoData-全流程可视化讲解.md)，不要直接修改这些快照。
+AutoData 文章历史版本：[v001](autodata-guide/v001/CHANGELOG.md)、[v002](autodata-guide/v002/CHANGELOG.md)。持续编辑文章请使用[博客正文源](../docs/autodata/AutoData-全流程可视化讲解.md)，不要直接修改这些快照。
 
 当前工作树的复现限制及最新生产失败见[过程记录](../docs/process-log.md)。v003 的历史 GPU 验证不代表当前源文件齐全。OpenArm 生产扩展见[维护入口](../workspace-overlays/openarm-production/README.md)，其 8 环境、100 条目标运行已失败退出，尚未完成数据回读验收。
 

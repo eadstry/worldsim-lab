@@ -27,8 +27,8 @@
 
 - Linux 主机与可用的 NVIDIA 驱动、GPU。
 - 容器路线：Docker 与 NVIDIA Container Toolkit（`nvidia-smi` 在容器内可见 GPU）。
-- 出网：GitHub、npm registry，以及 Nucleus 资产服务——SkillGen 初始化 planner 时要下载 Franka URDF。
-- 主机检查：Python 3 与 Node.js 22+；不含任何仿真依赖。
+- 出网：GitHub，以及 Nucleus 资产服务——SkillGen 初始化 planner 时要下载 Franka URDF。
+- 主机检查：Python 3；不含任何仿真依赖。
 
 ### 2.2 上机核对
 
@@ -52,19 +52,18 @@ docker run --rm --gpus all nvidia/cuda:12.8.0-base-ubuntu22.04 nvidia-smi
 ## 3. 仓库层
 
 ```bash
-git clone https://github.com/eadstry/WorldSimReady-Home.git
-cd WorldSimReady-Home
+git clone https://github.com/eadstry/worldsim-lab.git
+cd worldsim-lab
 bash scripts/cloud-setup.sh
 ```
 
-脚本依次做四件事：检查版本锁定与上游是否干净、忽略 LFS 初始化三个顶层子模块、`npm --prefix private-blog ci`、安装提交门禁并运行完整主机检查。
+脚本依次做四件事：检查版本锁定与上游是否干净、忽略 LFS 初始化三个顶层子模块、安装提交门禁并运行完整主机检查。
 
 等价的手动步骤：
 
 ```bash
 python3 scripts/check-version-management.py --allow-uninitialized --require-clean-upstream
 GIT_LFS_SKIP_SMUDGE=1 git submodule update --init --jobs 3 AutoData IsaacLab-Arena RLinf
-npm --prefix private-blog ci
 python3 scripts/review-workspace.py install
 bash scripts/cloud-check.sh
 ```

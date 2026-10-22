@@ -377,3 +377,53 @@ PYTHONDONTWRITEBYTECODE=1 /home/tangyuan/miniconda3/envs/autodata/bin/python \
   workspace-overlays/openarm-production/verify_handoff.py /path/to/closed.hdf5 \
   --demo demo_0 --directory /path/to/new-verification-directory
 ```
+
+## Batch-scoped HDR backgrounds
+
+`--background-config /absolute/path/backgrounds.json` selects one local HDR before
+simulator startup. `--background-seed 101` controls a separate random generator;
+selection does not consume the task's random sequence. Omit the option to preserve
+the existing scene. The JSON format is:
+
+```json
+{
+  "candidates": [
+    {"name": "studio", "path": "/assets/studio.hdr", "texture_format": "latlong"},
+    {"name": "office", "path": "/assets/office.exr", "texture_format": "latlong"}
+  ],
+  "intensity": 1800.0,
+  "color": [1.0, 1.0, 1.0],
+  "ground_visible": false
+}
+```
+
+Paths may be absolute or relative to the JSON file. All candidates must exist;
+this launcher does not download assets or resolve Arena registry names. A singleton
+pool forces a background for controlled comparisons. Keep the asset files unchanged
+while a job is queued or running.
+
+One background is shared by all environments and stays fixed for the entire
+production process. Run separate batches to obtain background diversity. The HDR
+also affects illumination/reflections; this is not a pure image-background edit.
+The existing table, object physics and calibrated camera configuration are retained.
+Texture loading is awaited by the environment. The spawned dome's USD texture,
+format, intensity and color are checked before generation. The `.background.json`
+sidecar records the pool, seed, chosen file, configuration/file hashes and readback;
+after export closes, the provenance is also stored in `data.attrs['background']`
+and every episode's `background` attribute. These attributes describe the configured
+batch, not proof that every camera sees an unobstructed background. Validate actual
+RGB streams and terminal task state separately with `validate_output.py`.
+
+Use `--runtime /absolute/path/prepared/runtime` and `--autodata-root /absolute/path/AutoData`
+to reuse an existing preparation from an isolated worktree. Both the task package
+and compatibility patches are loaded from that runtime without rewriting it.
+GPU execution must use the shared task queue described in `docs/task-queue.md`.
+
+`ground_visible` defaults to `true`. Set it to `false` to hide the large grid ground
+from rendering so the HDR is visible behind the tabletop. This changes visual
+occlusion and floor shadows, but retains the ground collision geometry; USD
+visibility and an enabled ground collider are checked during startup.
+
+## 整合的可选能力（2026-10-22）
+
+`background.py` 提供批次 HDR 背景选择；`dataset_metadata.py` 记录机器人关节名、单位和动作/状态含义；`joint_targets.py` 记录控制器实际关节目标。`generate.py` 组合这些能力，默认行为由其命令行参数决定。转换与语义约束见 [LeRobot v3 转换器](../autodata-lerobot-v3/README.md)。这些功能的历史运行结论以来源提交记录为准，本次仅验证主机代码。

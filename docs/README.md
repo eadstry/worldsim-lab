@@ -4,7 +4,7 @@
 
 | 主题 | 入口 | 内容 |
 | --- | --- | --- |
-| AutoData | [资料与阅读顺序](autodata/README.md) | 原理、数据流、随机化可视化及博客正文来源 |
+| AutoData | [资料与阅读顺序](autodata/README.md) | 原理、数据流、随机化可视化及完整文章正文 |
 | Arena 与共用配置 | [成果索引](../outputs/README.md) | 示例运行说明、RoboLab 配置、AutoData/Arena 共用配置建议 |
 | 运行环境 | [环境配置](environment-setup.md) | 主机、仓库、容器与原生环境、机器本地参数及验收顺序 |
 | 主机环境 | [存储挂载记录](host-storage.md) | `/data` 挂载容量及截图中的存储信息 |
@@ -30,3 +30,29 @@
 - [OpenArm 图像与隔离导出诊断](experiments/openarm-readiness-20261020.md)：历史运行结果及证据边界。
 - [实验图册](../outputs/experiment-chartbook/v001/report.md)：19 张图、原始记录、指标索引与 PDF。
 - [最新改动集成记录](main-integration-20261020.md)：迁移来源、适配和检查范围。
+
+## 2026-10-22 整合资料
+
+| 创建日期 | 资料 | 用途 |
+| --- | --- | --- |
+| 历史资料迁入 | [AutoData-全流程可视化讲解](autodata/AutoData-全流程可视化讲解.html) | 离线阅读版 |
+| 历史资料迁入 | [AutoData-全流程可视化讲解](autodata/AutoData-全流程可视化讲解.md) | 报告或说明，验证范围见正文 |
+| 历史资料迁入 | [AutoData-原理与数据流总览](autodata/AutoData-原理与数据流总览.md) | 报告或说明，验证范围见正文 |
+| 历史资料迁入 | [AutoData-数据生成随机化可视化](autodata/AutoData-数据生成随机化可视化.html) | 离线阅读版 |
+| 20261022 | [autodata-full-pipeline-20261022](autodata/autodata-full-pipeline-20261022.html) | 离线阅读版 |
+| 20261022 | [autodata-multirobot-v3-20261022](autodata/autodata-multirobot-v3-20261022.md) | 报告或说明，验证范围见正文 |
+| 20261022 | [autodata-multirobot-v3-gallery-20261022](autodata/autodata-multirobot-v3-gallery-20261022.html) | 离线阅读版 |
+| 20261022 | [autodata-arena-benchmark-20261022](autodata-arena-benchmark-20261022.md) | 报告或说明，验证范围见正文 |
+| 20261021 | [autodata-interview-media-20261021](autodata-interview-media-20261021.md) | 报告或说明，验证范围见正文 |
+| 20261020 | [report-20261020](experiment-portfolio/report-20261020.md) | 报告或说明，验证范围见正文 |
+| 历史资料迁入 | [lerobot-v3-oxe-visual](lerobot-v3/lerobot-v3-oxe-visual.html) | 离线阅读版 |
+| 20261021 | [open-source-parameter-survey-20261021](openarm-task-error/open-source-parameter-survey-20261021.pdf) | 报告或说明，验证范围见正文 |
+| 20261021 | [openarm-task-error-20261021-r02](openarm-task-error-20261021-r02.html) | 离线阅读版 |
+| 20261021 | [openarm-task-error-20261021-r02](openarm-task-error-20261021-r02.md) | 报告或说明，验证范围见正文 |
+| 20261021 | [openarm-task-error-20261021-r02](openarm-task-error-20261021-r02.pdf) | 报告或说明，验证范围见正文 |
+| 20261019 | [report-rewrite-plan-20261019](report-rewrite-plan-20261019.md) | 报告或说明，验证范围见正文 |
+| 20261022 | [repository-cleanup-20261022](repository-cleanup-20261022.md) | 报告或说明，验证范围见正文 |
+| 20261022 | [server-shutdown-recovery-20261022-r01](server-shutdown-recovery-20261022-r01.md) | 报告或说明，验证范围见正文 |
+| 20261022 | [server-shutdown-recovery-20261022](server-shutdown-recovery-20261022.md) | 报告或说明，验证范围见正文 |
+
+[分支来源清单](integration/branches-20261022.json) · [作品集资料](experiment-portfolio/README.md) · [LeRobot v3 格式](lerobot-v3/README.md) · [OpenArm 误差分析](openarm-task-error/README.md)

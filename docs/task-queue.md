@@ -53,3 +53,42 @@ python3 scripts/task-queue.py worker
 - 不替代 Git 同步：其他 worktree 需要 fetch 后选择性引入本任务提交，或共用脚本的绝对路径。
 
 调度器测试使用临时目录和 CPU 小任务，覆盖多个提交者、FIFO、失败继续、超时清理、排队取消、不同工作目录和环境、调度器崩溃恢复；不能据此声称 GPU 仿真已通过。
+
+## 单环境控制器的多进程并行
+
+单进程支持向量化的任务优先设置其 `num_envs`；G1 PINK 当前明确限制一个环境，
+不能只删除断言。可将独立环境进程交给同一个队列任务监督：
+
+```bash
+python3 scripts/task-queue.py submit --name parallel-environments --timeout 1800 -- \
+  python3 scripts/parallel-environments.py --manifest /absolute/path/to/manifest.json \
+  --output /absolute/path/to/new-batch-output --workers 16 --gpu-monitor \
+  --worker-mib 6000 --reserve-mib 4096 --cpu-threads 2 --kit-threads 4 --job-timeout 600
+```
+
+manifest 为 `{"jobs": [{"name": "seed-1", "cwd": "/absolute/worktree", "argv": ["bash", "run.sh"], "env": {"SEED": "1"}}]}`。
+每个 job 必须有独立数据输出路径；环境变量默认叠加到当前环境，`inherit_env: false` 可使用完整快照。
+manifest 若含环境快照应保持本机私有、权限 0600，不加入版本管理。报告不复制环境变量。
+
+`--workers` 是目标上限，不等于无条件同时启动的数量。开启 `--gpu-monitor` 时，
+初始容量为 `(总显存 - 已用显存 - 预留显存) / 每进程峰值估算` 向下取整，
+且不超过目标上限；每次启动前再检查空闲显存。6000 MiB 是当前单环境 G1 相机任务的初始估算，
+不是适用于任意任务的硬件保证；不同相机分辨率、场景和策略模型需重新测量。
+同时限制 OMP/MKL/OpenBLAS 线程，避免多个进程各自占满 CPU。
+
+Kit 自身还有独立线程池；使用 Isaac Lab AppLauncher 的 job 应显式加 `--kit-threads 4`，
+监督器会将 carb tasking 与 TBB 线程上限作为一个 `--kit_args` 参数传给子命令。
+这个开关只适用于会向 AppLauncher 转发参数的命令；通用命令不要启用。
+应通过实际初始化与运行吞吐确定线程配置，不能只看单次 GPU 利用率。
+
+每个环境有独立日志。`report.json` 记录实际并行容量、运行时间、退出状态、GPU 连续采样和
+未启动任务；进程退出成功不等于生成轨迹成功，仍须回读 HDF5、动作有限性、相机帧数和任务标签。
+失败不自动重试，其他环境继续执行。超时和终止清理所属进程组；子进程继承队列锁，
+监督进程崩溃后后续队列任务仍须等原环境退出，避免跨任务 GPU 重叠。
+不要让 manifest 子任务再次提交同一 GPU 队列，否则会等待自身占用的锁。
+
+当前 RTX 5090 32 GiB 主机的 G1 PINK + 头部/诊断相机任务，实测四进程完成，
+五进程确认轮有一个 Kit 初始化停滞，不能记为五环境通过。当前使用
+`--workers 16 --worker-mib 6000 --reserve-mib 4096 --cpu-threads 2 --kit-threads 4`，
+显存准入为四进程。目标上限沿用 16，这不是 16 环境已经通过的声明。
+其他任务（特别是本地策略模型和高分辨率光轮厨房相机）不得套用此显存估算。

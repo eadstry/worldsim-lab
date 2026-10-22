@@ -1,0 +1,13 @@
+{
+  "primary": "Success count over 12 paired attempts per condition, then equal-attempt whole-task arm request/pre-state MAE.",
+  "secondary": [
+    "Successful-attempt MAE",
+    "Moving-frame MAE: any arm joint finite-difference speed above 5 deg/s, no cross-trial differences",
+    "Four-phase balanced MAE when all four phases reached",
+    "Per-phase attempt mean and coverage",
+    "Same-physical-substep applied/pre-state residual",
+    "Task duration, TCP deviation and terminal acceptance flags"
+  ],
+  "correlation": "Within joint and trial; finite differences at common 30Hz observations; Pearson signed error/velocity and absolute error/speed; descriptive median across baseline attempts, no temporal-independence p values.",
+  "safeguard": "Failures retained and reported separately from successful-only metrics; no parameter tuning based solely on MAE."
+}

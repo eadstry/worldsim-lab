@@ -12,7 +12,7 @@
 | `codex/openarm-benchmark-demo`，`81149a6` | 合并已提交的 Arena 示例，保留 v001 交付包 | [Arena benchmark](../workspace-overlays/openarm-benchmark/README.md) |
 | 主工作目录，`bfd5ec8` 后的未提交成果 | 精确复制内部耗时 v001、证据和复现工具 | [内部耗时对照](../outputs/autodata-v1-internal-timing/v001/index.html) |
 | `5b06` worktree，`e650247` 后的未提交成果 | 精确复制 cuRobo v2 升级评估、最小验证、抓取诊断和 overlay | [v2 对照](../outputs/curobo-v2-openarm-mvp/v001/report.md) · [抓取诊断](../outputs/curobo-v2-grasp-diagnosis/v001/report.md) |
-| `e476` worktree，`34301dc` 后的未提交成果 | 保留效率图册 v001–v013，附历史 v2 复现脚本及来源记录 | [43 页图册](../outputs/autodata-efficiency-review/v013/charts.pdf) · [GPU 源码分析](../outputs/autodata-efficiency-review/v013/gpu-analysis.html) |
+| `e476` worktree，`34301dc` 后的未提交成果 | 保留效率图册 v001–v013，附历史 v2 复现脚本及来源记录 | [43 页图册](https://github.com/eadstry/worldsim-lab/blob/007732134bba64e47b52beb489f0c7363429cc1f/outputs/autodata-efficiency-review/v013/charts.pdf) · [GPU 源码分析](https://github.com/eadstry/worldsim-lab/blob/007732134bba64e47b52beb489f0c7363429cc1f/outputs/autodata-efficiency-review/v013/gpu-analysis.html) |
 | `c46d` worktree，`34301dc` 后的未提交源码 | 保存 32 条生产吞吐测试工具，标为实验工具 | [生产吞吐测试](../workspace-overlays/openarm-throughput-benchmark/README.md) |
 
 `codex/local-frontier-20261014` 的历史保存清单与补丁已由起点分支保留，manifest 与该分支逐字节相同。其旧实现已被 `bfd5ec8` 的自适应导出覆盖，因此没有再次合并旧分支；保留当前失败记录，不用历史的 `runtime-check-result.json` 通过状态覆盖它。历史整理分支 `codex/tidy-workspace` 不纳入，避免其删除行为影响封存版本。

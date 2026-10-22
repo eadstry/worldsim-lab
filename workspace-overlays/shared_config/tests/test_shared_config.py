@@ -119,7 +119,7 @@ class ConfigTests(unittest.TestCase):
         self.assertEqual(generate['task_contract_hash'], evaluate['task_contract_hash'])
         self.assertEqual(generate['effective_seed'], 1)
         self.assertEqual(evaluate['effective_seed'], 11)
-        self.assertIn(str(run / 'task_descriptor.json'), generate['launch']['argv'])
+        self.assertIn(str((run / 'task_descriptor.json').resolve()), generate['launch']['argv'])
         self.assertFalse(run.exists())
         self.assertFalse(any('arena-deliveries' in x for x in evaluate['launch']['argv']))
         self.assertIn('AutoData/openarm_autodata/tasks/pick_place/configs/left_env_cfg.py', generate['source_hashes'])
