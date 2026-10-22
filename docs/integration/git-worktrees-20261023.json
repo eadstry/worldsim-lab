@@ -1,0 +1,1052 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-23",
+  "baseline": "f64adf2c0ad7a7aea21ea749be43dce5ada94528",
+  "integration_branch": "codex/worktree-integration-20261023",
+  "reviewed_source_tree_head": "f26e70c4f0dbced1767ee70068fac2221cb409ab",
+  "source_branches": [
+    {
+      "branch": "codex/openarm-gs-render",
+      "head": "53522f46b9b1ff19ba9994ec7d537390b80d9c70",
+      "commits": [
+        "53522f46b9b1ff19ba9994ec7d537390b80d9c70"
+      ]
+    },
+    {
+      "branch": "codex/openarm-gs-production",
+      "head": "f2421cdfdea146c155da2478df5c2e8bbc7feb69",
+      "commits": [
+        "f2421cdfdea146c155da2478df5c2e8bbc7feb69"
+      ]
+    },
+    {
+      "branch": "codex/openarm-gs-wrist-video",
+      "head": "8e7203f714fd61baf611c997cdadd6514c7b20f0",
+      "commits": [
+        "8e7203f714fd61baf611c997cdadd6514c7b20f0"
+      ]
+    },
+    {
+      "branch": "codex/autodata-ray",
+      "head": "df0d693299a694f2e253a1a40b4cea91b142624a",
+      "commits": [
+        "95930abce05250c46e02df02e219f3dec4105d59",
+        "13d6c2e5ea911c2b0801215038712f060af6cbb2",
+        "df0d693299a694f2e253a1a40b4cea91b142624a"
+      ]
+    },
+    {
+      "branch": "codex/experiment-chartbook-vector-20261022",
+      "head": "f051c4e716d796bda839cec3c42e8af55172d650",
+      "commits": [
+        "f051c4e716d796bda839cec3c42e8af55172d650"
+      ]
+    },
+    {
+      "branch": "codex/openarm-gs-head-video",
+      "head": "2b1fe90f72303ede114b9fe2208a5817180b2161",
+      "commits": [
+        "2b1fe90f72303ede114b9fe2208a5817180b2161"
+      ]
+    }
+  ],
+  "local_branches": [
+    {
+      "branch": "codex/action-state-bundle-20261022",
+      "head": "ce95a5ad40d00da39eeec0b43d102b74cc37baf2",
+      "disposition": "included_in_integration_history",
+      "notes": ""
+    },
+    {
+      "branch": "codex/action-state-causality-20261021",
+      "head": "f3e0f870b419d73553ddde949d8be413f804ecd9",
+      "disposition": "included_in_integration_history",
+      "notes": ""
+    },
+    {
+      "branch": "codex/arena-5090-default24",
+      "head": "007732134bba64e47b52beb489f0c7363429cc1f",
+      "disposition": "included_in_integration_history",
+      "notes": ""
+    },
+    {
+      "branch": "codex/arena-domain-visual-20261016",
+      "head": "adbff2f700b89e2d8c248f8ba63c3aa817c55abd",
+      "disposition": "included_in_integration_history",
+      "notes": ""
+    },
+    {
+      "branch": "codex/arena-openarm-domain-20261016",
+      "head": "f236c7b48fdc1c8648428da0262e1cde3125c003",
+      "disposition": "included_in_integration_history",
+      "notes": ""
+    },
+    {
+      "branch": "codex/arm-home-scene-20261017",
+      "head": "755a23f8b26e45b7e8f9e64830138c7c5fd7c942",
+      "disposition": "included_in_integration_history",
+      "notes": ""
+    },
+    {
+      "branch": "codex/autodata-arena-benchmark",
+      "head": "1580a4ee93fb2f72e778741723df5eb82d81d104",
+      "disposition": "included_in_integration_history",
+      "notes": ""
+    },
+    {
+      "branch": "codex/autodata-interview-media",
+      "head": "f68acd394503048b21b7d36d724144783fa68040",
+      "disposition": "included_in_integration_history",
+      "notes": ""
+    },
+    {
+      "branch": "codex/autodata-lerobot-v3",
+      "head": "d3f6f0bd17ddb7d98a38406abae33ce614e6b3e5",
+      "disposition": "included_in_integration_history",
+      "notes": ""
+    },
+    {
+      "branch": "codex/autodata-multirobot-v3",
+      "head": "2c520765ba8bfa4e56de65c1b836a4a33967358d",
+      "disposition": "included_in_integration_history",
+      "notes": ""
+    },
+    {
+      "branch": "codex/autodata-plan-scene-20261016",
+      "head": "b5340ea7ff487a1bd11e6126f7d4fae8f61fa504",
+      "disposition": "included_in_integration_history",
+      "notes": ""
+    },
+    {
+      "branch": "codex/autodata-ray",
+      "head": "df0d693299a694f2e253a1a40b4cea91b142624a",
+      "disposition": "included_in_integration_history",
+      "notes": ""
+    },
+    {
+      "branch": "codex/autodata-semantic-metadata",
+      "head": "5ec52e5c0dce0d497efdcaef9a89c302a8f689f4",
+      "disposition": "included_in_integration_history",
+      "notes": ""
+    },
+    {
+      "branch": "codex/banana-home-grasp-20261017",
+      "head": "eb87555e94d448544e7595e8d2693dd8bcc3ca03",
+      "disposition": "included_in_integration_history",
+      "notes": ""
+    },
+    {
+      "branch": "codex/banana-wrist-force-20261017",
+      "head": "a414dd1db40bba50e08381ab70e937d6e34d0fb3",
+      "disposition": "included_in_integration_history",
+      "notes": ""
+    },
+    {
+      "branch": "codex/data-mount-note",
+      "head": "574d8e4cd4592d8dae0169124e4ba97f6564301a",
+      "disposition": "included_in_integration_history",
+      "notes": ""
+    },
+    {
+      "branch": "codex/experiment-chartbook-20261020",
+      "head": "83d705faa83a4709dc1d45c7babff2c28a14d81f",
+      "disposition": "previous_content_import",
+      "notes": "c5cf19b 文件已原字节纳入 PR #16；83d705f 仅远端地址说明，沿用当前配置"
+    },
+    {
+      "branch": "codex/experiment-chartbook-sharp-20261022",
+      "head": "2868f7c3c12a5b353f1fe15063b8c97937c0435c",
+      "disposition": "included_in_integration_history",
+      "notes": ""
+    },
+    {
+      "branch": "codex/experiment-chartbook-vector-20261022",
+      "head": "f051c4e716d796bda839cec3c42e8af55172d650",
+      "disposition": "included_in_integration_history",
+      "notes": ""
+    },
+    {
+      "branch": "codex/experimental-analysis-20261015",
+      "head": "e5f361139f19b87ae003558a85b957b907046310",
+      "disposition": "included_in_integration_history",
+      "notes": ""
+    },
+    {
+      "branch": "codex/experimental-portfolio-report-20261019",
+      "head": "b2edfeaaf215abc5f225db8ad44678ebd23882fd",
+      "disposition": "included_in_integration_history",
+      "notes": ""
+    },
+    {
+      "branch": "codex/franka-curobo-comparison-20261017",
+      "head": "f1bad8c475506b27f153664441e7e4bec7ded516",
+      "disposition": "included_in_integration_history",
+      "notes": ""
+    },
+    {
+      "branch": "codex/g1-data-visual-20261017",
+      "head": "907e69fb58fdd1bf954989d0b3724f661a524d21",
+      "disposition": "included_in_integration_history",
+      "notes": ""
+    },
+    {
+      "branch": "codex/g1-home-domain-20261017",
+      "head": "5bf0e536bea8b2f358e0f6a535c790ca39e44b04",
+      "disposition": "included_in_integration_history",
+      "notes": ""
+    },
+    {
+      "branch": "codex/g1-home-scene-20261017",
+      "head": "879b0e948473d75672152e2b74f0d8174f247eb7",
+      "disposition": "included_in_integration_history",
+      "notes": ""
+    },
+    {
+      "branch": "codex/git-hygiene-20261016",
+      "head": "f346cc5d93c11fed02e9566953ce337015fa50ad",
+      "disposition": "included_in_integration_history",
+      "notes": ""
+    },
+    {
+      "branch": "codex/github-sync-20261020",
+      "head": "e730970d73618480914fa31d3d51bceca1394694",
+      "disposition": "previous_content_import",
+      "notes": "e730970 成果已在 PR #14/#19 适配导入；保留当前版本策略、计划限定和已退役网站状态"
+    },
+    {
+      "branch": "codex/github-sync-20261022",
+      "head": "f9d246aa449c3a87072ead4b48e34a3e74dfd7f2",
+      "disposition": "included_in_integration_history",
+      "notes": ""
+    },
+    {
+      "branch": "codex/gpu-environment-parallelism-20261017",
+      "head": "78b4585ef0db03d1228826c4106b820d649de1ed",
+      "disposition": "included_in_integration_history",
+      "notes": ""
+    },
+    {
+      "branch": "codex/lightwheel-kitchen-local",
+      "head": "f20827b3c05e55ed2338e8f6c3b2b9c3e05815b5",
+      "disposition": "included_in_integration_history",
+      "notes": ""
+    },
+    {
+      "branch": "codex/lightwheel-openpi-download-20261017",
+      "head": "b8abf78c129d498315f553f059f744fecd2eb2a7",
+      "disposition": "included_in_integration_history",
+      "notes": ""
+    },
+    {
+      "branch": "codex/local-frontier-20261014",
+      "head": "6339e1fdcff709189b14b0d4b7742b54760d28c4",
+      "disposition": "included_in_integration_history",
+      "notes": ""
+    },
+    {
+      "branch": "codex/openarm-32-episode-throughput",
+      "head": "34301dc6a41049f5986fc19710ed6784a107d2c7",
+      "disposition": "included_in_integration_history",
+      "notes": ""
+    },
+    {
+      "branch": "codex/openarm-benchmark-demo",
+      "head": "a537426a410abc7f5e437b7365effe77af06110c",
+      "disposition": "included_in_integration_history",
+      "notes": ""
+    },
+    {
+      "branch": "codex/openarm-capability24-20261020",
+      "head": "4a45d64fc002d16930906c6bd521750dadf0d479",
+      "disposition": "included_in_integration_history",
+      "notes": ""
+    },
+    {
+      "branch": "codex/openarm-gs-head-video",
+      "head": "2b1fe90f72303ede114b9fe2208a5817180b2161",
+      "disposition": "included_in_integration_history",
+      "notes": ""
+    },
+    {
+      "branch": "codex/openarm-gs-production",
+      "head": "f2421cdfdea146c155da2478df5c2e8bbc7feb69",
+      "disposition": "included_in_integration_history",
+      "notes": ""
+    },
+    {
+      "branch": "codex/openarm-gs-render",
+      "head": "53522f46b9b1ff19ba9994ec7d537390b80d9c70",
+      "disposition": "included_in_integration_history",
+      "notes": ""
+    },
+    {
+      "branch": "codex/openarm-gs-wrist-video",
+      "head": "8e7203f714fd61baf611c997cdadd6514c7b20f0",
+      "disposition": "included_in_integration_history",
+      "notes": ""
+    },
+    {
+      "branch": "codex/openarm-hdr-production-20261016",
+      "head": "653b8bd38c3a7437b42e2cde8a647be9519aa4a6",
+      "disposition": "included_in_integration_history",
+      "notes": ""
+    },
+    {
+      "branch": "codex/openarm-joint-space",
+      "head": "0bc42665ab04eab3bb6d4fe3f50c83cb4188cf24",
+      "disposition": "included_in_integration_history",
+      "notes": ""
+    },
+    {
+      "branch": "codex/openarm-next-experiments-20261020",
+      "head": "dabd4c22f3111a61e339c3324bb345232bda5645",
+      "disposition": "previous_content_import",
+      "notes": "750b7d9 的 7 个诊断文件已原字节导入 PR #16；不重复旧基线"
+    },
+    {
+      "branch": "codex/openarm-task-error-20261021",
+      "head": "05da984cc7dd20715a001f225e07e54ac872d4b5",
+      "disposition": "included_in_integration_history",
+      "notes": ""
+    },
+    {
+      "branch": "codex/openarm-task-error-explanation-20261021",
+      "head": "3186ff753541446f9740757b2172845735515c05",
+      "disposition": "included_in_integration_history",
+      "notes": ""
+    },
+    {
+      "branch": "codex/organized-5b06-20261016",
+      "head": "755b2295292a05f05113e2de4391d61e34a85cda",
+      "disposition": "included_in_integration_history",
+      "notes": ""
+    },
+    {
+      "branch": "codex/organized-c46d-20261016",
+      "head": "755b2295292a05f05113e2de4391d61e34a85cda",
+      "disposition": "included_in_integration_history",
+      "notes": ""
+    },
+    {
+      "branch": "codex/organized-e476-20261016",
+      "head": "755b2295292a05f05113e2de4391d61e34a85cda",
+      "disposition": "included_in_integration_history",
+      "notes": ""
+    },
+    {
+      "branch": "codex/pr-readme-frontier",
+      "head": "47d2c5025e4635bdb8448f1cd66d73f8993e064a",
+      "disposition": "included_in_integration_history",
+      "notes": ""
+    },
+    {
+      "branch": "codex/production-capacity-20261019",
+      "head": "4eee8c24a78db0593cb7f95d4c6582caedc4eda2",
+      "disposition": "included_in_integration_history",
+      "notes": ""
+    },
+    {
+      "branch": "codex/queue-gpu-preparation-20261017",
+      "head": "fd1c981a2904daf6385ab5786d511968837c88f8",
+      "disposition": "included_in_integration_history",
+      "notes": ""
+    },
+    {
+      "branch": "codex/recovered-codex-session-index",
+      "head": "d8ec43631e4d9447cf51af23b73b1f8065835d7d",
+      "disposition": "previous_content_import",
+      "notes": "d8ec436 文本已存在；现行版本仅清除了失效本机/plugin 链接"
+    },
+    {
+      "branch": "codex/repair-version-management",
+      "head": "3871b045803620aa5f76557cfcc6e53f6b39d341",
+      "disposition": "included_in_integration_history",
+      "notes": ""
+    },
+    {
+      "branch": "codex/shared-validation-queue",
+      "head": "47723c155bbb357bdd5c5bc5bdbf812c6b8e733c",
+      "disposition": "included_in_integration_history",
+      "notes": ""
+    }
+  ],
+  "worktrees": [
+    {
+      "worktree": "/home/tangyuan/WorldSimReady-Home",
+      "branch": "refs/heads/main",
+      "initialized_submodules": [
+        "AutoData/.git",
+        "IsaacLab-Arena/.git"
+      ],
+      "archive_ref": "refs/archive/worktree-integration-20261023/00",
+      "initial_status": " M AGENTS.md\n M AutoData\nM  docs/README.md\nA  docs/lerobot-v3/README.md\nA  docs/lerobot-v3/fig-02-v3-anatomy.png\nA  docs/lerobot-v3/fig-04-failure-modes.png\nA  docs/lerobot-v3/fig-05-oxe-heterogeneity.png\nA  docs/lerobot-v3/lerobot-v3-oxe-visual.html\nR  report-rewrite-plan-20261019.md -> docs/report-rewrite-plan-20261019.md\n",
+      "initial_head": "d2f37966f1f6cf6a10912b8b492492af27070e0d",
+      "initial_ignored_file_count": 22291,
+      "cleanup": "main_fast_forwarded_local_changes_preserved",
+      "final_head": "f64adf2c0ad7a7aea21ea749be43dce5ada94528"
+    },
+    {
+      "worktree": "/home/tangyuan/.codex/worktrees/1099/WorldSimReady-Home",
+      "initialized_submodules": [],
+      "archive_ref": "refs/archive/worktree-integration-20261023/01",
+      "initial_status": "",
+      "initial_head": "34301dc6a41049f5986fc19710ed6784a107d2c7",
+      "initial_ignored_file_count": 0,
+      "cleanup": "removed",
+      "disposable_cache_roots_removed": 0
+    },
+    {
+      "worktree": "/home/tangyuan/.codex/worktrees/214b/WorldSimReady-Home",
+      "initialized_submodules": [],
+      "archive_ref": "refs/archive/worktree-integration-20261023/02",
+      "initial_status": "",
+      "initial_head": "34301dc6a41049f5986fc19710ed6784a107d2c7",
+      "initial_ignored_file_count": 0,
+      "cleanup": "removed",
+      "disposable_cache_roots_removed": 0
+    },
+    {
+      "worktree": "/home/tangyuan/.codex/worktrees/2b9e/WorldSimReady-Home",
+      "initialized_submodules": [],
+      "archive_ref": "refs/archive/worktree-integration-20261023/03",
+      "initial_status": "",
+      "initial_head": "34301dc6a41049f5986fc19710ed6784a107d2c7",
+      "initial_ignored_file_count": 0,
+      "cleanup": "removed",
+      "disposable_cache_roots_removed": 0
+    },
+    {
+      "worktree": "/home/tangyuan/.codex/worktrees/3ae2/WorldSimReady-Home",
+      "initialized_submodules": [],
+      "archive_ref": "refs/archive/worktree-integration-20261023/04",
+      "initial_status": "",
+      "initial_head": "34301dc6a41049f5986fc19710ed6784a107d2c7",
+      "initial_ignored_file_count": 0,
+      "cleanup": "removed",
+      "disposable_cache_roots_removed": 0
+    },
+    {
+      "worktree": "/home/tangyuan/.codex/worktrees/434b/WorldSimReady-Home",
+      "branch": "refs/heads/codex/shared-validation-queue",
+      "initialized_submodules": [],
+      "archive_ref": "refs/archive/worktree-integration-20261023/05",
+      "initial_status": "",
+      "initial_head": "47723c155bbb357bdd5c5bc5bdbf812c6b8e733c",
+      "initial_ignored_file_count": 3992,
+      "cleanup": "removed",
+      "disposable_cache_roots_removed": 2
+    },
+    {
+      "worktree": "/home/tangyuan/.codex/worktrees/5b06/WorldSimReady-Home",
+      "branch": "refs/heads/codex/organized-5b06-20261016",
+      "initialized_submodules": [],
+      "archive_ref": "refs/archive/worktree-integration-20261023/06",
+      "initial_status": "",
+      "initial_head": "755b2295292a05f05113e2de4391d61e34a85cda",
+      "initial_ignored_file_count": 215797,
+      "cleanup": "retained_local_assets_environment_or_runtime",
+      "final_head": "755b2295292a05f05113e2de4391d61e34a85cda"
+    },
+    {
+      "worktree": "/home/tangyuan/.codex/worktrees/8ff3/WorldSimReady-Home",
+      "initialized_submodules": [],
+      "archive_ref": "refs/archive/worktree-integration-20261023/07",
+      "initial_status": "",
+      "initial_head": "34301dc6a41049f5986fc19710ed6784a107d2c7",
+      "initial_ignored_file_count": 0,
+      "cleanup": "removed",
+      "disposable_cache_roots_removed": 0
+    },
+    {
+      "worktree": "/home/tangyuan/.codex/worktrees/aa69/WorldSimReady-Home",
+      "initialized_submodules": [],
+      "archive_ref": "refs/archive/worktree-integration-20261023/08",
+      "initial_status": "",
+      "initial_head": "34301dc6a41049f5986fc19710ed6784a107d2c7",
+      "initial_ignored_file_count": 0,
+      "cleanup": "removed",
+      "disposable_cache_roots_removed": 0
+    },
+    {
+      "worktree": "/home/tangyuan/.codex/worktrees/b8dd/WorldSimReady-Home",
+      "initialized_submodules": [],
+      "archive_ref": "refs/archive/worktree-integration-20261023/09",
+      "initial_status": "",
+      "initial_head": "34301dc6a41049f5986fc19710ed6784a107d2c7",
+      "initial_ignored_file_count": 0,
+      "cleanup": "removed",
+      "disposable_cache_roots_removed": 0
+    },
+    {
+      "worktree": "/home/tangyuan/.codex/worktrees/c46d/WorldSimReady-Home",
+      "branch": "refs/heads/codex/organized-c46d-20261016",
+      "initialized_submodules": [],
+      "archive_ref": "refs/archive/worktree-integration-20261023/10",
+      "initial_status": "",
+      "initial_head": "755b2295292a05f05113e2de4391d61e34a85cda",
+      "initial_ignored_file_count": 92,
+      "cleanup": "retained_local_assets_environment_or_runtime",
+      "final_head": "755b2295292a05f05113e2de4391d61e34a85cda"
+    },
+    {
+      "worktree": "/home/tangyuan/.codex/worktrees/ca7b/WorldSimReady-Home",
+      "branch": "refs/heads/codex/openarm-benchmark-demo",
+      "initialized_submodules": [],
+      "archive_ref": "refs/archive/worktree-integration-20261023/11",
+      "initial_status": "",
+      "initial_head": "a537426a410abc7f5e437b7365effe77af06110c",
+      "initial_ignored_file_count": 37,
+      "cleanup": "retained_local_assets_environment_or_runtime",
+      "final_head": "a537426a410abc7f5e437b7365effe77af06110c"
+    },
+    {
+      "worktree": "/home/tangyuan/.codex/worktrees/e476/WorldSimReady-Home",
+      "branch": "refs/heads/codex/organized-e476-20261016",
+      "initialized_submodules": [],
+      "archive_ref": "refs/archive/worktree-integration-20261023/12",
+      "initial_status": "",
+      "initial_head": "755b2295292a05f05113e2de4391d61e34a85cda",
+      "initial_ignored_file_count": 261,
+      "cleanup": "retained_local_assets_environment_or_runtime",
+      "final_head": "755b2295292a05f05113e2de4391d61e34a85cda"
+    },
+    {
+      "worktree": "/home/tangyuan/WorldSimReady-Home/.worktrees/action-state-bundle-20261022",
+      "branch": "refs/heads/codex/action-state-bundle-20261022",
+      "initialized_submodules": [],
+      "archive_ref": "refs/archive/worktree-integration-20261023/13",
+      "initial_status": "",
+      "initial_head": "ce95a5ad40d00da39eeec0b43d102b74cc37baf2",
+      "initial_ignored_file_count": 3993,
+      "cleanup": "retained_local_assets_environment_or_runtime",
+      "final_head": "ce95a5ad40d00da39eeec0b43d102b74cc37baf2"
+    },
+    {
+      "worktree": "/home/tangyuan/WorldSimReady-Home/.worktrees/action-state-causality-20261021",
+      "branch": "refs/heads/codex/action-state-causality-20261021",
+      "initialized_submodules": [],
+      "archive_ref": "refs/archive/worktree-integration-20261023/14",
+      "initial_status": "",
+      "initial_head": "f3e0f870b419d73553ddde949d8be413f804ecd9",
+      "initial_ignored_file_count": 3992,
+      "cleanup": "removed",
+      "disposable_cache_roots_removed": 2
+    },
+    {
+      "worktree": "/home/tangyuan/WorldSimReady-Home/.worktrees/arena-5090-default24",
+      "branch": "refs/heads/codex/arena-5090-default24",
+      "initialized_submodules": [],
+      "archive_ref": "refs/archive/worktree-integration-20261023/15",
+      "initial_status": "",
+      "initial_head": "007732134bba64e47b52beb489f0c7363429cc1f",
+      "initial_ignored_file_count": 3992,
+      "cleanup": "removed",
+      "disposable_cache_roots_removed": 2
+    },
+    {
+      "worktree": "/home/tangyuan/WorldSimReady-Home/.worktrees/arena-domain-visual-20261016",
+      "branch": "refs/heads/codex/arena-domain-visual-20261016",
+      "initialized_submodules": [],
+      "archive_ref": "refs/archive/worktree-integration-20261023/16",
+      "initial_status": "",
+      "initial_head": "adbff2f700b89e2d8c248f8ba63c3aa817c55abd",
+      "initial_ignored_file_count": 64,
+      "cleanup": "retained_local_assets_environment_or_runtime",
+      "final_head": "adbff2f700b89e2d8c248f8ba63c3aa817c55abd"
+    },
+    {
+      "worktree": "/home/tangyuan/WorldSimReady-Home/.worktrees/arena-openarm-domain-20261016",
+      "branch": "refs/heads/codex/arena-openarm-domain-20261016",
+      "initialized_submodules": [],
+      "archive_ref": "refs/archive/worktree-integration-20261023/17",
+      "initial_status": "",
+      "initial_head": "f236c7b48fdc1c8648428da0262e1cde3125c003",
+      "initial_ignored_file_count": 154,
+      "cleanup": "retained_local_assets_environment_or_runtime",
+      "final_head": "f236c7b48fdc1c8648428da0262e1cde3125c003"
+    },
+    {
+      "worktree": "/home/tangyuan/WorldSimReady-Home/.worktrees/arm-home-scene-20261017",
+      "branch": "refs/heads/codex/arm-home-scene-20261017",
+      "initialized_submodules": [],
+      "archive_ref": "refs/archive/worktree-integration-20261023/18",
+      "initial_status": "",
+      "initial_head": "755a23f8b26e45b7e8f9e64830138c7c5fd7c942",
+      "initial_ignored_file_count": 130,
+      "cleanup": "retained_local_assets_environment_or_runtime",
+      "final_head": "755a23f8b26e45b7e8f9e64830138c7c5fd7c942"
+    },
+    {
+      "worktree": "/home/tangyuan/WorldSimReady-Home/.worktrees/autodata-arena-benchmark",
+      "branch": "refs/heads/codex/autodata-arena-benchmark",
+      "initialized_submodules": [],
+      "archive_ref": "refs/archive/worktree-integration-20261023/19",
+      "initial_status": "",
+      "initial_head": "1580a4ee93fb2f72e778741723df5eb82d81d104",
+      "initial_ignored_file_count": 3992,
+      "cleanup": "removed",
+      "disposable_cache_roots_removed": 2
+    },
+    {
+      "worktree": "/home/tangyuan/WorldSimReady-Home/.worktrees/autodata-interview-media",
+      "branch": "refs/heads/codex/autodata-interview-media",
+      "initialized_submodules": [
+        "AutoData/.git",
+        "IsaacLab-Arena/.git"
+      ],
+      "archive_ref": "refs/archive/worktree-integration-20261023/20",
+      "initial_status": "",
+      "initial_head": "f68acd394503048b21b7d36d724144783fa68040",
+      "initial_ignored_file_count": 3301,
+      "cleanup": "retained_local_assets_environment_or_runtime",
+      "final_head": "f68acd394503048b21b7d36d724144783fa68040"
+    },
+    {
+      "worktree": "/home/tangyuan/WorldSimReady-Home/.worktrees/autodata-lerobot-v3",
+      "branch": "refs/heads/codex/autodata-lerobot-v3",
+      "initialized_submodules": [],
+      "archive_ref": "refs/archive/worktree-integration-20261023/21",
+      "initial_status": "",
+      "initial_head": "d3f6f0bd17ddb7d98a38406abae33ce614e6b3e5",
+      "initial_ignored_file_count": 3994,
+      "cleanup": "removed",
+      "disposable_cache_roots_removed": 3
+    },
+    {
+      "worktree": "/home/tangyuan/WorldSimReady-Home/.worktrees/autodata-multirobot-v3",
+      "branch": "refs/heads/codex/autodata-multirobot-v3",
+      "initialized_submodules": [],
+      "archive_ref": "refs/archive/worktree-integration-20261023/22",
+      "initial_status": "",
+      "initial_head": "2c520765ba8bfa4e56de65c1b836a4a33967358d",
+      "initial_ignored_file_count": 3288,
+      "cleanup": "retained_local_assets_environment_or_runtime",
+      "final_head": "2c520765ba8bfa4e56de65c1b836a4a33967358d"
+    },
+    {
+      "worktree": "/home/tangyuan/WorldSimReady-Home/.worktrees/autodata-plan-scene-20261016",
+      "branch": "refs/heads/codex/autodata-plan-scene-20261016",
+      "initialized_submodules": [],
+      "archive_ref": "refs/archive/worktree-integration-20261023/23",
+      "initial_status": "",
+      "initial_head": "b5340ea7ff487a1bd11e6126f7d4fae8f61fa504",
+      "initial_ignored_file_count": 278,
+      "cleanup": "retained_local_assets_environment_or_runtime",
+      "final_head": "b5340ea7ff487a1bd11e6126f7d4fae8f61fa504"
+    },
+    {
+      "worktree": "/home/tangyuan/WorldSimReady-Home/.worktrees/autodata-ray",
+      "branch": "refs/heads/codex/autodata-ray",
+      "initialized_submodules": [],
+      "archive_ref": "refs/archive/worktree-integration-20261023/24",
+      "initial_status": "",
+      "initial_head": "df0d693299a694f2e253a1a40b4cea91b142624a",
+      "initial_ignored_file_count": 18,
+      "cleanup": "removed",
+      "disposable_cache_roots_removed": 2
+    },
+    {
+      "worktree": "/home/tangyuan/WorldSimReady-Home/.worktrees/autodata-semantic-metadata",
+      "branch": "refs/heads/codex/autodata-semantic-metadata",
+      "initialized_submodules": [],
+      "archive_ref": "refs/archive/worktree-integration-20261023/25",
+      "initial_status": "",
+      "initial_head": "5ec52e5c0dce0d497efdcaef9a89c302a8f689f4",
+      "initial_ignored_file_count": 3992,
+      "cleanup": "removed",
+      "disposable_cache_roots_removed": 2
+    },
+    {
+      "worktree": "/home/tangyuan/WorldSimReady-Home/.worktrees/banana-home-grasp-20261017",
+      "branch": "refs/heads/codex/banana-home-grasp-20261017",
+      "initialized_submodules": [],
+      "archive_ref": "refs/archive/worktree-integration-20261023/26",
+      "initial_status": "",
+      "initial_head": "eb87555e94d448544e7595e8d2693dd8bcc3ca03",
+      "initial_ignored_file_count": 96,
+      "cleanup": "retained_local_assets_environment_or_runtime",
+      "final_head": "eb87555e94d448544e7595e8d2693dd8bcc3ca03"
+    },
+    {
+      "worktree": "/home/tangyuan/WorldSimReady-Home/.worktrees/banana-wrist-force-20261017",
+      "branch": "refs/heads/codex/banana-wrist-force-20261017",
+      "initialized_submodules": [],
+      "archive_ref": "refs/archive/worktree-integration-20261023/27",
+      "initial_status": "",
+      "initial_head": "a414dd1db40bba50e08381ab70e937d6e34d0fb3",
+      "initial_ignored_file_count": 129,
+      "cleanup": "retained_local_assets_environment_or_runtime",
+      "final_head": "a414dd1db40bba50e08381ab70e937d6e34d0fb3"
+    },
+    {
+      "worktree": "/home/tangyuan/WorldSimReady-Home/.worktrees/data-mount-note",
+      "branch": "refs/heads/codex/data-mount-note",
+      "initialized_submodules": [],
+      "archive_ref": "refs/archive/worktree-integration-20261023/28",
+      "initial_status": "",
+      "initial_head": "574d8e4cd4592d8dae0169124e4ba97f6564301a",
+      "initial_ignored_file_count": 0,
+      "cleanup": "removed",
+      "disposable_cache_roots_removed": 0
+    },
+    {
+      "worktree": "/home/tangyuan/WorldSimReady-Home/.worktrees/experiment-chartbook-20261020",
+      "branch": "refs/heads/codex/experiment-chartbook-20261020",
+      "initialized_submodules": [],
+      "archive_ref": "refs/archive/worktree-integration-20261023/29",
+      "initial_status": "",
+      "initial_head": "83d705faa83a4709dc1d45c7babff2c28a14d81f",
+      "initial_ignored_file_count": 236,
+      "cleanup": "retained_local_assets_environment_or_runtime",
+      "final_head": "83d705faa83a4709dc1d45c7babff2c28a14d81f"
+    },
+    {
+      "worktree": "/home/tangyuan/WorldSimReady-Home/.worktrees/experiment-chartbook-sharp-20261022",
+      "branch": "refs/heads/codex/experiment-chartbook-sharp-20261022",
+      "initialized_submodules": [],
+      "archive_ref": "refs/archive/worktree-integration-20261023/30",
+      "initial_status": "",
+      "initial_head": "2868f7c3c12a5b353f1fe15063b8c97937c0435c",
+      "initial_ignored_file_count": 2,
+      "cleanup": "removed",
+      "disposable_cache_roots_removed": 2
+    },
+    {
+      "worktree": "/home/tangyuan/WorldSimReady-Home/.worktrees/experiment-chartbook-vector-20261022",
+      "branch": "refs/heads/codex/experiment-chartbook-vector-20261022",
+      "initialized_submodules": [],
+      "archive_ref": "refs/archive/worktree-integration-20261023/31",
+      "initial_status": "",
+      "initial_head": "f051c4e716d796bda839cec3c42e8af55172d650",
+      "initial_ignored_file_count": 2,
+      "cleanup": "removed",
+      "disposable_cache_roots_removed": 2
+    },
+    {
+      "worktree": "/home/tangyuan/WorldSimReady-Home/.worktrees/experimental-analysis-20261015",
+      "branch": "refs/heads/codex/experimental-analysis-20261015",
+      "initialized_submodules": [],
+      "archive_ref": "refs/archive/worktree-integration-20261023/32",
+      "initial_status": "",
+      "initial_head": "e5f361139f19b87ae003558a85b957b907046310",
+      "initial_ignored_file_count": 3992,
+      "cleanup": "removed",
+      "disposable_cache_roots_removed": 2
+    },
+    {
+      "worktree": "/home/tangyuan/WorldSimReady-Home/.worktrees/experimental-portfolio-report-20261019",
+      "branch": "refs/heads/codex/experimental-portfolio-report-20261019",
+      "initialized_submodules": [],
+      "archive_ref": "refs/archive/worktree-integration-20261023/33",
+      "initial_status": "",
+      "initial_head": "b2edfeaaf215abc5f225db8ad44678ebd23882fd",
+      "initial_ignored_file_count": 1,
+      "cleanup": "retained_local_assets_environment_or_runtime",
+      "final_head": "b2edfeaaf215abc5f225db8ad44678ebd23882fd"
+    },
+    {
+      "worktree": "/home/tangyuan/WorldSimReady-Home/.worktrees/franka-curobo-comparison-20261017",
+      "branch": "refs/heads/codex/franka-curobo-comparison-20261017",
+      "initialized_submodules": [],
+      "archive_ref": "refs/archive/worktree-integration-20261023/34",
+      "initial_status": "",
+      "initial_head": "f1bad8c475506b27f153664441e7e4bec7ded516",
+      "initial_ignored_file_count": 342,
+      "cleanup": "retained_local_assets_environment_or_runtime",
+      "final_head": "f1bad8c475506b27f153664441e7e4bec7ded516"
+    },
+    {
+      "worktree": "/home/tangyuan/WorldSimReady-Home/.worktrees/g1-data-visual-20261017",
+      "branch": "refs/heads/codex/g1-data-visual-20261017",
+      "initialized_submodules": [],
+      "archive_ref": "refs/archive/worktree-integration-20261023/35",
+      "initial_status": "",
+      "initial_head": "907e69fb58fdd1bf954989d0b3724f661a524d21",
+      "initial_ignored_file_count": 4316,
+      "cleanup": "retained_local_assets_environment_or_runtime",
+      "final_head": "907e69fb58fdd1bf954989d0b3724f661a524d21"
+    },
+    {
+      "worktree": "/home/tangyuan/WorldSimReady-Home/.worktrees/g1-home-domain-20261017",
+      "branch": "refs/heads/codex/g1-home-domain-20261017",
+      "initialized_submodules": [],
+      "archive_ref": "refs/archive/worktree-integration-20261023/36",
+      "initial_status": "",
+      "initial_head": "5bf0e536bea8b2f358e0f6a535c790ca39e44b04",
+      "initial_ignored_file_count": 4299,
+      "cleanup": "retained_local_assets_environment_or_runtime",
+      "final_head": "5bf0e536bea8b2f358e0f6a535c790ca39e44b04"
+    },
+    {
+      "worktree": "/home/tangyuan/WorldSimReady-Home/.worktrees/g1-home-scene-20261017",
+      "branch": "refs/heads/codex/g1-home-scene-20261017",
+      "initialized_submodules": [],
+      "archive_ref": "refs/archive/worktree-integration-20261023/37",
+      "initial_status": "",
+      "initial_head": "879b0e948473d75672152e2b74f0d8174f247eb7",
+      "initial_ignored_file_count": 4040,
+      "cleanup": "retained_local_assets_environment_or_runtime",
+      "final_head": "879b0e948473d75672152e2b74f0d8174f247eb7"
+    },
+    {
+      "worktree": "/home/tangyuan/WorldSimReady-Home/.worktrees/git-all-worktrees-20261016",
+      "initialized_submodules": [],
+      "archive_ref": "refs/archive/worktree-integration-20261023/38",
+      "initial_status": "",
+      "initial_head": "dedb148b151abe81542503cfe4e135a3771f5ed6",
+      "initial_ignored_file_count": 3992,
+      "cleanup": "removed",
+      "disposable_cache_roots_removed": 2
+    },
+    {
+      "worktree": "/home/tangyuan/WorldSimReady-Home/.worktrees/git-hygiene-20261016",
+      "initialized_submodules": [],
+      "archive_ref": "refs/archive/worktree-integration-20261023/39",
+      "initial_status": "",
+      "initial_head": "f346cc5d93c11fed02e9566953ce337015fa50ad",
+      "initial_ignored_file_count": 3992,
+      "cleanup": "removed",
+      "disposable_cache_roots_removed": 2
+    },
+    {
+      "worktree": "/home/tangyuan/WorldSimReady-Home/.worktrees/github-sync-20261020",
+      "branch": "refs/heads/codex/github-sync-20261020",
+      "initialized_submodules": [],
+      "archive_ref": "refs/archive/worktree-integration-20261023/40",
+      "initial_status": "",
+      "initial_head": "e730970d73618480914fa31d3d51bceca1394694",
+      "initial_ignored_file_count": 3993,
+      "cleanup": "removed",
+      "disposable_cache_roots_removed": 3
+    },
+    {
+      "worktree": "/home/tangyuan/WorldSimReady-Home/.worktrees/github-sync-20261022",
+      "branch": "refs/heads/codex/github-sync-20261022",
+      "initialized_submodules": [],
+      "archive_ref": "refs/archive/worktree-integration-20261023/41",
+      "initial_status": "",
+      "initial_head": "f9d246aa449c3a87072ead4b48e34a3e74dfd7f2",
+      "initial_ignored_file_count": 3992,
+      "cleanup": "removed",
+      "disposable_cache_roots_removed": 2
+    },
+    {
+      "worktree": "/home/tangyuan/WorldSimReady-Home/.worktrees/gpu-environment-parallelism-20261017",
+      "branch": "refs/heads/codex/gpu-environment-parallelism-20261017",
+      "initialized_submodules": [],
+      "archive_ref": "refs/archive/worktree-integration-20261023/42",
+      "initial_status": "",
+      "initial_head": "78b4585ef0db03d1228826c4106b820d649de1ed",
+      "initial_ignored_file_count": 4066,
+      "cleanup": "retained_local_assets_environment_or_runtime",
+      "final_head": "78b4585ef0db03d1228826c4106b820d649de1ed"
+    },
+    {
+      "worktree": "/home/tangyuan/WorldSimReady-Home/.worktrees/lightwheel-kitchen-local",
+      "branch": "refs/heads/codex/lightwheel-kitchen-local",
+      "initialized_submodules": [],
+      "archive_ref": "refs/archive/worktree-integration-20261023/43",
+      "initial_status": "",
+      "initial_head": "f20827b3c05e55ed2338e8f6c3b2b9c3e05815b5",
+      "initial_ignored_file_count": 4055,
+      "cleanup": "retained_local_assets_environment_or_runtime",
+      "final_head": "f20827b3c05e55ed2338e8f6c3b2b9c3e05815b5"
+    },
+    {
+      "worktree": "/home/tangyuan/WorldSimReady-Home/.worktrees/lightwheel-openpi-download-20261017",
+      "branch": "refs/heads/codex/lightwheel-openpi-download-20261017",
+      "initialized_submodules": [],
+      "archive_ref": "refs/archive/worktree-integration-20261023/44",
+      "initial_status": "",
+      "initial_head": "b8abf78c129d498315f553f059f744fecd2eb2a7",
+      "initial_ignored_file_count": 3994,
+      "cleanup": "removed",
+      "disposable_cache_roots_removed": 3
+    },
+    {
+      "worktree": "/home/tangyuan/WorldSimReady-Home/.worktrees/openarm-capability24-20261020",
+      "branch": "refs/heads/codex/openarm-capability24-20261020",
+      "initialized_submodules": [],
+      "archive_ref": "refs/archive/worktree-integration-20261023/45",
+      "initial_status": "",
+      "initial_head": "4a45d64fc002d16930906c6bd521750dadf0d479",
+      "initial_ignored_file_count": 0,
+      "cleanup": "removed",
+      "disposable_cache_roots_removed": 0
+    },
+    {
+      "worktree": "/home/tangyuan/WorldSimReady-Home/.worktrees/openarm-gs-head-video",
+      "branch": "refs/heads/codex/openarm-gs-head-video",
+      "initialized_submodules": [],
+      "archive_ref": "refs/archive/worktree-integration-20261023/46",
+      "initial_status": "?? workspace-overlays/openarm-gs-production/\n",
+      "initial_head": "f64adf2c0ad7a7aea21ea749be43dce5ada94528",
+      "initial_ignored_file_count": 3,
+      "cleanup": "retained_local_assets_environment_or_runtime",
+      "final_head": "2b1fe90f72303ede114b9fe2208a5817180b2161"
+    },
+    {
+      "worktree": "/home/tangyuan/WorldSimReady-Home/.worktrees/openarm-gs-production",
+      "branch": "refs/heads/codex/openarm-gs-production",
+      "initialized_submodules": [],
+      "archive_ref": "refs/archive/worktree-integration-20261023/47",
+      "initial_status": "",
+      "initial_head": "f2421cdfdea146c155da2478df5c2e8bbc7feb69",
+      "initial_ignored_file_count": 175,
+      "cleanup": "retained_local_assets_environment_or_runtime",
+      "final_head": "f2421cdfdea146c155da2478df5c2e8bbc7feb69"
+    },
+    {
+      "worktree": "/home/tangyuan/WorldSimReady-Home/.worktrees/openarm-gs-render",
+      "branch": "refs/heads/codex/openarm-gs-render",
+      "initialized_submodules": [],
+      "archive_ref": "refs/archive/worktree-integration-20261023/48",
+      "initial_status": "",
+      "initial_head": "53522f46b9b1ff19ba9994ec7d537390b80d9c70",
+      "initial_ignored_file_count": 2,
+      "cleanup": "retained_local_assets_environment_or_runtime",
+      "final_head": "53522f46b9b1ff19ba9994ec7d537390b80d9c70"
+    },
+    {
+      "worktree": "/home/tangyuan/WorldSimReady-Home/.worktrees/openarm-gs-wrist-video",
+      "branch": "refs/heads/codex/openarm-gs-wrist-video",
+      "initialized_submodules": [],
+      "archive_ref": "refs/archive/worktree-integration-20261023/49",
+      "initial_status": "",
+      "initial_head": "8e7203f714fd61baf611c997cdadd6514c7b20f0",
+      "initial_ignored_file_count": 1,
+      "cleanup": "removed",
+      "disposable_cache_roots_removed": 1
+    },
+    {
+      "worktree": "/home/tangyuan/WorldSimReady-Home/.worktrees/openarm-hdr-production-20261016",
+      "branch": "refs/heads/codex/openarm-hdr-production-20261016",
+      "initialized_submodules": [
+        "AutoData/.git"
+      ],
+      "archive_ref": "refs/archive/worktree-integration-20261023/50",
+      "initial_status": "",
+      "initial_head": "653b8bd38c3a7437b42e2cde8a647be9519aa4a6",
+      "initial_ignored_file_count": 4107,
+      "cleanup": "retained_local_assets_environment_or_runtime",
+      "final_head": "653b8bd38c3a7437b42e2cde8a647be9519aa4a6"
+    },
+    {
+      "worktree": "/home/tangyuan/WorldSimReady-Home/.worktrees/openarm-joint-space",
+      "branch": "refs/heads/codex/openarm-joint-space",
+      "initialized_submodules": [],
+      "archive_ref": "refs/archive/worktree-integration-20261023/51",
+      "initial_status": "",
+      "initial_head": "0bc42665ab04eab3bb6d4fe3f50c83cb4188cf24",
+      "initial_ignored_file_count": 3998,
+      "cleanup": "retained_local_assets_environment_or_runtime",
+      "final_head": "0bc42665ab04eab3bb6d4fe3f50c83cb4188cf24"
+    },
+    {
+      "worktree": "/home/tangyuan/WorldSimReady-Home/.worktrees/openarm-next-experiments-20261020",
+      "branch": "refs/heads/codex/openarm-next-experiments-20261020",
+      "initialized_submodules": [],
+      "archive_ref": "refs/archive/worktree-integration-20261023/52",
+      "initial_status": "",
+      "initial_head": "dabd4c22f3111a61e339c3324bb345232bda5645",
+      "initial_ignored_file_count": 234,
+      "cleanup": "retained_local_assets_environment_or_runtime",
+      "final_head": "dabd4c22f3111a61e339c3324bb345232bda5645"
+    },
+    {
+      "worktree": "/home/tangyuan/WorldSimReady-Home/.worktrees/openarm-task-error-20261021",
+      "branch": "refs/heads/codex/openarm-task-error-20261021",
+      "initialized_submodules": [],
+      "archive_ref": "refs/archive/worktree-integration-20261023/53",
+      "initial_status": "",
+      "initial_head": "05da984cc7dd20715a001f225e07e54ac872d4b5",
+      "initial_ignored_file_count": 4001,
+      "cleanup": "removed",
+      "disposable_cache_roots_removed": 3
+    },
+    {
+      "worktree": "/home/tangyuan/WorldSimReady-Home/.worktrees/openarm-task-error-explanation-20261021",
+      "branch": "refs/heads/codex/openarm-task-error-explanation-20261021",
+      "initialized_submodules": [],
+      "archive_ref": "refs/archive/worktree-integration-20261023/54",
+      "initial_status": "",
+      "initial_head": "3186ff753541446f9740757b2172845735515c05",
+      "initial_ignored_file_count": 3992,
+      "cleanup": "removed",
+      "disposable_cache_roots_removed": 2
+    },
+    {
+      "worktree": "/home/tangyuan/WorldSimReady-Home/.worktrees/production-capacity-20261019",
+      "branch": "refs/heads/codex/production-capacity-20261019",
+      "initialized_submodules": [],
+      "archive_ref": "refs/archive/worktree-integration-20261023/55",
+      "initial_status": "",
+      "initial_head": "4eee8c24a78db0593cb7f95d4c6582caedc4eda2",
+      "initial_ignored_file_count": 229,
+      "cleanup": "retained_local_assets_environment_or_runtime",
+      "final_head": "4eee8c24a78db0593cb7f95d4c6582caedc4eda2"
+    },
+    {
+      "worktree": "/home/tangyuan/WorldSimReady-Home/.worktrees/queue-gpu-preparation-20261017",
+      "branch": "refs/heads/codex/queue-gpu-preparation-20261017",
+      "initialized_submodules": [],
+      "archive_ref": "refs/archive/worktree-integration-20261023/56",
+      "initial_status": "",
+      "initial_head": "fd1c981a2904daf6385ab5786d511968837c88f8",
+      "initial_ignored_file_count": 3993,
+      "cleanup": "removed",
+      "disposable_cache_roots_removed": 3
+    },
+    {
+      "worktree": "/home/tangyuan/WorldSimReady-Home/.worktrees/recovered-codex-session-index",
+      "branch": "refs/heads/codex/recovered-codex-session-index",
+      "initialized_submodules": [],
+      "archive_ref": "refs/archive/worktree-integration-20261023/57",
+      "initial_status": "",
+      "initial_head": "d8ec43631e4d9447cf51af23b73b1f8065835d7d",
+      "initial_ignored_file_count": 3992,
+      "cleanup": "removed",
+      "disposable_cache_roots_removed": 2
+    },
+    {
+      "worktree": "/home/tangyuan/WorldSimReady-Home/.worktrees/worktree-integration-20261023",
+      "branch": "refs/heads/codex/worktree-integration-20261023",
+      "initialized_submodules": [],
+      "archive_ref": "refs/archive/worktree-integration-20261023/58",
+      "initial_status": "",
+      "initial_head": "f64adf2c0ad7a7aea21ea749be43dce5ada94528",
+      "initial_ignored_file_count": 1,
+      "cleanup": "current_integration_worktree",
+      "final_head": "f26e70c4f0dbced1767ee70068fac2221cb409ab"
+    }
+  ],
+  "preservation": {
+    "stash": "d635e9db48644b21054c519a1bb532eb71d0a69d",
+    "backup_dir": "/home/tangyuan/WorldSimReady-Home/.git/worktree-integration-20261023-backup",
+    "archived_head_count": 59
+  },
+  "cleanup": {
+    "inventoried_worktrees": 59,
+    "removed": 29,
+    "remaining": 30,
+    "forced_removals": 0,
+    "branch_deletions": 0,
+    "runtime_deletions": 0
+  },
+  "validation": {
+    "script_tests": 42,
+    "shared_config_tests": 8,
+    "production_host_tests": 53,
+    "gs_configuration_hashes_verified": 27,
+    "sealed_manifests": 27,
+    "sealed_payload_files": 547,
+    "source_root": "/home/tangyuan/WorldSimReady-Home",
+    "python": "/home/tangyuan/WorldSimReady-Home/runs/lerobot-v3-conversion-env/bin/python",
+    "ffmpeg_library_paths": [
+      "runs/lerobot-v3-conversion-env/ffmpeg-libs",
+      "runs/lerobot-v3-conversion-env/lib/python3.12/site-packages/av.libs"
+    ],
+    "scope": "Host tests and static/source integrity checks only; no new GPU run, independent approval or main promotion"
+  },
+  "main_promotion": "PR plus separate approval remains required"
+}
