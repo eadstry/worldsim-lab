@@ -56,3 +56,8 @@
 | 20261022 | [server-shutdown-recovery-20261022](server-shutdown-recovery-20261022.md) | 报告或说明，验证范围见正文 |
 
 [分支来源清单](integration/branches-20261022.json) · [作品集资料](experiment-portfolio/README.md) · [LeRobot v3 格式](lerobot-v3/README.md) · [OpenArm 误差分析](openarm-task-error/README.md)
+## action–state 差值资料归档
+
+| 创建日期 | 文档 | 内容 |
+| --- | --- | --- |
+| 2026-10-22 | [实验与报告汇总](action-state-causality-20261022.md) | 两轮差值实验、历史报告与原始数据的本地压缩包说明；附[文件清单](action-state-causality-20261022-manifest.json)和[完整性校验](action-state-causality-20261022-verification.json)。 |

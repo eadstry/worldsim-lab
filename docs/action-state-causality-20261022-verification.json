@@ -1,0 +1,17 @@
+{
+  "created_date": "2026-10-22",
+  "archive": "action-state-causality-20261022.zip",
+  "archive_bytes": 198603518,
+  "archive_sha256": "e6bf7462a7ea5a7483c25b49cf7b4e69c37aabd86c1d3570c4b95f32e42302af",
+  "archive_entries": 899,
+  "source_files": 898,
+  "source_total_bytes": 297421404,
+  "checks": {
+    "zip_crc": "passed",
+    "every_payload_sha256": "passed",
+    "source_bytes_unchanged_during_packaging": "passed",
+    "embedded_manifest_matches": "passed"
+  },
+  "validation_scope": "Archive integrity only; historical experiments were not rerun",
+  "archive_git_policy": "local only; raw dataset archive excluded from synchronization"
+}
