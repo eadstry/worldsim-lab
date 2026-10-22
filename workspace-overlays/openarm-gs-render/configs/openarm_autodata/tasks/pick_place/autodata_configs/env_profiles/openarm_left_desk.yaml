@@ -1,0 +1,8 @@
+# Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-License-Identifier: Apache-2.0
+
+# Standard AutoData profile: scene geometry is selected by the registered base_env.
+name: openarm_left_desk
+description: OpenArm left-arm pick-place in the desk scene.
+base_env: Isaac-PickPlace-Cube-OpenArm-Desk-Bimanual-Left-IK-Rel-v0
+planner: openarm_pick_place_left_desk

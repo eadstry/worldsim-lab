@@ -1,0 +1,142 @@
+{
+  "package": "OpenArm_GS_config_assets_20261017_193312.zip",
+  "source_commit": "1bf7a3ba28d735de052582e9bd86a4000533f736",
+  "scope": "Unmodified configuration reference snapshot; dependent framework and assets are prepared from the local package, not imported from this snapshot",
+  "files": [
+    {
+      "path": "openarm_autodata/shared/autodata_configs/planners/openarm_right.yml",
+      "package_member": "OpenArm_GS_config_assets_20261017_193312/AutoData/openarm_autodata/shared/autodata_configs/planners/openarm_right.yml",
+      "sha256": "85b5f6dc7639c8645376aa695be1852607bc1eae412ccdb07ffa91c095c1b9fb"
+    },
+    {
+      "path": "openarm_autodata/shared/calibration/cameras.json",
+      "package_member": "OpenArm_GS_config_assets_20261017_193312/AutoData/openarm_autodata/shared/calibration/cameras.json",
+      "sha256": "e529c94b96d6c187cd94cc27a4b5bb2a8d07a969fe89b0f28decc52a73884c37"
+    },
+    {
+      "path": "openarm_autodata/shared/configs/__init__.py",
+      "package_member": "OpenArm_GS_config_assets_20261017_193312/AutoData/openarm_autodata/shared/configs/__init__.py",
+      "sha256": "e4b71e780b4bdb0415ad3b7d06b69000279666ceee450fae760786bc4f2c0e34"
+    },
+    {
+      "path": "openarm_autodata/shared/configs/camera_cfg.py",
+      "package_member": "OpenArm_GS_config_assets_20261017_193312/AutoData/openarm_autodata/shared/configs/camera_cfg.py",
+      "sha256": "3bed16ded69f04e532f92b27c8806e3400babb5241b625cc2e89d68d9e07d6bc"
+    },
+    {
+      "path": "openarm_autodata/shared/configs/robot_v2_cfg.py",
+      "package_member": "OpenArm_GS_config_assets_20261017_193312/AutoData/openarm_autodata/shared/configs/robot_v2_cfg.py",
+      "sha256": "28a935145388f6d00dcc1f7259e8f5b930a8426737a02f8bba6717e7885dce7a"
+    },
+    {
+      "path": "openarm_autodata/shared/planner_cfg.py",
+      "package_member": "OpenArm_GS_config_assets_20261017_193312/AutoData/openarm_autodata/shared/planner_cfg.py",
+      "sha256": "66f0e74ac4df28c2888dab4f444c294b82fa8ca8a394941d0f3aefa815d59509"
+    },
+    {
+      "path": "openarm_autodata/tasks/pick_place/autodata_configs/embodiments/openarm_bimanual_left_ik_rel.yaml",
+      "package_member": "OpenArm_GS_config_assets_20261017_193312/AutoData/openarm_autodata/tasks/pick_place/autodata_configs/embodiments/openarm_bimanual_left_ik_rel.yaml",
+      "sha256": "4ffae4f860d189184fe532983a7c7ac124a733c8515101b9d66fb0ed8f353c13"
+    },
+    {
+      "path": "openarm_autodata/tasks/pick_place/autodata_configs/embodiments/openarm_bimanual_right_ik_rel.yaml",
+      "package_member": "OpenArm_GS_config_assets_20261017_193312/AutoData/openarm_autodata/tasks/pick_place/autodata_configs/embodiments/openarm_bimanual_right_ik_rel.yaml",
+      "sha256": "9fe01ad9ed5c46093c407b7acf0e8f1ddc2f417062e60feb1010bbed05e70e00"
+    },
+    {
+      "path": "openarm_autodata/tasks/pick_place/autodata_configs/env_profiles/openarm_left_desk.yaml",
+      "package_member": "OpenArm_GS_config_assets_20261017_193312/AutoData/openarm_autodata/tasks/pick_place/autodata_configs/env_profiles/openarm_left_desk.yaml",
+      "sha256": "3baad591cf9924ec21cba9b2e4e332b9f2416f3519827b90287107565b86ca3f"
+    },
+    {
+      "path": "openarm_autodata/tasks/pick_place/autodata_configs/env_profiles/openarm_left_gs_table.yaml",
+      "package_member": "OpenArm_GS_config_assets_20261017_193312/AutoData/openarm_autodata/tasks/pick_place/autodata_configs/env_profiles/openarm_left_gs_table.yaml",
+      "sha256": "b3fbeea29662d48bd1c03e405c7074ff9c63a7bab40b7bea89fbdd1b9e478b31"
+    },
+    {
+      "path": "openarm_autodata/tasks/pick_place/autodata_configs/env_profiles/openarm_left_skillgen.yaml",
+      "package_member": "OpenArm_GS_config_assets_20261017_193312/AutoData/openarm_autodata/tasks/pick_place/autodata_configs/env_profiles/openarm_left_skillgen.yaml",
+      "sha256": "59031a52d3766fcf3083056d00e324ce4cf34cf4147e76d21bb2a02bbf821850"
+    },
+    {
+      "path": "openarm_autodata/tasks/pick_place/autodata_configs/env_profiles/openarm_right_desk.yaml",
+      "package_member": "OpenArm_GS_config_assets_20261017_193312/AutoData/openarm_autodata/tasks/pick_place/autodata_configs/env_profiles/openarm_right_desk.yaml",
+      "sha256": "73950c36eef7ba1981377ac3913a6401a34467b3e88f9bdb50b092893f67d25a"
+    },
+    {
+      "path": "openarm_autodata/tasks/pick_place/autodata_configs/env_profiles/openarm_right_gs_table.yaml",
+      "package_member": "OpenArm_GS_config_assets_20261017_193312/AutoData/openarm_autodata/tasks/pick_place/autodata_configs/env_profiles/openarm_right_gs_table.yaml",
+      "sha256": "c3741a3138febffd84daa3de0b0c4113ea90786037a2d1e7a72b135e0bc63596"
+    },
+    {
+      "path": "openarm_autodata/tasks/pick_place/autodata_configs/env_profiles/openarm_right_skillgen.yaml",
+      "package_member": "OpenArm_GS_config_assets_20261017_193312/AutoData/openarm_autodata/tasks/pick_place/autodata_configs/env_profiles/openarm_right_skillgen.yaml",
+      "sha256": "879179deddb1d5d09970fb433d77c4646978cf63a627b9e4f58dd401b6a5b058"
+    },
+    {
+      "path": "openarm_autodata/tasks/pick_place/autodata_configs/tasks/openarm_bimanual_left_pick_place.yaml",
+      "package_member": "OpenArm_GS_config_assets_20261017_193312/AutoData/openarm_autodata/tasks/pick_place/autodata_configs/tasks/openarm_bimanual_left_pick_place.yaml",
+      "sha256": "2d1eb17807433f2a898d11574e5b32c0bbdba0cbc9c6b3888ab568f58160823b"
+    },
+    {
+      "path": "openarm_autodata/tasks/pick_place/autodata_configs/tasks/openarm_bimanual_right_pick_place.yaml",
+      "package_member": "OpenArm_GS_config_assets_20261017_193312/AutoData/openarm_autodata/tasks/pick_place/autodata_configs/tasks/openarm_bimanual_right_pick_place.yaml",
+      "sha256": "d823ed196a8799e4f9ca4128b83ed7a2ad6a35d16afcfd242aa065c4f0f4d5ca"
+    },
+    {
+      "path": "openarm_autodata/tasks/pick_place/configs/__init__.py",
+      "package_member": "OpenArm_GS_config_assets_20261017_193312/AutoData/openarm_autodata/tasks/pick_place/configs/__init__.py",
+      "sha256": "1597c4aaff6ada9bef3d5f610e98c12229a558f3441a7409d050459ca073a3bc"
+    },
+    {
+      "path": "openarm_autodata/tasks/pick_place/configs/desk_env_cfg.py",
+      "package_member": "OpenArm_GS_config_assets_20261017_193312/AutoData/openarm_autodata/tasks/pick_place/configs/desk_env_cfg.py",
+      "sha256": "2e06535cd8212727d00732169397127751c7c3cea40ea3004de6d739e29a85e9"
+    },
+    {
+      "path": "openarm_autodata/tasks/pick_place/configs/env_cfg.py",
+      "package_member": "OpenArm_GS_config_assets_20261017_193312/AutoData/openarm_autodata/tasks/pick_place/configs/env_cfg.py",
+      "sha256": "b9003a66a7ab98fbcd1a100a0aa38a88af8eabee607f25ae1d48bb4c7289f9f8"
+    },
+    {
+      "path": "openarm_autodata/tasks/pick_place/configs/ker_env_cfg.py",
+      "package_member": "OpenArm_GS_config_assets_20261017_193312/AutoData/openarm_autodata/tasks/pick_place/configs/ker_env_cfg.py",
+      "sha256": "376386c6054da360414e867b7e2a7de5d8bb58b7ac12f538822ecc7f33a4de5e"
+    },
+    {
+      "path": "openarm_autodata/tasks/pick_place/configs/left_env_cfg.py",
+      "package_member": "OpenArm_GS_config_assets_20261017_193312/AutoData/openarm_autodata/tasks/pick_place/configs/left_env_cfg.py",
+      "sha256": "74e0994e5e460fc8176411cc4e8d94debde01edf9677904bdae7d0a3c96d0f36"
+    },
+    {
+      "path": "openarm_autodata/tasks/pick_place/configs/prop_assets.py",
+      "package_member": "OpenArm_GS_config_assets_20261017_193312/AutoData/openarm_autodata/tasks/pick_place/configs/prop_assets.py",
+      "sha256": "bc192ae593886f615f0add369475aac31568d8ddcf9fe8a69b8b7e271a8459e1"
+    },
+    {
+      "path": "openarm_autodata/tasks/pick_place/configs/scene_cfg.py",
+      "package_member": "OpenArm_GS_config_assets_20261017_193312/AutoData/openarm_autodata/tasks/pick_place/configs/scene_cfg.py",
+      "sha256": "95185688dcbbd45add2aa640b31ec38c49aeb27e2ab81aa46c2584e34f6ea725"
+    },
+    {
+      "path": "openarm_autodata/tasks/pick_place/configs/scene_layout.py",
+      "package_member": "OpenArm_GS_config_assets_20261017_193312/AutoData/openarm_autodata/tasks/pick_place/configs/scene_layout.py",
+      "sha256": "1953326968e6aaa09b10481101005d205ae279afafbd7e8b28e89580aec83602"
+    },
+    {
+      "path": "openarm_autodata/tasks/pick_place/configs/scenes/desk.yaml",
+      "package_member": "OpenArm_GS_config_assets_20261017_193312/AutoData/openarm_autodata/tasks/pick_place/configs/scenes/desk.yaml",
+      "sha256": "b96755312002a716a864d9744f0760204b3bc016c6ca7762c75b9ea302d8b637"
+    },
+    {
+      "path": "openarm_autodata/tasks/pick_place/configs/scenes/gs_table.yaml",
+      "package_member": "OpenArm_GS_config_assets_20261017_193312/AutoData/openarm_autodata/tasks/pick_place/configs/scenes/gs_table.yaml",
+      "sha256": "88ab13aadc58632717d9f69e2a0e1b5495fab6756b55db6aef9881246f89ac11"
+    },
+    {
+      "path": "openarm_autodata/tasks/pick_place/planner_cfg.py",
+      "package_member": "OpenArm_GS_config_assets_20261017_193312/AutoData/openarm_autodata/tasks/pick_place/planner_cfg.py",
+      "sha256": "19e931e79976341dc22c14ce715812fccf14ab34d943c096bc1d02a65bdc9d79"
+    }
+  ]
+}

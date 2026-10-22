@@ -61,3 +61,9 @@
 | 创建日期 | 文档 | 内容 |
 | --- | --- | --- |
 | 2026-10-22 | [实验与报告汇总](action-state-causality-20261022.md) | 两轮差值实验、历史报告与原始数据的本地压缩包说明；附[文件清单](action-state-causality-20261022-manifest.json)和[完整性校验](action-state-causality-20261022-verification.json)。 |
+
+## 2026-10-23 配置与验证
+
+| 创建日期 | 文档 | 内容 |
+| --- | --- | --- |
+| 2026-10-23 | [OpenArm GS 配置检查与渲染](openarm-gs-render-20261023.md) | 新配置归档、185 项哈希检查和 Isaac Sim 高斯场景 RGB 样例；不含任务动力学验证 |

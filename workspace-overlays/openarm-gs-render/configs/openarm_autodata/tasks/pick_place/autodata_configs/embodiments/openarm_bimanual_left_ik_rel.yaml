@@ -1,0 +1,20 @@
+# Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-License-Identifier: Apache-2.0
+
+type: delta_pose_ik_single_arm
+name: openarm_bimanual_left
+description: Left arm of the OpenArm bimanual robot with scaled relative-pose IK control.
+
+eef_name: left
+
+pose_obs_keys:
+  pos: left_tcp_pos_env
+  quat: left_tcp_quat_env
+
+action_layout:
+  gripper_dim: 1
+  position_action_scale: 0.02
+  rotation_action_scale: 0.10
+  pose_action_limit: 0.2
+
+eef_offset: [0.0, 0.0, 0.0]
