@@ -5,7 +5,7 @@
 | 主题 | 入口 | 内容 |
 | --- | --- | --- |
 | AutoData | [资料与阅读顺序](autodata/README.md) | 原理、数据流、随机化可视化及博客正文来源 |
-| Arena 与共用配置 | [成果索引](../outputs/README.md) | 示例运行说明、RoboLab 配置、AutoData/Arena 共用配置建议 |
+| Arena 与共用配置 | [基准搭建分析](autodata-arena-benchmark-20261022.md) · [成果索引](../outputs/README.md) | AutoData 场景/config 到 Arena 的映射、评测协议与实施缺口 |
 | 运行环境 | [环境配置](environment-setup.md) | 主机、仓库、容器与原生环境、机器本地参数及验收顺序 |
 | 主机环境 | [存储挂载记录](host-storage.md) | `/data` 挂载容量及截图中的存储信息 |
 | 版本管理与过程记录 | [管理约定](version-management.md) · [问题与改进](process-log.md) | 分支、worktree、锁定检查、快照保护及待解决事项 |
@@ -30,3 +30,9 @@
 - [OpenArm 图像与隔离导出诊断](experiments/openarm-readiness-20261020.md)：历史运行结果及证据边界。
 - [实验图册](../outputs/experiment-chartbook/v001/report.md)：19 张图、原始记录、指标索引与 PDF。
 - [最新改动集成记录](main-integration-20261020.md)：迁移来源、适配和检查范围。
+
+## 按创建日期归档的报告
+
+| 创建日期 | 文档 | 内容 |
+| --- | --- | --- |
+| 2026-10-22 | [AutoData / Arena 自有具身评测基准](autodata-arena-benchmark-20261022.md) | 场景与配置映射、任务判据、测试划分、指标及落地顺序 |

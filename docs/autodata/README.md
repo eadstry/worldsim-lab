@@ -9,6 +9,7 @@
 | [全流程可视化讲解：历史 HTML](AutoData-全流程可视化讲解.html) | 保留原始参考版，后续完整文章编辑使用下方博客 Markdown |
 | [全流程文章：正文编辑源](../../private-blog/content/autodata/AutoData-全流程可视化讲解.md) | 博客维护说明指定的唯一正文来源；修改后执行博客构建和检查 |
 | [博客维护说明](../../private-blog/README.md) | 构建命令、图示、样式和章节锚点约定 |
+| [自有具身评测基准分析（2026-10-22）](../autodata-arena-benchmark-20261022.md) | 从现有场景与 config 复用到 Arena 的接入、协议、统计与缺口 |
 | [版本化成果](../../outputs/README.md) | 查看 AutoData 文章交付快照及配置研究报告 |
 
 本目录三个原始资料文件从工作区根目录移入，保留名称。Markdown 的源码链接相对于本目录指向 `../../AutoData/`；文中以代码形式书写的源码路径仍相对于 AutoData 仓库根目录。阅读源码前先读 [AutoData 工作规则](../../AutoData/AGENTS.md)。
