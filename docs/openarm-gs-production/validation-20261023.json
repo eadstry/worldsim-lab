@@ -1,0 +1,116 @@
+{
+  "date": "2026-10-23",
+  "generation": {
+    "algorithm": "skillgen",
+    "env_profile": {
+      "name": "openarm_left_gs_table",
+      "path": "/home/tangyuan/WorldSimReady-Home/.worktrees/openarm-gs-production/workspace-overlays/openarm-gs-production/runtime/openarm_autodata/tasks/pick_place/autodata_configs/env_profiles/openarm_left_gs_table.yaml",
+      "planner": "openarm_pick_place_left_gs_table"
+    },
+    "num_attempts": 1,
+    "num_failures": 0,
+    "num_success": 1,
+    "requested_trials": 1
+  },
+  "replay": {
+    "task": "Isaac-PickPlace-Cube-OpenArm-GS-Bimanual-Left-IK-Rel-v0",
+    "input_sha256": "7feec70707608ae23a61816124fe2c12e2dc5455b66e67606f35aae5c1c3ef5f",
+    "recorded_success": true,
+    "replay_final_success": true,
+    "frames": 1318,
+    "fps": 15,
+    "duration_s": 87.86666666666666,
+    "steps": 2636,
+    "step_dt": 0.03333333333333333,
+    "resolution": [
+      1280,
+      960
+    ],
+    "rgb_stream_shapes": {
+      "left_hand_rgb": [
+        2636,
+        480,
+        640,
+        3
+      ],
+      "right_hand_rgb": [
+        2636,
+        480,
+        640,
+        3
+      ],
+      "third_person_rgb": [
+        2636,
+        480,
+        640,
+        3
+      ]
+    },
+    "camera": "Additional preview camera; original task cameras/configuration remain unchanged",
+    "max_cube_position_difference_m": 0.0,
+    "final_cube_position_difference_m": 0.0,
+    "video_sha256": "7ecfade8ba340eb43e88a1865e36461372ab0ac1b808a3ecc09bcb63c8973f1c"
+  },
+  "video": {
+    "status": "passed",
+    "decoded_frames": 1318,
+    "metadata": {
+      "ffmpeg_version": "7.0.2-static https://johnvansickle.com/ffmpeg/ built with gcc 8 (Debian 8.3.0-6)",
+      "codec": "h264",
+      "pix_fmt": "yuv420p(progressive)",
+      "fps": 15.0,
+      "source_size": [
+        1280,
+        960
+      ],
+      "size": [
+        1280,
+        960
+      ],
+      "rotate": 0,
+      "duration": 87.87
+    },
+    "sha256": "7ecfade8ba340eb43e88a1865e36461372ab0ac1b808a3ecc09bcb63c8973f1c"
+  },
+  "source": {
+    "success": true,
+    "stable_lift": true,
+    "frames": 1368,
+    "phases": {
+      "descend": 424,
+      "lower": 944
+    }
+  },
+  "input_code_stability": {
+    "checked_files": 11,
+    "unchanged": true
+  },
+  "prepared_package": {
+    "package_sha256": "4664f143fe5904d1d7cc0dd8e1fa18e4bdc9f5ac6780434a5952acfe92ab21df",
+    "manifest_files_verified": 185,
+    "source_commit": "1bf7a3ba28d735de052582e9bd86a4000533f736"
+  },
+  "task_source": {
+    "files": {
+      "/home/tangyuan/WorldSimReady-Home/AutoData/scripts/generate_dataset.py": "bb36958579a7e20d8b2b4cccc7f4dd545a89ad956e21434572699cfd3999df01",
+      "/home/tangyuan/WorldSimReady-Home/workspace-overlays/openarm-production/generate.py": "028a03f3c75fe46131bd03f17634cb6ed44ae0f4f7274e01ba4fe41d92195ff4",
+      "/home/tangyuan/WorldSimReady-Home/workspace-overlays/openarm-production/compat.py": "0f7df8d7a65f1178645aa02c53d733baa2dfc13e0a5435d81b54235d16f6023a",
+      "/home/tangyuan/WorldSimReady-Home/workspace-overlays/openarm-production/runtime/patches/curobo_planner.py": "95bee7d993e66fc3028c7bed509fa0e13b86d00d2bb5648cb3a765e34452dda0",
+      "/home/tangyuan/WorldSimReady-Home/workspace-overlays/openarm-production/runtime/patches/single_arm_embodiment_adapter.py": "60eef2725d396e375aa55ad5a1f2ccb3630a2990772518df9ac363826f69a7b7",
+      "/home/tangyuan/WorldSimReady-Home/runs/openarm-gs-render-20261023-r3/assets/OpenArm_GS_config_assets_20261017_193312/AutoData/openarm_autodata/tasks/pick_place/autodata_configs/tasks/openarm_bimanual_left_pick_place.yaml": "2d1eb17807433f2a898d11574e5b32c0bbdba0cbc9c6b3888ab568f58160823b",
+      "/home/tangyuan/WorldSimReady-Home/runs/openarm-gs-render-20261023-r3/assets/OpenArm_GS_config_assets_20261017_193312/AutoData/openarm_autodata/tasks/pick_place/autodata_configs/env_profiles/openarm_left_gs_table.yaml": "b3fbeea29662d48bd1c03e405c7074ff9c63a7bab40b7bea89fbdd1b9e478b31",
+      "/home/tangyuan/WorldSimReady-Home/runs/openarm-gs-render-20261023-r3/assets/OpenArm_GS_config_assets_20261017_193312/AutoData/openarm_autodata/tasks/pick_place/autodata_configs/embodiments/openarm_bimanual_left_ik_rel.yaml": "4ffae4f860d189184fe532983a7c7ac124a733c8515101b9d66fb0ed8f353c13",
+      "/home/tangyuan/WorldSimReady-Home/runs/openarm-gs-production-20261023/source-r3/source-ready.hdf5": "a94aae5aea1c0cedfff421bc07351b7bf65e881b34aa769bfa22ae7f57e94ad3",
+      "/home/tangyuan/WorldSimReady-Home/.worktrees/openarm-gs-production/workspace-overlays/openarm-gs-production/generate.py": "cc3b059785d878f1d5709bb7620894fa024f74bced2ac5e2676e1b34e725f763",
+      "/home/tangyuan/WorldSimReady-Home/.worktrees/openarm-gs-production/workspace-overlays/openarm-gs-production/planner_compat.py": "8c7f49e972e635b37daaaaa9f18076670890cfd6f2dca8c44e6a7dbd181033bb"
+    },
+    "scope": "Actual AutoData SkillGen; source collected in GS physics; supplied task/profile/thresholds unchanged; requested one successful episode"
+  },
+  "queue_ids": {
+    "source": 344,
+    "generation": 346,
+    "replay": 347,
+    "decode": 348
+  },
+  "scope": "One configured GS task, experimental measured source, actual SkillGen and independent action replay. Not a success-rate benchmark or a learned policy."
+}
