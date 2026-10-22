@@ -4,7 +4,7 @@
 
 | 主题 | 入口 | 内容 |
 | --- | --- | --- |
-| AutoData | [资料与阅读顺序](autodata/README.md) · [Ray 直接导出](autodata/autodata-ray-20261022.md) · [生产实验](autodata/autodata-ray-20261022-r02.md) · [PDF](autodata/autodata-ray-20261022-r02.pdf) | 原理、数据流与可视化；2026-10-22：Ray 并行 LeRobot v3 直接导出、容量与生产效率实验 |
+| AutoData | [资料与阅读顺序](autodata/README.md) · [Ray 直接导出](autodata/autodata-ray-20261022.md) · [生产实验](autodata/autodata-ray-20261022-r02.md) · [PDF](autodata/autodata-ray-20261022-r02.pdf) · [图解版](autodata/autodata-ray-20261022-r03.md) · [图解 PDF](autodata/autodata-ray-20261022-r03.pdf) | 原理、数据流与可视化；2026-10-22：Ray 并行 LeRobot v3 直接导出、容量与生产效率实验 |
 | Arena 与共用配置 | [成果索引](../outputs/README.md) | 示例运行说明、RoboLab 配置、AutoData/Arena 共用配置建议 |
 | 运行环境 | [环境配置](environment-setup.md) | 主机、仓库、容器与原生环境、机器本地参数及验收顺序 |
 | 主机环境 | [存储挂载记录](host-storage.md) | `/data` 挂载容量及截图中的存储信息 |
