@@ -1,0 +1,7 @@
+{
+  "overlay": "workspace-overlays/experiment-chartbook",
+  "entrypoint": "build_sharp.py",
+  "source_manifest_sha256": "a8a0f3e1e037d9d68253ab0bb866f14eef1186d943e4a879b7784b320d1a2609",
+  "source_version": "v001",
+  "reproduction": "python build_sharp.py --source-bundle outputs/experiment-chartbook/v001 --output outputs/experiment-chartbook/vNNN"
+}

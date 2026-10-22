@@ -1,0 +1,158 @@
+﻿figure,metric,condition,value,unit,sample_n,source,scope
+01,interface_checks_passed,shared,16,checks,16,shared,接口检查
+02,final_ready_rate,workers=0,1.24488100069697,episodes/min,24,export24,最终文件就绪；严格终态另列
+02,terminal_passes,workers=0,23,episodes,24,export24,最终文件就绪；严格终态另列
+02,final_ready_rate,workers=1,1.408734552387974,episodes/min,24,export24,最终文件就绪；严格终态另列
+02,terminal_passes,workers=1,23,episodes,24,export24,最终文件就绪；严格终态另列
+02,final_ready_rate,workers=2,1.6157537679944505,episodes/min,24,export24,最终文件就绪；严格终态另列
+02,terminal_passes,workers=2,23,episodes,24,export24,最终文件就绪；严格终态另列
+03,final_ready_rate,同步,0.9606287286209964,episodes/min,17,export16,16 成功目标；每配置 17 次尝试
+03,final_ready_rate,上限 4,1.4913609097689304,episodes/min,17,export16,16 成功目标；每配置 17 次尝试
+03,final_ready_rate,上限 8,1.5978292078795155,episodes/min,17,export16,16 成功目标；每配置 17 次尝试
+03,final_ready_rate,auto,1.5393300659812668,episodes/min,17,export16,16 成功目标；每配置 17 次尝试
+04,terminal_accepted_rate,pilot-workers0,0.21832882413961086,episodes/min,1,capacity,仅生产模式；未独立文件验收
+04,terminal_accepted_rate,pilot-workers2,0.4149636099045506,episodes/min,1,capacity,仅生产模式；未独立文件验收
+04,terminal_accepted_rate,screen-env1-workers0-seed101,0.38628054968533404,episodes/min,4,capacity,仅生产模式；未独立文件验收
+04,terminal_accepted_rate,screen-env1-workers2-seed101,0.5043960320929541,episodes/min,4,capacity,仅生产模式；未独立文件验收
+04,terminal_accepted_rate,screen-env1-workersauto-seed101,0.4729515221182105,episodes/min,4,capacity,仅生产模式；未独立文件验收
+04,terminal_accepted_rate,screen-env4-workers0-seed101,0.6144319685512418,episodes/min,4,capacity,仅生产模式；未独立文件验收
+04,terminal_accepted_rate,screen-env4-workers2-seed101,0.7511738194215009,episodes/min,4,capacity,仅生产模式；未独立文件验收
+04,terminal_accepted_rate,screen-env4-workersauto-seed101,0.7349448387151302,episodes/min,4,capacity,仅生产模式；未独立文件验收
+04,terminal_accepted_rate,screen-env1-workersauto-seed202,0.44907784082708,episodes/min,4,capacity,仅生产模式；未独立文件验收
+04,terminal_accepted_rate,screen-env1-workers2-seed202,0.4757444374622341,episodes/min,4,capacity,仅生产模式；未独立文件验收
+04,terminal_accepted_rate,screen-env1-workers0-seed202,0.4008576797683052,episodes/min,4,capacity,仅生产模式；未独立文件验收
+04,terminal_accepted_rate,screen-env4-workersauto-seed202,0.9278852577915001,episodes/min,4,capacity,仅生产模式；未独立文件验收
+04,terminal_accepted_rate,screen-env4-workers2-seed202,0.8442489168122238,episodes/min,4,capacity,仅生产模式；未独立文件验收
+04,terminal_accepted_rate,screen-env4-workers0-seed202,0.7253652745084234,episodes/min,4,capacity,仅生产模式；未独立文件验收
+04,terminal_accepted_rate,confirm-env4-workers0-seed303,0.941530932984696,episodes/min,4,capacity,仅生产模式；未独立文件验收
+04,terminal_accepted_rate,confirm-env4-workersauto-seed303,1.296736931708079,episodes/min,4,capacity,仅生产模式；未独立文件验收
+04,terminal_accepted_rate,confirm-env4-workersauto-seed404,0.677067781932717,episodes/min,4,capacity,仅生产模式；未独立文件验收
+04,terminal_accepted_rate,confirm-env4-workers0-seed404,0.4961342172714127,episodes/min,4,capacity,仅生产模式；未独立文件验收
+04,terminal_accepted_rate,confirm-env4-workers0-seed505,0.9989171446800834,episodes/min,4,capacity,仅生产模式；未独立文件验收
+04,terminal_accepted_rate,confirm-env4-workersauto-seed505,1.3437569831621035,episodes/min,4,capacity,仅生产模式；未独立文件验收
+05,final_ready_seconds,before_sync,515.768383,s,8,timing,主机墙钟
+05,execute_phase_mean,before_sync/render_scene_transforms,0.016419723486251314,s/episode,8,timing,主机计时阶段
+05,execute_phase_mean,before_sync/render,0.03928457247275219,s/episode,8,timing,主机计时阶段
+05,execute_phase_mean,before_sync/camera_data_other,1.7854527566360048,s/episode,8,timing,主机计时阶段
+05,execute_phase_mean,before_sync/action_prepare,2.9084573824839026,s/episode,8,timing,主机计时阶段
+05,execute_phase_mean,before_sync/scene_update,1.2240547585552122,s/episode,8,timing,主机计时阶段
+05,execute_phase_mean,before_sync/physics_step,37.8825038258492,s/episode,8,timing,主机计时阶段
+05,execute_phase_mean,before_sync/unattributed,0.2117390661405807,s/episode,8,timing,主机计时阶段
+05,execute_phase_mean,before_sync/reset_other,0.01440212889428949,s/episode,8,timing,主机计时阶段
+05,execute_phase_mean,before_sync/rgb_cpu_copy,3.802237832745959,s/episode,8,timing,主机计时阶段
+05,execute_phase_mean,before_sync/env_step_other,0.8558089692887734,s/episode,8,timing,主机计时阶段
+05,execute_phase_mean,before_sync/action_apply,6.671580959922721,s/episode,8,timing,主机计时阶段
+05,execute_phase_mean,before_sync/camera_render,29.08966487037287,s/episode,8,timing,主机计时阶段
+05,execute_phase_mean,before_sync/rgb_readback_other,0.21749515225019422,s/episode,8,timing,主机计时阶段
+05,execute_phase_mean,before_sync/export_producer_other,58.41196619338734,s/episode,8,timing,主机计时阶段
+05,execute_phase_mean,before_sync/scheduler_other,1.0706712384762795,s/episode,8,timing,主机计时阶段
+05,execute_phase_mean,before_sync/record_buffer_copy,1.4834963422163128,s/episode,8,timing,主机计时阶段
+05,execute_phase_mean,before_sync/record_post_other,0.5312180739965697,s/episode,8,timing,主机计时阶段
+05,execute_phase_mean,before_sync/camera_pose,35.75650590967416,s/episode,8,timing,主机计时阶段
+05,execute_phase_mean,before_sync/scene_write,4.58768458364284,s/episode,8,timing,主机计时阶段
+05,execute_phase_mean,before_sync/success_check,2.2250162548680237,s/episode,8,timing,主机计时阶段
+05,execute_phase_mean,before_sync/observation_other,6.149630303829326,s/episode,8,timing,主机计时阶段
+05,execute_phase_mean,before_sync/motion_plan,1.7181350626360654,s/episode,8,timing,主机计时阶段
+05,execute_phase_mean,before_sync/action_process,0.8301201490667154,s/episode,8,timing,主机计时阶段
+05,execute_phase_mean,before_sync/camera_output_read,0.013133392840245506,s/episode,8,timing,主机计时阶段
+05,execute_phase_mean,before_sync/record_pre_other,0.029472162865204155,s/episode,8,timing,主机计时阶段
+05,final_ready_seconds,after_auto,350.296877,s,8,timing,主机墙钟
+05,execute_phase_mean,after_auto/reset_other,0.014899517120284145,s/episode,8,timing,主机计时阶段
+05,execute_phase_mean,after_auto/camera_data_other,1.8352415804201883,s/episode,8,timing,主机计时阶段
+05,execute_phase_mean,after_auto/motion_plan,1.71715832100017,s/episode,8,timing,主机计时阶段
+05,execute_phase_mean,after_auto/record_post_other,0.46509501906075457,s/episode,8,timing,主机计时阶段
+05,execute_phase_mean,after_auto/action_prepare,2.7929790716534626,s/episode,8,timing,主机计时阶段
+05,execute_phase_mean,after_auto/scene_update,1.1199976128336857,s/episode,8,timing,主机计时阶段
+05,execute_phase_mean,after_auto/observation_other,6.444269662490115,s/episode,8,timing,主机计时阶段
+05,execute_phase_mean,after_auto/unattributed,0.21987660786544438,s/episode,8,timing,主机计时阶段
+05,execute_phase_mean,after_auto/render,0.04308453119301703,s/episode,8,timing,主机计时阶段
+05,execute_phase_mean,after_auto/render_scene_transforms,0.017497344215371413,s/episode,8,timing,主机计时阶段
+05,execute_phase_mean,after_auto/record_buffer_copy,2.1029204747646872,s/episode,8,timing,主机计时阶段
+05,execute_phase_mean,after_auto/action_process,0.7987739519394381,s/episode,8,timing,主机计时阶段
+05,execute_phase_mean,after_auto/camera_output_read,0.014833952713161125,s/episode,8,timing,主机计时阶段
+05,execute_phase_mean,after_auto/record_pre_other,0.028969345445148065,s/episode,8,timing,主机计时阶段
+05,execute_phase_mean,after_auto/scheduler_other,1.0874800274359586,s/episode,8,timing,主机计时阶段
+05,execute_phase_mean,after_auto/rgb_readback_other,0.23432975678952062,s/episode,8,timing,主机计时阶段
+05,execute_phase_mean,after_auto/env_step_other,0.8167218667258567,s/episode,8,timing,主机计时阶段
+05,execute_phase_mean,after_auto/success_check,2.1631080063489208,s/episode,8,timing,主机计时阶段
+05,execute_phase_mean,after_auto/export_poll_or_backpressure,0.4123487773049419,s/episode,8,timing,主机计时阶段
+05,execute_phase_mean,after_auto/action_apply,6.634091076544792,s/episode,8,timing,主机计时阶段
+05,execute_phase_mean,after_auto/camera_pose,36.136163778839546,s/episode,8,timing,主机计时阶段
+05,execute_phase_mean,after_auto/physics_step,36.65614028987147,s/episode,8,timing,主机计时阶段
+05,execute_phase_mean,after_auto/camera_render,28.97249550865854,s/episode,8,timing,主机计时阶段
+05,execute_phase_mean,after_auto/scene_write,4.593650470415014,s/episode,8,timing,主机计时阶段
+05,execute_phase_mean,after_auto/export_producer_other,0.018786258640830056,s/episode,8,timing,主机计时阶段
+05,execute_phase_mean,after_auto/rgb_cpu_copy,4.157939132528554,s/episode,8,timing,主机计时阶段
+05,execute_phase_mean,after_auto/export_pack,3.207224298746951,s/episode,8,timing,主机计时阶段
+06,check_passed,finite_poses,1,boolean,256,randomization,reset 检查；非任务成功
+06,check_passed,configured_bounds,1,boolean,256,randomization,reset 检查；非任务成功
+06,check_passed,xy_changes,1,boolean,256,randomization,reset 检查；非任务成功
+06,check_passed,z_fixed,1,boolean,256,randomization,reset 检查；非任务成功
+06,check_passed,orientation_fixed,1,boolean,256,randomization,reset 检查；非任务成功
+06,check_passed,same_seed_reproduces,1,boolean,256,randomization,reset 检查；非任务成功
+06,check_passed,different_seed_changes,1,boolean,256,randomization,reset 检查；非任务成功
+06,check_passed,disabled_randomization_fixed,1,boolean,256,randomization,reset 检查；非任务成功
+06,check_passed,physics_steps_finite,1,boolean,256,randomization,reset 检查；非任务成功
+07,task_success,baseline,1,boolean,1,g1,G1 小样本
+07,image_mae,baseline,0.0,0–255,1,g1,图像差；非泛化收益
+07,task_success,lighting,1,boolean,1,g1,G1 小样本
+07,image_mae,lighting,12.639495442708334,0–255,1,g1,图像差；非泛化收益
+07,task_success,camera,1,boolean,1,g1,G1 小样本
+07,image_mae,camera,9.356801215277779,0–255,1,g1,图像差；非泛化收益
+07,task_success,material,1,boolean,1,g1,G1 小样本
+07,image_mae,material,2.6929915364583334,0–255,1,g1,图像差；非泛化收益
+07,task_success,visual_only,1,boolean,1,g1,G1 小样本
+07,image_mae,visual_only,36.138110894097224,0–255,1,g1,图像差；非泛化收益
+07,task_success,combined_s1,0,boolean,1,g1,G1 小样本
+07,image_mae,combined_s1,38.26820203993056,0–255,1,g1,图像差；非泛化收益
+07,task_success,combined_s2,1,boolean,1,g1,G1 小样本
+07,image_mae,combined_s2,54.246555989583335,0–255,1,g1,图像差；非泛化收益
+08,task_successes,v1,5,episodes,5,mvp,任务与后续请求分开计数；v1/v2 集成配置不同
+08,warm_p50,v1,0.7531613930000276,s,9,mvp,任务与后续请求分开计数；v1/v2 集成配置不同
+08,warm_p95,v1,2.217390741200051,s,9,mvp,任务与后续请求分开计数；v1/v2 集成配置不同
+08,task_successes,v2,4,episodes,5,mvp,任务与后续请求分开计数；v1/v2 集成配置不同
+08,warm_p50,v2,1.3117659330000606,s,9,mvp,任务与后续请求分开计数；v1/v2 集成配置不同
+08,warm_p95,v2,1.763685532800082,s,9,mvp,任务与后续请求分开计数；v1/v2 集成配置不同
+09,terminal_passes,v2,15,episodes,16,v2,保存样本终态检查
+10,collision_free_successes,ik/clear,3,episodes,3,franka,配对局部避障
+10,collision_free_successes,curobo/clear,3,episodes,3,franka,配对局部避障
+10,collision_free_successes,ik/obstacle,0,episodes,3,franka,配对局部避障
+10,collision_free_successes,curobo/obstacle,3,episodes,3,franka,配对局部避障
+11,median_transfer_normal_force,0,38.707672119140625,N,1,banana,刚体香蕉；力曲线非独立试次
+11,median_transfer_normal_force,1,38.8348388671875,N,1,banana,刚体香蕉；力曲线非独立试次
+12,wall_seconds,baseline-r02,202.148468,s,1,hdr,配置可行性；非速度对照
+12,wall_seconds,studio-r03,184.05996,s,1,hdr,配置可行性；非速度对照
+12,wall_seconds,beach-r03,204.070343,s,1,hdr,配置可行性；非速度对照
+12,wall_seconds,studio-r04,179.99791,s,1,hdr,配置可行性；非速度对照
+12,wall_seconds,beach-r04,156.435901,s,1,hdr,配置可行性；非速度对照
+13,gpu_mean_percent,r01,9.424083769633508,%,1,concurrency,观测 1 轮、197.6s、4 并发；历史混合负载，含失败轮次
+13,gpu_peak_percent,r01,37.0,%,1,concurrency,观测 1 轮、197.6s、4 并发；历史混合负载，含失败轮次
+13,gpu_mean_percent,r02,32.443609022556394,%,1,concurrency,观测 1 轮、135.6s、4 并发；历史混合负载，含失败轮次
+13,gpu_peak_percent,r02,70.0,%,1,concurrency,观测 1 轮、135.6s、4 并发；历史混合负载，含失败轮次
+13,gpu_mean_percent,r04,23.70212765957447,%,1,concurrency,观测 1 轮、192.4s、5 并发；历史混合负载，含失败轮次
+13,gpu_peak_percent,r04,70.0,%,1,concurrency,观测 1 轮、192.4s、5 并发；历史混合负载，含失败轮次
+14,telemetry_count,started,63,episodes,63,history,日志计数；最终 HDF5 未验收
+14,telemetry_count,completed,55,episodes,63,history,日志计数；最终 HDF5 未验收
+14,telemetry_count,success,49,episodes,63,history,日志计数；最终 HDF5 未验收
+14,telemetry_count,failure,6,episodes,63,history,日志计数；最终 HDF5 未验收
+14,telemetry_count,unfinished,8,episodes,63,history,日志计数；最终 HDF5 未验收
+15,suspected_black_frames,left_hand_rgb,4,frames,5453,audit,全量像素诊断
+15,post_warmup_black_fraction,left_hand_rgb,0.0,fraction,5333,audit,每条排除前 30 帧
+15,suspected_black_frames,right_hand_rgb,5453,frames,5453,audit,全量像素诊断
+15,post_warmup_black_fraction,right_hand_rgb,1.0,fraction,5333,audit,每条排除前 30 帧
+15,suspected_black_frames,third_person_rgb,0,frames,5453,audit,全量像素诊断
+15,post_warmup_black_fraction,third_person_rgb,0.0,fraction,5333,audit,每条排除前 30 帧
+16,trajectory_count,attempts,8,episodes,8,regression,不同验收层分别计数
+16,trajectory_count,completed,8,episodes,8,regression,不同验收层分别计数
+16,trajectory_count,exported,8,episodes,8,regression,不同验收层分别计数
+16,trajectory_count,readback,8,episodes,8,readback,不同验收层分别计数
+16,trajectory_count,strict_success,7,episodes,8,readback,不同验收层分别计数
+17,effective_available_ram,observed,93.43951606750488,GiB,1,audit,资源快照
+17,required_ram,24-env-model,144.0,GiB,1,audit,单个24环境准入模型；非实测最低内存
+18,linear_speed,failed_terminal,0.19256773973196573,m/s,1,failure,单失败样本
+18,linear_speed,unchanged_threshold,0.03,m/s,1,failure,原严格终态阈值
+18,angular_speed,failed_terminal,6.186314004879438,rad/s,1,failure,单失败样本
+18,angular_speed,unchanged_threshold,0.5,rad/s,1,failure,原严格终态阈值
+19,decoded_video_frames,observation.images.left_hand,5453,frames,4,conversion,转换格式检查；非视觉质量
+19,decoded_video_frames,observation.images.right_hand,5453,frames,4,conversion,转换格式检查；非视觉质量
+19,decoded_video_frames,observation.images.third_person,5453,frames,4,conversion,转换格式检查；非视觉质量

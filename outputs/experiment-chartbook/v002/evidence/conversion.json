@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "episodes": 4,
+  "frames": 5453,
+  "fps": 30,
+  "numeric_roundtrip": "all values exact",
+  "official_loader_samples": 12,
+  "fully_decoded_video_frames": {
+    "observation.images.left_hand": 5453,
+    "observation.images.right_hand": 5453,
+    "observation.images.third_person": 5453
+  },
+  "semantic_names": "all exported feature names match source schema",
+  "scope": "CPU data conversion and decoding; no simulation or training"
+}

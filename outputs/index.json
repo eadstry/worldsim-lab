@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "artifact_count": 16,
-  "version_count": 26,
+  "version_count": 27,
   "artifacts": [
     {
       "id": "arena-examples-guide",
@@ -244,13 +244,20 @@
       "status": "current",
       "supersedes": [],
       "superseded_by": null,
-      "current_version": "v001",
+      "current_version": "v002",
       "versions": [
         {
           "version": "v001",
           "sealed_at": "2026-10-20",
           "files": 53,
           "bytes": 4879689,
+          "current": false
+        },
+        {
+          "version": "v002",
+          "sealed_at": "2026-10-22",
+          "files": 66,
+          "bytes": 7538926,
           "current": true
         }
       ]

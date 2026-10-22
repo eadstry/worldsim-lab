@@ -1,0 +1,45 @@
+{
+  "source_file": "/data/WorldSimReady-Home/openarm-export-isolated-20261020-r01/env8-auto-seed606/dataset_failed.hdf5",
+  "episode": "data/demo_0",
+  "num_samples": 1447,
+  "success": false,
+  "root_velocity": [
+    -0.11763721704483032,
+    0.1181187853217125,
+    -0.09639383852481842,
+    0.7662152051925659,
+    -3.858229398727417,
+    -4.7746686935424805
+  ],
+  "linear_speed_limit_m_s": 0.03,
+  "angular_speed_limit_rad_s": 0.5,
+  "scope": "Only final velocity vector extracted; no new simulation or whole-file scan",
+  "episode_finished_event": {
+    "schema_version": 2,
+    "run_id": "bc6fda7135e2497e922b48dfd5637fce",
+    "time_utc": "2026-10-20T12:38:12.511342+00:00",
+    "elapsed_seconds": 249.680527,
+    "event": "episode_finished",
+    "episode_id": "env1-attempt1",
+    "env_id": 1,
+    "success": false,
+    "error": null,
+    "duration_seconds": 207.98774298198987,
+    "planner_calls": 4,
+    "planner_successes": 4,
+    "planner_failures": 0,
+    "curobo_solver_iterations": 4,
+    "curobo_iteration_successes": 4,
+    "execution_steps": 1447,
+    "recorder_export_calls": 1,
+    "simulated_seconds": 48.233333333333334,
+    "execution_steps_per_wall_second": 6.9571406963710265,
+    "simulation_seconds_per_wall_second": 0.2319046880113109,
+    "stages_seconds": {
+      "reset": 0.6030897169839591,
+      "motion_plan": 2.0152017569635063,
+      "export_enqueue": 1.5164948590099812,
+      "execution_wait": 182.87500515044667
+    }
+  }
+}

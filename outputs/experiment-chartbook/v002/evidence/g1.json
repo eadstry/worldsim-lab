@@ -1,0 +1,1409 @@
+{
+  "episodes": [
+    {
+      "name": "baseline",
+      "generation_seed": 1,
+      "randomization_seed": 100,
+      "active": [],
+      "sampled": {},
+      "dataset": "/home/tangyuan/WorldSimReady-Home/.worktrees/g1-home-domain-20261017/runs/domain-r02/baseline/episodes.hdf5",
+      "dataset_sha256": "45c107e620f2f47e56c49e1935caf46ce5f31aa6dbc7c0bec1b29d8c54b327be",
+      "success": true,
+      "frames": 928,
+      "fps": 50.0,
+      "seconds": 18.56,
+      "finite_actions": true,
+      "initial_box_pose": [
+        [
+          0.5860796570777893,
+          0.19443616271018982,
+          0.07069999724626541,
+          -4.371138828673793e-08,
+          1.0,
+          -4.371138828673793e-08,
+          1.910685465164705e-15
+        ]
+      ],
+      "final_box_speed_m_s": 0.0005041745025664568,
+      "first_recorded_success_step": 828,
+      "overview": {
+        "mean_luminance": 149.52464294433594,
+        "dark_fraction": 0.0008523220486111111,
+        "clipped_fraction": 0.0
+      },
+      "head": {
+        "mean_luminance": 126.77942657470703,
+        "dark_fraction": 0.00098876953125,
+        "clipped_fraction": 0.0
+      },
+      "matched_step": 400,
+      "matched_step_rgb_mae_255": {
+        "overview": 0.0,
+        "head": 0.0
+      },
+      "overview_video": {
+        "path": "/home/tangyuan/WorldSimReady-Home/.worktrees/g1-home-domain-20261017/runs/final-review/baseline/overview.mp4",
+        "decoded_frames": 928,
+        "decoded_seconds": 18.56
+      },
+      "head_video": {
+        "path": "/home/tangyuan/WorldSimReady-Home/.worktrees/g1-home-domain-20261017/runs/final-review/baseline/head.mp4",
+        "decoded_frames": 928,
+        "decoded_seconds": 18.56
+      },
+      "resolved": {
+        "plan": {
+          "schema_version": 1,
+          "name": "baseline",
+          "generation_seed": 1,
+          "randomization_seed": 100,
+          "active": [],
+          "sampled": {},
+          "scene": "/home/tangyuan/WorldSimReady-Home/.worktrees/g1-home-domain-20261017/runs/domain-plans-r02/baseline/scene.usda",
+          "scene_sha256": "b459c6a9fb83f0b980e98e3b0bceb6ba30bb7db1c68310dbbd503fe2263106e6",
+          "base_layer": "/home/tangyuan/WorldSimReady-Home/.worktrees/g1-home-scene-20261017/runs/prepared-r03/home-g1.usda",
+          "base_layer_sha256": "8213884ae47221d62861cd91093da77f53f381cc1302d07a252515acdf19ad1a",
+          "hdr": "/opt/isaac-sim6.0/extscache/omni.kit.thumbnails.mdl-1.0.28+110.1.1/data/tests/template/SubUSDs/textures/photo_studio_01_4k.hdr",
+          "hdr_sha256": "b6bb7ed3522747f65ffbf50975054727d46516bc24dba98f8a5cd581b1341f28",
+          "scope": "One fixed sample per generated episode; reset pose sampled by simulator; diagnostic cameras fixed"
+        },
+        "camera_cfg": {
+          "pos": [
+            0.04485,
+            0.0,
+            0.35325
+          ],
+          "rot": [
+            -0.62721,
+            0.62721,
+            -0.32651,
+            0.32651
+          ],
+          "convention": "ros",
+          "focal_length": 15
+        },
+        "pose_range": {
+          "x": [
+            0.5535,
+            0.6035
+          ],
+          "y": [
+            0.155,
+            0.205
+          ],
+          "z": [
+            0.0707,
+            0.0707
+          ],
+          "roll": [
+            3.141592653589793,
+            3.141592653589793
+          ],
+          "pitch": [
+            0.0,
+            0.0
+          ],
+          "yaw": [
+            3.141592653589793,
+            3.141592653589793
+          ]
+        }
+      },
+      "readback": {
+        "dome_intensity": 1000.0,
+        "key_intensity": 1000.0,
+        "key_temperature_k": 6500.0,
+        "hdr": "None",
+        "camera_intrinsics": [
+          [
+            458.1245422363281,
+            0.0,
+            320.0
+          ],
+          [
+            0.0,
+            458.1245422363281,
+            240.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "camera_pos_w": [
+          0.04485000669956207,
+          0.18000002205371857,
+          0.35163286328315735
+        ]
+      },
+      "paired_actions": 0.0,
+      "manual_review": "Compared matched-step contact sheet and representative head/overview frames; baseline carry-stage top-edge truncation remains."
+    },
+    {
+      "name": "lighting",
+      "generation_seed": 1,
+      "randomization_seed": 101,
+      "active": [
+        "lighting"
+      ],
+      "sampled": {
+        "lighting": {
+          "dome_intensity": 911.5184596270541,
+          "key_intensity": 816.852697320482,
+          "temperature_k": 6413.127767652778,
+          "yaw_deg": 332.63150460364596
+        }
+      },
+      "dataset": "/home/tangyuan/WorldSimReady-Home/.worktrees/g1-home-domain-20261017/runs/domain-r02/lighting/episodes.hdf5",
+      "dataset_sha256": "91f6cec1b852b518c4fd24056714fe6f114b53a70a4aeef257918b4405e26b39",
+      "success": true,
+      "frames": 928,
+      "fps": 50.0,
+      "seconds": 18.56,
+      "finite_actions": true,
+      "initial_box_pose": [
+        [
+          0.5860796570777893,
+          0.19443616271018982,
+          0.07069999724626541,
+          -4.371138828673793e-08,
+          1.0,
+          -4.371138828673793e-08,
+          1.910685465164705e-15
+        ]
+      ],
+      "final_box_speed_m_s": 0.0005041745025664568,
+      "first_recorded_success_step": 828,
+      "overview": {
+        "mean_luminance": 143.2634735107422,
+        "dark_fraction": 0.00267578125,
+        "clipped_fraction": 0.0
+      },
+      "head": {
+        "mean_luminance": 126.76145935058594,
+        "dark_fraction": 0.0009440104166666667,
+        "clipped_fraction": 0.0
+      },
+      "matched_step": 400,
+      "matched_step_rgb_mae_255": {
+        "overview": 19.401339699074075,
+        "head": 12.639495442708334
+      },
+      "overview_video": {
+        "path": "/home/tangyuan/WorldSimReady-Home/.worktrees/g1-home-domain-20261017/runs/final-review/lighting/overview.mp4",
+        "decoded_frames": 928,
+        "decoded_seconds": 18.56
+      },
+      "resolved": {
+        "plan": {
+          "schema_version": 1,
+          "name": "lighting",
+          "generation_seed": 1,
+          "randomization_seed": 101,
+          "active": [
+            "lighting"
+          ],
+          "sampled": {
+            "lighting": {
+              "dome_intensity": 911.5184596270541,
+              "key_intensity": 816.852697320482,
+              "temperature_k": 6413.127767652778,
+              "yaw_deg": 332.63150460364596
+            }
+          },
+          "scene": "/home/tangyuan/WorldSimReady-Home/.worktrees/g1-home-domain-20261017/runs/domain-plans-r02/lighting/scene.usda",
+          "scene_sha256": "41fac3aa7e2bb7badface2c3c2025ca1147ed4e4cd5df91b9526ce569f7268a6",
+          "base_layer": "/home/tangyuan/WorldSimReady-Home/.worktrees/g1-home-scene-20261017/runs/prepared-r03/home-g1.usda",
+          "base_layer_sha256": "8213884ae47221d62861cd91093da77f53f381cc1302d07a252515acdf19ad1a",
+          "hdr": "/opt/isaac-sim6.0/extscache/omni.kit.thumbnails.mdl-1.0.28+110.1.1/data/tests/template/SubUSDs/textures/photo_studio_01_4k.hdr",
+          "hdr_sha256": "b6bb7ed3522747f65ffbf50975054727d46516bc24dba98f8a5cd581b1341f28",
+          "scope": "One fixed sample per generated episode; reset pose sampled by simulator; diagnostic cameras fixed"
+        },
+        "camera_cfg": {
+          "pos": [
+            0.04485,
+            0.0,
+            0.35325
+          ],
+          "rot": [
+            -0.62721,
+            0.62721,
+            -0.32651,
+            0.32651
+          ],
+          "convention": "ros",
+          "focal_length": 15
+        },
+        "pose_range": {
+          "x": [
+            0.5535,
+            0.6035
+          ],
+          "y": [
+            0.155,
+            0.205
+          ],
+          "z": [
+            0.0707,
+            0.0707
+          ],
+          "roll": [
+            3.141592653589793,
+            3.141592653589793
+          ],
+          "pitch": [
+            0.0,
+            0.0
+          ],
+          "yaw": [
+            3.141592653589793,
+            3.141592653589793
+          ]
+        }
+      },
+      "readback": {
+        "dome_intensity": 911.5184326171875,
+        "key_intensity": 816.8527221679688,
+        "key_temperature_k": 6413.1279296875,
+        "hdr": "@/opt/isaac-sim6.0/extscache/omni.kit.thumbnails.mdl-1.0.28+110.1.1/data/tests/template/SubUSDs/textures/photo_studio_01_4k.hdr@",
+        "camera_intrinsics": [
+          [
+            458.1245422363281,
+            0.0,
+            320.0
+          ],
+          [
+            0.0,
+            458.1245422363281,
+            240.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "camera_pos_w": [
+          0.04485000669956207,
+          0.18000002205371857,
+          0.35163286328315735
+        ]
+      },
+      "paired_actions": 0.0,
+      "manual_review": "Compared matched-step contact sheet and representative head/overview frames; baseline carry-stage top-edge truncation remains."
+    },
+    {
+      "name": "camera",
+      "generation_seed": 1,
+      "randomization_seed": 102,
+      "active": [
+        "camera"
+      ],
+      "sampled": {
+        "camera": {
+          "local_translation_m": [
+            -0.003518287936129164,
+            0.0011596528707622355,
+            -0.0033031417761433283
+          ],
+          "local_rpy_deg": [
+            0.8500277895008304,
+            0.43132997102988524,
+            -0.46265011153211777
+          ],
+          "focal_scale": 1.0117497633614467
+        }
+      },
+      "dataset": "/home/tangyuan/WorldSimReady-Home/.worktrees/g1-home-domain-20261017/runs/domain-r02/camera/episodes.hdf5",
+      "dataset_sha256": "f8af29bc65e03b15c0bbb115580ac74caad6c5e6648a6bbc5bd1fb925374444e",
+      "success": true,
+      "frames": 928,
+      "fps": 50.0,
+      "seconds": 18.56,
+      "finite_actions": true,
+      "initial_box_pose": [
+        [
+          0.5860796570777893,
+          0.19443616271018982,
+          0.07069999724626541,
+          -4.371138828673793e-08,
+          1.0,
+          -4.371138828673793e-08,
+          1.910685465164705e-15
+        ]
+      ],
+      "final_box_speed_m_s": 0.0005041745025664568,
+      "first_recorded_success_step": 828,
+      "overview": {
+        "mean_luminance": 149.52194213867188,
+        "dark_fraction": 0.0008555772569444444,
+        "clipped_fraction": 0.0
+      },
+      "head": {
+        "mean_luminance": 126.31023406982422,
+        "dark_fraction": 0.000953369140625,
+        "clipped_fraction": 0.0
+      },
+      "matched_step": 400,
+      "matched_step_rgb_mae_255": {
+        "overview": 0.32339265046296295,
+        "head": 9.356801215277779
+      },
+      "overview_video": {
+        "path": "/home/tangyuan/WorldSimReady-Home/.worktrees/g1-home-domain-20261017/runs/final-review/camera/overview.mp4",
+        "decoded_frames": 928,
+        "decoded_seconds": 18.56
+      },
+      "head_video": {
+        "path": "/home/tangyuan/WorldSimReady-Home/.worktrees/g1-home-domain-20261017/runs/final-review/camera/head.mp4",
+        "decoded_frames": 928,
+        "decoded_seconds": 18.56
+      },
+      "resolved": {
+        "plan": {
+          "schema_version": 1,
+          "name": "camera",
+          "generation_seed": 1,
+          "randomization_seed": 102,
+          "active": [
+            "camera"
+          ],
+          "sampled": {
+            "camera": {
+              "local_translation_m": [
+                -0.003518287936129164,
+                0.0011596528707622355,
+                -0.0033031417761433283
+              ],
+              "local_rpy_deg": [
+                0.8500277895008304,
+                0.43132997102988524,
+                -0.46265011153211777
+              ],
+              "focal_scale": 1.0117497633614467
+            }
+          },
+          "scene": "/home/tangyuan/WorldSimReady-Home/.worktrees/g1-home-domain-20261017/runs/domain-plans-r02/camera/scene.usda",
+          "scene_sha256": "b459c6a9fb83f0b980e98e3b0bceb6ba30bb7db1c68310dbbd503fe2263106e6",
+          "base_layer": "/home/tangyuan/WorldSimReady-Home/.worktrees/g1-home-scene-20261017/runs/prepared-r03/home-g1.usda",
+          "base_layer_sha256": "8213884ae47221d62861cd91093da77f53f381cc1302d07a252515acdf19ad1a",
+          "hdr": "/opt/isaac-sim6.0/extscache/omni.kit.thumbnails.mdl-1.0.28+110.1.1/data/tests/template/SubUSDs/textures/photo_studio_01_4k.hdr",
+          "hdr_sha256": "b6bb7ed3522747f65ffbf50975054727d46516bc24dba98f8a5cd581b1341f28",
+          "scope": "One fixed sample per generated episode; reset pose sampled by simulator; diagnostic cameras fixed"
+        },
+        "camera_cfg": {
+          "pos": [
+            0.04133171206387084,
+            0.0011596528707622355,
+            0.3499468582238567
+          ],
+          "rot": [
+            -0.6260867118835449,
+            0.6234256625175476,
+            -0.3348272740840912,
+            0.3274887204170227
+          ],
+          "convention": "ros",
+          "focal_length": 15.1762464504217
+        },
+        "pose_range": {
+          "x": [
+            0.5535,
+            0.6035
+          ],
+          "y": [
+            0.155,
+            0.205
+          ],
+          "z": [
+            0.0707,
+            0.0707
+          ],
+          "roll": [
+            3.141592653589793,
+            3.141592653589793
+          ],
+          "pitch": [
+            0.0,
+            0.0
+          ],
+          "yaw": [
+            3.141592653589793,
+            3.141592653589793
+          ]
+        }
+      },
+      "readback": {
+        "dome_intensity": 1000.0,
+        "key_intensity": 1000.0,
+        "key_temperature_k": 6500.0,
+        "hdr": "None",
+        "camera_intrinsics": [
+          [
+            463.5074157714844,
+            0.0,
+            320.0
+          ],
+          [
+            0.0,
+            463.5074157714844,
+            240.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "camera_pos_w": [
+          0.04133171960711479,
+          0.18115967512130737,
+          0.34832972288131714
+        ]
+      },
+      "verified_focal_scale_xy": [
+        1.0117498039045885,
+        1.0117498039045885
+      ],
+      "paired_actions": 0.0,
+      "manual_review": "Compared matched-step contact sheet and representative head/overview frames; baseline carry-stage top-edge truncation remains."
+    },
+    {
+      "name": "material",
+      "generation_seed": 1,
+      "randomization_seed": 103,
+      "active": [
+        "material"
+      ],
+      "sampled": {
+        "material": {
+          "floor_color": [
+            0.6565893367422689,
+            0.6437150360218323,
+            0.617966434580959
+          ],
+          "wall_color": [
+            0.7412596552583697,
+            0.7264344621532023,
+            0.6967840759428675
+          ],
+          "floor_roughness": 0.7734811653451064,
+          "wall_roughness": 0.8572101849048688
+        }
+      },
+      "dataset": "/home/tangyuan/WorldSimReady-Home/.worktrees/g1-home-domain-20261017/runs/domain-r03/material/episodes.hdf5",
+      "dataset_sha256": "3d986f78829ed392e1d19e1fb5977bc2cfeb60f938fed396b741ccc6c4b8ad13",
+      "success": true,
+      "frames": 928,
+      "fps": 50.0,
+      "seconds": 18.56,
+      "finite_actions": true,
+      "initial_box_pose": [
+        [
+          0.5860796570777893,
+          0.19443616271018982,
+          0.07069999724626541,
+          -4.371138828673793e-08,
+          1.0,
+          -4.371138828673793e-08,
+          1.910685465164705e-15
+        ]
+      ],
+      "final_box_speed_m_s": 0.0005041745025664568,
+      "first_recorded_success_step": 828,
+      "overview": {
+        "mean_luminance": 149.3984375,
+        "dark_fraction": 0.000703125,
+        "clipped_fraction": 0.0
+      },
+      "head": {
+        "mean_luminance": 126.97392272949219,
+        "dark_fraction": 0.0008504231770833333,
+        "clipped_fraction": 0.0
+      },
+      "matched_step": 400,
+      "matched_step_rgb_mae_255": {
+        "overview": 2.8980815972222222,
+        "head": 2.6929915364583334
+      },
+      "overview_video": {
+        "path": "/home/tangyuan/WorldSimReady-Home/.worktrees/g1-home-domain-20261017/runs/final-review/material/overview.mp4",
+        "decoded_frames": 928,
+        "decoded_seconds": 18.56
+      },
+      "resolved": {
+        "plan": {
+          "schema_version": 1,
+          "name": "material",
+          "generation_seed": 1,
+          "randomization_seed": 103,
+          "active": [
+            "material"
+          ],
+          "sampled": {
+            "material": {
+              "floor_color": [
+                0.6565893367422689,
+                0.6437150360218323,
+                0.617966434580959
+              ],
+              "wall_color": [
+                0.7412596552583697,
+                0.7264344621532023,
+                0.6967840759428675
+              ],
+              "floor_roughness": 0.7734811653451064,
+              "wall_roughness": 0.8572101849048688
+            }
+          },
+          "scene": "/home/tangyuan/WorldSimReady-Home/.worktrees/g1-home-domain-20261017/runs/domain-plans-r03/material/scene.usda",
+          "scene_sha256": "b69a45da27ddd555ec38ba95ab2f8a4e15ad95c723b53e5d6cc9924f6a9fda34",
+          "base_layer": "/home/tangyuan/WorldSimReady-Home/.worktrees/g1-home-scene-20261017/runs/prepared-r03/home-g1.usda",
+          "base_layer_sha256": "8213884ae47221d62861cd91093da77f53f381cc1302d07a252515acdf19ad1a",
+          "hdr": "/opt/isaac-sim6.0/extscache/omni.kit.thumbnails.mdl-1.0.28+110.1.1/data/tests/template/SubUSDs/textures/photo_studio_01_4k.hdr",
+          "hdr_sha256": "b6bb7ed3522747f65ffbf50975054727d46516bc24dba98f8a5cd581b1341f28",
+          "scope": "One fixed sample per generated episode; reset pose sampled by simulator; diagnostic cameras fixed"
+        },
+        "camera_cfg": {
+          "pos": [
+            0.04485,
+            0.0,
+            0.35325
+          ],
+          "rot": [
+            -0.62721,
+            0.62721,
+            -0.32651,
+            0.32651
+          ],
+          "convention": "ros",
+          "focal_length": 15
+        },
+        "pose_range": {
+          "x": [
+            0.5535,
+            0.6035
+          ],
+          "y": [
+            0.155,
+            0.205
+          ],
+          "z": [
+            0.0707,
+            0.0707
+          ],
+          "roll": [
+            3.141592653589793,
+            3.141592653589793
+          ],
+          "pitch": [
+            0.0,
+            0.0
+          ],
+          "yaw": [
+            3.141592653589793,
+            3.141592653589793
+          ]
+        }
+      },
+      "readback": {
+        "dome_intensity": 1000.0,
+        "key_intensity": 1000.0,
+        "key_temperature_k": 6500.0,
+        "hdr": "None",
+        "camera_intrinsics": [
+          [
+            458.1245422363281,
+            0.0,
+            320.0
+          ],
+          [
+            0.0,
+            458.1245422363281,
+            240.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "camera_pos_w": [
+          0.04485000669956207,
+          0.18000002205371857,
+          0.35163286328315735
+        ]
+      },
+      "paired_actions": 0.0,
+      "manual_review": "Compared matched-step contact sheet and representative head/overview frames; baseline carry-stage top-edge truncation remains."
+    },
+    {
+      "name": "visual_only",
+      "generation_seed": 1,
+      "randomization_seed": 104,
+      "active": [
+        "lighting",
+        "camera",
+        "material"
+      ],
+      "sampled": {
+        "lighting": {
+          "dome_intensity": 1081.98241858773,
+          "key_intensity": 1223.1182122135438,
+          "temperature_k": 5829.76323684171,
+          "yaw_deg": 81.9440667388627
+        },
+        "camera": {
+          "local_translation_m": [
+            -0.0016935767228347508,
+            0.0021381062362427128,
+            0.0030670941485246165
+          ],
+          "local_rpy_deg": [
+            -1.9331069614745107,
+            -1.3332250385006805,
+            1.581619833322757
+          ],
+          "focal_scale": 0.9618116520914026
+        },
+        "material": {
+          "floor_color": [
+            0.5575306313229355,
+            0.5465986581597406,
+            0.524734711833351
+          ],
+          "wall_color": [
+            0.7159408813249287,
+            0.7016220636984302,
+            0.6729844284454329
+          ],
+          "floor_roughness": 0.7404759610249633,
+          "wall_roughness": 0.9017959808638205
+        }
+      },
+      "dataset": "/home/tangyuan/WorldSimReady-Home/.worktrees/g1-home-domain-20261017/runs/domain-r03/visual_only/episodes.hdf5",
+      "dataset_sha256": "ca6d58ed94c6be78a919b801a81be038fbe6dba64030d7e3ba7112b565e8a809",
+      "success": true,
+      "frames": 928,
+      "fps": 50.0,
+      "seconds": 18.56,
+      "finite_actions": true,
+      "initial_box_pose": [
+        [
+          0.5860796570777893,
+          0.19443616271018982,
+          0.07069999724626541,
+          -4.371138828673793e-08,
+          1.0,
+          -4.371138828673793e-08,
+          1.910685465164705e-15
+        ]
+      ],
+      "final_box_speed_m_s": 0.0005041745025664568,
+      "first_recorded_success_step": 828,
+      "overview": {
+        "mean_luminance": 169.91944885253906,
+        "dark_fraction": 4.0147569444444445e-05,
+        "clipped_fraction": 0.0
+      },
+      "head": {
+        "mean_luminance": 149.16751098632812,
+        "dark_fraction": 0.00093994140625,
+        "clipped_fraction": 0.0
+      },
+      "matched_step": 400,
+      "matched_step_rgb_mae_255": {
+        "overview": 23.917552083333334,
+        "head": 36.138110894097224
+      },
+      "overview_video": {
+        "path": "/home/tangyuan/WorldSimReady-Home/.worktrees/g1-home-domain-20261017/runs/final-review/visual_only/overview.mp4",
+        "decoded_frames": 928,
+        "decoded_seconds": 18.56
+      },
+      "resolved": {
+        "plan": {
+          "schema_version": 1,
+          "name": "visual_only",
+          "generation_seed": 1,
+          "randomization_seed": 104,
+          "active": [
+            "lighting",
+            "camera",
+            "material"
+          ],
+          "sampled": {
+            "lighting": {
+              "dome_intensity": 1081.98241858773,
+              "key_intensity": 1223.1182122135438,
+              "temperature_k": 5829.76323684171,
+              "yaw_deg": 81.9440667388627
+            },
+            "camera": {
+              "local_translation_m": [
+                -0.0016935767228347508,
+                0.0021381062362427128,
+                0.0030670941485246165
+              ],
+              "local_rpy_deg": [
+                -1.9331069614745107,
+                -1.3332250385006805,
+                1.581619833322757
+              ],
+              "focal_scale": 0.9618116520914026
+            },
+            "material": {
+              "floor_color": [
+                0.5575306313229355,
+                0.5465986581597406,
+                0.524734711833351
+              ],
+              "wall_color": [
+                0.7159408813249287,
+                0.7016220636984302,
+                0.6729844284454329
+              ],
+              "floor_roughness": 0.7404759610249633,
+              "wall_roughness": 0.9017959808638205
+            }
+          },
+          "scene": "/home/tangyuan/WorldSimReady-Home/.worktrees/g1-home-domain-20261017/runs/domain-plans-r03/combined_s1/scene.usda",
+          "scene_sha256": "d659b7e692d17887fa1a1c3253cc832e1461a11c0487a6110db141600d1c209f",
+          "base_layer": "/home/tangyuan/WorldSimReady-Home/.worktrees/g1-home-scene-20261017/runs/prepared-r03/home-g1.usda",
+          "base_layer_sha256": "8213884ae47221d62861cd91093da77f53f381cc1302d07a252515acdf19ad1a",
+          "hdr": "/opt/isaac-sim6.0/extscache/omni.kit.thumbnails.mdl-1.0.28+110.1.1/data/tests/template/SubUSDs/textures/photo_studio_01_4k.hdr",
+          "hdr_sha256": "b6bb7ed3522747f65ffbf50975054727d46516bc24dba98f8a5cd581b1341f28",
+          "scope": "Same visual sample as combined_s1 with original box pose range and no yaw perturbation"
+        },
+        "camera_cfg": {
+          "pos": [
+            0.04315642327716525,
+            0.0021381062362427128,
+            0.35631709414852464
+          ],
+          "rot": [
+            -0.627816915512085,
+            0.6371326446533203,
+            -0.3040505349636078,
+            0.32781630754470825
+          ],
+          "convention": "ros",
+          "focal_length": 14.42717478137104
+        },
+        "pose_range": {
+          "x": [
+            0.5535,
+            0.6035
+          ],
+          "y": [
+            0.155,
+            0.205
+          ],
+          "z": [
+            0.0707,
+            0.0707
+          ],
+          "roll": [
+            3.141592653589793,
+            3.141592653589793
+          ],
+          "pitch": [
+            0.0,
+            0.0
+          ],
+          "yaw": [
+            3.141592653589793,
+            3.141592653589793
+          ]
+        }
+      },
+      "readback": {
+        "dome_intensity": 1081.982421875,
+        "key_intensity": 1223.1181640625,
+        "key_temperature_k": 5829.76318359375,
+        "hdr": "@/opt/isaac-sim6.0/extscache/omni.kit.thumbnails.mdl-1.0.28+110.1.1/data/tests/template/SubUSDs/textures/photo_studio_01_4k.hdr@",
+        "camera_intrinsics": [
+          [
+            440.6295166015625,
+            0.0,
+            320.0
+          ],
+          [
+            0.0,
+            440.6295166015625,
+            240.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "camera_pos_w": [
+          0.04315643012523651,
+          0.182138130068779,
+          0.354699969291687
+        ]
+      },
+      "verified_focal_scale_xy": [
+        0.9618116384916557,
+        0.9618116384916557
+      ],
+      "head_video": {
+        "path": "/home/tangyuan/WorldSimReady-Home/.worktrees/g1-home-domain-20261017/runs/final-review/visual_only/head.mp4",
+        "decoded_frames": 928,
+        "decoded_seconds": 18.56
+      },
+      "paired_actions": 0.0,
+      "manual_review": "Compared matched-step contact sheet and representative head/overview frames; baseline carry-stage top-edge truncation remains."
+    },
+    {
+      "name": "combined_s1",
+      "generation_seed": 1,
+      "randomization_seed": 104,
+      "active": [
+        "lighting",
+        "camera",
+        "material",
+        "pose_mild"
+      ],
+      "sampled": {
+        "lighting": {
+          "dome_intensity": 1081.98241858773,
+          "key_intensity": 1223.1182122135438,
+          "temperature_k": 5829.76323684171,
+          "yaw_deg": 81.9440667388627
+        },
+        "camera": {
+          "local_translation_m": [
+            -0.0016935767228347508,
+            0.0021381062362427128,
+            0.0030670941485246165
+          ],
+          "local_rpy_deg": [
+            -1.9331069614745107,
+            -1.3332250385006805,
+            1.581619833322757
+          ],
+          "focal_scale": 0.9618116520914026
+        },
+        "material": {
+          "floor_color": [
+            0.5575306313229355,
+            0.5465986581597406,
+            0.524734711833351
+          ],
+          "wall_color": [
+            0.7159408813249287,
+            0.7016220636984302,
+            0.6729844284454329
+          ],
+          "floor_roughness": 0.7404759610249633,
+          "wall_roughness": 0.9017959808638205
+        },
+        "pose": {
+          "xy_half_range_m": 0.035,
+          "yaw_half_range_deg": 3.0
+        }
+      },
+      "dataset": "/home/tangyuan/WorldSimReady-Home/.worktrees/g1-home-domain-20261017/runs/domain-r03/combined_s1/episodes.hdf5",
+      "dataset_sha256": "d7d92f2a244ea59ee62cd751815849b96b698a757f1cb4d460de8913b82df88b",
+      "success": false,
+      "frames": 843,
+      "fps": 50.0,
+      "seconds": 16.86,
+      "finite_actions": true,
+      "initial_box_pose": [
+        [
+          0.5891115069389343,
+          0.20021063089370728,
+          0.07069999724626541,
+          0.003520318539813161,
+          0.9999938011169434,
+          -4.371111828049834e-08,
+          -1.5387800755828351e-10
+        ]
+      ],
+      "final_box_speed_m_s": 0.01339422632008791,
+      "first_recorded_success_step": null,
+      "overview": {
+        "mean_luminance": 170.0494384765625,
+        "dark_fraction": 3.743489583333333e-05,
+        "clipped_fraction": 0.0
+      },
+      "head": {
+        "mean_luminance": 143.23109436035156,
+        "dark_fraction": 0.001116943359375,
+        "clipped_fraction": 0.0
+      },
+      "matched_step": 400,
+      "matched_step_rgb_mae_255": {
+        "overview": 24.04365306712963,
+        "head": 38.26820203993056
+      },
+      "overview_video": {
+        "path": "/home/tangyuan/WorldSimReady-Home/.worktrees/g1-home-domain-20261017/runs/final-review/combined_s1/overview.mp4",
+        "decoded_frames": 843,
+        "decoded_seconds": 16.86
+      },
+      "head_video": {
+        "path": "/home/tangyuan/WorldSimReady-Home/.worktrees/g1-home-domain-20261017/runs/final-review/combined_s1/head.mp4",
+        "decoded_frames": 843,
+        "decoded_seconds": 16.86
+      },
+      "resolved": {
+        "plan": {
+          "schema_version": 1,
+          "name": "combined_s1",
+          "generation_seed": 1,
+          "randomization_seed": 104,
+          "active": [
+            "lighting",
+            "camera",
+            "material",
+            "pose_mild"
+          ],
+          "sampled": {
+            "lighting": {
+              "dome_intensity": 1081.98241858773,
+              "key_intensity": 1223.1182122135438,
+              "temperature_k": 5829.76323684171,
+              "yaw_deg": 81.9440667388627
+            },
+            "camera": {
+              "local_translation_m": [
+                -0.0016935767228347508,
+                0.0021381062362427128,
+                0.0030670941485246165
+              ],
+              "local_rpy_deg": [
+                -1.9331069614745107,
+                -1.3332250385006805,
+                1.581619833322757
+              ],
+              "focal_scale": 0.9618116520914026
+            },
+            "material": {
+              "floor_color": [
+                0.5575306313229355,
+                0.5465986581597406,
+                0.524734711833351
+              ],
+              "wall_color": [
+                0.7159408813249287,
+                0.7016220636984302,
+                0.6729844284454329
+              ],
+              "floor_roughness": 0.7404759610249633,
+              "wall_roughness": 0.9017959808638205
+            },
+            "pose": {
+              "xy_half_range_m": 0.035,
+              "yaw_half_range_deg": 3.0
+            }
+          },
+          "scene": "/home/tangyuan/WorldSimReady-Home/.worktrees/g1-home-domain-20261017/runs/domain-plans-r03/combined_s1/scene.usda",
+          "scene_sha256": "d659b7e692d17887fa1a1c3253cc832e1461a11c0487a6110db141600d1c209f",
+          "base_layer": "/home/tangyuan/WorldSimReady-Home/.worktrees/g1-home-scene-20261017/runs/prepared-r03/home-g1.usda",
+          "base_layer_sha256": "8213884ae47221d62861cd91093da77f53f381cc1302d07a252515acdf19ad1a",
+          "hdr": "/opt/isaac-sim6.0/extscache/omni.kit.thumbnails.mdl-1.0.28+110.1.1/data/tests/template/SubUSDs/textures/photo_studio_01_4k.hdr",
+          "hdr_sha256": "b6bb7ed3522747f65ffbf50975054727d46516bc24dba98f8a5cd581b1341f28",
+          "scope": "One fixed sample per generated episode; reset pose sampled by simulator; diagnostic cameras fixed"
+        },
+        "camera_cfg": {
+          "pos": [
+            0.04315642327716525,
+            0.0021381062362427128,
+            0.35631709414852464
+          ],
+          "rot": [
+            -0.627816915512085,
+            0.6371326446533203,
+            -0.3040505349636078,
+            0.32781630754470825
+          ],
+          "convention": "ros",
+          "focal_length": 14.42717478137104
+        },
+        "pose_range": {
+          "x": [
+            0.5435,
+            0.6135
+          ],
+          "y": [
+            0.145,
+            0.215
+          ],
+          "z": [
+            0.0707,
+            0.0707
+          ],
+          "roll": [
+            3.141592653589793,
+            3.141592653589793
+          ],
+          "pitch": [
+            0.0,
+            0.0
+          ],
+          "yaw": [
+            3.0892327760299634,
+            3.193952531149623
+          ]
+        }
+      },
+      "readback": {
+        "dome_intensity": 1081.982421875,
+        "key_intensity": 1223.1181640625,
+        "key_temperature_k": 5829.76318359375,
+        "hdr": "@/opt/isaac-sim6.0/extscache/omni.kit.thumbnails.mdl-1.0.28+110.1.1/data/tests/template/SubUSDs/textures/photo_studio_01_4k.hdr@",
+        "camera_intrinsics": [
+          [
+            440.6295166015625,
+            0.0,
+            320.0
+          ],
+          [
+            0.0,
+            440.6295166015625,
+            240.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "camera_pos_w": [
+          0.04315643012523651,
+          0.182138130068779,
+          0.354699969291687
+        ]
+      },
+      "verified_focal_scale_xy": [
+        0.9618116384916557,
+        0.9618116384916557
+      ],
+      "paired_actions": null,
+      "manual_review": "Compared matched-step contact sheet and representative head/overview frames; baseline carry-stage top-edge truncation remains."
+    },
+    {
+      "name": "combined_s2",
+      "generation_seed": 2,
+      "randomization_seed": 105,
+      "active": [
+        "lighting",
+        "camera",
+        "material",
+        "pose_mild"
+      ],
+      "sampled": {
+        "lighting": {
+          "dome_intensity": 1045.1447070844215,
+          "key_intensity": 909.4711881014223,
+          "temperature_k": 5976.809149764993,
+          "yaw_deg": 342.5714966707992
+        },
+        "camera": {
+          "local_translation_m": [
+            -0.0018778124061199462,
+            0.0026832195796425966,
+            -0.0016530130585481395
+          ],
+          "local_rpy_deg": [
+            -1.3448458060677968,
+            -0.6067877362474507,
+            1.0049125519189661
+          ],
+          "focal_scale": 0.9647567131370244
+        },
+        "material": {
+          "floor_color": [
+            0.5587315423874464,
+            0.5477760219484769,
+            0.5258649810705378
+          ],
+          "wall_color": [
+            0.720252716438478,
+            0.7058476621097084,
+            0.6770375534521693
+          ],
+          "floor_roughness": 0.526064533599137,
+          "wall_roughness": 0.7505410493571676
+        },
+        "pose": {
+          "xy_half_range_m": 0.035,
+          "yaw_half_range_deg": 3.0
+        }
+      },
+      "dataset": "/home/tangyuan/WorldSimReady-Home/.worktrees/g1-home-domain-20261017/runs/domain-r03/combined_s2/episodes.hdf5",
+      "dataset_sha256": "eca0d97f420fe1c7a9b159123f210702249444cf48d115b5120f47cfa67fb066",
+      "success": true,
+      "frames": 904,
+      "fps": 50.0,
+      "seconds": 18.08,
+      "finite_actions": true,
+      "initial_box_pose": [
+        [
+          0.5903811454772949,
+          0.1665695458650589,
+          0.07069999724626541,
+          0.017886117100715637,
+          0.9998400211334229,
+          -4.370439654621805e-08,
+          -7.818269920356613e-10
+        ]
+      ],
+      "final_box_speed_m_s": 0.0005986700998619199,
+      "first_recorded_success_step": 801,
+      "overview": {
+        "mean_luminance": 148.41091918945312,
+        "dark_fraction": 0.0017296006944444444,
+        "clipped_fraction": 0.0
+      },
+      "head": {
+        "mean_luminance": 130.92271423339844,
+        "dark_fraction": 0.00095703125,
+        "clipped_fraction": 0.0
+      },
+      "matched_step": 400,
+      "matched_step_rgb_mae_255": {
+        "overview": 22.277484085648148,
+        "head": 54.246555989583335
+      },
+      "overview_video": {
+        "path": "/home/tangyuan/WorldSimReady-Home/.worktrees/g1-home-domain-20261017/runs/final-review/combined_s2/overview.mp4",
+        "decoded_frames": 904,
+        "decoded_seconds": 18.08
+      },
+      "head_video": {
+        "path": "/home/tangyuan/WorldSimReady-Home/.worktrees/g1-home-domain-20261017/runs/final-review/combined_s2/head.mp4",
+        "decoded_frames": 904,
+        "decoded_seconds": 18.08
+      },
+      "resolved": {
+        "plan": {
+          "schema_version": 1,
+          "name": "combined_s2",
+          "generation_seed": 2,
+          "randomization_seed": 105,
+          "active": [
+            "lighting",
+            "camera",
+            "material",
+            "pose_mild"
+          ],
+          "sampled": {
+            "lighting": {
+              "dome_intensity": 1045.1447070844215,
+              "key_intensity": 909.4711881014223,
+              "temperature_k": 5976.809149764993,
+              "yaw_deg": 342.5714966707992
+            },
+            "camera": {
+              "local_translation_m": [
+                -0.0018778124061199462,
+                0.0026832195796425966,
+                -0.0016530130585481395
+              ],
+              "local_rpy_deg": [
+                -1.3448458060677968,
+                -0.6067877362474507,
+                1.0049125519189661
+              ],
+              "focal_scale": 0.9647567131370244
+            },
+            "material": {
+              "floor_color": [
+                0.5587315423874464,
+                0.5477760219484769,
+                0.5258649810705378
+              ],
+              "wall_color": [
+                0.720252716438478,
+                0.7058476621097084,
+                0.6770375534521693
+              ],
+              "floor_roughness": 0.526064533599137,
+              "wall_roughness": 0.7505410493571676
+            },
+            "pose": {
+              "xy_half_range_m": 0.035,
+              "yaw_half_range_deg": 3.0
+            }
+          },
+          "scene": "/home/tangyuan/WorldSimReady-Home/.worktrees/g1-home-domain-20261017/runs/domain-plans-r03/combined_s2/scene.usda",
+          "scene_sha256": "31ae3f31e8a24639d6123837f71fefbdac8765f21c805cee309ab9530006bfbf",
+          "base_layer": "/home/tangyuan/WorldSimReady-Home/.worktrees/g1-home-scene-20261017/runs/prepared-r03/home-g1.usda",
+          "base_layer_sha256": "8213884ae47221d62861cd91093da77f53f381cc1302d07a252515acdf19ad1a",
+          "hdr": "/opt/isaac-sim6.0/extscache/omni.kit.thumbnails.mdl-1.0.28+110.1.1/data/tests/template/SubUSDs/textures/photo_studio_01_4k.hdr",
+          "hdr_sha256": "b6bb7ed3522747f65ffbf50975054727d46516bc24dba98f8a5cd581b1341f28",
+          "scope": "One fixed sample per generated episode; reset pose sampled by simulator; diagnostic cameras fixed"
+        },
+        "camera_cfg": {
+          "pos": [
+            0.04297218759388005,
+            0.0026832195796425966,
+            0.35159698694145186
+          ],
+          "rot": [
+            -0.6272522807121277,
+            0.6346492171287537,
+            -0.31291112303733826,
+            0.3253675103187561
+          ],
+          "convention": "ros",
+          "focal_length": 14.471350697055366
+        },
+        "pose_range": {
+          "x": [
+            0.5435,
+            0.6135
+          ],
+          "y": [
+            0.145,
+            0.215
+          ],
+          "z": [
+            0.0707,
+            0.0707
+          ],
+          "roll": [
+            3.141592653589793,
+            3.141592653589793
+          ],
+          "pitch": [
+            0.0,
+            0.0
+          ],
+          "yaw": [
+            3.0892327760299634,
+            3.193952531149623
+          ]
+        }
+      },
+      "readback": {
+        "dome_intensity": 1045.1446533203125,
+        "key_intensity": 909.47119140625,
+        "key_temperature_k": 5976.80908203125,
+        "hdr": "@/opt/isaac-sim6.0/extscache/omni.kit.thumbnails.mdl-1.0.28+110.1.1/data/tests/template/SubUSDs/textures/photo_studio_01_4k.hdr@",
+        "camera_intrinsics": [
+          [
+            441.9787292480469,
+            0.0,
+            320.0
+          ],
+          [
+            0.0,
+            441.9787292480469,
+            240.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "camera_pos_w": [
+          0.04297219589352608,
+          0.18268324434757233,
+          0.34997984766960144
+        ]
+      },
+      "verified_focal_scale_xy": [
+        0.9647567167882652,
+        0.9647567167882652
+      ],
+      "paired_actions": null,
+      "manual_review": "Compared matched-step contact sheet and representative head/overview frames; baseline carry-stage top-edge truncation remains."
+    }
+  ],
+  "num_attempts": 7,
+  "num_success": 6,
+  "scope": "Production feasibility and appearance checks; not learned-policy or real-world generalization.",
+  "warning": "Paired generation seeds aid comparison; one sample per single-factor profile is not a success-rate estimate.",
+  "goal": "Head-camera visual imitation learning and appearance generalization",
+  "recommended_profile": "visual_only",
+  "physics_regression": [
+    {
+      "profile": "material",
+      "preserved_geometry_bindings": 36,
+      "static_friction": 0.5799999833106995,
+      "dynamic_friction": 0.47999998927116394,
+      "restitution": 0.12999999523162842
+    },
+    {
+      "profile": "combined_s1",
+      "preserved_geometry_bindings": 36,
+      "static_friction": 0.5799999833106995,
+      "dynamic_friction": 0.47999998927116394,
+      "restitution": 0.12999999523162842
+    },
+    {
+      "profile": "combined_s2",
+      "preserved_geometry_bindings": 36,
+      "static_friction": 0.5799999833106995,
+      "dynamic_friction": 0.47999998927116394,
+      "restitution": 0.12999999523162842
+    }
+  ],
+  "input_validation": {
+    "home": {
+      "path": "/home/tangyuan/WorldSimReady-Home/.worktrees/g1-home-scene-20261017/runs/home-input/scene/scene000430/scene000430.usdz",
+      "sha256": "d38ebd9e8312c46125bee1412c3a45933c245b890ea081c307fcfc4e37814ee6"
+    },
+    "galileo": {
+      "path": "/home/tangyuan/WorldSimReady-Home/.worktrees/g1-data-visual-20261017/runs/g1/assets/Isaac/IsaacLab/Arena/assets/background_library/galileo_locomanip/galileo_locomanip.usd",
+      "sha256": "3eb28353cb861d35107a75c51990b78fd38e187231a2a801a46d42ec71f675ec"
+    },
+    "source_demo": {
+      "path": "/home/tangyuan/WorldSimReady-Home/.worktrees/g1-data-visual-20261017/runs/g1/input/arena_g1_loco_manipulation_dataset_annotated.hdf5",
+      "sha256": "0ab51ca69c10c2fe3bbd3d21a398dbf1e4b5cbf8c7600275f1f2408513175bfa"
+    },
+    "arena_head": "98866596fd024d96c874fe6fb95ae916d1133629"
+  },
+  "runtime_source_sha256": {
+    "workspace-overlays/g1-home-domain/domain_capture.py": "6e4c36d8203ef0a37d234e6a2b01335c7e88d4ef78e7a523e5bf6f1bceac6977",
+    "workspace-overlays/g1-home-domain/run.sh": "c297c72a9920bad72e884d30dc0bd621acb644114ed11b3710f705052539a01f",
+    "workspace-overlays/g1-home-scene/home_capture.py": "3edb3eb7846546993c646a332a28ddd737cebca03d36823e0364de8eb9e6ad71",
+    "workspace-overlays/g1-data-visual/g1_capture.py": "416b818f021f697dbba656c7c4301515f1380959f870a205c40e66a5c56f1546",
+    "workspace-overlays/g1-data-visual/launch.py": "61da76d02903864c6f8175d5390deb64273dad3e9c66e6ee917e2fd5dc37c28e"
+  },
+  "execution": {
+    "baseline": 58,
+    "lighting": 59,
+    "camera": 60,
+    "material": "shared batch 83 / source task 78",
+    "combined_s1": "shared batch 83 / source task 80",
+    "combined_s2": "shared batch 83 / source task 81",
+    "visual_only": "isolated recovery 87 after startup failure in five-process batch 83"
+  },
+  "excluded_diagnostics": {
+    "old_material_and_combined": "runs/domain-r02 material/combined_s1/combined_s2: visual binding also changed contact material; excluded from formal comparison",
+    "wide_pose": "Additional diagnostic, not required in head-vision default recipe",
+    "initial_probe_56": "USD layer lacked defaultPrim; failed before a complete trajectory; fixed with regression test",
+    "parallel_startup": "One fifth concurrent simulator failed during initialization, not a task-success failure; isolated retry produced the single visual_only formal episode"
+  },
+  "limits": [
+    "Seven formal trajectories, not an estimate of population success rate.",
+    "Same generation seed for single-factor groups; identical action sequences are intentional visual-domain variants.",
+    "One house, one source demonstration and one HDR asset; new-layout and unseen-HDR generalization not evaluated.",
+    "Mimic acts from state, not RGB; no learned policy was trained or evaluated.",
+    "The success predicate latches; final-speed checks do not replace original placement predicates."
+  ],
+  "commit": "5bf0e536bea8b2f358e0f6a535c790ca39e44b04",
+  "branch": "codex/g1-home-domain-20261017",
+  "host_checks": "passed; --allow-uninitialized for intentionally absent upstream worktree checkouts; actual GPU execution reused configured root Arena",
+  "module_tests": "3 passed, configured runtime Python",
+  "synchronization": "pushed current reviewed branch to origin",
+  "maintained_source_sha256": {
+    "workspace-overlays/g1-home-domain/test_prepare_batch.py": "51adfeeff255fe6ba0909837a659a1820989682e15af9b646f37c95dfe62183d",
+    "workspace-overlays/g1-home-domain/test_analyze.py": "846157540692dce2976cbdd3bc8c40865ce56bf1662145d529be6ebc10e36952",
+    "workspace-overlays/g1-home-domain/prepare_batch.py": "059a4de3deaf0469fa5a4e079642cb38dcdf799d087035dcd193927435250eba",
+    "workspace-overlays/g1-home-domain/README.md": "bcad9951f3635e3af8c375b8a025e02d0a26dd753f8a3dbc9efd40650d78fd2a",
+    "workspace-overlays/g1-home-domain/analyze.py": "55229ba1cbe0c1bc6435038c97777ea09a0440c827bd7f53a5df4dcc7e1d1217",
+    "workspace-overlays/g1-home-domain/domain_capture.py": "6e4c36d8203ef0a37d234e6a2b01335c7e88d4ef78e7a523e5bf6f1bceac6977",
+    "workspace-overlays/g1-home-domain/run.sh": "c297c72a9920bad72e884d30dc0bd621acb644114ed11b3710f705052539a01f"
+  }
+}

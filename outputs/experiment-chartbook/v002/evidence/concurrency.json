@@ -1,0 +1,380 @@
+{
+  "date": "2026-10-17",
+  "gpu": "NVIDIA GeForce RTX 5090 32607 MiB",
+  "selected": {
+    "workers_target": 16,
+    "worker_peak_mib": 6000,
+    "reserve_mib": 4096,
+    "effective_workers": 4,
+    "cpu_threads": 2,
+    "kit_threads": 4
+  },
+  "rounds": [
+    {
+      "round": "r01",
+      "queue_task_id": 70,
+      "duration_seconds": 197.62950658798218,
+      "effective_workers": 4,
+      "gpu_mean_percent": 9.424083769633508,
+      "gpu_peak_percent": 37.0,
+      "vram_peak_mib": 10832.0,
+      "jobs": [
+        {
+          "name": "g1-dr-combined_s2",
+          "source_task_id": 63,
+          "started": 1792232692.0590577,
+          "status": "failed",
+          "finished": 1792232889.6363506,
+          "returncode": -15
+        },
+        {
+          "name": "g1-dr-pose_wide",
+          "source_task_id": 64,
+          "started": 1792232692.0600994,
+          "status": "succeeded",
+          "finished": 1792232888.611518,
+          "returncode": 0
+        },
+        {
+          "name": "capacity-baseline",
+          "source_task_id": 58,
+          "started": 1792232692.0612326,
+          "status": "failed",
+          "finished": 1792232889.6365182,
+          "returncode": -15
+        },
+        {
+          "name": "capacity-camera",
+          "source_task_id": 60,
+          "started": 1792232692.0621514,
+          "status": "failed",
+          "finished": 1792232889.6366477,
+          "returncode": -15
+        }
+      ],
+      "report_sha256": "6ce2f1f03cf36e738581c919cd7cc90ae026de7a583e61bd3e67d798333f8efd"
+    },
+    {
+      "round": "r02",
+      "queue_task_id": 74,
+      "duration_seconds": 135.61832189559937,
+      "effective_workers": 4,
+      "gpu_mean_percent": 32.443609022556394,
+      "gpu_peak_percent": 70.0,
+      "vram_peak_mib": 23517.0,
+      "jobs": [
+        {
+          "name": "g1-dr-combined_s2",
+          "source_task_id": 63,
+          "started": 1792232889.752439,
+          "status": "succeeded",
+          "finished": 1792233024.2637188,
+          "returncode": 0
+        },
+        {
+          "name": "capacity-baseline",
+          "source_task_id": 58,
+          "started": 1792232889.7532644,
+          "status": "succeeded",
+          "finished": 1792233024.2638917,
+          "returncode": 0
+        },
+        {
+          "name": "capacity-camera",
+          "source_task_id": 60,
+          "started": 1792232889.7536283,
+          "status": "succeeded",
+          "finished": 1792232999.6694443,
+          "returncode": 0
+        },
+        {
+          "name": "capacity-baseline-repeat",
+          "source_task_id": 58,
+          "started": 1792232889.7539017,
+          "status": "succeeded",
+          "finished": 1792233025.3269863,
+          "returncode": 0
+        }
+      ],
+      "report_sha256": "125478f1cc0168545739b40b600a78879a3c12b91f3567d5f86cc3d5da052a3c",
+      "all_initialized_overlap_gpu_mean_percent": 53.483870967741936,
+      "all_initialized_overlap_seconds": 62.7403838634491
+    },
+    {
+      "round": "r04",
+      "queue_task_id": 83,
+      "duration_seconds": 192.4014904499054,
+      "effective_workers": 5,
+      "gpu_mean_percent": 23.70212765957447,
+      "gpu_peak_percent": 70.0,
+      "vram_peak_mib": 24777.0,
+      "jobs": [
+        {
+          "name": "g1-dr-fixed-material",
+          "source_task_id": 78,
+          "started": 1792233140.9075718,
+          "status": "succeeded",
+          "finished": 1792233264.4776003,
+          "returncode": 0
+        },
+        {
+          "name": "g1-dr-fixed-visual_only",
+          "source_task_id": 79,
+          "started": 1792233140.9085252,
+          "status": "failed",
+          "finished": 1792233333.2099168,
+          "returncode": -15
+        },
+        {
+          "name": "g1-dr-fixed-combined_s1",
+          "source_task_id": 80,
+          "started": 1792233140.9094553,
+          "status": "succeeded",
+          "finished": 1792233256.176501,
+          "returncode": 0
+        },
+        {
+          "name": "g1-dr-fixed-combined_s2",
+          "source_task_id": 81,
+          "started": 1792233140.9104435,
+          "status": "succeeded",
+          "finished": 1792233264.4777095,
+          "returncode": 0
+        },
+        {
+          "name": "five-env-capacity-baseline",
+          "source_task_id": 58,
+          "started": 1792233140.9115098,
+          "status": "succeeded",
+          "finished": 1792233265.4979172,
+          "returncode": 0
+        }
+      ],
+      "report_sha256": "c97d4878fd776519a84ee7951ab4c20146c5f54697f044fb0875caa75f979ec8"
+    }
+  ],
+  "limitations": [
+    "G1 PINK remains one environment per process with CPU physics; parallelism is across independent processes.",
+    "Not a matched repeated throughput benchmark or proof of global optimum.",
+    "Five-process round had one Kit initialization stall and is not validated as five simultaneous simulations.",
+    "Process completion and task success labels are separate; failed trajectory labels are retained."
+  ],
+  "five_environment_executed_runner_sha256": "551987e08503224b74c957dc401bf33fa6f00c249ec1efe493cc290a3a1ba415",
+  "final_runner_sha256": "21f61afc665161827afa8e2d36bf58c88b8db6376bee53709cf0e8b05b1aaf3f",
+  "commit": "78b4585",
+  "branch": "codex/gpu-environment-parallelism-20261017",
+  "host_validation": {
+    "script_tests": 40,
+    "shared_config_tests": 8,
+    "blog_build_and_check": "passed",
+    "allow_uninitialized": "isolated worktree intentionally omits upstream checkouts"
+  },
+  "data_validation": {
+    "four_process_round": [
+      {
+        "name": "g1-dr-combined_s2",
+        "path": "/home/tangyuan/WorldSimReady-Home/.worktrees/g1-home-domain-20261017/runs/domain-r02/combined_s2/episodes.hdf5",
+        "demos": [
+          {
+            "name": "demo_0",
+            "frames": 942,
+            "success": false,
+            "finite_actions": true,
+            "head_shape": [
+              942,
+              480,
+              640,
+              3
+            ],
+            "overview_shape": [
+              942,
+              360,
+              640,
+              3
+            ],
+            "head_first_last_mean": [
+              121.81274631076388,
+              97.6641091579861
+            ]
+          }
+        ]
+      },
+      {
+        "name": "capacity-baseline",
+        "path": "/home/tangyuan/WorldSimReady-Home/.worktrees/gpu-environment-parallelism-20261017/runs/gpu-parallel-20261017-r02/capacity-baseline/episodes.hdf5",
+        "demos": [
+          {
+            "name": "demo_0",
+            "frames": 928,
+            "success": true,
+            "finite_actions": true,
+            "head_shape": [
+              928,
+              480,
+              640,
+              3
+            ],
+            "overview_shape": [
+              928,
+              360,
+              640,
+              3
+            ],
+            "head_first_last_mean": [
+              107.8870095486111,
+              108.66296549479166
+            ]
+          }
+        ]
+      },
+      {
+        "name": "capacity-camera",
+        "path": "/home/tangyuan/WorldSimReady-Home/.worktrees/gpu-environment-parallelism-20261017/runs/gpu-parallel-20261017-r02/capacity-camera/episodes.hdf5",
+        "demos": [
+          {
+            "name": "demo_0",
+            "frames": 928,
+            "success": true,
+            "finite_actions": true,
+            "head_shape": [
+              928,
+              480,
+              640,
+              3
+            ],
+            "overview_shape": [
+              928,
+              360,
+              640,
+              3
+            ],
+            "head_first_last_mean": [
+              108.36004991319444,
+              108.2517990451389
+            ]
+          }
+        ]
+      },
+      {
+        "name": "capacity-baseline-repeat",
+        "path": "/home/tangyuan/WorldSimReady-Home/.worktrees/gpu-environment-parallelism-20261017/runs/gpu-parallel-20261017-r02/capacity-baseline-repeat/episodes.hdf5",
+        "demos": [
+          {
+            "name": "demo_0",
+            "frames": 928,
+            "success": true,
+            "finite_actions": true,
+            "head_shape": [
+              928,
+              480,
+              640,
+              3
+            ],
+            "overview_shape": [
+              928,
+              360,
+              640,
+              3
+            ],
+            "head_first_last_mean": [
+              107.87980577256944,
+              108.6615744357639
+            ]
+          }
+        ]
+      }
+    ],
+    "five_process_round_including_single_fallback": [
+      {
+        "name": "g1-dr-fixed-material",
+        "demos": [
+          {
+            "name": "demo_0",
+            "frames": 928,
+            "success": true,
+            "finite_actions": true,
+            "camera_frames_match": true,
+            "head_first_last_mean": [
+              107.40574001736111,
+              109.66589192708334
+            ]
+          }
+        ]
+      },
+      {
+        "name": "g1-dr-fixed-visual_only",
+        "demos": [
+          {
+            "name": "demo_0",
+            "frames": 928,
+            "success": true,
+            "finite_actions": true,
+            "camera_frames_match": true,
+            "head_first_last_mean": [
+              137.9500217013889,
+              124.41355143229167
+            ]
+          }
+        ]
+      },
+      {
+        "name": "g1-dr-fixed-combined_s1",
+        "demos": [
+          {
+            "name": "demo_0",
+            "frames": 843,
+            "success": false,
+            "finite_actions": true,
+            "camera_frames_match": true,
+            "head_first_last_mean": [
+              137.94316948784723,
+              118.52323784722222
+            ]
+          }
+        ]
+      },
+      {
+        "name": "g1-dr-fixed-combined_s2",
+        "demos": [
+          {
+            "name": "demo_0",
+            "frames": 904,
+            "success": true,
+            "finite_actions": true,
+            "camera_frames_match": true,
+            "head_first_last_mean": [
+              121.80025716145833,
+              105.91361219618055
+            ]
+          }
+        ]
+      },
+      {
+        "name": "five-env-capacity-baseline",
+        "demos": [
+          {
+            "name": "demo_0",
+            "frames": 928,
+            "success": true,
+            "finite_actions": true,
+            "camera_frames_match": true,
+            "head_first_last_mean": [
+              107.9089453125,
+              108.66340603298612
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "fallback": {
+    "task_id": 87,
+    "status": "succeeded",
+    "duration_seconds": 71.27594447135925,
+    "trigger": "Kit startup stall; no output had been created before fallback"
+  },
+  "notes": [
+    "Five-process runner subsequently changed only to let missing executables fail independently; covered by host integration tests.",
+    "Four-process all-initialized overlap mean 53.48% is a subset of the total batch; whole-batch average including startup/teardown is 32.44%."
+  ]
+}

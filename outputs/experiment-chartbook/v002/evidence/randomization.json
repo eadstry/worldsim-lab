@@ -1,0 +1,189 @@
+{
+  "status": "passed",
+  "task": "Isaac-PickPlace-Cube-OpenArm-Bimanual-Left-IK-Rel-v0",
+  "sample_count": 256,
+  "num_envs": 4,
+  "seed": 101,
+  "pose_range": {
+    "x": [
+      -0.04,
+      0.04
+    ],
+    "y": [
+      -0.06,
+      0.06
+    ]
+  },
+  "center_m": [
+    0.5299999713897705,
+    0.11999999731779099,
+    1.0809999704360962
+  ],
+  "checks": {
+    "finite_poses": true,
+    "configured_bounds": true,
+    "xy_changes": true,
+    "z_fixed": true,
+    "orientation_fixed": true,
+    "same_seed_reproduces": true,
+    "different_seed_changes": true,
+    "disabled_randomization_fixed": true,
+    "physics_steps_finite": true
+  },
+  "same_seed_max_error": 0.0,
+  "mean_offset_m": [
+    0.0009036811534315348,
+    0.001617176691070199,
+    0.0
+  ],
+  "std_offset_m": [
+    0.024020033422640027,
+    0.03491653073608147,
+    0.0
+  ],
+  "frames": [
+    {
+      "file": "reset-00.png",
+      "position": [
+        0.5449951887130737,
+        0.06804287433624268,
+        1.0781772136688232
+      ],
+      "overview": "overview-00.png",
+      "reset_position": [
+        0.5455291271209717,
+        0.06856220960617065,
+        1.0809999704360962
+      ],
+      "control_steps_after_reset": 1
+    },
+    {
+      "file": "reset-01.png",
+      "position": [
+        0.4952847957611084,
+        0.13547486066818237,
+        1.0783252716064453
+      ],
+      "overview": "overview-01.png",
+      "reset_position": [
+        0.4956512451171875,
+        0.13559985160827637,
+        1.0809999704360962
+      ],
+      "control_steps_after_reset": 1
+    },
+    {
+      "file": "reset-02.png",
+      "position": [
+        0.5313224792480469,
+        0.1388845443725586,
+        1.0780590772628784
+      ],
+      "overview": "overview-02.png",
+      "reset_position": [
+        0.5321195125579834,
+        0.1394047737121582,
+        1.0809999704360962
+      ],
+      "control_steps_after_reset": 1
+    },
+    {
+      "file": "reset-03.png",
+      "position": [
+        0.5651419162750244,
+        0.175359845161438,
+        1.0782421827316284
+      ],
+      "overview": "overview-03.png",
+      "reset_position": [
+        0.5652852058410645,
+        0.17556077241897583,
+        1.0809999704360962
+      ],
+      "control_steps_after_reset": 1
+    },
+    {
+      "file": "reset-04.png",
+      "position": [
+        0.5465517044067383,
+        0.07110172510147095,
+        1.078121304512024
+      ],
+      "overview": "overview-04.png",
+      "reset_position": [
+        0.5472544431686401,
+        0.07155299186706543,
+        1.0809999704360962
+      ],
+      "control_steps_after_reset": 1
+    },
+    {
+      "file": "reset-05.png",
+      "position": [
+        0.5594114065170288,
+        0.08583557605743408,
+        1.0782978534698486
+      ],
+      "overview": "overview-05.png",
+      "reset_position": [
+        0.5595669746398926,
+        0.08613622188568115,
+        1.0809999704360962
+      ],
+      "control_steps_after_reset": 1
+    },
+    {
+      "file": "reset-06.png",
+      "position": [
+        0.5532249212265015,
+        0.09113633632659912,
+        1.0782877206802368
+      ],
+      "overview": "overview-06.png",
+      "reset_position": [
+        0.5533822774887085,
+        0.09135651588439941,
+        1.0809999704360962
+      ],
+      "control_steps_after_reset": 1
+    },
+    {
+      "file": "reset-07.png",
+      "position": [
+        0.5079069137573242,
+        0.06079208850860596,
+        1.0787816047668457
+      ],
+      "overview": "overview-07.png",
+      "reset_position": [
+        0.5080163478851318,
+        0.06108546257019043,
+        1.0809999704360962
+      ],
+      "control_steps_after_reset": 1
+    },
+    {
+      "file": "reset-08.png",
+      "position": [
+        0.5519245862960815,
+        0.06260204315185547,
+        1.0779110193252563
+      ],
+      "overview": "overview-08.png",
+      "reset_position": [
+        0.5529347658157349,
+        0.06288719177246094,
+        1.0809999704360962
+      ],
+      "control_steps_after_reset": 1
+    }
+  ],
+  "physics_steps": 12,
+  "source_sha256": {
+    "workspace-overlays/autodata-domain-randomization/run.py": "05a4d693b1f41f3b455514b0dcdb18d38e7b0be0e79a89584ed41899771007e8",
+    "workspace-overlays/openarm-production/runtime/openarm_autodata/tasks/pick_place/configs/scene_cfg.py": "878f559e5fe0ed98daf1ffc41c79a7f541da524297a47a8a7714488ad8a69450",
+    "workspace-overlays/openarm-production/runtime/openarm_autodata/tasks/pick_place/configs/env_cfg.py": "81416c26ec4e4b402914d8d6df0e7f56268888524f507b9738b6068898e1afa0",
+    "workspace-overlays/openarm-production/runtime/openarm_autodata/tasks/pick_place/configs/left_env_cfg.py": "a9a8560626e07cef784899671b3f298f17613efb6c223d695f11a389b9f4f3b2"
+  },
+  "scope": "Reset-event and rendering validation; no trajectory generation or success-rate evaluation."
+}

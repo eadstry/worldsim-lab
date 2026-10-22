@@ -1,0 +1,87 @@
+[
+  {
+    "name": "baseline-r02",
+    "result": {
+      "algorithm": "skillgen",
+      "env_profile": {
+        "name": "openarm_left_skillgen",
+        "path": "/home/tangyuan/WorldSimReady-Home/workspace-overlays/openarm-production/runtime/openarm_autodata/tasks/pick_place/autodata_configs/env_profiles/openarm_left_skillgen.yaml",
+        "planner": "openarm_pick_place_left"
+      },
+      "num_attempts": 1,
+      "num_failures": 0,
+      "num_success": 1,
+      "requested_trials": 1
+    },
+    "validated": true,
+    "seconds": 202.148468
+  },
+  {
+    "name": "studio-r03",
+    "result": {
+      "algorithm": "skillgen",
+      "env_profile": {
+        "name": "openarm_left_skillgen",
+        "path": "/home/tangyuan/WorldSimReady-Home/workspace-overlays/openarm-production/runtime/openarm_autodata/tasks/pick_place/autodata_configs/env_profiles/openarm_left_skillgen.yaml",
+        "planner": "openarm_pick_place_left"
+      },
+      "num_attempts": 1,
+      "num_failures": 0,
+      "num_success": 1,
+      "requested_trials": 1
+    },
+    "validated": true,
+    "seconds": 184.05996
+  },
+  {
+    "name": "beach-r03",
+    "result": {
+      "algorithm": "skillgen",
+      "env_profile": {
+        "name": "openarm_left_skillgen",
+        "path": "/home/tangyuan/WorldSimReady-Home/workspace-overlays/openarm-production/runtime/openarm_autodata/tasks/pick_place/autodata_configs/env_profiles/openarm_left_skillgen.yaml",
+        "planner": "openarm_pick_place_left"
+      },
+      "num_attempts": 1,
+      "num_failures": 0,
+      "num_success": 1,
+      "requested_trials": 1
+    },
+    "validated": true,
+    "seconds": 204.070343
+  },
+  {
+    "name": "studio-r04",
+    "result": {
+      "algorithm": "skillgen",
+      "env_profile": {
+        "name": "openarm_left_skillgen",
+        "path": "/home/tangyuan/WorldSimReady-Home/workspace-overlays/openarm-production/runtime/openarm_autodata/tasks/pick_place/autodata_configs/env_profiles/openarm_left_skillgen.yaml",
+        "planner": "openarm_pick_place_left"
+      },
+      "num_attempts": 1,
+      "num_failures": 0,
+      "num_success": 1,
+      "requested_trials": 1
+    },
+    "validated": true,
+    "seconds": 179.99791
+  },
+  {
+    "name": "beach-r04",
+    "result": {
+      "algorithm": "skillgen",
+      "env_profile": {
+        "name": "openarm_left_skillgen",
+        "path": "/home/tangyuan/WorldSimReady-Home/workspace-overlays/openarm-production/runtime/openarm_autodata/tasks/pick_place/autodata_configs/env_profiles/openarm_left_skillgen.yaml",
+        "planner": "openarm_pick_place_left"
+      },
+      "num_attempts": 1,
+      "num_failures": 0,
+      "num_success": 1,
+      "requested_trials": 1
+    },
+    "validated": true,
+    "seconds": 156.435901
+  }
+]

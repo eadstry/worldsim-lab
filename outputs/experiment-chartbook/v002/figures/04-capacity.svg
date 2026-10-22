@@ -1,0 +1,4437 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="841.68pt" height="595.44pt" viewBox="0 0 841.68 595.44" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-22T17:17:36.737612</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 595.44 
+L 841.68 595.44 
+L 841.68 0 
+L 0 0 
+z
+" style="fill: #f7f6f2"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 109.4184 434.6712 
+L 791.1792 434.6712 
+L 791.1792 148.86 
+L 109.4184 148.86 
+z
+" style="fill: #f7f6f2"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <defs>
+       <path id="m4cd9652c43" d="M 0 0 
+L 0 3.5 
+" style="stroke: #263c3b; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m4cd9652c43" x="224.923329" y="434.6712" style="fill: #263c3b; stroke: #263c3b; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <!-- seed 303 -->
+      <g style="fill: #263c3b" transform="translate(199.509579 449.8987) scale(0.12 -0.12)">
+       <defs>
+        <path id="WenQuanYiZenHei-73" d="M 3031 944 
+Q 3031 294 2350 44 
+Q 2050 -63 1681 -63 
+Q 863 -63 475 425 
+Q 319 613 256 863 
+L 744 963 
+Q 806 544 1344 406 
+Q 1531 350 1719 350 
+Q 2250 350 2438 631 
+Q 2506 744 2506 888 
+Q 2506 1206 2081 1331 
+L 1638 1425 
+Q 988 1544 750 1688 
+Q 388 1919 388 2381 
+Q 388 2975 994 3219 
+Q 1269 3338 1606 3338 
+Q 2463 3338 2781 2781 
+Q 2856 2663 2894 2513 
+L 2431 2419 
+Q 2275 2869 1725 2925 
+Q 1663 2931 1600 2931 
+Q 1150 2931 981 2688 
+Q 906 2594 906 2456 
+Q 906 2138 1356 2013 
+Q 1413 1988 2038 1881 
+Q 2456 1806 2644 1675 
+Q 3031 1413 3031 944 
+z
+" transform="scale(0.015625)"/>
+        <path id="WenQuanYiZenHei-65" d="M 3163 1588 
+L 800 1588 
+Q 794 963 1088 631 
+Q 1331 356 1769 356 
+Q 2313 356 2569 831 
+Q 2606 900 2638 988 
+L 3113 888 
+Q 2931 325 2363 69 
+Q 2063 -63 1725 -63 
+Q 888 -63 488 625 
+Q 238 1050 238 1625 
+Q 238 2431 725 2925 
+Q 1125 3338 1744 3338 
+Q 2588 3338 2956 2606 
+Q 3163 2200 3163 1663 
+L 3163 1588 
+z
+M 2613 1956 
+Q 2619 2488 2288 2763 
+Q 2063 2950 1744 2950 
+Q 1250 2950 988 2500 
+Q 838 2256 825 1956 
+L 2613 1956 
+z
+" transform="scale(0.015625)"/>
+        <path id="WenQuanYiZenHei-64" d="M 3025 0 
+L 2575 0 
+L 2575 575 
+L 2563 575 
+Q 2244 -63 1544 -63 
+Q 806 -63 456 663 
+Q 244 1094 244 1625 
+Q 244 2425 663 2919 
+Q 1025 3338 1588 3338 
+Q 2156 3338 2525 2813 
+L 2525 4388 
+L 3025 4388 
+L 3025 0 
+z
+M 2525 1406 
+L 2525 1925 
+Q 2525 2550 2119 2813 
+Q 1913 2938 1631 2938 
+Q 1075 2938 869 2275 
+Q 781 1994 781 1681 
+Q 781 775 1213 475 
+Q 1381 350 1619 350 
+Q 2119 350 2381 819 
+Q 2525 1088 2525 1406 
+z
+" transform="scale(0.015625)"/>
+        <path id="WenQuanYiZenHei-20" transform="scale(0.015625)"/>
+        <path id="WenQuanYiZenHei-33" d="M 3588 1231 
+Q 3588 494 2875 144 
+Q 2450 -63 1925 -63 
+Q 1044 -63 556 488 
+Q 356 706 256 1000 
+L 769 1169 
+Q 994 375 1913 375 
+Q 2631 375 2900 788 
+Q 3019 975 3019 1231 
+Q 3019 1638 2638 1881 
+Q 2325 2081 1613 2069 
+L 1338 2069 
+L 1338 2494 
+Q 1969 2494 2094 2506 
+Q 2325 2544 2463 2613 
+Q 2763 2756 2844 3100 
+Q 2863 3169 2863 3244 
+Q 2863 3744 2381 3944 
+L 2163 4006 
+Q 2056 4025 1931 4025 
+Q 1388 4025 1075 3631 
+Q 969 3488 906 3313 
+L 419 3456 
+Q 675 4150 1400 4369 
+Q 1669 4456 1975 4456 
+Q 2694 4456 3106 4050 
+Q 3419 3744 3419 3275 
+Q 3419 2813 3025 2513 
+Q 2825 2356 2575 2319 
+L 2575 2306 
+Q 3181 2213 3450 1769 
+Q 3588 1525 3588 1231 
+z
+" transform="scale(0.015625)"/>
+        <path id="WenQuanYiZenHei-30" d="M 3581 2175 
+Q 3581 1288 3169 638 
+Q 2713 -63 1938 -63 
+Q 1025 -63 563 831 
+Q 256 1425 256 2188 
+Q 256 3188 700 3819 
+Q 1138 4456 1888 4456 
+Q 2863 4456 3306 3500 
+Q 3581 2925 3581 2175 
+z
+M 3019 2100 
+Q 3019 3356 2500 3806 
+L 2350 3919 
+Q 2144 4031 1888 4031 
+Q 1100 4031 888 2956 
+Q 819 2625 819 2225 
+Q 819 1013 1338 569 
+Q 1588 356 1938 356 
+Q 2675 356 2925 1294 
+Q 3019 1663 3019 2100 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#WenQuanYiZenHei-73"/>
+       <use xlink:href="#WenQuanYiZenHei-65" transform="translate(51.953125 0)"/>
+       <use xlink:href="#WenQuanYiZenHei-65" transform="translate(105.859375 0)"/>
+       <use xlink:href="#WenQuanYiZenHei-64" transform="translate(159.765625 0)"/>
+       <use xlink:href="#WenQuanYiZenHei-20" transform="translate(213.671875 0)"/>
+       <use xlink:href="#WenQuanYiZenHei-33" transform="translate(243.652344 0)"/>
+       <use xlink:href="#WenQuanYiZenHei-30" transform="translate(303.613281 0)"/>
+       <use xlink:href="#WenQuanYiZenHei-33" transform="translate(363.574219 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2">
+      <g>
+       <use xlink:href="#m4cd9652c43" x="450.2988" y="434.6712" style="fill: #263c3b; stroke: #263c3b; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <!-- seed 404 -->
+      <g style="fill: #263c3b" transform="translate(424.88505 449.8987) scale(0.12 -0.12)">
+       <defs>
+        <path id="WenQuanYiZenHei-34" d="M 3631 1025 
+L 2913 1025 
+L 2913 0 
+L 2381 0 
+L 2381 1025 
+L 219 1025 
+L 219 1388 
+L 2225 4388 
+L 2913 4388 
+L 2913 1444 
+L 3631 1444 
+L 3631 1025 
+z
+M 2381 1444 
+L 2381 3963 
+L 788 1444 
+L 2381 1444 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#WenQuanYiZenHei-73"/>
+       <use xlink:href="#WenQuanYiZenHei-65" transform="translate(51.953125 0)"/>
+       <use xlink:href="#WenQuanYiZenHei-65" transform="translate(105.859375 0)"/>
+       <use xlink:href="#WenQuanYiZenHei-64" transform="translate(159.765625 0)"/>
+       <use xlink:href="#WenQuanYiZenHei-20" transform="translate(213.671875 0)"/>
+       <use xlink:href="#WenQuanYiZenHei-34" transform="translate(243.652344 0)"/>
+       <use xlink:href="#WenQuanYiZenHei-30" transform="translate(303.613281 0)"/>
+       <use xlink:href="#WenQuanYiZenHei-34" transform="translate(363.574219 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3">
+      <g>
+       <use xlink:href="#m4cd9652c43" x="675.674271" y="434.6712" style="fill: #263c3b; stroke: #263c3b; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <!-- seed 505 -->
+      <g style="fill: #263c3b" transform="translate(650.260521 449.8987) scale(0.12 -0.12)">
+       <defs>
+        <path id="WenQuanYiZenHei-35" d="M 3531 1488 
+Q 3531 688 2913 250 
+Q 2456 -63 1844 -63 
+Q 1175 -63 706 350 
+Q 413 613 306 975 
+L 781 1131 
+Q 1000 538 1569 406 
+Q 1706 369 1856 369 
+Q 2550 369 2850 869 
+Q 3000 1131 3000 1494 
+Q 3000 2056 2581 2356 
+Q 2319 2538 1969 2538 
+Q 1400 2538 1031 2075 
+Q 981 2013 938 1938 
+L 500 2031 
+L 644 4388 
+L 3244 4388 
+L 3200 3919 
+L 1044 3919 
+L 950 2500 
+Q 1431 2975 2006 2975 
+Q 2713 2975 3163 2475 
+Q 3531 2063 3531 1488 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#WenQuanYiZenHei-73"/>
+       <use xlink:href="#WenQuanYiZenHei-65" transform="translate(51.953125 0)"/>
+       <use xlink:href="#WenQuanYiZenHei-65" transform="translate(105.859375 0)"/>
+       <use xlink:href="#WenQuanYiZenHei-64" transform="translate(159.765625 0)"/>
+       <use xlink:href="#WenQuanYiZenHei-20" transform="translate(213.671875 0)"/>
+       <use xlink:href="#WenQuanYiZenHei-35" transform="translate(243.652344 0)"/>
+       <use xlink:href="#WenQuanYiZenHei-30" transform="translate(303.613281 0)"/>
+       <use xlink:href="#WenQuanYiZenHei-35" transform="translate(363.574219 0)"/>
+      </g>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_4">
+      <path d="M 109.4184 434.6712 
+L 791.1792 434.6712 
+" clip-path="url(#p38722e1508)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.15; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_5">
+      <defs>
+       <path id="m68d1b00a11" d="M 0 0 
+L -3.5 0 
+" style="stroke: #263c3b; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m68d1b00a11" x="109.4184" y="434.6712" style="fill: #263c3b; stroke: #263c3b; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <!-- 0.00 -->
+      <g style="fill: #263c3b" transform="translate(77.231525 438.78495) scale(0.12 -0.12)">
+       <defs>
+        <path id="WenQuanYiZenHei-2e" d="M 1344 0 
+L 631 0 
+L 631 725 
+L 1344 725 
+L 1344 0 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#WenQuanYiZenHei-30"/>
+       <use xlink:href="#WenQuanYiZenHei-2e" transform="translate(59.960938 0)"/>
+       <use xlink:href="#WenQuanYiZenHei-30" transform="translate(89.941406 0)"/>
+       <use xlink:href="#WenQuanYiZenHei-30" transform="translate(149.902344 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_6">
+      <path d="M 109.4184 396.689843 
+L 791.1792 396.689843 
+" clip-path="url(#p38722e1508)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.15; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_7">
+      <g>
+       <use xlink:href="#m68d1b00a11" x="109.4184" y="396.689843" style="fill: #263c3b; stroke: #263c3b; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <!-- 0.25 -->
+      <g style="fill: #263c3b" transform="translate(77.231525 400.803593) scale(0.12 -0.12)">
+       <defs>
+        <path id="WenQuanYiZenHei-32" d="M 3488 0 
+L 369 0 
+L 369 456 
+L 2150 1850 
+Q 2931 2463 2931 3144 
+Q 2931 3619 2488 3863 
+Q 2231 4013 1931 4013 
+Q 1425 4013 1113 3619 
+Q 894 3356 881 3013 
+L 369 3169 
+Q 531 3981 1213 4300 
+Q 1544 4456 1950 4456 
+Q 2631 4456 3088 4044 
+L 3225 3888 
+L 3350 3706 
+Q 3481 3444 3481 3144 
+Q 3481 2313 2519 1569 
+L 1069 456 
+L 3488 456 
+L 3488 0 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#WenQuanYiZenHei-30"/>
+       <use xlink:href="#WenQuanYiZenHei-2e" transform="translate(59.960938 0)"/>
+       <use xlink:href="#WenQuanYiZenHei-32" transform="translate(89.941406 0)"/>
+       <use xlink:href="#WenQuanYiZenHei-35" transform="translate(149.902344 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_8">
+      <path d="M 109.4184 358.708485 
+L 791.1792 358.708485 
+" clip-path="url(#p38722e1508)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.15; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_9">
+      <g>
+       <use xlink:href="#m68d1b00a11" x="109.4184" y="358.708485" style="fill: #263c3b; stroke: #263c3b; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_6">
+      <!-- 0.50 -->
+      <g style="fill: #263c3b" transform="translate(77.231525 362.822235) scale(0.12 -0.12)">
+       <use xlink:href="#WenQuanYiZenHei-30"/>
+       <use xlink:href="#WenQuanYiZenHei-2e" transform="translate(59.960938 0)"/>
+       <use xlink:href="#WenQuanYiZenHei-35" transform="translate(89.941406 0)"/>
+       <use xlink:href="#WenQuanYiZenHei-30" transform="translate(149.902344 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_10">
+      <path d="M 109.4184 320.727128 
+L 791.1792 320.727128 
+" clip-path="url(#p38722e1508)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.15; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_11">
+      <g>
+       <use xlink:href="#m68d1b00a11" x="109.4184" y="320.727128" style="fill: #263c3b; stroke: #263c3b; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_7">
+      <!-- 0.75 -->
+      <g style="fill: #263c3b" transform="translate(77.231525 324.840878) scale(0.12 -0.12)">
+       <defs>
+        <path id="WenQuanYiZenHei-37" d="M 3400 4056 
+Q 1838 2175 1838 0 
+L 1275 0 
+Q 1269 1438 2056 2825 
+Q 2381 3400 2825 3913 
+L 444 3913 
+L 500 4388 
+L 3400 4388 
+L 3400 4056 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#WenQuanYiZenHei-30"/>
+       <use xlink:href="#WenQuanYiZenHei-2e" transform="translate(59.960938 0)"/>
+       <use xlink:href="#WenQuanYiZenHei-37" transform="translate(89.941406 0)"/>
+       <use xlink:href="#WenQuanYiZenHei-35" transform="translate(149.902344 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_12">
+      <path d="M 109.4184 282.74577 
+L 791.1792 282.74577 
+" clip-path="url(#p38722e1508)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.15; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_13">
+      <g>
+       <use xlink:href="#m68d1b00a11" x="109.4184" y="282.74577" style="fill: #263c3b; stroke: #263c3b; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_8">
+      <!-- 1.00 -->
+      <g style="fill: #263c3b" transform="translate(77.231525 286.85952) scale(0.12 -0.12)">
+       <defs>
+        <path id="WenQuanYiZenHei-31" d="M 3556 0 
+L 488 0 
+L 488 406 
+L 1800 406 
+L 1800 3725 
+Q 1231 3125 588 2788 
+L 588 3338 
+Q 1456 3781 1931 4388 
+L 2331 4388 
+L 2331 406 
+L 3556 406 
+L 3556 0 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#WenQuanYiZenHei-31"/>
+       <use xlink:href="#WenQuanYiZenHei-2e" transform="translate(59.960938 0)"/>
+       <use xlink:href="#WenQuanYiZenHei-30" transform="translate(89.941406 0)"/>
+       <use xlink:href="#WenQuanYiZenHei-30" transform="translate(149.902344 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_14">
+      <path d="M 109.4184 244.764413 
+L 791.1792 244.764413 
+" clip-path="url(#p38722e1508)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.15; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_15">
+      <g>
+       <use xlink:href="#m68d1b00a11" x="109.4184" y="244.764413" style="fill: #263c3b; stroke: #263c3b; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_9">
+      <!-- 1.25 -->
+      <g style="fill: #263c3b" transform="translate(77.231525 248.878163) scale(0.12 -0.12)">
+       <use xlink:href="#WenQuanYiZenHei-31"/>
+       <use xlink:href="#WenQuanYiZenHei-2e" transform="translate(59.960938 0)"/>
+       <use xlink:href="#WenQuanYiZenHei-32" transform="translate(89.941406 0)"/>
+       <use xlink:href="#WenQuanYiZenHei-35" transform="translate(149.902344 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_7">
+     <g id="line2d_16">
+      <path d="M 109.4184 206.783055 
+L 791.1792 206.783055 
+" clip-path="url(#p38722e1508)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.15; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_17">
+      <g>
+       <use xlink:href="#m68d1b00a11" x="109.4184" y="206.783055" style="fill: #263c3b; stroke: #263c3b; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_10">
+      <!-- 1.50 -->
+      <g style="fill: #263c3b" transform="translate(77.231525 210.896805) scale(0.12 -0.12)">
+       <use xlink:href="#WenQuanYiZenHei-31"/>
+       <use xlink:href="#WenQuanYiZenHei-2e" transform="translate(59.960938 0)"/>
+       <use xlink:href="#WenQuanYiZenHei-35" transform="translate(89.941406 0)"/>
+       <use xlink:href="#WenQuanYiZenHei-30" transform="translate(149.902344 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_8">
+     <g id="line2d_18">
+      <path d="M 109.4184 168.801698 
+L 791.1792 168.801698 
+" clip-path="url(#p38722e1508)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.15; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_19">
+      <g>
+       <use xlink:href="#m68d1b00a11" x="109.4184" y="168.801698" style="fill: #263c3b; stroke: #263c3b; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_11">
+      <!-- 1.75 -->
+      <g style="fill: #263c3b" transform="translate(77.231525 172.915448) scale(0.12 -0.12)">
+       <use xlink:href="#WenQuanYiZenHei-31"/>
+       <use xlink:href="#WenQuanYiZenHei-2e" transform="translate(59.960938 0)"/>
+       <use xlink:href="#WenQuanYiZenHei-37" transform="translate(89.941406 0)"/>
+       <use xlink:href="#WenQuanYiZenHei-35" transform="translate(149.902344 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="text_12">
+     <!-- 仿真终态接受吞吐 / 条/分钟 -->
+     <g style="fill: #263c3b" transform="translate(70.8384 380.23685) rotate(-90) scale(0.14 -0.14)">
+      <defs>
+       <path id="WenQuanYiZenHei-4eff" d="M 5138 -44 
+L 5138 2175 
+L 3781 2175 
+Q 3725 1075 3269 375 
+Q 2856 -263 2244 -644 
+Q 2106 -388 1825 -319 
+Q 2506 0 2918 675 
+Q 3331 1350 3331 2294 
+L 3331 3369 
+L 2956 3369 
+Q 2594 3369 2231 3350 
+Q 2250 3544 2231 3744 
+Q 2594 3725 2956 3725 
+L 5450 3725 
+Q 5813 3725 6175 3744 
+Q 6156 3544 6175 3350 
+Q 5813 3369 5450 3369 
+L 3781 3369 
+L 3781 2531 
+L 5588 2531 
+L 5588 -175 
+Q 5588 -425 5400 -600 
+Q 5131 -831 4419 -825 
+Q 4494 -513 4269 -275 
+Q 4475 -300 4753 -303 
+Q 5031 -306 5084 -265 
+Q 5138 -225 5138 -44 
+z
+M 4213 3813 
+Q 3856 4344 3431 4813 
+L 3800 5150 
+Q 4250 4650 4625 4088 
+L 4213 3813 
+z
+M 2319 4919 
+Q 2031 4006 1569 3219 
+L 1569 94 
+Q 1569 -381 1588 -850 
+Q 1344 -825 1094 -850 
+Q 1113 -381 1113 94 
+L 1113 2550 
+Q 794 2150 394 1819 
+Q 250 2063 -13 2181 
+Q 319 2438 613 2738 
+Q 1131 3269 1369 3800 
+Q 1619 4394 1788 5056 
+Q 2031 4963 2319 4919 
+z
+" transform="scale(0.015625)"/>
+       <path id="WenQuanYiZenHei-771f" d="M 744 400 
+Q 431 400 119 381 
+Q 138 550 119 725 
+Q 431 706 744 706 
+L 1413 706 
+L 1406 3944 
+L 2850 3944 
+L 2850 4319 
+L 1100 4319 
+Q 788 4319 475 4306 
+Q 494 4475 475 4644 
+Q 788 4625 1100 4625 
+L 2850 4625 
+Q 2844 4938 2825 5256 
+Q 3063 5231 3300 5256 
+L 3275 4625 
+L 5119 4625 
+Q 5431 4625 5744 4644 
+Q 5725 4475 5744 4306 
+Q 5431 4319 5119 4319 
+L 3275 4319 
+L 3275 3944 
+L 4806 3944 
+L 4806 706 
+L 5513 706 
+Q 5819 706 6131 725 
+Q 6119 550 6131 381 
+Q 5825 400 5513 400 
+L 4419 400 
+Q 5106 -25 5750 -506 
+L 5469 -888 
+Q 4731 -338 3944 138 
+L 4100 400 
+L 2100 400 
+Q 2213 288 2338 194 
+Q 1619 -625 375 -1006 
+Q 344 -781 188 -619 
+Q 700 -481 1090 -234 
+Q 1481 13 1881 400 
+L 744 400 
+z
+M 4381 3200 
+L 4381 3638 
+L 1838 3638 
+Q 1838 3431 1838 3200 
+L 4381 3200 
+z
+M 4381 2394 
+L 4381 2894 
+L 1838 2894 
+L 1838 2394 
+L 4381 2394 
+z
+M 4381 1519 
+L 4381 2088 
+L 1838 2088 
+L 1838 1519 
+L 4381 1519 
+z
+M 4381 706 
+L 4381 1213 
+L 1838 1213 
+L 1838 706 
+L 4381 706 
+z
+" transform="scale(0.015625)"/>
+       <path id="WenQuanYiZenHei-7ec8" d="M 4731 -706 
+Q 3950 -219 3119 181 
+L 3331 619 
+Q 4181 206 4988 -294 
+L 4731 -706 
+z
+M 4413 563 
+Q 3931 1038 3388 1444 
+L 3675 1831 
+Q 4244 1406 4756 913 
+L 4413 563 
+z
+M 6169 1400 
+Q 5938 1269 5844 1025 
+Q 4838 1431 4131 2388 
+Q 3388 1519 2381 975 
+Q 2200 1169 1963 1294 
+Q 3088 1819 3881 2769 
+Q 3588 3244 3381 3813 
+Q 3056 3175 2525 2513 
+Q 2369 2688 2144 2738 
+Q 2556 3231 2834 3772 
+Q 3113 4313 3369 5131 
+Q 3600 5044 3838 5006 
+Q 3763 4706 3650 4413 
+L 5288 4413 
+Q 4975 3494 4394 2713 
+Q 5044 1844 6169 1400 
+z
+M 3706 4081 
+Q 3894 3538 4138 3106 
+Q 4463 3563 4694 4081 
+L 3706 4081 
+z
+M 263 -256 
+Q 250 69 100 281 
+Q 475 300 937 378 
+Q 1400 456 2456 788 
+L 2469 475 
+Q 1450 181 1028 31 
+Q 606 -119 263 -256 
+z
+M 1319 5131 
+Q 1544 4994 1813 4900 
+Q 1625 4544 1231 3944 
+L 719 3169 
+L 1363 3231 
+L 1556 3281 
+Q 1744 3588 1875 3919 
+Q 2100 3775 2363 3675 
+Q 2275 3506 2147 3312 
+Q 2019 3119 1537 2456 
+Q 1056 1794 881 1581 
+L 1969 1713 
+L 2356 1800 
+L 2344 1425 
+L 2013 1406 
+L 213 1144 
+L 163 1488 
+Q 294 1494 381 1594 
+Q 800 2094 1325 2913 
+L 100 2738 
+L 56 3081 
+Q 181 3088 250 3181 
+Q 788 3975 1219 4881 
+Q 1275 5006 1319 5131 
+z
+" transform="scale(0.015625)"/>
+       <path id="WenQuanYiZenHei-6001" d="M 1231 4138 
+Q 894 4138 563 4119 
+Q 581 4300 563 4481 
+Q 894 4469 1231 4469 
+L 2894 4469 
+Q 2906 4913 2869 5306 
+Q 3113 5281 3356 5306 
+Q 3319 4913 3331 4469 
+L 5425 4469 
+Q 5763 4469 6094 4481 
+Q 6075 4300 6094 4119 
+Q 5763 4138 5425 4138 
+L 3769 4138 
+Q 4200 3256 4906 2750 
+Q 5325 2450 6000 2244 
+Q 5788 2094 5719 1844 
+Q 4925 2081 4312 2706 
+Q 3700 3331 3325 4138 
+L 3300 4138 
+Q 3188 3488 2700 2906 
+L 3006 3200 
+L 3813 2344 
+L 3463 2006 
+L 2663 2863 
+Q 1900 1994 644 1650 
+Q 556 1944 275 2056 
+Q 1275 2206 2038 2863 
+Q 2713 3438 2856 4138 
+L 1231 4138 
+z
+M 5806 -475 
+Q 5431 88 4988 588 
+L 5363 888 
+Q 5831 363 6219 -231 
+L 5806 -475 
+z
+M 3513 313 
+Q 3213 844 2769 1256 
+L 3113 1588 
+Q 3606 1131 3944 531 
+L 3513 313 
+z
+M 4756 450 
+Q 4938 338 5188 319 
+L 5006 -506 
+Q 4981 -644 4893 -741 
+Q 4806 -838 4681 -838 
+L 2306 -838 
+Q 2025 -838 1837 -669 
+Q 1650 -500 1650 -213 
+L 1650 513 
+Q 1650 944 1625 1375 
+Q 1869 1350 2119 1375 
+Q 2094 944 2094 513 
+L 2094 -213 
+Q 2094 -313 2156 -388 
+Q 2219 -463 2313 -463 
+L 4363 -463 
+Q 4469 -456 4544 -378 
+Q 4619 -300 4644 -188 
+L 4756 450 
+z
+M -50 -431 
+Q 356 263 694 1019 
+L 1144 838 
+Q 800 56 375 -663 
+L -50 -431 
+z
+" transform="scale(0.015625)"/>
+       <path id="WenQuanYiZenHei-63a5" d="M 6169 1894 
+Q 6150 1731 6169 1569 
+Q 5869 1581 5563 1581 
+L 5081 1581 
+Q 4869 1006 4506 519 
+Q 5294 138 5981 -419 
+Q 5781 -581 5625 -788 
+Q 5000 -194 4225 188 
+Q 3425 -663 2338 -838 
+Q 2144 -525 1806 -394 
+Q 3088 -300 3819 369 
+Q 3338 563 2825 669 
+L 3163 1581 
+L 2700 1581 
+Q 2394 1581 2094 1569 
+Q 2113 1731 2094 1894 
+Q 2394 1881 2700 1881 
+L 3281 1881 
+L 3606 2700 
+L 2788 2700 
+Q 2488 2700 2188 2681 
+Q 2200 2850 2188 3013 
+Q 2488 2994 2788 2994 
+L 3388 2994 
+L 2863 3925 
+L 3175 4106 
+L 2506 4088 
+Q 2525 4250 2506 4419 
+Q 2806 4400 3113 4400 
+L 3894 4400 
+L 3381 5063 
+L 3750 5350 
+L 4331 4594 
+L 4081 4400 
+L 5213 4400 
+Q 5513 4400 5819 4419 
+Q 5800 4250 5819 4088 
+Q 5513 4106 5213 4106 
+L 4863 4106 
+Q 5038 4000 5231 3938 
+Q 5044 3519 4663 2994 
+L 5444 2994 
+Q 5744 2994 6044 3013 
+Q 6031 2850 6044 2681 
+Q 5744 2700 5444 2700 
+L 4444 2700 
+L 4419 2663 
+Q 4400 2681 4381 2700 
+L 3825 2700 
+Q 3969 2638 4113 2600 
+Q 3913 2244 3750 1881 
+L 5563 1881 
+Q 5869 1881 6169 1894 
+z
+M 4556 1581 
+L 3619 1581 
+Q 3494 1281 3381 963 
+Q 3756 850 4119 700 
+Q 4413 1081 4556 1581 
+z
+M 4144 2994 
+Q 4481 3456 4794 4106 
+L 3294 4106 
+L 3831 3163 
+L 3538 2994 
+L 4144 2994 
+z
+M 31 1769 
+Q 625 1881 1175 2094 
+L 1175 3425 
+L 763 3425 
+Q 456 3425 144 3413 
+Q 163 3569 144 3731 
+Q 456 3719 763 3719 
+L 1175 3719 
+L 1175 4275 
+Q 1175 4700 1150 5125 
+Q 1394 5100 1638 5125 
+Q 1619 4700 1619 4275 
+L 1619 3719 
+L 2363 3731 
+Q 2350 3569 2363 3413 
+L 1619 3425 
+L 1619 2269 
+L 2244 2538 
+L 2288 2281 
+L 1619 1975 
+L 1619 -113 
+Q 1619 -650 1206 -788 
+Q 863 -900 475 -869 
+Q 525 -544 325 -363 
+Q 525 -381 775 -384 
+Q 1025 -388 1100 -331 
+Q 1175 -275 1175 50 
+L 1175 1763 
+L 894 1625 
+L 269 1294 
+Q 213 1581 31 1769 
+z
+" transform="scale(0.015625)"/>
+       <path id="WenQuanYiZenHei-53d7" d="M 1431 1775 
+Q 1450 1963 1431 2144 
+Q 1763 2125 2100 2125 
+L 4700 2125 
+Q 4275 1156 3469 450 
+Q 3969 100 4619 -84 
+Q 5269 -269 5975 -219 
+Q 5819 -431 5838 -688 
+Q 4400 -763 3150 194 
+Q 1963 -681 481 -731 
+Q 406 -475 250 -263 
+Q 1650 -319 2800 481 
+Q 2206 1031 1738 1788 
+Q 1581 1788 1431 1775 
+z
+M 831 1806 
+L 388 1806 
+L 394 3131 
+L 1806 3125 
+Q 1500 3706 1125 4231 
+L 1513 4519 
+Q 1925 3944 2256 3319 
+L 1894 3125 
+L 3656 3125 
+Q 4000 3438 4203 3791 
+Q 4406 4144 4588 4631 
+Q 4806 4531 5044 4481 
+Q 4838 3781 4263 3125 
+L 5831 3125 
+L 5831 1806 
+L 5388 1806 
+L 5388 2794 
+L 831 2794 
+L 831 1806 
+z
+M 3194 3256 
+Q 2925 3850 2575 4400 
+L 2981 4656 
+Q 3350 4081 3631 3456 
+L 3194 3256 
+z
+M 5263 4819 
+Q 3531 4756 781 4519 
+L 550 4950 
+Q 1538 4894 3069 5063 
+Q 4419 5194 5225 5325 
+Q 5219 5069 5263 4819 
+z
+M 2206 1794 
+Q 2631 1163 3119 731 
+Q 3656 1188 4006 1794 
+L 2206 1794 
+z
+" transform="scale(0.015625)"/>
+       <path id="WenQuanYiZenHei-541e" d="M 2175 -769 
+Q 1931 -744 1681 -769 
+Q 1706 -319 1706 131 
+L 1706 1713 
+Q 1119 1194 406 919 
+Q 338 1188 131 1369 
+Q 1100 1719 1788 2438 
+Q 2169 2831 2363 3281 
+L 1131 3281 
+Q 788 3281 438 3263 
+Q 456 3450 438 3644 
+Q 788 3625 1131 3625 
+L 2488 3625 
+Q 2650 4138 2731 4644 
+L 1675 4644 
+Q 1325 4644 981 4625 
+Q 1000 4813 981 5000 
+Q 1325 4988 1675 4988 
+L 4588 4988 
+Q 4938 4988 5288 5000 
+Q 5263 4813 5288 4625 
+Q 4938 4644 4588 4644 
+L 3231 4644 
+Q 3163 4119 2988 3625 
+L 5188 3625 
+Q 5538 3625 5888 3644 
+Q 5869 3450 5888 3263 
+Q 5538 3281 5188 3281 
+L 3863 3281 
+Q 4294 2650 4809 2253 
+Q 5325 1856 6119 1631 
+Q 5900 1475 5825 1219 
+Q 5288 1388 4781 1750 
+L 4781 -756 
+L 4331 -756 
+L 4331 -269 
+L 2156 -269 
+Q 2163 -519 2175 -769 
+z
+M 4331 1581 
+L 2150 1581 
+L 2150 75 
+L 4331 75 
+L 4331 1581 
+z
+M 1931 1925 
+L 4550 1925 
+Q 3888 2469 3388 3281 
+L 2850 3281 
+Q 2506 2513 1931 1925 
+z
+" transform="scale(0.015625)"/>
+       <path id="WenQuanYiZenHei-5410" d="M 6181 -125 
+Q 6163 -325 6181 -525 
+Q 5819 -506 5450 -506 
+L 3056 -506 
+Q 2694 -506 2331 -525 
+Q 2350 -325 2331 -125 
+Q 2694 -144 3056 -144 
+L 4000 -144 
+L 4000 2800 
+L 3413 2800 
+Q 3050 2800 2688 2781 
+Q 2706 2981 2688 3175 
+Q 3050 3156 3413 3156 
+L 4000 3156 
+L 4000 4350 
+Q 4000 4806 3975 5263 
+Q 4225 5238 4469 5263 
+Q 4450 4806 4450 4350 
+L 4450 3156 
+L 5250 3156 
+Q 5613 3156 5981 3175 
+Q 5956 2981 5981 2781 
+Q 5613 2800 5250 2800 
+L 4450 2800 
+L 4450 -144 
+L 5450 -144 
+Q 5819 -144 6181 -125 
+z
+M 825 269 
+L 319 269 
+L 319 4750 
+L 2256 4750 
+L 2256 269 
+L 1750 269 
+L 1750 831 
+L 825 831 
+L 825 269 
+z
+M 1750 4481 
+L 825 4481 
+L 825 1081 
+L 1750 1081 
+L 1750 4481 
+z
+" transform="scale(0.015625)"/>
+       <path id="WenQuanYiZenHei-2f" d="M 3213 4388 
+L 563 -1094 
+L 138 -1094 
+L 2775 4388 
+L 3213 4388 
+z
+" transform="scale(0.015625)"/>
+       <path id="WenQuanYiZenHei-6761" d="M 5544 -413 
+Q 4794 156 3994 644 
+L 4250 1063 
+Q 5075 556 5838 -25 
+L 5544 -413 
+z
+M 2025 1094 
+Q 2181 900 2375 750 
+Q 2069 400 1563 50 
+Q 1181 -225 688 -519 
+Q 600 -294 406 -169 
+Q 1019 163 1606 700 
+L 2025 1094 
+z
+M 3069 -56 
+L 3069 1119 
+L 1694 1119 
+Q 1344 1119 994 1106 
+Q 1019 1294 994 1481 
+Q 1344 1463 1694 1463 
+L 3069 1463 
+Q 3069 1844 3050 2219 
+Q 3294 2194 3538 2219 
+Q 3519 1844 3519 1463 
+L 4819 1463 
+Q 5169 1463 5513 1481 
+Q 5494 1294 5513 1106 
+Q 5169 1119 4819 1119 
+L 3519 1119 
+L 3519 -181 
+Q 3494 -575 3175 -694 
+Q 2888 -825 2488 -825 
+Q 2550 -519 2356 -275 
+Q 2525 -300 2744 -303 
+Q 2963 -306 3016 -278 
+Q 3069 -250 3069 -56 
+z
+M 6081 2231 
+Q 5894 2050 5869 1781 
+Q 4538 1944 3281 2819 
+Q 1994 1894 456 1519 
+Q 331 1763 138 1950 
+Q 1650 2213 2900 3106 
+Q 2513 3419 2144 3788 
+Q 1731 3269 1125 2869 
+Q 1031 3081 825 3200 
+Q 1350 3531 1694 3978 
+Q 2038 4425 2313 5144 
+Q 2538 5044 2781 4988 
+Q 2700 4738 2594 4500 
+L 5013 4500 
+Q 4413 3713 3625 3081 
+Q 4694 2381 6081 2231 
+z
+M 3231 3356 
+Q 3681 3725 4056 4156 
+L 2406 4156 
+L 2381 4125 
+Q 2813 3681 3231 3356 
+z
+" transform="scale(0.015625)"/>
+       <path id="WenQuanYiZenHei-5206" d="M 2088 2169 
+Q 1688 2169 1288 2150 
+Q 1306 2363 1288 2581 
+Q 1688 2563 2088 2563 
+L 4819 2563 
+L 4819 -169 
+Q 4819 -425 4619 -600 
+Q 4350 -844 3613 -838 
+Q 3688 -513 3456 -269 
+Q 3669 -294 3956 -297 
+Q 4244 -300 4297 -259 
+Q 4350 -219 4350 -31 
+L 4350 2169 
+L 2931 2169 
+Q 2875 1131 2315 309 
+Q 1756 -513 881 -813 
+Q 681 -519 338 -406 
+Q 706 -375 1078 -165 
+Q 1450 44 1753 375 
+Q 2056 706 2247 1181 
+Q 2438 1656 2431 2169 
+L 2088 2169 
+z
+M 6150 2500 
+Q 5900 2381 5788 2131 
+Q 4863 2606 4306 3450 
+Q 3819 4175 3550 5050 
+L 3956 5163 
+Q 4356 3781 5294 3031 
+Q 5694 2719 6150 2500 
+z
+M 2106 5050 
+Q 2369 4944 2650 4900 
+Q 2350 4044 1863 3313 
+Q 1306 2469 456 1913 
+Q 331 2175 75 2313 
+Q 831 2769 1338 3381 
+Q 1550 3638 1669 3881 
+Q 1931 4438 2106 5050 
+z
+" transform="scale(0.015625)"/>
+       <path id="WenQuanYiZenHei-949f" d="M 4850 -769 
+Q 4613 -744 4375 -769 
+Q 4394 -325 4394 113 
+L 4394 1525 
+L 3481 1525 
+Q 3481 1344 3494 1169 
+Q 3256 1194 3019 1169 
+Q 3038 1613 3038 2050 
+L 3038 3819 
+L 4394 3819 
+L 4394 4313 
+Q 4394 4750 4375 5194 
+Q 4613 5169 4850 5194 
+Q 4831 4750 4831 4313 
+L 4831 3819 
+L 6006 3819 
+L 6006 1306 
+L 5569 1306 
+L 5569 1525 
+L 4831 1525 
+L 4831 113 
+Q 4831 -325 4850 -769 
+z
+M 4831 1844 
+L 5569 1844 
+L 5569 3500 
+L 4831 3500 
+L 4831 1844 
+z
+M 4394 1844 
+L 4394 3500 
+L 3469 3500 
+L 3475 1844 
+L 4394 1844 
+z
+M 1063 5044 
+Q 1306 4969 1588 4950 
+Q 1469 4525 1331 4106 
+L 2138 4106 
+Q 2450 4106 2763 4119 
+Q 2744 3963 2763 3800 
+Q 2450 3819 2138 3819 
+L 1238 3819 
+Q 1094 3375 956 3038 
+L 1988 3038 
+Q 2294 3038 2606 3050 
+Q 2588 2894 2606 2731 
+Q 2294 2750 1988 2750 
+L 1656 2750 
+L 1656 1944 
+L 2169 1944 
+Q 2481 1944 2794 1956 
+Q 2775 1800 2794 1638 
+Q 2481 1656 2169 1656 
+L 1656 1656 
+L 1656 350 
+L 2500 1119 
+L 2688 875 
+Q 2575 788 2475 688 
+Q 1925 125 1431 -494 
+L 1119 -194 
+Q 1213 -38 1213 138 
+L 1213 1656 
+L 856 1656 
+Q 544 1656 238 1638 
+Q 256 1800 238 1956 
+Q 544 1944 856 1944 
+L 1213 1944 
+L 1213 2750 
+L 838 2750 
+Q 675 2388 475 2050 
+Q 281 2194 -25 2206 
+Q 188 2538 438 3013 
+Q 900 3906 1063 5044 
+z
+" transform="scale(0.015625)"/>
+      </defs>
+      <use xlink:href="#WenQuanYiZenHei-4eff"/>
+      <use xlink:href="#WenQuanYiZenHei-771f" transform="translate(100 0)"/>
+      <use xlink:href="#WenQuanYiZenHei-7ec8" transform="translate(200 0)"/>
+      <use xlink:href="#WenQuanYiZenHei-6001" transform="translate(300 0)"/>
+      <use xlink:href="#WenQuanYiZenHei-63a5" transform="translate(400 0)"/>
+      <use xlink:href="#WenQuanYiZenHei-53d7" transform="translate(500 0)"/>
+      <use xlink:href="#WenQuanYiZenHei-541e" transform="translate(600 0)"/>
+      <use xlink:href="#WenQuanYiZenHei-5410" transform="translate(700 0)"/>
+      <use xlink:href="#WenQuanYiZenHei-20" transform="translate(800 0)"/>
+      <use xlink:href="#WenQuanYiZenHei-2f" transform="translate(829.980469 0)"/>
+      <use xlink:href="#WenQuanYiZenHei-20" transform="translate(881.933594 0)"/>
+      <use xlink:href="#WenQuanYiZenHei-6761" transform="translate(911.914062 0)"/>
+      <use xlink:href="#WenQuanYiZenHei-2f" transform="translate(1011.914062 0)"/>
+      <use xlink:href="#WenQuanYiZenHei-5206" transform="translate(1063.867188 0)"/>
+      <use xlink:href="#WenQuanYiZenHei-949f" transform="translate(1163.867188 0)"/>
+     </g>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 140.407527 434.6712 
+L 224.923329 434.6712 
+L 224.923329 291.628708 
+L 140.407527 291.628708 
+z
+" clip-path="url(#p38722e1508)" style="fill: #9aa9a6"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 365.782998 434.6712 
+L 450.2988 434.6712 
+L 450.2988 359.295796 
+L 365.782998 359.295796 
+z
+" clip-path="url(#p38722e1508)" style="fill: #9aa9a6"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 591.158469 434.6712 
+L 675.674271 434.6712 
+L 675.674271 282.910284 
+L 591.158469 282.910284 
+z
+" clip-path="url(#p38722e1508)" style="fill: #9aa9a6"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 224.923329 434.6712 
+L 309.439131 434.6712 
+L 309.439131 237.663884 
+L 224.923329 237.663884 
+z
+" clip-path="url(#p38722e1508)" style="fill: #157c73"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 450.2988 434.6712 
+L 534.814602 434.6712 
+L 534.814602 331.807386 
+L 450.2988 331.807386 
+z
+" clip-path="url(#p38722e1508)" style="fill: #157c73"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 675.674271 434.6712 
+L 760.190073 434.6712 
+L 760.190073 230.520343 
+L 675.674271 230.520343 
+z
+" clip-path="url(#p38722e1508)" style="fill: #157c73"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 109.4184 434.6712 
+L 109.4184 148.86 
+" style="fill: none; stroke: #c8d1cd; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 109.4184 434.6712 
+L 791.1792 434.6712 
+" style="fill: none; stroke: #c8d1cd; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_13">
+    <!-- 0.94 -->
+    <g style="fill: #263c3b" transform="translate(170.071991 284.483428) scale(0.12 -0.12)">
+     <defs>
+      <path id="WenQuanYiZenHei-39" d="M 3544 2300 
+Q 3544 1163 3019 513 
+Q 2563 -63 1775 -63 
+Q 956 -63 563 488 
+Q 463 631 394 813 
+L 838 975 
+Q 1025 494 1550 388 
+Q 1656 369 1775 369 
+Q 2594 369 2900 1325 
+Q 3044 1769 3038 2313 
+L 3025 2313 
+Q 2675 1638 1944 1544 
+Q 1844 1531 1744 1531 
+Q 1050 1531 625 2031 
+Q 294 2419 294 2963 
+Q 294 3656 813 4094 
+Q 1238 4456 1819 4456 
+Q 2988 4456 3381 3363 
+Q 3544 2900 3544 2300 
+z
+M 2925 2994 
+Q 2925 3563 2469 3844 
+Q 2206 4006 1863 4006 
+Q 1275 4006 988 3563 
+Q 844 3344 825 3056 
+Q 819 3006 819 2956 
+Q 819 2413 1269 2131 
+Q 1538 1963 1875 1963 
+Q 2363 1963 2681 2350 
+Q 2925 2638 2925 2994 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#WenQuanYiZenHei-30"/>
+     <use xlink:href="#WenQuanYiZenHei-2e" transform="translate(59.960938 0)"/>
+     <use xlink:href="#WenQuanYiZenHei-39" transform="translate(89.941406 0)"/>
+     <use xlink:href="#WenQuanYiZenHei-34" transform="translate(149.902344 0)"/>
+    </g>
+   </g>
+   <g id="text_14">
+    <!-- 0.50 -->
+    <g style="fill: #263c3b" transform="translate(395.447462 352.150516) scale(0.12 -0.12)">
+     <use xlink:href="#WenQuanYiZenHei-30"/>
+     <use xlink:href="#WenQuanYiZenHei-2e" transform="translate(59.960938 0)"/>
+     <use xlink:href="#WenQuanYiZenHei-35" transform="translate(89.941406 0)"/>
+     <use xlink:href="#WenQuanYiZenHei-30" transform="translate(149.902344 0)"/>
+    </g>
+   </g>
+   <g id="text_15">
+    <!-- 1.00 -->
+    <g style="fill: #263c3b" transform="translate(620.822933 275.765004) scale(0.12 -0.12)">
+     <use xlink:href="#WenQuanYiZenHei-31"/>
+     <use xlink:href="#WenQuanYiZenHei-2e" transform="translate(59.960938 0)"/>
+     <use xlink:href="#WenQuanYiZenHei-30" transform="translate(89.941406 0)"/>
+     <use xlink:href="#WenQuanYiZenHei-30" transform="translate(149.902344 0)"/>
+    </g>
+   </g>
+   <g id="text_16">
+    <!-- 1.30 -->
+    <g style="fill: #263c3b" transform="translate(254.587792 230.518604) scale(0.12 -0.12)">
+     <use xlink:href="#WenQuanYiZenHei-31"/>
+     <use xlink:href="#WenQuanYiZenHei-2e" transform="translate(59.960938 0)"/>
+     <use xlink:href="#WenQuanYiZenHei-33" transform="translate(89.941406 0)"/>
+     <use xlink:href="#WenQuanYiZenHei-30" transform="translate(149.902344 0)"/>
+    </g>
+   </g>
+   <g id="text_17">
+    <!-- 0.68 -->
+    <g style="fill: #263c3b" transform="translate(479.963263 324.662106) scale(0.12 -0.12)">
+     <defs>
+      <path id="WenQuanYiZenHei-36" d="M 3550 1431 
+Q 3550 725 3006 288 
+Q 2581 -63 1994 -63 
+Q 1013 -63 563 825 
+Q 288 1363 288 2081 
+Q 288 3294 856 3938 
+Q 1319 4456 2075 4456 
+Q 2969 4456 3363 3756 
+Q 3431 3631 3481 3481 
+L 2988 3350 
+Q 2750 3994 2075 4006 
+Q 1056 4006 844 2669 
+Q 794 2356 794 1981 
+L 806 1981 
+Q 1006 2506 1544 2744 
+Q 1819 2869 2119 2869 
+Q 2788 2869 3213 2375 
+Q 3550 1975 3550 1431 
+z
+M 3038 1406 
+Q 3038 1906 2656 2213 
+Q 2381 2431 2038 2431 
+Q 1525 2431 1181 2044 
+Q 919 1744 919 1356 
+Q 919 881 1344 581 
+Q 1631 375 1981 375 
+Q 2519 375 2838 781 
+Q 3038 1050 3038 1406 
+z
+" transform="scale(0.015625)"/>
+      <path id="WenQuanYiZenHei-38" d="M 3619 1175 
+Q 3619 431 2850 100 
+Q 2444 -63 1944 -63 
+Q 1231 -63 725 269 
+Q 225 594 225 1125 
+Q 225 1881 1269 2281 
+Q 719 2481 519 2938 
+Q 444 3119 444 3319 
+Q 444 4000 1144 4294 
+Q 1519 4456 1963 4456 
+Q 2669 4456 3094 4094 
+Q 3425 3813 3425 3369 
+Q 3425 2638 2575 2356 
+Q 3231 2056 3450 1725 
+Q 3619 1488 3619 1175 
+z
+M 2944 3344 
+Q 2944 3906 2288 4019 
+Q 2138 4044 1969 4044 
+Q 1438 4044 1163 3775 
+Q 1000 3613 1000 3375 
+Q 1000 2925 1594 2663 
+Q 1756 2588 1931 2550 
+Q 2581 2725 2788 2956 
+Q 2944 3125 2944 3344 
+z
+M 3075 1094 
+Q 3075 1738 1875 2050 
+Q 1094 1881 850 1463 
+Q 763 1313 763 1131 
+Q 763 569 1456 406 
+Q 1681 344 1944 344 
+Q 2519 344 2850 619 
+Q 3075 813 3075 1094 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#WenQuanYiZenHei-30"/>
+     <use xlink:href="#WenQuanYiZenHei-2e" transform="translate(59.960938 0)"/>
+     <use xlink:href="#WenQuanYiZenHei-36" transform="translate(89.941406 0)"/>
+     <use xlink:href="#WenQuanYiZenHei-38" transform="translate(149.902344 0)"/>
+    </g>
+   </g>
+   <g id="text_18">
+    <!-- 1.34 -->
+    <g style="fill: #263c3b" transform="translate(705.338734 223.375063) scale(0.12 -0.12)">
+     <use xlink:href="#WenQuanYiZenHei-31"/>
+     <use xlink:href="#WenQuanYiZenHei-2e" transform="translate(59.960938 0)"/>
+     <use xlink:href="#WenQuanYiZenHei-33" transform="translate(89.941406 0)"/>
+     <use xlink:href="#WenQuanYiZenHei-34" transform="translate(149.902344 0)"/>
+    </g>
+   </g>
+   <g id="legend_1">
+    <g id="patch_11">
+     <path d="M 120.2184 169.42125 
+L 144.2184 169.42125 
+L 144.2184 161.02125 
+L 120.2184 161.02125 
+z
+" style="fill: #9aa9a6"/>
+    </g>
+    <g id="text_19">
+     <!-- 同步 -->
+     <g style="fill: #263c3b" transform="translate(153.8184 169.42125) scale(0.12 -0.12)">
+      <defs>
+       <path id="WenQuanYiZenHei-540c" d="M 2338 538 
+L 1888 538 
+L 1888 2750 
+L 4331 2744 
+L 4331 538 
+L 3881 538 
+L 3881 875 
+L 2338 875 
+L 2338 538 
+z
+M 4831 3775 
+Q 4813 3575 4831 3381 
+Q 4469 3400 4100 3400 
+L 2269 3400 
+Q 1906 3400 1544 3381 
+Q 1563 3575 1544 3775 
+Q 1906 3756 2269 3756 
+L 4100 3756 
+Q 4469 3756 4831 3775 
+z
+M 5263 125 
+L 5263 4588 
+L 1031 4588 
+L 1031 163 
+Q 1031 -300 1056 -756 
+Q 806 -731 556 -756 
+Q 581 -300 581 163 
+L 575 4950 
+L 5719 4950 
+L 5719 -44 
+Q 5719 -488 5450 -650 
+Q 5163 -825 4556 -819 
+Q 4625 -506 4406 -269 
+Q 4606 -294 4865 -294 
+Q 5125 -294 5194 -237 
+Q 5263 -181 5263 125 
+z
+M 3881 2388 
+L 2338 2388 
+L 2338 1231 
+L 3881 1231 
+L 3881 2388 
+z
+" transform="scale(0.015625)"/>
+       <path id="WenQuanYiZenHei-6b65" d="M 5369 1981 
+Q 5581 1831 5819 1725 
+Q 5038 313 3456 -313 
+Q 2888 -531 2119 -753 
+Q 1350 -975 931 -1013 
+Q 663 -613 194 -494 
+L 1244 -419 
+Q 4263 -175 5369 1981 
+z
+M 1781 2031 
+Q 1988 1888 2213 1794 
+Q 1681 781 519 63 
+Q 431 281 231 406 
+Q 750 706 1097 1087 
+Q 1444 1469 1781 2031 
+z
+M 3600 531 
+Q 3356 563 3113 531 
+Q 3131 988 3131 1438 
+L 3131 2363 
+L 1050 2363 
+Q 700 2363 350 2350 
+Q 369 2538 350 2725 
+Q 700 2706 1050 2706 
+L 1494 2706 
+L 1494 3700 
+Q 1494 4150 1475 4600 
+Q 1719 4575 1963 4600 
+Q 1944 4150 1944 3700 
+L 1944 2706 
+L 3144 2706 
+L 3144 4350 
+Q 3144 4800 3119 5256 
+Q 3363 5231 3606 5256 
+Q 3588 4800 3588 4350 
+L 3588 4163 
+L 4775 4163 
+Q 5125 4163 5475 4181 
+Q 5450 3994 5475 3806 
+Q 5125 3819 4775 3819 
+L 3588 3819 
+L 3588 2706 
+L 5438 2706 
+Q 5788 2706 6138 2725 
+Q 6119 2538 6138 2350 
+Q 5788 2363 5438 2363 
+L 3575 2363 
+L 3575 1438 
+Q 3575 988 3600 531 
+z
+" transform="scale(0.015625)"/>
+      </defs>
+      <use xlink:href="#WenQuanYiZenHei-540c"/>
+      <use xlink:href="#WenQuanYiZenHei-6b65" transform="translate(100 0)"/>
+     </g>
+    </g>
+    <g id="patch_12">
+     <path d="M 120.2184 185.814375 
+L 144.2184 185.814375 
+L 144.2184 177.414375 
+L 120.2184 177.414375 
+z
+" style="fill: #157c73"/>
+    </g>
+    <g id="text_20">
+     <!-- auto -->
+     <g style="fill: #263c3b" transform="translate(153.8184 185.814375) scale(0.12 -0.12)">
+      <defs>
+       <path id="WenQuanYiZenHei-61" d="M 3181 0 
+L 2681 0 
+L 2625 606 
+Q 2294 -63 1488 -63 
+Q 856 -63 544 331 
+Q 350 575 350 919 
+Q 350 1400 763 1706 
+Q 850 1781 956 1825 
+Q 1375 2025 2344 2019 
+L 2625 2019 
+L 2625 2156 
+Q 2625 2756 2200 2894 
+L 1975 2938 
+Q 1894 2944 1800 2944 
+Q 1025 2944 906 2369 
+L 444 2444 
+Q 525 3075 1281 3263 
+Q 1544 3338 1844 3338 
+Q 2675 3338 2931 2894 
+Q 3113 2594 3113 1944 
+L 3113 688 
+Q 3113 244 3181 0 
+z
+M 2625 1425 
+L 2625 1638 
+L 2206 1638 
+Q 888 1638 888 894 
+Q 888 488 1319 363 
+Q 1444 325 1594 325 
+Q 2125 325 2425 769 
+Q 2625 1063 2625 1425 
+z
+" transform="scale(0.015625)"/>
+       <path id="WenQuanYiZenHei-75" d="M 2994 0 
+L 2544 0 
+L 2544 644 
+L 2525 644 
+Q 2356 219 1938 25 
+Q 1744 -63 1531 -63 
+Q 581 -63 463 975 
+Q 444 1113 444 1275 
+L 444 3250 
+L 944 3250 
+L 944 1275 
+Q 944 425 1513 369 
+Q 1513 369 1575 369 
+Q 2131 369 2375 925 
+Q 2494 1194 2494 1525 
+L 2494 3250 
+L 2994 3250 
+L 2994 0 
+z
+" transform="scale(0.015625)"/>
+       <path id="WenQuanYiZenHei-74" d="M 1994 -25 
+L 1406 -69 
+Q 594 -69 594 1000 
+L 594 2881 
+L 19 2881 
+L 19 3275 
+L 594 3275 
+L 594 4081 
+L 1094 4138 
+L 1094 3275 
+L 1819 3275 
+L 1819 2881 
+L 1094 2881 
+L 1094 913 
+Q 1150 363 1538 331 
+Q 1538 331 1994 369 
+L 1994 -25 
+z
+" transform="scale(0.015625)"/>
+       <path id="WenQuanYiZenHei-6f" d="M 3175 1644 
+Q 3175 813 2681 331 
+Q 2281 -63 1663 -63 
+Q 856 -63 481 656 
+Q 256 1088 256 1650 
+Q 256 2494 763 2969 
+Q 1150 3338 1750 3338 
+Q 2525 3338 2919 2656 
+Q 3175 2219 3175 1644 
+z
+M 2619 1650 
+Q 2619 2481 2181 2788 
+Q 1981 2925 1706 2925 
+Q 1069 2925 875 2188 
+Q 813 1938 813 1650 
+Q 813 750 1288 463 
+Q 1463 350 1706 350 
+Q 2400 350 2575 1169 
+Q 2619 1394 2619 1650 
+z
+" transform="scale(0.015625)"/>
+      </defs>
+      <use xlink:href="#WenQuanYiZenHei-61"/>
+      <use xlink:href="#WenQuanYiZenHei-75" transform="translate(53.90625 0)"/>
+      <use xlink:href="#WenQuanYiZenHei-74" transform="translate(107.8125 0)"/>
+      <use xlink:href="#WenQuanYiZenHei-6f" transform="translate(139.746094 0)"/>
+     </g>
+    </g>
+   </g>
+  </g>
+  <g id="text_21">
+   <!-- 04 / 固定尝试预算产能 -->
+   <g style="fill: #263c3b" transform="translate(58.9176 47.6352) scale(0.24 -0.24)">
+    <defs>
+     <path id="WenQuanYiZenHei-56fa" d="M 2294 306 
+L 1856 306 
+L 1856 2438 
+L 2906 2438 
+L 2906 3219 
+L 1950 3219 
+Q 1613 3219 1281 3206 
+Q 1300 3388 1281 3569 
+Q 1613 3550 1950 3550 
+L 2906 3550 
+L 2881 4481 
+Q 3125 4456 3369 4481 
+L 3344 3550 
+L 4300 3550 
+Q 4631 3550 4969 3569 
+Q 4950 3388 4969 3206 
+Q 4631 3219 4300 3219 
+L 3344 3219 
+L 3344 2438 
+L 4394 2438 
+L 4394 306 
+L 3956 306 
+L 3956 719 
+L 2294 719 
+L 2294 306 
+z
+M 981 -775 
+Q 738 -744 500 -775 
+Q 519 -325 519 119 
+L 519 4981 
+L 5731 4975 
+L 5731 -763 
+L 5288 -763 
+L 5288 -325 
+L 963 -325 
+Q 969 -550 981 -775 
+z
+M 3956 2106 
+L 2294 2106 
+L 2294 1050 
+L 3956 1050 
+L 3956 2106 
+z
+M 5288 4644 
+L 963 4644 
+L 963 6 
+L 5288 6 
+L 5288 4644 
+z
+" transform="scale(0.015625)"/>
+     <path id="WenQuanYiZenHei-5b9a" d="M 2963 2850 
+L 1469 2850 
+Q 1138 2850 800 2831 
+Q 819 3013 800 3194 
+Q 1138 3181 1469 3181 
+L 4944 3181 
+Q 5281 3181 5619 3194 
+Q 5600 3013 5619 2831 
+Q 5281 2850 4944 2850 
+L 3400 2850 
+L 3400 1638 
+L 4538 1638 
+Q 4875 1638 5206 1656 
+Q 5188 1469 5206 1288 
+Q 4875 1306 4538 1306 
+L 3400 1306 
+L 3400 -181 
+Q 3744 -269 4450 -288 
+L 5981 -338 
+Q 5813 -538 5806 -806 
+Q 5156 -756 4575 -750 
+Q 3113 -775 2331 -206 
+Q 1806 175 1531 706 
+Q 1119 -263 481 -888 
+Q 319 -669 56 -588 
+Q 913 200 1175 981 
+Q 1338 1519 1425 2113 
+Q 1688 2050 1950 2044 
+Q 1875 1675 1763 1319 
+Q 2031 356 2963 -38 
+L 2963 2850 
+z
+M 963 3350 
+L 519 3350 
+L 519 4538 
+L 3013 4531 
+L 2456 5069 
+L 2794 5419 
+L 3431 4806 
+L 3169 4531 
+L 5675 4531 
+L 5675 3350 
+L 5238 3350 
+L 5238 4206 
+L 963 4200 
+L 963 3350 
+z
+" transform="scale(0.015625)"/>
+     <path id="WenQuanYiZenHei-5c1d" d="M 806 1100 
+Q 481 1100 156 1081 
+Q 175 1256 156 1431 
+Q 481 1419 806 1419 
+L 5431 1419 
+Q 5756 1419 6075 1431 
+Q 6056 1256 6075 1081 
+Q 5756 1100 5431 1100 
+L 2575 1100 
+Q 2731 969 2913 863 
+L 1913 -263 
+L 4056 -113 
+L 4363 -75 
+L 3825 456 
+L 4150 806 
+Q 4863 138 5506 -600 
+L 5150 -913 
+L 4656 -375 
+L 4081 -400 
+L 1269 -638 
+L 1244 -319 
+Q 1356 -319 1438 -231 
+Q 1594 -63 1944 381 
+Q 2294 825 2450 1100 
+L 806 1100 
+z
+M 4988 2456 
+Q 4969 2281 4988 2106 
+Q 4663 2125 4344 2125 
+L 2050 2125 
+Q 1725 2125 1406 2106 
+Q 1425 2281 1406 2456 
+Q 1725 2444 2050 2444 
+L 4344 2444 
+Q 4663 2444 4988 2456 
+z
+M 856 2644 
+L 425 2644 
+L 425 3569 
+L 3850 3569 
+L 4094 3988 
+Q 4313 4369 4431 4556 
+L 4681 4913 
+Q 4863 4763 5075 4650 
+L 4831 4288 
+Q 4450 3750 4344 3569 
+L 6031 3569 
+L 6031 2644 
+L 5600 2644 
+L 5600 3250 
+L 856 3250 
+L 856 2644 
+z
+M 1950 3625 
+Q 1594 4219 1163 4763 
+L 1538 5063 
+Q 1988 4494 2363 3869 
+L 1950 3625 
+z
+M 3500 3594 
+Q 3263 3619 3019 3594 
+Q 3038 3988 3041 4403 
+Q 3044 4819 3019 5256 
+Q 3263 5231 3500 5256 
+Q 3481 4856 3478 4443 
+Q 3475 4031 3500 3594 
+z
+" transform="scale(0.015625)"/>
+     <path id="WenQuanYiZenHei-8bd5" d="M 5694 4644 
+L 5300 4356 
+L 4838 4981 
+L 5225 5269 
+L 5694 4644 
+z
+M 2475 3644 
+Q 2138 3644 1806 3631 
+Q 1825 3813 1806 3994 
+Q 2138 3975 2475 3975 
+L 4150 3975 
+L 4125 5256 
+Q 4369 5231 4613 5256 
+L 4594 3975 
+L 5331 3975 
+Q 5669 3975 6000 3994 
+Q 5981 3813 6000 3631 
+Q 5669 3644 5331 3644 
+L 4588 3644 
+Q 4588 3388 4588 3216 
+Q 4588 3044 4609 2737 
+Q 4631 2431 4668 2197 
+Q 4706 1963 4784 1647 
+Q 4863 1331 4975 1069 
+Q 5231 475 5650 0 
+Q 5625 419 5588 838 
+Q 5813 700 6075 719 
+Q 6156 100 6106 -519 
+Q 6100 -731 5894 -763 
+Q 5806 -769 5731 -713 
+Q 4575 294 4269 1906 
+Q 4150 2531 4150 3644 
+L 2475 3644 
+z
+M 4019 2688 
+Q 4000 2506 4019 2325 
+Q 3725 2344 3425 2344 
+L 3425 475 
+Q 3725 588 4306 831 
+L 4344 538 
+Q 2844 -81 2038 -494 
+Q 2000 -206 1825 19 
+Q 2388 113 2988 319 
+L 2988 2344 
+L 2700 2344 
+Q 2363 2344 2031 2325 
+Q 2050 2506 2031 2688 
+Q 2363 2675 2700 2675 
+L 3350 2675 
+Q 3681 2675 4019 2688 
+z
+M 38 2613 
+Q 56 2775 38 2938 
+Q 363 2925 688 2925 
+L 1425 2925 
+L 1425 506 
+L 1869 1006 
+L 2044 1250 
+L 2275 1013 
+L 2100 838 
+L 1225 -256 
+L 919 -25 
+Q 969 81 969 200 
+L 969 2625 
+L 38 2613 
+z
+M 1063 3713 
+Q 681 4325 225 4881 
+L 625 5163 
+Q 1094 4588 1494 3944 
+L 1063 3713 
+z
+" transform="scale(0.015625)"/>
+     <path id="WenQuanYiZenHei-9884" d="M 1206 19 
+L 1206 2888 
+L 669 2888 
+Q 356 2888 50 2869 
+Q 63 3044 50 3213 
+Q 363 3194 669 3194 
+L 1250 3194 
+Q 950 3631 606 4031 
+L 963 4338 
+L 1263 3975 
+L 1913 4719 
+L 731 4719 
+Q 419 4719 106 4706 
+Q 125 4875 106 5044 
+Q 419 5031 731 5031 
+L 2481 5031 
+L 2544 4663 
+Q 2394 4613 2256 4466 
+Q 2119 4319 1525 3631 
+Q 1656 3444 1788 3250 
+L 1700 3194 
+L 2700 3194 
+L 2763 2825 
+Q 2656 2819 2613 2763 
+L 2100 2038 
+L 1750 2288 
+L 2175 2888 
+L 1638 2888 
+L 1638 -150 
+Q 1638 -525 1363 -669 
+Q 1075 -819 525 -813 
+Q 594 -513 388 -294 
+Q 575 -313 837 -316 
+Q 1100 -319 1153 -272 
+Q 1206 -225 1206 19 
+z
+M 5813 -888 
+Q 5100 -225 4306 375 
+L 4669 719 
+Q 5481 106 6219 -575 
+L 5813 -888 
+z
+M 2375 -906 
+Q 2294 -631 2025 -506 
+Q 2769 -431 3353 19 
+Q 3938 469 3938 1069 
+L 3938 2200 
+Q 3938 2625 3913 3050 
+Q 4188 3025 4456 3050 
+Q 4431 2625 4431 2200 
+L 4431 1069 
+Q 4431 681 4225 319 
+Q 3644 -606 2375 -906 
+z
+M 3444 488 
+Q 3169 513 2894 488 
+Q 2919 913 2919 1338 
+L 2919 3675 
+Q 3219 3675 3525 3675 
+Q 3750 4013 3931 4525 
+L 3238 4525 
+Q 2888 4525 2538 4513 
+Q 2556 4669 2538 4831 
+Q 2888 4813 3238 4813 
+L 5313 4813 
+Q 5663 4813 6006 4831 
+Q 5988 4669 6006 4513 
+Q 5663 4525 5313 4525 
+L 4481 4525 
+Q 4388 4088 4088 3675 
+L 5644 3675 
+L 5644 513 
+L 5144 513 
+L 5144 3388 
+L 3894 3388 
+L 3875 3363 
+Q 3863 3375 3844 3388 
+Q 3631 3388 3413 3388 
+L 3419 1338 
+Q 3419 913 3444 488 
+z
+" transform="scale(0.015625)"/>
+     <path id="WenQuanYiZenHei-7b97" d="M 4419 -800 
+Q 4194 -781 3969 -800 
+Q 3988 -388 3988 31 
+L 3988 413 
+L 2463 413 
+Q 2331 -19 1934 -366 
+Q 1538 -713 1006 -856 
+Q 956 -600 744 -456 
+Q 1181 -406 1531 -159 
+Q 1881 88 2031 413 
+L 738 413 
+Q 463 413 188 400 
+Q 200 550 188 700 
+Q 463 688 738 688 
+L 2106 688 
+L 2106 1231 
+L 1456 1231 
+Q 1531 2356 1456 3488 
+L 4956 3488 
+Q 4881 2356 4950 1231 
+L 4400 1231 
+L 4400 688 
+L 5581 688 
+Q 5856 688 6131 700 
+Q 6119 550 6131 400 
+Q 5856 413 5581 413 
+L 4400 413 
+L 4400 31 
+Q 4400 -388 4419 -800 
+z
+M 3988 688 
+L 3988 1231 
+L 2519 1231 
+L 2513 688 
+L 3988 688 
+z
+M 1869 3213 
+L 1869 2813 
+L 4544 2813 
+L 4550 3213 
+L 1869 3213 
+z
+M 1869 2563 
+L 1869 2150 
+L 4544 2150 
+L 4544 2563 
+L 1869 2563 
+z
+M 1869 1906 
+L 1869 1506 
+L 4544 1506 
+L 4544 1906 
+L 1869 1906 
+z
+M 3975 5194 
+Q 4181 5131 4425 5106 
+Q 4350 4863 4225 4631 
+L 5538 4631 
+Q 5831 4631 6125 4644 
+Q 6106 4525 6125 4400 
+Q 5831 4413 5538 4413 
+L 4675 4413 
+L 5038 3788 
+L 4613 3644 
+L 4231 4313 
+L 4531 4413 
+L 4094 4413 
+Q 3763 3931 3306 3544 
+Q 3175 3669 2956 3719 
+Q 3675 4306 3975 5194 
+z
+M 1425 5213 
+Q 1619 5131 1850 5081 
+Q 1731 4838 1581 4606 
+L 2869 4606 
+Q 3163 4606 3450 4619 
+Q 3438 4494 3450 4375 
+Q 3163 4388 2869 4388 
+L 2056 4388 
+L 2363 3656 
+L 1919 3550 
+L 1581 4363 
+L 1675 4388 
+L 1431 4388 
+Q 1025 3838 544 3350 
+Q 400 3463 169 3500 
+Q 719 4025 1138 4713 
+L 1425 5213 
+z
+" transform="scale(0.015625)"/>
+     <path id="WenQuanYiZenHei-4ea7" d="M 1050 981 
+L 1050 2994 
+L 2431 2994 
+Q 2175 3531 1850 4031 
+L 2119 4206 
+L 1300 4206 
+Q 938 4206 569 4188 
+Q 594 4388 569 4581 
+Q 938 4563 1300 4563 
+L 2956 4563 
+L 2613 5113 
+L 3031 5375 
+L 3475 4675 
+L 3300 4563 
+L 5306 4563 
+Q 5669 4563 6031 4581 
+Q 6013 4388 6031 4188 
+Q 5669 4206 5306 4206 
+L 2325 4206 
+Q 2656 3681 2919 3125 
+L 2631 2994 
+L 3406 2994 
+L 3825 3700 
+L 4125 4169 
+Q 4319 4013 4544 3900 
+Q 4400 3663 4244 3431 
+L 3938 2994 
+L 5406 2994 
+Q 5775 2994 6138 3006 
+Q 6119 2813 6138 2613 
+Q 5775 2631 5406 2631 
+L 3706 2631 
+L 3688 2606 
+Q 3675 2619 3656 2631 
+L 1500 2631 
+L 1500 981 
+Q 1500 369 1247 -87 
+Q 994 -544 575 -800 
+Q 456 -550 206 -438 
+Q 600 -288 825 78 
+Q 1050 444 1050 981 
+z
+" transform="scale(0.015625)"/>
+     <path id="WenQuanYiZenHei-80fd" d="M 4000 -6 
+Q 4000 -125 4056 -212 
+Q 4113 -300 4206 -300 
+L 5531 -294 
+Q 5675 -294 5725 -69 
+L 5831 475 
+Q 6025 369 6244 350 
+L 6069 -375 
+Q 6006 -669 5825 -669 
+L 4200 -669 
+Q 3919 -669 3744 -487 
+Q 3569 -306 3569 -6 
+L 3569 1350 
+Q 3569 1788 3550 2225 
+Q 3781 2200 4019 2225 
+Q 4000 1788 4000 1350 
+L 4000 956 
+Q 4431 1106 4825 1322 
+Q 5219 1538 5713 1881 
+Q 5831 1675 5988 1500 
+Q 5200 900 4000 513 
+L 4000 -6 
+z
+M 4000 2969 
+Q 4000 2863 4056 2784 
+Q 4113 2706 4206 2706 
+L 5531 2706 
+Q 5675 2706 5725 2938 
+L 5831 3481 
+Q 6025 3369 6244 3350 
+L 6069 2631 
+Q 6006 2338 5825 2338 
+L 4200 2338 
+Q 3900 2338 3734 2516 
+Q 3569 2694 3569 2969 
+L 3569 4250 
+Q 3569 4681 3550 5119 
+Q 3781 5094 4019 5119 
+Q 4000 4681 4000 4250 
+L 4000 3856 
+Q 4431 4006 4822 4215 
+Q 5213 4425 5719 4763 
+Q 5831 4550 5988 4375 
+Q 5206 3800 4000 3413 
+L 4000 2969 
+z
+M 2444 69 
+L 2444 638 
+L 919 638 
+L 919 188 
+Q 919 -244 938 -681 
+Q 706 -656 469 -681 
+Q 488 -244 488 188 
+L 488 2919 
+L 2875 2913 
+L 2875 -81 
+Q 2850 -475 2556 -606 
+Q 2313 -725 1994 -725 
+Q 2050 -419 1863 -169 
+Q 1981 -200 2113 -225 
+Q 2363 -231 2403 -193 
+Q 2444 -156 2444 69 
+z
+M 1544 5269 
+Q 1731 5094 1956 4963 
+Q 1813 4788 806 3688 
+L 2369 3725 
+Q 2150 4019 1919 4300 
+L 2281 4600 
+Q 2763 4025 3163 3394 
+L 2769 3144 
+L 2575 3438 
+L 2294 3444 
+L 169 3356 
+L 156 3663 
+Q 269 3656 350 3744 
+Q 531 3938 959 4466 
+Q 1388 4994 1544 5269 
+z
+M 2444 1938 
+L 2444 2606 
+L 919 2606 
+Q 919 2269 919 1938 
+L 2444 1938 
+z
+M 2444 944 
+L 2444 1625 
+L 919 1625 
+L 919 944 
+L 2444 944 
+z
+" transform="scale(0.015625)"/>
+    </defs>
+    <use xlink:href="#WenQuanYiZenHei-30"/>
+    <use xlink:href="#WenQuanYiZenHei-34" transform="translate(59.960938 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-20" transform="translate(119.921875 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-2f" transform="translate(149.902344 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-20" transform="translate(201.855469 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-56fa" transform="translate(231.835938 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-5b9a" transform="translate(331.835938 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-5c1d" transform="translate(431.835938 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-8bd5" transform="translate(531.835938 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-9884" transform="translate(631.835938 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-7b97" transform="translate(731.835938 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-4ea7" transform="translate(831.835938 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-80fd" transform="translate(931.835938 0)"/>
+   </g>
+  </g>
+  <g id="text_22">
+   <!-- 确认阶段：4 环境；3 个配对 seed；每单元固定 4 次尝试 -->
+   <g style="fill: #263c3b" transform="translate(58.9176 92.2932) scale(0.14 -0.14)">
+    <defs>
+     <path id="WenQuanYiZenHei-786e" d="M 4794 -769 
+Q 4563 -744 4331 -769 
+Q 4350 -344 4350 81 
+L 4350 1081 
+L 3419 1081 
+L 3419 788 
+Q 3419 225 3150 -194 
+Q 2881 -613 2456 -806 
+Q 2375 -569 2150 -444 
+Q 2531 -344 2765 -15 
+Q 3000 313 3000 788 
+L 2994 2919 
+L 2888 2813 
+Q 2769 3000 2563 3081 
+Q 3044 3494 3309 3969 
+Q 3575 4444 3763 5119 
+Q 3981 5044 4213 5013 
+Q 4144 4700 4025 4400 
+L 5238 4400 
+L 5306 4050 
+Q 5213 4031 5163 3947 
+Q 5113 3863 4813 3325 
+L 5994 3325 
+L 5994 -150 
+Q 5981 -519 5738 -656 
+Q 5469 -806 5069 -806 
+Q 5125 -525 4956 -294 
+Q 5100 -313 5290 -316 
+Q 5481 -319 5525 -278 
+Q 5569 -238 5569 25 
+L 5569 1081 
+L 4769 1081 
+L 4769 81 
+Q 4769 -344 4794 -769 
+z
+M 4769 1344 
+L 5569 1344 
+L 5569 2100 
+L 4769 2100 
+L 4769 1344 
+z
+M 4350 1344 
+L 4350 2100 
+L 3413 2100 
+L 3419 1344 
+L 4350 1344 
+z
+M 4769 2363 
+L 5569 2363 
+L 5569 3038 
+L 4769 3038 
+L 4769 2363 
+z
+M 4350 2363 
+L 4350 3038 
+L 3413 3038 
+L 3413 2363 
+L 4350 2363 
+z
+M 3375 3325 
+L 4350 3325 
+L 4344 3331 
+L 4775 4113 
+L 3894 4113 
+Q 3688 3700 3375 3325 
+z
+M 481 1069 
+Q 281 1194 -25 1188 
+Q 775 2750 1244 4294 
+L 869 4294 
+Q 563 4294 250 4275 
+Q 269 4438 250 4594 
+Q 563 4581 869 4581 
+L 2156 4581 
+Q 2463 4581 2775 4594 
+Q 2756 4438 2775 4275 
+Q 2463 4294 2156 4294 
+L 1744 4294 
+L 1181 2763 
+L 2494 2763 
+L 2494 -338 
+L 2050 -338 
+L 2050 156 
+L 1406 156 
+Q 1406 -94 1419 -350 
+Q 1181 -325 938 -350 
+Q 956 75 956 500 
+L 956 2181 
+L 769 1713 
+Q 631 1388 481 1069 
+z
+M 2050 2475 
+L 1400 2475 
+L 1400 425 
+L 2050 425 
+L 2050 2475 
+z
+" transform="scale(0.015625)"/>
+     <path id="WenQuanYiZenHei-8ba4" d="M 3875 5063 
+Q 4156 5031 4438 5063 
+Q 4438 3950 4344 3175 
+Q 4513 1906 4963 1028 
+Q 5413 150 6219 -600 
+Q 5944 -638 5756 -844 
+Q 4638 219 4138 2075 
+Q 3788 744 2950 -138 
+Q 2450 -663 1813 -988 
+Q 1713 -713 1475 -550 
+Q 2900 131 3513 1625 
+Q 3744 2238 3806 2894 
+Q 3875 3519 3875 3900 
+L 3875 5063 
+z
+M 38 2725 
+Q 63 2931 38 3138 
+Q 413 3119 781 3119 
+L 1450 3119 
+L 1450 425 
+L 2000 1150 
+L 2194 1488 
+L 2463 1188 
+L 2263 950 
+L 1263 -488 
+L 938 -231 
+Q 1000 -94 1000 63 
+L 1000 2744 
+L 781 2744 
+Q 413 2744 38 2725 
+z
+M 1419 3913 
+Q 1069 4438 588 4831 
+L 894 5225 
+Q 1450 4769 1825 4194 
+L 1419 3913 
+z
+" transform="scale(0.015625)"/>
+     <path id="WenQuanYiZenHei-9636" d="M 5019 -769 
+Q 4769 -744 4519 -769 
+Q 4544 -313 4544 150 
+L 4544 1819 
+Q 4544 2275 4519 2731 
+Q 4769 2706 5019 2731 
+Q 4994 2275 4994 1819 
+L 4994 150 
+Q 4994 -313 5019 -769 
+z
+M 3075 2719 
+Q 3350 2694 3619 2719 
+Q 3669 2181 3606 1762 
+Q 3544 1344 3475 1050 
+Q 3406 756 3265 472 
+Q 3125 188 2944 -50 
+Q 2575 -544 1925 -763 
+Q 1731 -475 1400 -350 
+Q 1975 -300 2428 106 
+Q 2881 513 3062 1250 
+Q 3244 1988 3075 2719 
+z
+M 6156 3069 
+Q 5925 2931 5838 2675 
+Q 5275 2888 4759 3350 
+Q 4244 3813 3931 4413 
+Q 3469 3300 2356 2419 
+Q 2238 2631 2025 2731 
+Q 2594 3156 2975 3703 
+Q 3356 4250 3688 5119 
+L 3900 5056 
+L 4088 5113 
+Q 4344 4281 4913 3775 
+Q 5431 3325 6156 3069 
+z
+M 863 -850 
+Q 613 -825 369 -850 
+Q 388 -419 388 19 
+L 381 4938 
+L 2394 4938 
+L 2394 4625 
+Q 2275 4513 2194 4375 
+L 1569 3238 
+Q 2306 2319 2306 1156 
+Q 2269 400 1656 163 
+L 1488 88 
+Q 1363 300 1200 481 
+Q 1369 538 1538 606 
+Q 1869 744 1900 1156 
+Q 1900 1744 1694 2300 
+Q 1488 2856 1100 3313 
+L 1825 4625 
+L 831 4625 
+L 838 19 
+Q 844 -419 863 -850 
+z
+" transform="scale(0.015625)"/>
+     <path id="WenQuanYiZenHei-6bb5" d="M 2563 2369 
+Q 2544 2194 2563 2019 
+Q 2238 2038 1913 2038 
+L 1050 2038 
+L 1050 994 
+Q 1650 1081 2831 1363 
+L 2819 1075 
+Q 1631 794 1050 638 
+L 1050 150 
+Q 1050 -294 1069 -731 
+Q 831 -706 594 -731 
+Q 613 -294 613 150 
+L 613 513 
+L 156 369 
+Q 169 656 31 900 
+Q 319 913 613 938 
+L 613 3944 
+Q 613 4388 594 4825 
+Q 831 4800 1069 4825 
+Q 1069 4775 1063 4725 
+Q 1644 4813 2431 5219 
+Q 2525 4994 2663 4800 
+Q 2006 4419 1050 4288 
+L 1050 3544 
+L 1900 3544 
+Q 2225 3544 2544 3556 
+Q 2525 3381 2544 3206 
+Q 2219 3225 1900 3225 
+L 1050 3225 
+L 1050 2356 
+L 1913 2356 
+Q 2238 2356 2563 2369 
+z
+M 3375 3750 
+L 3369 4856 
+L 5213 4856 
+L 5150 3356 
+Q 5125 3256 5119 3150 
+Q 5125 3113 5175 3113 
+L 5488 3113 
+Q 5806 3113 6131 3131 
+Q 6113 2969 6131 2806 
+L 5169 2806 
+Q 4981 2806 4875 2972 
+Q 4769 3138 4769 3356 
+L 4769 4550 
+L 3813 4550 
+L 3813 3750 
+Q 3819 3169 3419 2700 
+Q 3331 2600 3231 2519 
+L 5400 2513 
+Q 5369 1863 5141 1353 
+Q 4913 844 4613 481 
+Q 4856 250 5237 22 
+Q 5619 -206 6138 -325 
+Q 5938 -469 5863 -725 
+Q 4938 -469 4344 188 
+Q 3544 -600 2425 -800 
+Q 2306 -556 2125 -375 
+Q 2675 -325 3175 -93 
+Q 3675 138 4063 519 
+Q 3531 1231 3281 2200 
+Q 3131 2194 2981 2188 
+Q 2988 2263 2988 2344 
+Q 2900 2288 2800 2244 
+Q 2713 2494 2488 2625 
+Q 2850 2713 3112 3013 
+Q 3375 3313 3375 3750 
+z
+M 3694 2200 
+Q 3906 1419 4325 819 
+Q 4800 1425 4919 2200 
+L 3694 2200 
+z
+" transform="scale(0.015625)"/>
+     <path id="WenQuanYiZenHei-ff1a" d="M 3556 2525 
+L 2844 2525 
+L 2844 3250 
+L 3556 3250 
+L 3556 2525 
+z
+M 3556 0 
+L 2844 0 
+L 2844 725 
+L 3556 725 
+L 3556 0 
+z
+" transform="scale(0.015625)"/>
+     <path id="WenQuanYiZenHei-73af" d="M 6156 1350 
+L 5769 1063 
+L 5125 1906 
+L 4450 2706 
+L 4813 3025 
+L 5500 2206 
+L 6156 1350 
+z
+M 4394 -775 
+Q 4156 -750 3913 -775 
+Q 3938 -325 3938 119 
+L 3931 3094 
+Q 3294 2038 2388 1344 
+Q 2250 1581 2000 1694 
+Q 2731 2219 3297 2956 
+Q 3863 3694 4138 4606 
+L 3525 4606 
+Q 3194 4606 2856 4588 
+Q 2875 4769 2856 4950 
+Q 3194 4938 3525 4938 
+L 5500 4938 
+Q 5838 4938 6175 4950 
+Q 6156 4769 6175 4588 
+Q 5838 4606 5500 4606 
+L 4638 4606 
+Q 4438 4044 4175 3531 
+Q 4288 3538 4394 3544 
+Q 4375 3100 4375 2656 
+L 4375 119 
+Q 4375 -325 4394 -775 
+z
+M 6 575 
+Q 594 631 1138 750 
+L 1138 2594 
+L 150 2581 
+Q 169 2738 150 2900 
+L 1138 2888 
+L 1138 4475 
+L 719 4475 
+Q 381 4475 44 4456 
+Q 63 4619 44 4775 
+Q 381 4763 719 4763 
+L 1963 4763 
+Q 2300 4763 2638 4775 
+Q 2619 4619 2638 4456 
+Q 2300 4475 1963 4475 
+L 1619 4475 
+L 1619 2888 
+L 2500 2900 
+Q 2481 2738 2500 2581 
+L 1619 2594 
+L 1619 869 
+Q 2063 981 2644 1150 
+L 2663 888 
+Q 1525 550 1056 387 
+Q 588 225 206 81 
+Q 175 375 6 575 
+z
+" transform="scale(0.015625)"/>
+     <path id="WenQuanYiZenHei-5883" d="M 4781 -650 
+Q 4494 -650 4334 -484 
+Q 4175 -319 4175 -56 
+L 4175 325 
+Q 4175 719 4156 1106 
+L 3788 1106 
+Q 3681 550 3312 159 
+Q 2944 -231 2363 -531 
+Q 2025 -706 1800 -725 
+Q 1594 -463 1294 -313 
+Q 1913 -263 2269 -134 
+Q 2625 -6 2931 328 
+Q 3238 663 3350 1106 
+L 2619 1106 
+Q 2688 2006 2619 2906 
+L 5425 2906 
+Q 5344 2006 5413 1106 
+L 4606 1106 
+Q 4588 719 4588 325 
+L 4588 -56 
+Q 4588 -163 4644 -234 
+Q 4700 -306 4788 -306 
+L 5650 -300 
+Q 5750 -225 5750 -56 
+L 5856 531 
+Q 6038 425 6250 413 
+L 6063 -456 
+Q 6044 -563 5981 -625 
+Q 5950 -650 5906 -650 
+L 4781 -650 
+z
+M 5944 3575 
+Q 5925 3425 5944 3275 
+Q 5663 3288 5388 3288 
+L 4631 3288 
+L 4606 3250 
+Q 4588 3269 4563 3288 
+L 2781 3288 
+Q 2506 3288 2231 3275 
+Q 2244 3425 2231 3575 
+Q 2506 3563 2781 3563 
+L 3200 3563 
+L 2738 4206 
+L 3106 4469 
+L 3725 3606 
+L 3669 3563 
+L 4331 3563 
+Q 4594 3944 4894 4494 
+L 2875 4494 
+Q 2600 4494 2325 4481 
+Q 2338 4631 2325 4781 
+Q 2600 4763 2875 4763 
+L 3700 4763 
+L 3319 5075 
+L 3606 5425 
+L 4200 4938 
+L 4056 4763 
+L 5188 4763 
+Q 5463 4763 5738 4781 
+Q 5725 4631 5738 4481 
+L 4919 4494 
+Q 5100 4369 5300 4288 
+Q 5150 3994 4838 3563 
+L 5388 3563 
+Q 5663 3563 5944 3575 
+z
+M 3025 2638 
+L 3025 2131 
+L 5013 2131 
+L 5013 2638 
+L 3025 2638 
+z
+M 3025 1881 
+L 3025 1381 
+L 5006 1381 
+L 5006 1881 
+L 3025 1881 
+z
+M -31 625 
+Q 463 763 913 975 
+L 913 3206 
+L 613 3206 
+Q 338 3206 69 3188 
+Q 81 3356 69 3531 
+Q 338 3513 613 3513 
+L 913 3513 
+L 913 4263 
+Q 913 4700 900 5131 
+Q 1100 5106 1306 5131 
+Q 1288 4700 1288 4263 
+L 1288 3513 
+L 2044 3531 
+Q 2025 3356 2044 3188 
+L 1288 3206 
+L 1288 1163 
+L 1956 1531 
+L 2000 1256 
+Q 1156 775 744 519 
+L 175 144 
+Q 125 438 -31 625 
+z
+" transform="scale(0.015625)"/>
+     <path id="WenQuanYiZenHei-ff1b" d="M 3575 2525 
+L 2869 2525 
+L 2869 3250 
+L 3575 3250 
+L 3575 2525 
+z
+M 3575 75 
+L 3100 -825 
+L 2825 -825 
+L 3206 0 
+L 2875 0 
+L 2875 738 
+L 3575 738 
+L 3575 75 
+z
+" transform="scale(0.015625)"/>
+     <path id="WenQuanYiZenHei-4e2a" d="M 3419 -769 
+Q 3163 -744 2900 -769 
+Q 2925 -288 2925 188 
+L 2925 2263 
+Q 2925 2744 2900 3225 
+Q 3163 3200 3419 3225 
+Q 3400 2744 3400 2263 
+L 3400 188 
+Q 3400 -288 3419 -769 
+z
+M 6125 2669 
+Q 5894 2506 5819 2238 
+Q 5019 2481 4347 3087 
+Q 3675 3694 3213 4444 
+Q 1988 2650 444 1781 
+Q 331 2056 88 2213 
+Q 1019 2694 1784 3441 
+Q 2550 4188 3025 5206 
+Q 3169 5106 3319 5031 
+L 3356 5050 
+L 3388 5000 
+Q 3456 4963 3525 4931 
+L 3469 4844 
+Q 4019 3875 4744 3319 
+Q 5356 2881 6125 2669 
+z
+" transform="scale(0.015625)"/>
+     <path id="WenQuanYiZenHei-914d" d="M 4400 -669 
+Q 4094 -669 3928 -487 
+Q 3763 -306 3763 -31 
+L 3763 2975 
+L 5419 2975 
+L 5419 4706 
+L 4344 4706 
+Q 4031 4706 3719 4694 
+Q 3738 4863 3719 5031 
+Q 4031 5019 4344 5019 
+L 5844 5019 
+L 5844 2663 
+L 4194 2663 
+L 4194 -31 
+Q 4194 -138 4253 -219 
+Q 4313 -300 4406 -300 
+L 5650 -294 
+Q 5781 -206 5781 13 
+L 5900 944 
+Q 6088 813 6319 819 
+L 6125 -419 
+Q 6100 -556 6025 -638 
+Q 5981 -669 5925 -669 
+L 4400 -669 
+z
+M 900 -850 
+Q 663 -825 419 -850 
+Q 444 -419 444 19 
+L 444 3888 
+Q 838 3888 1225 3888 
+L 1225 4656 
+L 925 4656 
+Q 606 4656 288 4638 
+Q 306 4806 288 4981 
+Q 606 4963 925 4963 
+L 2719 4963 
+Q 3038 4963 3356 4981 
+Q 3338 4806 3356 4638 
+Q 3038 4656 2719 4656 
+L 2369 4656 
+L 2369 3888 
+L 3138 3888 
+L 3138 -838 
+L 2700 -838 
+L 2700 -275 
+L 881 -275 
+Q 888 -563 900 -850 
+z
+M 881 1894 
+Q 1219 2169 1225 2725 
+L 1225 3581 
+Q 1081 3581 881 3581 
+L 881 1894 
+z
+M 1931 3581 
+L 1669 3581 
+L 1669 2725 
+Q 1669 2163 1356 1763 
+Q 1163 1513 888 1369 
+L 881 1381 
+L 881 1244 
+L 2700 1244 
+L 2700 1775 
+Q 2338 1744 2134 1934 
+Q 1931 2125 1931 2381 
+L 1931 3581 
+z
+M 2369 3581 
+L 2369 2381 
+Q 2369 2263 2425 2169 
+Q 2506 2050 2700 2081 
+L 2700 3581 
+L 2369 3581 
+z
+M 2700 938 
+L 881 938 
+L 881 38 
+L 2700 38 
+L 2700 938 
+z
+M 1931 3888 
+L 1931 4656 
+L 1669 4656 
+L 1669 3888 
+L 1931 3888 
+z
+" transform="scale(0.015625)"/>
+     <path id="WenQuanYiZenHei-5bf9" d="M 3750 1375 
+Q 3538 2000 3163 2538 
+L 3575 2831 
+Q 3994 2231 4225 1538 
+L 3750 1375 
+z
+M 4688 150 
+L 4688 3288 
+L 3838 3288 
+Q 3456 3288 3075 3269 
+Q 3100 3475 3075 3681 
+Q 3456 3663 3838 3663 
+L 4688 3663 
+L 4688 4325 
+Q 4688 4794 4663 5256 
+Q 4913 5231 5169 5256 
+Q 5144 4794 5144 4325 
+L 5144 3663 
+L 5375 3663 
+Q 5756 3663 6138 3681 
+Q 6113 3475 6138 3269 
+Q 5756 3288 5375 3288 
+L 5144 3288 
+L 5144 -25 
+Q 5144 -469 4894 -650 
+Q 4625 -838 3994 -831 
+Q 4063 -513 3844 -269 
+Q 4044 -294 4294 -297 
+Q 4544 -300 4612 -240 
+Q 4681 -181 4688 150 
+z
+M 1256 4025 
+Q 875 4025 494 4006 
+Q 519 4213 494 4419 
+Q 875 4400 1256 4400 
+L 2875 4400 
+Q 2775 3063 2175 1869 
+L 3013 431 
+L 2569 181 
+L 1894 1350 
+Q 1344 444 556 -250 
+Q 325 -94 56 -31 
+Q 1013 744 1625 1813 
+L 488 3688 
+L 913 3956 
+L 1900 2344 
+Q 2263 3150 2400 4025 
+L 1256 4025 
+z
+" transform="scale(0.015625)"/>
+     <path id="WenQuanYiZenHei-6bcf" d="M 6138 2181 
+Q 6113 1988 6138 1800 
+Q 5788 1819 5438 1819 
+L 4975 1819 
+L 4863 738 
+L 5806 738 
+L 5806 394 
+L 4831 394 
+L 4775 -144 
+Q 4719 -563 4350 -725 
+Q 4013 -856 3550 -825 
+L 3288 -819 
+Q 3331 -663 3275 -519 
+Q 3219 -375 3113 -288 
+Q 3381 -313 3759 -303 
+Q 4138 -294 4231 -238 
+Q 4338 -163 4350 88 
+L 4381 394 
+L 1025 394 
+L 1244 1819 
+L 813 1819 
+Q 463 1819 113 1800 
+Q 138 1988 113 2181 
+Q 463 2163 813 2163 
+L 1294 2163 
+L 1488 3431 
+L 1488 3581 
+L 1506 3581 
+L 1513 3613 
+L 1713 3581 
+L 5156 3581 
+L 5013 2163 
+L 5438 2163 
+Q 5788 2163 6138 2181 
+z
+M 5588 4463 
+Q 5569 4269 5588 4081 
+Q 5244 4100 4894 4100 
+L 1813 4100 
+Q 1344 3463 606 2788 
+Q 481 2988 256 3069 
+Q 744 3494 1116 3972 
+Q 1488 4450 1919 5181 
+Q 2119 5044 2344 4950 
+Q 2213 4688 2050 4444 
+L 4894 4444 
+Q 5238 4444 5588 4463 
+z
+M 2844 3238 
+L 1906 3238 
+L 1744 2163 
+L 3244 2163 
+L 2581 3038 
+L 2844 3238 
+z
+M 3250 2163 
+L 4563 2163 
+L 4669 3238 
+L 3044 3238 
+L 3638 2456 
+L 3250 2163 
+z
+M 2944 1819 
+Q 3275 1394 3550 938 
+L 3213 738 
+L 4419 738 
+L 4525 1819 
+L 2944 1819 
+z
+M 2656 1819 
+L 1694 1819 
+L 1525 738 
+L 3094 738 
+Q 2806 1219 2450 1650 
+L 2656 1819 
+z
+" transform="scale(0.015625)"/>
+     <path id="WenQuanYiZenHei-5355" d="M 3381 -769 
+Q 3138 -744 2894 -769 
+Q 2919 -319 2919 125 
+L 2919 613 
+L 788 613 
+Q 450 613 113 594 
+Q 138 781 113 963 
+Q 450 944 788 944 
+L 2919 944 
+L 2919 1588 
+L 1531 1588 
+L 1531 1244 
+L 1094 1244 
+L 1094 3938 
+L 2331 3938 
+Q 1969 4475 1544 4956 
+L 1906 5275 
+Q 2388 4731 2788 4125 
+L 2500 3938 
+L 3388 3938 
+Q 3656 4225 3956 4675 
+L 4294 5194 
+Q 4488 5044 4713 4944 
+Q 4444 4475 3969 3938 
+L 5263 3938 
+L 5263 1244 
+L 4825 1244 
+L 4825 1588 
+L 3356 1588 
+L 3356 944 
+L 5463 944 
+Q 5800 944 6138 963 
+Q 6113 781 6138 594 
+Q 5800 613 5463 613 
+L 3356 613 
+L 3356 125 
+Q 3356 -319 3381 -769 
+z
+M 3356 1919 
+L 4825 1919 
+L 4825 2606 
+L 3356 2606 
+L 3356 1919 
+z
+M 2919 1919 
+L 2919 2606 
+L 1531 2606 
+L 1531 1919 
+L 2919 1919 
+z
+M 3356 2938 
+L 4825 2938 
+L 4825 3606 
+L 3669 3606 
+L 3644 3575 
+Q 3631 3594 3619 3606 
+L 3356 3606 
+L 3356 2938 
+z
+M 2919 2938 
+L 2919 3606 
+L 1531 3606 
+Q 1531 3275 1531 2938 
+L 2919 2938 
+z
+" transform="scale(0.015625)"/>
+     <path id="WenQuanYiZenHei-5143" d="M 3575 2825 
+L 2500 2825 
+L 2500 1431 
+Q 2500 1013 2303 628 
+Q 2106 244 1769 -63 
+Q 1256 -531 581 -700 
+Q 519 -406 263 -256 
+Q 950 -169 1490 315 
+Q 2031 800 2031 1431 
+L 2031 2825 
+L 1238 2825 
+Q 838 2825 438 2806 
+Q 463 3019 438 3238 
+Q 838 3219 1238 3219 
+L 5156 3219 
+Q 5556 3219 5956 3238 
+Q 5931 3019 5956 2806 
+Q 5556 2825 5156 2825 
+L 4044 2825 
+L 4044 150 
+Q 4044 -275 4269 -275 
+L 5306 -269 
+Q 5394 -269 5419 -203 
+Q 5444 -138 5450 -106 
+L 5625 956 
+Q 5831 813 6075 806 
+L 5831 -519 
+Q 5813 -600 5772 -650 
+Q 5731 -700 5650 -700 
+L 4263 -700 
+Q 3944 -700 3759 -456 
+Q 3575 -213 3575 150 
+L 3575 2825 
+z
+M 5250 5000 
+Q 5225 4781 5250 4569 
+Q 4850 4588 4450 4588 
+L 1944 4588 
+Q 1544 4588 1144 4569 
+Q 1169 4781 1144 5000 
+Q 1544 4981 1944 4981 
+L 4450 4981 
+Q 4850 4981 5250 5000 
+z
+" transform="scale(0.015625)"/>
+     <path id="WenQuanYiZenHei-6b21" d="M 1325 -413 
+Q 1944 -281 2459 94 
+Q 2975 469 3290 1028 
+Q 3606 1588 3600 2219 
+Q 3600 2681 3575 3138 
+Q 3825 3113 4075 3138 
+L 4050 2131 
+Q 4281 806 5056 75 
+Q 5525 -331 6138 -563 
+Q 5900 -694 5813 -950 
+Q 5100 -669 4615 -94 
+Q 4131 481 3869 1219 
+Q 3613 538 3047 -6 
+Q 2481 -550 1706 -813 
+Q 1613 -519 1325 -413 
+z
+M 3150 3775 
+L 5706 3775 
+L 5756 3369 
+Q 5663 3356 5619 3294 
+L 5156 2438 
+L 4756 2656 
+L 5175 3413 
+L 3044 3413 
+Q 2731 2444 2225 1725 
+Q 2019 1919 1738 1950 
+Q 2531 3019 2719 3919 
+Q 2838 4494 2863 5081 
+Q 3138 5038 3413 5044 
+Q 3313 4369 3150 3775 
+z
+M 250 -363 
+Q 625 363 897 1069 
+Q 1169 1775 1563 3006 
+L 1831 2831 
+Q 1350 1288 1125 506 
+L 831 -556 
+Q 569 -375 250 -363 
+z
+M 1181 3188 
+Q 800 3775 338 4313 
+L 713 4638 
+Q 1194 4075 1600 3456 
+L 1181 3188 
+z
+" transform="scale(0.015625)"/>
+    </defs>
+    <use xlink:href="#WenQuanYiZenHei-786e"/>
+    <use xlink:href="#WenQuanYiZenHei-8ba4" transform="translate(100 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-9636" transform="translate(200 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-6bb5" transform="translate(300 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-ff1a" transform="translate(400 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-34" transform="translate(500 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-20" transform="translate(559.960938 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-73af" transform="translate(589.941406 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-5883" transform="translate(689.941406 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-ff1b" transform="translate(789.941406 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-33" transform="translate(889.941406 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-20" transform="translate(949.902344 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-4e2a" transform="translate(979.882812 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-914d" transform="translate(1079.882812 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-5bf9" transform="translate(1179.882812 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-20" transform="translate(1279.882812 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-73" transform="translate(1309.863281 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-65" transform="translate(1361.816406 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-65" transform="translate(1415.722656 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-64" transform="translate(1469.628906 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-ff1b" transform="translate(1523.535156 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-6bcf" transform="translate(1623.535156 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-5355" transform="translate(1723.535156 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-5143" transform="translate(1823.535156 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-56fa" transform="translate(1923.535156 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-5b9a" transform="translate(2023.535156 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-20" transform="translate(2123.535156 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-34" transform="translate(2153.515625 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-20" transform="translate(2213.476562 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-6b21" transform="translate(2243.457031 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-5c1d" transform="translate(2343.457031 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-8bd5" transform="translate(2443.457031 0)"/>
+   </g>
+  </g>
+  <g id="text_23">
+   <!-- 完整预算共 20 单元、74 次尝试；此图展示 6 个确认单元。 -->
+   <g style="fill: #263c3b" transform="translate(58.9176 523.231462) scale(0.12 -0.12)">
+    <defs>
+     <path id="WenQuanYiZenHei-5b8c" d="M 4231 -681 
+Q 3950 -681 3762 -475 
+Q 3575 -269 3575 75 
+L 3575 1906 
+L 2731 1906 
+Q 2263 431 2156 206 
+Q 2050 -19 1834 -200 
+Q 1619 -381 1350 -506 
+Q 906 -713 425 -819 
+Q 425 -538 263 -319 
+Q 981 -175 1425 75 
+Q 1750 263 1875 656 
+Q 1938 819 1975 963 
+L 2250 1906 
+L 1213 1906 
+Q 863 1906 513 1888 
+Q 538 2075 513 2269 
+Q 863 2250 1213 2250 
+L 5194 2250 
+Q 5538 2250 5888 2269 
+Q 5869 2075 5888 1888 
+Q 5538 1906 5194 1906 
+L 4019 1906 
+L 4019 75 
+Q 4019 -75 4075 -178 
+Q 4131 -281 4238 -281 
+L 5456 -281 
+Q 5525 -281 5563 -225 
+Q 5631 -125 5644 44 
+L 5769 813 
+Q 5963 681 6194 681 
+L 5981 -475 
+Q 5963 -544 5913 -612 
+Q 5863 -681 5788 -681 
+L 4231 -681 
+z
+M 4919 3431 
+Q 4900 3244 4919 3050 
+Q 4569 3069 4219 3069 
+L 1963 3069 
+Q 1613 3069 1263 3050 
+Q 1281 3244 1263 3431 
+Q 1613 3413 1963 3413 
+L 4219 3413 
+Q 4569 3413 4919 3431 
+z
+M 875 3425 
+L 431 3425 
+L 431 4669 
+L 3006 4669 
+L 2488 5050 
+L 2781 5444 
+L 3438 4956 
+L 3225 4669 
+L 5831 4669 
+L 5831 3425 
+L 5388 3425 
+L 5388 4325 
+L 875 4325 
+L 875 3425 
+z
+" transform="scale(0.015625)"/>
+     <path id="WenQuanYiZenHei-6574" d="M 6113 -319 
+Q 6094 -463 6113 -606 
+Q 5850 -594 5588 -594 
+L 988 -594 
+Q 719 -594 456 -606 
+Q 475 -463 456 -319 
+Q 719 -331 988 -331 
+L 1681 -331 
+L 1681 50 
+Q 1681 463 1656 869 
+Q 1881 844 2100 869 
+Q 2081 525 2081 331 
+L 2081 -331 
+L 3181 -331 
+L 3181 1188 
+L 1488 1188 
+Q 1225 1188 963 1169 
+Q 975 1313 963 1456 
+Q 1225 1444 1488 1444 
+L 5175 1444 
+Q 5438 1444 5700 1456 
+Q 5688 1313 5700 1169 
+Q 5438 1188 5175 1188 
+L 3581 1188 
+L 3581 600 
+L 4675 600 
+Q 4938 600 5200 613 
+Q 5188 475 5200 331 
+Q 4938 344 4675 344 
+L 3581 344 
+L 3581 -331 
+L 5588 -331 
+Q 5850 -331 6113 -319 
+z
+M 2206 1581 
+Q 1988 1606 1769 1581 
+Q 1788 1975 1788 2363 
+Q 1306 1919 406 1438 
+Q 338 1638 169 1763 
+Q 713 2031 1281 2513 
+L 1744 2919 
+L 731 2919 
+Q 800 3431 731 3944 
+L 1788 3944 
+L 1788 4275 
+L 850 4275 
+Q 588 4275 325 4263 
+Q 338 4406 325 4550 
+Q 588 4538 850 4538 
+L 1781 4538 
+Q 1781 4831 1769 5131 
+Q 1988 5106 2206 5131 
+Q 2194 4831 2188 4538 
+L 3050 4538 
+Q 3313 4538 3575 4550 
+Q 3556 4406 3575 4263 
+Q 3313 4275 3050 4275 
+L 2188 4275 
+L 2188 3944 
+L 3206 3944 
+Q 3138 3494 3181 3038 
+Q 3563 3513 3775 3997 
+Q 3988 4481 4163 5119 
+Q 4369 5050 4588 5019 
+Q 4506 4625 4344 4231 
+L 5600 4231 
+Q 5863 4231 6125 4244 
+Q 6113 4100 6125 3956 
+L 5550 3969 
+Q 5400 3250 4975 2656 
+Q 5413 2181 6106 1938 
+Q 5906 1813 5825 1588 
+Q 5225 1813 4738 2363 
+Q 4194 1763 3463 1544 
+Q 3313 1788 3050 1894 
+L 3031 1869 
+Q 2625 2150 2188 2381 
+Q 2188 1981 2206 1581 
+z
+M 4719 2988 
+Q 5019 3444 5069 3969 
+L 4275 3969 
+Q 4450 3394 4719 2988 
+z
+M 2188 2919 
+L 2188 2881 
+Q 2756 2594 3281 2238 
+L 3063 1919 
+Q 3425 1963 3806 2166 
+Q 4188 2369 4488 2694 
+Q 4206 3100 4025 3575 
+Q 3800 3188 3494 2794 
+Q 3369 2931 3188 2981 
+Q 3188 2950 3194 2919 
+L 2188 2919 
+z
+M 2188 3681 
+L 2188 3181 
+L 2794 3181 
+L 2800 3681 
+L 2188 3681 
+z
+M 1788 3681 
+L 1131 3681 
+L 1131 3181 
+L 1788 3181 
+L 1788 3681 
+z
+" transform="scale(0.015625)"/>
+     <path id="WenQuanYiZenHei-5171" d="M 5713 -506 
+L 5350 -850 
+L 4619 -113 
+L 3856 588 
+L 4188 963 
+L 4963 244 
+L 5713 -506 
+z
+M 1944 913 
+Q 2144 763 2369 656 
+Q 1756 -438 425 -1013 
+Q 369 -781 188 -625 
+Q 750 -400 1150 -40 
+Q 1550 319 1944 913 
+z
+M 6138 1713 
+Q 6113 1513 6138 1319 
+Q 5769 1338 5406 1338 
+L 844 1338 
+Q 481 1338 113 1319 
+Q 138 1513 113 1713 
+Q 481 1694 844 1694 
+L 1988 1694 
+L 1988 3438 
+L 1225 3438 
+Q 863 3438 494 3419 
+Q 519 3613 494 3813 
+Q 863 3794 1225 3794 
+L 1988 3794 
+L 1988 4338 
+Q 1988 4794 1963 5256 
+Q 2213 5231 2463 5256 
+Q 2438 4794 2438 4338 
+L 2438 3794 
+L 3813 3794 
+L 3813 4338 
+Q 3813 4794 3788 5256 
+Q 4038 5231 4288 5256 
+Q 4263 4794 4263 4338 
+L 4263 3794 
+L 5025 3794 
+Q 5388 3794 5756 3813 
+Q 5731 3613 5756 3419 
+Q 5388 3438 5025 3438 
+L 4263 3438 
+L 4263 1694 
+L 5406 1694 
+Q 5769 1694 6138 1713 
+z
+M 3813 1694 
+L 3813 3438 
+L 2438 3438 
+L 2438 1694 
+L 3813 1694 
+z
+" transform="scale(0.015625)"/>
+     <path id="WenQuanYiZenHei-3001" d="M 1913 -538 
+Q 1913 -781 1706 -788 
+Q 1556 -788 1413 -525 
+Q 1138 -6 950 188 
+Q 869 263 788 325 
+Q 619 456 625 481 
+Q 631 506 656 506 
+Q 969 506 1413 169 
+Q 1888 -200 1913 -538 
+z
+" transform="scale(0.015625)"/>
+     <path id="WenQuanYiZenHei-6b64" d="M 4081 2163 
+L 4088 50 
+Q 4094 -131 4181 -238 
+Q 4231 -281 4306 -281 
+L 5519 -275 
+Q 5594 -275 5619 -237 
+Q 5644 -200 5656 -175 
+Q 5669 -150 5678 -106 
+Q 5688 -63 5688 -31 
+L 5838 1088 
+Q 6031 944 6275 950 
+L 6050 -500 
+Q 6013 -644 5919 -675 
+Q 5894 -688 5863 -688 
+L 4294 -688 
+Q 3844 -650 3700 -238 
+Q 3631 -44 3631 238 
+L 3631 4344 
+Q 3631 4800 3606 5263 
+Q 3856 5238 4106 5263 
+Q 4081 4800 4081 4344 
+L 4081 2700 
+Q 4575 3044 5088 3519 
+L 5656 4063 
+Q 5813 3869 6013 3713 
+Q 5213 2894 4081 2163 
+z
+M 3425 3288 
+Q 3400 3088 3425 2894 
+Q 3069 2913 2719 2913 
+L 2225 2913 
+L 2225 719 
+L 3300 1231 
+L 3363 919 
+Q 1931 244 1225 -119 
+L 281 -625 
+Q 231 -331 31 -113 
+Q 294 -38 550 44 
+L 550 3006 
+Q 550 3463 531 3925 
+Q 781 3894 1025 3925 
+Q 1006 3463 1006 3006 
+L 1006 206 
+Q 1375 338 1775 513 
+L 1775 4219 
+Q 1775 4675 1750 5138 
+Q 2000 5113 2250 5138 
+Q 2225 4675 2225 4219 
+L 2225 3269 
+L 2694 3269 
+Q 3056 3269 3425 3288 
+z
+" transform="scale(0.015625)"/>
+     <path id="WenQuanYiZenHei-56fe" d="M 3963 -25 
+L 5300 -25 
+L 5300 4650 
+L 950 4650 
+L 950 -25 
+L 3700 -25 
+Q 2913 388 2088 731 
+L 2275 1175 
+Q 3225 781 4138 294 
+L 3963 -25 
+z
+M 3681 1356 
+L 3319 1038 
+L 2631 1819 
+L 2994 2138 
+L 3681 1356 
+z
+M 4956 2144 
+Q 4763 1969 4725 1713 
+Q 3894 1850 3194 2469 
+Q 2425 1800 1488 1388 
+Q 1325 1600 1100 1744 
+Q 2088 2094 2875 2781 
+Q 2613 3069 2388 3419 
+Q 2044 2931 1525 2500 
+Q 1406 2700 1194 2794 
+Q 1663 3163 1947 3597 
+Q 2231 4031 2481 4638 
+Q 2700 4538 2938 4481 
+Q 2863 4256 2763 4044 
+L 4538 4044 
+Q 4094 3331 3494 2744 
+Q 4106 2269 4956 2144 
+z
+M 969 -775 
+Q 725 -744 488 -775 
+Q 506 -325 506 119 
+L 506 4981 
+L 5744 4975 
+L 5744 -763 
+L 5300 -763 
+L 5300 -356 
+L 950 -356 
+Q 956 -563 969 -775 
+z
+M 2675 3713 
+Q 2900 3325 3163 3050 
+Q 3475 3356 3725 3713 
+L 2675 3713 
+z
+" transform="scale(0.015625)"/>
+     <path id="WenQuanYiZenHei-5c55" d="M 2656 1469 
+L 2656 -56 
+L 3469 494 
+L 3613 206 
+Q 3431 119 3034 -218 
+Q 2638 -556 2388 -800 
+L 2144 -450 
+Q 2225 -356 2225 -225 
+L 2225 1469 
+L 1519 1469 
+Q 1456 44 606 -738 
+Q 444 -531 181 -494 
+Q 1125 163 1100 1756 
+L 1088 5044 
+L 5544 5044 
+L 5544 3656 
+L 4538 3656 
+Q 4519 3269 4519 2888 
+L 4988 2888 
+Q 5300 2888 5613 2900 
+Q 5594 2731 5613 2563 
+Q 5300 2581 4988 2581 
+L 4519 2581 
+L 4519 1775 
+L 5244 1775 
+Q 5556 1775 5869 1788 
+Q 5850 1619 5869 1450 
+L 5006 1469 
+Q 5131 1319 5275 1194 
+L 5013 956 
+L 4431 513 
+Q 5081 -50 6100 -294 
+Q 5900 -450 5844 -700 
+Q 4875 -444 4231 156 
+Q 3600 731 3163 1469 
+L 2656 1469 
+z
+M 4119 806 
+Q 4281 931 4656 1269 
+L 4875 1469 
+L 3619 1469 
+Q 3869 1088 4119 806 
+z
+M 4088 1775 
+L 4088 2581 
+L 2975 2581 
+L 2975 1775 
+L 4088 1775 
+z
+M 2550 1775 
+L 2550 2581 
+L 1681 2563 
+Q 1700 2731 1681 2900 
+L 2550 2888 
+Q 2544 3269 2525 3656 
+L 1519 3656 
+L 1525 1775 
+L 2550 1775 
+z
+M 4088 2888 
+Q 4088 3269 4069 3656 
+L 3000 3656 
+Q 2981 3269 2975 2888 
+L 4088 2888 
+z
+M 1519 3963 
+L 5119 3963 
+L 5119 4738 
+L 1519 4738 
+L 1519 3963 
+z
+" transform="scale(0.015625)"/>
+     <path id="WenQuanYiZenHei-793a" d="M 6144 175 
+L 5731 -119 
+L 4913 981 
+L 4056 2044 
+L 4444 2363 
+L 5313 1288 
+L 6144 175 
+z
+M 1913 2394 
+Q 2138 2269 2381 2200 
+Q 1838 819 444 -144 
+Q 338 75 125 194 
+Q 725 581 1131 1084 
+Q 1538 1588 1913 2394 
+z
+M 2994 31 
+L 2994 2881 
+L 1144 2881 
+Q 763 2881 381 2863 
+Q 406 3069 381 3275 
+Q 763 3256 1144 3256 
+L 5375 3256 
+Q 5756 3256 6138 3275 
+Q 6113 3069 6138 2863 
+Q 5756 2881 5375 2881 
+L 3450 2881 
+L 3450 -138 
+Q 3450 -744 2644 -825 
+L 2438 -838 
+Q 2500 -525 2313 -275 
+Q 2469 -294 2681 -300 
+Q 2894 -306 2944 -265 
+Q 2994 -225 2994 31 
+z
+M 5419 4969 
+Q 5394 4763 5419 4556 
+Q 5038 4575 4656 4575 
+L 1813 4575 
+Q 1431 4575 1056 4556 
+Q 1075 4763 1056 4969 
+Q 1431 4950 1813 4950 
+L 4656 4950 
+Q 5038 4950 5419 4969 
+z
+" transform="scale(0.015625)"/>
+     <path id="WenQuanYiZenHei-3002" d="M 2056 0 
+Q 2056 -681 1343 -681 
+Q 631 -681 631 0 
+Q 631 675 1344 675 
+Q 1775 675 1975 325 
+Q 2056 169 2056 0 
+z
+M 1819 0 
+Q 1819 444 1344 444 
+Q 1025 444 906 175 
+Q 869 94 869 0 
+Q 869 -456 1344 -456 
+Q 1819 -456 1819 0 
+z
+" transform="scale(0.015625)"/>
+    </defs>
+    <use xlink:href="#WenQuanYiZenHei-5b8c"/>
+    <use xlink:href="#WenQuanYiZenHei-6574" transform="translate(100 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-9884" transform="translate(200 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-7b97" transform="translate(300 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-5171" transform="translate(400 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-20" transform="translate(500 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-32" transform="translate(529.980469 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-30" transform="translate(589.941406 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-20" transform="translate(649.902344 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-5355" transform="translate(679.882812 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-5143" transform="translate(779.882812 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-3001" transform="translate(879.882812 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-37" transform="translate(979.882812 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-34" transform="translate(1039.84375 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-20" transform="translate(1099.804688 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-6b21" transform="translate(1129.785156 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-5c1d" transform="translate(1229.785156 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-8bd5" transform="translate(1329.785156 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-ff1b" transform="translate(1429.785156 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-6b64" transform="translate(1529.785156 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-56fe" transform="translate(1629.785156 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-5c55" transform="translate(1729.785156 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-793a" transform="translate(1829.785156 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-20" transform="translate(1929.785156 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-36" transform="translate(1959.765625 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-20" transform="translate(2019.726562 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-4e2a" transform="translate(2049.707031 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-786e" transform="translate(2149.707031 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-8ba4" transform="translate(2249.707031 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-5355" transform="translate(2349.707031 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-5143" transform="translate(2449.707031 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-3002" transform="translate(2549.707031 0)"/>
+   </g>
+   <!-- 仅为仿真终态接受吞吐；正式批次未执行独立文件验收。 -->
+   <g style="fill: #263c3b" transform="translate(58.9176 541.8504) scale(0.12 -0.12)">
+    <defs>
+     <path id="WenQuanYiZenHei-4ec5" d="M 3825 956 
+Q 2913 2231 2713 4175 
+Q 2619 4169 2519 4163 
+Q 2538 4381 2519 4600 
+Q 2919 4575 3319 4575 
+L 5463 4575 
+Q 5363 3463 5156 2613 
+Q 4925 1669 4406 925 
+Q 5131 131 6175 -244 
+Q 5938 -381 5844 -644 
+Q 4844 -263 4125 569 
+Q 3294 -375 2088 -719 
+Q 1931 -488 1706 -313 
+Q 2969 -19 3825 956 
+z
+M 5013 4181 
+L 3138 4181 
+Q 3200 3494 3419 2731 
+Q 3650 1931 4100 1300 
+Q 4856 2388 5013 4181 
+z
+M 2156 4925 
+Q 1900 4075 1494 3338 
+L 1494 31 
+Q 1494 -413 1519 -850 
+Q 1288 -825 1050 -850 
+Q 1075 -413 1075 31 
+L 1075 2681 
+Q 769 2269 388 1931 
+Q 244 2156 0 2256 
+Q 338 2544 631 2875 
+Q 1125 3425 1331 3950 
+Q 1531 4469 1663 5050 
+Q 1894 4963 2156 4925 
+z
+" transform="scale(0.015625)"/>
+     <path id="WenQuanYiZenHei-4e3a" d="M 2019 3588 
+Q 1588 4188 1081 4725 
+L 1456 5075 
+Q 1981 4513 2431 3881 
+L 2019 3588 
+z
+M 5331 3025 
+L 3463 3025 
+Q 3388 2550 3231 2106 
+L 3600 2400 
+Q 4088 1788 4488 1119 
+L 4050 856 
+Q 3669 1488 3219 2063 
+Q 2500 138 713 -750 
+Q 550 -456 213 -425 
+Q 1275 -25 2028 878 
+Q 2781 1781 2988 3025 
+L 1331 3025 
+Q 931 3025 531 3006 
+Q 550 3219 531 3438 
+Q 931 3419 1331 3419 
+L 3038 3419 
+Q 3063 3650 3063 3881 
+L 3063 4313 
+Q 3063 4788 3038 5256 
+Q 3294 5231 3550 5256 
+Q 3525 4788 3525 4313 
+L 3525 3881 
+Q 3525 3650 3506 3419 
+L 5800 3419 
+L 5800 -125 
+Q 5800 -413 5606 -600 
+Q 5306 -863 4594 -831 
+Q 4669 -506 4444 -269 
+Q 4650 -294 4931 -294 
+Q 5213 -294 5275 -250 
+Q 5331 -194 5331 56 
+L 5331 3025 
+z
+" transform="scale(0.015625)"/>
+     <path id="WenQuanYiZenHei-6b63" d="M 6138 31 
+Q 6113 -175 6138 -381 
+Q 5756 -363 5375 -363 
+L 875 -363 
+Q 494 -363 113 -381 
+Q 138 -175 113 31 
+Q 494 13 875 13 
+L 1138 13 
+L 1138 2169 
+Q 1138 2631 1113 3100 
+Q 1369 3075 1619 3100 
+Q 1594 2631 1594 2169 
+L 1594 13 
+L 3019 13 
+L 3019 4513 
+L 1144 4513 
+Q 763 4513 381 4494 
+Q 400 4700 381 4906 
+Q 763 4888 1144 4888 
+L 5138 4888 
+Q 5519 4888 5900 4906 
+Q 5881 4700 5900 4494 
+Q 5519 4513 5138 4513 
+L 3475 4513 
+L 3475 2594 
+L 4744 2594 
+Q 5125 2594 5506 2606 
+Q 5488 2400 5506 2194 
+Q 5125 2213 4744 2213 
+L 3475 2213 
+L 3475 13 
+L 5375 13 
+Q 5756 13 6138 31 
+z
+" transform="scale(0.015625)"/>
+     <path id="WenQuanYiZenHei-5f0f" d="M 5069 4006 
+Q 4700 4481 4263 4894 
+L 4606 5256 
+Q 5069 4813 5463 4306 
+L 5069 4006 
+z
+M 1606 2250 
+L 1050 2250 
+Q 688 2250 325 2231 
+Q 344 2425 325 2625 
+Q 688 2606 1050 2606 
+L 2500 2606 
+Q 2869 2606 3231 2625 
+Q 3213 2425 3231 2231 
+Q 2869 2250 2500 2250 
+L 2056 2250 
+L 2056 481 
+Q 2588 613 3619 913 
+L 3625 588 
+Q 1431 -6 238 -419 
+Q 238 -125 81 125 
+Q 813 206 1606 381 
+L 1606 2250 
+z
+M 969 3606 
+Q 606 3606 244 3588 
+Q 263 3781 244 3981 
+Q 606 3963 969 3963 
+L 3519 3963 
+L 3500 5256 
+Q 3750 5231 3994 5256 
+L 3975 3963 
+L 5406 3963 
+Q 5769 3963 6138 3981 
+Q 6113 3781 6138 3588 
+Q 5769 3606 5406 3606 
+L 3975 3606 
+Q 3963 1531 4981 425 
+Q 5269 100 5631 -138 
+Q 5631 363 5606 856 
+Q 5831 706 6100 719 
+Q 6156 94 6081 -531 
+Q 6081 -625 6006 -694 
+Q 5894 -819 5738 -750 
+Q 4963 -325 4419 406 
+Q 3875 1138 3669 2088 
+Q 3538 2688 3525 3606 
+L 969 3606 
+z
+" transform="scale(0.015625)"/>
+     <path id="WenQuanYiZenHei-6279" d="M 4594 181 
+Q 4594 -288 4813 -288 
+L 5425 -288 
+Q 5475 -288 5503 -247 
+Q 5531 -206 5538 -163 
+L 5550 81 
+L 5681 950 
+Q 5875 813 6113 813 
+L 5919 -256 
+Q 5919 -525 5831 -656 
+Q 5800 -681 5750 -681 
+L 4800 -681 
+Q 4356 -650 4219 -263 
+Q 4150 -75 4150 181 
+L 4150 4275 
+Q 4150 4725 4125 5181 
+Q 4369 5150 4613 5181 
+Q 4594 4725 4594 4275 
+L 4594 2806 
+Q 4863 3013 5131 3288 
+L 5538 3725 
+Q 5706 3550 5913 3413 
+Q 5463 2838 4594 2263 
+L 4594 181 
+z
+M 3963 2988 
+Q 3944 2794 3963 2606 
+Q 3669 2619 3500 2625 
+L 3044 2625 
+L 3044 6 
+L 3775 575 
+L 3956 269 
+Q 3781 169 3403 -197 
+Q 3025 -563 2788 -813 
+L 2506 -463 
+Q 2600 -213 2600 56 
+L 2600 4275 
+Q 2600 4725 2575 5181 
+Q 2825 5150 3069 5181 
+Q 3044 4725 3044 4275 
+L 3044 2969 
+L 3263 2969 
+Q 3613 2969 3963 2988 
+z
+M 31 1769 
+Q 613 1881 1144 2094 
+L 1144 3425 
+L 744 3425 
+Q 444 3425 144 3413 
+Q 156 3569 144 3731 
+Q 444 3719 744 3719 
+L 1144 3719 
+L 1144 4275 
+Q 1144 4700 1125 5125 
+Q 1356 5100 1594 5125 
+Q 1575 4700 1575 4275 
+L 1575 3719 
+L 2300 3731 
+Q 2288 3569 2300 3413 
+L 1575 3425 
+L 1575 2269 
+L 2181 2538 
+L 2225 2281 
+L 1575 1975 
+L 1575 -113 
+Q 1575 -650 1175 -788 
+Q 838 -900 463 -869 
+Q 513 -544 319 -363 
+Q 513 -381 756 -384 
+Q 1000 -388 1072 -331 
+Q 1144 -275 1144 50 
+L 1144 1763 
+L 875 1625 
+L 263 1294 
+Q 206 1581 31 1769 
+z
+" transform="scale(0.015625)"/>
+     <path id="WenQuanYiZenHei-672a" d="M 3475 2231 
+Q 4213 631 6113 181 
+Q 5894 13 5831 -250 
+Q 5150 -75 4506 384 
+Q 3863 844 3425 1488 
+L 3425 163 
+Q 3425 -300 3444 -769 
+Q 3194 -738 2944 -769 
+Q 2963 -300 2963 163 
+L 2963 1763 
+Q 2481 1044 1834 490 
+Q 1188 -63 406 -375 
+Q 338 -94 119 88 
+Q 838 338 1469 806 
+Q 1869 1094 2122 1416 
+Q 2375 1738 2675 2231 
+L 1125 2231 
+Q 744 2231 363 2213 
+Q 388 2419 363 2625 
+Q 744 2606 1125 2606 
+L 2963 2606 
+L 2963 3700 
+L 1556 3700 
+Q 1175 3700 794 3681 
+Q 813 3888 794 4094 
+Q 1175 4075 1556 4075 
+L 2963 4075 
+L 2963 4331 
+Q 2963 4794 2944 5263 
+Q 3194 5231 3444 5263 
+Q 3425 4794 3425 4331 
+L 3425 4075 
+L 4831 4075 
+Q 5213 4075 5594 4094 
+Q 5575 3888 5594 3681 
+Q 5213 3700 4831 3700 
+L 3425 3700 
+L 3425 2606 
+L 5263 2606 
+Q 5644 2606 6025 2625 
+Q 6000 2419 6025 2213 
+Q 5644 2231 5263 2231 
+L 3475 2231 
+z
+" transform="scale(0.015625)"/>
+     <path id="WenQuanYiZenHei-6267" d="M 3319 2206 
+Q 3369 2750 3350 3350 
+L 3044 3350 
+Q 2675 3350 2313 3331 
+Q 2331 3531 2313 3725 
+Q 2675 3706 3044 3706 
+L 3350 3706 
+L 3350 4344 
+Q 3350 4800 3331 5263 
+Q 3575 5231 3825 5263 
+Q 3806 4800 3806 4344 
+L 3806 3706 
+L 5100 3706 
+L 5056 1950 
+Q 5050 1731 5053 1643 
+Q 5056 1556 5065 1347 
+Q 5075 1138 5097 1025 
+Q 5119 913 5166 728 
+Q 5213 544 5275 419 
+Q 5419 125 5663 -100 
+Q 5656 119 5638 325 
+Q 5888 300 6131 325 
+Q 6094 -100 6113 -531 
+Q 6113 -625 6044 -688 
+Q 5963 -775 5844 -750 
+Q 5806 -756 5763 -744 
+Q 5219 -413 4912 137 
+Q 4606 688 4619 1294 
+L 4650 2219 
+L 4650 3350 
+L 3806 3350 
+L 3806 2769 
+Q 3806 2275 3719 1825 
+L 4431 1106 
+L 4069 763 
+L 3575 1269 
+Q 3144 -25 2031 -700 
+Q 1881 -444 1588 -388 
+Q 2131 -138 2572 359 
+Q 3013 856 3213 1625 
+L 2431 2350 
+L 2763 2719 
+L 3319 2206 
+z
+M 31 1769 
+Q 650 1881 1219 2094 
+L 1219 3425 
+L 794 3425 
+Q 475 3425 150 3413 
+Q 169 3569 150 3731 
+Q 475 3719 794 3719 
+L 1219 3719 
+L 1219 4275 
+Q 1219 4700 1200 5125 
+Q 1450 5100 1700 5125 
+Q 1681 4700 1681 4275 
+L 1681 3719 
+L 2456 3731 
+Q 2438 3569 2456 3413 
+L 1681 3425 
+L 1681 2269 
+L 2331 2538 
+L 2375 2281 
+L 1681 1975 
+L 1681 -113 
+Q 1681 -650 1256 -788 
+Q 894 -900 494 -869 
+Q 544 -544 338 -363 
+Q 544 -381 806 -384 
+Q 1069 -388 1144 -331 
+Q 1219 -275 1219 50 
+L 1219 1763 
+L 931 1625 
+L 281 1294 
+Q 219 1581 31 1769 
+z
+" transform="scale(0.015625)"/>
+     <path id="WenQuanYiZenHei-884c" d="M 4413 -6 
+L 4413 2606 
+L 3263 2606 
+Q 2900 2606 2538 2588 
+Q 2556 2788 2538 2981 
+Q 2900 2963 3263 2963 
+L 5456 2963 
+Q 5819 2963 6188 2981 
+Q 6163 2788 6188 2588 
+Q 5819 2606 5456 2606 
+L 4863 2606 
+L 4863 -163 
+Q 4863 -431 4675 -606 
+Q 4413 -844 3694 -838 
+Q 3769 -519 3544 -288 
+Q 3750 -313 4025 -313 
+Q 4300 -313 4356 -272 
+Q 4413 -231 4413 -6 
+z
+M 5825 4675 
+Q 5800 4475 5825 4281 
+Q 5463 4294 5094 4294 
+L 3656 4294 
+Q 3294 4294 2925 4281 
+Q 2950 4475 2925 4675 
+Q 3294 4656 3656 4656 
+L 5094 4656 
+Q 5463 4656 5825 4675 
+z
+M 1944 3663 
+Q 2156 3519 2400 3419 
+Q 2069 2919 1663 2469 
+L 1663 13 
+Q 1663 -419 1688 -850 
+Q 1419 -825 1150 -850 
+Q 1175 -419 1175 13 
+L 1175 1956 
+L 438 1263 
+Q 294 1438 38 1513 
+Q 788 2144 1431 2981 
+L 1944 3663 
+z
+M 1750 5094 
+Q 1963 4969 2219 4875 
+Q 1763 4119 1019 3525 
+Q 769 3325 506 3138 
+Q 375 3331 144 3425 
+Q 794 3850 1300 4488 
+Q 1538 4788 1750 5094 
+z
+" transform="scale(0.015625)"/>
+     <path id="WenQuanYiZenHei-72ec" d="M 4169 1619 
+L 3388 1619 
+L 3388 1269 
+L 2950 1269 
+L 2950 3875 
+L 4169 3875 
+L 4169 4381 
+Q 4169 4825 4150 5263 
+Q 4388 5238 4625 5263 
+Q 4606 4825 4606 4381 
+L 4606 3875 
+L 5838 3875 
+L 5838 1269 
+L 5406 1269 
+L 5406 1619 
+L 4606 1619 
+L 4606 900 
+Q 4606 506 4619 113 
+Q 4950 163 5400 244 
+Q 5225 531 5031 813 
+L 5425 1081 
+Q 5881 419 6256 -300 
+L 5831 -519 
+Q 5700 -263 5550 -13 
+Q 3763 -325 2681 -588 
+Q 2706 -306 2581 -50 
+Q 3331 -50 4150 50 
+Q 4169 475 4169 900 
+L 4169 1619 
+z
+M 4606 1938 
+L 5406 1938 
+L 5406 3556 
+L 4606 3556 
+L 4606 1938 
+z
+M 4169 1938 
+L 4169 3556 
+L 3388 3556 
+L 3388 1938 
+L 4169 1938 
+z
+M 2319 4775 
+Q 2488 4581 2688 4425 
+Q 2325 4081 1944 3756 
+L 1769 3613 
+Q 2000 3163 2144 2563 
+Q 2488 1113 2119 69 
+Q 1881 -731 1038 -856 
+Q 950 -575 650 -450 
+Q 800 -444 1009 -409 
+Q 1219 -375 1375 -262 
+Q 1531 -150 1663 175 
+Q 1969 1056 1763 2100 
+L 1525 1813 
+L 894 1081 
+L 513 619 
+Q 350 775 88 831 
+L 1113 2113 
+L 1631 2694 
+Q 1544 3044 1419 3325 
+L 406 2506 
+Q 281 2706 44 2800 
+L 700 3331 
+L 1181 3750 
+Q 869 4175 300 4338 
+Q 413 4550 481 4794 
+Q 1125 4556 1506 4038 
+L 2319 4775 
+z
+" transform="scale(0.015625)"/>
+     <path id="WenQuanYiZenHei-7acb" d="M 6138 44 
+Q 6113 -163 6138 -369 
+Q 5756 -350 5375 -350 
+L 875 -350 
+Q 494 -350 113 -369 
+Q 138 -163 113 44 
+Q 494 25 875 25 
+L 3194 25 
+L 3438 588 
+Q 3675 1100 3897 1859 
+Q 4119 2619 4269 3363 
+Q 4531 3269 4806 3231 
+L 4344 1738 
+Q 3969 550 3769 25 
+L 5375 25 
+Q 5756 25 6138 44 
+z
+M 2144 544 
+Q 1963 1863 1250 2988 
+L 1675 3263 
+Q 2450 2038 2644 606 
+L 2144 544 
+z
+M 5756 4100 
+Q 5738 3894 5756 3688 
+Q 5375 3706 4994 3706 
+L 1175 3706 
+Q 794 3706 413 3688 
+Q 438 3894 413 4100 
+Q 794 4081 1175 4081 
+L 4994 4081 
+Q 5375 4081 5756 4100 
+z
+M 3163 4100 
+Q 2794 4625 2350 5081 
+L 2719 5431 
+Q 3188 4944 3575 4394 
+L 3163 4100 
+z
+" transform="scale(0.015625)"/>
+     <path id="WenQuanYiZenHei-6587" d="M 2806 856 
+Q 1969 1925 1625 3481 
+L 988 3481 
+Q 588 3481 188 3463 
+Q 213 3681 188 3894 
+Q 588 3875 988 3875 
+L 5106 3875 
+Q 5506 3875 5906 3894 
+Q 5881 3681 5906 3463 
+Q 5506 3481 5106 3481 
+L 4506 3481 
+Q 4400 2469 3894 1575 
+Q 3669 1175 3394 838 
+Q 3819 413 4478 87 
+Q 5138 -238 5969 -288 
+Q 5775 -488 5756 -763 
+Q 4919 -694 4250 -334 
+Q 3581 25 3106 519 
+Q 2625 44 1934 -331 
+Q 1244 -706 369 -806 
+Q 375 -519 206 -281 
+Q 1031 -194 1693 125 
+Q 2356 444 2806 856 
+z
+M 3181 3944 
+Q 2769 4506 2281 5006 
+L 2644 5363 
+Q 3163 4838 3594 4244 
+L 3181 3944 
+z
+M 3100 1169 
+Q 3338 1463 3494 1806 
+Q 3813 2581 3975 3481 
+L 2056 3481 
+Q 2363 2138 3100 1169 
+z
+" transform="scale(0.015625)"/>
+     <path id="WenQuanYiZenHei-4ef6" d="M 4394 -769 
+Q 4144 -744 3894 -769 
+Q 3919 -313 3919 150 
+L 3919 1594 
+L 2813 1594 
+Q 2444 1594 2081 1575 
+Q 2100 1775 2081 1969 
+Q 2444 1950 2813 1950 
+L 3919 1950 
+L 3919 3263 
+L 2769 3263 
+Q 2506 2700 2106 2125 
+Q 1931 2288 1700 2325 
+Q 2100 2869 2322 3406 
+Q 2544 3944 2725 4656 
+Q 2963 4575 3206 4544 
+Q 3113 4088 2931 3625 
+L 3919 3625 
+L 3919 4181 
+Q 3919 4638 3894 5100 
+Q 4144 5069 4394 5100 
+Q 4369 4638 4369 4181 
+L 4369 3625 
+L 5169 3625 
+Q 5531 3625 5894 3638 
+Q 5875 3444 5894 3244 
+Q 5531 3263 5169 3263 
+L 4369 3263 
+L 4369 1950 
+L 5444 1950 
+Q 5813 1950 6175 1969 
+Q 6150 1775 6175 1575 
+Q 5813 1594 5444 1594 
+L 4369 1594 
+L 4369 150 
+Q 4369 -313 4394 -769 
+z
+M 2094 4925 
+Q 1844 4075 1450 3338 
+L 1450 31 
+Q 1450 -413 1475 -850 
+Q 1250 -825 1025 -850 
+Q 1044 -413 1044 31 
+L 1044 2681 
+Q 744 2269 375 1931 
+Q 238 2156 0 2256 
+Q 325 2544 613 2875 
+Q 1088 3425 1294 3950 
+Q 1488 4469 1613 5050 
+Q 1838 4963 2094 4925 
+z
+" transform="scale(0.015625)"/>
+     <path id="WenQuanYiZenHei-9a8c" d="M 5981 -106 
+Q 5963 -275 5981 -444 
+Q 5669 -431 5356 -431 
+L 2969 -431 
+Q 2656 -431 2350 -444 
+Q 2363 -275 2350 -106 
+Q 2656 -125 2969 -125 
+L 4369 -125 
+Q 4600 431 4881 1288 
+L 5206 2300 
+Q 5425 2206 5663 2163 
+Q 5375 1188 4831 -125 
+L 5356 -125 
+Q 5669 -125 5981 -106 
+z
+M 4063 594 
+Q 3788 1425 3425 2219 
+L 3856 2419 
+Q 4225 1600 4513 744 
+L 4063 594 
+z
+M 3163 363 
+Q 2931 1200 2613 2006 
+L 3056 2175 
+Q 3381 1350 3619 488 
+L 3163 363 
+z
+M 4581 2550 
+L 3513 2550 
+Q 3200 2550 2888 2538 
+Q 2900 2663 2894 2769 
+Q 2569 2488 2206 2300 
+Q 2113 2550 1894 2700 
+Q 2488 2975 2975 3463 
+Q 3269 3756 3394 4006 
+Q 3644 4513 3794 5063 
+Q 4038 4975 4294 4931 
+Q 4250 4806 4206 4681 
+Q 4475 3888 5025 3388 
+Q 5519 2938 6169 2650 
+Q 5938 2538 5838 2300 
+Q 5513 2456 5200 2700 
+Q 5200 2619 5206 2538 
+Q 4894 2550 4581 2550 
+z
+M 3513 2863 
+L 4994 2869 
+Q 4344 3438 3988 4194 
+Q 3594 3406 3013 2869 
+Q 3263 2863 3513 2863 
+z
+M 206 444 
+Q 188 756 44 963 
+Q 319 956 650 1003 
+Q 981 1050 1731 1281 
+L 1738 1006 
+Q 800 719 206 444 
+z
+M 525 4000 
+Q 744 3950 994 3944 
+Q 925 3519 875 3081 
+L 763 2144 
+L 1475 2144 
+L 1831 4444 
+L 663 4444 
+Q 350 4444 38 4431 
+Q 56 4600 38 4769 
+Q 350 4756 663 4756 
+L 2313 4756 
+L 1913 2144 
+L 2375 2144 
+L 2200 -200 
+Q 2188 -425 1988 -588 
+Q 1694 -800 1181 -788 
+L 944 -788 
+Q 1000 -450 788 -269 
+Q 1013 -294 1334 -287 
+Q 1656 -281 1715 -243 
+Q 1775 -206 1781 -50 
+L 1925 1831 
+L 294 1831 
+L 444 3131 
+Q 500 3569 525 4000 
+z
+" transform="scale(0.015625)"/>
+     <path id="WenQuanYiZenHei-6536" d="M 2081 -769 
+Q 1831 -744 1581 -769 
+Q 1606 -313 1606 144 
+L 1606 1281 
+Q 1119 1113 394 744 
+L 250 1175 
+Q 313 1288 313 1425 
+L 313 3106 
+Q 313 3569 294 4025 
+Q 544 4000 788 4025 
+Q 769 3569 769 3106 
+L 769 1375 
+L 1606 1663 
+L 1606 4119 
+Q 1606 4575 1581 5038 
+Q 1831 5006 2081 5038 
+Q 2056 4575 2056 4119 
+L 2056 144 
+Q 2056 -313 2081 -769 
+z
+M 3375 5031 
+Q 3625 4963 3913 4944 
+Q 3781 4400 3613 3869 
+L 3588 3781 
+L 5200 3781 
+Q 5563 3781 5925 3800 
+Q 5906 3600 5925 3406 
+L 5175 3419 
+Q 5106 1925 4488 888 
+Q 5125 106 6175 -306 
+Q 5950 -438 5850 -694 
+Q 4875 -288 4256 519 
+Q 3575 -469 2406 -906 
+Q 2338 -613 2144 -438 
+Q 3338 -44 3981 913 
+Q 3413 1806 3281 2963 
+Q 3044 2381 2638 1806 
+Q 2450 1981 2150 2025 
+Q 2431 2406 2737 2937 
+Q 3044 3469 3178 3991 
+Q 3313 4513 3375 5031 
+z
+M 3663 3419 
+Q 3675 2794 3831 2244 
+Q 3988 1694 4206 1300 
+Q 4650 2181 4681 3419 
+L 3663 3419 
+z
+" transform="scale(0.015625)"/>
+    </defs>
+    <use xlink:href="#WenQuanYiZenHei-4ec5"/>
+    <use xlink:href="#WenQuanYiZenHei-4e3a" transform="translate(100 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-4eff" transform="translate(200 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-771f" transform="translate(300 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-7ec8" transform="translate(400 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-6001" transform="translate(500 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-63a5" transform="translate(600 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-53d7" transform="translate(700 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-541e" transform="translate(800 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-5410" transform="translate(900 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-ff1b" transform="translate(1000 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-6b63" transform="translate(1100 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-5f0f" transform="translate(1200 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-6279" transform="translate(1300 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-6b21" transform="translate(1400 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-672a" transform="translate(1500 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-6267" transform="translate(1600 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-884c" transform="translate(1700 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-72ec" transform="translate(1800 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-7acb" transform="translate(1900 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-6587" transform="translate(2000 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-4ef6" transform="translate(2100 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-9a8c" transform="translate(2200 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-6536" transform="translate(2300 0)"/>
+    <use xlink:href="#WenQuanYiZenHei-3002" transform="translate(2400 0)"/>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p38722e1508">
+   <rect x="109.4184" y="148.86" width="681.7608" height="285.8112"/>
+  </clipPath>
+ </defs>
+</svg>
