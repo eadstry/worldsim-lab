@@ -4,7 +4,7 @@
 Links into upstream submodules are skipped (their content is not part of this
 repository), preserved partial snapshots under outputs/git-worktree-preservation/
 are skipped, and links to versions listed as archived in config/outputs-status.json
-count as satisfied because the archive lives in a GitHub Release.
+count as satisfied because the archive is recorded in config/outputs-status.json.
 """
 import json
 import os

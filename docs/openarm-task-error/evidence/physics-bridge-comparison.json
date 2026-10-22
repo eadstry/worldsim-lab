@@ -1,0 +1,23 @@
+{
+  "physics_60": {
+    "paired_change_percent_against_layout_matched_120hz": 13.45874247044855
+  },
+  "physics_120_layout": {
+    "paired_change_percent_against_layout_matched_120hz": 0.0
+  },
+  "physics_240": {
+    "paired_change_percent_against_layout_matched_120hz": -7.740504679692261
+  },
+  "physics_480": {
+    "paired_change_percent_against_layout_matched_120hz": -11.950728216582684
+  },
+  "position_32": {
+    "paired_change_percent_against_layout_matched_120hz": -3.535494421916835
+  },
+  "velocity_8": {
+    "paired_change_percent_against_layout_matched_120hz": 2.2660182633980623
+  },
+  "external_forces_every_iteration": {
+    "paired_change_percent_against_layout_matched_120hz": 1.4593359780696977
+  }
+}

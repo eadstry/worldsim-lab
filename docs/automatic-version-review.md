@@ -6,7 +6,7 @@
 
 ## 新任务的基线
 
-版本策略保存在 `config/version-policy.json`。默认起点为 `origin/main`，最低祖先是 2026-10-20 的分支收敛提交 `7420954`（该提交把此前各研究分支合并为一次快照导入，旧分支链已归档到 Release `archive-branches-20261020`）。起点同时必须包含自动审查策略。先 fetch，再创建任务：
+版本策略保存在 `config/version-policy.json`。默认起点为 `origin/main`，最低祖先是 2026-10-20 的分支收敛提交 `7420954`（该提交把此前各研究分支合并为一次快照导入，旧分支链已单独备份归档，见 `docs/repository-cleanup-20261022.md`）。起点同时必须包含自动审查策略。先 fetch，再创建任务：
 
 ```bash
 git fetch origin
@@ -45,7 +45,7 @@ git commit -m "Describe the reviewed change"
 git push -u origin "$(git branch --show-current)"
 ```
 
-检查在当前工作树运行，因此暂存之外不得有未暂存的跟踪修改或未忽略的新文件；存在无关修改时，应使用独立 worktree，不自动暂存无关内容。博客构建如改变了未暂存的 dist，需审阅并显式暂存生成物后重新 prepare。
+检查在当前工作树运行，因此暂存之外不得有未暂存的跟踪修改或未忽略的新文件；存在无关修改时，应使用独立 worktree，不自动暂存无关内容。
 
 超过 100 个变更文件默认阻止提交，优先拆分。确需导入完整封存成果时，使用 `--large-change-reason` 记录原因；这不会跳过哈希或测试。封存 outputs 保持原生成字节，行尾空白检查作用于其他维护文件。
 
@@ -56,7 +56,7 @@ git push -u origin "$(git branch --show-current)"
 | 分支 | `codex/`，包含最低整合祖先及策略文件；拒绝 detached HEAD、main、release 分支 |
 | 暂存范围 | 拒绝运行数据、模型、凭据文件名、`.local/`、runtime、整体根目录和上游 pin 更新 |
 | 版本完整性 | 上游 URL/gitlink/锁定一致、已初始化上游干净、封存文件哈希正确、历史版本未删除或重封 |
-| 基础检查 | `cloud-check.sh`：版本管理、成果索引与文档链接一致性、审查门禁和共享队列测试、共享配置测试、博客构建及完整性检查 |
+| 基础检查 | `cloud-check.sh`：版本管理、成果索引与文档链接一致性、审查门禁和共享队列测试、共享配置测试 |
 | 相关模块 | 对修改 Python 的 production、cuRobo v2、内部计时、生产吞吐、Arena benchmark 自动运行对应主机测试 |
 | 内容一致 | 审查前后 HEAD、分支、Git 暂存树一致；提交和推送时再次匹配 |
 | 推送 | 仅当前已审查分支、指定 origin；拒绝其他目标、远端删除及非 fast-forward 历史 |
@@ -77,7 +77,7 @@ python3 scripts/review-workspace.py install
 
 安装器把门禁代码放到本机共享 Git 元数据的 `workspace-hooks/`，将 `core.hooksPath` 设置为绝对路径。因此同一仓库的旧 worktree 也会执行门禁，缺少策略或基线过旧时给出迁移错误。安装器同时设置仓库级 `pull.ff=only`、`push.default=simple` 和 `fetch.prune=true`，不改全局 Git 配置。每台机器分别安装；共享门禁代码升级后重新安装。
 
-远端工作流 `.github/workflows/workspace-review.yml` 在 codex 分支推送和 PR 时运行。只使用读权限，不准备 GPU、上传研究报告或发布站点。它检查差异边界、封存历史及基础主机测试；依赖本机仿真环境的模块测试和 GPU 验证仍由本地对应流程负责。工作流采用官方 [checkout v6](https://github.com/actions/checkout/tree/v6) 和 [setup-node v6](https://github.com/actions/setup-node/tree/v6)。
+远端工作流 `.github/workflows/workspace-review.yml` 在 codex 分支推送和 PR 时运行。只使用读权限，不准备 GPU、上传研究报告或发布站点。它检查差异边界、封存历史及基础主机测试；依赖本机仿真环境的模块测试和 GPU 验证仍由本地对应流程负责。工作流采用官方 [checkout v6](https://github.com/actions/checkout/tree/v6)。
 
 Git 钩子是本机合作约定，可以被人为绕过；增加工作流也不等于已经开启 GitHub 分支保护。main 的远端强制门槛应在仓库设置中另行要求 `Workspace review / host-review` 成功、PR 审阅通过，并禁止强推。当前 main 尚未接入本整合版本，不能声称这些远端保护已经生效。
 

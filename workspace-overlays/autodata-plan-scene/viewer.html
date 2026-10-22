@@ -1,0 +1,79 @@
+<div id="autodata-live-plan">
+  <style>
+    #autodata-live-plan {color:var(--foreground)}
+    #autodata-live-plan .heading {padding-right:96px;margin-bottom:14px}
+    #autodata-live-plan .legend {display:flex;flex-wrap:wrap;gap:16px;margin:14px 0}
+    #autodata-live-plan .swatch {display:inline-block;width:22px;height:3px;vertical-align:middle;margin-right:5px}
+    #autodata-live-plan .scenes {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:20px 0}
+    #autodata-live-plan .scene-image {display:block;width:100%;aspect-ratio:4/3;object-fit:contain;background:var(--muted)}
+    #autodata-live-plan .scene-meta {display:grid;gap:7px;margin:10px 0;overflow-wrap:anywhere}
+    #autodata-live-plan .scene-time {margin:8px 0}
+    #autodata-live-plan .status {font-weight:500}
+    #autodata-live-plan code {white-space:normal;overflow-wrap:anywhere}
+    @media(max-width:700px) {#autodata-live-plan .scenes {grid-template-columns:1fr}}
+  </style>
+  <div class="heading"><h2>真实场景：规划与执行</h2><div class="text-small">RTX 5090 · AutoData SkillGen + cuRobo · OpenArm 左臂 · 同一源演示 / seed 101</div></div>
+  <div class="legend text-small">
+    <span><span class="swatch" style="background:var(--orange)"></span>橙色：cuRobo 预测过渡路径</span>
+    <span><span class="swatch" style="background:var(--blue)"></span>蓝色：已生成的技能参考路径</span>
+    <span><span class="swatch" style="background:var(--green)"></span>绿色：实际末端轨迹</span>
+  </div>
+  <div class="viz-controls">
+    <label class="form-label" for="alp-time">仿真时间 <span id="alp-time-value" class="tabular-nums"></span><input id="alp-time" class="form-range" type="range" min="0" max="100" value="0" step="1"></label>
+    <button type="button" class="btn" id="alp-play">播放一次</button>
+  </div>
+  <div class="text-small">真实渲染帧；按各帧时间取样，无画面插值。预测路径是叠加标记，未加入物理碰撞。</div>
+  <div id="alp-scenes" class="scenes" aria-live="polite"></div>
+  <h3>实测比较</h3>
+  <div class="table-responsive"><table class="table table-sm"><thead><tr><th>场景</th><th>规划成功</th><th>过渡路径总长</th><th>生成判据</th><th>严格终态</th></tr></thead><tbody id="alp-summary"></tbody></table></div>
+  <details><summary class="cursor-interaction">本次验证范围与来源</summary><table class="table table-sm"><tbody id="alp-evidence"></tbody></table></details>
+  <script type="application/json" id="alp-data">__LIVE_DATA__</script>
+  <script>
+    (() => {
+      const root=document.getElementById('autodata-live-plan');
+      const data=JSON.parse(root.querySelector('#alp-data').textContent);
+      const slider=root.querySelector('#alp-time');
+      const timeLabel=root.querySelector('#alp-time-value');
+      const play=root.querySelector('#alp-play');
+      const scenes=root.querySelector('#alp-scenes');
+      const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+      const formatPos=p=>p.map(v=>(v*1000).toFixed(1)).join(', ');
+      const stateLabel=x=>x===true?'通过':x===false?'未通过':'无结果';
+      let timer=null;
+      slider.max=String(data.timeline.length-1);
+      for(const c of data.cases) {
+        const section=document.createElement('section');
+        section.innerHTML=`<h3>${esc(c.label)}</h3><div class="text-small">XY 偏移 ${c.offset_m.map(v=>(v*1000).toFixed(0)).join(', ')} mm</div><div class="scene-time text-small tabular-nums"></div><img class="scene-image" alt="${esc(c.label)}的真实 GPU 渲染"><div class="scene-meta text-small"><span class="stage"></span><span class="cube tabular-nums"></span></div>`;
+        section.dataset.case=c.case;scenes.appendChild(section);
+      }
+      root.querySelector('#alp-summary').innerHTML=data.cases.map(c=>`<tr><td>${esc(c.label)}</td><td>${c.plan_successes}/${c.plan_count}</td><td class="tabular-nums">${c.planned_length_m.toFixed(3)} m</td><td>${stateLabel(c.recorded_success)}</td><td>${stateLabel(c.terminal_success)}</td></tr>`).join('');
+      const evidence=[['场景变化','仅物体 XY 初始位置；两组偏移均在原有 ±40 / ±60 mm 范围内。'],['控制变量','同一源 HDF5、seed 101、1 个环境、同一任务判据、零动作噪声、末尾 60 步等待。'],['实际执行',data.cases.map(c=>`${c.label} ${c.steps} 步`).join('；')],['轨迹标记','橙/蓝为当时已生成的参考路径，并保留历史路径；绿色为截止当前的真实末端轨迹。'],['验证限制','每个场景仅 1 次；不能估计成功率。未测试其余随机化方法或模型训练效果。'],['图像视角','独立诊断相机；原有三个数据相机的配置未修改。'],['源码稳定',data.source_stable?'回合开始与运行后核对的源码 SHA256 一致':'发现源码变化，需检查'],['帧记录核对','模拟器退出前的部分元数据快照由真实 HDF5 状态补齐；已用原快照帧逐项检查记录对应关系。'],['源演示限制','使用本机历史准备的单条演示；其技能标注源于回放夹具，未有人审确认。'],['原始证据',data.run_root]];
+      root.querySelector('#alp-evidence').innerHTML=evidence.map(([a,b])=>`<tr><td>${esc(a)}</td><td>${esc(b)}</td></tr>`).join('');
+      function stop(){if(timer!==null){clearInterval(timer);timer=null;}play.textContent='播放一次';}
+      function render() {
+        const t=data.timeline[Number(slider.value)];
+        timeLabel.textContent=`${t.toFixed(1)} s`;
+        for(const c of data.cases) {
+          let f=c.frames[0];for(const candidate of c.frames)if(candidate.time_s<=t)f=candidate;
+          const section=scenes.querySelector(`[data-case="${c.case}"]`);
+          section.querySelector('img').src=f.image;
+          section.querySelector('.scene-time').textContent=`实帧 ${f.time_s.toFixed(1)} s · 第 ${f.step} 步${t>c.duration_s?' · 已结束':''}`;
+          section.querySelector('.stage').textContent=`当前阶段：${f.segment_kind==='final_hold'?'末尾静置':f.segment_kind==='skill_replay'?'技能回放':'cuRobo 过渡执行'} · 已生成 ${f.plan_count} 个计划`;
+          section.querySelector('.cube').textContent=`方块 XYZ [mm]：${formatPos(f.cube_position_m)}`;
+        }
+      }
+      function save(){window.openai?.setWidgetState?.({modelContent:{simulationTimeSeconds:data.timeline[Number(slider.value)],cases:data.cases.map(x=>x.case)},privateContent:{frameIndex:Number(slider.value)}})?.catch(()=>{});}
+      slider.addEventListener('input',()=>{stop();render();});
+      slider.addEventListener('change',save);
+      play.addEventListener('click',()=>{
+        if(timer!==null){stop();save();return;}
+        if(Number(slider.value)>=data.timeline.length-1)slider.value='0';
+        play.textContent='暂停';
+        timer=setInterval(()=>{slider.value=String(Number(slider.value)+1);render();if(Number(slider.value)>=data.timeline.length-1){stop();save();}},450);
+      });
+      function restore(state){stop();const i=state?.privateContent?.frameIndex;if(Number.isInteger(i)&&i>=0&&i<data.timeline.length)slider.value=String(i);render();}
+      restore(window.openai?.widgetState);
+      window.addEventListener('openai:set_globals',e=>restore(e.detail?.globals?.widgetState));
+    })();
+  </script>
+</div>

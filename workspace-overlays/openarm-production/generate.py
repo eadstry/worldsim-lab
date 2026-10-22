@@ -15,7 +15,9 @@ def build_source(source, args):
         source = source.replace(anchor_debug, anchor_debug + "\n            planner_config.debug_planner = True", 1)
     anchor = "simulation_app = app_launcher.app"
     assert source.count(anchor) == 1, "Upstream launcher changed; review the integration hook"
-    source = source.replace(anchor, anchor + "\nfrom compat import install\ninstall()", 1)
+    runtime_path = getattr(args, "runtime", None)
+    runtime_arg = repr(str(runtime_path)) if runtime_path is not None else "None"
+    source = source.replace(anchor, anchor + f"\nfrom compat import install\ninstall(runtime={runtime_arg})", 1)
     policy_anchor = "generation_policy_params = task_descriptor.get_generation_policy()"
     assert source.count(policy_anchor) == 1
     source = source.replace(policy_anchor, policy_anchor + f"""
@@ -30,6 +32,18 @@ def build_source(source, args):
         if stats["num_failures"] >= failure_limit:
             raise RuntimeError(f"OpenArm generation reached failure limit {failure_limit}")
 ''', 1)
+    background = getattr(args, 'background', None)
+    if background is not None:
+        anchor_env = "    env = gym.make(env_name, cfg=env_cfg).unwrapped"
+        assert source.count(anchor_env) == 1, "Upstream environment hook changed"
+        source = source.replace(anchor_env, "    from background import configure_background, verify_background\n"
+            + f"    _background = {background!r}\n"
+            + "    configure_background(env_cfg, _background)\n" + anchor_env
+            + f"\n    verify_background(env, _background, {str(args.output_file.resolve())!r})", 1)
+        shutdown = '    simulation_app.close()'
+        assert source.count(shutdown) == 1, 'Upstream shutdown hook changed'
+        source = source.replace(shutdown, '    from background import annotate_dataset\n'
+            + f'    annotate_dataset({str(args.output_file.resolve())!r})\n' + shutdown, 1)
     if args.export_workers:
         import json
         os.environ["OPENARM_ASYNC_EXPORT"] = json.dumps(dict(
@@ -52,6 +66,14 @@ def build_source(source, args):
 """ + finish_anchor, 1)
     else:
         os.environ.pop("OPENARM_ASYNC_EXPORT", None)
+    semantic_anchor = "    env = gym.make(env_name, cfg=env_cfg).unwrapped"
+    assert source.count(semantic_anchor) == 1, "Upstream environment creation changed; review metadata capture"
+    source = source.replace(semantic_anchor, semantic_anchor + """
+    from dataset_metadata import attach as attach_dataset_metadata
+    attach_dataset_metadata(env)
+    from joint_targets import attach as attach_joint_targets
+    attach_joint_targets(env)
+""", 1)
     close_anchor = "        env.close()"
     assert source.count(close_anchor) == 1
     source = source.replace(close_anchor, close_anchor + """
@@ -66,6 +88,11 @@ def main():
     from export_governor import parse_workers
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--autodata-root", type=Path, default=Path(__file__).resolve().parents[2] / "AutoData")
+    parser.add_argument("--runtime", type=Path, default=None,
+                        help="Existing prepared OpenArm runtime; read without changing it")
+    parser.add_argument("--background-config", type=Path, default=None,
+                        help="JSON HDR candidate pool; sampled once per production process")
+    parser.add_argument("--background-seed", type=int, default=101)
     parser.add_argument("--arm", choices=("left", "right"), default="right")
     parser.add_argument("--input_file", type=Path, required=True)
     parser.add_argument("--output_file", type=Path, required=True)
@@ -95,7 +122,12 @@ def main():
     assert args.log_interval > 0
     os.environ["OPENARM_TELEMETRY_FILE"] = str(args.output_file.resolve().with_suffix(".telemetry.jsonl"))
     os.environ["OPENARM_LOG_INTERVAL"] = str(args.log_interval)
-    runtime = root / "runtime"
+    runtime = args.runtime.resolve() if args.runtime else root / "runtime"
+    args.runtime = runtime
+    from background import select_background
+    args.background = select_background(args.background_config, args.background_seed)
+    if args.background is not None:
+        assert not args.output_file.with_suffix('.background.json').exists(), 'Existing background record'
     configs = runtime / "openarm_autodata/tasks/pick_place/autodata_configs"
     script = args.autodata_root.resolve() / "scripts/generate_dataset.py"
     assert script.is_file(), script

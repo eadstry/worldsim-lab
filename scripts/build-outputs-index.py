@@ -145,10 +145,10 @@ def render_section(items, status):
         for record in status[artifact_id].get("archived_versions", []):
             archived.append((artifact_id, record))
     if archived:
-        lines.extend(["", "**已归档版本**（移出主树，原文与校验值保存在 GitHub Release 附件中）：", ""])
+        lines.extend(["", "**已归档版本**（移出主树，原文与校验值保存在单独归档中，位置见仓库整理记录）：", ""])
         for artifact_id, record in archived:
             lines.append("- %s %s → [%s](%s)" % (
-                BT + artifact_id + BT, record["versions"], record["release"], record["url"]))
+                BT + artifact_id + BT, record["versions"], record.get("archive", record.get("release", "归档记录")), record["url"]))
     lines.extend(["", END])
     return "\n".join(lines)
 

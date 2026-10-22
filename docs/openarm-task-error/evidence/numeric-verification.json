@@ -1,0 +1,1166 @@
+{
+  "primary_attempts_checked": 192,
+  "conditions": 16,
+  "max_mae_recompute_difference_deg": 1.1920928955078125e-07,
+  "checks": [
+    "All numeric arrays finite",
+    "9 absolute joint channels",
+    "Independent arm MAE recomputation",
+    "30Hz consecutive timestamps",
+    "Duration/physics substep count consistency"
+  ],
+  "trials": [
+    {
+      "condition": "external_forces_every_iteration",
+      "file": "runs/openarm-task-error-20261021/final-batches/external-forces/baseline-demo_0-r0.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "a179948dcefe997f4880efb23462779f81bd405046723e7485c05c46cc6ec615"
+    },
+    {
+      "condition": "external_forces_every_iteration",
+      "file": "runs/openarm-task-error-20261021/final-batches/external-forces/baseline-demo_1-r0.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "a3f43d6fa00bb93e4a98b6f684fb65b787bc5a4cc7afceb2abe7e03370777397"
+    },
+    {
+      "condition": "external_forces_every_iteration",
+      "file": "runs/openarm-task-error-20261021/final-batches/external-forces/baseline-demo_2-r0.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "b020471ca43d9bd9943841000e20aa8bca2f53d7f1c8192b85cbdf95bdae17a0"
+    },
+    {
+      "condition": "external_forces_every_iteration",
+      "file": "runs/openarm-task-error-20261021/final-batches/external-forces/baseline-demo_3-r0.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "1f676c6bf2ee8ae1de650714fffc58e78af20b739b60ec13f359371104a14ce9"
+    },
+    {
+      "condition": "external_forces_every_iteration",
+      "file": "runs/openarm-task-error-20261021/final-batches/external-forces/baseline-demo_0-r1.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "2f98fee8d1717d5c618ba0087808f4f0aa2b9d9a8719165691ec08f2c0337e8b"
+    },
+    {
+      "condition": "external_forces_every_iteration",
+      "file": "runs/openarm-task-error-20261021/final-batches/external-forces/baseline-demo_1-r1.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "2ca8150d3b6342df188e11b8efdc735995e4e22590a54d7b2255bd7b7bcc9459"
+    },
+    {
+      "condition": "external_forces_every_iteration",
+      "file": "runs/openarm-task-error-20261021/final-batches/external-forces/baseline-demo_2-r1.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "dd568e9f737d04dd2e8891c3c662b1016415430d9a7dec7d6df9ec92395927c7"
+    },
+    {
+      "condition": "external_forces_every_iteration",
+      "file": "runs/openarm-task-error-20261021/final-batches/external-forces/baseline-demo_3-r1.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "9f5508f43cf513f95a4d9b605fc6c570d7d1dfe034b871822579d3f8a38f1b28"
+    },
+    {
+      "condition": "external_forces_every_iteration",
+      "file": "runs/openarm-task-error-20261021/final-batches/external-forces/baseline-demo_0-r2.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "2f98fee8d1717d5c618ba0087808f4f0aa2b9d9a8719165691ec08f2c0337e8b"
+    },
+    {
+      "condition": "external_forces_every_iteration",
+      "file": "runs/openarm-task-error-20261021/final-batches/external-forces/baseline-demo_1-r2.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "2ca8150d3b6342df188e11b8efdc735995e4e22590a54d7b2255bd7b7bcc9459"
+    },
+    {
+      "condition": "external_forces_every_iteration",
+      "file": "runs/openarm-task-error-20261021/final-batches/external-forces/baseline-demo_2-r2.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "dd568e9f737d04dd2e8891c3c662b1016415430d9a7dec7d6df9ec92395927c7"
+    },
+    {
+      "condition": "external_forces_every_iteration",
+      "file": "runs/openarm-task-error-20261021/final-batches/external-forces/baseline-demo_3-r2.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "9f5508f43cf513f95a4d9b605fc6c570d7d1dfe034b871822579d3f8a38f1b28"
+    },
+    {
+      "condition": "baseline",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/baseline-demo_0-r0.npz",
+      "mae_difference_deg": -1.1920928955078125e-07,
+      "sha256": "0b64b9c872fb90ace5ca9968a53b919d7576289455ba2124e6817bb088e1b5d1"
+    },
+    {
+      "condition": "baseline",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/baseline-demo_1-r0.npz",
+      "mae_difference_deg": -5.960464477539063e-08,
+      "sha256": "0c7214109be9c11408a95329abe911651dd477be257401312f18e89118859fb8"
+    },
+    {
+      "condition": "baseline",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/baseline-demo_2-r0.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "239a145392acb439c805b88d0ba43475100cf2574be7c96d40a0a2fcd8a6b90c"
+    },
+    {
+      "condition": "baseline",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/baseline-demo_3-r0.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "f762521235c9841002173eafd69755655098e256ee560a141e015041bbe243a8"
+    },
+    {
+      "condition": "baseline",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/baseline-demo_0-r1.npz",
+      "mae_difference_deg": -1.1920928955078125e-07,
+      "sha256": "eb3016614fe50c5f3deb02efbbc630b02a92e2fa41737ef52c958cec33e6d962"
+    },
+    {
+      "condition": "baseline",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/baseline-demo_1-r1.npz",
+      "mae_difference_deg": -5.960464477539063e-08,
+      "sha256": "9e8473cd1cc5c976441eb07f725a97b0fb56b0a428b816ad64b161672d076915"
+    },
+    {
+      "condition": "baseline",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/baseline-demo_2-r1.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "9510695f32861fef0a17d63a7f9e2997701f7eef2483e5b5670afeab792b9651"
+    },
+    {
+      "condition": "baseline",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/baseline-demo_3-r1.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "d2c6756f8957bcc6f33e4935920b83d1ddad09ddb6068b7ea202990334cfca67"
+    },
+    {
+      "condition": "baseline",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/baseline-demo_0-r2.npz",
+      "mae_difference_deg": -1.1920928955078125e-07,
+      "sha256": "eb3016614fe50c5f3deb02efbbc630b02a92e2fa41737ef52c958cec33e6d962"
+    },
+    {
+      "condition": "baseline",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/baseline-demo_1-r2.npz",
+      "mae_difference_deg": -5.960464477539063e-08,
+      "sha256": "9e8473cd1cc5c976441eb07f725a97b0fb56b0a428b816ad64b161672d076915"
+    },
+    {
+      "condition": "baseline",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/baseline-demo_2-r2.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "9510695f32861fef0a17d63a7f9e2997701f7eef2483e5b5670afeab792b9651"
+    },
+    {
+      "condition": "baseline",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/baseline-demo_3-r2.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "d2c6756f8957bcc6f33e4935920b83d1ddad09ddb6068b7ea202990334cfca67"
+    },
+    {
+      "condition": "kp_half",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/kp_half-demo_0-r0.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "01e25a57283bf8526b019f84bd4a5ba1d68027a014ecb68f2d240a18fb223cf6"
+    },
+    {
+      "condition": "kp_half",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/kp_half-demo_1-r0.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "180b42c5bfb1da1bcd2d275c34551efb31f034f07722d0ac61ccf18a8980ccd2"
+    },
+    {
+      "condition": "kp_half",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/kp_half-demo_2-r0.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "a0724b7fba9c4a01c3b4e8557310f52a27d9246b01a5082593f9975e78908e02"
+    },
+    {
+      "condition": "kp_half",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/kp_half-demo_3-r0.npz",
+      "mae_difference_deg": -1.1920928955078125e-07,
+      "sha256": "85174de1a337390fb8e991830ee992340d2973aafd45a7ac667ed7740a16a907"
+    },
+    {
+      "condition": "kp_half",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/kp_half-demo_0-r1.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "cfabff3130a8edf9658fb8bab27d78e1286504011c8a8b8446582eb55f4650b7"
+    },
+    {
+      "condition": "kp_half",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/kp_half-demo_1-r1.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "c512ccbe567d5f6bb03be621cc2a53c23f812ee721971eb378f2235e3fdee4fd"
+    },
+    {
+      "condition": "kp_half",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/kp_half-demo_2-r1.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "ba3b89fb507f5456f457e6f7a0bc29ad205e1ef2a141dd7fcda72bbb002ad8dd"
+    },
+    {
+      "condition": "kp_half",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/kp_half-demo_3-r1.npz",
+      "mae_difference_deg": -1.1920928955078125e-07,
+      "sha256": "fa614371e1d96979a4c21b448c607ab2244c551fa17918db87610912c0b80945"
+    },
+    {
+      "condition": "kp_half",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/kp_half-demo_0-r2.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "cfabff3130a8edf9658fb8bab27d78e1286504011c8a8b8446582eb55f4650b7"
+    },
+    {
+      "condition": "kp_half",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/kp_half-demo_1-r2.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "c512ccbe567d5f6bb03be621cc2a53c23f812ee721971eb378f2235e3fdee4fd"
+    },
+    {
+      "condition": "kp_half",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/kp_half-demo_2-r2.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "ba3b89fb507f5456f457e6f7a0bc29ad205e1ef2a141dd7fcda72bbb002ad8dd"
+    },
+    {
+      "condition": "kp_half",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/kp_half-demo_3-r2.npz",
+      "mae_difference_deg": -1.1920928955078125e-07,
+      "sha256": "fa614371e1d96979a4c21b448c607ab2244c551fa17918db87610912c0b80945"
+    },
+    {
+      "condition": "kp_double",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/kp_double-demo_0-r0.npz",
+      "mae_difference_deg": -2.9802322387695312e-08,
+      "sha256": "95cb4415b17dc19a7171b729e9e64788c45654ee278dab156f920e2a88cacf93"
+    },
+    {
+      "condition": "kp_double",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/kp_double-demo_1-r0.npz",
+      "mae_difference_deg": -5.960464477539063e-08,
+      "sha256": "4a5aaf1d0884fedadafab1398ad71c06a1b5810c79184590d980a1e744bb447c"
+    },
+    {
+      "condition": "kp_double",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/kp_double-demo_2-r0.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "59505b76e775015f14838f4c22a3ca2151881b5a11f3c1effb0b2c7c5f754012"
+    },
+    {
+      "condition": "kp_double",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/kp_double-demo_3-r0.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "bfc8613456d8b2ede35ceda89c829d9426ed6318e9834c6dcd366faea15dadea"
+    },
+    {
+      "condition": "kp_double",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/kp_double-demo_0-r1.npz",
+      "mae_difference_deg": -2.9802322387695312e-08,
+      "sha256": "0a3fc370ea51ca3a65477d7726474c7c6c9befb9af44cd51d4546deccf824fac"
+    },
+    {
+      "condition": "kp_double",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/kp_double-demo_1-r1.npz",
+      "mae_difference_deg": -5.960464477539063e-08,
+      "sha256": "79fda6c011c0a9433964b51453ba88e4ee4b432747162e520dd5c190d4304684"
+    },
+    {
+      "condition": "kp_double",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/kp_double-demo_2-r1.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "167c8e1fd20967779026a5cd476b627b75d29f51949d360de02ae836153badf2"
+    },
+    {
+      "condition": "kp_double",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/kp_double-demo_3-r1.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "da128c9542307c850d5be998abd2fa714a38df3c0ac8331c40f07c8368962e6a"
+    },
+    {
+      "condition": "kp_double",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/kp_double-demo_0-r2.npz",
+      "mae_difference_deg": -2.9802322387695312e-08,
+      "sha256": "0a3fc370ea51ca3a65477d7726474c7c6c9befb9af44cd51d4546deccf824fac"
+    },
+    {
+      "condition": "kp_double",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/kp_double-demo_1-r2.npz",
+      "mae_difference_deg": -5.960464477539063e-08,
+      "sha256": "79fda6c011c0a9433964b51453ba88e4ee4b432747162e520dd5c190d4304684"
+    },
+    {
+      "condition": "kp_double",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/kp_double-demo_2-r2.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "167c8e1fd20967779026a5cd476b627b75d29f51949d360de02ae836153badf2"
+    },
+    {
+      "condition": "kp_double",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/kp_double-demo_3-r2.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "da128c9542307c850d5be998abd2fa714a38df3c0ac8331c40f07c8368962e6a"
+    },
+    {
+      "condition": "kd_half",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/kd_half-demo_0-r0.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "3869df8bea08f52b48c7e16ff2fb80687bc8c2b62be0276314b3772f35bea010"
+    },
+    {
+      "condition": "kd_half",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/kd_half-demo_1-r0.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "0b5dddeac1b2bcc3ce8185c2b1d6250058e0a31c68f359ecfad47507c5eea52b"
+    },
+    {
+      "condition": "kd_half",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/kd_half-demo_2-r0.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "372b17142a7cdd6e76dd923da4fdaabc6f3f7839bfb289714d59cab3d6f55a75"
+    },
+    {
+      "condition": "kd_half",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/kd_half-demo_3-r0.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "c3dc2a133594e5779584484f7d53e65e99826173079c160ea108fcbf9526551f"
+    },
+    {
+      "condition": "kd_half",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/kd_half-demo_0-r1.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "b9708bdf9485839bf5c10ec0e22c979a57f9980d037f9fbca88fbca0bbe028f5"
+    },
+    {
+      "condition": "kd_half",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/kd_half-demo_1-r1.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "19c98fdb4b27cecd4c9fe8948365f8885ff576e9f4e55a3d2ff994fb547cf767"
+    },
+    {
+      "condition": "kd_half",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/kd_half-demo_2-r1.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "e16c26921a41e034cde8e7b4f4d5d3a7e504dac0811ce538ea1d4452fd78f36e"
+    },
+    {
+      "condition": "kd_half",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/kd_half-demo_3-r1.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "8e5538646c11c838cd8434c1d413bb134b481594976481dfd6d3aeb91575e451"
+    },
+    {
+      "condition": "kd_half",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/kd_half-demo_0-r2.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "b9708bdf9485839bf5c10ec0e22c979a57f9980d037f9fbca88fbca0bbe028f5"
+    },
+    {
+      "condition": "kd_half",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/kd_half-demo_1-r2.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "19c98fdb4b27cecd4c9fe8948365f8885ff576e9f4e55a3d2ff994fb547cf767"
+    },
+    {
+      "condition": "kd_half",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/kd_half-demo_2-r2.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "e16c26921a41e034cde8e7b4f4d5d3a7e504dac0811ce538ea1d4452fd78f36e"
+    },
+    {
+      "condition": "kd_half",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/kd_half-demo_3-r2.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "8e5538646c11c838cd8434c1d413bb134b481594976481dfd6d3aeb91575e451"
+    },
+    {
+      "condition": "kd_double",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/kd_double-demo_0-r0.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "759abdfe34131ae54129fef67a57e2499b5ed7e7bf8cfcd19050a525b3af9fb2"
+    },
+    {
+      "condition": "kd_double",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/kd_double-demo_1-r0.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "21abc4694c025e6779139d809b27267572ec86465f01c0c65e7dfeede7e436ca"
+    },
+    {
+      "condition": "kd_double",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/kd_double-demo_2-r0.npz",
+      "mae_difference_deg": -1.1920928955078125e-07,
+      "sha256": "50c962f859b5ee1728ec61ea1a479c6c772ca051855e69f133b139903bc4235a"
+    },
+    {
+      "condition": "kd_double",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/kd_double-demo_3-r0.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "b5e6f43e0f770c0fba234cd8750aaf7520c48567bba6fff17d2357a667a61a60"
+    },
+    {
+      "condition": "kd_double",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/kd_double-demo_0-r1.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "5f610155d8d5ffab1449e2a77e582d32037b1897c648715e79058e2d07e4a839"
+    },
+    {
+      "condition": "kd_double",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/kd_double-demo_1-r1.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "948a6cfc7aa3cfbc80046afeb2e922969c3bfd5b6fdd2d73b71c4f26f0d325d9"
+    },
+    {
+      "condition": "kd_double",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/kd_double-demo_2-r1.npz",
+      "mae_difference_deg": -1.1920928955078125e-07,
+      "sha256": "716a5845dba1a6919b3be037e1ec6c7f3e196595c567085512447a2da119cd41"
+    },
+    {
+      "condition": "kd_double",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/kd_double-demo_3-r1.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "a4f71c79751a6613cfcc1d39f693a75795819d76fb50e7609a9355d4654100cd"
+    },
+    {
+      "condition": "kd_double",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/kd_double-demo_0-r2.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "5f610155d8d5ffab1449e2a77e582d32037b1897c648715e79058e2d07e4a839"
+    },
+    {
+      "condition": "kd_double",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/kd_double-demo_1-r2.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "948a6cfc7aa3cfbc80046afeb2e922969c3bfd5b6fdd2d73b71c4f26f0d325d9"
+    },
+    {
+      "condition": "kd_double",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/kd_double-demo_2-r2.npz",
+      "mae_difference_deg": -1.1920928955078125e-07,
+      "sha256": "716a5845dba1a6919b3be037e1ec6c7f3e196595c567085512447a2da119cd41"
+    },
+    {
+      "condition": "kd_double",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/kd_double-demo_3-r2.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "a4f71c79751a6613cfcc1d39f693a75795819d76fb50e7609a9355d4654100cd"
+    },
+    {
+      "condition": "gravity_ff",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/gravity_ff-demo_0-r0.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "04c0da4b9469107431ab3dcb2cdff55419ef9e80d467bba1e5379d2bdd09a923"
+    },
+    {
+      "condition": "gravity_ff",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/gravity_ff-demo_1-r0.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "296548828eba0e0ee6c0a7a63ead6130e85c27b986ab0a9c666024716a17254d"
+    },
+    {
+      "condition": "gravity_ff",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/gravity_ff-demo_2-r0.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "9ec34f300926ca96ed33c32a5f84203355c0b039bf4d84871e9c177f2e10c63f"
+    },
+    {
+      "condition": "gravity_ff",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/gravity_ff-demo_3-r0.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "24102a98675f450ccf2d79223251dac68f804d610bdd0e8e361a2e7f9afbc00b"
+    },
+    {
+      "condition": "gravity_ff",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/gravity_ff-demo_0-r1.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "775c65772006a07a3967d4411f6439c2a17074b7d0fecdb686a677a794d80cdd"
+    },
+    {
+      "condition": "gravity_ff",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/gravity_ff-demo_1-r1.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "36a96ae999a9c019e0c2a1119d84754e855078931568bb7ad61f99a7449a9b4d"
+    },
+    {
+      "condition": "gravity_ff",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/gravity_ff-demo_2-r1.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "67ea9d44c9cc6836a980d7a4a14c26c70914a69d289a700d3d83009aab693259"
+    },
+    {
+      "condition": "gravity_ff",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/gravity_ff-demo_3-r1.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "74d0de8b7a59fe54df846d415f49e945277b056ac1c678ab3990604ea215ed4f"
+    },
+    {
+      "condition": "gravity_ff",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/gravity_ff-demo_0-r2.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "775c65772006a07a3967d4411f6439c2a17074b7d0fecdb686a677a794d80cdd"
+    },
+    {
+      "condition": "gravity_ff",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/gravity_ff-demo_1-r2.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "36a96ae999a9c019e0c2a1119d84754e855078931568bb7ad61f99a7449a9b4d"
+    },
+    {
+      "condition": "gravity_ff",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/gravity_ff-demo_2-r2.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "67ea9d44c9cc6836a980d7a4a14c26c70914a69d289a700d3d83009aab693259"
+    },
+    {
+      "condition": "gravity_ff",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/gravity_ff-demo_3-r2.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "74d0de8b7a59fe54df846d415f49e945277b056ac1c678ab3990604ea215ed4f"
+    },
+    {
+      "condition": "speed_half",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/speed_half-demo_0-r0.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "b62aa26db854f0c74ea87fa5f9656fead82b7b96d5e54d9322816989181f8ace"
+    },
+    {
+      "condition": "speed_half",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/speed_half-demo_1-r0.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "eec521085d645c3a18880ff22c77f81aa394dc4b6543ce1ee08d4c116c5e7878"
+    },
+    {
+      "condition": "speed_half",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/speed_half-demo_2-r0.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "cb2d59ae63f76e9f5dfecfd0e354662d9c41b30ef210efff67c8bc9a79b4850d"
+    },
+    {
+      "condition": "speed_half",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/speed_half-demo_3-r0.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "2777ead79792b8fb9077efe2629892e7264b6387351b0a71125271c68803750c"
+    },
+    {
+      "condition": "speed_half",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/speed_half-demo_0-r1.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "5ffdf5c3d7e391f8c55cee2fe5d883b36bee5b9cd83c8dea6d511662b49c770d"
+    },
+    {
+      "condition": "speed_half",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/speed_half-demo_1-r1.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "4145a9a612d983f7a76520b80006cb3d18ae764962ab3e1f4981456a92bd4464"
+    },
+    {
+      "condition": "speed_half",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/speed_half-demo_2-r1.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "0c250dac4fd0eb28dca272bc948326862fbef291dcda893bff04bdf617957553"
+    },
+    {
+      "condition": "speed_half",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/speed_half-demo_3-r1.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "182d8da0ed9ec9d663cd5fcb0e11134df0dc10b6674da66f7e44d4a6f4902daa"
+    },
+    {
+      "condition": "speed_half",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/speed_half-demo_0-r2.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "5ffdf5c3d7e391f8c55cee2fe5d883b36bee5b9cd83c8dea6d511662b49c770d"
+    },
+    {
+      "condition": "speed_half",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/speed_half-demo_1-r2.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "4145a9a612d983f7a76520b80006cb3d18ae764962ab3e1f4981456a92bd4464"
+    },
+    {
+      "condition": "speed_half",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/speed_half-demo_2-r2.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "0c250dac4fd0eb28dca272bc948326862fbef291dcda893bff04bdf617957553"
+    },
+    {
+      "condition": "speed_half",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/speed_half-demo_3-r2.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "182d8da0ed9ec9d663cd5fcb0e11134df0dc10b6674da66f7e44d4a6f4902daa"
+    },
+    {
+      "condition": "speed_double",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/speed_double-demo_0-r0.npz",
+      "mae_difference_deg": -1.1920928955078125e-07,
+      "sha256": "bd3cc5adc1de9363c73a35cc55ed229fb59118d1a369800df8f5efd066f4706b"
+    },
+    {
+      "condition": "speed_double",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/speed_double-demo_1-r0.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "e4edcf81c0092c8c81c01bf4814133789a854c3486cf5a60ba9900f75f039e7d"
+    },
+    {
+      "condition": "speed_double",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/speed_double-demo_2-r0.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "4f6103452578727ed729a457d57d6e5516381508e06dcd74ccc64c79808410f8"
+    },
+    {
+      "condition": "speed_double",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/speed_double-demo_3-r0.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "d29733d434889a9a4d7f6f9cc1923507954f2ee76c30514077dafd0e0705ac1a"
+    },
+    {
+      "condition": "speed_double",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/speed_double-demo_0-r1.npz",
+      "mae_difference_deg": -1.1920928955078125e-07,
+      "sha256": "e5a725b5240b6e57cb368d7a20eaa9a65ba406dd88fe477f519a8452e6eb2301"
+    },
+    {
+      "condition": "speed_double",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/speed_double-demo_1-r1.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "0a0e9486ea6f52965d5c0433ff18375ec4a063f4696367cf4cc4cf64353685c4"
+    },
+    {
+      "condition": "speed_double",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/speed_double-demo_2-r1.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "97f875668e6618a51ccc41b742646d9933b3478ab1f6ebf80d4b1ace38d35adf"
+    },
+    {
+      "condition": "speed_double",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/speed_double-demo_3-r1.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "fd09aee635da6ebe430d5a2e4c50b73268ff1fc2ca342fe808a990332c5fed0c"
+    },
+    {
+      "condition": "speed_double",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/speed_double-demo_0-r2.npz",
+      "mae_difference_deg": -1.1920928955078125e-07,
+      "sha256": "e5a725b5240b6e57cb368d7a20eaa9a65ba406dd88fe477f519a8452e6eb2301"
+    },
+    {
+      "condition": "speed_double",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/speed_double-demo_1-r2.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "0a0e9486ea6f52965d5c0433ff18375ec4a063f4696367cf4cc4cf64353685c4"
+    },
+    {
+      "condition": "speed_double",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/speed_double-demo_2-r2.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "97f875668e6618a51ccc41b742646d9933b3478ab1f6ebf80d4b1ace38d35adf"
+    },
+    {
+      "condition": "speed_double",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/speed_double-demo_3-r2.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "fd09aee635da6ebe430d5a2e4c50b73268ff1fc2ca342fe808a990332c5fed0c"
+    },
+    {
+      "condition": "friction_half",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/friction_half-demo_0-r0.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "4a55b90cf6a6a3c828636ec1fca092317c38189e7f934b189083b62cca4642df"
+    },
+    {
+      "condition": "friction_half",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/friction_half-demo_1-r0.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "c382392fd68c67651135df5904d7bcaab505772d537b18b78f8f3ebc8f006582"
+    },
+    {
+      "condition": "friction_half",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/friction_half-demo_2-r0.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "8dc35fa66b3a6c637eef3feb2e2321b66efcb69efd7599c59a5e6cc51a53228c"
+    },
+    {
+      "condition": "friction_half",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/friction_half-demo_3-r0.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "3fc7a57607213d474bd03c5c71de3d40290a43e07e1564096ec934024cde46bc"
+    },
+    {
+      "condition": "friction_half",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/friction_half-demo_0-r1.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "9550247aef88a59f8ae3182552285ac90b519b5aecb2a6ce79b059fb56ad5875"
+    },
+    {
+      "condition": "friction_half",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/friction_half-demo_1-r1.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "11c824fef3c286b9b43e47665a97f6b8bcb4ddec3ffc0576da666c03bbe5799c"
+    },
+    {
+      "condition": "friction_half",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/friction_half-demo_2-r1.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "897cc06dcf0b65c7b7c90b213365d2226c4eb365b14e2192afb0f043076b8b72"
+    },
+    {
+      "condition": "friction_half",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/friction_half-demo_3-r1.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "4278dd5ddc738a534d56bf019c9ccf5060c5aeebb3daa5495ab93c6098b4fe9c"
+    },
+    {
+      "condition": "friction_half",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/friction_half-demo_0-r2.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "9550247aef88a59f8ae3182552285ac90b519b5aecb2a6ce79b059fb56ad5875"
+    },
+    {
+      "condition": "friction_half",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/friction_half-demo_1-r2.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "11c824fef3c286b9b43e47665a97f6b8bcb4ddec3ffc0576da666c03bbe5799c"
+    },
+    {
+      "condition": "friction_half",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/friction_half-demo_2-r2.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "897cc06dcf0b65c7b7c90b213365d2226c4eb365b14e2192afb0f043076b8b72"
+    },
+    {
+      "condition": "friction_half",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/friction_half-demo_3-r2.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "4278dd5ddc738a534d56bf019c9ccf5060c5aeebb3daa5495ab93c6098b4fe9c"
+    },
+    {
+      "condition": "friction_double",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/friction_double-demo_0-r0.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "9108bb608cd1210139d1664db6c3d5d8721a372a5bc85cbb32185e18716bd57f"
+    },
+    {
+      "condition": "friction_double",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/friction_double-demo_1-r0.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "f6a7ec488d76a0414d85e63b42bb42bf75fa3824b3d9615b0c6af5422c1b5dc1"
+    },
+    {
+      "condition": "friction_double",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/friction_double-demo_2-r0.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "9c3355df350e5b65cb1acc654d96c21c8408b0776163c44f8a2934d145e04bce"
+    },
+    {
+      "condition": "friction_double",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/friction_double-demo_3-r0.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "9db1f071e79773ee75733767e808e38206ca4855f6374cee0ab4ab824e095a34"
+    },
+    {
+      "condition": "friction_double",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/friction_double-demo_0-r1.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "09b3261cd8c50122e2bca49b5589f95649979481a113789dd43fb7e2894acc9e"
+    },
+    {
+      "condition": "friction_double",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/friction_double-demo_1-r1.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "9cd768b32ee5a50c52c1a6d294f9cd56bb8e5b1655b8b39c7744a558f7a2ee0e"
+    },
+    {
+      "condition": "friction_double",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/friction_double-demo_2-r1.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "2848214fa681ccae5ce97ed8d4aa5a3598c4abbdff28b5ce79968840d564678f"
+    },
+    {
+      "condition": "friction_double",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/friction_double-demo_3-r1.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "6b2ea1c8bafde4f6b80a2f92a06fcddc08c7d3e67d56ef032ef5a4cb3363c948"
+    },
+    {
+      "condition": "friction_double",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/friction_double-demo_0-r2.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "09b3261cd8c50122e2bca49b5589f95649979481a113789dd43fb7e2894acc9e"
+    },
+    {
+      "condition": "friction_double",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/friction_double-demo_1-r2.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "9cd768b32ee5a50c52c1a6d294f9cd56bb8e5b1655b8b39c7744a558f7a2ee0e"
+    },
+    {
+      "condition": "friction_double",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/friction_double-demo_2-r2.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "2848214fa681ccae5ce97ed8d4aa5a3598c4abbdff28b5ce79968840d564678f"
+    },
+    {
+      "condition": "friction_double",
+      "file": "runs/openarm-task-error-20261021/final-batches/main-120hz/friction_double-demo_3-r2.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "6b2ea1c8bafde4f6b80a2f92a06fcddc08c7d3e67d56ef032ef5a4cb3363c948"
+    },
+    {
+      "condition": "physics_240",
+      "file": "runs/openarm-task-error-20261021/final-batches/physics-240hz/baseline-demo_0-r0.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "e1b0d7a1e41a018c3e2bcc2236125fe53c2cf08dca4da3d73b700eb483c2dbc2"
+    },
+    {
+      "condition": "physics_240",
+      "file": "runs/openarm-task-error-20261021/final-batches/physics-240hz/baseline-demo_1-r0.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "5636a8e05a62c04e62ebeb59a0a0d09986e27412608ca9bb0ce0e82353f942b7"
+    },
+    {
+      "condition": "physics_240",
+      "file": "runs/openarm-task-error-20261021/final-batches/physics-240hz/baseline-demo_2-r0.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "c44a83e31555836cde2c3791bd99a2caff84c4cae6abff3f9e27b8ff0b330a93"
+    },
+    {
+      "condition": "physics_240",
+      "file": "runs/openarm-task-error-20261021/final-batches/physics-240hz/baseline-demo_3-r0.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "2e3703d03de86c018f3a12da39799d96c2f022cadde771dc394dcc4a6b3d53f5"
+    },
+    {
+      "condition": "physics_240",
+      "file": "runs/openarm-task-error-20261021/final-batches/physics-240hz/baseline-demo_0-r1.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "45fe4cef6d5742fba7cb9ebbf7a4ac6138ffe92db7b2f4a7d7b7dee885e5ae47"
+    },
+    {
+      "condition": "physics_240",
+      "file": "runs/openarm-task-error-20261021/final-batches/physics-240hz/baseline-demo_1-r1.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "b9b1af9b50c02947e18b0736d39d69cfb48c1cd902374b27fdf81f0d5d7a4029"
+    },
+    {
+      "condition": "physics_240",
+      "file": "runs/openarm-task-error-20261021/final-batches/physics-240hz/baseline-demo_2-r1.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "ab2081b513a4a5058a3c6c25ec02846bb0f25744bcdfafc5b3513d9c0aa0a293"
+    },
+    {
+      "condition": "physics_240",
+      "file": "runs/openarm-task-error-20261021/final-batches/physics-240hz/baseline-demo_3-r1.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "e842f2dd69ff8d8d2bd0e4b665d71e542e9793ba58745e4dbb195c1d06ec5d94"
+    },
+    {
+      "condition": "physics_240",
+      "file": "runs/openarm-task-error-20261021/final-batches/physics-240hz/baseline-demo_0-r2.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "45fe4cef6d5742fba7cb9ebbf7a4ac6138ffe92db7b2f4a7d7b7dee885e5ae47"
+    },
+    {
+      "condition": "physics_240",
+      "file": "runs/openarm-task-error-20261021/final-batches/physics-240hz/baseline-demo_1-r2.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "b9b1af9b50c02947e18b0736d39d69cfb48c1cd902374b27fdf81f0d5d7a4029"
+    },
+    {
+      "condition": "physics_240",
+      "file": "runs/openarm-task-error-20261021/final-batches/physics-240hz/baseline-demo_2-r2.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "ab2081b513a4a5058a3c6c25ec02846bb0f25744bcdfafc5b3513d9c0aa0a293"
+    },
+    {
+      "condition": "physics_240",
+      "file": "runs/openarm-task-error-20261021/final-batches/physics-240hz/baseline-demo_3-r2.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "e842f2dd69ff8d8d2bd0e4b665d71e542e9793ba58745e4dbb195c1d06ec5d94"
+    },
+    {
+      "condition": "physics_480",
+      "file": "runs/openarm-task-error-20261021/final-batches/physics-480hz/baseline-demo_0-r0.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "964b18cf55cbcbb199364878b03572999fdfb2a156652014ebdc02c35797a59e"
+    },
+    {
+      "condition": "physics_480",
+      "file": "runs/openarm-task-error-20261021/final-batches/physics-480hz/baseline-demo_1-r0.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "73d20de18738b90a75cd9c449ccf8913e6f7876ba4999f7a43287d44e000bd97"
+    },
+    {
+      "condition": "physics_480",
+      "file": "runs/openarm-task-error-20261021/final-batches/physics-480hz/baseline-demo_2-r0.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "5ef1fd07d97f64fcec6dc3646c806b116a8e18da4eabd3ddf05d8206ec34e253"
+    },
+    {
+      "condition": "physics_480",
+      "file": "runs/openarm-task-error-20261021/final-batches/physics-480hz/baseline-demo_3-r0.npz",
+      "mae_difference_deg": -5.960464477539063e-08,
+      "sha256": "dde0a60754ef56b0fa728d47ad22c5b32b4dda35418ccd132b87aaeb0fddafba"
+    },
+    {
+      "condition": "physics_480",
+      "file": "runs/openarm-task-error-20261021/final-batches/physics-480hz/baseline-demo_0-r1.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "d8d2c2901d660a95846cfc604189f590b42d8fd526fd4dc40744fce213ac4f26"
+    },
+    {
+      "condition": "physics_480",
+      "file": "runs/openarm-task-error-20261021/final-batches/physics-480hz/baseline-demo_1-r1.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "73ebded3c122aa2f783d25d76704eb15baea6857f1223b61e375cfcf7facbcc7"
+    },
+    {
+      "condition": "physics_480",
+      "file": "runs/openarm-task-error-20261021/final-batches/physics-480hz/baseline-demo_2-r1.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "6980b16e541a3441c9debd4550380707ea67168fb1ecab3d5a0cdea8bd4f6977"
+    },
+    {
+      "condition": "physics_480",
+      "file": "runs/openarm-task-error-20261021/final-batches/physics-480hz/baseline-demo_3-r1.npz",
+      "mae_difference_deg": -5.960464477539063e-08,
+      "sha256": "bf0d8757994a03b21172098a0b3d8834dc9e246012d327e85b044ec88cf0b5a0"
+    },
+    {
+      "condition": "physics_480",
+      "file": "runs/openarm-task-error-20261021/final-batches/physics-480hz/baseline-demo_0-r2.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "d8d2c2901d660a95846cfc604189f590b42d8fd526fd4dc40744fce213ac4f26"
+    },
+    {
+      "condition": "physics_480",
+      "file": "runs/openarm-task-error-20261021/final-batches/physics-480hz/baseline-demo_1-r2.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "73ebded3c122aa2f783d25d76704eb15baea6857f1223b61e375cfcf7facbcc7"
+    },
+    {
+      "condition": "physics_480",
+      "file": "runs/openarm-task-error-20261021/final-batches/physics-480hz/baseline-demo_2-r2.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "6980b16e541a3441c9debd4550380707ea67168fb1ecab3d5a0cdea8bd4f6977"
+    },
+    {
+      "condition": "physics_480",
+      "file": "runs/openarm-task-error-20261021/final-batches/physics-480hz/baseline-demo_3-r2.npz",
+      "mae_difference_deg": -5.960464477539063e-08,
+      "sha256": "bf0d8757994a03b21172098a0b3d8834dc9e246012d327e85b044ec88cf0b5a0"
+    },
+    {
+      "condition": "physics_60",
+      "file": "runs/openarm-task-error-20261021/final-batches/physics-60hz/baseline-demo_0-r0.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "995f5b511a50b200566183775ddf4d69495e2591ca69b2ada69f93eae40dc179"
+    },
+    {
+      "condition": "physics_60",
+      "file": "runs/openarm-task-error-20261021/final-batches/physics-60hz/baseline-demo_1-r0.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "ac091346b7ae87cf3d6e76b4732c08e82bbd6d6f536ee93b4d744b7cd9568d9c"
+    },
+    {
+      "condition": "physics_60",
+      "file": "runs/openarm-task-error-20261021/final-batches/physics-60hz/baseline-demo_2-r0.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "cabf2d319a8dfce5b0e2877ea3be532a9ca983224345bf9ccedfe8a54d17a67d"
+    },
+    {
+      "condition": "physics_60",
+      "file": "runs/openarm-task-error-20261021/final-batches/physics-60hz/baseline-demo_3-r0.npz",
+      "mae_difference_deg": -5.960464477539063e-08,
+      "sha256": "43dafa4e63ef7e4a2cffad80a1bb26f32499c52efc3d8deff8403d7569168f4e"
+    },
+    {
+      "condition": "physics_60",
+      "file": "runs/openarm-task-error-20261021/final-batches/physics-60hz/baseline-demo_0-r1.npz",
+      "mae_difference_deg": -5.960464477539063e-08,
+      "sha256": "5c85b210da5948e10dab79b017ee117e171cff90c90267cae3b69b7c61a2d828"
+    },
+    {
+      "condition": "physics_60",
+      "file": "runs/openarm-task-error-20261021/final-batches/physics-60hz/baseline-demo_1-r1.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "4a0371f954a5b45f6cfba4f8f949dd492be6012c510c61c17e3a66d3b78b3e6e"
+    },
+    {
+      "condition": "physics_60",
+      "file": "runs/openarm-task-error-20261021/final-batches/physics-60hz/baseline-demo_2-r1.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "a2dfd36e0d74f5a2cee4ac1f13ca2adb8f204a3434728eb3a4769ea26975f006"
+    },
+    {
+      "condition": "physics_60",
+      "file": "runs/openarm-task-error-20261021/final-batches/physics-60hz/baseline-demo_3-r1.npz",
+      "mae_difference_deg": -5.960464477539063e-08,
+      "sha256": "975b35392fbdc562a76374685aa4c276231ebf4002061a66dc61a48f2dac2ae0"
+    },
+    {
+      "condition": "physics_60",
+      "file": "runs/openarm-task-error-20261021/final-batches/physics-60hz/baseline-demo_0-r2.npz",
+      "mae_difference_deg": -5.960464477539063e-08,
+      "sha256": "5c85b210da5948e10dab79b017ee117e171cff90c90267cae3b69b7c61a2d828"
+    },
+    {
+      "condition": "physics_60",
+      "file": "runs/openarm-task-error-20261021/final-batches/physics-60hz/baseline-demo_1-r2.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "b2580b4723f752572c21eb679a6a1357ab87ddf5ade7bfd8487c6f9417940681"
+    },
+    {
+      "condition": "physics_60",
+      "file": "runs/openarm-task-error-20261021/final-batches/physics-60hz/baseline-demo_2-r2.npz",
+      "mae_difference_deg": -5.960464477539063e-08,
+      "sha256": "674adc16dac41a427f9925670d6c1b2d8050e5761253aa965dfa2da6900ffb0a"
+    },
+    {
+      "condition": "physics_60",
+      "file": "runs/openarm-task-error-20261021/final-batches/physics-60hz/baseline-demo_3-r2.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "e754aa900246673c6213eae0a942b1ea1c8a6feb93f61689982ec8e2126a6c65"
+    },
+    {
+      "condition": "position_32",
+      "file": "runs/openarm-task-error-20261021/final-batches/position-32/baseline-demo_0-r0.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "0dce011330a5887e89ee28e2e5eaf4daae66298ab39d931b7f1be8422b3b043a"
+    },
+    {
+      "condition": "position_32",
+      "file": "runs/openarm-task-error-20261021/final-batches/position-32/baseline-demo_1-r0.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "b3493acc2f987d1319c8207fd2c147589785eae779be28299ca7571f12b19337"
+    },
+    {
+      "condition": "position_32",
+      "file": "runs/openarm-task-error-20261021/final-batches/position-32/baseline-demo_2-r0.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "4703595c9e2d17e182d11cf19363f6b2d072cb11af3e965cfc850d8dd0acbb72"
+    },
+    {
+      "condition": "position_32",
+      "file": "runs/openarm-task-error-20261021/final-batches/position-32/baseline-demo_3-r0.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "ff697de47ab2f426fbba03b34514c0a0a716a2f4c27bd0b4ea3014140184d16b"
+    },
+    {
+      "condition": "position_32",
+      "file": "runs/openarm-task-error-20261021/final-batches/position-32/baseline-demo_0-r1.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "113c6f55433e93271e5462dbca47e5a80229db3c8b5c6384e524a3d9ed0d9fbf"
+    },
+    {
+      "condition": "position_32",
+      "file": "runs/openarm-task-error-20261021/final-batches/position-32/baseline-demo_1-r1.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "0fe8013b38b02cc6f0ebf54f82862f14726f5c5f864533e8ef106de75f31a245"
+    },
+    {
+      "condition": "position_32",
+      "file": "runs/openarm-task-error-20261021/final-batches/position-32/baseline-demo_2-r1.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "aecd0173cbc243daf4f023ba050f588a932223689290ce898195b47f5cda2231"
+    },
+    {
+      "condition": "position_32",
+      "file": "runs/openarm-task-error-20261021/final-batches/position-32/baseline-demo_3-r1.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "39160bd2bac48f83104beb52ebbde9bb4d9e93bd6bf5f380b716c6e152729610"
+    },
+    {
+      "condition": "position_32",
+      "file": "runs/openarm-task-error-20261021/final-batches/position-32/baseline-demo_0-r2.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "113c6f55433e93271e5462dbca47e5a80229db3c8b5c6384e524a3d9ed0d9fbf"
+    },
+    {
+      "condition": "position_32",
+      "file": "runs/openarm-task-error-20261021/final-batches/position-32/baseline-demo_1-r2.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "0fe8013b38b02cc6f0ebf54f82862f14726f5c5f864533e8ef106de75f31a245"
+    },
+    {
+      "condition": "position_32",
+      "file": "runs/openarm-task-error-20261021/final-batches/position-32/baseline-demo_2-r2.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "aecd0173cbc243daf4f023ba050f588a932223689290ce898195b47f5cda2231"
+    },
+    {
+      "condition": "position_32",
+      "file": "runs/openarm-task-error-20261021/final-batches/position-32/baseline-demo_3-r2.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "39160bd2bac48f83104beb52ebbde9bb4d9e93bd6bf5f380b716c6e152729610"
+    },
+    {
+      "condition": "velocity_8",
+      "file": "runs/openarm-task-error-20261021/final-batches/velocity-8/baseline-demo_0-r0.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "00da5a646af048c7eef17826fe29c3fc9f48ffc0977570e24c02aa3737835d0c"
+    },
+    {
+      "condition": "velocity_8",
+      "file": "runs/openarm-task-error-20261021/final-batches/velocity-8/baseline-demo_1-r0.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "64afa79dd6a1f69927afe437b411f1b07276beb33a0238021081eb1a89887a2f"
+    },
+    {
+      "condition": "velocity_8",
+      "file": "runs/openarm-task-error-20261021/final-batches/velocity-8/baseline-demo_2-r0.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "8fedd79f92ff6c051e031d2937189d8d2c2cded710c5f63c307a4258aedf6e2f"
+    },
+    {
+      "condition": "velocity_8",
+      "file": "runs/openarm-task-error-20261021/final-batches/velocity-8/baseline-demo_3-r0.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "b83f0fe60040bb5df2ec6b7c21a6a9610650d716070c77ae095d7d70a4f47b67"
+    },
+    {
+      "condition": "velocity_8",
+      "file": "runs/openarm-task-error-20261021/final-batches/velocity-8/baseline-demo_0-r1.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "65d94ed3a1e2005106ee5ea13af70e297d6424a352777e10769ca416e1fb7249"
+    },
+    {
+      "condition": "velocity_8",
+      "file": "runs/openarm-task-error-20261021/final-batches/velocity-8/baseline-demo_1-r1.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "c2b5a657f50156091100897165978f68cb767e7808ca17c2f2da173748129142"
+    },
+    {
+      "condition": "velocity_8",
+      "file": "runs/openarm-task-error-20261021/final-batches/velocity-8/baseline-demo_2-r1.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "280926152aeef2320d4c633f3625b281787cd418fa122bf5976b6818e29c654c"
+    },
+    {
+      "condition": "velocity_8",
+      "file": "runs/openarm-task-error-20261021/final-batches/velocity-8/baseline-demo_3-r1.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "b04f34cdc301c918a81c59f6c8580ee4219edd24ff56098f4cc1d2bcffd57953"
+    },
+    {
+      "condition": "velocity_8",
+      "file": "runs/openarm-task-error-20261021/final-batches/velocity-8/baseline-demo_0-r2.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "65d94ed3a1e2005106ee5ea13af70e297d6424a352777e10769ca416e1fb7249"
+    },
+    {
+      "condition": "velocity_8",
+      "file": "runs/openarm-task-error-20261021/final-batches/velocity-8/baseline-demo_1-r2.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "c2b5a657f50156091100897165978f68cb767e7808ca17c2f2da173748129142"
+    },
+    {
+      "condition": "velocity_8",
+      "file": "runs/openarm-task-error-20261021/final-batches/velocity-8/baseline-demo_2-r2.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "280926152aeef2320d4c633f3625b281787cd418fa122bf5976b6818e29c654c"
+    },
+    {
+      "condition": "velocity_8",
+      "file": "runs/openarm-task-error-20261021/final-batches/velocity-8/baseline-demo_3-r2.npz",
+      "mae_difference_deg": 0.0,
+      "sha256": "b04f34cdc301c918a81c59f6c8580ee4219edd24ff56098f4cc1d2bcffd57953"
+    }
+  ]
+}

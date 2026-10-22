@@ -50,8 +50,8 @@
       "archived_versions": [
         {
           "versions": "v001–v021",
-          "release": "archive-autodata-review-20261020",
-          "url": "https://github.com/eadstry/worldsim-lab/releases/tag/archive-autodata-review-20261020"
+          "url": "https://github.com/eadstry/worldsim-lab/blob/main/docs/repository-cleanup-20261022.md",
+          "archive": "autodata-review-v001-v021.zip"
         }
       ]
     },
