@@ -180,7 +180,7 @@ def verify(root, committed=False):
     if committed:
         if git(root, 'rev-parse', 'HEAD^{tree}') != receipt['tree']:
             raise ValueError('HEAD differs from reviewed tree')
-        if receipt['head'] not in git(root, 'show', '-s', '--format=%P', 'HEAD').split():
+        if receipt['head'] not in git(root, 'rev-list', '--parents', '-n', '1', 'HEAD').split()[1:]:
             raise ValueError('Current commit was not made from the reviewed parent')
     elif receipt['head'] != current['head']:
         raise ValueError('Review is stale: HEAD changed')
