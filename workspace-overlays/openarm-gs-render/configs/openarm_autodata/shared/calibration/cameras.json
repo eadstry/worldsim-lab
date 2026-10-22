@@ -1,0 +1,169 @@
+{
+  "source_archive": "openarm_all_calibrations_20260922",
+  "units": "meters",
+  "matrix_contract": "T_parent_child maps child-frame coordinates into parent-frame coordinates.",
+  "cameras": {
+    "left_hand": {
+      "intrinsics_source": "vla_sim2real/camera/left_hand_intrinsics.yaml",
+      "extrinsics_source": "vla_sim2real/camera/wrist_camera_transforms_isaac.json",
+      "width": 1920,
+      "height": 1200,
+      "intrinsic_matrix": [
+        1197.528379906335,
+        0,
+        920.9708252292802,
+        0,
+        1199.007731977176,
+        607.1444167421877,
+        0,
+        0,
+        1
+      ],
+      "distortion_model": "plumb_bob",
+      "distortion_coefficients": [
+        -0.05664343573890213,
+        -0.07308664164260387,
+        -0.001771075695265592,
+        0.00526461826099068,
+        0.04918128901624461
+      ],
+      "parent_frame": "openarm_left_ee_base_link",
+      "ros_optical_frame": "left_hand_camera_optical_frame",
+      "T_parent_ros_optical": [
+        [
+          -0.01167780613694041,
+          -0.9417281225304204,
+          -0.33617223573513333,
+          0.009221377975235062
+        ],
+        [
+          -0.9496246036649229,
+          0.11573886015786321,
+          -0.29123466202290804,
+          0.027458779879964486
+        ],
+        [
+          0.3131720628633197,
+          0.315836444199666,
+          -0.8956397710894957,
+          -0.12603827273042367
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "status": "candidate"
+    },
+    "right_hand": {
+      "intrinsics_source": "vla_sim2real/camera/right_hand_intrinsics.yaml",
+      "extrinsics_source": "vla_sim2real/camera/wrist_camera_transforms_isaac.json",
+      "width": 1920,
+      "height": 1200,
+      "intrinsic_matrix": [
+        1245.853844832036,
+        0,
+        912.659268233065,
+        0,
+        1251.965618257157,
+        642.2726150703224,
+        0,
+        0,
+        1
+      ],
+      "distortion_model": "plumb_bob",
+      "distortion_coefficients": [
+        -0.0729661993676028,
+        -0.04577717190717763,
+        0.001412946278355804,
+        -0.004554762879676065,
+        0.0255508256774464
+      ],
+      "parent_frame": "openarm_right_ee_base_link",
+      "ros_optical_frame": "right_hand_camera_optical_frame",
+      "T_parent_ros_optical": [
+        [
+          -0.03993617143978523,
+          -0.9497221287630266,
+          -0.3105366006585333,
+          0.006015775493350159
+        ],
+        [
+          -0.9372386790837827,
+          -0.072135206741339,
+          0.34114538012066087,
+          -0.010866652241159805
+        ],
+        [
+          -0.3463939385151222,
+          0.3046709537947615,
+          -0.8872355094752309,
+          -0.1541908243270932
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "status": "candidate"
+    },
+    "third_person": {
+      "intrinsics_source": "camera/realsense_color_camera_info_848x480.yaml",
+      "extrinsics_source": "vla_sim2real/camera/third_person_realsense_extrinsics.json",
+      "width": 848,
+      "height": 480,
+      "intrinsic_matrix": [
+        603.1517333984375,
+        0.0,
+        427.3912353515625,
+        0.0,
+        603.1273193359375,
+        240.4123077392578,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "distortion_model": "plumb_bob",
+      "distortion_coefficients": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent_frame": "openarm_right_base_link",
+      "ros_optical_frame": "third_person_color_optical_frame",
+      "T_parent_ros_optical": [
+        [
+          0.06361131933466696,
+          -0.39328546136265924,
+          0.9172132499769415,
+          0.060333582886693556
+        ],
+        [
+          -0.9977668943147404,
+          -0.006305950129881388,
+          0.06649405689591459,
+          0.047603193103776295
+        ],
+        [
+          -0.02036724483136365,
+          -0.9193947905408861,
+          -0.39280834317038055,
+          -0.0979634127638751
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "status": "candidate_requires_independent_holdout"
+    }
+  }
+}

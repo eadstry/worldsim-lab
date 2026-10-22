@@ -1,0 +1,430 @@
+# Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-License-Identifier: Apache-2.0
+
+# Collision spheres approximate the OpenArm URDF meshes; left arm is locked at its scene pose.
+robot_cfg:
+  kinematics:
+    urdf_path: ../../../assets/openarm_v2/urdf/openarm_v20_bimanual_local.urdf
+    asset_root_path: ../../../assets/openarm_v2/urdf
+    base_link: openarm_body_link0
+    ee_link: openarm_right_grasp_frame
+    collision_link_names:
+    - openarm_left_base_link
+    - openarm_left_link1
+    - openarm_left_link2
+    - openarm_left_link3
+    - openarm_left_link4
+    - openarm_left_link5
+    - openarm_left_link6
+    - openarm_left_ee_base_link
+    - openarm_left_ee_link1
+    - openarm_left_ee_link2
+    - openarm_right_base_link
+    - openarm_right_link1
+    - openarm_right_link2
+    - openarm_right_link3
+    - openarm_right_link4
+    - openarm_right_link5
+    - openarm_right_link6
+    - openarm_right_ee_base_link
+    - openarm_right_ee_link1
+    - openarm_right_ee_link2
+    - attached_object
+    collision_spheres:
+      openarm_left_base_link:
+      - center:
+        - -0.0001
+        - 0.0308
+        - -0.0305
+        radius: 0.0674
+      - center:
+        - -0.0001
+        - 0.0308
+        - 0.0305
+        radius: 0.0674
+      openarm_left_link1:
+      - center:
+        - 0.0015
+        - 0.0545
+        - 0.0
+        radius: 0.0893
+      openarm_left_link2:
+      - center:
+        - -0.0068
+        - -0.0
+        - -0.0083
+        radius: 0.0881
+      openarm_left_link3:
+      - center:
+        - -0.0038
+        - 0.0002
+        - -0.1366
+        radius: 0.0701
+      - center:
+        - -0.0038
+        - 0.0002
+        - -0.0454
+        radius: 0.0701
+      openarm_left_link4:
+      - center:
+        - -0.005
+        - -0.0
+        - -0.0653
+        radius: 0.0645
+      - center:
+        - -0.005
+        - -0.0
+        - -0.0028
+        radius: 0.0645
+      openarm_left_link5:
+      - center:
+        - -0.0
+        - 0.0
+        - -0.0982
+        radius: 0.0634
+      - center:
+        - -0.0
+        - 0.0
+        - -0.0338
+        radius: 0.0634
+      openarm_left_link6:
+      - center:
+        - -0.005
+        - -0.0
+        - -0.0
+        radius: 0.0567
+      openarm_left_ee_base_link:
+      - center:
+        - 0.0066
+        - -0.03
+        - -0.0751
+        radius: 0.0559
+      - center:
+        - 0.0066
+        - 0.003
+        - -0.0751
+        radius: 0.0559
+      - center:
+        - 0.0066
+        - 0.0361
+        - -0.0751
+        radius: 0.0559
+      openarm_left_ee_link1:
+      - center:
+        - -0.0
+        - -0.0017
+        - -0.0873
+        radius: 0.0378
+      - center:
+        - -0.0
+        - -0.0017
+        - -0.0579
+        radius: 0.0378
+      - center:
+        - -0.0
+        - -0.0017
+        - -0.0286
+        radius: 0.0378
+      - center:
+        - -0.0
+        - -0.0017
+        - 0.0008
+        radius: 0.0378
+      openarm_left_ee_link2:
+      - center:
+        - -0.0
+        - 0.0016
+        - -0.0873
+        radius: 0.0378
+      - center:
+        - -0.0
+        - 0.0016
+        - -0.0579
+        radius: 0.0378
+      - center:
+        - -0.0
+        - 0.0016
+        - -0.0285
+        radius: 0.0378
+      - center:
+        - -0.0
+        - 0.0016
+        - 0.0008
+        radius: 0.0378
+      openarm_right_base_link:
+      - center:
+        - -0.0001
+        - -0.0308
+        - -0.0305
+        radius: 0.0674
+      - center:
+        - -0.0001
+        - -0.0308
+        - 0.0305
+        radius: 0.0674
+      openarm_right_link1:
+      - center:
+        - 0.0015
+        - -0.0545
+        - 0.0
+        radius: 0.0893
+      openarm_right_link2:
+      - center:
+        - -0.0068
+        - 0.0
+        - -0.0083
+        radius: 0.0881
+      openarm_right_link3:
+      - center:
+        - -0.0038
+        - 0.0002
+        - -0.1366
+        radius: 0.0701
+      - center:
+        - -0.0038
+        - 0.0002
+        - -0.0454
+        radius: 0.0701
+      openarm_right_link4:
+      - center:
+        - -0.005
+        - -0.0
+        - -0.0653
+        radius: 0.0645
+      - center:
+        - -0.005
+        - -0.0
+        - -0.0028
+        radius: 0.0645
+      openarm_right_link5:
+      - center:
+        - -0.0
+        - -0.0
+        - -0.0982
+        radius: 0.0634
+      - center:
+        - -0.0
+        - -0.0
+        - -0.0338
+        radius: 0.0634
+      openarm_right_link6:
+      - center:
+        - -0.005
+        - 0.0
+        - -0.0
+        radius: 0.0567
+      openarm_right_ee_base_link:
+      - center:
+        - 0.0066
+        - -0.0361
+        - -0.0751
+        radius: 0.0559
+      - center:
+        - 0.0066
+        - -0.003
+        - -0.0751
+        radius: 0.0559
+      - center:
+        - 0.0066
+        - 0.03
+        - -0.0751
+        radius: 0.0559
+      openarm_right_ee_link1:
+      - center:
+        - -0.0
+        - 0.0017
+        - -0.0873
+        radius: 0.0378
+      - center:
+        - -0.0
+        - 0.0017
+        - -0.0579
+        radius: 0.0378
+      - center:
+        - -0.0
+        - 0.0017
+        - -0.0286
+        radius: 0.0378
+      - center:
+        - -0.0
+        - 0.0017
+        - 0.0008
+        radius: 0.0378
+      openarm_right_ee_link2:
+      - center:
+        - -0.0
+        - -0.0016
+        - -0.0873
+        radius: 0.0378
+      - center:
+        - -0.0
+        - -0.0016
+        - -0.0579
+        radius: 0.0378
+      - center:
+        - -0.0
+        - -0.0016
+        - -0.0285
+        radius: 0.0378
+      - center:
+        - -0.0
+        - -0.0016
+        - 0.0008
+        radius: 0.0378
+    collision_sphere_buffer: 0.002
+    extra_collision_spheres:
+      attached_object: 16
+    self_collision_ignore:
+      openarm_left_base_link:
+      - openarm_left_link1
+      - openarm_left_link2
+      - openarm_left_link3
+      - openarm_left_link4
+      - openarm_left_link5
+      - openarm_left_link6
+      - openarm_left_ee_base_link
+      - openarm_left_ee_link1
+      - openarm_left_ee_link2
+      - openarm_right_base_link
+      openarm_left_link1:
+      - openarm_left_link2
+      - openarm_left_link3
+      - openarm_left_link4
+      - openarm_left_link5
+      - openarm_left_link6
+      - openarm_left_ee_base_link
+      - openarm_left_ee_link1
+      - openarm_left_ee_link2
+      openarm_left_link2:
+      - openarm_left_link3
+      - openarm_left_link4
+      - openarm_left_link5
+      - openarm_left_link6
+      - openarm_left_ee_base_link
+      - openarm_left_ee_link1
+      - openarm_left_ee_link2
+      openarm_left_link3:
+      - openarm_left_link4
+      - openarm_left_link5
+      - openarm_left_link6
+      - openarm_left_ee_base_link
+      - openarm_left_ee_link1
+      - openarm_left_ee_link2
+      openarm_left_link4:
+      - openarm_left_link5
+      - openarm_left_link6
+      - openarm_left_ee_base_link
+      - openarm_left_ee_link1
+      - openarm_left_ee_link2
+      openarm_left_link5:
+      - openarm_left_link6
+      - openarm_left_ee_base_link
+      - openarm_left_ee_link1
+      - openarm_left_ee_link2
+      openarm_left_link6:
+      - openarm_left_ee_base_link
+      - openarm_left_ee_link1
+      - openarm_left_ee_link2
+      openarm_left_ee_base_link:
+      - openarm_left_ee_link1
+      - openarm_left_ee_link2
+      openarm_left_ee_link1:
+      - openarm_left_ee_link2
+      openarm_right_base_link:
+      - openarm_right_link1
+      - openarm_right_link2
+      - openarm_right_link3
+      openarm_right_link1:
+      - openarm_right_link2
+      - openarm_right_link3
+      openarm_right_link2:
+      - openarm_right_link3
+      - openarm_right_link4
+      openarm_right_link3:
+      - openarm_right_link4
+      - openarm_right_link5
+      openarm_right_link4:
+      - openarm_right_link5
+      - openarm_right_link6
+      openarm_right_link5:
+      - openarm_right_link6
+      - openarm_right_ee_base_link
+      - openarm_right_ee_link1
+      - openarm_right_ee_link2
+      openarm_right_link6:
+      - openarm_right_ee_base_link
+      - openarm_right_ee_link1
+      - openarm_right_ee_link2
+      openarm_right_ee_base_link:
+      - openarm_right_ee_link1
+      - openarm_right_ee_link2
+      - attached_object
+      openarm_right_ee_link1:
+      - openarm_right_ee_link2
+      - attached_object
+      openarm_right_ee_link2:
+      - attached_object
+    self_collision_buffer: {}
+    lock_joints:
+      openarm_left_joint1: 0.0
+      openarm_left_joint2: 0.0
+      openarm_left_joint3: 0.0
+      openarm_left_joint4: 1.2
+      openarm_left_joint5: 0.0
+      openarm_left_joint6: 0.0
+      openarm_left_joint7: 0.0
+      openarm_left_finger_joint1: 0.7
+      openarm_right_finger_joint1: -0.7
+    extra_links:
+      attached_object:
+        parent_link_name: openarm_right_grasp_frame
+        link_name: attached_object
+        fixed_transform:
+        - 0
+        - 0
+        - 0
+        - 1
+        - 0
+        - 0
+        - 0
+        joint_type: FIXED
+        joint_name: attach_joint
+    cspace:
+      joint_names:
+      - openarm_right_joint1
+      - openarm_right_joint2
+      - openarm_right_joint3
+      - openarm_right_joint4
+      - openarm_right_joint5
+      - openarm_right_joint6
+      - openarm_right_joint7
+      - openarm_right_finger_joint1
+      retract_config:
+      - 0
+      - 0
+      - 0
+      - 1.2
+      - 0
+      - 0
+      - 0
+      - -0.7
+      null_space_weight:
+      - 1
+      - 1
+      - 1
+      - 1
+      - 1
+      - 1
+      - 1
+      - 1
+      cspace_distance_weight:
+      - 1
+      - 1
+      - 1
+      - 1
+      - 1
+      - 1
+      - 1
+      - 1
+      max_acceleration: 8.0
+      max_jerk: 200.0

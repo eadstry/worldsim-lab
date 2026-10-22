@@ -1,0 +1,38 @@
+# Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-License-Identifier: Apache-2.0
+
+# Production 2026-10-15 package already contains GS, tabletop and carpet colliders.
+# Table local +X is the long edge; front=-Y faces the robot after yaw=-90 degrees.
+# Collider transform in USD: translate=(0,0,0.003) m, no rotation.
+# The effective tabletop is level; root/GS visual unchanged.
+# Quaternions are XYZW.
+table_usd: table_scene/table_scene_aligned.usda
+asset_dependencies: [table_scene/table_scene.usdz, table_scene/mouse_pad_1015.usdz]
+table_position: [0.690, 0.000, 1.060]
+table_orientation: [0.0, 0.0, -0.7071067811865476, 0.7071067811865476]
+ground_plane: false
+# Provisional placement; position/yaw/pitch are relative to the table, in metres/radians.
+# This puts the pad centre at environment (0.555, 0.315, 1.06383).
+mousepad:
+  usd: table_scene/mouse_pad_fixed.usda
+  geometry: table_scene/mouse_pad_geometry.json
+  position: [-0.315, -0.135, 0.00383]
+  yaw: 0.0
+  pitch: 0.0  # Parallel to the level collider.
+cube_spawn_left: [0.500, 0.120, 1.084]
+cube_spawn_right: [0.500, 0.120, 1.084]
+world_ignore_substrings: [/Robot, /Nightstand, /World/GroundPlane, /curobo, /Table/Visual]
+table_height: 1.063  # Collision plane height at the table root XY.
+# Keep the robot/cabinet placement; collider centre is 0.333 m above the base.
+robot_position: [0.150, 0.0, 0.730]
+left_elbow_angle: 1.5
+# Stretch only the cabinet Z axis: bottom on carpet, support surface at robot base.
+# Local cabinet bottom/support Z are 0.00012168643 / 0.413644 m.
+nightstand_scale: [1.0, 1.0, 1.430734168641]
+nightstand_position: [0.34948072, 0.0, 0.138185395546]
+nightstand_orientation: [0.0, 0.0, -0.70710678, 0.70710678]
+cube_half_size: 0.019
+cube_spawn_offsets:
+  x: [-0.040, 0.040]
+  y: [-0.060, 0.060]
+static_objects: [table]
