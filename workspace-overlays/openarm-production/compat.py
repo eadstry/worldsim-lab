@@ -68,6 +68,14 @@ def install_generation_compat():
     isaaclab_env_interface.env_loop = scope["env_loop"]
     env_exports.env_loop = scope["env_loop"]
 
+    install_final_hold()
+
+
+def install_final_hold():
+    """Shared task settling, independent of planner/parallelism implementation."""
+    import inspect
+    import textwrap
+    from autodata_core import data_generator
     source = textwrap.dedent(inspect.getsource(data_generator.DataGenerator.generate))
     anchor = "    # Recorder lifecycle stays on env by design:"
     assert source.count(anchor) == 1
@@ -86,7 +94,7 @@ def install_generation_compat():
     data_generator.DataGenerator.generate = scope["generate"]
 
 
-def install(runtime=None):
+def install(runtime=None, implementation="modified"):
     install_task_compat()
     import importlib.util
     import os
@@ -95,6 +103,18 @@ def install(runtime=None):
 
     runtime = Path(runtime) if runtime is not None else Path(__file__).resolve().parent / "runtime"
 
+    if implementation == "upstream":
+        # Only task registration/schema and observation hooks are shared. Do not
+        # replace the upstream planner, embodiment adapter or generation loop.
+        import openarm_autodata.tasks.pick_place
+        install_final_hold()
+        from autodata_core import data_generator
+        from autodata_interfaces.motion_planners.curobo import curobo_planner as planner_module
+        from telemetry import install as install_telemetry
+        install_telemetry(data_generator, planner_module, Path(os.environ["OPENARM_TELEMETRY_FILE"]))
+        return
+    if implementation != "modified":
+        raise ValueError(implementation)
     from autodata_interfaces.motion_planners.curobo import curobo_planner_cfg  # noqa: F401
 
     name = "autodata_interfaces.motion_planners.curobo.curobo_planner"

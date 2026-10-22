@@ -34,6 +34,7 @@ def main():
     parser.add_argument('--arm', default='right')
     parser.add_argument('--final-hold-steps', type=int, default=0)
     parser.add_argument('--log-interval', type=float, default=10)
+    parser.add_argument('--export-format', choices=('hdf5', 'lerobot-v3'), default='hdf5')
     parser.add_argument('--export-workers', '--export-max-workers', type=parse_workers, default=0)
     parser.add_argument('--export-queue-memory-gib', type=float, default=16)
     parser.add_argument('--export-timeout-seconds', type=float, default=600)
@@ -44,6 +45,8 @@ def main():
     assert args.input_file.is_file(), f'Missing input: {args.input_file}'
     suffixes = ('.console.log', '.run.json', '.resources.jsonl', '.status.json', '.telemetry.jsonl',
                 '.telemetry-summary.json', '.background.json', '.result.json', '.error.txt', '.export.json', '.export-parts', '.partial.hdf5')
+    if args.export_format == 'lerobot-v3':
+        assert not output.with_suffix('.lerobot').exists(), 'LeRobot output exists'
     assert not output.exists(), f'Output already exists: {output}'
     for suffix in suffixes:
         assert not output.with_suffix(suffix).exists(), f'Existing run artifact: {output.with_suffix(suffix)}; use a new output name'
@@ -163,7 +166,8 @@ def main():
             os.killpg(child.pid, signal.SIGTERM)
         except ProcessLookupError:
             pass
-        export_path = output.with_suffix('.export.json')
+        export_path = (output.with_suffix('.lerobot') / 'manifest.json' if args.export_format == 'lerobot-v3'
+                       else output.with_suffix('.export.json'))
         if export_path.exists():
             state = json.loads(export_path.read_text())
             if state.get('status') != 'complete':
@@ -183,8 +187,12 @@ def main():
                 background = json.loads(output.with_suffix('.background.json').read_text())
                 assert background.get('dataset_annotated') is True, 'HDR dataset provenance is incomplete'
             if args.export_workers:
-                export = json.loads(output.with_suffix('.export.json').read_text())
-                assert export['status'] == 'complete' and output.is_file(), 'Async export is incomplete'
+                export_path = (output.with_suffix('.lerobot') / 'manifest.json' if args.export_format == 'lerobot-v3'
+                               else output.with_suffix('.export.json'))
+                export = json.loads(export_path.read_text())
+                assert export['status'] == 'complete', 'Async export is incomplete'
+                if args.export_format == 'hdf5':
+                    assert output.is_file(), 'HDF5 output is missing'
                 assert sum(e['attributes'].get('success') is True for e in export['entries']) == stats['num_success'], 'Saved/generated success count mismatch'
             assert stats['num_success'] > 0, 'No successful demonstrations'
             assert stats.get('requested_trials') == args.generation_num_trials, 'Completion target mismatch'
