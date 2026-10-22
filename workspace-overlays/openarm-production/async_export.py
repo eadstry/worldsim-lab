@@ -82,9 +82,16 @@ class Bridge:
         self.mode_class = DatasetExportMode
         self.episode_class = EpisodeData
         self.format_version = DATASET_FORMAT_VERSION
-        self.pool = ExportPool(settings['output'], workers=settings['workers'],
-                               memory_bytes=int(settings['memory_gib'] * 1024**3),
-                               timeout=settings['timeout'], emit=emit)
+        pool_class, extra = ExportPool, {}
+        if settings.get('format') == 'lerobot-v3':
+            from ray_lerobot_pool import RayLeRobotPool
+            if recorder.cfg.dataset_export_mode != DatasetExportMode.EXPORT_SUCCEEDED_ONLY:
+                raise ValueError('Direct LeRobot export requires EXPORT_SUCCEEDED_ONLY')
+            pool_class = RayLeRobotPool
+            extra = dict(task=settings['task'], robot_type=settings['robot_type'])
+        self.pool = pool_class(settings['output'], workers=settings['workers'],
+                              memory_bytes=int(settings['memory_gib'] * 1024**3),
+                              timeout=settings['timeout'], emit=emit, **extra)
         recorder.export_episodes = MethodType(lambda instance, *a, **k: self.export(*a, **k), recorder)
         self.saved_seen = set()
 

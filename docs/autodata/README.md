@@ -2,6 +2,7 @@
 
 | 资料 | 用途 |
 | --- | --- |
+| [Ray 并行直接导出 LeRobot v3](autodata-ray-20261022.md) · [生产实验](autodata-ray-20261022-r02.md) · [数据](autodata-ray-20261022-r02.json) · [图表](autodata-ray-20261022-r02.png) | 2026-10-22：实现记录与原生环境下的并行容量、吞吐及 GPU 利用率实验 |
 | [原理与数据流总览](AutoData-原理与数据流总览.md) | 原理与源码阅读入口，数值示例不代表实测 |
 | [数据生成随机化](AutoData-数据生成随机化可视化.html) | 独立专题离线 HTML |
 | [全流程文章 Markdown](AutoData-全流程可视化讲解.md) | 文章唯一编辑源及 11 张 SVG 配图 |
