@@ -1,0 +1,401 @@
+{
+  "checked_at": "2026-10-20T12:29:18.750613+00:00",
+  "scope": "Full camera pixel scan, historical export journal audit and resource admission; no simulation/training",
+  "source": "/home/tangyuan/WorldSimReady-Home/runs/openarm-left-fresh-20261020-v001/openarm-left.hdf5",
+  "source_bytes": 2114859140,
+  "script_sha256": "09eaf889886ccc4e14e0e3017ef848cb77e37182ce2a1f8409a8bb758425a832",
+  "qualification24": {
+    "status": "blocked",
+    "required_available_gib": 144.0,
+    "blockers": [
+      "Conservative admission requires 144 GiB available; observed 93.44 GiB"
+    ],
+    "memory": {
+      "host_total_gib": 94.07559967041016,
+      "host_available_gib": 93.43951606750488,
+      "effective_available_gib": 93.43951606750488,
+      "cgroup_limits": [],
+      "probe_errors": []
+    },
+    "gpu": {
+      "devices": "GPU-62dfb56e-71e5-7565-5b79-ac8dd6a2ff92, NVIDIA GeForce RTX 5090, 32607, 188",
+      "compute_pids": []
+    },
+    "num_envs": 24,
+    "simulation_executed": false,
+    "scope": "Resource admission only; capacity, runtime dependencies and data quality are not validated",
+    "checked_at": "2026-10-20T12:29:18.835486+00:00",
+    "protocol_sha256": "63dc39880adcb080615b679f8d79cbb2cc3ab12f7d10871da1671212975bbdf4",
+    "probe_sha256": "3406b7f1f662bac3a7639eca55083bfdca8dccbfcc67375248dd238add2a0a99"
+  },
+  "export_audit": {
+    "directory": "/data/WorldSimReady-Home/env8-probe-20261020/env8-workersauto-seed606",
+    "supervisor_run_id": "b03b6f2d787b41a59faa3679942dd761",
+    "supervisor_status": "failed",
+    "export_status": "failed",
+    "completion_error": "Generation failed: Traceback (most recent call last):\n  File \"/home/tangyuan/WorldSimReady-Home/.worktrees/production-capacity-20261019/workspace-overlays/openarm-production/generate.py\", line 148, in main\n    exec(compile(source, str(script), \"exec\"), namespace)\n  File \"/home/tangyuan/WorldSimReady-Home/AutoData/scripts/generate_dataset.py\", line 427, in <module>\n  File \"/home/tangyuan/WorldSimReady-Home/AutoData/scripts/generate_dataset.py\", line 404, in main\n  File \"/home/tangyuan/WorldSimReady-Home/.worktrees/production-capacity-20261019/workspace-overlays/openarm-production/async_export.py\", line 152, in finish\n    _active.pool.finish()\n  File \"/home/tangyuan/WorldSimReady-Home/.worktrees/production-capacity-20261019/workspace-overlays/openarm-production/export_pool.py\", line 343, in finish\n    self.poll(wait=.05)\n  File \"/home/tangyuan/WorldSimReady-Home/.worktrees/production-capacity-20261019/workspace-overlays/openarm-production/export_pool.py\", line 261, in poll\n    raise RuntimeError(f'Export {key} failed: {row[\"error\"]}')\nRuntimeError: Export 1:0 failed: FileNotFoundError: [Errno 2] No such file or directory: '/data/WorldSimReady-Home/env8-probe-20261020/env8-workersauto-seed606/dataset.export-parts/worker-77274-1.hdf5'",
+    "export_error": "Export 1:0 failed: FileNotFoundError: [Errno 2] No such file or directory: '/data/WorldSimReady-Home/env8-probe-20261020/env8-workersauto-seed606/dataset.export-parts/worker-77274-1.hdf5'",
+    "telemetry": {
+      "runs": {
+        "bd5cdea1431b4866947e7540d7254c9c": {
+          "events": {
+            "heartbeat": 179,
+            "episode_started": 8,
+            "stage_started": 32,
+            "stage_finished": 32,
+            "planner_request_started": 32,
+            "solver_iteration_started": 32,
+            "solver_iteration_finished": 32,
+            "planner_request_finished": 32,
+            "execution_progress": 107,
+            "recorded_terminal_acceptance": 8,
+            "export_submitted": 8,
+            "export_scaling_decision": 3,
+            "episode_finished": 8,
+            "export_worker_started": 4,
+            "export_write_started": 8,
+            "export_saved": 8,
+            "export_complete": 1,
+            "output_ready": 1
+          },
+          "first_utc": "2026-10-20T05:36:35.553512+00:00",
+          "last_utc": "2026-10-20T05:43:53.189315+00:00"
+        },
+        "b03b6f2d787b41a59faa3679942dd761": {
+          "events": {
+            "telemetry_started": 1,
+            "instrumentation_ready": 1,
+            "generation_policy": 1,
+            "heartbeat": 171,
+            "export_pool_started": 1,
+            "episode_started": 8,
+            "stage_started": 32,
+            "stage_finished": 32,
+            "planner_request_started": 32,
+            "solver_iteration_started": 32,
+            "solver_iteration_finished": 32,
+            "planner_request_finished": 32,
+            "execution_progress": 107,
+            "recorded_terminal_acceptance": 8,
+            "export_submitted": 8,
+            "export_scaling_decision": 2,
+            "episode_finished": 8,
+            "export_worker_started": 4,
+            "export_write_started": 8,
+            "export_saved": 5,
+            "output_ready": 1
+          },
+          "first_utc": "2026-10-20T05:37:43.446303+00:00",
+          "last_utc": "2026-10-20T05:44:04.191149+00:00"
+        }
+      },
+      "invalid_lines": 0
+    },
+    "multiple_run_ids": true,
+    "inference": "Multiple runs wrote this telemetry path; shard disappearance cause is not proven by this audit",
+    "saved_entries": 5,
+    "source_immutability": "read only; historical files not repaired or deleted"
+  },
+  "images": {
+    "demo_0": {
+      "left_hand_rgb": {
+        "frames": 1349,
+        "shape": [
+          1349,
+          480,
+          640,
+          3
+        ],
+        "dtype": "uint8",
+        "mean_intensity_quantiles": [
+          0.7208116319444444,
+          87.58500946180556,
+          102.93248480902778,
+          237.42047725694445,
+          237.50927842881944
+        ],
+        "spatial_std_median": 74.69942063502158,
+        "suspected_black_frames": 1,
+        "suspected_black_fraction": 0.0007412898443291327,
+        "warmup_frames_excluded": 30,
+        "post_warmup_frames": 1319,
+        "post_warmup_suspected_black_fraction": 0.0,
+        "diagnostic_rule": "mean < 1/255 AND >99% channel values <=2/255; not a semantic image-validity proof"
+      },
+      "right_hand_rgb": {
+        "frames": 1349,
+        "shape": [
+          1349,
+          480,
+          640,
+          3
+        ],
+        "dtype": "uint8",
+        "mean_intensity_quantiles": [
+          9.114583333333334e-05,
+          0.00017465277777777778,
+          0.00037760416666666666,
+          0.0005365885416666667,
+          0.0005859375
+        ],
+        "spatial_std_median": 0.032053006028002734,
+        "suspected_black_frames": 1349,
+        "suspected_black_fraction": 1.0,
+        "warmup_frames_excluded": 30,
+        "post_warmup_frames": 1319,
+        "post_warmup_suspected_black_fraction": 1.0,
+        "diagnostic_rule": "mean < 1/255 AND >99% channel values <=2/255; not a semantic image-validity proof"
+      },
+      "third_person_rgb": {
+        "frames": 1349,
+        "shape": [
+          1349,
+          480,
+          640,
+          3
+        ],
+        "dtype": "uint8",
+        "mean_intensity_quantiles": [
+          168.36330078125,
+          168.44241137152778,
+          180.69705295138888,
+          196.6040062934028,
+          196.6536990017361
+        ],
+        "spatial_std_median": 69.49039006380174,
+        "suspected_black_frames": 0,
+        "suspected_black_fraction": 0.0,
+        "warmup_frames_excluded": 30,
+        "post_warmup_frames": 1319,
+        "post_warmup_suspected_black_fraction": 0.0,
+        "diagnostic_rule": "mean < 1/255 AND >99% channel values <=2/255; not a semantic image-validity proof"
+      }
+    },
+    "demo_1": {
+      "left_hand_rgb": {
+        "frames": 1353,
+        "shape": [
+          1353,
+          480,
+          640,
+          3
+        ],
+        "dtype": "uint8",
+        "mean_intensity_quantiles": [
+          0.7690082465277778,
+          90.43913789062499,
+          105.32925455729166,
+          237.5032584201389,
+          237.588369140625
+        ],
+        "spatial_std_median": 74.80256051425552,
+        "suspected_black_frames": 1,
+        "suspected_black_fraction": 0.0007390983000739098,
+        "warmup_frames_excluded": 30,
+        "post_warmup_frames": 1323,
+        "post_warmup_suspected_black_fraction": 0.0,
+        "diagnostic_rule": "mean < 1/255 AND >99% channel values <=2/255; not a semantic image-validity proof"
+      },
+      "right_hand_rgb": {
+        "frames": 1353,
+        "shape": [
+          1353,
+          480,
+          640,
+          3
+        ],
+        "dtype": "uint8",
+        "mean_intensity_quantiles": [
+          0.0,
+          7.109374999999999e-05,
+          9.114583333333334e-05,
+          0.00011935763888888888,
+          0.00023111979166666666
+        ],
+        "spatial_std_median": 0.016731395910196276,
+        "suspected_black_frames": 1353,
+        "suspected_black_fraction": 1.0,
+        "warmup_frames_excluded": 30,
+        "post_warmup_frames": 1323,
+        "post_warmup_suspected_black_fraction": 1.0,
+        "diagnostic_rule": "mean < 1/255 AND >99% channel values <=2/255; not a semantic image-validity proof"
+      },
+      "third_person_rgb": {
+        "frames": 1353,
+        "shape": [
+          1353,
+          480,
+          640,
+          3
+        ],
+        "dtype": "uint8",
+        "mean_intensity_quantiles": [
+          167.16072157118055,
+          167.22779175347222,
+          179.4196950954861,
+          195.75748268229168,
+          195.79717339409723
+        ],
+        "spatial_std_median": 66.75174418145924,
+        "suspected_black_frames": 0,
+        "suspected_black_fraction": 0.0,
+        "warmup_frames_excluded": 30,
+        "post_warmup_frames": 1323,
+        "post_warmup_suspected_black_fraction": 0.0,
+        "diagnostic_rule": "mean < 1/255 AND >99% channel values <=2/255; not a semantic image-validity proof"
+      }
+    },
+    "demo_2": {
+      "left_hand_rgb": {
+        "frames": 1359,
+        "shape": [
+          1359,
+          480,
+          640,
+          3
+        ],
+        "dtype": "uint8",
+        "mean_intensity_quantiles": [
+          0.7526985677083333,
+          90.34922771267361,
+          103.15973741319445,
+          237.48246380208334,
+          237.60005316840278
+        ],
+        "spatial_std_median": 74.94105062931959,
+        "suspected_black_frames": 1,
+        "suspected_black_fraction": 0.0007358351729212656,
+        "warmup_frames_excluded": 30,
+        "post_warmup_frames": 1329,
+        "post_warmup_suspected_black_fraction": 0.0,
+        "diagnostic_rule": "mean < 1/255 AND >99% channel values <=2/255; not a semantic image-validity proof"
+      },
+      "right_hand_rgb": {
+        "frames": 1359,
+        "shape": [
+          1359,
+          480,
+          640,
+          3
+        ],
+        "dtype": "uint8",
+        "mean_intensity_quantiles": [
+          0.0001247829861111111,
+          0.00017361111111111112,
+          0.0003352864583333333,
+          0.00048222656250000007,
+          0.0005696614583333334
+        ],
+        "spatial_std_median": 0.031386708771830946,
+        "suspected_black_frames": 1359,
+        "suspected_black_fraction": 1.0,
+        "warmup_frames_excluded": 30,
+        "post_warmup_frames": 1329,
+        "post_warmup_suspected_black_fraction": 1.0,
+        "diagnostic_rule": "mean < 1/255 AND >99% channel values <=2/255; not a semantic image-validity proof"
+      },
+      "third_person_rgb": {
+        "frames": 1359,
+        "shape": [
+          1359,
+          480,
+          640,
+          3
+        ],
+        "dtype": "uint8",
+        "mean_intensity_quantiles": [
+          166.16365668402779,
+          166.33771208767362,
+          178.94762044270834,
+          195.8444611328125,
+          195.89421875
+        ],
+        "spatial_std_median": 65.95123687720866,
+        "suspected_black_frames": 0,
+        "suspected_black_fraction": 0.0,
+        "warmup_frames_excluded": 30,
+        "post_warmup_frames": 1329,
+        "post_warmup_suspected_black_fraction": 0.0,
+        "diagnostic_rule": "mean < 1/255 AND >99% channel values <=2/255; not a semantic image-validity proof"
+      }
+    },
+    "demo_3": {
+      "left_hand_rgb": {
+        "frames": 1392,
+        "shape": [
+          1392,
+          480,
+          640,
+          3
+        ],
+        "dtype": "uint8",
+        "mean_intensity_quantiles": [
+          0.7664246961805555,
+          92.35909195963542,
+          111.66902289496528,
+          237.37721078559028,
+          237.45476779513888
+        ],
+        "spatial_std_median": 75.60956704239243,
+        "suspected_black_frames": 1,
+        "suspected_black_fraction": 0.0007183908045977011,
+        "warmup_frames_excluded": 30,
+        "post_warmup_frames": 1362,
+        "post_warmup_suspected_black_fraction": 0.0,
+        "diagnostic_rule": "mean < 1/255 AND >99% channel values <=2/255; not a semantic image-validity proof"
+      },
+      "right_hand_rgb": {
+        "frames": 1392,
+        "shape": [
+          1392,
+          480,
+          640,
+          3
+        ],
+        "dtype": "uint8",
+        "mean_intensity_quantiles": [
+          4.6657986111111113e-05,
+          5.859375e-05,
+          9.114583333333334e-05,
+          0.00012162543402777768,
+          0.000263671875
+        ],
+        "spatial_std_median": 0.016370816908094433,
+        "suspected_black_frames": 1392,
+        "suspected_black_fraction": 1.0,
+        "warmup_frames_excluded": 30,
+        "post_warmup_frames": 1362,
+        "post_warmup_suspected_black_fraction": 1.0,
+        "diagnostic_rule": "mean < 1/255 AND >99% channel values <=2/255; not a semantic image-validity proof"
+      },
+      "third_person_rgb": {
+        "frames": 1392,
+        "shape": [
+          1392,
+          480,
+          640,
+          3
+        ],
+        "dtype": "uint8",
+        "mean_intensity_quantiles": [
+          164.80621310763888,
+          164.91602214626735,
+          181.00372395833332,
+          196.45790947265624,
+          196.52751410590278
+        ],
+        "spatial_std_median": 69.95489890083545,
+        "suspected_black_frames": 0,
+        "suspected_black_fraction": 0.0,
+        "warmup_frames_excluded": 30,
+        "post_warmup_frames": 1362,
+        "post_warmup_suspected_black_fraction": 0.0,
+        "diagnostic_rule": "mean < 1/255 AND >99% channel values <=2/255; not a semantic image-validity proof"
+      }
+    }
+  },
+  "source_size_mtime_unchanged": true,
+  "status": "audit_complete",
+  "production_ready": false,
+  "next_gate": "Resolve 24-env memory admission and camera usability before formal capability trials"
+}

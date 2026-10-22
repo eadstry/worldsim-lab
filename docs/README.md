@@ -4,9 +4,10 @@
 
 | 主题 | 入口 | 内容 |
 | --- | --- | --- |
-| AutoData | [资料与阅读顺序](autodata/README.md) | 原理、数据流、随机化可视化及完整文章正文 |
+| AutoData | [资料与阅读顺序](autodata/README.md) · [Ray 直接导出](autodata/autodata-ray-20261022.md) · [生产实验](autodata/autodata-ray-20261022-r02.md) · [PDF](autodata/autodata-ray-20261022-r02.pdf) · [图解版](autodata/autodata-ray-20261022-r03.md) · [图解 PDF](autodata/autodata-ray-20261022-r03.pdf) | 原理、数据流与可视化；2026-10-22：Ray 并行 LeRobot v3 直接导出、容量与生产效率实验 |
 | Arena 与共用配置 | [成果索引](../outputs/README.md) | 示例运行说明、RoboLab 配置、AutoData/Arena 共用配置建议 |
 | 运行环境 | [环境配置](environment-setup.md) | 主机、仓库、容器与原生环境、机器本地参数及验收顺序 |
+| LeRobot v3 数据格式 | [可视化笔记](lerobot-v3/README.md) | v3 与 OXE 格式对比、失败模式与异构性说明图 |
 | 主机环境 | [存储挂载记录](host-storage.md) | `/data` 挂载容量及截图中的存储信息 |
 | 版本管理与过程记录 | [管理约定](version-management.md) · [问题与改进](process-log.md) | 分支、worktree、锁定检查、快照保护及待解决事项 |
 
@@ -35,6 +36,7 @@
 
 | 创建日期 | 资料 | 用途 |
 | --- | --- | --- |
+| 2026-10-22 | [实验图册清晰度修订](experiment-portfolio/experiment-chartbook-20261022.md) | 全部 19 图矢量重绘、大字号 PDF、300 dpi PNG 与来源校验 |
 | 历史资料迁入 | [AutoData-全流程可视化讲解](autodata/AutoData-全流程可视化讲解.html) | 离线阅读版 |
 | 历史资料迁入 | [AutoData-全流程可视化讲解](autodata/AutoData-全流程可视化讲解.md) | 报告或说明，验证范围见正文 |
 | 历史资料迁入 | [AutoData-原理与数据流总览](autodata/AutoData-原理与数据流总览.md) | 报告或说明，验证范围见正文 |
@@ -61,3 +63,37 @@
 | 创建日期 | 文档 | 内容 |
 | --- | --- | --- |
 | 2026-10-22 | [实验与报告汇总](action-state-causality-20261022.md) | 两轮差值实验、历史报告与原始数据的本地压缩包说明；附[文件清单](action-state-causality-20261022-manifest.json)和[完整性校验](action-state-causality-20261022-verification.json)。 |
+
+## 2026-10-23 配置与验证
+
+| 创建日期 | 文档 | 内容 |
+| --- | --- | --- |
+| 2026-10-23 | [OpenArm GS 配置检查与渲染](openarm-gs-render-20261023.md) | 新配置归档、185 项哈希检查和 Isaac Sim 高斯场景 RGB 样例；不含任务动力学验证 |
+
+## 2026-10-23 GS 生产验证
+
+| 创建日期 | 文档 | 内容 |
+| --- | --- | --- |
+| 2026-10-23 | [OpenArm GS 预设任务生产与视频](openarm-gs-production-20261023.md) | 原配置 SkillGen 生成 1 条成功轨迹、三路 RGB、独立物理回放及约 88 秒视频 |
+
+## 2026-10-23 GS 视频视角
+
+| 创建日期 | 文档 | 内容 |
+| --- | --- | --- |
+| 2026-10-23 | [OpenArm GS 生产视频 r02](openarm-gs-production-20261023-r02.md) | 同一条预设任务的左右腕部原始 RGB 视频、外部视角入口、完整解码检查及右腕黑画面限制 |
+
+## 2026-10-23 GS 头部机位
+
+| 创建日期 | 文档 | 内容 |
+| --- | --- | --- |
+| 2026-10-23 | [OpenArm GS 生产视频 r03](openarm-gs-production-20261023-r03.md) | 新增机器人机身固定的虚拟头部相机、同轨迹物理回放视频及完整解码验证 |
+
+## 工作树整合与历史记录
+
+| 创建日期 | 文档 | 内容 |
+| --- | --- | --- |
+| 2026-10-23 | [工作树整合核对](git-worktrees-20261023.md) | 已完成任务的合并来源、主机验证、主目录保存及安全清理；附[逐工作树清单](integration/git-worktrees-20261023.json) |
+| 2026-10-16 | [根目录归档与忽略边界](git-hygiene-20261016.md) | 原本地索引中的历史入口 |
+| 2026-10-16 | [全库工作树核对](git-worktrees-20261016.md) | [原始工作树清单](git-worktrees-20261016.json)及[迁移回执](worktree-migration-receipts-20261016.json) |
+
+常驻说明：[任务队列](task-queue.md) · [历史整合证据](integration/) · [版本管理](version-management.md)。

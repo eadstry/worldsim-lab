@@ -1,0 +1,82 @@
+{
+  "backend": "v2",
+  "date": "2026-10-15",
+  "num_envs": 8,
+  "seed": 101,
+  "requested_successes": 16,
+  "successes": 16,
+  "failures": 0,
+  "completed": 16,
+  "saved_episodes": 16,
+  "physical_passes": 15,
+  "validation_passed": false,
+  "seconds": 699.0455019999999,
+  "generation_seconds": 663.221634,
+  "tail_seconds": 35.82386799999995,
+  "rate": 1.3733011617318154,
+  "launcher_seconds": 782.91847,
+  "drain_seconds": 27.22792474499147,
+  "merge_seconds": 4.13362921900989,
+  "writers": 4,
+  "stages": {
+    "reset": {
+      "count": 16,
+      "mean": 1.4818245401247623,
+      "p50": 0.6211410730029456,
+      "p95": 18.45943415298825,
+      "max": 18.45943415298825
+    },
+    "motion_plan": {
+      "count": 16,
+      "mean": 8.037998487005098,
+      "p50": 2.3284865989844548,
+      "p95": 27.736570792010752,
+      "max": 27.736570792010752
+    },
+    "execution_wait": {
+      "count": 16,
+      "mean": 241.7395420179837,
+      "p50": 237.0032130098989,
+      "p95": 312.98736084574193,
+      "max": 312.98736084574193
+    },
+    "export": {
+      "count": 16,
+      "mean": 0.0,
+      "p50": 0,
+      "p95": 0,
+      "max": 0
+    },
+    "export_enqueue": {
+      "count": 16,
+      "mean": 3.6936450129369405,
+      "p50": 1.7337343109975336,
+      "p95": 18.397238482997636,
+      "max": 18.397238482997636
+    }
+  },
+  "async_export": {
+    "packing_seconds": 26.86432879898348,
+    "queue_wait_seconds": 31.661601542989956,
+    "write_seconds": {
+      "count": 16,
+      "mean": 28.408971346250837,
+      "p50": 28.17146012900048,
+      "p95": 30.3798204420018,
+      "max": 30.3798204420018
+    }
+  },
+  "sha256": "801cc08322f51e0d38a800fc00445931246d3b25ccd47bc06f657576ccf27bb2",
+  "bytes": 8913001730,
+  "run_id": "1c00268dca1d4f31bc94c644ea4222d7",
+  "schema_validation_passed": true,
+  "physical_validator_returncode": 1,
+  "terminal_pass_rate": 0.9375,
+  "terminal_passes_per_minute": 1.2874698391235768,
+  "quality_failure": {
+    "episode": "demo_2",
+    "angular_speed_rad_s": 0.8537716269493103,
+    "maximum_rad_s": 0.5,
+    "reason": "angular speed exceeds unchanged terminal threshold"
+  }
+}

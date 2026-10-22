@@ -1,0 +1,51 @@
+{
+  "status": "passed",
+  "scope": "USD composition and RTX RGB only; no physics or AutoData rollout",
+  "robot_pose": "Authored USD pose, not task initial joint configuration",
+  "package_sha256": "4664f143fe5904d1d7cc0dd8e1fa18e4bdc9f5ac6780434a5952acfe92ab21df",
+  "verified_files": 185,
+  "source_commit": "1bf7a3ba28d735de052582e9bd86a4000533f736",
+  "config": "/home/tangyuan/WorldSimReady-Home/.worktrees/openarm-gs-render/workspace-overlays/openarm-gs-render/configs/openarm_autodata/tasks/pick_place/configs/scenes/gs_table.yaml",
+  "composition_errors": [],
+  "gaussian_prims": [
+    {
+      "path": "/World/Table/Visual",
+      "type": "ParticleField3DGaussianSplat"
+    }
+  ],
+  "prim_type_counts": {
+    "": 9,
+    "RenderProduct": 2,
+    "OmniGraph": 4,
+    "OmniGraphNode": 9,
+    "RenderSettings": 1,
+    "RenderVar": 1,
+    "Camera": 5,
+    "Xform": 144,
+    "Mesh": 7,
+    "Material": 12,
+    "Shader": 25,
+    "ParticleField3DGaussianSplat": 1,
+    "GeomSubset": 10,
+    "PhysicsMaterial": 2,
+    "Scope": 7,
+    "NodeGraph": 6,
+    "PhysicsFixedJoint": 3,
+    "PhysicsRevoluteJoint": 18,
+    "DomeLight": 1,
+    "PhysicsScene": 1
+  },
+  "rgb_shape": [
+    960,
+    1280,
+    4
+  ],
+  "rgb_std": 80.23262741887407,
+  "table_surface_z_m": 1.063,
+  "mousepad_center_m": [
+    0.5549999999999998,
+    0.31499999999999995,
+    1.06383
+  ],
+  "image": "example.png"
+}

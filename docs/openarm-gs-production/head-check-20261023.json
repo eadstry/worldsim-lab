@@ -1,0 +1,88 @@
+{
+  "task": "Isaac-PickPlace-Cube-OpenArm-GS-Bimanual-Left-IK-Rel-v0",
+  "input_sha256": "7feec70707608ae23a61816124fe2c12e2dc5455b66e67606f35aae5c1c3ef5f",
+  "recorded_success": true,
+  "replay_final_success": true,
+  "frames": 1318,
+  "fps": 15,
+  "duration_s": 87.86666666666666,
+  "steps": 2636,
+  "step_dt": 0.03333333333333333,
+  "resolution": [
+    1280,
+    960
+  ],
+  "rgb_stream_shapes": {
+    "left_hand_rgb": [
+      2636,
+      480,
+      640,
+      3
+    ],
+    "right_hand_rgb": [
+      2636,
+      480,
+      640,
+      3
+    ],
+    "third_person_rgb": [
+      2636,
+      480,
+      640,
+      3
+    ]
+  },
+  "camera": {
+    "name": "virtual_head_preview",
+    "mount_relative_to_robot": "Geometry/world/openarm_body_link0/HeadPreviewCamera",
+    "eye_env_m": [
+      0.15,
+      0.0,
+      1.65
+    ],
+    "look_at_env_m": [
+      0.53,
+      0.18,
+      1.1
+    ],
+    "width": 1280,
+    "height": 960,
+    "focal_length_mm": 18.0,
+    "horizontal_aperture_mm": 24.0,
+    "vertical_aperture_mm": 18.0,
+    "scope": "New virtual head-position preview on the robot body; not an existing calibrated sensor"
+  },
+  "camera_prim": "{ENV_REGEX_NS}/Robot/Geometry/world/openarm_body_link0/HeadPreviewCamera",
+  "max_cube_position_difference_m": 0.0,
+  "final_cube_position_difference_m": 0.0,
+  "video_sha256": "7ec31f3af91b2b81aed9a1cd3812ffa1c805a4dba823688f2a0df39ca1b3e14e",
+  "decode": {
+    "status": "passed",
+    "decoded_frames": 1318,
+    "metadata": {
+      "ffmpeg_version": "7.0.2-static https://johnvansickle.com/ffmpeg/ built with gcc 8 (Debian 8.3.0-6)",
+      "codec": "h264",
+      "pix_fmt": "yuv420p(progressive)",
+      "fps": 15.0,
+      "source_size": [
+        1280,
+        960
+      ],
+      "size": [
+        1280,
+        960
+      ],
+      "rotate": 0,
+      "duration": 87.87
+    },
+    "sha256": "7ec31f3af91b2b81aed9a1cd3812ffa1c805a4dba823688f2a0df39ca1b3e14e"
+  },
+  "queue_ids": {
+    "replay": 352,
+    "decode": 353
+  },
+  "implementation_hashes": {
+    "workspace-overlays/openarm-gs-production/replay_head.py": "9990bbd1e392e41835cc35f995ca922c6948bca1a5c6a5a559dfe24fe4b02164",
+    "workspace-overlays/openarm-gs-production/configs/head_preview.json": "7313169019caf7dfa2a16d4525d21abaf45e3b2823f55ca6363cf8074e325309"
+  }
+}

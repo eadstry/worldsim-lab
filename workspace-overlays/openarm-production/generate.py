@@ -13,11 +13,26 @@ def build_source(source, args):
         anchor_debug = "planner_config = CuroboPlannerCfg.from_profile(planner_profile)"
         assert source.count(anchor_debug) == 1
         source = source.replace(anchor_debug, anchor_debug + "\n            planner_config.debug_planner = True", 1)
+    if getattr(args, 'implementation', 'modified') == 'upstream':
+        planner_anchor = "planner_config = CuroboPlannerCfg.from_profile(planner_profile)"
+        assert source.count(planner_anchor) == 1
+        source = source.replace(planner_anchor, planner_anchor + f"""
+            import yaml
+            from pathlib import Path as _PlannerPath
+            _resolved_path = _PlannerPath({str(args.output_file.resolve().parent)!r}) / f'planner-{{env_id}}.yaml'
+            _robot_cfg = planner_config.get_robot_config()
+            for _state in ('gripper_open_positions', 'gripper_closed_positions'):
+                _locks = dict(_robot_cfg['kinematics'].get('lock_joints') or {{}})
+                _locks.update(getattr(planner_config, _state))
+                setattr(planner_config, _state, _locks)
+            _resolved_path.write_text(yaml.safe_dump({{'robot_cfg': _robot_cfg}}))
+            planner_config.robot_config_file = str(_resolved_path)
+""", 1)
     anchor = "simulation_app = app_launcher.app"
     assert source.count(anchor) == 1, "Upstream launcher changed; review the integration hook"
     runtime_path = getattr(args, "runtime", None)
     runtime_arg = repr(str(runtime_path)) if runtime_path is not None else "None"
-    source = source.replace(anchor, anchor + f"\nfrom compat import install\ninstall(runtime={runtime_arg})", 1)
+    source = source.replace(anchor, anchor + f"\nfrom compat import install\ninstall(runtime={runtime_arg}, implementation={getattr(args, 'implementation', 'modified')!r})", 1)
     policy_anchor = "generation_policy_params = task_descriptor.get_generation_policy()"
     assert source.count(policy_anchor) == 1
     source = source.replace(policy_anchor, policy_anchor + f"""
@@ -25,6 +40,10 @@ def build_source(source, args):
     from telemetry import record_policy
     record_policy(generation_policy_params, {args.generation_num_trials}, {args.num_envs})
 """, 1)
+    if getattr(args, 'generation_seed', None) is not None:
+        source = source.replace(policy_anchor, policy_anchor + f"\n    generation_policy_params.seed = {args.generation_seed}", 1)
+    if getattr(args, 'max_failures', None) is not None:
+        source = source.replace(policy_anchor, policy_anchor + f'\n    generation_policy_params.max_num_failures = {args.max_failures}', 1)
     counter = '        stats["num_attempts"] += 1'
     assert source.count(counter) == 1, "Upstream attempt accounting changed; review the failure limit"
     source = source.replace(counter, counter + '''
@@ -48,7 +67,10 @@ def build_source(source, args):
         import json
         os.environ["OPENARM_ASYNC_EXPORT"] = json.dumps(dict(
             output=str(args.output_file.resolve()), workers=args.export_workers,
-            memory_gib=args.export_queue_memory_gib, timeout=args.export_timeout_seconds))
+            memory_gib=args.export_queue_memory_gib, timeout=args.export_timeout_seconds,
+            format=getattr(args, 'export_format', 'hdf5'),
+            task=f"Pick up the cube with the {getattr(args, 'arm', 'right')} arm and place it at the target.",
+            robot_type=f"openarm_bimanual_{getattr(args, 'arm', 'right')}"))
         env_anchor = "    env = gym.make(env_name, cfg=env_cfg).unwrapped"
         assert source.count(env_anchor) == 1
         source = source.replace(env_anchor, """    from async_export import configure, attach
@@ -93,13 +115,17 @@ def main():
     parser.add_argument("--background-config", type=Path, default=None,
                         help="JSON HDR candidate pool; sampled once per production process")
     parser.add_argument("--background-seed", type=int, default=101)
+    parser.add_argument("--implementation", choices=("upstream", "modified"), default="modified")
     parser.add_argument("--arm", choices=("left", "right"), default="right")
     parser.add_argument("--input_file", type=Path, required=True)
     parser.add_argument("--output_file", type=Path, required=True)
     parser.add_argument("--num_envs", type=int, default=1)
+    parser.add_argument("--generation-seed", type=int, default=None)
+    parser.add_argument("--export-format", choices=("hdf5", "lerobot-v3"), default="hdf5")
     parser.add_argument("--generation_num_trials", type=int, default=1)
     parser.add_argument("--task_descriptor", type=Path, default=None)
     parser.add_argument("--debug-planner", action="store_true")
+    parser.add_argument("--max-failures", type=int, default=None)
     parser.add_argument("--final-hold-steps", type=int, default=0)
     parser.add_argument("--log-interval", type=float, default=10)
     parser.add_argument("--export-workers", "--export-max-workers", type=parse_workers, default=0,
@@ -107,6 +133,15 @@ def main():
     parser.add_argument("--export-queue-memory-gib", type=float, default=16)
     parser.add_argument("--export-timeout-seconds", type=float, default=600)
     args = parser.parse_args()
+    if args.generation_seed is not None and not 0 <= args.generation_seed < 2**32:
+        parser.error('--generation-seed must fit uint32')
+    if args.export_format == 'lerobot-v3':
+        from ray_lerobot_pool import preflight
+        preflight()
+        if not isinstance(args.export_workers, int) or args.export_workers <= 0:
+            parser.error('LeRobot v3 requires an explicit positive --export-workers')
+        if args.background_config:
+            parser.error('Direct LeRobot background provenance is not supported yet')
     assert args.export_workers == 'auto' or args.export_workers >= 0
     assert math.isfinite(args.export_queue_memory_gib) and args.export_queue_memory_gib > 0
     assert math.isfinite(args.export_timeout_seconds) and args.export_timeout_seconds > 0

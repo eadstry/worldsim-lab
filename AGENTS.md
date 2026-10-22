@@ -10,11 +10,14 @@ This repository combines upstream source references with local AutoData research
 
 ## Documents and reports
 
-- Put new documents, notes and reports in `docs/<topic>/` and register them in `docs/README.md` and the topic index. Keep prose out of the repository root and runtime directories.
-- Name new reports `<topic>-<YYYYMMDD>[-rNN].<ext>`, using a stable ASCII topic slug. Keep figures beside their report and use relative links.
+- Put every document or report a task produces in `docs/`; keep the repository root, `runs/` and scratch worktrees free of prose. `outputs/` stays for sealed, versioned artifacts, not for notes.
+- Name new documents `<topic>-<YYYYMMDD>[-r<NN>].<ext>`: a stable lowercase ASCII topic slug, the creation date, and a revision suffix only when a same-day document supersedes an earlier one. Reuse the slug of an existing problem instead of coining a near-duplicate, so related documents sort together in the order they were written; use `docs/<topic>/` for reference material shared by several documents.
+- Register each new document in the index table in `docs/README.md` (and the topic index, when one exists) in the same change, with its creation date and its one-line purpose. Extend the entry for an existing problem instead of adding an alias.
+- Leave superseded documents in place and add the newer dated file; do not rewrite an old report's conclusions in place.
+- Run `python3 scripts/check-doc-links.py` after renaming or moving a document, and update every link you move.
+
 - Maintain one editable source per document. Preserve existing sealed `outputs/` versions unchanged; their code references point to `workspace-overlays/`.
 - This repository has no blog build or deployment pipeline. Documents are read on GitHub or opened offline.
-- Run `python3 scripts/check-doc-links.py` after moving or adding documents.
 
 ## Automatic version submission and review
 

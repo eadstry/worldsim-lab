@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "charts": 19,
+  "vector_svg": 19,
+  "pdf_pages": 20,
+  "pdf_bitmap_images": 0,
+  "png_pixels": [
+    3507,
+    2481
+  ],
+  "png_dpi": 300,
+  "text_within_canvas": true,
+  "source_manifest_verified": true,
+  "metrics_csv_unchanged": true,
+  "scope": "Chart rendering and frozen evidence integrity only; no new simulation or training"
+}

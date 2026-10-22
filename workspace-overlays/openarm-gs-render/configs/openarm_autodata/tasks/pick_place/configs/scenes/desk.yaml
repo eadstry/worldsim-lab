@@ -1,0 +1,23 @@
+# Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-License-Identifier: Apache-2.0
+
+# Asset paths are relative to openarm_autodata/assets. Quaternions are XYZW.
+# Preserve the mesh desk's original frame for existing left_scanned_pad data.
+table_usd: desk/desk_physics.usda
+asset_dependencies: [desk/desk.usdz]
+table_position: [0.750, 0.0, 0.540]
+table_orientation: [0.0, 0.0, 0.70710678, 0.70710678]
+cube_spawn_left: [0.530, 0.120, 1.081]
+cube_spawn_right: [0.530, -0.120, 1.081]
+pad_footprint: [[0.270, 0.130], [0.485, 0.130], [0.485, 0.260], [0.270, 0.260]]
+pad_surface_z: 0.5205
+world_ignore_substrings: [/Robot, /Nightstand, /World/GroundPlane, /curobo]
+table_height: 1.060
+robot_position: [0.150, 0.0, 0.730]
+nightstand_position: [0.34948072, 0.0, 0.316356]
+nightstand_orientation: [0.0, 0.0, -0.70710678, 0.70710678]
+cube_half_size: 0.019
+cube_spawn_offsets:
+  x: [-0.040, 0.040]
+  y: [-0.060, 0.060]
+static_objects: [table]

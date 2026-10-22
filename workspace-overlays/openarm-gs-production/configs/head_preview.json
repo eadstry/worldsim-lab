@@ -1,0 +1,12 @@
+{
+  "name": "virtual_head_preview",
+  "mount_relative_to_robot": "Geometry/world/openarm_body_link0/HeadPreviewCamera",
+  "eye_env_m": [0.15, 0.0, 1.65],
+  "look_at_env_m": [0.53, 0.18, 1.10],
+  "width": 1280,
+  "height": 960,
+  "focal_length_mm": 18.0,
+  "horizontal_aperture_mm": 24.0,
+  "vertical_aperture_mm": 18.0,
+  "scope": "New virtual head-position preview on the robot body; not an existing calibrated sensor"
+}
