@@ -26,6 +26,7 @@
 ## 2026-10-20 新增准备材料
 
 - [GPU 高负载实验计划](experiment-plan-gpu-utilization-20261020.md)：待执行设计，尚无负载矩阵结果。
+- [具身实验图谱站点源码](../workspace-overlays/embodied-experiment-atlas/README.md)：归档静态站点构建脚本、报告和图片；未部署。
 - [OpenArm 24 环境资源预检](../workspace-overlays/openarm-capability24/README.md)：资源准入工具，不等于仿真验收。
 - [源码与草稿同步清单](github-sync-20261020.json)：原始快照来源及集成适配记录。
 - [OpenArm 图像与隔离导出诊断](experiments/openarm-readiness-20261020.md)：历史运行结果及证据边界。

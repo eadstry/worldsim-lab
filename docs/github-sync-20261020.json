@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "repository": "https://github.com/eadstry/worldsim-lab",
-  "scope": "Byte-preserving synchronization snapshot. v005 is an unfinished, unsealed draft whose report still identifies v004; additional figures are not yet integrated. Site files are source archives only; hosting metadata is excluded and no deployment was performed. Original worktrees retained. Upstream tracked source differences already appear in workspace-overlays/upstream-patches; dataset deletions and runtime data are not source changes.",
+  "scope": "Source-preserving archive. Atlas Markdown links were adapted to current workspace paths; the original source hashes and adapted saved-file hashes are recorded per file. v005 remains an unfinished, unsealed draft whose report still identifies v004. Site files are source archives only; hosting metadata is excluded and no deployment was performed. Original worktrees retained. Upstream tracked source differences already appear in workspace-overlays/upstream-patches; dataset deletions and runtime data are not source changes.",
   "files": [
     {
       "source": "docs/experiment-plan-gpu-utilization-20261020.md",
@@ -151,7 +151,8 @@
       "source": ".worktrees/experimental-portfolio-report-20261019/site-publish/embodied-experiment-atlas/build_page.py",
       "source_head": "9e727ddeba1b3ba3ea5f81298e944a2367698c94",
       "saved_path": "workspace-overlays/embodied-experiment-atlas/build_page.py",
-      "sha256": "7994eeac3016669b02f2fe40ed9e93c1d5dd678177ead8fea2a3cf6365f289f9"
+      "sha256": "6795aa0dd5ce8246c11f069b184ee27e42aca8fa061fa4db8951de2dcd97aa5c",
+      "source_sha256": "7994eeac3016669b02f2fe40ed9e93c1d5dd678177ead8fea2a3cf6365f289f9"
     },
     {
       "source": ".worktrees/experimental-portfolio-report-20261019/site-publish/embodied-experiment-atlas/dist/figures/async-throughput.png",
@@ -199,7 +200,8 @@
       "source": ".worktrees/experimental-portfolio-report-20261019/site-publish/embodied-experiment-atlas/dist/report.md",
       "source_head": "9e727ddeba1b3ba3ea5f81298e944a2367698c94",
       "saved_path": "workspace-overlays/embodied-experiment-atlas/dist/report.md",
-      "sha256": "88ef4b097d0b8a7af3c309667ccaf7b9a4f9a17ea5f37c3e3f14f8a5fb974aea"
+      "sha256": "f136a5ec710d20d0d48f642d126c2cfec5d7cfa20433cbdbf57461f012b6e2c9",
+      "source_sha256": "88ef4b097d0b8a7af3c309667ccaf7b9a4f9a17ea5f37c3e3f14f8a5fb974aea"
     },
     {
       "source": ".worktrees/experimental-portfolio-report-20261019/site-publish/embodied-experiment-atlas/figures/async-throughput.png",
@@ -241,7 +243,8 @@
       "source": ".worktrees/experimental-portfolio-report-20261019/site-publish/embodied-experiment-atlas/report.md",
       "source_head": "9e727ddeba1b3ba3ea5f81298e944a2367698c94",
       "saved_path": "workspace-overlays/embodied-experiment-atlas/report.md",
-      "sha256": "88ef4b097d0b8a7af3c309667ccaf7b9a4f9a17ea5f37c3e3f14f8a5fb974aea"
+      "sha256": "3c2479419819b73e5ccf392e0719e1b596719e8aa1b44a7833fdcbeeec8239e4",
+      "source_sha256": "88ef4b097d0b8a7af3c309667ccaf7b9a4f9a17ea5f37c3e3f14f8a5fb974aea"
     }
   ]
 }
